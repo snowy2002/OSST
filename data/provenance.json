@@ -1,0 +1,24 @@
+{
+  "dataset": "InchLake1",
+  "creator": "Derek H. Ogle, personal collection",
+  "source_page": "https://fishr-core-team.github.io/FSAdata/reference/InchLake1.html",
+  "download_url": "https://raw.githubusercontent.com/fishR-Core-Team/FSAdata/2db85a9eaed25f9d13be5a3a5fde5dce0cf125c7/data-raw/InchLake1.csv",
+  "commit": "2db85a9eaed25f9d13be5a3a5fde5dce0cf125c7",
+  "sha256": "0bcf180122609e77a220a46626004776c36a5176a1e4f663a4c81372b0219584",
+  "verified_at_utc": "2026-10-21T08:26:14.199375+00:00",
+  "raw_records": 4894,
+  "fish_records": 4887,
+  "excluded": {
+    "Rusty Crayfish": 7
+  },
+  "observed_fish_species": 9,
+  "package_license": "GPL (>= 2), per upstream DESCRIPTION; attribution retained",
+  "cleaning": "只去除明确的非鱼类 Rusty Crayfish；不按相同行去重，不按体长筛选",
+  "sampling_caveats": [
+    "含多种渔具和 2007/2008 两年；按年份和渔具分层",
+    "netID 为捕获事件；同一网内的鱼可能相关",
+    "无逐鱼时间戳；CSV 顺序不认定为捕获时间顺序",
+    "记录的个体不保证跨事件从未重捕；没有可用于去重的鱼个体 ID",
+    "完整数据中的物种数不是全湖物种普查结果"
+  ]
+}

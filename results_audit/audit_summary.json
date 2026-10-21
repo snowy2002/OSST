@@ -1,0 +1,34 @@
+{
+  "completed_utc": "2026-10-16T08:50:20.771115+00:00",
+  "paper_sha256": "ee5509c4fdc637773a37b28d7c080f275f6c2e129f3f122f848cd858556f2720",
+  "source_hashes": {
+    "audit_paper.py": "7dd43b82fe6dcb1cb48e998ebc1388140eb2b31810d89eb20adca144553d4fce",
+    "benchmark_core.py": "9ac85b03b0e5502b450da4d6dc9e8894eb6e2da36f7f9931f307e2efcb4926d8",
+    "benchmark_data.py": "fe5df6c9c4b4c2b0951f263192a0f32573f8eb8c5389d84a44b50057fac3b139",
+    "experiments.py": "d10662f54cb9c97abf429c1f5453491583d2a5856f66510eb576d45b72863351",
+    "fish_data.py": "ec653ca6e6dd9e657d0ceb552086b6d519f6718f6b5d2f31df7b8ba59adfe3b5",
+    "large_experiments.py": "e631c63e45bd37fd4e691ee3a565c9aba7bd2d79058ba25942cdb058315efc33",
+    "paper_reference.py": "33a06321c3a6c5abbc541da5d55892e213ab91f3158787f5849118f353907ce8",
+    "pytest.ini": "8598faba585848caeea36d9870febf121d910c68c0f132402320867fe7fa2d38",
+    "report_large.py": "25cadcf936a96fba6ba95bbdee2b176bcd0ffedc4de618d1b600ce5f6f450138",
+    "requirements-lock.txt": "1584da9c11af5a4ce03ff892a3ba1fa7cd7498524e95394b26f8e769d6edcb2d",
+    "requirements.txt": "afb2aaa4bc0422a83afd9edfc0067747e31b7486d256c07481b601d132ab34f3",
+    "run_all.py": "ca50f1d6d25e45963c6df06b1ad1f026a36c6ed57bbe72579502203cfcfa997b",
+    "run_large_benchmark.py": "d4df429288f3f1b190efa6f32bb46cd26787bb51557bad5ff94e8bb5790cbf39",
+    "support_size.py": "3a37f0f41db6f6e06fa832b39ae41f779dc4570a8a83a26e917a2d593028ff54",
+    "support_size_demo.py": "7abf3a8aa05070ae37550228db172ff32651aca88464c77a4dde644ca1030d21",
+    "test_benchmark.py": "bb8b302af562bb5db329678e77f2944c1efd4a3db699bbc26ac5f51fce157e0c",
+    "test_paper_reference.py": "e5aa0fbbf682fd6cc31b57648d366bb9a2d4ddffa983ad0f22d32aca85ea2e8d",
+    "test_support_size.py": "2775116c93b4f5f220088910e305b4f15f7eced535e601a7668e672a6fa592c6"
+  },
+  "functions": 100,
+  "statuses": {
+    "实际入口已调用": 68,
+    "此次仅在测试调用": 4,
+    "此次未覆盖；需结合静态入口": 28
+  },
+  "core_not_executed": [],
+  "tests": "75 passed in 1.58s",
+  "trace_scope": "原版两分支和 demo、旧版各入口少量运行、evaluate 小批量路径、全测试；不是全部 CLI/下载分支覆盖或整套程序形式化证明。",
+  "historical_results": "results/results_large 数值保持历史结果；before_audit 源码快照对应旧 protocol 哈希。"
+}

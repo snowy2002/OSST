@@ -1,0 +1,16 @@
+strict references n=100 eps=0.01 uniform_null
+strict references n=100 eps=0.01 uniform_boundary
+strict references n=100 eps=0.01 exact_diffuse_boundary
+strict references n=100 eps=0.01 rare_null
+strict references n=100 eps=0.1 uniform_null
+strict references n=100 eps=0.1 uniform_boundary
+strict references n=100 eps=0.1 exact_diffuse_boundary
+strict references n=100 eps=0.1 rare_null
+strict references n=1000 eps=0.01 uniform_null
+strict references n=1000 eps=0.01 uniform_boundary
+strict references n=1000 eps=0.01 exact_diffuse_boundary
+strict references n=1000 eps=0.01 rare_null
+strict references n=1000 eps=0.1 uniform_null
+strict references n=1000 eps=0.1 uniform_boundary
+strict references n=1000 eps=0.1 exact_diffuse_boundary
+strict references n=1000 eps=0.1 rare_null

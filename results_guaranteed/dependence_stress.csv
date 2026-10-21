@@ -1,0 +1,4 @@
+dataset,n,epsilon,S,delta_n,block_size,trials,errors,false_negative_rate,mean_actual_samples,reasons,guarantee_applies
+retail,1791,0.1,3791,0.10013738215926857,1,200,0,0.0,4212.565,"{""certified_polynomial"": 200}",True
+retail,1791,0.1,3791,0.10013738215926857,10,200,200,1.0,21207.615,"{""certified_count_fallback"": 200}",False
+retail,1791,0.1,3791,0.10013738215926857,100,200,200,1.0,21190.52,"{""certified_count_fallback"": 200}",False

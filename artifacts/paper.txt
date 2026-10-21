@@ -1,0 +1,636 @@
+
+--- PAGE 1 ---
+                                  Optimal Support Size Testing
+
+                                                    Qisheng Wang  ∗
+
+
+
+
+                                                         Abstract
+           We present an optimal tester for support size that determines whether an unknown prob-
+       ability distribution is supported on n elements or ε-far away (in total variation distance) with
+       sample complexity Θ(     nε log(n)),  improving the prior best O(     nε log(n) log(min{ 1ε, n})) due toFer-
+       reira Pinto Jr. and Harms (STOC 2025).  As a generalization, we provide a            pretty  good lower
+       bound on support size.
+
+1   Introduction
+
+The support size of an unknown discrete probability distribution is an important measure of species
+diversity in ecology [FCW43]. The estimation of support size has been subsequently investigated
+in statistics from a theoretical perspective [Goo49,Goo53] (cf. [BF93]). Since “I don’t believe it is
+usually possible to estimate the number of unseen species [i.e., support size]” (quoting I. J. Good
+in [BF93]), the best we can hope is to consider weaker tasks with promise rather than estimation
+in all cases. Among them, support size testing is a basic statistical decision problem in property
+testing (cf. [Gol17, Section 11.4]).
+
+Problem  1 (Support size testing). Given an unknown probability distribution  p, the task is to
+determine whether p is supported on at most n elements or ε-far in total variation distance from
+any distribution supported on at most n elements. Formally, determine whether
+
+                                  Yes: |supp(p)| ≤ n    or    No:  ∆n(p) ≥ ε,
+
+with the promise that it is in either case. Here, supp(p) = {i: pi > 0} denotes the set of elements
+with nonzero probability, and ∆n(p) = infq : |supp(q)|≤n dTV(p, q) denotes the total variation distanceP
+of p to distributions supported on at most n elements, where dTV(p, q) =  12                      i|pi − qi|.
+
+    This problem has been investigated in a series of works [GR22,AF24,AFL24,KLR25,FH25].
+In particular, the prior best approach is with sample complexity O(     nε log(n) log(min{1ε, n})) due to
+[FH25], improving the prior approaches via learning histograms [VV11,VV17,HJW18,HO19] with
+sample complexity O(      nε2 log(n)). However, the prior best lower bound is Ω(     nε log(n)) implied by [VV11,
+Theorem 2] and [WY19, Proposition 1]. There still remains a gap of            log(min{1ε, n}) between the
+upper and lower bounds. In this paper, we present an optimal support size tester, thereby closing
+this gap.
+
+Theorem 1.1 (Optimal support size testing). There is an algorithm for support size testing with
+optimal sample complexity Θ(     nε log(n)).
+
+   ∗QishengWangiswiththeSchoolofComputerScience, ShanghaiJiaoTongUniversity(e-mail:  QishengWang1994@
+gmail.com).
+
+
+                                                              1
+
+--- PAGE 2 ---
+1.1    Generalization:  Pretty good lower bound on support size
+As a generalization of this result, we can further give a pretty good lower bound on the support
+size, without any assumptions on the distribution.
+
+Theorem 1.2 (Prettygoodlowerboundonsupportsize). There is an algorithm that uses Θ(     nε log(n))
+samples drawn from an unknown distribution p and outputs a number bS ∈ {1, 2, . . . , n} such that
+with probability at least 2/3,
+                                         min{effε(p), n} ≤ bS ≤ |supp(p)|,                           (1)
+where effε(p) is the ε-effective support size of p,1 the smallest number k ∈ N such that there is a
+distribution q with |supp(q)| = k and dTV(p, q) ≤ ε.
+
+    If an estimate bS satisfies Equation (1), then we call it a  pretty good lower bound on support size,
+which is a stronger definition than the good lower bound on support size  min{effε(p), n} ≤ bS ≤
+(1 + ε)|supp(p)| defined in [FH25, Corollary 1.6], where we remove the factor           (1 + ε). Theorem1.2
+can also be interpreted as: using m samples, one can obtain a lower bound on support size at least
+min{effε(p), Θ(εm log(e+εm))}, which improves the lower bound min{effε(p), Θ(      εlog(1/ε)m log(m))}
+in [FH25].
+    The algorithm in Theorem1.2is also optimal since a pretty good lower bound on support size
+can solve the support size testing problem:  |supp(p)| ≤ ⌊n/2⌋ vs ∆⌊n/2⌋(p) ≥ 2ε,2 and thus the
+lower bound Ω(     nε log(n)) for support size testing [VV11,WY19] applies.
+
+1.2    Implications in distribution-free sample-based testing
+In [FH25], they provided an algorithm for testing the class         Hn of Boolean functions f : N → {0, 1}
+with |f−1(1)| ≤ n with sample complexity O(n log(1/ε)ε log(n)  ) in the distribution-free sample-based test-
+ing model [GR16,Gol17,RR20,BFH21,RR22].  Testing Boolean function classes can aid the
+proper PAC (probably approximately correct) learning in model selection when testing is faster
+than learning.  As an implication of our results, combining [FH25, Theorem 1.8], we settle the
+sample complexity of testing Hn.
+
+Theorem 1.3 (Optimal distribution-free sample-based testing for Hn). There is an algorithm that
+uses Θ(     nε log(n)) samples of the form (x, f(x)) with x ∼ p for an unknown function f : N → {0, 1}
+and an unknown probability distribution p, and determines whether f ∈ Hn or f is ε-far from Hn
+(i.e., infg∈Hn Prx∼p[f(x) ̸= g(x)] ≥ ε) with success probability at least 2/3.
+
+Proof. [FH25, Theorem 1.8] gives          mHn(n, ε) ≤ msupp(n, ε) + O(1/ε) where mHn(n, ε) is the sample
+complexity of testing Hn and msupp(n, ε) is the sample complexity of support size testing.
+
+    The upper bound in Theorem1.3matches the lower bound                    Ω(     VCε log(VC)) due to [BFH21] (cf.
+[FH25, Section 1.3]), where the VC (Vapnik–Chervonenkis) dimension of         Hn is VC(Hn) = n.
+
+1.3    Techniques
+We now explain the intuition of our tester. Given the inspiration from prior approaches, we use
+a new strategy to solve an even harder problem: pretty good lower bound on support size. During
+
+   1The effective support size was recently involved in property testing [CDS18,BCG19], and its estimation (in a
+query model) was studied in [Gol19,NT23,Gol25].
+   2If |supp(p)| ≤ ⌊n/2⌋, then  bS ≤ ⌊n/2⌋. If ∆⌊n/2⌋(p) ≥ 2ε, then effε(p) > ⌊n/2⌋, which gives  bS ≥ ⌊n/2⌋ + 1.
+
+
+                                                             2
+
+--- PAGE 3 ---
+directly facing this harder problem, it suggests new forms of testers and better parameter choices.
+Since our tester itself (as well as its correctness proof) is very simple, for the readers who are
+interested in the specific construction, skip to the last paragraph of this subsection and Section3.
+    Like prior works [JVHW15,WY16] on property testing, we employ the Poissonized sampling
+model: Let M ∼ Poi(m), draw M independent samples X1, X2, . . . , XM from p, and the algorithm
+takes the empirical counts Ni = Pj 1{Xj=i} as input. The sample complexity in the Poissonized
+sampling model is essentially the same as that in the standard (multinomial) sampling model up to
+a constant factor; namely, the algorithm takes independent samples X1, X2, . . . , Xm ∼ p as input.
+
+The approach of [FH25].        In [FH25], they first provided a tester for support size and then used
+it as a subroutine to give a good lower bound on support size. Their tester is of the form
+
+                                         bSFH := bSa,b,k,m = X       fa,b,k,m(Ni),
+
+                                                                  i
+
+with a ≍  εn log( 1ε), b ≍   ε log2(n)n log(1/ε), k ≍ log(n), and m ≍  n log(1/ε)ε log(n) , where
+
+                                b + a − 2x             kX                         b + a  −1
+          Pa,b,k(x) = −ρTk           b − a        =       cℓxℓ,       ρ =     Tk   b − a          ∈ (0, 1],         (2)
+                                                  ℓ=0                    
+                           1 + cℓℓ!/mℓ,   1 ≤ ℓ ≤ k,                          1,                                 k = 0,
+        fa,b,k,m(ℓ) =   1,                   ℓ > k,            Tk(x) =    x,                                 k = 1,   (3)
+                           0,                   ℓ = 0,                        2xTk−1(x) − Tk−2(x),   k ≥ 2.
+
+Their tester returns “Yes” if bSFH < (1 + ε2)n and “No” otherwise. Here, Tk(x) is the k-th Chebyshev
+polynomial of the first kind. It is noted that Pa,b,k(·) and fa,b,k,m(·) were also used in [WY19] for
+support size estimation.
+
+New strategy for testing.  Rather than directly focusing on support size testing, we aim to deal
+with giving a pretty good lower bound on support size as well. Namely, our goal is to directly find
+a pretty good lower bound bS on support size such that min{effε(p), n} ≤ bS ≤ |supp(p)|. If this can
+be done, it already gives a support size tester, as explained in Section1.1. So, in the following, we
+skip directly to solving this harder task and we will explain why the harder task will give hints to
+an optimal support size tester.
+
+Step 1:  Removing the multiplicative factor (1 + ε).  The reason that the good lower bound
+on support size obtained in [FH25] has an upper bound of           (1 + ε)|supp(p)| with a multiplicative
+factor (1 + ε) is that if |supp(p)| ≤ n, the best possible upper bound on E[bSFH] we can have is
+already E[bSFH] ≤ (1 + δ)|supp(p)| where δ  = ε/4 (see [FH25, Lemma 3.7]). On the other hand,
+|bSFH − E[bSFH]| ≤ δn with high probability (see [FH25, Lemma 3.17]). The two inequalities inspire
+us to consider the case where there is a tester bS such that with high probability,
+                                                                      bS − E[bS] ≤ δn,
+                                  E[bS] ≤ (1 + δ)|supp(p)|,
+
+where δ = ε/4 reduces to the case of [FH25]. The two conditions together yield
+                                              bS ≤ (1 + δ)|supp(p)| + δn,
+
+
+                                                              3
+
+--- PAGE 4 ---
+which is                                   bS − δn
+
+                                                   1 + δ  ≤ |supp(p)|.
+This suggests we use a tester of the form
+
+                                              bS′a,b,k,m,δ = bSa,b,k,m − δn1 + δ      ,
+
+which guarantees bS′a,b,k,m,δ ≤ |supp(p)| with high probability. Since our goal is the sample complex-
+ity m ≍      nε log(n), it remains to determine the rest parameters.
+
+Step  2:   The  choice  of  parameter  a  leads  to  multiple  sub-testers.  We now consider
+how to choose  a so that  bS′a,b,k,m,δ  ≥  effε(p) when  effε(p) ≤  n.  In other words, for every  1 ≤
+r  ≤  n, if  effε(p)  >  r, then  bS′a,b,k,m,δ  >  r.  Note that under some smooth conditions, one has
+EX∼Poi(mx)[fa,b,k,m(X)] ≥ (1− δa) min{x/a, 1} (see Lemma2.3), where          δa > 0 depends on a. When
+effε(p) > r, this further leads to
+
+                                  bS′a,b,k,m,δa − r ≥ (1 − δa)ε/p(r) − 2δa(n + r)1 + δa                ,
+
+
+where p(r) denotes the r-th largest probability weight of p. So, in order to ensure bS′a,b,k,m,δa > r, it
+suffices to ensure (1 − δa)ε/p(r) > 2δa(n + r), which, for small δa ≤ 1/4, is
+
+                                                       δan ≲   εp(r) .                                    (4)
+
+    However, p(r) is not known yet. To overcome this issue, we consider a list of candidates of a,
+namely a0, a1, . . . , aJ with aj  = 2ja0. For large enough J, there must be a 0 ≤ j < J such that
+aj ≤ p(r) < aj+1 = 2aj, in which case p(r) ≍ aj and one can take δaj ≍    εajn to meet Equation (4).
+To complete this, since smaller a gives larger δa while we require in our analysis that δa ≤ 1/4, the
+smallest possible a (i.e., a0) we can choose is therefore a0 ≍    εδa0n, which is a0 ≍  εn when δa ≍ 1. As
+a result, we can take aj ≍  2jεn  and δj ≍ 2−j and these suggest a tester of the form
+
+                                                bS′ =  max
+                                                      0≤j≤J bS′aj,bj,kj,m,δj.
+                                            q   bj
+Fortherestoftheparameters, kj ≍                aj log( 1δj ) ≲ log(n)ischosentoensurethat ρ = (Tkj(bj+ajbj−aj ))−1 <
+δj, and bj ≍  log(n)m   ≍  ε log2(n)n   is chosen to ensure that every element with top-n probability is seen
+with high probability. As a result, J ≍ log(  ba0 ) ≍ log(log(n)).
+
+Step 3:  Maximum likelihood estimation strikes back.  However, the tester bS′ may fail in
+some extreme cases. For example, when p1  = p2  = ··· = pn−1  =   1−εn−1 and pn  = ε with ε =   14n,
+∆n−1(p) = ε and effε(p) = |supp(p)| = n, which forces the pretty good lower bound on the support
+size of p to be exactly bS = n. On the other hand, with high probability, bSaj,bj,kj,m = n, which gives
+bS′aj,bj,kj,m,δj ≤ n − 1 as long as δjn ≳ 1 and therefore bS′ ≤ n − 1.
+    To overcome this issue, we employ the simple maximum likelihood estimator
+
+                                                 bSMLE = X1{Ni>0},                                (5)
+
+                                                              i
+
+                                                             4
+
+--- PAGE 5 ---
+and finally our tester is now completed:
+                                             bSour = maxnbSMLE, bS′o
+                                                                          .
+
+It only remains to verify that the tester bSour can give a pretty good lower bound on support size
+and thus a support size tester.
+
+Our tester:  A formal description.
+                                  (                  bSCheb        )
+                    bSour = max      bSMLE,  max      j     − δjn    ,      bSCheb
+                                             0≤j≤J      1 + δj                j      = bSaj,bj,kj,m,
+
+
+where m ≍       nε log(n) and aj ≍  2jεn , bj ≍  ε log2(n)n   , kj ≲ log(n), δj ≍ 2−j, and J ≍ log(log(n)). Note
+that the choice of bj is independent of j. With the choice of these parameters,
+
+   1.  bSour gives a pretty good lower bound on support size.
+
+   2.The support size tester is immediate: return “Yes” if   bSour ≤ n and “No” otherwise.
+
+1.4    Independent and Simultaneous Work
+During the preparation of this paper, the author became aware of the independent work [BGY26]
+with an optimal support size tester over a finite alphabet.  Although both approaches employ
+polynomial estimators, their algorithmic construction is substantially different. Specifically, they
+first amplify the samples by taking unions, construct an initial set of observed elements, and then
+reduce the problem to testing bounded residual sets, involving the Fejér polynomial. In contrast,
+our approach directly deals with the empirical counts using sub-testers involving affined Chebyshev
+polynomials. Furthermore, ourapproachyieldsaprettygoodlowerboundonsupportsize, providing
+a numerical guarantee beyond support size testing.
+
+2   Preliminaries
+
+Fact 2.1 ([MU05, Exercise 4.7])          . For M ∼ Poi(m), then Pr[M > 4m] ≤ e−m.
+
+Fact 2.2. Let independent Ni ∼ Poi(mpi). Define bSMLE as in Equation (5)  . Then,
+                               hbSMLEi        hbSMLEi           1 − e−mpi ≤ |supp(p)|.                 (6)
+                          Var            ≤ E            = X
+                                                             i
+If ∆r(p) ≥ ε, then                              hbSMLE ≤ ri
+                                             Pr                 ≤ r + 1mε  .                              (7)
+
+Lemma 2.3 (Adapted from [FH25, Proposition 2.12, 3.2, 3.4, and 3.14])        . Let 0 < a < b ≤ 1, m > 0
+and integer k ≥ 1. Let Pa,b,k(x) and fa,b,k,m(ℓ) be defined in Equations (2)   and (3)  , respectively.
+Then,
+                      Q(x) :=      E
+                                X∼Poi(mx)[fa,b,k,m(X)] = 1 + e−mxPa,b,k(x),        x ≥ 0.             (8)
+If mpb(b − a) ≥ k, then
+                                      (1 − ρ) min{x/a, 1} ≤ Q(x) ≤ 1 + ρ.                         (9)
+
+                                                           5
+
+--- PAGE 6 ---
+If a ≤ b/2, then for 1 ≤ ℓ ≤ k,                                    ℓ
+
+                                                |cℓ|ℓ! ≤ 15k kb      .                                (10)
+
+Proof. See AppendixA.
+
+3   The Tester
+
+Set constants C0 = 226 and L0 = 210. The choice of constants is for simplicity, and we did not try
+to optimize them. Let                                                C0n
+                                         L = log(en),       m =        εL    .
+
+Let M ∼ Poi(m) and let X1, X2, . . . , XM ∼ p be M independent samples from p. Let
+
+                                                        MX
+                                                 Ni =       1{Xj=i}.
+                                                        j=1
+
+Note that Ni ∼ Poi(mpi) are independent. Our tester considers two cases.
+
+   1.  L < L0. Let eS = bSMLE.
+
+   2.  L ≥ L0. Let                                                                 b
+                                  a0 =  ε8n,       b = 64Lm  ,       J =   log2   2a0     .
+
+      For each 0 ≤ j ≤ J, consider the Chebyshev polynomial estimator
+                                                                          &s            2   ’
+          bSCheb         faj,b,kj,m(Ni),       aj = 2j−3ε                       b              ,       δj = 2−j−2.
+            j      = X                                   n   ,       kj =      aj log   δj
+                      i
+      Finally, set                                (                                )
+                                        eS = max     bSMLE,  max     bSChebj     − δjn
+                                                             0≤j≤J      1 + δj       .
+
+
+    The tester outputs “Yes” if eS ≤ n and “No” otherwise. Take bS  = min{max{⌈eS⌉, 1}, n} as a
+pretty good lower bound on support size.
+
+4   Correctness
+
+Lemma 4.1. Suppose L ≥ L0. For every 0 ≤ j ≤ J,
+                                x                      faj,b,kj,m(X) ≤ 1 + δj,        0 ≤ x ≤ 1,        (11)
+                (1 − δj) min    aj , 1   ≤      E
+                                            X∼Poi(mx)
+                faj,b,kj,m∞ ≤ 4n1/16.                                                   (12)
+
+
+Equation (11)   further gives
+                                              pi           hbSChebi
+                         (1 − δj)X     min    aj , 1   ≤ E    j       ≤ (1 + δj)|supp(p)|.               (13)
+                                    i
+
+                                                          6
+
+--- PAGE 7 ---
+If E[bSMLE] ≤ 2n, then
+                                  hbSCheb               ≤ δjn,  0 ≤ j ≤ Ji
+                               Pr     j     − E[bSChebj     ]                       ≥ 0.99.                  (14)
+
+Proof. It can be verified that the tuple (a, b, k, m) := (aj, b, kj, m) satisfies the conditions required
+in Lemma2.3:             mpb(b − aj) ≥ kj and aj ≤ b/2. Equation (9) in Lemma2.3gives
+
+                           (1 − ρj) min{x/aj, 1} ≤      E
+                                                         X∼Poi(mx)[fa,b,k,m(X)] ≤ 1 + ρj,
+
+which gives Equation (11) by noting that
+                                                    raj        −1
+                      ρj =    cosh    2kj artanh                      ≤ 2e−2kj√aj/b ≤ δ2j
+                                                         b                                   2  ≤ δj.
+
+Denote Paj,b,kj(x) = Pkjℓ=0 cℓxℓ. Using Equation (10) in Lemma2.3, Equation (12) is obtained by
+noting that for 1 ≤ ℓ ≤ kj,
+                     faj,b,kj,m(ℓ) ≤ 1 + |cℓ|ℓ!                  kj   ℓ
+                                               mℓ  ≤ 1 + 15kj        mb      ≤ 1 + 15kj ≤ 4n1/16,
+
+where we use that fact that kj < L/64.
+    Since Ni are independent and faj,b,kj,m(0) = 0, we have
+                           hbSChebi                   2 X                                hbSMLEi
+                       Var    j       ≤ faj,b,kj,m   ∞       Pr[Ni > 0] ≤ 16n1/8 E                .
+                                                            i
+
+Note that this argument is also valid on a countable alphabet of  i.  If E[bSMLE] ≤  2n, then, by
+Chebyshev’s inequality, for any 0 ≤ j ≤ J,
+                                    hbSCheb     hbSChebi > δjni
+                                 Pr     j     − E     j                  ≤ 32n−7/8δ−2j   .
+
+Equation (14) is obtained by the union bound and by noting that
+
+                              JX
+                                 32n−7/8δ−2j    < 64n−7/8δ−2J   ≤ 64n−7/8 · L4232 < 0.01,
+                            j=0
+
+where we use δ−1J   ≤ L2/216.
+
+Lemma 4.2. If |supp(p)| ≤ n, then
+                                                 heS > |supp(p)|i
+                                             Pr                      < 0.01.                            (15)
+
+For 1 ≤ r ≤ n, if ∆r(p) ≥ ε, then                     heS ≤ ri
+                                                  Pr            < 0.01.                                (16)
+
+Proof. If L < L0, then eS = bSMLE. Then, eS = bSMLE ≤ |supp(p)| holds with certainty, which gives
+Equation (15). For      1 ≤ r ≤ n, if ∆r(p) ≥ ε, Equation (7) in Fact2.2gives Equation (16):
+                             heS ≤ ri         hbSMLE ≤ ri
+                          Pr            = Pr                  ≤ r + 1mε  ≤  2nmε ≤ 2LC0  < 0.01.
+
+
+                                                             7
+
+--- PAGE 8 ---
+    In the rest, we assume that L ≥ L0. To see Equation (15), since     E[bSMLE] ≤ |supp(p)| ≤ n ≤
+2n, Equation (14) in Lemma4.1gives that it holds with probability at least                      0.99 that |bSChebj     −
+E[bSChebj     ]| ≤ δjn for all 0 ≤ j ≤ J, in which case Equation (13) in Lemma4.1gives
+
+                                        bSChebj     − δjn      j     ]
+                                           1 + δj     ≤ E[bSCheb1 + δj   ≤ |supp(p)|.
+
+    To show Equation (16), we consider two cases.
+
+   1. E[bSMLE]  >  2n.  Since  eS  ≥  bSMLE, Equation (6) in Fact2.2, together with Chebyshev’s
+       inequality, gives
+                   heS ≤ ri         hbSMLE ≤ ni
+                Pr            ≤ Pr                   ≤    Var[bSMLE](E[bSMLE] − n)2 ≤      E[bSMLE](E[bSMLE] − n)2 ≤  2n < 0.01.
+
+
+   2. E[bSMLE] ≤  2n.  Let p(1) ≥  p(2) ≥  p(3) ≥  . . . be the decreasing probability weights of the
+       distribution p. We consider three cases on p(r).
+
+       2.1.  p(r) ≥ b/2. Since eS ≥ bSMLE, the union bound gives
+                      heS ≤ ri         hbSMLE ≤ ri
+                   Pr            ≤ Pr                  ≤ Pr∃1 ≤ i ≤ r: N(i) = 0 + Pr∀i > r: N(i) = 0,
+
+             where N(i) is the count of the element with probability p(i). For the first term,
+
+                                                              rX                       rX
+                         Pr∃1 ≤ i ≤ r: N(i) = 0 ≤              PrN(i) = 0 =           e−mp(i) ≤ re−mp(r).
+                                                             i=1                     i=1
+             For the second term,
+                                                                     "X               #
+                                    Pr∀i > r: N(i) = 0 = Pr              N(i) = 0     = e−m∆r(p),
+                                                                       i>r
+
+             where note that Pi>r N(i) ∼ Poi(mPi>r p(i)) = Poi(m∆r(p)). Therefore,
+                                  heS ≤ ri
+                               Pr            ≤ re−mp(r) + e−m∆r(p) ≤ re−mb/2 + e−mε < 0.01.
+
+       2.2.  p(r) < a0. By Equation (13) in Lemma4.1,
+                                  hbSChebi               X
+                                E    0       ≥ 1 − δ0a0       p(i) = 1 − δ0a0   ∆r(p) ≥ 1 − δ0a0   ε = 6n.
+                                                         i>r
+
+             By Equation (14) in Lemma4.1, it holds with probability at least                      0.99 that |bSCheb0     −
+             E[bSCheb0     ]| ≤ δ0n, in which case
+
+                               eS ≥ bSCheb0     − δ0n        0     ] − 2δ0n
+                                        1 + δ0     ≥ E[bSCheb1 + δ0       ≥ 6n − n/21 + 1/4   = 225 n > r,
+
+             which yields Equation (16).
+
+                                                              8
+
+--- PAGE 9 ---
+       2.3.  a0  ≤  p(r)  <  b/2.  Let  0 ≤  j  ≤  J such that  aj  ≤  p(r)  <  2aj.  By Equation (13) in
+             Lemma4.1,
+                 hbSChebi                           pi
+                E    j      ≥ (1 − δj)X      min     aj , 1  ≥ (1 − δj)     r + ∆r(p)p(r)  ≥ (1 − δj)    r +   ε2aj  .
+                                           i
+
+             By Equation (14) in Lemma4.1, it holds with probability at least                      0.99 that |bSChebj     −
+             E[bSChebj     ]| ≤ δjn, in which case
+
+                           eS ≥ bSChebj     − δjn      j     ] − 2δjn
+                                    1 + δj     ≥ E[bSCheb1 + δj       ≥ (1 − δj)(r + ε/2aj) − 2δjn1 + δj
+
+                             = r + δj((14 − 16δj)n − 2r)1 + δj             > r,
+
+             where we use δj ≤ 1/4 and r ≤ n. This yields Equation (16).
+
+
+
+Proof of Theorem1.1.      When |supp(p)| ≤ n, Lemma4.2gives that                 Pr[eS > n] ≤ Pr[eS > |supp(p)|] <
+0.01. When ∆n(p) ≥ ε, Lemma4.2gives          Pr[eS ≤ n] < 0.01.
+
+Proof of Theorem1.2.      When |supp(p)|  ≥  n,  bS  ≤  n  ≤  |supp(p)| holds with certainty.  When
+|supp(p)| < n, Lemma4.2gives       Pr[bS > |supp(p)|] ≤ 0.01. Therefore, Pr[bS ≤ |supp(p)|] ≥ 0.99.
+    For the left hand side of the inequality, let r = min{effε(p), n} − 1. If r = 0, then bS ≥ 1 = r + 1
+with certainty. If 1 ≤ r ≤ n − 1, then ∆r(p) > ε. Lemma4.2gives                 Pr[eS ≤ r] < 0.01, which is
+Pr[bS ≥ min{effε(p), n}] ≥ 0.99.
+    Combining the above with the union bound gives Pr[min{effε(p), n} ≤ bS ≤ |supp(p)|] ≥ 0.98.
+
+
+Acknowledgment
+
+The author used Large Language Models as AI-assisted research and writing tools throughout the
+preparation of this paper. The tools were used to help brainstorm ideas and explore proof strategies.
+Allfinal mathematical claims, algorithms, proofs, citations, andwording werewritten bythe author.
+The author assumes responsibility for all content of the paper.
+    The author thanks Jinge Bao, Minbo Gao, and Penghui Yao for communication regarding the
+related work [BGY26].
+
+References
+
+[AF24]Tomer Adar and Eldar Fischer.  Refining the adaptivity notion in the huge object
+              model. In Approximation, Randomization, and Combinatorial Optimization. Algorithms
+              and Techniques (APPROX/RANDOM 2024), pages 45:1–45:16, 2024.   doi:10.4230/
+              LIPIcs.APPROX/RANDOM.2024.45.1
+
+[AFL24]Tomer Adar, Eldar Fischer, and Amit Levi.  Support testing in the huge object
+              model.  In Approximation, Randomization, and Combinatorial Optimization. Algo-
+              rithms and Techniques (APPROX/RANDOM 2024), pages 46:1–46:16, 2024.    doi:
+              10.4230/LIPIcs.APPROX/RANDOM.2024.46.1
+
+                                                           9
+
+--- PAGE 10 ---
+[BCG19]Eric Blais, Clément L. Canonne, and Tom Gur. Distribution testing lower bounds via
+             reductionsfromcommunicationcomplexity. ACM Transactions on Computation Theory,
+             11(2):6:1–6:37, 2019.  doi:10.1145/3305270.2
+[BF93]J. Bunge and M. Fitzpatrick. Estimating the number of species: A review.       Journal of
+             the American Statistical Association, 88(421):364–373, 1993.  doi:10.1080/01621459.
+             1993.10594330.1
+[BFH21]Eric Blais, Renato Ferreira Pinto Jr., and Nathaniel Harms.  VC dimension and
+             distribution-free sample-based testing. In Proceedings of the 53rd Annual ACM SIGACT
+             Symposium on Theory of Computing, pages 504–517, 2021.   doi:10.1145/3406325.
+             3451104.2
+
+[BGY26]Jinge Bao, Minbo Gao, and Penghui Yao.  Optimal quantum junta testing without
+             inverse queries. ArXiv preprints, 2026.  arXiv:2609.37926.5,9
+[CDS18]Clément L. Canonne, Ilias Diakonikolas, and Alistair Stewart.  Testing for fami-
+             lies of distributions via the Fourier transform.  In Advances in Neural Information
+             Processing Systems 31 (NeurIPS 2018), pages 10084–10095, 2018.  URL:  https://
+             proceedings.neurips.cc/paper/2018/hash/aa8fdbb7d8159b3048daca36fe5c06d2-
+             Abstract.html.2
+
+[FCW43]R. A. Fisher, A. Steven Corbet, and C. B. Williams. The relation between the number
+             of species and the number of individuals in a random sample of an animal population.
+             Journal of Animal Ecology, 12(1):42–58, 1943.  doi:10.2307/1411.1
+
+[FH25]Renato Ferreira Pinto Jr. and Nathaniel Harms. Testing support size more efficiently
+             than learning histograms. In Proceedings of the 57th ACM Symposium on Theory of
+             Computing, pages 995–1006, 2025.  doi:10.1145/3717823.3718134.1,2,3,5
+
+[Gol17]Oded Goldreich.       Introduction to property testing. Cambridge University Press, 2017.
+             doi:10.1017/9781108135252.1,2
+
+[Gol19]Oded Goldreich.  Testing bipartitness in an augmented VDF bounded-degree graph
+             model. ArXiv preprints, 2019.  arXiv:1905.03070.2
+[Gol25]Oded Goldreich. On the complexity of estimating the effective support size. In Oded
+             Goldreich, editor, Computational Complexity and Local Algorithms: On the Interplay
+             Between Randomness and Computation, volume 15700 of Lecture Notes in Computer
+             Science, pages 204–236. Springer, 2025.  doi:10.1007/978-3-031-88946-2_13.2
+
+[Goo49] Leo A. Goodman. On the estimation of the number of classes in a population.   Annals
+             of Mathematical Statistics, 20(4):572–579, 1949.  doi:10.1214/aoms/1177729949.1
+[Goo53] I. J. Good.  The population frequencies of species and the estimation of population
+             parameters. Biometrika, 40(3–4):237–264, 1953.  doi:10.2307/2333344.1
+
+[GR16]Oded Goldreich and Dana Ron. On sample-based testers.       ACM Transactions on Com-
+             putation Theory, 8(2):7:1–7:54, 2016.  doi:10.1145/2898355.2
+
+[GR22]Oded Goldreich and Dana Ron. Testing distributions of huge objects. In       Proceedings
+             of the 13th Innovations in Theoretical Computer Science Conference, pages 78:1–78:19,
+             2022.  doi:10.4230/LIPIcs.ITCS.2022.78.1
+
+                                                        10
+
+--- PAGE 11 ---
+[HJW18]Yanjun Han, Jiantao Jiao, and Tsachy Weissman. Local moment matching: A unified
+             methodology for symmetric functional estimation and distribution estimation under
+             Wasserstein distance. In Proceedings of the 31st Conference On Learning Theory, pages
+             3189–3221, 2018. URL: https://proceedings.mlr.press/v75/han18b.html.1
+
+[HO19]Yi Hao and Alon Orlitsky.  The broad optimality of profile maximum likelihood.
+             In Advances in Neural Information Processing Systems 32 (NeurIPS 2019), pages
+             10991–11003,  2019.   URL:   https://proceedings.neurips.cc/paper/2019/hash/
+             f9fd5ec4c141a95257aa99ef1b590672-Abstract.html.1
+
+[JVHW15]Jiantao Jiao, Kartik Venkat, Yanjun Han, and Tsachy Weissman. Minimax estimation
+             of functionals of discrete distributions.  IEEE Transactions on Information Theory,
+             61(5):2835–2885, 2015.  doi:10.1109/TIT.2015.2412945.3
+
+[KLR25]Esty Kelman, Ephraim Linder, and Sofya Raskhodnikova. Online versus offline adver-
+             saries in property testing. In Proceedings of the 16th Innovations in Theoretical Com-
+             puter Science Conference, pages65:1–65:18, 2025. doi:10.4230/LIPIcs.ITCS.2025.65.
+             1
+
+[MU05]Michael Mitzenmacher and Eli Upfal.       Probability and Computing: Randomization and
+             Probabilistic Techniques in Algorithms and Data Analysis. Cambridge University, 2005.
+             5
+
+[NT23]Shyam Narayanan and Jakub Tětek. Estimating the effective support size in constant
+             query complexity. In Proceedings of the 2023 Symposium on Simplicity in Algorithms
+             (SOSA), pages 242–252, 2023.  doi:10.1137/1.9781611977585.ch22.2
+
+[RR20]Dana Ron and Asaf Rosin. Almost optimal distribution-free sample-based testing of
+             k-modality.  In Approximation, Randomization, and Combinatorial Optimization. Al-
+             gorithms and Techniques (APPROX/RANDOM 2020), pages 27:1–27:19, 2020.   doi:
+             10.4230/LIPIcs.APPROX/RANDOM.2020.27.2
+
+[RR22]Dana Ron and Asaf Rosin.   Optimal distribution-free sample-based testing of
+             subsequence-freeness with one-sided error.  ACM Transactions on Computation The-
+             ory, 14(1):4:1–4:31, 2022.  doi:10.1145/3512750.2
+
+[VV11]Gregory Valiant and Paul Valiant. Estimating the unseen: an n/log(n)-sample estimator
+             for entropy and support size, shown optimal via new CLTs. In Proceedings of the 43rd
+             Annual ACM Symposium on Theory of Computing, pages 685–694, 2011. doi:10.1145/
+             1993636.1993727.1,2
+
+[VV17]Gregory Valiant and Paul Valiant.  Estimating the unseen: improved estimators for
+             entropy and other properties. Journal of the ACM, 64(6):37:1–37:41, 2017.   doi:10.
+             1145/3125643.1
+
+[WY16]Yihong Wu and Pengkun Yang. Minimax rates of entropy estimation on large alpha-
+             bets via best polynomial approximation. IEEE Transactions on Information Theory,
+             62(6):3702–3720, 2016.  doi:10.1109/TIT.2016.2548468.3
+
+[WY19]YihongWuandPengkunYang. Chebyshevpolynomials, momentmatching, andoptimal
+             estimation of the unseen. Annals of Statistics, 47(2):857–883, 2019.  doi:10.1214/17-
+             AOS1665.1,2,3
+
+                                                       11
+
+--- PAGE 12 ---
+A   Proof of Lemma2.3
+
+Proof. By definition, direct calculation gives Equation (8):
+                                     ∞X  e−mx(mx)ℓ
+                          Q(x) =               ℓ!       f(ℓ)
+                                    ℓ=0
+                                      kX                                  ∞X
+                                 =       e−mx(mx)ℓ       1 + cℓℓ!    +          e−mx(mx)ℓ
+                                    ℓ=1        ℓ!              mℓ       ℓ=k+1        ℓ!
+
+                                     ∞X  e−mx(mx)ℓ          kX e−mx(mx)ℓ
+                                 =             ℓ!        +           ℓ!       · cℓℓ!mℓ
+                                    ℓ=1                    ℓ=1
+                                 = (1 − e−mx) + e−mx(Pa,b,k(x) + 1)
+                                 = 1 + e−mxPa,b,k(x).
+    Now we prove Equation (9). We consider three cases.
+   1.  0 ≤ x ≤ a. Since Tk(x)isincreasingandconvexon [1, +∞), Pa,b,k(x)isincreasingandconcave
+       on [0, a], which gives
+                                                       x
+                Pa,b,k(x) ≥     1 − xa   Pa,b,k(0) +    a   Pa,b,k(a) = −1 + (1 − ρ)xa      ,        0 ≤ x ≤ a,
+
+       where we use Pa,b,k(0) = −1 and Pa,b,k(a) = −ρ. Moreover, since Pa,b,k(x) ≤ 0 and e−mx ≤ 1
+       for 0 ≤ x ≤ a, Equation (8) gives
+                                         (1 − ρ)x
+                                             a     ≤ Q(x) ≤ 1,        0 ≤ x ≤ a.                     (17)
+   2.  a ≤ x ≤ b. Since |Pa,b,k(x)| ≤ ρ, Equation (8) gives
+                                                  1 − ρ ≤ Q(x) ≤ 1 + ρ.                           (18)
+
+   3.  x ≥ b. Let u =  2(x−b)b−a   ≥ 0. Note that  b+a−2xb−a    = −1 − u. Then,
+                            Tk(1 + u) = cosh(k arcosh(1 + u)) ≤ ek arcosh(1+u) ≤ ek√2u.
+
+       On the other hand, the condition mpb(b − a) ≥ k, together with the fact that x = b+ b−a2  u ≥
+       p2b(b − a)u, implies mx ≥ k√2u. Therefore,
+
+                                  |Q(x) − 1| = ρe−mxTk(1 + u) ≤ ρek√2u−mx ≤ ρ.                (19)
+
+Combining Equations (17) to (19) gives Equation (9).
+    Finally, we prove Equation (10). Let      u = x/b. Then,
+
+                P(x) = P(bu) = −ρTk(α − βu),       α = a + bb − a ≤ 3,       β =    2bb − a ≤ 4.
+
+Let Mj = ∥Tj(α − βu)∥1 be the absolute sum of the coefficients of Tj(α − βu) in terms of u. Then,
+M0 = 1, M1 ≤ 7, and Mj+1 ≤ 14Mj +Mj−1, which gives Mj ≤ 15j for any integer j ≥ 0. Therefore,
+
+                                             kX
+                                  |cℓ|bℓ ≤     |cℓ|bℓ = ∥P(bu)∥1 = ρMk ≤ 15k,
+                                            ℓ=0
+which gives Equation (10) using      ℓ! ≤ kℓ for 0 ≤ ℓ ≤ k.
+
+
+                                                           12

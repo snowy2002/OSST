@@ -1,0 +1,8 @@
+{
+  "python": "3.14.4",
+  "platform": "Linux-6.18.54.1-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+  "certificate_dependencies": "Python standard library only",
+  "arithmetic": "integer endpoints, Fraction Taylor bounds, checked integer square-root witnesses",
+  "proof_assistant_kernel": "not used",
+  "latex_engine": "tectonic 0.17.0"
+}

@@ -1,0 +1,476 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Prb}{\mathbb P}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\Poi}{\operatorname{Poi}}
+\newcommand{\supp}{\operatorname{supp}}
+\title{Reducing the explicit sampling constant in Optimal Support Size Testing}
+\author{Research derivation for the supplied manuscript; not externally peer reviewed}
+\date{21 October 2026}
+\begin{document}
+\maketitle
+
+\paragraph{Scope.}
+We analyze the exact real-parameter, Poissonized algorithm in Section 3 of the
+supplied manuscript by Qisheng Wang, \emph{Optimal Support Size Testing},
+local file \texttt{2610.18723v1.pdf}. We keep $L_0=1024$, the coefficient $64$
+in $b$, every scale, every polynomial degree, and every decision correction
+unchanged. Only $C_0$ is reduced. The bounds replacing Lemma 4.1 below are new
+derivations; the original intermediate bound $\|f\|_\infty\le4n^{1/16}$ is not
+asserted with the new constants. The error conclusions of Lemma 4.2 and the
+main theorems are preserved. This is not a deduction from experimental curves.
+
+\begin{theorem}[Sufficient constant]
+Set
+\[
+ \eta=\frac{9}{4\cdot10^{219}}=2.25\cdot10^{-219},\qquad
+ C_* =1024+\eta.
+\]
+For every $C\in[C_*,2^{26}]$, the original Section 3 algorithm with $C_0=C$
+and $L_0=1024$ satisfies, for every integer $n\ge1$ and $0<\epsilon<1$,
+\begin{align}
+ S=|\supp(p)|\le n&\ \Longrightarrow\
+ \Prb(\widetilde S>S)<0.01,\label{eq:upper}\\
+ 1\le r\le n,\quad\Delta_r(p)\ge\epsilon&\ \Longrightarrow\
+ \Prb(\widetilde S\le r)<0.01.\label{eq:lower}
+\end{align}
+Consequently the tester has error below $1\%$ on each promise class, and
+$\widehat S=\min\{\max\{\lceil\widetilde S\rceil,1\},n\}$ satisfies
+\[
+ \Prb\{\min(\operatorname{eff}_\epsilon(p),n)\le\widehat S\le S\}\ge0.98.
+\]
+In particular the simple integer choice $C_0=1025$ is sufficient. Its
+sampling coefficient is smaller than the original by a factor
+$2^{26}/1025>65{,}472$.
+\end{theorem}
+
+\paragraph{Integer rounding of the mean.}
+For either recommended choice $C=C_*$ or $C=1025$, replacing $m$ by
+$\lceil Cn/(\epsilon L)\rceil$ and recomputing $b$ preserves the result.
+In the count branch this only increases the sample mean. In the polynomial
+branch it amounts to using an effective coefficient
+$C'\in[C,C+\epsilon L/n)$, and $L/n\le1024e^{-1023}<1$ for $L\ge1024$.
+Thus $C'\in[C_*,2^{26}]$, where all the pointwise bounds below apply.
+
+\begin{theorem}[Obstruction with the unchanged count branch]
+For every $0<C\le1024$, there exist a finite distribution, an integer $n$,
+and $\epsilon=1/4$ for which $L<1024$, $\Delta_n(p)=\epsilon$, and the
+unchanged Section 3 tester with mean $m=Cn/(\epsilon L)$ has error above
+$1\%$. Thus no such $C$ preserves the original $1\%$ guarantee.
+Together with the preceding theorem, the admissible constant is localized
+to within $2.25\cdot10^{-219}$ of the obstruction at $1024$.
+This does not identify the exact optimum in that tiny interval, nor is the
+obstruction a lower bound for all support testers or for a changed $L_0$.
+\end{theorem}
+
+\paragraph{Integer optimum under the stated guarantee.}
+The two theorems show that $1025$ is the smallest positive integer $C_0$
+preserving the original $1\%$ guarantee with the rest of Section 3 fixed.
+This integer-optimality statement is specifically about that stronger
+guarantee, not about all algorithms achieving success probability $2/3$.
+
+\section{Algorithm and notation}
+All logarithms except $\log_2$ are natural. Put
+\[
+ L=1+\ln n,\quad m=\frac{Cn}{\epsilon L},\quad
+ M\sim\Poi(m),\quad N_i\sim\Poi(mp_i)\ \text{independently},\quad
+ D=\sum_i\mathbf1\{N_i>0\}.
+\]
+If $L<1024$, set $\widetilde S=D$. Otherwise define
+\[
+ a_0=\frac{\epsilon}{8n},\quad b=\frac{64L}{m},\quad
+ J=\left\lfloor\log_2\frac b{2a_0}\right\rfloor,\quad
+ a_j=2^ja_0,\quad \delta_j=2^{-j-2},\quad
+ k_j=\left\lceil\sqrt{b/a_j}\ln(2/\delta_j)\right\rceil.
+\]
+For each scale, write
+\[
+ P_j(x)=-\rho_jT_{k_j}\!\left(\frac{b+a_j-2x}{b-a_j}\right)
+       =\sum_{\ell=0}^{k_j}c_{j,\ell}x^\ell,\qquad
+ \rho_j=T_{k_j}\!\left(\frac{b+a_j}{b-a_j}\right)^{-1}.
+\]
+Use $f_j(0)=0$, $f_j(\ell)=1+c_{j,\ell}\ell!/m^\ell$ for
+$1\le\ell\le k_j$, and $f_j(\ell)=1$ above $k_j$. Finally
+\[
+ Z_j=\sum_i f_j(N_i),\qquad
+ \widetilde S=\max\left\{D,\max_{0\le j\le J}\frac{Z_j-\delta_jn}{1+\delta_j}\right\}.
+\]
+The output is Yes iff $\widetilde S\le n$. These are exactly the original
+formulas with the revised $C$; $m$ is a Poisson mean, not a realized sample
+count. A numerical implementation must not round $1024+\eta$ to $1024$.
+
+\section{A sharp enough count bound}
+\begin{lemma}
+If $\Delta_r(p)\ge\epsilon$, then for the Poissonized observed count,
+\[
+ \Prb(D\le r)\le\Prb\{\Poi(m\epsilon)\le r\}.
+\]
+\end{lemma}
+\begin{proof}
+Embed sampling in a rate-one marked Poisson process, with marks drawn from
+$p$. After any $k\le r$ distinct labels have been seen, their total mass is
+at most that of the $r$ largest categories. Thus the rate of the next new
+label is at least $\epsilon$. Conditional on the labels already seen, the
+waiting time for the next new label is exponential with that rate.
+More explicitly, at stage $k$ let $q_k$ be the mass of all unseen labels.
+Generate a fresh independent $E_k\sim\mathrm{Exp}(1)$, and independently
+choose the next new label according to the normalized unseen probabilities.
+The exponential-race law gives the correct waiting time $E_k/q_k$ and the
+correct next-label distribution. This constructs the discovery process
+without conditioning on future labels. Since $q_k\ge\epsilon$ for $k\le r$,
+each waiting time is at most $E_k/\epsilon$, and the variables
+$E_k/\epsilon$ are independent. Hence the time to discover $r+1$ labels is stochastically
+at most $\mathrm{Gamma}(r+1,\epsilon)$. Its survival probability at time $m$
+is $\Prb\{\Poi(m\epsilon)\le r\}$.
+\end{proof}
+
+For $x>1$, exponential Markov applied with $s=\ln x$ gives
+\begin{equation}
+ \Prb\{\Poi(nx)\le n\}
+ \le \exp\{-n g(x)\},\qquad g(x)=x-1-\ln x.
+ \label{eq:chernoff}
+\end{equation}
+Here $g$ is increasing on $(1,\infty)$, and, for $h\ge0$,
+\begin{equation}
+ g(1+h)=\int_0^h\frac{u}{1+u}\,du
+ \ge\frac{h^2}{2(1+h)}.\label{eq:g}
+\end{equation}
+
+For the small-$L$ branch, $x=C/L>1$. Set $t=1022.999$ and
+$h=\eta/1024$. We check all integers $n$ using three ranges:
+\begin{enumerate}
+\item If $n\le e^{40}$, then $L\le41$ and
+\[
+ ng(C/L)\ge g(1024/41)>20.75>\ln100.
+\]
+\item If $e^{40}<n\le e^t$, then $L\le t+1=1023.999$ and
+$C/L\ge1+h_2$, where $h_2=1024/1023.999-1=1/1023999$. Therefore
+\[
+ ng(C/L)>\frac{e^{40}h_2^2}{2(1+h_2)}>112240>\ln100.
+\]
+\item If $e^t<n<e^{1023}$, then $L<1024$ and $C/L>1+h$, giving
+\[
+ ng(C/L)>\frac{e^t h^2}{2(1+h)}>4.6297>\ln100.
+\]
+\end{enumerate}
+Thus, if $r\le n$ and $\Delta_r(p)\ge\epsilon$,
+\[
+ \Prb(\widetilde S\le r)\le\Prb\{\Poi(m\epsilon)\le n\}<0.01.
+\]
+Also $D\le S$ surely. This proves both desired conclusions for $L<1024$.
+The decimal inequalities above are strict bounds on explicit elementary
+expressions, independently checked by directed interval arithmetic in the
+accompanying script; they are not statistical estimates.
+
+\paragraph{Simpler standalone check for the integer choice $C=1025$.}
+The tiny increment $\eta$ is unnecessary for this choice. If $n<10^8$,
+then $L<20$, whence $ng(C/L)\ge g(1025/20)>46>\ln100$.
+If $n\ge10^8$ and $L<1024$, then $C/L>1+1/1024$, whence
+\[
+ ng(C/L)>\frac{10^8}{2\cdot1024\cdot1025}>47>\ln100.
+\]
+This proves the count part for $1025$ independently of the sharp real-constant
+refinement and gives a uniform bound below $e^{-46}<1.06\cdot10^{-20}$.
+
+\section{Parameter bounds in the polynomial branch}
+Suppose $L\ge1024$ and $1024\le C\le2^{26}$. Then
+\[
+ \frac b{2a_0}=\frac{256L^2}{C}\ge4,
+ \qquad 0<a_j\le b/2,\qquad
+ b=\frac{64\epsilon L^2}{Cn}\le\frac{L^2}{16e^{L-1}}<1.
+\]
+The last function is decreasing for $L>2$, and its value at $1024$ is
+less than $4\cdot10^{-440}$. Let $t_j=a_j/b$. Then
+\[
+ t_j=\frac{C2^j}{512L^2},\qquad
+ k_j\le \sqrt{\frac{512}{C}}L\frac{(j+3)\ln2}{2^{j/2}}+1.
+\]
+The sequence $(j+3)2^{-j/2}$ is decreasing for integers $j\ge0$, since
+$(j+4)/(j+3)\le4/3<\sqrt2$. Consequently
+\begin{equation}
+ \frac{k_j}{L}\le\frac{3\ln2}{\sqrt2}+\frac1{1024}
+ <1.472<\frac32.\label{eq:degree}
+\end{equation}
+In particular
+\[
+ m\sqrt{b(b-a_j)}\ge\frac{64L}{\sqrt2}>k_j,
+ \qquad m(b-a_j)\ge32L.
+\]
+Furthermore,
+\[
+ \rho_j=\frac1{\cosh(2k_j\operatorname{artanh}\sqrt{a_j/b})}
+ \le2e^{-2k_j\sqrt{a_j/b}}
+ \le\frac{\delta_j^2}{2}\le\delta_j.
+\]
+
+\section{Expectation bound, with its analytic prerequisites checked}
+For a general scale $a,b,k,m$, direct substitution into the Poisson series
+gives
+\[
+ Q(x)=\E[f(\Poi(mx))]=1+e^{-mx}P(x).
+\]
+We recall a short proof of the bound used in the supplied Lemma 2.3.
+On $[0,a]$, $P$ is nonpositive, increasing and concave: $T_k$ is increasing
+and convex on $[1,\infty)$. Since $P(0)=-1$ and $P(a)=-\rho$, its chord gives
+$Q(x)\ge(1-\rho)x/a$, while $Q(x)\le1$. On $[a,b]$, $|P(x)|\le\rho$, so
+$1-\rho\le Q(x)\le1+\rho$. For $x\ge b$, put $u=2(x-b)/(b-a)$.
+Using $T_k(1+u)=\cosh(k\operatorname{arcosh}(1+u))\le e^{k\sqrt{2u}}$
+and $x^2\ge4b(x-b)$, the condition $m\sqrt{b(b-a)}\ge k$ implies
+$mx\ge k\sqrt{2u}$. Hence $|Q(x)-1|\le\rho$ also in this range.
+Combining the three ranges yields
+\begin{equation}
+ (1-\delta_j)\min\{x/a_j,1\}\le Q_j(x)\le1+\delta_j,
+ \qquad x\ge0.\label{eq:expectation}
+\end{equation}
+In particular
+\[
+ (1-\delta_j)\sum_i\min\{p_i/a_j,1\}\le\E Z_j\le(1+\delta_j)S.
+\]
+
+\section{An improved bound on polynomial weights}
+\begin{lemma}
+For $0<a<b$, $k\ge1$, and the original Chebyshev weights,
+\[
+ \|f\|_\infty\le4\exp\!\left(\frac{2k^2}{m(b-a)}\right).
+\]
+\end{lemma}
+\begin{proof}
+Let $z_0=(b+a)/(b-a)>1$. All roots of $T_k$ are in $(-1,1)$ and its
+leading coefficient is positive, so every coefficient of $T_k(z_0+v)$
+as a polynomial in $v$ is positive. Therefore, for $u\ge0$,
+\[
+ \sum_{\ell=0}^k|c_\ell|u^\ell
+ =\rho T_k\!\left(z_0+\frac{2u}{b-a}\right),\qquad |c_0|=1.
+\]
+By $\int_0^\infty e^{-s}s^\ell ds=\ell!$,
+\begin{equation}
+ A:=\sum_{\ell=0}^k\frac{|c_\ell|\ell!}{m^\ell}
+ =\int_0^\infty e^{-s}
+   \frac{T_k(z_0+2s/[m(b-a)])}{T_k(z_0)}\,ds,
+ \qquad \|f\|_\infty\le A.\label{eq:integral}
+\end{equation}
+To bound the ratio, write $v=a/(b-a)$ and $u=s/[m(b-a)]$.
+The identity $\operatorname{arcosh}(1+2v)=2\operatorname{arsinh}\sqrt v$
+and the fact that $\operatorname{arsinh}$ is 1-Lipschitz on $[0,\infty)$
+imply
+\[
+ \operatorname{arcosh}(1+2v+2u)-\operatorname{arcosh}(1+2v)
+ \le2(\sqrt{v+u}-\sqrt v)\le2\sqrt u.
+\]
+Since $T_k(z)=\cosh(k\operatorname{arcosh}z)$,
+\[
+ \frac{T_k(z_0+2u)}{T_k(z_0)}\le2e^{2k\sqrt u}.
+\]
+(The factor 2 can be improved to 1, but is not needed.) Now
+\[
+ 2k\sqrt{\frac{s}{m(b-a)}}\le\frac s2+\frac{2k^2}{m(b-a)}.
+\]
+Substituting in \eqref{eq:integral} and integrating $e^{-s/2}$ gives
+$A\le4\exp(2k^2/[m(b-a)])$.
+\end{proof}
+
+By \eqref{eq:degree}, at every scale
+\begin{equation}
+ \|f_j\|_\infty\le4e^{9L/64}.\label{eq:weights}
+\end{equation}
+This replaces the loose coefficient bound $1+15^{k_j}$ in the original
+proof. It is the main reason the huge original $C_0$ is unnecessary.
+
+\section{Simultaneous concentration}
+Because $f_j(0)=0$ and the category counts are independent,
+\[
+ \Var(Z_j)\le\|f_j\|_\infty^2\E D.
+\]
+If $\E D\le2n$, then \eqref{eq:weights} and Chebyshev give
+\[
+ \Prb\{|Z_j-\E Z_j|>\delta_jn\}
+ \le\frac{32e^{9L/32}}{n\delta_j^2}.
+\]
+Also
+\[
+ \delta_J^{-1}=4\cdot2^J\le\frac{1024L^2}{C}\le L^2,
+ \qquad \sum_{j=0}^J\delta_j^{-2}\le\frac43\delta_J^{-2}\le\frac43L^4.
+\]
+Thus the event
+\[
+ \mathcal E=\{|Z_j-\E Z_j|\le\delta_jn\text{ for every }j\}
+\]
+satisfies
+\begin{equation}
+ \Prb(\mathcal E^c)
+ \le\frac{128e}{3}L^4e^{-23L/32}
+ \le\frac{128e}{3}(1024)^4e^{-736}
+ <3\cdot10^{-306}<0.01.\label{eq:concentration}
+\end{equation}
+The function decreases for $L\ge1024$, since its logarithmic derivative
+is $4/L-23/32<0$. For countable alphabets the variance calculation follows
+by finite truncation: $\E D\le m<\infty$ and bounded weights ensure the
+required $L^2$ convergence. Explicitly, truncate to finitely many categories
+and let $\tau$ be the omitted probability mass. The absolute difference of
+the full and truncated statistics is at most $\|f_j\|_\infty M_{\rm tail}$,
+where $M_{\rm tail}\sim\Poi(m\tau)$. Its second moment is at most
+$\|f_j\|_\infty^2(m\tau+(m\tau)^2)$, which tends to zero as $\tau\to0$.
+Thus no finite-alphabet assumption is hidden in the variance calculation.
+
+\section{Completion of the correctness proof}
+If $S\le n$, then $\E D\le S\le n$ and, on $\mathcal E$,
+\[
+ \frac{Z_j-\delta_jn}{1+\delta_j}
+ \le\frac{\E Z_j}{1+\delta_j}\le S.
+\]
+Together with $D\le S$, this proves \eqref{eq:upper}.
+
+Now fix $1\le r\le n$ with $\Delta_r(p)\ge\epsilon$.
+If $\mu=\E D>2n$, independence of the occupancy indicators gives
+$\Var(D)\le\mu$. Therefore
+\[
+ \Prb(\widetilde S\le r)\le\Prb(D\le n)
+ \le\frac{\mu}{(\mu-n)^2}\le\frac2n<0.01.
+\]
+Otherwise $\E D\le2n$ and \eqref{eq:concentration} applies. Order the
+probabilities as $p_{(1)}\ge p_{(2)}\ge\cdots$ and consider three cases.
+
+\paragraph{Case 1: $p_{(r)}\ge b/2$.}
+If the top $r$ labels and at least one tail label are observed, $D>r$.
+A union bound and Poisson zero probabilities give
+\[
+ \Prb(D\le r)\le r e^{-mb/2}+e^{-m\Delta_r(p)}
+ \le ne^{-32L}+e^{-Cn/L}<0.01.
+\]
+Indeed $ne^{-32L}=e^{-31L-1}$, while $Cn/L\ge1024e^{L-1}/L$,
+whose right side is increasing for $L\ge1024$ and at $1024$ equals $e^{1023}$.
+
+\paragraph{Case 2: $p_{(r)}<a_0$.}
+All tail weights are below $a_0$, so
+\[
+ \E Z_0\ge\frac{1-\delta_0}{a_0}\Delta_r(p)\ge6n.
+\]
+On $\mathcal E$,
+\[
+ \widetilde S\ge\frac{\E Z_0-2\delta_0 n}{1+\delta_0}
+ \ge\frac{6n-n/2}{5/4}=\frac{22}{5}n>r.
+\]
+
+\paragraph{Case 3: $a_0\le p_{(r)}<b/2$.}
+There is $0\le j\le J$ such that $a_j\le p_{(r)}<2a_j$.
+For every tail weight, $\min\{p_i/a_j,1\}\ge p_i/p_{(r)}$, and the top
+$r$ summands equal one. Consequently
+\[
+ \E Z_j\ge(1-\delta_j)\left(r+\frac{\epsilon}{2a_j}\right).
+\]
+As $a_j\delta_j=\epsilon/(32n)$, on $\mathcal E$,
+\begin{align*}
+ \widetilde S
+ &\ge\frac{\E Z_j-2\delta_jn}{1+\delta_j}\\
+ &\ge r+\frac{\delta_j\{(14-16\delta_j)n-2r\}}{1+\delta_j}>r,
+\end{align*}
+because $\delta_j\le1/4$ and $r\le n$.
+These cases prove \eqref{eq:lower}. Their probabilities are not added:
+the case selection depends on the fixed distribution, and only one applies.
+
+For the lower-support output, the upper inequality is automatic if $S\ge n$;
+otherwise \eqref{eq:upper} and integer-valued $S$ give it with probability
+at least $0.99$. Put $r=\min\{\operatorname{eff}_\epsilon(p),n\}-1$.
+If $r=0$, the lower inequality is automatic. Otherwise
+$\Delta_r(p)>\epsilon$ by the definition of effective support, and
+\eqref{eq:lower} implies $\widehat S\ge r+1$ with probability at least $0.99$.
+The union bound proves joint success at least $0.98$.
+
+The sample order remains $\Theta(n/[\epsilon\log(en)])$.
+For a deterministic sample cap, abort when $M>4m$ and allow an arbitrary
+output on that event. The Poisson tail adds at most $e^{-m}\le e^{-1024}$
+to the failure probability and uses at most $\lceil4m\rceil$ samples.
+Thus the original $2/3$-success main theorems in the ordinary sampling model
+also follow. The optimized $C$ itself is a Poisson-mean coefficient;
+de-Poissonization introduces its own constant factor.
+
+\section{Why $C\le1024$ cannot preserve the 1\% guarantee}
+Let $n=\lceil e^{1023}\rceil-1$, so $1023<L=1+\ln n<1024$ and the
+algorithm takes the count branch. At $C=1024$, write
+\[
+ \lambda=\frac{1024n}{L}=n+d,\qquad
+ 0<d=\frac{n\ln(e^{1023}/n)}L\le\frac1L<\frac1{1023}.
+\]
+Here we used $e^{1023}-n\le1$ and $\ln(1+x)\le x$.
+
+Let $Y\sim\Poi(n)$ and $Z=n-Y$. The Poisson central moments are
+$\E Z=0$, $\E Z^2=n$, and $\E Z^4=3n^2+n\le4n^2$.
+H\"older's inequality gives
+\[
+ \E|Z|\ge\frac{(\E Z^2)^{3/2}}{(\E Z^4)^{1/2}}\ge\frac{\sqrt n}{2}.
+\]
+Since $\E Z_+=\E|Z|/2$, Cauchy--Schwarz yields
+\[
+ \Prb(Y<n)=\Prb(Z>0)
+ \ge\frac{(\E Z_+)^2}{\E Z_+^2}\ge\frac1{16}.
+\]
+Couple an independent $V\sim\Poi(d)$ to obtain
+\begin{equation}
+ \Prb\{\Poi(n+d)\le n-1\}
+ \ge\Prb(V=0)\Prb(Y<n)
+ \ge\frac{e^{-d}}{16}>\frac{e^{-1/1023}}{16}>0.0624.
+ \label{eq:obstruction}
+\end{equation}
+This bound remains true when $C$ is smaller, by monotonicity in the mean.
+
+To realize this in a finite promised distribution, fix $\epsilon=1/4$.
+One may choose the explicit finite integer $K=100n^2+n-1$ and put
+\[
+ q=\frac{\epsilon}{K-n+1},\qquad
+ p_0=1-Kq,\qquad p_i=q\quad(1\le i\le K).
+\]
+For this choice $q=1/(400n^2)$ and
+$p_0=3/4-(n-1)/(400n^2)>q>0$. In particular the head is the largest
+atom, and
+\[
+ \Delta_n(p)=(K-n+1)q=\epsilon.
+\]
+The total number of tail observations is $Y_K\sim\Poi(mKq)$. If
+$Y_K\le n-1$, then $D\le Y_K+1\le n$, so the tester incorrectly returns
+Yes. At $C=1024$, its mean is
+\[
+ mKq=(n+d)\left(1+\frac{n-1}{100n^2}\right)=n+\tau,
+ \quad
+ 0<\tau<\frac1{1023}+\frac{1+1/1023}{100}<0.012.
+\]
+The same independent-Poisson coupling as in \eqref{eq:obstruction} now gives
+an explicit error lower bound $e^{-0.012}/16>0.06$ for this finite
+distribution. For smaller $C$, monotonicity in the mean increases the error.
+This proves the obstruction.
+If the mean is rounded upward, the tail mean increases by less than
+$Kq=(1/4)(1+(n-1)/(100n^2))<0.2525$.
+Thus its excess above $n$ is below $0.2645$, and the same argument gives
+$e^{-0.2645}/16>0.0479>0.01$. The obstruction is not a rounding artifact.
+
+\paragraph{What is and is not optimized.}
+The result preserves the stronger $1\%$ conclusion of the original proof,
+not just the $2/3$ statement. It brackets the constant for that guarantee
+with the original branch threshold fixed. The lower bound above alone does
+not prove failure of a $2/3$-success guarantee at $C=1024$; its certified
+failure probability is only above $6\%$. Nor does it rule out much smaller
+constants after changing the branch threshold or the algorithm. No claim
+of the exact optimal increment above 1024, or of a new asymptotic sample
+complexity, is made. The easy-to-use integer $1025$ avoids the extreme
+precision required to encode the sharper mathematical value.
+
+\paragraph{Verification and provenance.}
+The proof uses the supplied paper's definitions, and re-proves the analytic
+expectation property needed from its Lemma 2.3. The standard Chebyshev
+identity can also be checked at NIST DLMF,
+\url{https://dlmf.nist.gov/18.5.E1}. The companion
+\texttt{verify\_c0\_reduction.py} evaluates the scalar endpoints using
+4096-bit Arb interval arithmetic and exact rational constants. It checks
+numerical inequalities, not the entire mathematical proof. Existing
+experimental code and results were not changed to use the new constants.
+An independent mathematical review remains appropriate before publication.
+The subsequent audit script \texttt{audit\_c0\_1025.py} adds independently
+computed finite-distribution probabilities, exact rational polynomial
+identities, full-degree weight comparisons, consecutive-integer branch
+boundaries, explicit finite counterexamples and output-pipeline checks.
+Its scope and limitations are recorded in \texttt{c0\_1025\_audit/results.json}.
+\end{document}

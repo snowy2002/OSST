@@ -1,0 +1,16 @@
+group,M,N,reference_species,n_cap,epsilon,alpha,trials,mean_observed,mean_polynomial_lower_bound,reference_overstatement_rate,improvement_over_observed_rate,overflows,model_status
+2007_seine,30,1180,8,20,0.01,0.05,2,2.5,2.5,0.0,0.0,0,descriptive_original_catches_not_certified_iid
+2007_seine,100,1180,8,20,0.01,0.05,2,3.5,3.5,0.0,0.0,0,descriptive_original_catches_not_certified_iid
+2007_seine,300,1180,8,20,0.01,0.05,2,7.0,7.0,0.0,0.0,0,descriptive_original_catches_not_certified_iid
+2007_seine,600,1180,8,20,0.01,0.05,2,7.5,7.5,0.0,0.0,0,descriptive_original_catches_not_certified_iid
+2007_seine,1180,1180,8,20,0.01,0.05,2,8.0,8.0,0.0,0.0,0,descriptive_original_catches_not_certified_iid
+2008_seine,30,330,4,20,0.01,0.05,2,2.5,2.5,0.0,0.0,0,descriptive_original_catches_not_certified_iid
+2008_seine,100,330,4,20,0.01,0.05,2,4.0,4.0,0.0,0.0,0,descriptive_original_catches_not_certified_iid
+2008_seine,300,330,4,20,0.01,0.05,2,4.0,4.0,0.0,0.0,0,descriptive_original_catches_not_certified_iid
+2008_seine,330,330,4,20,0.01,0.05,2,4.0,4.0,0.0,0.0,0,descriptive_original_catches_not_certified_iid
+2007_angling,30,154,3,20,0.01,0.05,2,2.0,2.0,0.0,0.0,0,descriptive_original_catches_not_certified_iid
+2007_angling,100,154,3,20,0.01,0.05,2,3.0,3.0,0.0,0.0,0,descriptive_original_catches_not_certified_iid
+2007_angling,154,154,3,20,0.01,0.05,2,3.0,3.0,0.0,0.0,0,descriptive_original_catches_not_certified_iid
+2008_miniWDNR,30,261,7,20,0.01,0.05,2,4.0,4.0,0.0,0.0,0,descriptive_original_catches_not_certified_iid
+2008_miniWDNR,100,261,7,20,0.01,0.05,2,5.5,5.5,0.0,0.0,0,descriptive_original_catches_not_certified_iid
+2008_miniWDNR,261,261,7,20,0.01,0.05,2,7.0,7.0,0.0,0.0,0,descriptive_original_catches_not_certified_iid

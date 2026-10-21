@@ -1,0 +1,56 @@
+[
+  {
+    "dataset": "nips",
+    "groups": 1500,
+    "records": 1932365,
+    "support": 12375,
+    "record_effective_support": 3926,
+    "equal_event_effective_support": 3957,
+    "external_population_truth": false
+  },
+  {
+    "dataset": "enron",
+    "groups": 39861,
+    "records": 6412172,
+    "support": 28099,
+    "record_effective_support": 7109,
+    "equal_event_effective_support": 5750,
+    "external_population_truth": false
+  },
+  {
+    "dataset": "movielens",
+    "groups": 6040,
+    "records": 1000209,
+    "support": 3706,
+    "record_effective_support": 1681,
+    "equal_event_effective_support": 1481,
+    "external_population_truth": false
+  },
+  {
+    "dataset": "retail",
+    "groups": 19773,
+    "records": 527725,
+    "support": 3791,
+    "record_effective_support": 1792,
+    "equal_event_effective_support": 1618,
+    "external_population_truth": false
+  },
+  {
+    "dataset": "bci",
+    "groups": 50,
+    "records": 21457,
+    "support": 225,
+    "record_effective_support": 79,
+    "equal_event_effective_support": 79,
+    "external_population_truth": false
+  },
+  {
+    "dataset": "fish_2007_seine",
+    "groups": 15,
+    "records": 1180,
+    "support": 8,
+    "record_effective_support": 2,
+    "equal_event_effective_support": 2,
+    "external_population_truth": false
+  }
+]

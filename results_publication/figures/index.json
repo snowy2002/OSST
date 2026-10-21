@@ -1,0 +1,46 @@
+[
+  {
+    "name": "fixed_risk",
+    "caption": "Worst observed error over promised synthetic scenarios. The dashed line is 5%; simultaneous confidence bounds, not this point-estimate plot, determine passing budgets."
+  },
+  {
+    "name": "sample_complexity",
+    "caption": "Smallest tested budget passing simultaneous 95% error upper bounds across all promised synthetic scenarios. Missing points are right-censored; no interpolation or universal complexity claim is made."
+  },
+  {
+    "name": "scale_mechanism",
+    "caption": "Left: all triggered scales are recorded, not only the first winner. Right: remove one scale while retaining the original error spending and common sample paths."
+  },
+  {
+    "name": "sequential_ablation",
+    "caption": "Large-scale coupled Poisson trajectories. Cost is stopped training mean plus validation labels; it estimates expected acquisition cost and is not the distribution of actual sample counts."
+  },
+  {
+    "name": "actual_cost",
+    "caption": "Actual label consumption including validation, compared with an immediately stopping fixed-budget count baseline. All methods share iid training labels and fresh validation pools."
+  },
+  {
+    "name": "actual_cost_cdf",
+    "caption": "Full stopping-cost distributions for n=1,000 and epsilon=0.01. Quantiles refer to actual consumed labels, with verification samples included."
+  },
+  {
+    "name": "adversarial_risk",
+    "caption": "Adversarial candidates were selected on a separate search stream and then frozen. Each fixed-budget test cell uses 10,000 new trials; all selected candidates are retained."
+  },
+  {
+    "name": "effective_lower",
+    "caption": "n=10,000, epsilon=0.01. Joint success requires min(effective support,n) <= lower <= S. Exact rational flooring preserves coverage at a cost of less than one category per scale."
+  },
+  {
+    "name": "group_structure",
+    "caption": "Dependent blocks deliberately violate iid. The repaired samplers draw a fresh independent group per label; equal-event weighting changes the target distribution. The right panel has a different vertical scale and shows simultaneous upper confidence limits even at zero observed errors. Fixed-budget non-rejection remains Inconclusive."
+  },
+  {
+    "name": "sensitivity",
+    "caption": "Frozen configurations are not re-selected from these outcomes. Delta=0.001 cells use 20,000 trials; remaining sensitivity cells use 2,000."
+  },
+  {
+    "name": "runtime",
+    "caption": "Compilation is measured separately from grouped simulation and scoring. Peak RSS is the absolute fresh-process peak, including Python and dependencies. Timing should be interpreted on the recorded machine."
+  }
+]

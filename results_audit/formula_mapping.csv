@@ -1,0 +1,19 @@
+paper,formula,implementation,finding
+Problem 1,Yes: S≤n; No: Δ_n≥ε; Gap 不计错,benchmark_core.py:Population.truth,定义一致；真值仅在模拟评测中使用
+Theorem 1.2,eff_ε=min{k: Δ_k≤ε},support_size.py:effective_support,定义一致；不是未知总体的可观测输入
+§3,"L=log(en), C0=2^26, L0=2^10",paper_reference.py:_plan_at_precision,原常数；自然对数
+§3,m=ceil(C0 n/(εL)); m≠实际 M,paper_reference.py:reference_test,认证取整并强制检查输入预算
+§3,M~Poi(m); Ni 独立~Poi(mp_i),support_size.py:poisson_fingerprint,已知模拟分布时等价生成次数；现实模型须由采样设计满足
+"式 (5), §3",D=Σ 1{Ni>0}; L<L0 时 tildeS=D,paper_reference.py:reference_statistic,原分支；不强行启用多项式
+§3,"a0=ε/(8n), b=64L/m, J=floor(log2(b/(2a0)))",paper_reference.py:_plan_at_precision,原式；J 取整有区间认证
+§3,"aj=2^j a0, δj=2^(-j-2), kj=ceil(√(b/aj) log(2/δj))",paper_reference.py:_plan_at_precision,"遍历 j=0,…,J；不截断 kj"
+式 (2),P(x)=-Tk((b+a-2x)/(b-a))/Tk((b+a)/(b-a)),paper_reference.py:reference_weights,代数等价的阶乘系数递推；独立有理数闭式展开核对
+式 (3),f(0)=0; f(l)=1+cl l!/m^l (1≤l≤k); f(l>k)=1,paper_reference.py:reference_weights,零次数不贡献，高次数贡献 1
+"式 (4), §3",Zj=Σi fj(Ni)=D+Σl Fl(fj(l)-1),paper_reference.py:reference_statistic,按频数聚合是精确代数改写；不遗漏高次数类别
+式 (8),Q(x)=E[f(Poi(mx))]=1+exp(-mx)P(x),test_paper_reference.py:test_poisson_expectation_identity_in_interval_arithmetic,证明恒等式，在独立测试中核对；检验时不需要已知 p
+Lemma 2.3/4.1,"0<a≤b/2≤1/2, √(B(B-A))≥k, ρ≤δ",paper_reference.py:_plan_at_precision,逐尺度认证参数前提；不靠容差放过失败
+§3,"tildeS=max(D,maxj (Zj-δj n)/(1+δj))",support_size.py:paper_correction,原修正，由 reference_statistic 聚合全部尺度
+§3,tildeS≤n→Yes；tildeS>n→No,paper_reference.py:reference_test,用未截断统计量判定；边界无法认证则加精度或报错
+§3,"Shat=min(max(ceil(tildeS),1),n)",support_size.py:clipped_paper_lower_bound,单独数值输出；No 分支下代数化简为 n
+工程改动,较小 m、B、受限 k、实际 ρ、Hoeffding 修正,support_size.py:hoeffding_statistic,不等同于第 3 节；旧大规模实验主要评测这一版本
+论文外对照,计数尾概率基线、Chao1、固定池适配器,support_size.py:count_plan/chao1/poissonized_fixed_test,不是原论文算法步骤；保留用于比较与数据接入

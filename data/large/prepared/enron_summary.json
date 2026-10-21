@@ -1,0 +1,21 @@
+{
+  "dataset": "enron",
+  "raw_rows": 3710420,
+  "declared_documents": 39861,
+  "declared_vocabulary": 28102,
+  "sample_unit": "保留词表中的一次词语出现",
+  "category": "wordID",
+  "group_unit": "document",
+  "filters": "使用发布者预处理后的 docword；本地没有再次词频筛选",
+  "limitations": "发布者已删除停用词并仅保留出现超过 10 次的词；词序不可恢复；只评估这个截断词表。文档内词语相关。",
+  "records": 6412172,
+  "support": 28099,
+  "groups": 39861,
+  "nonzero_group_category_pairs": 3710420,
+  "min_category_count": 1,
+  "max_category_count": 32985,
+  "top10_mass": 0.03471444621260939,
+  "counts_sha256": "29a7b9afcb3ad1796c45631b4d95fa86e33bc368b1704f28e6549e722d528095",
+  "groups_sha256": "51b765cbd8ba36f2fc4acd562810c25e7b62088d7d8c6e20ddb6c4896908210d",
+  "reference_scope": "该数据文件清洗后的有限参考总体，不是未知外部总体的真实支持集"
+}

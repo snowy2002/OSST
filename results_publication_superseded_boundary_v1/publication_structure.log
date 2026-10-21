@@ -1,0 +1,17 @@
+structure and held-out groups: nips complete
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/snowy/OSST/publication/run.py", line 75, in <module>
+    if __name__=="__main__":main()
+                            ~~~~^^
+  File "/home/snowy/OSST/publication/run.py", line 63, in main
+    PHASES[phase](configs,out,args.quick)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/snowy/OSST/publication/structure.py", line 53, in structure_suite
+    fp,actual=clustered_profiles(matrix,m,block,T,stable_rng(SEEDS["structure"],*key))
+              ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/snowy/OSST/large_experiments.py", line 201, in clustered_profiles
+    counts[cols] += rng.multinomial(int(number[group]), cc/totals[group])
+    ~~~~~~^^^^^^
+KeyboardInterrupt

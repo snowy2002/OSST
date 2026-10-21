@@ -1,0 +1,42 @@
+[
+  {
+    "name": "risk",
+    "caption": "Worst cellwise error upper confidence bounds, Bonferroni-adjusted within each suite over all promised method cells. Zero observed errors are not zero risk.",
+    "description_zh": "柱子是测试网格中最差单元的错误率置信上界，越低越好；虚线是 1% 目标。"
+  },
+  {
+    "name": "budgets",
+    "caption": "Prescribed acquisition budgets, not simulator run times. The original coefficient decreases by about 65,472x, but a 99% Chernoff count baseline remains cheaper over all tested sizes.",
+    "description_zh": "左图比较理论样本预算；右图显示新常数仍比简单计数基线多用多少倍样本，不能把预算倍数说成运行加速。"
+  },
+  {
+    "name": "constant_sweep",
+    "caption": "Coefficient sensitivity for three alternatives at epsilon=0.01. Each point has 4,000 trials; the CSV includes simultaneous confidence bounds. Dashed horizontal line: 1% target. Vertical dotted line: C=1025.",
+    "description_zh": "展示常数过小时会失败，以及有限规模下远小于 1025 的常数也可能成功；不将网格阈值称为全局最优。"
+  },
+  {
+    "name": "natural_shapes",
+    "caption": "Rank-abundance distributions for ten published empirical populations spanning seven biological groups. These are observed finite populations, not complete ecosystem inventories.",
+    "description_zh": "真实数据涵盖七类生物、十个总体；曲线描述丰度不均匀程度，不是预测准确率。"
+  },
+  {
+    "name": "natural_feasibility",
+    "caption": "Budget feasibility: ratios above one mean that the original file has fewer observations than the prescribed mean. Even ratios below one do not establish iid field sampling or guarantee a Poisson draw fits in the file.",
+    "description_zh": "大于 1 表示原始记录数连理论平均预算都达不到；这里只能重采样验证经验分布，不能冒充新增野外观测。"
+  },
+  {
+    "name": "dependence",
+    "caption": "Stress tests preserve the marginal category distribution but violate independence. Group selection is abundance-weighted. Error increases measure artificial perturbations, not an estimate of actual field correlation.",
+    "description_zh": "即使每条观测的物种概率不变，重复或成组相关也可能破坏保证；这些是压力测试，不是测得的自然界相关强度。"
+  },
+  {
+    "name": "stream",
+    "caption": "Actual label-stream simulation at epsilon=0.01 with 300 trials per cell. The count baseline stops immediately upon observing n+1 species; a prescribed Poisson cap controls acceptance. C1025 bars are prescribed means, not an additional simulated giant stream.",
+    "description_zh": "从实际逐条标签流检查早停成本，避免只比较批处理检查点而夸大采样效率。"
+  },
+  {
+    "name": "runtime",
+    "caption": "Ten timed repetitions after one warm-up in each isolated process. Independent Poisson category-count generation and certified decision computation are separated. These timings exclude physical data acquisition.",
+    "description_zh": "区分模拟生成数据的耗时和完整接口判定耗时；这些不是采集理论样本量的现实耗时。"
+  }
+]

@@ -1,0 +1,35 @@
+\documentclass[10pt]{article}
+\usepackage[margin=0.9in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,microtype}
+\usepackage{graphicx,booktabs,enumitem,textcomp}
+\usepackage[hidelinks]{hyperref}
+\setlist[enumerate]{leftmargin=*,itemsep=2pt,topsep=4pt}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Prob}{\mathbb P}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\Poi}{\operatorname{Poi}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\eff}{\operatorname{eff}}
+\newcommand{\ind}{\mathbf 1}
+\DeclareMathOperator{\arcosh}{arcosh}
+\DeclareMathOperator{\arsinh}{arsinh}
+\DeclareMathOperator{\artanh}{artanh}
+\begin{document}
+\begin{center}{\Large\bfseries Evaluating an Explicit Constant for Support-Size Testing\par}\vspace{.4em}
+{\normalsize Reproducible experiments for $C_0=1025$, with proof appendix}\end{center}
+\input{experiment_body.tex}
+\clearpage\appendix\input{proof_appendix.tex}
+\clearpage
+\begin{thebibliography}{6}
+\bibitem{wang} Qisheng Wang. \emph{Optimal Support Size Testing}. Supplied manuscript, arXiv:2610.18723v1, 2026.
+\bibitem{dlmf} NIST Digital Library of Mathematical Functions. Chapter 18, Sections 18.5 and 18.16. \url{https://dlmf.nist.gov/18.5}.
+\bibitem{vegan} vegan developers. BCI and Oribatid mite data documentation; original sources Condit et al. (2002) and Borcard et al. (1992, 1994). \url{https://vegandevs.github.io/vegan/reference/BCI.html}; \url{https://vegandevs.github.io/vegan/reference/mite.html}.
+\bibitem{inext} T. C. Hsieh, K. H. Ma, and Anne Chao. iNEXT package data documentation: bird and spider abundance data, citing Chao et al. (2015), Ellison et al. (2010), and Sackett et al. (2011). \url{https://annechao.r-universe.dev/iNEXT/doc/manual.html}.
+\bibitem{sads} Paulo I. Prado, Murilo Dantas Miranda, and Andre Chalom. sads package data documentation: Rothamsted moths and Okland land snails. \url{https://pilaboratory.r-universe.dev/sads/doc/manual.html}.
+\bibitem{fish} Derek H. Ogle. InchLake1, FSAdata package. \url{https://fishr-core-team.github.io/FSAdata/reference/InchLake1.html}.
+\end{thebibliography}
+\end{document}

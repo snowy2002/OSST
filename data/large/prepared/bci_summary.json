@@ -1,0 +1,21 @@
+{
+  "dataset": "bci",
+  "raw_rows": 50,
+  "census": "1982, DBH>=10cm subset",
+  "sample_unit": "该次普查 DBH>=10cm 的一棵树",
+  "category": "发布者整理后的物种名",
+  "group_unit": "1ha spatial quadrat",
+  "filters": "原始 50 样方 x 225 物种计数矩阵全部使用；无需展开逐树标签",
+  "limitations": "这是 1982 年大树子集，非 2019 全档案；用于算法基准，不用于当代生态结论。样方内空间相关。",
+  "full_archive_attempt": "2019 Dryad 全档案 DOI:10.15146/5xcp-0d46 的公开文件下载返回 HTTP 403，API 下载返回 401，未使用该全档案，也未混合年份凑样本量。",
+  "records": 21457,
+  "support": 225,
+  "groups": 50,
+  "nonzero_group_category_pairs": 4539,
+  "min_category_count": 1,
+  "max_category_count": 1717,
+  "top10_mass": 0.4180919979493871,
+  "counts_sha256": "2f7b4f3f0037444dd9818fb724b638606f1bddb0988fdfb8dc41df9209bb7803",
+  "groups_sha256": "70542adcf8f0650b36cb8f1947cabb0329cbdf43814d4af484fe61cf4a93d452",
+  "reference_scope": "该数据文件清洗后的有限参考总体，不是未知外部总体的真实支持集"
+}

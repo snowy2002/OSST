@@ -1,0 +1,11 @@
+[
+  {
+    "dataset": "nips",
+    "groups": 1500,
+    "records": 1932365,
+    "support": 12375,
+    "record_effective_support": 3926,
+    "equal_event_effective_support": 3957,
+    "external_population_truth": false
+  }
+]

@@ -1,0 +1,19 @@
+{
+  "selected_sha256": "92ed6907fbab7daf919ae1b03d4f2f78354ac62928342239173dcc0c0361b4ee",
+  "seed": 8726101904,
+  "design": {
+    "sizes": [
+      1000,
+      10000
+    ],
+    "epsilons": [
+      0.001,
+      0.01,
+      0.1
+    ],
+    "search_trials": 300,
+    "test_trials": 10000,
+    "sequential_test_trials": 5000,
+    "selected_per_problem": 6
+  }
+}

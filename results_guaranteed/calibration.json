@@ -1,0 +1,80 @@
+{
+  "seed": 2026101901,
+  "trials_per_cell": 100,
+  "criterion": "60 个开发场景相对计数基线的平均预算，场景等权；不使用正式测试数据。",
+  "ranking": [
+    {
+      "candidate": 5,
+      "config": {
+        "b_factor": 0.5,
+        "max_degree": 12,
+        "weight_cap": 20.0,
+        "validation_factor": 12.0,
+        "validation_gate": 0.75
+      },
+      "mean_relative_budget": 0.4009465051800601
+    },
+    {
+      "candidate": 3,
+      "config": {
+        "b_factor": 0.5,
+        "max_degree": 12,
+        "weight_cap": 20.0,
+        "validation_factor": 8.0,
+        "validation_gate": 0.75
+      },
+      "mean_relative_budget": 0.4127233230727762
+    },
+    {
+      "candidate": 1,
+      "config": {
+        "b_factor": 0.5,
+        "max_degree": 12,
+        "weight_cap": 20.0,
+        "validation_factor": 4.0,
+        "validation_gate": 0.75
+      },
+      "mean_relative_budget": 0.45660147053263384
+    },
+    {
+      "candidate": 4,
+      "config": {
+        "b_factor": 0.5,
+        "max_degree": 12,
+        "weight_cap": 20.0,
+        "validation_factor": 12.0,
+        "validation_gate": 0.5
+      },
+      "mean_relative_budget": 0.4723767695679572
+    },
+    {
+      "candidate": 2,
+      "config": {
+        "b_factor": 0.5,
+        "max_degree": 12,
+        "weight_cap": 20.0,
+        "validation_factor": 8.0,
+        "validation_gate": 0.5
+      },
+      "mean_relative_budget": 0.4732492417861294
+    },
+    {
+      "candidate": 0,
+      "config": {
+        "b_factor": 0.5,
+        "max_degree": 12,
+        "weight_cap": 20.0,
+        "validation_factor": 4.0,
+        "validation_gate": 0.5
+      },
+      "mean_relative_budget": 0.48983531425568605
+    }
+  ],
+  "selected_config": {
+    "b_factor": 0.5,
+    "max_degree": 12,
+    "weight_cap": 20.0,
+    "validation_factor": 12.0,
+    "validation_gate": 0.75
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "note": "已知有限分布的原参数等价泊松计数模拟；随机发生器使用双精度，不是在现实中获取这些观测。",
+  "plan": {
+    "algorithm": "paper_section3_reference",
+    "n": 1000,
+    "epsilon": "1/10",
+    "C0": 1025,
+    "L0": 1024,
+    "L": "[7.90775527898213705205397436405309262280330446588631892810 +/- 2.28e-57]",
+    "m": 1296196,
+    "a0": "[1.250000000000000000000000000000000000000000000000000000000e-5 +/- 8.34e-63]",
+    "b": "[0.000390447384388515912201128810225766726528558555817734672378 +/- 5.83e-61]",
+    "J": null,
+    "branch": "observed_count",
+    "precision_bits": 192,
+    "parameter_rounding_certified": true,
+    "scales": [],
+    "note": "保留第 3 节公式与分支；C0 显式记录，1025 对应新证明。区间文本包含舍入误差。"
+  },
+  "runs": [
+    {
+      "true_S": 1000,
+      "algorithm": "paper_section3_reference",
+      "branch": "observed_count",
+      "n": 1000,
+      "epsilon": "1/10",
+      "C0": 1025,
+      "L0": 1024,
+      "m": 1296196,
+      "M": 1296907,
+      "observed": 1000,
+      "score_interval": "1000.00000000000000000000000000000000000000000000000000000000",
+      "decision": "Yes",
+      "support_lower_bound": 1000,
+      "numeric_decision_certified": true,
+      "precision_bits": 192,
+      "scale_diagnostics": [],
+      "model_requirement": "数据须来自预先指定此 m 的 iid 泊松采样；函数不能仅凭频数证明采样模型。",
+      "guarantee_scope": "C0=1025 新证明的条件性保证；须满足 iid 泊松模型。"
+    },
+    {
+      "true_S": 2000,
+      "algorithm": "paper_section3_reference",
+      "branch": "observed_count",
+      "n": 1000,
+      "epsilon": "1/10",
+      "C0": 1025,
+      "L0": 1024,
+      "m": 1296196,
+      "M": 1295117,
+      "observed": 2000,
+      "score_interval": "2000.00000000000000000000000000000000000000000000000000000000",
+      "decision": "No",
+      "support_lower_bound": 1000,
+      "numeric_decision_certified": true,
+      "precision_bits": 192,
+      "scale_diagnostics": [],
+      "model_requirement": "数据须来自预先指定此 m 的 iid 泊松采样；函数不能仅凭频数证明采样模型。",
+      "guarantee_scope": "C0=1025 新证明的条件性保证；须满足 iid 泊松模型。"
+    }
+  ]
+}

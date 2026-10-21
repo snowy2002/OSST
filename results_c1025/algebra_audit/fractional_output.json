@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "case": "polynomial wins over D, below n, noninteger score",
+  "initial_precision_bits": 1608,
+  "final_precision_bits": 3216,
+  "independent_precision_bits": 4096,
+  "score_divided_by_n": "[0.0197151604474786106910908771396 +/- 3.53e-32]",
+  "observed_divided_by_n": "[0.0100000000000000000000000000000 +/- 3e-36]",
+  "output_digits": 443,
+  "lower_bound_sha256": "aa6aed5a48f4642fe990f4c6198108c788f8dea4f272e053b29a138a6c019dc5",
+  "elapsed_seconds": 31.083980369003257,
+  "script_sha256": "2421d4b947fe01129020e5a0a24942297259fb1d43bc5d9c1c5534bc2cf9b594"
+}

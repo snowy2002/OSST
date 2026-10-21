@@ -1,0 +1,196 @@
+{
+  "frozen_at_utc": "2026-10-19T08:16:16.658773+00:00",
+  "design": {
+    "version": 2,
+    "correctness_amendment": {
+      "reason": "Exact rational audit found some nominal Delta_n=epsilon candidates below the promise boundary by floating-point roundoff (roughly 1e-20 to 1e-18).",
+      "repair": "Certify the exact normalized rational tail of stored binary probability weights, moving the mixture upward by ulps if necessary; rerun every formal suite.",
+      "original_output_preserved": "results_publication_superseded_boundary_v1",
+      "selection": "Reuse the original independently selected configurations unchanged; no outcome-based tuning. The same keyed seeds enable paired correction.",
+      "disclosure": "Some v1 sequential/stream aggregate outcomes were inspected before this correctness amendment. This is not a claim of an untouched externally preregistered experiment."
+    },
+    "primary_question": "When do certified polynomial tests save samples relative to competitive count and validation baselines?",
+    "fixed": {
+      "sizes": [
+        1000,
+        10000,
+        100000,
+        1000000
+      ],
+      "epsilons": [
+        0.001,
+        0.005,
+        0.01,
+        0.02,
+        0.05,
+        0.1,
+        0.2
+      ],
+      "factors": [
+        0.5,
+        1,
+        1.5,
+        2,
+        2.5,
+        3,
+        3.5,
+        4,
+        5,
+        6,
+        8,
+        12,
+        16
+      ],
+      "trials": 2000,
+      "seed_blocks": 4,
+      "methods": [
+        "count",
+        "multi",
+        "single",
+        "fh_certified",
+        "fh_native_tuned",
+        "chao1_point"
+      ]
+    },
+    "development": {
+      "sizes": [
+        1500,
+        15000
+      ],
+      "epsilons": [
+        0.005,
+        0.05,
+        0.2
+      ],
+      "factors": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "trials": 400,
+      "candidates_per_family": 8
+    },
+    "sequential": {
+      "sizes": [
+        1000,
+        10000,
+        100000,
+        1000000
+      ],
+      "epsilons": [
+        0.001,
+        0.01,
+        0.1
+      ],
+      "trials": 2000
+    },
+    "stream": {
+      "sizes": [
+        50,
+        200,
+        1000
+      ],
+      "epsilons": [
+        0.01,
+        0.1
+      ],
+      "trials": 1000,
+      "scenarios": [
+        "uniform_null",
+        "head90_null",
+        "uniform_boundary",
+        "exact_diffuse_boundary",
+        "near_multilevel_boundary"
+      ]
+    },
+    "adversarial": {
+      "sizes": [
+        1000,
+        10000
+      ],
+      "epsilons": [
+        0.001,
+        0.01,
+        0.1
+      ],
+      "search_trials": 300,
+      "test_trials": 10000,
+      "sequential_test_trials": 5000,
+      "selected_per_problem": 6
+    },
+    "structure": {
+      "datasets": [
+        "nips",
+        "enron",
+        "movielens",
+        "retail",
+        "bci",
+        "fish_2007_seine"
+      ],
+      "block_sizes": [
+        1,
+        5,
+        20,
+        100
+      ],
+      "stress_trials": 500,
+      "iid_trials": 2000,
+      "holdout_splits": 3,
+      "holdout_epsilon": 0.1
+    },
+    "sensitivity": {
+      "sizes": [
+        1000,
+        100000
+      ],
+      "epsilons": [
+        0.01,
+        0.1
+      ],
+      "deltas": [
+        0.1,
+        0.05,
+        0.01,
+        0.001
+      ],
+      "trials": 2000,
+      "small_delta_trials": 20000
+    },
+    "reference": {
+      "sizes": [
+        100,
+        1000
+      ],
+      "epsilons": [
+        0.01,
+        0.1
+      ],
+      "trials": 1000,
+      "note": "Strict Wang Poisson branch and FH fixed-sample small-epsilon branch; conservative amplification for 5% risk."
+    },
+    "statistical_analysis": {
+      "errors": "Exact one-sided Clopper-Pearson; 95% simultaneous bounds Bonferroni within each frozen suite across all non-Gap method cells. Fixed-suite lower-bound failure metrics use a separate simultaneous family.",
+      "cost": "Equal-weight cell means, Yes/No and synthetic/empirical strata reported separately. CRN paired differences with descriptive 95% normal intervals and bootstrap aggregate intervals.",
+      "m_star": "Smallest tested fixed budget for which all promised synthetic scenarios for the method/n/epsilon pass the simultaneous error upper bound. Report right censoring and do not interpolate as proven power.",
+      "search": "All adversarial search scores retained; selected populations frozen before independent new-seed test. No formal outcomes used for parameter changes.",
+      "gap": "No error labels for S>n and Delta_n<epsilon.",
+      "scope": "Empirical tests are not an optimal-order proof; FH-shaped practical variants are not original FH theorem algorithms; reference empirical supports are not external population truth."
+    },
+    "external_limitations": [
+      "No new ecological field survey or independently established full-lake species inventory is available.",
+      "Prospective local timestamp/hash manifest is not an external preregistration.",
+      "All new designs were informed by previously inspected v1 results; only this follow-up's outcomes are held out."
+    ],
+    "seeds": {
+      "development": 8726101901,
+      "formal": 8726101902,
+      "search": 8726101903,
+      "adversarial_test": 8726101904,
+      "stream": 8726101905,
+      "structure": 8726101906,
+      "sensitivity": 8726101907,
+      "reference": 8726101908
+    }
+  }
+}

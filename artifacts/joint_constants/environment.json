@@ -1,0 +1,8 @@
+{
+  "python": "3.14.4",
+  "python_flint": "0.9.0",
+  "platform": "Linux-6.18.54.1-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+  "latex": "tectonic 0.17.0",
+  "source_model": "independent Poissonized iid samples",
+  "arithmetic": "256-bit Arb certificates; 512-bit audit; exact Fraction polynomial checks"
+}

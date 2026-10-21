@@ -1,0 +1,148 @@
+{
+  "inventory": [
+    {
+      "suite": "fixed",
+      "method_cells": 25872,
+      "method_trial_evaluations": 51744000,
+      "non_gap_method_cells": 21168
+    },
+    {
+      "suite": "sequential",
+      "method_cells": 792,
+      "method_trial_evaluations": 1584000,
+      "non_gap_method_cells": 648
+    },
+    {
+      "suite": "adversarial_fixed",
+      "method_cells": 1080,
+      "method_trial_evaluations": 10800000,
+      "non_gap_method_cells": 1080
+    },
+    {
+      "suite": "adversarial_sequential",
+      "method_cells": 216,
+      "method_trial_evaluations": 1080000,
+      "non_gap_method_cells": 216
+    },
+    {
+      "suite": "stream",
+      "method_cells": 240,
+      "method_trial_evaluations": 240000,
+      "non_gap_method_cells": 240
+    },
+    {
+      "suite": "structure",
+      "method_cells": 432,
+      "method_trial_evaluations": 432000,
+      "non_gap_method_cells": 432
+    },
+    {
+      "suite": "group_holdout",
+      "method_cells": 432,
+      "method_trial_evaluations": 864000,
+      "non_gap_method_cells": 228
+    },
+    {
+      "suite": "sensitivity",
+      "method_cells": 696,
+      "method_trial_evaluations": 3120000,
+      "non_gap_method_cells": 696
+    },
+    {
+      "suite": "reference",
+      "method_cells": 32,
+      "method_trial_evaluations": 32000,
+      "non_gap_method_cells": 32
+    }
+  ],
+  "total_method_trial_evaluations": 69896000,
+  "certified_fixed_max_fp": 0.0005,
+  "actual_stream_hybrid": [
+    {
+      "suite": "stream",
+      "truth": "No",
+      "method": "multi_hybrid",
+      "cells": 18,
+      "mean_relative_cost": 0.8511041402800568,
+      "median_relative_cost": 0.8862975252208853,
+      "worst_relative_cost": 1.0,
+      "grid_bootstrap_low95": 0.7726551577982778,
+      "grid_bootstrap_high95": 0.9240309249382885,
+      "max_error": 0.016,
+      "max_error_upper": 0.0351216874882594,
+      "mean_validation": 22.046055555555554
+    },
+    {
+      "suite": "stream",
+      "truth": "Yes",
+      "method": "multi_hybrid",
+      "cells": 12,
+      "mean_relative_cost": 0.6883376904068671,
+      "median_relative_cost": 0.5909705818217659,
+      "worst_relative_cost": 1.051049441786284,
+      "grid_bootstrap_low95": 0.49485647232974445,
+      "grid_bootstrap_high95": 0.8784510702593877,
+      "max_error": 0.0,
+      "max_error_upper": 0.0084405480507789,
+      "mean_validation": 1348.2465
+    }
+  ],
+  "sequential_hybrid": [
+    {
+      "suite": "sequential",
+      "truth": "No",
+      "method": "multi_hybrid",
+      "cells": 60,
+      "mean_relative_cost": 0.5597610878555304,
+      "median_relative_cost": 0.4937519336716212,
+      "worst_relative_cost": 1.0001291244083617,
+      "grid_bootstrap_low95": 0.4933812343529226,
+      "grid_bootstrap_high95": 0.6315625328118978,
+      "max_error": 0.001,
+      "max_error_upper": 0.0070917490840833,
+      "mean_validation": 19.82414166666667
+    },
+    {
+      "suite": "sequential",
+      "truth": "Yes",
+      "method": "multi_hybrid",
+      "cells": 48,
+      "mean_relative_cost": 0.2646928540951116,
+      "median_relative_cost": 0.14654861266661856,
+      "worst_relative_cost": 0.6671473447329358,
+      "grid_bootstrap_low95": 0.20424012775665856,
+      "grid_bootstrap_high95": 0.32558660854577637,
+      "max_error": 0.0,
+      "max_error_upper": 0.0047236199353138,
+      "mean_validation": 26414.06509375
+    }
+  ],
+  "fixed_complete_grid_passes": {
+    "chao1_point": 0,
+    "count": 28,
+    "fh_certified": 28,
+    "fh_native_tuned": 15,
+    "multi": 28,
+    "single": 28
+  },
+  "structural_max_observed_fn": 0.282,
+  "source_and_raw_audit": {
+    "passed": true,
+    "issues": [],
+    "raw_method_cells_checked": 29792,
+    "evaluation_source_hashes_checked": 31,
+    "data_hashes_checked": 10
+  },
+  "analysis_notes": [
+    "Scenario bootstrap describes sensitivity to the chosen finite scenario mix; not generalization to all distributions.",
+    "Monte Carlo paired intervals use delta-method standard errors; Holm corrects the reported aggregate cost contrasts.",
+    "Non-rejection is not a certified Yes for fixed-budget polynomial methods."
+  ],
+  "exact_effective_support_audit": {
+    "changed_metadata_rows": 1938,
+    "affected_population_epsilon_pairs": 25,
+    "changed_clipped_targets_in_method_cells": 168,
+    "changed_lower_error_cells": 1,
+    "policy": "Raw simulation CSVs preserved. Exact-target analysis CSVs in tables/ are canonical for lower-bound metrics; no decisions, costs, tuning or samples changed."
+  }
+}

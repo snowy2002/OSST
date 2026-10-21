@@ -1,0 +1,2 @@
+Preserving completed noninteger-output verification
+PASS: 16 exact-rational endpoint/sign certificates; no floating point or FLINT

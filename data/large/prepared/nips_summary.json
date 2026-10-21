@@ -1,0 +1,21 @@
+{
+  "dataset": "nips",
+  "raw_rows": 746316,
+  "declared_documents": 1500,
+  "declared_vocabulary": 12419,
+  "sample_unit": "保留词表中的一次词语出现",
+  "category": "wordID",
+  "group_unit": "document",
+  "filters": "使用发布者预处理后的 docword；本地没有再次词频筛选",
+  "limitations": "发布者已删除停用词并仅保留出现超过 10 次的词；词序不可恢复；只评估这个截断词表。文档内词语相关。",
+  "records": 1932365,
+  "support": 12375,
+  "groups": 1500,
+  "nonzero_group_category_pairs": 746316,
+  "min_category_count": 1,
+  "max_category_count": 25977,
+  "top10_mass": 0.07612795719235238,
+  "counts_sha256": "bb7405185f48fc6433c9285666267ef3159e5f63189a6eea7e3eb35185b3605e",
+  "groups_sha256": "7cadd9327f6c9b2c8c23fce15456bc569d65a1433fd0d3c48b80df33ea45656e",
+  "reference_scope": "该数据文件清洗后的有限参考总体，不是未知外部总体的真实支持集"
+}

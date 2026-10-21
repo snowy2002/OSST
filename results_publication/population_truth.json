@@ -1,0 +1,2774 @@
+[
+  {
+    "n": 1000,
+    "epsilon": 0.001,
+    "scenario": "uniform_null",
+    "S": 1000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/1000"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.001,
+    "scenario": "head90_null",
+    "S": 1000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/1000"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.001,
+    "scenario": "rare_null",
+    "S": 1000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/1000"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.001,
+    "scenario": "power_null",
+    "S": 1000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/1000"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.001,
+    "scenario": "uniform_boundary",
+    "S": 1003,
+    "truth": "No",
+    "exact_normalized_tail": "3/1003",
+    "exact_margin": "1997/1003000"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.001,
+    "scenario": "uniform_clear",
+    "S": 2000,
+    "truth": "No",
+    "exact_normalized_tail": "1/2",
+    "exact_margin": "499/1000"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.001,
+    "scenario": "exact_diffuse_boundary",
+    "S": 100001,
+    "truth": "No",
+    "exact_normalized_tail": "37778931862957175317/37778931862957163320352",
+    "exact_margin": "1499581/4722366482869645415044000"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.001,
+    "scenario": "near_multilevel_boundary",
+    "S": 100001,
+    "truth": "No",
+    "exact_normalized_tail": "1209046712196590747277/1208925819614629211610029",
+    "exact_margin": "120892581961535666971/1208925819614629211610029000"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.001,
+    "scenario": "clear_tail",
+    "S": 100001,
+    "truth": "No",
+    "exact_normalized_tail": "302231454903657303535/151115727451828642847328",
+    "exact_margin": "18889465931478582585959/18889465931478580355916000"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.001,
+    "scenario": "gap_near",
+    "S": 100001,
+    "truth": "Gap",
+    "exact_normalized_tail": "301929223448753699197/302231454903657289592096",
+    "exact_margin": "-37778931862948799387/37778931862957161199012000"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.001,
+    "scenario": "gap_half",
+    "S": 100001,
+    "truth": "Gap",
+    "exact_normalized_tail": "60446290980731460707/120892581961462920027872",
+    "exact_margin": "-7555786372591432415109/15111572745182865003484000"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.005,
+    "scenario": "uniform_null",
+    "S": 1000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/200"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.005,
+    "scenario": "head90_null",
+    "S": 1000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/200"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.005,
+    "scenario": "rare_null",
+    "S": 1000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/200"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.005,
+    "scenario": "power_null",
+    "S": 1000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/200"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.005,
+    "scenario": "uniform_boundary",
+    "S": 1007,
+    "truth": "No",
+    "exact_normalized_tail": "7/1007",
+    "exact_margin": "393/201400"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.005,
+    "scenario": "uniform_clear",
+    "S": 2000,
+    "truth": "No",
+    "exact_normalized_tail": "1/2",
+    "exact_margin": "99/200"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.005,
+    "scenario": "exact_diffuse_boundary",
+    "S": 100001,
+    "truth": "No",
+    "exact_normalized_tail": "377789318629571654169/75557863725914322649760",
+    "exact_margin": "204601/377789318629571613248800"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.005,
+    "scenario": "near_multilevel_boundary",
+    "S": 100001,
+    "truth": "No",
+    "exact_normalized_tail": "3022616780491477562489/604462909807314681008057",
+    "exact_margin": "60446290980831489743/120892581961462936201611400"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.005,
+    "scenario": "clear_tail",
+    "S": 100001,
+    "truth": "No",
+    "exact_normalized_tail": "125929772876523884723/12592977287652386980064",
+    "exact_margin": "1574122160956548745567/314824432191309674501600"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.005,
+    "scenario": "gap_near",
+    "S": 100001,
+    "truth": "Gap",
+    "exact_normalized_tail": "188705764655471049623/37778931862957163338592",
+    "exact_margin": "-4722366482869176749/944473296573929083464800"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.005,
+    "scenario": "gap_half",
+    "S": 100001,
+    "truth": "Gap",
+    "exact_normalized_tail": "125929772876523884723/50371909150609548689632",
+    "exact_margin": "-3148244321913096468129/1259297728765238717240800"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.01,
+    "scenario": "uniform_null",
+    "S": 1000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/100"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.01,
+    "scenario": "head90_null",
+    "S": 1000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/100"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.01,
+    "scenario": "rare_null",
+    "S": 1000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/100"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.01,
+    "scenario": "power_null",
+    "S": 1000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/100"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.01,
+    "scenario": "uniform_boundary",
+    "S": 1012,
+    "truth": "No",
+    "exact_normalized_tail": "3/253",
+    "exact_margin": "47/25300"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.01,
+    "scenario": "uniform_clear",
+    "S": 2000,
+    "truth": "No",
+    "exact_normalized_tail": "1/2",
+    "exact_margin": "49/100"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.01,
+    "scenario": "exact_diffuse_boundary",
+    "S": 100001,
+    "truth": "No",
+    "exact_normalized_tail": "125929772876523884723/12592977287652386980064",
+    "exact_margin": "373059/314824432191309674501600"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.01,
+    "scenario": "near_multilevel_boundary",
+    "S": 100001,
+    "truth": "No",
+    "exact_normalized_tail": "83961577235874362057/8395318191768258866649",
+    "exact_margin": "839531819177339051/839531819176825886664900"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.01,
+    "scenario": "clear_tail",
+    "S": 100001,
+    "truth": "No",
+    "exact_normalized_tail": "755578637259143209337/37778931862957160070816",
+    "exact_margin": "9444732965739290215721/944473296573929001770400"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.01,
+    "scenario": "gap_near",
+    "S": 100001,
+    "truth": "Gap",
+    "exact_normalized_tail": "188705764655471049623/18889465931478580386656",
+    "exact_margin": "-4722366482868856089/472236648286964509666400"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.01,
+    "scenario": "gap_half",
+    "S": 100001,
+    "truth": "Gap",
+    "exact_normalized_tail": "377789318629571654169/75557863725914322649760",
+    "exact_margin": "-1888946593147857861643/377789318629571613248800"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.02,
+    "scenario": "uniform_null",
+    "S": 1000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/50"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.02,
+    "scenario": "head90_null",
+    "S": 1000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/50"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.02,
+    "scenario": "rare_null",
+    "S": 1000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/50"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.02,
+    "scenario": "power_null",
+    "S": 1000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/50"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.02,
+    "scenario": "uniform_boundary",
+    "S": 1022,
+    "truth": "No",
+    "exact_normalized_tail": "11/511",
+    "exact_margin": "39/25550"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.02,
+    "scenario": "uniform_clear",
+    "S": 2000,
+    "truth": "No",
+    "exact_normalized_tail": "1/2",
+    "exact_margin": "12/25"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.02,
+    "scenario": "exact_diffuse_boundary",
+    "S": 100001,
+    "truth": "No",
+    "exact_normalized_tail": "755578637259143209337/37778931862957160070816",
+    "exact_margin": "198017/944473296573929001770400"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.02,
+    "scenario": "near_multilevel_boundary",
+    "S": 100001,
+    "truth": "No",
+    "exact_normalized_tail": "377827097561434553931/18889465931478575507131",
+    "exact_margin": "1888946593152189419/944473296573928775356550"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.02,
+    "scenario": "clear_tail",
+    "S": 100001,
+    "truth": "No",
+    "exact_normalized_tail": "53969902661367379167/1349247566534184386656",
+    "exact_margin": "674623783267092285847/33731189163354609666400"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.02,
+    "scenario": "gap_near",
+    "S": 100001,
+    "truth": "Gap",
+    "exact_normalized_tail": "188705764655471049623/9444732965739289959264",
+    "exact_margin": "-4722366482868739057/236118324143482248981600"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.02,
+    "scenario": "gap_half",
+    "S": 100001,
+    "truth": "Gap",
+    "exact_normalized_tail": "125929772876523884723/12592977287652386980064",
+    "exact_margin": "-3148244321913096371957/314824432191309674501600"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.05,
+    "scenario": "uniform_null",
+    "S": 1000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/20"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.05,
+    "scenario": "head90_null",
+    "S": 1000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/20"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.05,
+    "scenario": "rare_null",
+    "S": 1000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/20"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.05,
+    "scenario": "power_null",
+    "S": 1000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/20"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.05,
+    "scenario": "uniform_boundary",
+    "S": 1054,
+    "truth": "No",
+    "exact_normalized_tail": "27/527",
+    "exact_margin": "13/10540"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.05,
+    "scenario": "uniform_clear",
+    "S": 2000,
+    "truth": "No",
+    "exact_normalized_tail": "1/2",
+    "exact_margin": "9/20"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.05,
+    "scenario": "exact_diffuse_boundary",
+    "S": 100001,
+    "truth": "No",
+    "exact_normalized_tail": "472236648286964542961/9444732965739290489248",
+    "exact_margin": "92493/47223664828696452446240"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.05,
+    "scenario": "near_multilevel_boundary",
+    "S": 100001,
+    "truth": "No",
+    "exact_normalized_tail": "1889135487807173201829/37778931862957165201445",
+    "exact_margin": "755578637259767027/151115727451828660805780"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.05,
+    "scenario": "clear_tail",
+    "S": 100001,
+    "truth": "No",
+    "exact_normalized_tail": "472236648286964542961/4722366482869645275552",
+    "exact_margin": "1180591620717411395917/23611832414348226377760"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.05,
+    "scenario": "gap_near",
+    "S": 100001,
+    "truth": "Gap",
+    "exact_normalized_tail": "471764411638677574557/9444732965739290255648",
+    "exact_margin": "-2361183241434691127/47223664828696451278240"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.05,
+    "scenario": "gap_half",
+    "S": 100001,
+    "truth": "Gap",
+    "exact_normalized_tail": "472236648286964542961/18889465931478579868064",
+    "exact_margin": "-2361183241434822252211/94447329657392899340320"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.1,
+    "scenario": "uniform_null",
+    "S": 1000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/10"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.1,
+    "scenario": "head90_null",
+    "S": 1000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/10"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.1,
+    "scenario": "rare_null",
+    "S": 1000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/10"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.1,
+    "scenario": "power_null",
+    "S": 1000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/10"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.1,
+    "scenario": "uniform_boundary",
+    "S": 1113,
+    "truth": "No",
+    "exact_normalized_tail": "113/1113",
+    "exact_margin": "17/11130"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.1,
+    "scenario": "uniform_clear",
+    "S": 2000,
+    "truth": "No",
+    "exact_normalized_tail": "1/2",
+    "exact_margin": "2/5"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.1,
+    "scenario": "exact_diffuse_boundary",
+    "S": 100001,
+    "truth": "No",
+    "exact_normalized_tail": "472236648286964542961/4722366482869645275552",
+    "exact_margin": "77029/23611832414348226377760"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.1,
+    "scenario": "near_multilevel_boundary",
+    "S": 100001,
+    "truth": "No",
+    "exact_normalized_tail": "472283871951793262951/4722366482869643902951",
+    "exact_margin": "472236648288726559/47223664828696439029510"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.1,
+    "scenario": "clear_tail",
+    "S": 100001,
+    "truth": "No",
+    "exact_normalized_tail": "472236648286964542961/2361183241434822668704",
+    "exact_margin": "1180591620717411380453/11805916207174113343520"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.1,
+    "scenario": "gap_near",
+    "S": 100001,
+    "truth": "Gap",
+    "exact_normalized_tail": "471764411638677574557/4722366482869645041952",
+    "exact_margin": "-2361183241434648191/23611832414348225209760"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.1,
+    "scenario": "gap_half",
+    "S": 100001,
+    "truth": "Gap",
+    "exact_normalized_tail": "472236648286964542961/9444732965739290489248",
+    "exact_margin": "-2361183241434822529819/47223664828696452446240"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.2,
+    "scenario": "uniform_null",
+    "S": 1000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/5"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.2,
+    "scenario": "head90_null",
+    "S": 1000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/5"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.2,
+    "scenario": "rare_null",
+    "S": 1000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/5"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.2,
+    "scenario": "power_null",
+    "S": 1000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/5"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.2,
+    "scenario": "uniform_boundary",
+    "S": 1251,
+    "truth": "No",
+    "exact_normalized_tail": "251/1251",
+    "exact_margin": "4/6255"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.2,
+    "scenario": "uniform_clear",
+    "S": 2000,
+    "truth": "No",
+    "exact_normalized_tail": "1/2",
+    "exact_margin": "3/10"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.2,
+    "scenario": "exact_diffuse_boundary",
+    "S": 100001,
+    "truth": "No",
+    "exact_normalized_tail": "472236648286964542961/2361183241434822668704",
+    "exact_margin": "46101/11805916207174113343520"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.2,
+    "scenario": "near_multilevel_boundary",
+    "S": 100001,
+    "truth": "No",
+    "exact_normalized_tail": "472283871951793373573/2361183241434823087301",
+    "exact_margin": "236118324143780564/11805916207174115436505"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.2,
+    "scenario": "clear_tail",
+    "S": 100001,
+    "truth": "No",
+    "exact_normalized_tail": "33731189163354617283/84327972908386523872",
+    "exact_margin": "84327972908386562543/421639864541932619360"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.2,
+    "scenario": "gap_near",
+    "S": 100001,
+    "truth": "Gap",
+    "exact_normalized_tail": "235882205819338836779/1180591620717411267552",
+    "exact_margin": "-1180591620717083657/5902958103587056337760"
+  },
+  {
+    "n": 1000,
+    "epsilon": 0.2,
+    "scenario": "gap_half",
+    "S": 100001,
+    "truth": "Gap",
+    "exact_normalized_tail": "472236648286964542961/4722366482869645275552",
+    "exact_margin": "-2361183241434822560747/23611832414348226377760"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.001,
+    "scenario": "uniform_null",
+    "S": 10000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/1000"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.001,
+    "scenario": "head90_null",
+    "S": 10000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/1000"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.001,
+    "scenario": "rare_null",
+    "S": 10000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/1000"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.001,
+    "scenario": "power_null",
+    "S": 10000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/1000"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.001,
+    "scenario": "uniform_boundary",
+    "S": 10012,
+    "truth": "No",
+    "exact_normalized_tail": "3/2503",
+    "exact_margin": "497/2503000"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.001,
+    "scenario": "uniform_clear",
+    "S": 20000,
+    "truth": "No",
+    "exact_normalized_tail": "1/2",
+    "exact_margin": "499/1000"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.001,
+    "scenario": "exact_diffuse_boundary",
+    "S": 1000001,
+    "truth": "No",
+    "exact_normalized_tail": "1574122160956548723/1574122160956548464320",
+    "exact_margin": "6467/39353054023913711608000"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.001,
+    "scenario": "near_multilevel_boundary",
+    "S": 1000001,
+    "truth": "No",
+    "exact_normalized_tail": "19344747395145453574849/19342813113834067899374401",
+    "exact_margin": "1934281311385675474599/19342813113834067899374401000"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.001,
+    "scenario": "clear_tail",
+    "S": 1000001,
+    "truth": "No",
+    "exact_normalized_tail": "690814754065502383865/345407377032751180506176",
+    "exact_margin": "43175922129093900419853/43175922129093897563272000"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.001,
+    "scenario": "gap_near",
+    "S": 1000001,
+    "truth": "Gap",
+    "exact_normalized_tail": "2415433787590029112409/2417851639229258354195520",
+    "exact_margin": "-60446290980731044663/60446290980731458854888000"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.001,
+    "scenario": "gap_half",
+    "S": 1000001,
+    "truth": "Gap",
+    "exact_normalized_tail": "4722366482869646169/9444732965739290606656",
+    "exact_margin": "-590295810358705554707/1180591620717411325832000"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.005,
+    "scenario": "uniform_null",
+    "S": 10000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/200"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.005,
+    "scenario": "head90_null",
+    "S": 10000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/200"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.005,
+    "scenario": "rare_null",
+    "S": 10000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/200"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.005,
+    "scenario": "power_null",
+    "S": 10000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/200"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.005,
+    "scenario": "uniform_boundary",
+    "S": 10052,
+    "truth": "No",
+    "exact_normalized_tail": "13/2513",
+    "exact_margin": "87/502600"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.005,
+    "scenario": "uniform_clear",
+    "S": 20000,
+    "truth": "No",
+    "exact_normalized_tail": "1/2",
+    "exact_margin": "99/200"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.005,
+    "scenario": "exact_diffuse_boundary",
+    "S": 1000001,
+    "truth": "No",
+    "exact_normalized_tail": "6044629098073146106319/1208925819614629134728640",
+    "exact_margin": "2163379/6044629098073145673643200"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.005,
+    "scenario": "near_multilevel_boundary",
+    "S": 1000001,
+    "truth": "No",
+    "exact_normalized_tail": "4030155707321969633237/805950546409752834444853",
+    "exact_margin": "80595054641092202547/161190109281950566888970600"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.005,
+    "scenario": "clear_tail",
+    "S": 1000001,
+    "truth": "No",
+    "exact_normalized_tail": "7870610804782743615/787061080478274238912",
+    "exact_margin": "98382635059784310511/19676527011956855972800"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.005,
+    "scenario": "gap_near",
+    "S": 1000001,
+    "truth": "Gap",
+    "exact_normalized_tail": "6038584468975073276023/1208925819614629187164096",
+    "exact_margin": "-151115727451816494937/30223145490365729679102400"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.005,
+    "scenario": "gap_half",
+    "S": 1000001,
+    "truth": "Gap",
+    "exact_normalized_tail": "6044629098073146106319/2417851639229258309434816",
+    "exact_margin": "-151115727451828636021377/60446290980731457735870400"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.01,
+    "scenario": "uniform_null",
+    "S": 10000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/100"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.01,
+    "scenario": "head90_null",
+    "S": 10000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/100"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.01,
+    "scenario": "rare_null",
+    "S": 10000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/100"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.01,
+    "scenario": "power_null",
+    "S": 10000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/100"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.01,
+    "scenario": "uniform_boundary",
+    "S": 10103,
+    "truth": "No",
+    "exact_normalized_tail": "103/10103",
+    "exact_margin": "197/1010300"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.01,
+    "scenario": "uniform_clear",
+    "S": 20000,
+    "truth": "No",
+    "exact_normalized_tail": "1/2",
+    "exact_margin": "49/100"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.01,
+    "scenario": "exact_diffuse_boundary",
+    "S": 1000001,
+    "truth": "No",
+    "exact_normalized_tail": "7870610804782743615/787061080478274238912",
+    "exact_margin": "30647/19676527011956855972800"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.01,
+    "scenario": "near_multilevel_boundary",
+    "S": 1000001,
+    "truth": "No",
+    "exact_normalized_tail": "24180934243931814020859/2417851639229258380639739",
+    "exact_margin": "241785163923021446161/241785163922925838063973900"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.01,
+    "scenario": "clear_tail",
+    "S": 1000001,
+    "truth": "No",
+    "exact_normalized_tail": "6044629098073146106319/302231454903657287253440",
+    "exact_margin": "15111572745182866168923/1511157274518286436267200"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.01,
+    "scenario": "gap_near",
+    "S": 1000001,
+    "truth": "Gap",
+    "exact_normalized_tail": "6038584468975073276023/604462909807314599811008",
+    "exact_margin": "-151115727451818052177/15111572745182864995275200"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.01,
+    "scenario": "gap_half",
+    "S": 1000001,
+    "truth": "Gap",
+    "exact_normalized_tail": "6044629098073146106319/1208925819614629134728640",
+    "exact_margin": "-30223145490365726204837/6044629098073145673643200"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.02,
+    "scenario": "uniform_null",
+    "S": 10000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/50"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.02,
+    "scenario": "head90_null",
+    "S": 10000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/50"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.02,
+    "scenario": "rare_null",
+    "S": 10000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/50"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.02,
+    "scenario": "power_null",
+    "S": 10000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/50"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.02,
+    "scenario": "uniform_boundary",
+    "S": 10206,
+    "truth": "No",
+    "exact_normalized_tail": "103/5103",
+    "exact_margin": "47/255150"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.02,
+    "scenario": "uniform_clear",
+    "S": 20000,
+    "truth": "No",
+    "exact_normalized_tail": "1/2",
+    "exact_margin": "12/25"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.02,
+    "scenario": "exact_diffuse_boundary",
+    "S": 1000001,
+    "truth": "No",
+    "exact_normalized_tail": "6044629098073146106319/302231454903657287253440",
+    "exact_margin": "1806251/1511157274518286436267200"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.02,
+    "scenario": "near_multilevel_boundary",
+    "S": 1000001,
+    "truth": "No",
+    "exact_normalized_tail": "24180934243931814020859/1208925819614629205933563",
+    "exact_margin": "120892581961495109387/60446290980731460296678150"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.02,
+    "scenario": "clear_tail",
+    "S": 1000001,
+    "truth": "No",
+    "exact_normalized_tail": "6044629098073146106319/151115727451828640415168",
+    "exact_margin": "75557863725914332450391/3777893186295716010379200"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.02,
+    "scenario": "gap_near",
+    "S": 1000001,
+    "truth": "Gap",
+    "exact_normalized_tail": "862654924139296182289/43175922129093900876352",
+    "exact_margin": "-21587961064545880951/1079398053227347521908800"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.02,
+    "scenario": "gap_half",
+    "S": 1000001,
+    "truth": "Gap",
+    "exact_normalized_tail": "7870610804782743615/787061080478274238912",
+    "exact_margin": "-196765270119568529081/19676527011956855972800"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.05,
+    "scenario": "uniform_null",
+    "S": 10000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/20"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.05,
+    "scenario": "head90_null",
+    "S": 10000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/20"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.05,
+    "scenario": "rare_null",
+    "S": 10000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/20"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.05,
+    "scenario": "power_null",
+    "S": 10000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/20"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.05,
+    "scenario": "uniform_boundary",
+    "S": 10528,
+    "truth": "No",
+    "exact_normalized_tail": "33/658",
+    "exact_margin": "1/6580"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.05,
+    "scenario": "uniform_clear",
+    "S": 20000,
+    "truth": "No",
+    "exact_normalized_tail": "1/2",
+    "exact_margin": "9/20"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.05,
+    "scenario": "exact_diffuse_boundary",
+    "S": 1000001,
+    "truth": "No",
+    "exact_normalized_tail": "7555786372591432880399/151115727451828647448000",
+    "exact_margin": "507999/151115727451828647448000"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.05,
+    "scenario": "near_multilevel_boundary",
+    "S": 1000001,
+    "truth": "No",
+    "exact_normalized_tail": "839615772358743557729/16790636383536517448129",
+    "exact_margin": "1679063638353706451/335812727670730348962580"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.05,
+    "scenario": "clear_tail",
+    "S": 1000001,
+    "truth": "No",
+    "exact_normalized_tail": "7555786372591432880399/75557863725914324028864",
+    "exact_margin": "18889465931478583394779/377789318629571620144320"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.05,
+    "scenario": "gap_near",
+    "S": 1000001,
+    "truth": "Gap",
+    "exact_normalized_tail": "471764411638677553283/9444732965739290305216",
+    "exact_margin": "-2361183241434809889/47223664828696451526080"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.05,
+    "scenario": "gap_half",
+    "S": 1000001,
+    "truth": "Gap",
+    "exact_normalized_tail": "7555786372591432880399/302231454903657277509056",
+    "exact_margin": "-37778931862957154975269/1511157274518286387545280"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.1,
+    "scenario": "uniform_null",
+    "S": 10000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/10"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.1,
+    "scenario": "head90_null",
+    "S": 10000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/10"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.1,
+    "scenario": "rare_null",
+    "S": 10000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/10"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.1,
+    "scenario": "power_null",
+    "S": 10000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/10"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.1,
+    "scenario": "uniform_boundary",
+    "S": 11113,
+    "truth": "No",
+    "exact_normalized_tail": "1113/11113",
+    "exact_margin": "17/111130"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.1,
+    "scenario": "uniform_clear",
+    "S": 20000,
+    "truth": "No",
+    "exact_normalized_tail": "1/2",
+    "exact_margin": "2/5"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.1,
+    "scenario": "exact_diffuse_boundary",
+    "S": 1000001,
+    "truth": "No",
+    "exact_normalized_tail": "7555786372591432880399/75557863725914324028864",
+    "exact_margin": "2387563/377789318629571620144320"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.1,
+    "scenario": "near_multilevel_boundary",
+    "S": 1000001,
+    "truth": "No",
+    "exact_normalized_tail": "1889135487807172932895/18889465931478581151759",
+    "exact_margin": "1888946593148177191/188894659314785811517590"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.1,
+    "scenario": "clear_tail",
+    "S": 1000001,
+    "truth": "No",
+    "exact_normalized_tail": "7555786372591432880399/37778931862957162319296",
+    "exact_margin": "18889465931478583242347/188894659314785811596480"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.1,
+    "scenario": "gap_near",
+    "S": 1000001,
+    "truth": "Gap",
+    "exact_normalized_tail": "471764411638677553283/4722366482869645091520",
+    "exact_margin": "-472236648286955869/4722366482869645091520"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.1,
+    "scenario": "gap_half",
+    "S": 1000001,
+    "truth": "Gap",
+    "exact_normalized_tail": "7555786372591432880399/151115727451828647448000",
+    "exact_margin": "-7555786372591431864401/151115727451828647448000"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.2,
+    "scenario": "uniform_null",
+    "S": 10000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/5"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.2,
+    "scenario": "head90_null",
+    "S": 10000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/5"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.2,
+    "scenario": "rare_null",
+    "S": 10000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/5"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.2,
+    "scenario": "power_null",
+    "S": 10000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/5"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.2,
+    "scenario": "uniform_boundary",
+    "S": 12501,
+    "truth": "No",
+    "exact_normalized_tail": "2501/12501",
+    "exact_margin": "4/62505"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.2,
+    "scenario": "uniform_clear",
+    "S": 20000,
+    "truth": "No",
+    "exact_normalized_tail": "1/2",
+    "exact_margin": "3/10"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.2,
+    "scenario": "exact_diffuse_boundary",
+    "S": 1000001,
+    "truth": "No",
+    "exact_normalized_tail": "7555786372591432880399/37778931862957162319296",
+    "exact_margin": "2082699/188894659314785811596480"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.2,
+    "scenario": "near_multilevel_boundary",
+    "S": 1000001,
+    "truth": "No",
+    "exact_normalized_tail": "1889135487807173590261/9444732965739292140909",
+    "exact_margin": "944473296575810396/47223664828696460704545"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.2,
+    "scenario": "clear_tail",
+    "S": 1000001,
+    "truth": "No",
+    "exact_normalized_tail": "7555786372591432880399/18889465931478581464512",
+    "exact_margin": "18889465931478582937483/94447329657392907322560"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.2,
+    "scenario": "gap_near",
+    "S": 1000001,
+    "truth": "Gap",
+    "exact_normalized_tail": "471764411638677553283/2361183241434822484672",
+    "exact_margin": "-2361183241434718257/11805916207174112423360"
+  },
+  {
+    "n": 10000,
+    "epsilon": 0.2,
+    "scenario": "gap_half",
+    "S": 1000001,
+    "truth": "Gap",
+    "exact_normalized_tail": "7555786372591432880399/75557863725914324028864",
+    "exact_margin": "-37778931862957159626869/377789318629571620144320"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.001,
+    "scenario": "uniform_null",
+    "S": 100000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/1000"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.001,
+    "scenario": "head90_null",
+    "S": 100000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/1000"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.001,
+    "scenario": "rare_null",
+    "S": 100000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/1000"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.001,
+    "scenario": "power_null",
+    "S": 100000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/1000"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.001,
+    "scenario": "uniform_boundary",
+    "S": 100102,
+    "truth": "No",
+    "exact_normalized_tail": "51/50051",
+    "exact_margin": "949/50051000"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.001,
+    "scenario": "uniform_clear",
+    "S": 200000,
+    "truth": "No",
+    "exact_normalized_tail": "1/2",
+    "exact_margin": "499/1000"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.001,
+    "scenario": "exact_diffuse_boundary",
+    "S": 10000001,
+    "truth": "No",
+    "exact_normalized_tail": "77371252455336266469599/77371252455336265856076160",
+    "exact_margin": "15338071/1934281311383406646401904000"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.001,
+    "scenario": "near_multilevel_boundary",
+    "S": 10000001,
+    "truth": "No",
+    "exact_normalized_tail": "154757979161163647290235/154742504910672501891411707",
+    "exact_margin": "15474250491145398823293/154742504910672501891411707000"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.001,
+    "scenario": "clear_tail",
+    "S": 10000001,
+    "truth": "No",
+    "exact_normalized_tail": "77371252455336266469599/38685626227668132265478528",
+    "exact_margin": "4835703278458516775515059/4835703278458516533184816000"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.001,
+    "scenario": "gap_near",
+    "S": 10000001,
+    "truth": "Gap",
+    "exact_normalized_tail": "25764627067626982011077/25790417485112090379673728",
+    "exact_margin": "-3223802185638546074591/3223802185639011297459216000"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.001,
+    "scenario": "gap_half",
+    "S": 10000001,
+    "truth": "Gap",
+    "exact_normalized_tail": "1208925819614629318275/2417851639229258463081344",
+    "exact_margin": "-151115727451828643100793/302231454903657307885168000"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.005,
+    "scenario": "uniform_null",
+    "S": 100000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/200"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.005,
+    "scenario": "head90_null",
+    "S": 100000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/200"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.005,
+    "scenario": "rare_null",
+    "S": 100000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/200"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.005,
+    "scenario": "power_null",
+    "S": 100000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/200"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.005,
+    "scenario": "uniform_boundary",
+    "S": 100504,
+    "truth": "No",
+    "exact_normalized_tail": "63/12563",
+    "exact_margin": "37/2512600"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.005,
+    "scenario": "uniform_clear",
+    "S": 200000,
+    "truth": "No",
+    "exact_normalized_tail": "1/2",
+    "exact_margin": "99/200"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.005,
+    "scenario": "exact_diffuse_boundary",
+    "S": 10000001,
+    "truth": "No",
+    "exact_normalized_tail": "6044629098073146591375/1208925819614629206180224",
+    "exact_margin": "14011847/30223145490365730154505600"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.005,
+    "scenario": "near_multilevel_boundary",
+    "S": 10000001,
+    "truth": "No",
+    "exact_normalized_tail": "193447473951454500992237/38685626227668122937551341",
+    "exact_margin": "3868562622777260896059/7737125245533624587510268200"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.005,
+    "scenario": "clear_tail",
+    "S": 10000001,
+    "truth": "No",
+    "exact_normalized_tail": "2014876366024382197125/201487636602438206275712",
+    "exact_margin": "25185954575304779143661/5037190915060955156892800"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.005,
+    "scenario": "gap_near",
+    "S": 10000001,
+    "truth": "Gap",
+    "exact_normalized_tail": "48308675751800587558269/9671406556917033720056960",
+    "exact_margin": "-241785163922905210079/48357032784585168600284800"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.005,
+    "scenario": "gap_half",
+    "S": 10000001,
+    "truth": "Gap",
+    "exact_normalized_tail": "80595054640975287885/32238021856390111745152",
+    "exact_margin": "-2014876366024381771019/805950546409752793628800"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.01,
+    "scenario": "uniform_null",
+    "S": 100000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/100"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.01,
+    "scenario": "head90_null",
+    "S": 100000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/100"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.01,
+    "scenario": "rare_null",
+    "S": 100000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/100"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.01,
+    "scenario": "power_null",
+    "S": 100000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/100"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.01,
+    "scenario": "uniform_boundary",
+    "S": 101012,
+    "truth": "No",
+    "exact_normalized_tail": "253/25253",
+    "exact_margin": "47/2525300"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.01,
+    "scenario": "uniform_clear",
+    "S": 200000,
+    "truth": "No",
+    "exact_normalized_tail": "1/2",
+    "exact_margin": "49/100"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.01,
+    "scenario": "exact_diffuse_boundary",
+    "S": 10000001,
+    "truth": "No",
+    "exact_normalized_tail": "2014876366024382197125/201487636602438206275712",
+    "exact_margin": "3359197/5037190915060955156892800"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.01,
+    "scenario": "near_multilevel_boundary",
+    "S": 10000001,
+    "truth": "No",
+    "exact_normalized_tail": "24180934243931817969131/2417851639229258640335155",
+    "exact_margin": "48357032784631315589/48357032784585172806703100"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.01,
+    "scenario": "clear_tail",
+    "S": 10000001,
+    "truth": "No",
+    "exact_normalized_tail": "402975273204876439425/20148763660243819439744",
+    "exact_margin": "5037190915060956125689/503719091506095485993600"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.01,
+    "scenario": "gap_near",
+    "S": 10000001,
+    "truth": "Gap",
+    "exact_normalized_tail": "48308675751800587558269/4835703278458516484361344",
+    "exact_margin": "-1208925819614432133611/120892581961462912109033600"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.01,
+    "scenario": "gap_half",
+    "S": 10000001,
+    "truth": "Gap",
+    "exact_normalized_tail": "6044629098073146591375/1208925819614629206180224",
+    "exact_margin": "-151115727451828636760681/30223145490365730154505600"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.02,
+    "scenario": "uniform_null",
+    "S": 100000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/50"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.02,
+    "scenario": "head90_null",
+    "S": 100000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/50"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.02,
+    "scenario": "rare_null",
+    "S": 100000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/50"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.02,
+    "scenario": "power_null",
+    "S": 100000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/50"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.02,
+    "scenario": "uniform_boundary",
+    "S": 102042,
+    "truth": "No",
+    "exact_normalized_tail": "1021/51021",
+    "exact_margin": "29/2551050"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.02,
+    "scenario": "uniform_clear",
+    "S": 200000,
+    "truth": "No",
+    "exact_normalized_tail": "1/2",
+    "exact_margin": "12/25"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.02,
+    "scenario": "exact_diffuse_boundary",
+    "S": 10000001,
+    "truth": "No",
+    "exact_normalized_tail": "402975273204876439425/20148763660243819439744",
+    "exact_margin": "1265753/503719091506095485993600"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.02,
+    "scenario": "near_multilevel_boundary",
+    "S": 10000001,
+    "truth": "No",
+    "exact_normalized_tail": "24180934243931817969131/1208925819614629331411251",
+    "exact_margin": "120892581961567045299/60446290980731466570562550"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.02,
+    "scenario": "clear_tail",
+    "S": 10000001,
+    "truth": "No",
+    "exact_normalized_tail": "6044629098073146591375/151115727451828644757888",
+    "exact_margin": "75557863725914342405431/3777893186295716118947200"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.02,
+    "scenario": "gap_near",
+    "S": 10000001,
+    "truth": "Gap",
+    "exact_normalized_tail": "48308675751800587558269/2417851639229258403384448",
+    "exact_margin": "-1208925819614512735499/60446290980731460084611200"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.02,
+    "scenario": "gap_half",
+    "S": 10000001,
+    "truth": "Gap",
+    "exact_normalized_tail": "2014876366024382197125/201487636602438206275712",
+    "exact_margin": "-50371909150609548209731/5037190915060955156892800"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.05,
+    "scenario": "uniform_null",
+    "S": 100000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/20"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.05,
+    "scenario": "head90_null",
+    "S": 100000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/20"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.05,
+    "scenario": "rare_null",
+    "S": 100000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/20"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.05,
+    "scenario": "power_null",
+    "S": 100000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/20"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.05,
+    "scenario": "uniform_boundary",
+    "S": 105265,
+    "truth": "No",
+    "exact_normalized_tail": "1053/21053",
+    "exact_margin": "7/421060"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.05,
+    "scenario": "uniform_clear",
+    "S": 200000,
+    "truth": "No",
+    "exact_normalized_tail": "1/2",
+    "exact_margin": "9/20"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.05,
+    "scenario": "exact_diffuse_boundary",
+    "S": 10000001,
+    "truth": "No",
+    "exact_normalized_tail": "71113283506742901075/1422265670134857907072",
+    "exact_margin": "28607/7111328350674289535360"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.05,
+    "scenario": "near_multilevel_boundary",
+    "S": 10000001,
+    "truth": "No",
+    "exact_normalized_tail": "3778270975614346485171/75557863725914335171618",
+    "exact_margin": "3777893186297265901/755578637259143351716180"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.05,
+    "scenario": "clear_tail",
+    "S": 10000001,
+    "truth": "No",
+    "exact_normalized_tail": "30223145490365732956875/302231454903657283274624",
+    "exact_margin": "75557863725914343965719/1511157274518286416373120"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.05,
+    "scenario": "gap_near",
+    "S": 10000001,
+    "truth": "Gap",
+    "exact_normalized_tail": "15096461172437682993209/302231454903657293140608",
+    "exact_margin": "-75557863725908319107/1511157274518286465703040"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.05,
+    "scenario": "gap_half",
+    "S": 10000001,
+    "truth": "Gap",
+    "exact_normalized_tail": "30223145490365732956875/1208925819614629197858688",
+    "exact_margin": "-151115727451828634680297/6044629098073145989293440"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.1,
+    "scenario": "uniform_null",
+    "S": 100000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/10"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.1,
+    "scenario": "head90_null",
+    "S": 100000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/10"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.1,
+    "scenario": "rare_null",
+    "S": 100000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/10"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.1,
+    "scenario": "power_null",
+    "S": 100000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/10"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.1,
+    "scenario": "uniform_boundary",
+    "S": 111113,
+    "truth": "No",
+    "exact_normalized_tail": "11113/111113",
+    "exact_margin": "17/1111130"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.1,
+    "scenario": "uniform_clear",
+    "S": 200000,
+    "truth": "No",
+    "exact_normalized_tail": "1/2",
+    "exact_margin": "2/5"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.1,
+    "scenario": "exact_diffuse_boundary",
+    "S": 10000001,
+    "truth": "No",
+    "exact_normalized_tail": "30223145490365732956875/302231454903657283274624",
+    "exact_margin": "23147063/1511157274518286416373120"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.1,
+    "scenario": "near_multilevel_boundary",
+    "S": 10000001,
+    "truth": "No",
+    "exact_normalized_tail": "20150778536609842907059/201487636602438157795747",
+    "exact_margin": "20148763660271274843/2014876366024381577957470"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.1,
+    "scenario": "clear_tail",
+    "S": 10000001,
+    "truth": "No",
+    "exact_normalized_tail": "10074381830121910985625/50371909150609545478784",
+    "exact_margin": "25185954575304782188733/251859545753047727393920"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.1,
+    "scenario": "gap_near",
+    "S": 10000001,
+    "truth": "Gap",
+    "exact_normalized_tail": "15096461172437682993209/151115727451828646302336",
+    "exact_margin": "-75557863725908185123/755578637259143231511680"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.1,
+    "scenario": "gap_half",
+    "S": 10000001,
+    "truth": "Gap",
+    "exact_normalized_tail": "71113283506742901075/1422265670134857907072",
+    "exact_margin": "-355566417533714448161/7111328350674289535360"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.2,
+    "scenario": "uniform_null",
+    "S": 100000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/5"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.2,
+    "scenario": "head90_null",
+    "S": 100000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/5"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.2,
+    "scenario": "rare_null",
+    "S": 100000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/5"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.2,
+    "scenario": "power_null",
+    "S": 100000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/5"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.2,
+    "scenario": "uniform_boundary",
+    "S": 125001,
+    "truth": "No",
+    "exact_normalized_tail": "25001/125001",
+    "exact_margin": "4/625005"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.2,
+    "scenario": "uniform_clear",
+    "S": 200000,
+    "truth": "No",
+    "exact_normalized_tail": "1/2",
+    "exact_margin": "3/10"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.2,
+    "scenario": "exact_diffuse_boundary",
+    "S": 10000001,
+    "truth": "No",
+    "exact_normalized_tail": "10074381830121910985625/50371909150609545478784",
+    "exact_margin": "9449341/251859545753047727393920"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.2,
+    "scenario": "near_multilevel_boundary",
+    "S": 10000001,
+    "truth": "No",
+    "exact_normalized_tail": "60452335609829536977757/302231454903657265373821",
+    "exact_margin": "30223145490419514964/1511157274518286326869105"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.2,
+    "scenario": "clear_tail",
+    "S": 10000001,
+    "truth": "No",
+    "exact_normalized_tail": "30223145490365732956875/75557863725914321405824",
+    "exact_margin": "75557863725914343378551/377789318629571607029120"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.2,
+    "scenario": "gap_near",
+    "S": 10000001,
+    "truth": "Gap",
+    "exact_normalized_tail": "15096461172437682993209/75557863725914322883200",
+    "exact_margin": "-15111572745181583431/75557863725914322883200"
+  },
+  {
+    "n": 100000,
+    "epsilon": 0.2,
+    "scenario": "gap_half",
+    "S": 10000001,
+    "truth": "Gap",
+    "exact_normalized_tail": "30223145490365732956875/302231454903657283274624",
+    "exact_margin": "-151115727451828618490249/1511157274518286416373120"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.001,
+    "scenario": "uniform_null",
+    "S": 1000000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/1000"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.001,
+    "scenario": "head90_null",
+    "S": 1000000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/1000"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.001,
+    "scenario": "rare_null",
+    "S": 1000000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/1000"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.001,
+    "scenario": "power_null",
+    "S": 1000000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/1000"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.001,
+    "scenario": "uniform_boundary",
+    "S": 1001003,
+    "truth": "No",
+    "exact_normalized_tail": "1003/1001003",
+    "exact_margin": "1997/1001003000"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.001,
+    "scenario": "uniform_clear",
+    "S": 2000000,
+    "truth": "No",
+    "exact_normalized_tail": "1/2",
+    "exact_margin": "499/1000"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.001,
+    "scenario": "exact_diffuse_boundary",
+    "S": 100000001,
+    "truth": "No",
+    "exact_normalized_tail": "309485009821345141739737/309485009821345073041963264",
+    "exact_margin": "8587221717/38685626227668134130245408000"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.001,
+    "scenario": "near_multilevel_boundary",
+    "S": 100000001,
+    "truth": "No",
+    "exact_normalized_tail": "2476127666578618021347207/2475880078570759872787387399",
+    "exact_margin": "247588007858148559819601/2475880078570759872787387399000"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.001,
+    "scenario": "clear_tail",
+    "S": 100000001,
+    "truth": "No",
+    "exact_normalized_tail": "309485009821345141739737/154742504910672538679572736",
+    "exact_margin": "19342813113834075382520533/19342813113834067334946592000"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.001,
+    "scenario": "gap_near",
+    "S": 100000001,
+    "truth": "Gap",
+    "exact_normalized_tail": "309175524811523770560997/309485009821345056037635328",
+    "exact_margin": "-38685626227660684579791/38685626227668132004704416000"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.001,
+    "scenario": "gap_half",
+    "S": 100000001,
+    "truth": "Gap",
+    "exact_normalized_tail": "309485009821345141739737/618970019642690141766744320",
+    "exact_margin": "-7737125245533625000675183/15474250491067253544168608000"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.005,
+    "scenario": "uniform_null",
+    "S": 1000000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/200"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.005,
+    "scenario": "head90_null",
+    "S": 1000000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/200"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.005,
+    "scenario": "rare_null",
+    "S": 1000000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/200"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.005,
+    "scenario": "power_null",
+    "S": 1000000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/200"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.005,
+    "scenario": "uniform_boundary",
+    "S": 1005027,
+    "truth": "No",
+    "exact_normalized_tail": "5027/1005027",
+    "exact_margin": "373/201005400"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.005,
+    "scenario": "uniform_clear",
+    "S": 2000000,
+    "truth": "No",
+    "exact_normalized_tail": "1/2",
+    "exact_margin": "99/200"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.005,
+    "scenario": "exact_diffuse_boundary",
+    "S": 100000001,
+    "truth": "No",
+    "exact_normalized_tail": "773712524553362705849341/154742504910672527825476864",
+    "exact_margin": "1668048917/3868562622766813195636921600"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.005,
+    "scenario": "near_multilevel_boundary",
+    "S": 100000001,
+    "truth": "No",
+    "exact_normalized_tail": "773789895805817992401151/154742504910672528614462591",
+    "exact_margin": "15474250491069865767609/30948500982134505722892518200"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.005,
+    "scenario": "clear_tail",
+    "S": 100000001,
+    "truth": "No",
+    "exact_normalized_tail": "773712524553362705849341/77371252455336269234216192",
+    "exact_margin": "9671406556917033991956501/1934281311383406730855404800"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.005,
+    "scenario": "gap_near",
+    "S": 100000001,
+    "truth": "Gap",
+    "exact_normalized_tail": "193234703007202344225623/38685626227668134238566144",
+    "exact_margin": "-4835703278458174180193/967140655691703355964153600"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.005,
+    "scenario": "gap_half",
+    "S": 100000001,
+    "truth": "Gap",
+    "exact_normalized_tail": "773712524553362705849341/309485009821345079367736576",
+    "exact_margin": "-19342813113834067274733547/7737125245533626984193414400"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.01,
+    "scenario": "uniform_null",
+    "S": 1000000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/100"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.01,
+    "scenario": "head90_null",
+    "S": 1000000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/100"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.01,
+    "scenario": "rare_null",
+    "S": 1000000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/100"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.01,
+    "scenario": "power_null",
+    "S": 1000000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/100"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.01,
+    "scenario": "uniform_boundary",
+    "S": 1010103,
+    "truth": "No",
+    "exact_normalized_tail": "10103/1010103",
+    "exact_margin": "197/101010300"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.01,
+    "scenario": "uniform_clear",
+    "S": 2000000,
+    "truth": "No",
+    "exact_normalized_tail": "1/2",
+    "exact_margin": "49/100"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.01,
+    "scenario": "exact_diffuse_boundary",
+    "S": 100000001,
+    "truth": "No",
+    "exact_normalized_tail": "773712524553362705849341/77371252455336269234216192",
+    "exact_margin": "337679477/1934281311383406730855404800"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.01,
+    "scenario": "near_multilevel_boundary",
+    "S": 100000001,
+    "truth": "No",
+    "exact_normalized_tail": "515859930537212148259901/51580834970224186122047549",
+    "exact_margin": "5158083497028703942551/5158083497022418612204754900"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.01,
+    "scenario": "clear_tail",
+    "S": 100000001,
+    "truth": "No",
+    "exact_normalized_tail": "386856262276681402424671/19342813113834067871809280",
+    "exact_margin": "967140655691703618532891/96714065569170339359046400"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.01,
+    "scenario": "gap_near",
+    "S": 100000001,
+    "truth": "Gap",
+    "exact_normalized_tail": "193234703007202344225623/19342813113834067443267328",
+    "exact_margin": "-4835703278458255176257/483570327845851686081683200"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.01,
+    "scenario": "gap_half",
+    "S": 100000001,
+    "truth": "Gap",
+    "exact_normalized_tail": "773712524553362705849341/154742504910672527825476864",
+    "exact_margin": "-19342813113834064310135691/3868562622766813195636921600"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.02,
+    "scenario": "uniform_null",
+    "S": 1000000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/50"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.02,
+    "scenario": "head90_null",
+    "S": 1000000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/50"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.02,
+    "scenario": "rare_null",
+    "S": 1000000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/50"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.02,
+    "scenario": "power_null",
+    "S": 1000000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/50"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.02,
+    "scenario": "uniform_boundary",
+    "S": 1020410,
+    "truth": "No",
+    "exact_normalized_tail": "2041/102041",
+    "exact_margin": "9/5102050"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.02,
+    "scenario": "uniform_clear",
+    "S": 2000000,
+    "truth": "No",
+    "exact_normalized_tail": "1/2",
+    "exact_margin": "12/25"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.02,
+    "scenario": "exact_diffuse_boundary",
+    "S": 100000001,
+    "truth": "No",
+    "exact_normalized_tail": "386856262276681402424671/19342813113834067871809280",
+    "exact_margin": "224942427/96714065569170339359046400"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.02,
+    "scenario": "near_multilevel_boundary",
+    "S": 100000001,
+    "truth": "No",
+    "exact_normalized_tail": "34012742672783214077581/1700467086930467548945677",
+    "exact_margin": "170046708693154933373/85023354346523377447283850"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.02,
+    "scenario": "clear_tail",
+    "S": 100000001,
+    "truth": "No",
+    "exact_normalized_tail": "773712524553362705849341/19342813113834066700836096",
+    "exact_margin": "9671406556917034295815477/483570327845851667520902400"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.02,
+    "scenario": "gap_near",
+    "S": 100000001,
+    "truth": "Gap",
+    "exact_normalized_tail": "193234703007202344225623/9671406556917032971876096",
+    "exact_margin": "-4835703278457880297473/241785163922925824296902400"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.02,
+    "scenario": "gap_half",
+    "S": 100000001,
+    "truth": "Gap",
+    "exact_normalized_tail": "773712524553362705849341/77371252455336269234216192",
+    "exact_margin": "-19342813113834066970874571/1934281311383406730855404800"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.05,
+    "scenario": "uniform_null",
+    "S": 1000000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/20"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.05,
+    "scenario": "head90_null",
+    "S": 1000000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/20"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.05,
+    "scenario": "rare_null",
+    "S": 1000000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/20"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.05,
+    "scenario": "power_null",
+    "S": 1000000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/20"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.05,
+    "scenario": "uniform_boundary",
+    "S": 1052633,
+    "truth": "No",
+    "exact_normalized_tail": "52633/1052633",
+    "exact_margin": "27/21052660"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.05,
+    "scenario": "uniform_clear",
+    "S": 2000000,
+    "truth": "No",
+    "exact_normalized_tail": "1/2",
+    "exact_margin": "9/20"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.05,
+    "scenario": "exact_diffuse_boundary",
+    "S": 100000001,
+    "truth": "No",
+    "exact_normalized_tail": "483570327845851777780839/9671406556917033694545664",
+    "exact_margin": "465267779/48357032784585168472728320"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.05,
+    "scenario": "near_multilevel_boundary",
+    "S": 100000001,
+    "truth": "No",
+    "exact_normalized_tail": "241809342439318172287757/4835703278458517166841373",
+    "exact_margin": "483570327846278913767/96714065569170343336827460"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.05,
+    "scenario": "clear_tail",
+    "S": 100000001,
+    "truth": "No",
+    "exact_normalized_tail": "161190109281950592593613/1611901092819505665240320",
+    "exact_margin": "80595054640975309331597/1611901092819505665240320"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.05,
+    "scenario": "gap_near",
+    "S": 100000001,
+    "truth": "Gap",
+    "exact_normalized_tail": "241543378759002955032029/4835703278458516460043520",
+    "exact_margin": "-241785163922867970147/4835703278458516460043520"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.05,
+    "scenario": "gap_half",
+    "S": 100000001,
+    "truth": "Gap",
+    "exact_normalized_tail": "241785163922925839390419/9671406556917033496097536",
+    "exact_margin": "-1208925819614629177072289/48357032784585167480487680"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.1,
+    "scenario": "uniform_null",
+    "S": 1000000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/10"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.1,
+    "scenario": "head90_null",
+    "S": 1000000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/10"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.1,
+    "scenario": "rare_null",
+    "S": 1000000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/10"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.1,
+    "scenario": "power_null",
+    "S": 1000000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/10"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.1,
+    "scenario": "uniform_boundary",
+    "S": 1111113,
+    "truth": "No",
+    "exact_normalized_tail": "111113/1111113",
+    "exact_margin": "17/11111130"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.1,
+    "scenario": "uniform_clear",
+    "S": 2000000,
+    "truth": "No",
+    "exact_normalized_tail": "1/2",
+    "exact_margin": "2/5"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.1,
+    "scenario": "exact_diffuse_boundary",
+    "S": 100000001,
+    "truth": "No",
+    "exact_normalized_tail": "161190109281950592593613/1611901092819505665240320",
+    "exact_margin": "26069581/1611901092819505665240320"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.1,
+    "scenario": "near_multilevel_boundary",
+    "S": 100000001,
+    "truth": "No",
+    "exact_normalized_tail": "967237369757272533348527/9671406556917032747417519",
+    "exact_margin": "967140655692586067751/96714065569170327474175190"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.1,
+    "scenario": "clear_tail",
+    "S": 100000001,
+    "truth": "No",
+    "exact_normalized_tail": "241785163922925839390419/1208925819614629138936576",
+    "exact_margin": "604462909807314627483807/6044629098073145694682880"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.1,
+    "scenario": "gap_near",
+    "S": 100000001,
+    "truth": "Gap",
+    "exact_normalized_tail": "241543378759002955032029/2417851639229258379066624",
+    "exact_margin": "-1208925819614414373167/12089258196146291895333120"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.1,
+    "scenario": "gap_half",
+    "S": 100000001,
+    "truth": "Gap",
+    "exact_normalized_tail": "483570327845851777780839/9671406556917033694545664",
+    "exact_margin": "-2417851639229257958368637/48357032784585168472728320"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.2,
+    "scenario": "uniform_null",
+    "S": 1000000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/5"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.2,
+    "scenario": "head90_null",
+    "S": 1000000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/5"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.2,
+    "scenario": "rare_null",
+    "S": 1000000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/5"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.2,
+    "scenario": "power_null",
+    "S": 1000000,
+    "truth": "Yes",
+    "exact_normalized_tail": "0",
+    "exact_margin": "-1/5"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.2,
+    "scenario": "uniform_boundary",
+    "S": 1250001,
+    "truth": "No",
+    "exact_normalized_tail": "250001/1250001",
+    "exact_margin": "4/6250005"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.2,
+    "scenario": "uniform_clear",
+    "S": 2000000,
+    "truth": "No",
+    "exact_normalized_tail": "1/2",
+    "exact_margin": "3/10"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.2,
+    "scenario": "exact_diffuse_boundary",
+    "S": 100000001,
+    "truth": "No",
+    "exact_normalized_tail": "241785163922925839390419/1208925819614629138936576",
+    "exact_margin": "58015519/6044629098073145694682880"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.2,
+    "scenario": "near_multilevel_boundary",
+    "S": 100000001,
+    "truth": "No",
+    "exact_normalized_tail": "138176767108181790478361/690814754065502369351961",
+    "exact_margin": "69081475406583039844/3454073770327511846759805"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.2,
+    "scenario": "clear_tail",
+    "S": 100000001,
+    "truth": "No",
+    "exact_normalized_tail": "241785163922925839390419/604462909807314551583488",
+    "exact_margin": "604462909807314645368607/3022314549036572757917440"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.2,
+    "scenario": "gap_near",
+    "S": 100000001,
+    "truth": "Gap",
+    "exact_normalized_tail": "17892102130296511520891/89550060712194752174848",
+    "exact_margin": "-89550060712194570393/447750303560973760874240"
+  },
+  {
+    "n": 1000000,
+    "epsilon": 0.2,
+    "scenario": "gap_half",
+    "S": 100000001,
+    "truth": "Gap",
+    "exact_normalized_tail": "161190109281950592593613/1611901092819505665240320",
+    "exact_margin": "-161190109281950540454451/1611901092819505665240320"
+  }
+]

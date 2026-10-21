@@ -1,0 +1,19 @@
+{
+  "n": 1000,
+  "epsilon": 0.1,
+  "alpha": 0.05,
+  "seed": 20261016,
+  "trials": 500,
+  "budgets": [
+    2530,
+    5059,
+    10537
+  ],
+  "paper_m": 84864619140,
+  "count_poisson_m": 10537,
+  "seconds": 9.014907627999492,
+  "parameter_selection": "预先固定 b_factor=1, max_degree=12, weight_cap=20；未按测试结果调优",
+  "bounded_method_note": "No/未拒绝；无统一漏报保证，failure_to_reject 不是已认证的 Yes",
+  "data": "/home/snowy/OSST/results/synthetic_results.csv",
+  "plot": "/home/snowy/OSST/results/synthetic_error_rates.png"
+}

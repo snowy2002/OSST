@@ -1,0 +1,23 @@
+{
+  "config": {
+    "b_factor": 0.5,
+    "max_degree": 12,
+    "weight_cap": 20.0
+  },
+  "iid_cells_before_methods": 1344,
+  "iid_simulated_samples": 672000,
+  "iid_method_decisions": 3360000,
+  "simultaneous_intervals_count": 5775,
+  "max_synthetic_support": 100000001,
+  "max_synthetic_expected_sample_size": 21598986,
+  "formal_false_positive_bound": "bounded_multiscale 和 bounded_single_scale: iid Poisson 模型下 <=.05（精确算术）；不保证缩小常数后的漏报。",
+  "baseline": "observed_count: Yes 时误报 0；certified_count 预算下 No 漏报<=.05。",
+  "source_pages": {
+    "nips": "https://archive.ics.uci.edu/dataset/164/bag+of+words",
+    "enron": "https://archive.ics.uci.edu/dataset/164/bag+of+words",
+    "movielens": "https://grouplens.org/datasets/movielens/1m/",
+    "retail": "https://archive.ics.uci.edu/dataset/352/online+retail",
+    "bci": "https://vegandevs.github.io/vegan/reference/BCI.html"
+  },
+  "completed_at_utc": "2026-10-16T08:17:07.534827+00:00"
+}

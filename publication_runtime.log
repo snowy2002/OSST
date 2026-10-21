@@ -1,0 +1,8 @@
+runtime n=1000 epsilon=0.001
+runtime n=1000 epsilon=0.1
+runtime n=10000 epsilon=0.001
+runtime n=10000 epsilon=0.1
+runtime n=100000 epsilon=0.001
+runtime n=100000 epsilon=0.1
+runtime n=1000000 epsilon=0.001
+runtime n=1000000 epsilon=0.1

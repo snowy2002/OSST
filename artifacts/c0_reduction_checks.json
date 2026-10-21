@@ -1,0 +1,92 @@
+{
+  "passed": true,
+  "precision_bits": 4096,
+  "C_exact": "1024 + 9/(4*10^219)",
+  "scope": "Scalar inequalities only. The analytic proof is in c0_reduction_proof.tex; no simulations are evidence for its universal claims.",
+  "checks": [
+    {
+      "name": "strictly positive increment",
+      "relation": ">",
+      "value": "[2.2500000000000000000000000000000000e-219 +/- 3e-258]",
+      "bound": "0"
+    },
+    {
+      "name": "small-n Chernoff exponent",
+      "relation": ">",
+      "value": "[20.757710017202415685304198256016618 +/- 4.83e-34]",
+      "bound": "[4.6051701859880913680359829093687284 +/- 1.53e-35]"
+    },
+    {
+      "name": "middle-n Chernoff exponent",
+      "relation": ">",
+      "value": "[112240.55133136230089087111246732385 +/- 4.34e-30]",
+      "bound": "[4.6051701859880913680359829093687284 +/- 1.53e-35]"
+    },
+    {
+      "name": "near-boundary Chernoff exponent",
+      "relation": ">",
+      "value": "[4.6297316584567709724984731895940283 +/- 9.31e-37]",
+      "bound": "[4.6051701859880913680359829093687284 +/- 1.53e-35]"
+    },
+    {
+      "name": "degree divided by L",
+      "relation": "<",
+      "value": "[1.4713637777028207875708525854528501 +/- 2.81e-35]",
+      "bound": "1.5000000000000000000000000000000000"
+    },
+    {
+      "name": "b upper bound at L=1024",
+      "relation": "<",
+      "value": "[3.4136967887007745656873153220663384e-440 +/- 1.81e-475]",
+      "bound": "1"
+    },
+    {
+      "name": "joint concentration bound at L=1024",
+      "relation": "<",
+      "value": "[2.9163815534700906068292196252293340e-306 +/- 2.13e-341]",
+      "bound": "[0.010000000000000000000000000000000000 +/- 3e-41]"
+    },
+    {
+      "name": "large expected occupancy count error",
+      "relation": "<",
+      "value": "[1.0417775844423750505637558966266902e-444 +/- 2.00e-479]",
+      "bound": "[0.010000000000000000000000000000000000 +/- 3e-41]"
+    },
+    {
+      "name": "heavy top-r case",
+      "relation": "<",
+      "value": "[2.0973551716785213445334935487766854e-13787 +/- 3.86e-13822]",
+      "bound": "[0.010000000000000000000000000000000000 +/- 3e-41]"
+    },
+    {
+      "name": "lower-bound n logarithm",
+      "relation": ">",
+      "value": "[1024.0000000000000000000000000000000 +/- 3e-36]",
+      "bound": "1023"
+    },
+    {
+      "name": "lower-bound n is in count branch",
+      "relation": "<",
+      "value": "[1024.0000000000000000000000000000000 +/- 3e-36]",
+      "bound": "1024"
+    },
+    {
+      "name": "Poisson mean excess for C=1024",
+      "relation": ">",
+      "value": "[0.00056454124463247808082996228983538652 +/- 4.16e-39]",
+      "bound": "0"
+    },
+    {
+      "name": "Poisson mean excess bound",
+      "relation": "<",
+      "value": "[0.00056454124463247808082996228983538652 +/- 4.16e-39]",
+      "bound": "[0.00097751710654936461388074291300097752 +/- 2.90e-39]"
+    },
+    {
+      "name": "counterexample error lower limit",
+      "relation": ">",
+      "value": "[0.062438935031728712762208278321912619 +/- 2.88e-37]",
+      "bound": "[0.010000000000000000000000000000000000 +/- 3e-41]"
+    }
+  ]
+}

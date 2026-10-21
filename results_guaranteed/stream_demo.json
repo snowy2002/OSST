@@ -1,0 +1,168 @@
+{
+  "plan": {
+    "algorithm": "certified_chebyshev_validation_count",
+    "n": 1000,
+    "epsilon": "1/10",
+    "delta": "1/20",
+    "config": {
+      "b_factor": 0.5,
+      "max_degree": 12,
+      "weight_cap": 20.0,
+      "validation_factor": 12.0,
+      "validation_gate": 0.75
+    },
+    "false_positive_bound": "1/20",
+    "false_negative_bound": "1/20",
+    "error_allocation": {
+      "polynomial_total": "1/20",
+      "early_accept_total": "1/40",
+      "final_count": "1/40"
+    },
+    "final_poisson_mean": 10640,
+    "final_count_tail_interval": "[0.0249152208589753320123472889712433170283661430102710633209319 +/- 4.56e-62]",
+    "baseline_poisson_mean": 10537,
+    "baseline_count_tail_interval": "[0.0496955354418322728555691220501371874194363926057351103463629 +/- 6.53e-63]",
+    "max_validation_samples": 2128,
+    "expected_sample_upper_bound": 12768,
+    "looks": [
+      {
+        "m": 633,
+        "scales": 8,
+        "degrees": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "validation_r": 532,
+        "accept_if_outside_at_most": 36,
+        "binomial_tail_interval": "[0.00581039602587551872337567358093982829145285723510834994673098 +/- 1.38e-64]"
+      },
+      {
+        "m": 1265,
+        "scales": 7,
+        "degrees": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "validation_r": 532,
+        "accept_if_outside_at_most": 36,
+        "binomial_tail_interval": "[0.00581039602587551872337567358093982829145285723510834994673098 +/- 1.38e-64]"
+      },
+      {
+        "m": 2530,
+        "scales": 6,
+        "degrees": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "validation_r": 532,
+        "accept_if_outside_at_most": 36,
+        "binomial_tail_interval": "[0.00581039602587551872337567358093982829145285723510834994673098 +/- 1.38e-64]"
+      },
+      {
+        "m": 5059,
+        "scales": 5,
+        "degrees": [
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "validation_r": 532,
+        "accept_if_outside_at_most": 36,
+        "binomial_tail_interval": "[0.00581039602587551872337567358093982829145285723510834994673098 +/- 1.38e-64]"
+      }
+    ],
+    "guarantee_scope": "固定 n/epsilon/delta、固定分布 iid、采样随机化独立、Yes/No 承诺；不需最小非零概率假设。",
+    "complexity": "最坏期望观测量 O((n+log(1/delta))/epsilon)，未证明最优阶的缩常数版本。",
+    "numeric_policy": "参数和尾界由 Arb 认证，多项式最终比较使用整数；无法认证则拒绝配置。"
+  },
+  "runs": [
+    {
+      "true_support": 1000,
+      "decision": "Yes",
+      "reason": "independent_validation",
+      "samples_consumed": 5632,
+      "training_samples": 5100,
+      "validation_samples": 532,
+      "training_poisson_mean": 5059,
+      "observed_training_categories": 991,
+      "n": 1000,
+      "epsilon": "1/10",
+      "delta": "1/20",
+      "history": [
+        {
+          "m": 633,
+          "M_training": 614,
+          "D": 446,
+          "F1": 313
+        },
+        {
+          "m": 1265,
+          "M_training": 1216,
+          "D": 679,
+          "F1": 329
+        },
+        {
+          "m": 2530,
+          "M_training": 2471,
+          "D": 899,
+          "F1": 206
+        },
+        {
+          "m": 5059,
+          "M_training": 5100,
+          "D": 991,
+          "F1": 45,
+          "validation_r": 532,
+          "outside": 3,
+          "cutoff": 36
+        }
+      ],
+      "guarantee_scope": "仅当预定参数和独立同分布采样设计成立；未完成时不保证给出二元结果。"
+    },
+    {
+      "true_support": 2000,
+      "decision": "No",
+      "reason": "certified_polynomial",
+      "samples_consumed": 1216,
+      "training_samples": 1216,
+      "validation_samples": 0,
+      "training_poisson_mean": 1265,
+      "observed_training_categories": 921,
+      "n": 1000,
+      "epsilon": "1/10",
+      "delta": "1/20",
+      "history": [
+        {
+          "m": 633,
+          "M_training": 614,
+          "D": 531,
+          "F1": 456
+        },
+        {
+          "m": 1265,
+          "M_training": 1216,
+          "D": 921,
+          "F1": 673
+        }
+      ],
+      "guarantee_scope": "仅当预定参数和独立同分布采样设计成立；未完成时不保证给出二元结果。"
+    }
+  ]
+}

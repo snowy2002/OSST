@@ -1,0 +1,121 @@
+{
+  "primary_method_cells": 4644,
+  "primary_method_trial_evaluations": 39720000,
+  "primary_independent_poisson_paths": 9130000,
+  "synthetic_base_cells": 645,
+  "natural_base_cells": 236,
+  "natural_datasets": 10,
+  "public_api_runs": 1428,
+  "audit_assertions": 43801,
+  "risk_summary": [
+    {
+      "suite": "synthetic",
+      "method": "C1024",
+      "cells": 645,
+      "promised_cells": 555,
+      "promised_trials": 5550000,
+      "errors": 0,
+      "worst_error": 0.0,
+      "worst_simultaneous_upper": 0.0010695271225751,
+      "worst_lower_failure_upper": 0.0010845391569885
+    },
+    {
+      "suite": "synthetic",
+      "method": "C1025",
+      "cells": 645,
+      "promised_cells": 555,
+      "promised_trials": 5550000,
+      "errors": 0,
+      "worst_error": 0.0,
+      "worst_simultaneous_upper": 0.0010695271225751,
+      "worst_lower_failure_upper": 0.0010845391569885
+    },
+    {
+      "suite": "synthetic",
+      "method": "C67108864",
+      "cells": 645,
+      "promised_cells": 555,
+      "promised_trials": 5550000,
+      "errors": 0,
+      "worst_error": 0.0,
+      "worst_simultaneous_upper": 0.0010695271225751,
+      "worst_lower_failure_upper": 0.0010845391569885
+    },
+    {
+      "suite": "synthetic",
+      "method": "count_chernoff_99",
+      "cells": 645,
+      "promised_cells": 555,
+      "promised_trials": 5550000,
+      "errors": 203,
+      "worst_error": 0.0013,
+      "worst_simultaneous_upper": 0.0034665179783957,
+      "worst_lower_failure_upper": 0.0034898689781929
+    },
+    {
+      "suite": "natural",
+      "method": "C1024",
+      "cells": 236,
+      "promised_cells": 176,
+      "promised_trials": 1760000,
+      "errors": 0,
+      "worst_error": 0.0,
+      "worst_simultaneous_upper": 0.0009547949559183,
+      "worst_lower_failure_upper": 0.0009841012983665
+    },
+    {
+      "suite": "natural",
+      "method": "C1025",
+      "cells": 236,
+      "promised_cells": 176,
+      "promised_trials": 1760000,
+      "errors": 0,
+      "worst_error": 0.0,
+      "worst_simultaneous_upper": 0.0009547949559183,
+      "worst_lower_failure_upper": 0.0009841012983665
+    },
+    {
+      "suite": "natural",
+      "method": "C67108864",
+      "cells": 236,
+      "promised_cells": 176,
+      "promised_trials": 1760000,
+      "errors": 0,
+      "worst_error": 0.0,
+      "worst_simultaneous_upper": 0.0009547949559183,
+      "worst_lower_failure_upper": 0.0009841012983665
+    },
+    {
+      "suite": "natural",
+      "method": "count_chernoff_99",
+      "cells": 236,
+      "promised_cells": 176,
+      "promised_trials": 1760000,
+      "errors": 0,
+      "worst_error": 0.0,
+      "worst_simultaneous_upper": 0.0009547949559183,
+      "worst_lower_failure_upper": 0.0009841012983665
+    }
+  ],
+  "new_to_count_ratio_min": 35.800221205129226,
+  "new_to_count_ratio_max": 135.1546096879573,
+  "original_to_new_ratio_min": 65459.25061932288,
+  "original_to_new_ratio_max": 65472.06243902439,
+  "natural_budget_sufficient_cells": 2,
+  "natural_budget_cells": 236,
+  "duplication_worst_error": 0.99825,
+  "group_stress_worst_error": 0.424,
+  "holdout_gap_cells": 5,
+  "holdout_worst_error": 0.0,
+  "finite_file_attempts": 400,
+  "finite_file_overflows": 52,
+  "limitations": [
+    "Working theorem assumption, not proof of universal correctness from simulation",
+    "Practical sizes never exercise the polynomial branch",
+    "C1024 also succeeds on this finite practical grid; integer minimality is not empirically established",
+    "Finite empirical distributions do not reveal undiscovered ecosystem species",
+    "Most original files do not meet C1025 budget",
+    "Compressed occupancy computation is not physical collection of the nominal sample budget",
+    "No new field survey, formal proof-assistant certificate, or venue acceptance guarantee"
+  ]
+}

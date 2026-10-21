@@ -1,0 +1,10 @@
+suite,method_cells,method_trial_evaluations,non_gap_method_cells
+fixed,25872,51744000,21168
+sequential,792,1584000,648
+adversarial_fixed,1080,10800000,1080
+adversarial_sequential,216,1080000,216
+stream,240,240000,240
+structure,432,432000,432
+group_holdout,432,864000,228
+sensitivity,696,3120000,696
+reference,32,32000,32

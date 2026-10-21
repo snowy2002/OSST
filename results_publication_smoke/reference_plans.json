@@ -1,0 +1,32 @@
+[
+  {
+    "n": 100,
+    "epsilon": 0.01,
+    "wang": {
+      "algorithm": "paper_section3_reference",
+      "n": 100,
+      "epsilon": "1/100",
+      "C0": 67108864,
+      "L0": 1024,
+      "L": "[5.60517018598809136803598290936872841520220297725754595207 +/- 5.28e-57]",
+      "m": 119726719749,
+      "a0": "[1.250000000000000000000000000000000000000000000000000000000e-5 +/- 8.96e-63]",
+      "b": "[2.99624755990388766258842395005302934913986917188235093281e-9 +/- 4.68e-66]",
+      "J": null,
+      "branch": "observed_count",
+      "precision_bits": 192,
+      "parameter_rounding_certified": true,
+      "scales": [],
+      "note": "严格保留第 3 节常数与分支；区间文本包含舍入误差，不是近似后当成精确值。"
+    },
+    "wang_repetitions": 23,
+    "wang_total_mean": 2753714554227,
+    "wang_amplified_bound": "1507858457/31381059609",
+    "fh_branch": "Proposition 2.2, n+1 tester, fixed count",
+    "fh_per_run_samples": 101000,
+    "fh_repetitions": 3,
+    "fh_total_samples": 303000,
+    "fh_amplified_bound": "7/250",
+    "fh_single_run_bound": "1/10 from the Markov argument in its proof"
+  }
+]

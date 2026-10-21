@@ -1,0 +1,38 @@
+{
+  "accessed_at_utc": "2026-10-19T08:27:09.724846+00:00",
+  "primary_sources": [
+    {
+      "title": "Optimal Support Size Testing",
+      "authors": [
+        "Qisheng Wang"
+      ],
+      "version": "supplied 2610.18723v1.pdf",
+      "url": "https://arxiv.org/abs/2610.18723",
+      "local_sha256": "ee5509c4fdc637773a37b28d7c080f275f6c2e129f3f122f848cd858556f2720",
+      "role": "Original construction and exact constants; supplied PDF is the source of record."
+    },
+    {
+      "title": "Testing Support Size More Efficiently Than Learning Histograms",
+      "authors": [
+        "Renato Ferreira Pinto Jr.",
+        "Nathaniel Harms"
+      ],
+      "version": "arXiv:2410.18915v4",
+      "url": "https://arxiv.org/pdf/2410.18915v4",
+      "local_sha256": "48d6235d3e76a199857c91db7c0ccc5f3157db6923806c3baa3109f38d7cca3d",
+      "role": "Direct same-problem comparator. Sections 2.1, 2.2, 3.5, 3.6 inspected. Small-epsilon count branch is used literally for practical n; tuned shape variants are separately labelled."
+    },
+    {
+      "title": "Support Estimation via Regularized and Weighted Chebyshev Approximations",
+      "authors": [
+        "I (Eli) Chien",
+        "Olgica Milenkovic"
+      ],
+      "version": "arXiv:1901.07506v2",
+      "url": "https://arxiv.org/pdf/1901.07506v2",
+      "local_sha256": "d6f8424f525a782750a49b0cb3095130f1615f1682af902a94bd2ce5ab7d62f5",
+      "role": "Related estimation model, not a direct distribution-free tester with an inherited risk guarantee."
+    }
+  ],
+  "redistribution": "External full papers are not included in the portable archive."
+}

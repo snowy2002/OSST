@@ -1,0 +1,12 @@
+{
+  "seconds": 204.3273685439999,
+  "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "arguments": {
+    "out": "/home/snowy/OSST/results_large",
+    "trials": 500,
+    "calibration_trials": 200,
+    "stress_trials": 200,
+    "seed": 20261017,
+    "phase": "all"
+  }
+}

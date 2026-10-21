@@ -1,0 +1,63 @@
+{
+  "frozen_at_utc": "2026-10-16T09:27:17.081823+00:00",
+  "config": {
+    "b_factor": 0.5,
+    "max_degree": 12,
+    "weight_cap": 20.0,
+    "validation_factor": 12.0,
+    "validation_gate": 0.75
+  },
+  "seed": 2026101902,
+  "trials_per_cell": 1000,
+  "sizes": [
+    1000,
+    10000,
+    100000,
+    1000000
+  ],
+  "epsilons": [
+    0.05,
+    0.1,
+    0.2
+  ],
+  "real_epsilons": [
+    0.01,
+    0.05,
+    0.1
+  ],
+  "methods": {
+    "count": "计数基线",
+    "count_validation": "计数＋独立验证",
+    "polynomial_count": "多项式＋计数收尾",
+    "hybrid": "完整组合方法"
+  },
+  "dependence_stress": {
+    "datasets": [
+      "retail"
+    ],
+    "epsilon": 0.1,
+    "block_sizes": [
+      1,
+      10,
+      100
+    ],
+    "trials": 200
+  },
+  "source_hashes": {
+    "guaranteed.py": "a7c26f702f9f6b0c43eb61b9c3907bc6b06a1a4ae5e2d86a3ed89708d19f59b9",
+    "guaranteed_experiments.py": "b01ca889efb1add53fef8cf80b6fe3da5288452de11ff49a191392287b9ecd6f",
+    "guaranteed_report.py": "d51f2cde10a671bf6930bbcad819235f292ff4900337c5cb63bdb7a7ac4ac022",
+    "test_guaranteed.py": "e0bb8405723bd99a50c9d647afa818b15702174c4860fbde8d33fef9aee53df2",
+    "paper_reference.py": "33a06321c3a6c5abbc541da5d55892e213ab91f3158787f5849118f353907ce8",
+    "support_size.py": "3a37f0f41db6f6e06fa832b39ae41f779dc4570a8a83a26e917a2d593028ff54",
+    "benchmark_core.py": "9ac85b03b0e5502b450da4d6dc9e8894eb6e2da36f7f9931f307e2efcb4926d8",
+    "requirements-lock.txt": "1584da9c11af5a4ce03ff892a3ba1fa7cd7498524e95394b26f8e769d6edcb2d"
+  },
+  "calibration_sha256": "e383bbf5b376250a7fe47cc6947fd6eaf8fba7887822bbe26a809c8b2c433cd1",
+  "data_summary_sha256": "12c733968c6b6186b0ebbf7bfd7a93a63e610cc1d113547a5cbb41816115046e",
+  "risk": "每个承诺情形下错误率<=.05；No 的提前 Yes 与最终 Yes 共分配 .05；Yes 的多项式 No 共分配 .05。",
+  "budget_metric": "累计训练泊松均值+实际验证条数。有限阶段且增量独立，平均值无偏估计期望实际观测成本；不是每次实际 M。",
+  "sampling": "多个阶段共享同一泊松过程的历史；独立验证；原始真实记录只用来定义有限经验分布。",
+  "simultaneous_intervals": "全部非 Gap 单元及四种方法，Bonferroni 95% 同时单侧 Clopper–Pearson 上界。",
+  "scope": "最坏期望 O(n/epsilon) 的组合算法，不是论文第 3 节的缩常数最优阶证明。"
+}

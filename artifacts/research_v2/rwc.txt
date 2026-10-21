@@ -1,0 +1,1755 @@
+arXiv:1901.07506v2  [stat.ML]  23 Jan 2019
+Support Estimation via Regularized and Weighted Chebyshev Approximations
+I (Eli) Chien 1 Olgica Milenkovic 1
+Abstract
+We introduce a new framework for estimating the
+support size of an unknown distribution which
+improves upon known approximation-based tech-
+niques. Our main contributions include describ-
+ing a rigorous new weighted Chebyshev polyno-
+mial approximation method and introducing reg-
+ularization terms into the problem formulation
+that provably improve the performance of state-
+of-the-art approximation-based approaches. In
+particular, we present both theoretical and com-
+puter simulation results that illustrate the utility
+and performance improvements of our method.
+The theoretical analysis relies on jointly optimiz-
+ing the bias and variance components of the risk,
+and combining new weighted minmax polyno-
+mial approximation techniques with discretized
+semi-inﬁnite programming solvers. Such a set-
+ting allows for casting the estimation problem
+as a linear program (LP) with a small num-
+ber of variables and constraints that may be
+solved as efﬁciently as the original Chebyshev
+approximation-based problem. The described ap-
+proach also applies to the support coverage and
+entropy estimation problems. Our newly devel-
+oped technique is tested on synthetic data and
+used to estimate the number of bacterial species
+in the human gut. On synthetic datasets, we ob-
+served up to ﬁve-fold improvements in the value
+of the worst-case risk. For the bioinformatics ap-
+plication, metagenomic data from the NIH Hu-
+man Gut and the American Gut Microbiome was
+combined and processed to obtain lists of bacte-
+rial taxonomies. These were subsequently used
+to compute the bacterial species histograms and
+estimate the number of bacterial species in the hu-
+man gut to roughly 2350, with the species being
+represented by trillions of cells.
+*Equal contribution 1Department of ECE, UIUC. Corre-
+spondence to: I (Eli) Chien <ichien3@illinois.edu>, Olgica
+Milenkovic <milenkov@illinois.edu>.
+1. Introduction
+Estimating the support size of a discrete distribu-
+tion is an important theoretical and data-driven prob-
+lem ( Fisher et al., 1943; Efron & Thisted, 1976). In
+computer science, this task frequently arises in large-
+scale database mining and network monitoring, where
+the objective is to estimate the types of database en-
+tries or IP addresses from a limited number of ob-
+servations ( Raskhodnikova et al., 2009; Bar-Y ossef et al.,
+2002; Charikar et al. , 2000). In machine learning, sup-
+port estimation is used to bound the number of clus-
+ters in clustering problems arising in semi-supervised or
+active learning ( Chien et al. , 2018; Ashtiani et al., 2016;
+Chien et al., 2019). In computational genomics and life
+sciences, estimating the support of a distribution is equiv -
+alent to estimating the number of species or cell types in
+a biosystem ( Nelson et al., 2012; Tennessen et al., 2012;
+Keinan & Clark, 2012).
+The most challenging practical support estimation is-
+sues arise in the “small sample set” regime, in which
+one has insufﬁciently many observations for a large-
+support distribution. In such a setting, classical
+maximum likelihood frequency techniques are known
+to perform poorly ( Orlitsky et al., 2003). It is for
+this parameter regime that the estimation problem
+has received signiﬁcant attention from both the the-
+oretical computer science and machine learning com-
+munity and researchers from various computational
+data processing ﬁeld ( Acharya et al., 2011; Paninski,
+2003; Bunge & Fitzpatrick , 1993; Bar-Y ossef et al., 2001;
+Charikar et al. , 2000; Batu et al. , 2000)).
+1.1. Prior Work
+Approaches to distribution estimation in the small
+sample regime may be roughly grouped into two
+categories ( V aliant & V aliant, 2013; Wu & Y ang, 2019;
+Acharya et al., 2017; Wu & Y ang, 2018). The ﬁrst
+line of work ( V aliant & V aliant, 2013; Acharya et al. ,
+2017) makes use of the maximum likelihood principle.
+While ( Acharya et al., 2017) constructs estimators based
+on the Proﬁle Maximum Likelihood (PML) ( Orlitsky et al.,
+2004), (V aliant & V aliant, 2013) focuses on Sequence Max-
+imum Likelihood (SML) estimators ( Aldrich et al., 1997).
+Support Estimation via Regularized and Weighted Chebyshev Approximations
+The second line of work formulates the estimation problem
+as an approximation problem ( Wu & Y ang, 2019; 2018).
+In particular, ( Wu & Y ang, 2019) used shifted and scaled
+Chebyshev polynomials of the ﬁrst kind to construct efﬁ-
+cient estimators.
+The main advantage of ML-based approaches is that they
+easily generalize to many other estimation tasks. For
+example, ( Acharya et al., 2017) showed that one and the
+same method may be used for entropy estimation, sup-
+port coverage and distance to uniformity analysis. On
+the other hand, approximation-based methods tend to be
+more problem speciﬁc, as is the case for support cov-
+erage estimation ( Orlitsky et al., 2016) and entropy es-
+timation ( Wu & Y ang, 2016). The main advantage of
+approximation-based techniques is their computational efﬁ-
+ciency, as they reduce to thresholding empirical counts. In
+contrast, ML-based methods usually require solving large
+optimization problems on the datasets or on the data his-
+tograms. To illustrate the point, in ( Wu & Y ang, 2019),
+the authors estimated the number of distinct words in the
+New Y ork Times Corpusfrom 1987 until 2007. This dataset
+contains roughly 109 words, out of which 2 × 106 are dis-
+tinct. Their estimator took less then 15 minutes to complete
+the task, while the ML-based estimator ( V aliant & V aliant,
+2013) took over 100 hours for one single year of data.
+Furthermore, within the reduced computational time win-
+dow, the performance of the approximation-based estima-
+tor showed similar convergence rates as ( V aliant & V aliant,
+2013).
+1.2. Our contributions
+In order to be guaranteed computational efﬁciency for the
+support estimation problem, we adopt an approximation
+approach ﬁrst put forward in ( Wu & Y ang, 2019). When
+the loss function is the normalized square loss, we prove
+that our estimator has strictly better worst case risk bound s
+compared to the estimators in ( Wu & Y ang, 2019)1. Also,
+as is the case for ( Wu & Y ang, 2019), our method scales
+with large sample sizes. The main idea behind our ap-
+proach is to formulate the support estimation problem as a
+regularized and weighted Chebyshev approximation prob-
+lem (Mason & Handscomb , 2002), in which the regularizer
+is derived from the variance of the estimator. Hence, intro-
+ducing the regularization term allows for joint optimizati on
+of the bias and the variance. This is in contrast with all cur-
+rently known approaches that focus on minimizing the bias
+only, and subsequently choose the parameters of the estima-
+tors to account for the variance. We solve the regularized
+1Although the estimator in ( Wu & Yang, 2019) has order-
+optimal minmax risk, improvements in the risk exponent are p os-
+sible, as demonstrated in this work. As we show on a number
+of examples, these improvements are of signiﬁcant practica l rele-
+vance.
+weighted Chebyshev approximation problem via its dual
+formulation, which takes the form of a semi-inﬁnite pro-
+gram (SIP) ( L´ opez & Still, 2007). By making use of non-
+trivial results in weighted polynomial approximation the-
+ory ( Lubinsky, 2007), we demonstrate that the underlying
+SIP can be solved consistently and efﬁciently through dis-
+cretization, resulting in a small Linear Program (LP). In-
+terestingly, despite the fact that we also use an LP solver
+as was done in one of the best performing ML-based ap-
+proaches (V aliant & V aliant, 2013), our LP invokes only a
+ﬁxed small number of variables and constraints. In con-
+trast, the LP problem in ( V aliant & V aliant, 2013) uses the
+entire histogram. From a practical point of view, we also
+show through extensive simulations that our method indeed
+outperforms the estimator proposed in ( Wu & Y ang, 2019)
+with comparable running times.
+Another advantage of our method is that it general-
+izes to other distribution-related estimation tasks such a s
+support coverage ( Orlitsky et al., 2016), entropy estima-
+tion ( Wu & Y ang, 2016; Jiao et al. , 2015) and the distinct
+elements problem ( Wu & Y ang, 2018). This is due to the
+fact that our weighted version of the problem accounts for
+various scaling effects in the polynomial approximation
+framework. Due to the space limitations, we defer the anal-
+ysis of these problems to a companion paper.
+1.3. Outline
+The paper is organized as follows. In Section 2, we in-
+troduce the relevant notation and the support estimation
+problem, and describe a class of estimators termed poly-
+nomial class estimators . The same section also provides a
+brief review of relevant results from ( Wu & Y ang, 2019).
+In Section 3, we outline the bias analysis for polyno-
+mial class estimators and highlight the differences betwee n
+our method and the method in ( Wu & Y ang, 2019), and
+the additional technical challenges one needs to overcome
+when dealing with weighted minmax polynomial approx-
+imations. The same section contains our worst-case risk
+analysis. Section 4 is devoted to experimental veriﬁ-
+cations and testing, both on synthetically generated data
+and metagenomic data samples from the NIH Human Mi-
+crobiome (Peterson et al., 2009) and American Gut Micro-
+biome project ( http://americangut.org/publications/).
+2. Problem formulation and polynomial class
+estimators
+Let P = ( p1, p2, . . .) be a discrete distribution over some
+countable alphabet and let X1, . . . , Xn be i.i.d. samples
+drawn according to the distribution P . The problem of in-
+terest is to estimate the support size, deﬁned as S(P ) =∑
+i 1{pi>0}. Henceforth, we use S instead of S(P ) to
+avoid notational clutter. We make the assumption that
+Support Estimation via Regularized and Weighted Chebyshev Approximations
+the minimum non-zero probability of the distribution P is
+greater than 1k , for some k ∈ R+, i.e., inf{p ∈ P | p >
+0} ≥ 1k . Furthermore, we let Dk denote the space of all
+probability distribution satisfying inf{p ∈ P | p > 0} ≥ 1k .
+Clearly, S ≤ k, ∀P ∈ Dk. A sufﬁcient statistics for
+X1, . . . , Xn is the empirical distribution (i.e., histogram)
+N = ( N1, N2, . . .), where Ni = ∑nj=1 1{Xj =i} and 1A
+stands for the indicator function of the event A.
+The focal point of our analysis is R∗(k, n), the minmax risk
+under normalized squared loss, deﬁned as
+R∗(k, n) = inf
+ˆS
+sup
+P ∈Dk
+E
+
+
+( ˆS(N ) − S
+k
+)2
+ . (1)
+We seek a support estimator ˆS that minimizes
+sup
+P ∈Dk
+E
+
+
+( ˆS(N ) − S
+k
+)2
+ =
+sup
+P ∈Dk
+[
+E2
+( ˆS(N ) − S
+k
+)
++ var
+( ˆS(N ) − S
+k
+)]
+.
+The ﬁrst term within the supremum captures the expected
+bias of the estimator ˆS. The second term represents the
+variance of the estimator ˆS. Hence, “good” estimators are
+required to balance out the worst-case contributions of the
+bias and variance.
+The Chebyshev polynomial of the ﬁrst kind of degree L is
+deﬁned as TL(x) = cos( L arccos(x)) = zL+z−L2 , where
+z is the solution of the quadratic equation z + z−1 = 2 x.
+From the deﬁnition, it is easy to see that the polynomial
+TL is bounded in the interval [−1, 1]. Chebyshev polyno-
+mials may be scaled and shifted to lie in an interval [l, r]
+not necessarily equal to [−1, 1],
+RL(x) = −
+TL( 2x−r−lr−l )
+TL( −r−lr−l ) ≜
+L∑
+j=0
+˜ajxj .
+Clearly, RL(0) = −1, and ˜a0 = −1. The coefﬁcients in
+the above expansion may be found according to
+˜aj = R(j)L (0)j! . (2)
+The estimator used in ( Wu & Y ang, 2019) takes the form
+˜S =∑
+i
+˜gL(Ni),
+where
+˜gL(j) =
+{
+˜ajj! + 1, if j ≤ L,
+1, otherwise, (3)
+L ≜ ⌊c0 log k⌋, [l, r] ≜
+[ n
+k , c1 log k
+]
+. (4)
+The estimator ˜S is order-optimal in the exponent under the
+risk ( 1). Nevertheless, the estimator ˜S was constructed
+to minimize only the bias term for a given pair of param-
+eters (c0, c1) while ignoring a multiplicative exponential
+term. The parameters (c0, c1) were subsequently set to
+c0 ≈ 0.558 and c1 = 0 .5 in order to ensure provably good
+balance between the bias and variance of the estimator.
+Theorem 2.1 (Theorem 1 in ( Wu & Y ang, 2019)). For all
+k, n ≥ 2, the optimal achievable risk 1 is bounded as
+R∗(k, n) = exp( −Θ(
+√
+n log k
+k ∨ nk ∨ 1)) (5)
+In addition, if klog k ≪ n ≪ k log k, as k → ∞,
+exp(−(3.844 + o(1))
+√
+n log k
+k ) ≤ R∗(k, n)
+≤ exp(−(1.579 + o(1))
+√
+n log k
+k ).
+Note ˜S attains the upper bound, which has half the negative
+exponent value of the lower bound. Consequently, ˜S may
+be improved by jointly optimizing the bias and variance
+term in the squared loss. This is accomplished by our pro-
+posed estimator that directly operates on the squared loss.
+To this end, we deﬁne an extended class of polynomial
+based estimators as follows. Given a parameter L ∈ N,
+we say that an estimator ˆS is a polynomial class estimator
+with parameter L (i.e., a P oly(L) estimator) if it takes the
+form ˆS =∑i gL(Ni), where gL is deﬁned as
+gL(j) =
+{
+ajj! + 1, if j ≤ L
+1, otherwise. (6)
+Here, aj ∈ R, and a0 = −1, since this choice ensures that
+gL(0) = 0 . One can associate an estimator S with its corre-
+sponding coefﬁcients a, and deﬁne a family of estimators
+P oly(L) =
+{
+a ∈ RL+1|a0 = −1
+}
+.
+Clearly, ˜S ∈ P oly(L), with corresponding coefﬁcients
+˜a = arg min
+a∈P oly(L)
+sup
+λ∈[l= nk ,r=c1 log k]
+|
+L∑
+l=0
+alλli|. (7)
+Next, we show that the original minmax problem can be
+rewritten as a regularized exponentially weighted Cheby-
+shev approximation problem. In order to solve this problem
+efﬁciently, one ﬁrst needs to identify an adequate choice for
+the interval [l, r], which can be accomplished using sophis-
+ticated techniques from exponentially weighted Chebyshev
+approximations ( Lubinsky, 2007). Once a proper interval
+is identiﬁed, it is possible to efﬁciently determine the bes t
+coefﬁcients a in the class P oly(L).
+Support Estimation via Regularized and Weighted Chebyshev Approximations
+3. Estimator analysis
+In order to jointly optimize the bias and variance term in the
+squared loss, we start by analyzing supP ∈Dk E
+(
+S− ˆS
+k
+)2
+di-
+rectly. Classical Poissonization arguments lead to
+E
+(
+S − ˆS
+k
+)2
+= 1k2
+{ ∑
+i:λi>0
+( L∑
+l=0
+e−λi a2l λlil!
+)
++
+∑
+i⁄=j:λi λj >0
+(
+e−λiPL(λi, a)
+)(
+e−λj PL(λj, a)
+)}
+,
+where PL(λ, a) ≜∑Ll=0 alλl. Taking the supremum over
+Dk we can bound the risk as
+≤ sup
+λ:λi∈[ nk ,n]
+1
+k2
+{ ∑
+i:λi>0
+( L∑
+l=0
+e−λia2l λlil!
+)
++
+∑
+i⁄=j:λiλj >0
+(
+e−λiPL(λi, a)
+)(
+e−λj PL(λj , a)
+)}
+≤ sup
+λ∈[ nk ,n]
+{ 1
+k
+( L∑
+l=0
+e−λa2l λll!
+)
++
+(
+e−λPL(λ, a)
+)2}
+.
+In the above inequality, we used the fact that S ≤ k and(∑L
+l=0 e−λa2l λll!
+)
+> 0, for all λ > 0. Hence, the opti-
+mization problem at hand reads as
+inf
+a∈P oly(L)
+sup
+λ∈[ nk ,n]
+{ 1
+k
+( L∑
+l=0
+e−λa2l λll!
+)
++
+(
+e−λPL(λ, a)
+)2}
+.
+(8)
+Problem ( 8) represents a regularized weighted Chebyshev
+approximation problem. If we ignore the ﬁrst term in ( 8),
+the optimization problem becomes
+inf
+a∈P oly(L)
+sup
+λ∈[ nk ,n]
+(
+e−λPL(λ, a)
+)2
+.
+The term e−λPL(λ, a) corresponds to the bias of the esti-
+mator. It is straightforward to see that the optimal choice
+of a for the above problem is a solution of
+inf
+a∈P oly(L)
+sup
+λ∈[ nk ,n]
+⏐⏐⏐⏐e−λPL(λ, a)⏐⏐⏐⏐. (9)
+Problem (9) is an exponential weighted Chebyshev approx-
+imation problem ( Mason & Handscomb, 2002).
+The ﬁrst term 1k
+(∑L
+l=0 e−λa2l λll!
+)
+, which corresponds to
+the variance, may be written as
+1
+k
+( L∑
+l=0
+e−λa2l λll!
+)
+= aT M(λ)a ≜ ||a||2M(λ)
+M(λ) ≜ e−λ
+k Diag(λ00!, λ11!, ..., λLL!).
+Clearly, ||.||M(λ) is a valid norm, and consequently, the ﬁrst
+term in ( 8) can be viewed as a regularizer.
+Note that both problems ( 7) and ( 9) aim to minimize the
+bias term. However, simple algebra reveals that
+sup
+P ∈Dk
+1
+k |E(S − ˆS(N (P,n)))| ≤ supλ∈[ nk ,n] |e−λPL(λ, a)| (10)
+≤ e− nk sup
+λ∈[ nk ,n]
+|PL(λ, a)|. (11)
+where (10) is equivalent to ( 9), while ( 11) resembles prob-
+lem ( 7), except for a different optimization interval used
+within the supremum. Optimizing ( 10) instead of ( 11)
+should give us a smaller bias as the exponential weight
+is inherent to the formulation. Note that the authors
+of (Wu & Y ang, 2019) choose a shorter interval in ( 7) in or-
+der to decrease the contribution of the variance to the loss.
+The intuitive justiﬁcation behind their reformulation was
+that for c0 < c 1, Ni ≤ L = ⌊c0 log k⌋ implies λi = npi ≤
+c1 log k with high probability ( Wu & Y ang, 2019). Never-
+theless, a rigorous proof that the optimal value of the ar-
+gument λ lies in the interval [ nk , c1 log k] was not provided,
+and the chosen parameter values (c0, c1) ≈ (0.558, 0.5) did
+not end up satisfying the constraint c0 < c 1. Furthermore,
+the interval [ nk , c1 log(k)] shrinks as n increases, so that
+when n > c 1k log k the problem ( 7) becomes ill-deﬁned.
+For allowed parameter values, the modiﬁed bound in ( 11)
+was minimized with respect to the coefﬁcients a, using the
+minmax property of Chebyshev polynomials (Timan, 2014;
+Mason & Handscomb , 2002), resulting in ˜a.
+Let us now turn back to the solution of the minmax prob-
+lem ( 8), denoted by a⋆. Clearly, using a⋆ instead of ˜a is
+guaranteed to reduce the risk since a⋆ jointly minimizes
+both contributing terms.
+Proposition 3.1. Let ˆS⋆ be the estimator associate with
+the coefﬁcients a⋆ optimizing (8). Whenever klog k ≪ n ≪
+k log k, and k → ∞ , the estimator ˆS⋆ has a smaller worst-
+case risk bound than ˜S.
+Proof. The proof follows directly from the fact that the
+upper bound of Theorem 2.1 is derived by upper bound-
+ing (8), plugging ˜a into the expression, and replacing e−λ
+by e− nk .
+3.1. Solving problem (8)
+To directly solve the optimization problem of in-
+terest, we turn to weighted Chebyshev approxima-
+tions ( Mason & Handscomb , 2002) and semi-inﬁnite pro-
+graming. Solving for a⋆ directly appears to be difﬁcult, so
+we instead resort to numerically solving the dual of prob-
+lem ( 8) and proving that the numerical solution is asymp-
+totically consistent.
+Support Estimation via Regularized and Weighted Chebyshev Approximations
+The dual problem of ( 8) is of the form
+((Boyd & V andenberghe, 2004), Chapter 6.1)
+min
+t,a1,...,aL
+t subject to
+{ 1
+k
+( L∑
+l=0
+e−λa2l λll!
+)
++
+(
+e−λPL(λ, a)
+)2}
+≤ t
+∀λ ∈ [ nk , n], with a0 = −1.
+(12)
+Note that ( 12) is a semi-inﬁnite programming problem.
+There are many algorithms that can be used to numerically
+solve (12), such as the discretization method, and the cen-
+tral cutting plane, KKT reduction and SQP reduction meth-
+ods ( L´ opez & Still, 2007; Reemtsen & G¨ orner, 1998). For
+simplicity, we focus on the discretization method. For this
+purpose, we ﬁrst form a grid of the interval [ nk , n] involving
+s points, denoted by Grid ([ nk , n], s). Problem ( 12) may be
+viewed as an LP with inﬁnitely many quadratic constraints,
+which is not solvable. Hence, instead of addressing ( 12),
+we focus on solving the relaxed problem
+min
+t,a1,...,aL
+t subject to
+{ 1
+k
+( L∑
+l=0
+e−λa2l λll!
+)
++
+(
+e−λPL(λ, a)
+)2}
+≤ t
+∀λ ∈ Grid([ nk , n], s), with a0 = −1.
+(13)
+As will be discussed in greater detail in Section 3.2, the so-
+lution of the relaxed problem is asymptotically consistent
+with the solution of the original problem (i.e., as s goes
+to inﬁnity, the optimal values of the objectives of the orig-
+inal and relaxed problem are equal). Problem ( 13) is an
+LP with a ﬁnite number of quadratic constraints that may
+be solved using standard optimization tools. Unfortunatel y,
+the number of constraints scales with the length of the grid
+interval, which in the case of interest is linear in n. This
+is an undesired feature of the approach, but it may be mit-
+igated through the following analysis which demonstrates
+that a optimal solution of the problem may be found over an
+interval of length proportional to the signiﬁcantly smalle r
+value log k, where klog k ≲ n is the fundamental bound for
+support estimation.
+Lemma 3.2. For any a ∈ P oly(L), and L = ⌊c0 log k⌋,
+sup
+λ∈[ nk ,n]
+{ 1
+k
+( L∑
+l=0
+e−λa2l λll!
+)
++
+(
+e−λPL(λ, a)
+)2}
+= sup
+λ∈[ nk , π2 L+ nk ]
+{ 1
+k
+( L∑
+l=0
+e−λa2l λll!
+)
++
+(
+e−λPL(λ, a)
+)2}
+.
+To prove lemma 3.2, we will ﬁrst prove the following sim-
+pler result pertaining to the bias only.
+Lemma 3.3. Let a ∈ P oly(L). Then we have
+sup
+λ∈[ nk ,n]
+|e−λPL(λ, a)| = sup
+λ∈[ nk , π2 L+ nk ]
+|e−λPL(λ, a)|
+Proof. To prove Lemma 3.3, we make use the follow-
+ing theorem (Theorem 6.2 in ( Lubinsky, 2007)) from ap-
+proximation theory. The result was originally proved
+in (Mhaskar & Saff, 1984; 1985) and ( Rakhmanov, 1984).
+Theorem 3.4 (Theorem 6.2 from ( Lubinsky, 2007)). Let
+W (x) = exp( −Q(x)) be a weight function, where Q :
+R ↦→ [0, ∞) is even, convex, diverging for x → ∞ , and
+such that
+0 = Q(0) < Q(x), ∀x ⁄= 0.
+Then, for any polynomial P (x) of degree ≤ L, not identical
+to zero, one has
+sup
+x∈R
+|P (x)W (x)| = sup
+x∈[−ML,ML]
+|P (x)W (x)|,
+sup
+x∈R\[−ML,ML]
+|P (x)W (x)| < sup
+x∈[−ML,ML]
+|P (x)W (x)|.
+Here, ML stands for the Mhaskar-Rakhmanov-Saff num-
+ber, which is the smallest positive root of the integral equa -
+tion
+L = 2π∫ 10 MLtQ′(MLt)√1 − t2 dt.
+Recall that in problem ( 9), the relevant weight function
+equals W (λ) = exp( −λ), and the interval of interest is
+λ ∈ [ nk , n]. Let x = λ − nk . Then, problem ( 9) reduces to
+inf
+a∈P oly(L)
+sup
+x∈[0,n− nk ]
+e− nk |e−xPL(x + nk , a)|.
+Note that the constant factor e− nk may be ignored. We ﬁrst
+turn our attention to the supremum, and set P (x) = PL(x+
+n
+k , a), so that the inner maximization problem becomes
+sup
+x∈[0,n− nk ]
+|e−xP (x)|
+In our setting, Q(x) = x, and we only consider x ≥ 0.
+Clearly, the conditions of Theorem 3.4 hold and lead to the
+following observations
+sup
+x∈[0,∞)
+|e−xP (x)| = sup
+x∈[0,ML]
+|e−xP (x)|,
+sup
+x∈(ML,∞)
+|e−xP (x)| < sup
+x∈[0,ML]
+|e−xP (x)|.
+These results imply
+sup
+x∈[0,n− nk ]
+|e−xP (x)| = sup
+x∈[0,ML]
+|e−xP (x)|,
+sup
+x∈(ML,n− nk ]
+|e−xP (x)| < sup
+x∈[0,ML]
+|e−xP (x)|.
+Support Estimation via Regularized and Weighted Chebyshev Approximations
+We can therefore conclude that
+sup
+λ∈[ nk ,n]
+|e−λPL(λ, a)| = sup
+λ∈[ nk ,ML+ nk ]
+|e−λPL(λ, a)|.
+It is easy to show that for W (x) = exp( −|x|), one has
+ML = π2 L. This completes the proof.
+Remark 3.1. We refer the interested reader to the survey
+paper ( Lubinsky, 2007) for a rather complicated proof of
+Theorem 3.4. The proof may be modiﬁed so as to apply
+to non-negative reals only. For completeness, we also pro-
+vide a weaker version of Theorem 3.4 with a signiﬁcantly
+simpler proof in the Appendix. The main idea behind both
+proofs is to show that the “tails” of the polynomials of inter-
+est are dominate by an exponentially decaying weight. The
+interval in Theorem 3.4 is optimal.
+To prove Lemma 3.2, let
+f (λ) = 1k( L∑l=0 e−λa2l λll!) +(e−λPL(λ, a))2
+= 1k f1(λ) + (f2(λ))2.
+It is simple to see that
+d
+dλ f1(λ) = e−λ
+L∑
+l=0
+(l − λ)l!a2l λl−1,
+so that when λ > L , one has ddλ f1(λ) < 0. Hence, f1 is
+monotonically decreasing for λ > L . Furthermore, |f2(λ)|
+attains its maximum at λ∗ if and only if f2(λ)2 attains its
+maximum at λ∗, which follows since x2 is strictly convex.
+From Lemma 3.3 we know that all arguments that maxi-
+mize f2(λ)2 are < π2 L + nk . And, since π2 > 1, all the
+arguments that maximize f (λ) are < π2 L + nk .
+Consequently, the optimization problem of interest equals
+min
+t,a1,...,aL
+t subject to
+{ 1
+k
+( L∑
+l=0
+e−λa2l λll!
+)
++
+(
+e−λPL(λ, a)
+)2}
+≤ t
+∀λ ∈ Grid([ nk , π2 L + nk ], s), with a0 = −1.
+(14)
+Since L = ⌊c0 log k⌋, the optimization interval in ( 14) is
+proportional to log k.
+Remark 3.2. Note that Lemma 3.3 allows for reducing
+the length of the optimization interval from (1 − 1k )n toπ
+2 L. From ( Wu & Y ang, 2019), we also know that when
+n ≲ klog k it is impossible to have a risk as small as
+o(1). Hence, when n /greaterorsimilar klog k , the length of the inter-
+val in the original problem is Ω( klog k ), while the length
+guaranteed by Lemma 3.3 is Θ(log k). Moreover, unlike
+in (Wu & Y ang, 2019), both our optimization problem and
+choice of interval are well-deﬁned for all parameter values .
+Remark 3.3. Problem ( 9) may also be solved efﬁciently
+using Remez’s exchange algorithm ( Remez, 1934; Fraser,
+1965), by modifying the interval within the supremum ac-
+cording to Lemma 3.3. Remez’s exchange algorithm was
+also used in (Wu & Y ang, 2016) for entropy estimation, but
+without exponential weighting.
+3.2. Convergence analysis of the discretization method
+It appears intuitive to assume that as s grows, the solution
+of the relaxed semi-inﬁnite program approaches the opti-
+mal solution of the original problem ( 12). This intuition
+can be rigorously justiﬁed for the case of objective func-
+tions and constraints that are “well-behaved”. The author
+established in ( Reemtsen, 1991) convergence guarantees
+for the discretization method for general semi-inﬁnite pro -
+grams.
+To describe their result, we introduce the following termi-
+nology. Let Π ⊂ RL+1 be a closed set of parameters, and
+let f be a continuous functional on Π. Assume that B is a
+compact set in R and that g : Π ↦→ C (B) is a continuous
+mapping from Π into C(B), where C(B) is the space of
+continuous functions over B equipped with the supremum
+norm || · ||∞. For each D ⊂ B, let
+M (D) = {c ∈ Π| g(c, x) ≤ 0, x ∈ D}
+denote the set of feasible points for the optimization prob-
+lem
+Minimize f (c) over all c ∈ M (D).
+Assuming that M (D) ⁄= ∅, let
+µ(D) = inf {f (c)|c ∈ M (D)},
+and deﬁne the level set
+Level(c0, D) = {c ∈ Π| f (c) ≤ f (c0)} ∩ M (D).
+We also make the following two assumptions:
+Assumption 3.5 (Fine grid) . Let N0 = N ∪ { 0}. There
+exists a sequence {Bi} of compact subsets of B with Bi ⊂
+Bi+1, i ∈ N0, for which limi→∞ h(Bi, B) = 0 , such that
+h(Bi, B) = sup
+x∈B
+inf
+y∈Bi
+||x − y||∞.
+Assumption 3.6 (Bounded level set) . M (B) is nonempty,
+and there exists a c0 ∈ M (B) such that the level set
+Level(c0, B0) is bounded and hence compact in RL+1.
+Theorem 3.7 (Convergence of the discretization method,
+Theorem 2.1 in (Reemtsen, 1991)). Under assumptions 3.5
+Support Estimation via Regularized and Weighted Chebyshev Approximations
+and 3.6, the solution of the discretized problem converges
+to the optimal solution. More formally, we have
+µ(Bi) ≤ µ(Bi+1) ≤ µ(B), ∀t ∈ N0
+lim
+i→∞
+µ(Bi) = µ(B).
+If c∗ is the unique optimal solution of the original problem,
+and c∗i is the optimal solution of the discretization relax-
+ation with grid Bi, then
+lim
+i→∞
+||c∗ − c∗i ||2 = 0.
+It is straightforward to see that our chosen grid is arbitrar y
+ﬁne. Hence, we only need to prove that there exists a c0
+such that the level set Level (c0, D) is bounded.
+Let c = ( a; t) and note that in our setting, f (c) = t.
+Rewrite g(c, λ) in matrix form as
+g(a, λ) = aT M(λ)a + aT ΛΛT a,
+where
+Λ ≜ e−λ(λ0, λ1, ..., λL)T .
+Obviously, ΛΛT is positive semi-deﬁnite and the previ-
+ously introduced M(λ) is positive deﬁnite for all λ > 0.
+Since the constraints on g in (14) are positive deﬁnite with
+respect to a, g is coercive in a. Furthermore, for any given
+t, the set of feasible coefﬁcients a is bounded. Therefore,
+given a t0, the level set Level (c0, B0) is bounded. This
+ensures that Assumption 3.6 holds for our problem.
+Remark 3.4. The author ( Still, 2001) provided the conver-
+gence rate of the discretization method, given that it con-
+verges. He showed that under some regularity conditions,
+the convergence speed is O(d2), where d = h(Bi, B), for
+grid Bi. More speciﬁcally, we have µ(B) − µ(Bi) =
+O(d2). A discussion of other methods that may be used
+to solve the SIP ( 14) can be found in ( L´ opez & Still, 2007;
+Reemtsen & G¨ orner, 1998).
+4. Simulations
+Next, we compare our proposed method, referred to as
+the Regularized Weighted Chebyshev (RWC) estimator,
+with the Good-Turing (GT) estimator and the Wu-Y ang
+(WY) estimator proposed in ( Wu & Y ang, 2019). We
+do not compare our method with the estimator described
+in (V aliant & V aliant, 2013) due to the high computational
+complexity of the latter.
+In the ﬁrst experiment, we evaluate the maximum risk of
+the three listed estimators over six different distributio ns:
+the uniform distribution with pi = 1k , the Zipf distributions
+with pi ∝ i−α, and α equal to 1.5, 1, 0.5 or 0.25, and the
+Benford distribution with pi ∝ log(i + 1) − log(i).
+We choose the support sizes for the Zipf and Benford dis-
+tribution so that the minimum non-zero probability mass is
+roughly 10−6. We ran the estimator 100 times to calculate
+the risk. For both approximation-based estimators, we set
+c0 to either 0.45 or 0.558. With our proposed method, we
+solved ( 14) on a grid with s = 1000 points. For the esti-
+mator described in ( Wu & Y ang, 2019), we set c1 = 0 .5.
+The GT method used for comparison ﬁrst estimates the to-
+tal probability of seen symbols (e.g., sample coverage) ac-
+cording to ˆC = 1 − h1n , and then estimates the support
+size according to ˆSGT = ˆScˆC ; here, ˆSc stands for the (naive)counting estimator. Note that h1 equals the number of dif-
+ferent alphabet symbols observed only once in the n sam-
+ples.
+Figure 1 shows that our RWC estimator has a signiﬁcantly
+better worst case performance over the above described col-
+lection of distributions in the small sample set regime than
+WY estimator. Also, both approximation-based estimators
+have signiﬁcantly better convergence rates than the GT es-
+timator. Figures 2 depict the relative worst case risk of the
+0 2 4 6 8 10
+Number of samples 105
+0
+0.05
+0.1
+0.15
+0.2
+0.25
+0.3
+0.35Risk
+Worst-case risk over the selected set of distributions
+WY, c0 = 0.558
+WY, c0 = 0.45
+GT
+RWC, c0 = 0.558
+RWC, c0 = 0.45
+Figure 1. The worst case risk under normalized squared loss for
+six selected probability distributions.
+GT and WY estimators, obtained by dividing the worst case
+risk of these estimators with the worst case risk of our es-
+timator. The results are plotted for moderate samples set
+sizes, and they reveal that the risk of the WY estimator
+is 2-5 times larger than that of our estimator. Moreover,
+the worst case risk of the GT estimator exhibits a steep
+growth in this region, exceeding the corresponding values
+of the approximation-based methods by roughly two orders
+of magnitude.
+Note that both our RWC estimator and the WY estimator
+are highly efﬁcient, and only a small time penalty < 1s
+is paid for using our LP solver (Figure 6, Appendix). The
+same ﬁndings may be observed for other types of loss func-
+tions, as illustrated in the Appendix on the example of
+the loss function E( S− ˆSS )2. This loss may be analyzed
+in an almost identical manner as the normalized squared
+loss E( S− ˆSk )2). But unlike the normalized squared loss,
+which encourages minmax solutions with S ≈ k, this pro-
+Support Estimation via Regularized and Weighted Chebyshev Approximations
+0 2 4 6 8 10
+Number of samples 105
+0
+20
+40
+60
+80
+100
+120Relative risk
+Relative worst-case risk, with RWC c0=0.558
+WY, c0 = 0.558
+WY, c0 = 0.45
+GT
+RWC, c0 = 0.45
+2 4 6 8 10
+Number of samples 105
+0
+1
+2
+3
+4
+5Relative risk
+Relative worst-case risk, with RWC c0=0.558
+WY, c0 = 0.558
+WY, c0 = 0.45
+GT
+RWC, c0 = 0.45
+Figure 2. The relative worst case risk over the six chosen types
+of distributions, with RWC c0 = 0 .558. The plot on the right
+represents a magniﬁed view of a region in the plot on the left.
+posed loss accommodates minmax solutions that may devi-
+ate more signiﬁcantly from k. The underlying estimator
+is termed RWC-S. The RWC-S estimator strictly outper-
+forms the WY estimator for all six distributions by a factor
+up to 15 (Figures 9-10, Appendix). The worst-case risk of
+E( S− ˆSk )2 is plotted in Figure 3, while the performance of
+the estimator for two speciﬁc distributions is shown in Fig-
+ure 4. RWC-S only performs slightly worse than RWC for
+distributions close to uniform, and is hence the estimator o f
+choice for practical applications.
+We now turn our attention to a new support estimation prob-
+lem, concerned with determining the bacterial diversity of
+the human gut microbiome. Although it is known that
+human guts hosts trillions of bacterial cells ( Sender et al. ,
+2016), very little effort has been placed on “rigorously” es-
+timating the actual number of different bacterial species i n
+the gut. To address this problem, we retrieved 1374 hu-
+man gut microbiome datasets from the NIH Human Gut Mi-
+crobiome ( Peterson et al., 2009) and the America Gut Mi-
+crobiome websites ( http://americangut.org). To determine
+which bacterial species are present in the samples, we ran
+Kraken (Wood & Salzberg, 2014), a taxonomy proﬁler, on
+each dataset, using a library of size 8 GB (corresponding to
+MiniKraken). This lead to n = 7, 415, 847 samples, which
+we used for obtaining the bacterial sample histograms (de-
+picted in the Appendix, Figure 11), and to specify k = n.
+The obtained estimates for different choices of estimator
+parameters are listed in Table 1. Note that the number of
+bacterial species is most likely signiﬁcantly larger than e sti-
+0 2 4 6 8 10
+Number of samples 105
+0
+20
+40
+60
+80
+100
+120Relative risk
+Relative worst-case risk, with RWC-S c0=0.558
+WY, c0 = 0.558
+WY, c0 = 0.45
+GT
+RWC-S, c0 = 0.45
+2 4 6 8 10
+Number of samples 105
+0
+5
+10
+15
+20
+25Relative risk
+Relative worst-case risk, with RWC-S c0=0.558
+WY, c0 = 0.558
+WY, c0 = 0.45
+GT
+RWC-S, c0 = 0.45
+Figure 3. The relative worst case risk over the six chosen types of
+distributions, with RWC-S c0 = 0 .558. The plot on the right is
+a magniﬁed view of a region in the plot on the left. Note that th e
+risk used is E( S− ˆSS )2.
+0 1 2 3 4 5 6 7 8 9 10
+Number of samples 105
+-2000
+0
+2000
+4000
+6000
+8000
+10000
+12000Estimated support size
+Zipf(1.5), estimated support size
+WY, c0 = 0.558
+GT
+RWC, c0 = 0.558
+RWC-S, c0 = 0.558
+Ground truth
+0 1 2 3 4 5 6 7 8 9 10
+Number of samples 105
+4
+4.5
+5
+5.5
+6
+6.5
+7
+7.5Estimated support size
+105 Zipf(0.25), estimated support size
+WY, c0 = 0.558
+GT
+RWC, c0 = 0.558
+RWC-S, c0 = 0.558
+Ground truth
+Figure 4. Performance comparison of all methods on 2 speciﬁc
+distributions. The bar stands for 1 standard deviation and e ach
+line represent the mean. For clarity, we only compare the res ults
+for the case c0 = 0.558.
+Support Estimation via Regularized and Weighted Chebyshev Approximations
+Naive GT WY( 0.558) WY( 0.45)
+2151 2151 2663 2571
+RWC(0.558) RWC( 0.45) RWC-S( 0.558) RWC-S( 0.45)
+2362 2504 2347 2373
+Table 1. Estimates for the number of different bacterial species in
+the human gut obtained using four different methods. The num -
+bers in brackets correspond to the parameter c0.
+mated; this follows since taxonomic identiﬁcation, required
+for labeling the samples, relies on identifying unique sub-
+strings in metagenomic reads that can be associated with
+already sequenced bacterial species.
+References
+Acharya, J., Das, H., Jafarpour, A., Orlitsky, A., and Pan,
+S. Competitive closeness testing. In Proceedings of the
+24th Annual Conference on Learning Theory , pp. 47–68,
+2011.
+Acharya, J., Das, H., Orlitsky, A., and Suresh, A. T. A
+uniﬁed maximum likelihood approach for estimating
+symmetric properties of discrete distributions. In Inter-
+national Conference on Machine Learning , pp. 11–21,
+2017.
+Aldrich, J. et al. Ra ﬁsher and the making of maximum like-
+lihood 1912-1922. Statistical science , 12(3):162–176,
+1997.
+Ashtiani, H., Kushagra, S., and Ben-David, S. Clustering
+with same-cluster queries. In Advances in Neural Infor-
+mation Processing Systems, pp. 3216–3224, 2016.
+Bar-Y ossef, Z., Kumar, R., and Sivakumar, D. Sampling
+algorithms: lower bounds and applications. In Proceed-
+ings of the thirty-third annual ACM symposium on The-
+ory of computing , pp. 266–275. ACM, 2001.
+Bar-Y ossef, Z., Jayram, T., Kumar, R., Sivakumar, D., and
+Trevisan, L. Counting distinct elements in a data stream.
+In International W orkshop on Randomization and Ap-
+proximation T echniques in Computer Science, pp. 1–10.
+Springer, 2002.
+Batu, T., Fortnow, L., Rubinfeld, R., Smith, W . D., and
+White, P . Testing that distributions are close. In F oun-
+dations of Computer Science, 2000. Proceedings. 41st
+Annual Symposium on , pp. 259–269. IEEE, 2000.
+Boyd, S. and V andenberghe, L.Convex optimization. Cam-
+bridge university press, 2004.
+Bunge, J. and Fitzpatrick, M. Estimating the number of
+species: a review. Journal of the American Statistical
+Association, 88(421):364–373, 1993.
+Charikar, M., Chaudhuri, S., Motwani, R., and Narasayya,
+V . Towards estimation error guarantees for distinct val-
+ues. In Proceedings of the nineteenth ACM SIGMOD-
+SIGACT-SIGART symposium on Principles of database
+systems, pp. 268–279. ACM, 2000.
+Chien, I., Pan, C., and Milenkovic, O. Query k-means clus-
+tering and the double dixie cup problem. In Advances in
+Neural Information Processing Systems , pp. 6650–6659,
+2018.
+Chien, I., Zhou, H., and Li, P . HS 2 : Active learning over
+hypergraphs. In International Conference on Artiﬁcial
+Intelligence and Statistics, 2019.
+Support Estimation via Regularized and Weighted Chebyshev Approximations
+Efron, B. and Thisted, R. Estimating the number of un-
+seen species: How many words did shakespeare know?
+Biometrika, 63(3):435–447, 1976.
+Fisher, R. A., Corbet, A. S., and Williams, C. B. The re-
+lation between the number of species and the number of
+individuals in a random sample of an animal population.
+The Journal of Animal Ecology , pp. 42–58, 1943.
+Fraser, W . A survey of methods of computing minimax and
+near-minimax polynomial approximations for functions
+of a single independent variable. Journal of the ACM
+(JACM), 12(3):295–314, 1965.
+Jiao, J., V enkat, K., Han, Y ., and Weissman, T. Minimax
+estimation of functionals of discrete distributions. IEEE
+Transactions on Information Theory , 61(5):2835–2885,
+2015.
+Keinan, A. and Clark, A. G. Recent explosive human pop-
+ulation growth has resulted in an excess of rare genetic
+variants. Science, 336(6082):740–743, 2012.
+L´ opez, M. and Still, G. Semi-inﬁnite programming. Euro-
+pean Journal of Operational Research , 180(2):491–518,
+2007.
+Lubinsky, D. S. A survey of weighted polynomial approxi-
+mation with exponential weights. Surveys in Approxima-
+tion Theory, 3:1–105, 2007.
+Mason, J. C. and Handscomb, D. C. Chebyshev polynomi-
+als. Chapman and Hall/CRC, 2002.
+Mhaskar, H. and Saff, E. Extremal problems for polynomi-
+als with exponential weights. Transactions of the Ameri-
+can Mathematical Society , 285(1):203–234, 1984.
+Mhaskar, H. and Saff, E. Where does the sup norm of a
+weighted polynomial live? Constructive Approximation,
+1(1):71–91, 1985.
+Nelson, M. R., Wegmann, D., Ehm, M. G., Kessner, D.,
+Jean, P . S., V erzilli, C., Shen, J., Tang, Z., Bacanu, S.-
+A., Fraser, D., et al. An abundance of rare functional
+variants in 202 drug target genes sequenced in 14,002
+people. Science, pp. 1217876, 2012.
+Orlitsky, A., Santhanam, N. P ., and Zhang, J. Always good
+turing: Asymptotically optimal probability estimation.
+Science, 302(5644):427–431, 2003.
+Orlitsky, A., Santhanam, N. P ., Viswanathan, K., and
+Zhang, J. On modeling proﬁles instead of values. In
+Proceedings of the 20th conference on Uncertainty in Ar-
+tiﬁcial Intelligence, pp. 426–435. AUAI Press, 2004.
+Orlitsky, A., Suresh, A. T., and Wu, Y . Optimal predic-
+tion of the number of unseen species. Proceedings of the
+National Academy of Sciences , 113(47):13283–13288,
+2016.
+Paninski, L. Estimation of entropy and mutual information.
+Neural computation, 15(6):1191–1253, 2003.
+Peterson, J., Garges, S., Giovanni, M., McInnes, P ., Wang,
+L., Schloss, J. A., Bonazzi, V ., McEwen, J. E., Wetter-
+strand, K. A., Deal, C., et al. The nih human microbiome
+project. Genome research, 19(12):2317–2323, 2009.
+Rakhmanov, E. A. On asymptotic properties of polynomi-
+als orthogonal on the real axis. Sbornik: Mathematics ,
+47(1):155–193, 1984.
+Raskhodnikova, S., Ron, D., Shpilka, A., and Smith, A.
+Strong lower bounds for approximating distribution sup-
+port size and the distinct elements problem. SIAM Jour-
+nal on Computing , 39(3):813–842, 2009.
+Reemtsen, R. Discretization methods for the solution of
+semi-inﬁnite programming problems. Journal of Opti-
+mization Theory and Applications , 71(1):85–103, 1991.
+Reemtsen, R. and G¨ orner, S. Numerical methods for semi-
+inﬁnite programming: a survey. In Semi-inﬁnite pro-
+gramming, pp. 195–275. Springer, 1998.
+Remez, E. Y . Sur la d´ etermination des polynˆ omes dapprox-
+imation de degr´ e donn´ ee.Comm. Soc. Math. Kharkov ,
+10(4163):196, 1934.
+Sender, R., Fuchs, S., and Milo, R. Revised estimates
+for the number of human and bacteria cells in the body.
+PLoS biology, 14(8):e1002533, 2016.
+Still, G. Discretization in semi-inﬁnite programming: the
+rate of convergence. Mathematical programming, 91(1):
+53–69, 2001.
+Tennessen, J. A., Bigham, A. W ., Oconnor, T. D., Fu, W .,
+Kenny, E. E., Gravel, S., McGee, S., Do, R., Liu, X., Jun,
+G., et al. Evolution and functional impact of rare coding
+variation from deep sequencing of human exomes. sci-
+ence, 337(6090):64–69, 2012.
+Timan, A. F. Theory of approximation of functions of a real
+variable, volume 34. Elsevier, 2014.
+V aliant, P . and V aliant, G. Estimating the unseen: im-
+proved estimators for entropy and other properties. In
+Advances in Neural Information Processing Systems , pp.
+2157–2165, 2013.
+Wood, D. E. and Salzberg, S. L. Kraken: ultrafast metage-
+nomic sequence classiﬁcation using exact alignments.
+Genome biology, 15(3):R46, 2014.
+Support Estimation via Regularized and Weighted Chebyshev Approximations
+Wu, Y . and Y ang, P . Minimax rates of entropy estimation
+on large alphabets via best polynomial approximation.
+IEEE Transactions on Information Theory , 62(6):3702–
+3720, 2016.
+Wu, Y . and Y ang, P . Sample complexity of the distinct ele-
+ments problem. Mathematical Statistics and Learning , 1
+(1):37–72, 2018.
+Wu, Y . and Y ang, P . Chebyshev polynomials, moment
+matching, and optimal estimation of the unseen. The
+Annals of Statistics , 47(2):857–883, 2019.
+Support Estimation via Regularized and Weighted Chebyshev Approximations
+5. Appendix
+5.1. A weaker version of Theorem 3.4
+We provide a simple proof of a weaker version of Theo-
+rem 3.4 which allows us to deduce that the stated result ap-
+plies to non-negative reals. For this and related results, t he
+interested reader is referred to the survey paper ( Lubinsky,
+2007).
+Theorem 5.1 (Theorem 6.1 in ( Lubinsky, 2007)). Let
+W (x) = exp( −Q(x)) be an even weight function. As-
+sume that xQ′(x) is positive, continuous, and strictly in-
+creasing in (0, ∞), with limit 0 at x = 0 and ∞ at x = ∞.
+Then, the Freud’s number qL, deﬁned as the positive root
+of the equation
+L = qLQ′(qL) (15)
+exists and is unique. For L ≥ 1 and any polynomials P (x)
+of degree ≤ L that is not identical to zero, one has
+sup
+x∈R
+||P (x)W (x)|| = sup
+x∈[−4q2L,4q2L]
+||P (x)W (x)||. (16)
+Proof. Recall that if TL is the classical Chebyshev polyno-
+mial of the ﬁrst kind, then for |x| ≥ 1 and any polynomial
+P (x) of degree ≤ L that is not identical to zero, one has
+|P (x)| ≤ TL(|x|) sup
+z∈[−1,1]
+|P (z)| ≤ (2|x|)L sup
+z∈[−1,1]
+|P (z)|.
+(17)
+Scaling to [−q2L, q2L] and using the fact that Q(x) is in-
+creasing in (0, ∞) gives
+|P (x)| ≤ ( 2|x|q2L )L supz∈[−q2L,q2L] |P (z)|
+≤ ( 2|x|q2L )L 1W (q2L) supz∈[−q2L,q2L] |P (z)W (z)|.
+Consequently,
+|P (x)W (x)| ≤ 2L |x|LW (x)qL2LW (q2L) supz∈[−q2L,q2L] |P (z)W (z)|.
+If x ≥ 4q2L, then
+log xLW (x)qL2LW (q2L) =∫ xq2L L − uQ′(u)u du
+≤ −L
+∫ 4q2L
+q2L
+du
+u = −L log 4,
+since u ≥ q2L ⇒ uQ′(u) ≥ 2L. Hence, for x ≥ 4q2L, we
+have
+|P (x)W (x)| ≤ 2−L sup
+z∈[−q2L,q2L]
+|P (z)W (z)|,
+which implies ( 16).
+It is straightforward to see that when Q(x) = |x|, then
+qL = L. This implies that the interval of interest is
+[−8L, 8L]. Compared to Theorem 3.4, the resulting inter-
+val is a constant factor longer.
+On the other hand, it is not hard to see that if we consider
+non-negative reals alone, only Equation ( 17) needs to be
+changed accordingly. Due to the fact that |TL(x)| is even,
+it is clear that for x ≥ 1 we have
+|P (x)| ≤ TL(x) sup
+z∈[0,1]
+|P (z)| ≤ (2x)L sup
+z∈[0,1]
+|P (z)|.
+(18)
+Hence, Theorem 5.1 also applies to non-negative reals only.
+Note that the key idea behind both this proof and the proof
+of the stronger result Theorem 3.4 is to ﬁrst upper bound
+the “tails” of the polynomials of degree ≤ L. The next
+step is to show that tail is dominated by an exponentially
+decaying weight. Hence, the stronger version can also be
+shown to be valid for non-negative reals, but the tedious
+veriﬁcations are omitted.
+5.2. Extensions for other Risk Functions
+We introduce the optimization problem needed for mini-
+mizing the risk E
+(
+S− ˆS
+S
+)2
+. Poissonization arguments once
+again establish that
+E
+(
+S − ˆS
+S
+)2
+= 1S2
+{ ∑
+i:λi>0
+( L∑
+l=0
+e−λi a2l λlil!
+)
++
+∑
+i⁄=j:λi λj >0
+(
+e−λiPL(λi, a)
+)(
+e−λj PL(λj, a)
+)}
+.
+Taking the supremum over Dk, one can further upper
+bound the risk as
+≤ sup
+λ:λi∈[ nk ,n]
+1
+S2
+{ ∑
+i:λi>0
+( L∑
+l=0
+e−λia2l λlil!
+)
++
+∑
+i⁄=j:λiλj >0
+(
+e−λiPL(λi, a)
+)(
+e−λj PL(λj , a)
+)}
+≤ sup
+λ∈[ nk ,n]
+{ 1
+S
+( L∑
+l=0
+e−λa2l λll!
+)
++
+(
+e−λPL(λ, a)
+)2}
+≤ sup
+λ∈[ nk ,n]
+{ 1
+ˆSc
+( L∑
+l=0
+e−λa2l λll!
+)
++
+(
+e−λPL(λ, a)
+)2}
+,
+(19)
+where the last inequality is due to the fact that ˆSc ≤ S.
+By applying Lemma 3.2 and the same analysis we did for
+E
+(
+S− ˆS
+k
+)2
+, one can show that ( 19) will be optimized by
+Support Estimation via Regularized and Weighted Chebyshev Approximations
+the solution of the following optimization problem
+min
+t,a1,...,aL
+t subject to
+{ 1
+ˆSc
+( L∑
+l=0
+e−λa2l λll!
+)
++
+(
+e−λPL(λ, a)
+)2}
+≤ t
+∀λ ∈ Grid([ nk , π2 L + nk ], s), with a0 = −1.
+(20)
+Compared to ( 14), the main difference is in replacing 1k
+by 1ˆSc . Under the newly introduced loss model, our esti-
+0 2 4 6 8 10
+Number of samples 105
+0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7Risk
+Worst-case risk over the selected set of distributions
+WY, c0 = 0.558
+WY, c0 = 0.45
+GT
+RWC-S, c0 = 0.558
+RWC-S, c0 = 0.45
+Figure 5. The worst case risk ( E( S− ˆSS )2) over six different types
+of distributions.
+mator outperform all previously known methods: RWC-S
+outperforms the WY estimator with optimized parameter
+c0 = 0 .45 up to a factor of 15 and at least 1.5-fold, as
+shown in Figure 3.
+5.3. Supplementary Experiments
+Figure 6 compares the computational time needed for de-
+termining the coefﬁcients of gL for the WY and our estima-
+tor2. Both methods are highly efﬁcient, and only a small
+time penalty (< 1s) is paid for using the LP solver to deter-
+mine the coefﬁcients of gL.
+It can be observed from Figures 7 and 8 that for most dis-
+tributions, choosing of c0 = 0 .558 or c0 = 0 .45 makes
+little difference. Moreover, from Figure 7 one can see that
+our RWC estimator performs well under the loss ( S− ˆSk )2
+when the underlying distribution has a heavier tail. The GT
+estimator performs well only when the underlying distribu-
+tion is close to uniform. The WY estimator outperforms
+our RWC estimator when the underlying distribution has
+a small support size. Note that since the loss function is
+2The time is measured on a MSI laptop (GP72VR), with an
+Intel Core i7-7700HQ CPU @ 2.80Hz, 16GB RAM. The matlab
+code for our method can be found in the Supplementary Materia l.
+0 2 4 6 8 10
+Number of samples 105
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9Time (sec)
+Time needed for computing the coefficients of g L
+WY
+Our method
+Figure 6. The time complexity for computing coefﬁcients of gL.
+0 2 4 6 8 10
+Number of samples 105
+0
+0.05
+0.1
+0.15
+0.2
+0.25
+0.3
+0.35Risk
+Uniform
+WY, c0 = 0.558
+WY, c0 = 0.45
+GT
+RWC, c0 = 0.558
+RWC, c0 = 0.45
+0 2 4 6 8 10
+Number of samples 105
+0
+1
+2
+3
+4Risk
+10-3 Benford
+WY, c0 = 0.558
+WY, c0 = 0.45
+GT
+RWC, c0 = 0.558
+RWC, c0 = 0.45
+0 2 4 6 8 10
+Number of samples 105
+0
+0.5
+1
+1.5
+2
+2.5
+3
+3.5Risk
+10-5 Zipf(1.5)
+WY, c0 = 0.558
+WY, c0 = 0.45
+GT
+RWC, c0 = 0.558
+RWC, c0 = 0.45
+0 2 4 6 8 10
+Number of samples 105
+0
+1
+2
+3
+4Risk
+10-3 Zipf(1)
+WY, c0 = 0.558
+WY, c0 = 0.45
+GT
+RWC, c0 = 0.558
+RWC, c0 = 0.45
+0 2 4 6 8 10
+Number of samples 105
+0
+0.01
+0.02
+0.03
+0.04
+0.05
+0.06Risk
+Zipf(0.5)
+WY, c0 = 0.558
+WY, c0 = 0.45
+GT
+RWC, c0 = 0.558
+RWC, c0 = 0.45
+0 2 4 6 8 10
+Number of samples 105
+0
+0.02
+0.04
+0.06
+0.08
+0.1
+Risk
+Zipf(0.25)
+WY, c0 = 0.558
+WY, c0 = 0.45
+GT
+RWC, c0 = 0.558
+RWC, c0 = 0.45
+Figure 7. The risk E
+(
+S− ˆS
+k
+)2
+evaluated empirically for six differ-
+ent distributions.
+( S− ˆSk )2, for ﬁxed k, the worst case distribution is expected
+to have large support size. This explains the performance
+degradation of the RWC estimator. The RWC estimator ex-
+hibits excellent performance on the Zipf (0.5) distribution,
+which has large support size and is highly non-uniform.
+Next, let us turn our attention to the risk of the form
+E
+(
+S− ˆS
+S
+)2
+. From Figure 8, one can see that our RWC-S
+estimator consistently outperforms the WY estimator. This
+follows since the loss takes into account the actual support
+scaling. Figures 9 and 10 show that, in general, the RWC-S
+Support Estimation via Regularized and Weighted Chebyshev Approximations
+0 2 4 6 8 10
+Number of samples 105
+0
+0.05
+0.1
+0.15
+0.2
+0.25
+0.3
+0.35Risk
+Uniform
+WY, c0 = 0.558
+WY, c0 = 0.45
+GT
+RWC-S, c0 = 0.558
+RWC-S, c0 = 0.45
+0 2 4 6 8 10
+Number of samples 105
+0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6Risk
+Benford
+WY, c0 = 0.558
+WY, c0 = 0.45
+GT
+RWC-S, c0 = 0.558
+RWC-S, c0 = 0.45
+0 2 4 6 8 10
+Number of samples 105
+0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6Risk
+Zipf(1.5)
+WY, c0 = 0.558
+WY, c0 = 0.45
+GT
+RWC-S, c0 = 0.558
+RWC-S, c0 = 0.45
+0 2 4 6 8 10
+Number of samples 105
+0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7Risk
+Zipf(1)
+WY, c0 = 0.558
+WY, c0 = 0.45
+GT
+RWC-S, c0 = 0.558
+RWC-S, c0 = 0.45
+0 2 4 6 8 10
+Number of samples 105
+0
+0.05
+0.1
+0.15
+0.2
+0.25Risk
+Zipf(0.5)
+WY, c0 = 0.558
+WY, c0 = 0.45
+GT
+RWC-S, c0 = 0.558
+RWC-S, c0 = 0.45
+0 2 4 6 8 10
+Number of samples 105
+0
+0.05
+0.1
+0.15
+0.2
+Risk
+Zipf(0.25)
+WY, c0 = 0.558
+WY, c0 = 0.45
+GT
+RWC-S, c0 = 0.558
+RWC-S, c0 = 0.45
+Figure 8. The risk E
+(
+S− ˆS
+S
+)2
+evaluated empirically for six differ-
+ent distributions.
+estimator has a smaller variance and bias when compared
+to the WY estimator. As before, when the underlying dis-
+tribution has a heavy tail or large support size, our RWC
+estimator signiﬁcantly improves upon the WY estimator.
+With regards to the real dataset used in our experiment, per-
+taining to human gut microbiomes, we also provide the his-
+tograms for the used dataset in Figure 11. The support size
+of the underlying distribution appears to be signiﬁcantly
+smaller than k = n and appears to be more similar to a
+Zipf(1.5) distribution. This suggests that the RWC-S es-
+timator should provide the most accurate estimate for the
+number of bacterial species.
+0 1 2 3 4 5 6 7 8 9 10
+Number of samples 105
+4
+5
+6
+7
+8
+9
+10
+11Estimated support size
+105 Uniform, estimated support size
+WY, c0 = 0.558
+GT
+RWC, c0 = 0.558
+RWC-S, c0 = 0.558
+Ground truth
+0 1 2 3 4 5 6 7 8 9 10
+Number of samples 105
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10Estimated support size
+104 Benford, estimated support size
+WY, c0 = 0.558
+GT
+RWC, c0 = 0.558
+RWC-S, c0 = 0.558
+Ground truth
+0 1 2 3 4 5 6 7 8 9 10
+Number of samples 105
+-2000
+0
+2000
+4000
+6000
+8000
+10000
+12000Estimated support size
+Zipf(1.5), estimated support size
+WY, c0 = 0.558
+GT
+RWC, c0 = 0.558
+RWC-S, c0 = 0.558
+Ground truth
+Figure 9. Estimated support size for each distribution. The bar
+represents one standard deviation, while each line represe nts the
+mean. To avoid clutter, we only provide comparisons for c0 =
+0.558.
+Support Estimation via Regularized and Weighted Chebyshev Approximations
+0 1 2 3 4 5 6 7 8 9 10
+Number of samples 105
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10Estimated support size
+104 Zipf(1), estimated support size
+WY, c0 = 0.558
+GT
+RWC, c0 = 0.558
+RWC-S, c0 = 0.558
+Ground truth
+0 1 2 3 4 5 6 7 8 9 10
+Number of samples 105
+2.5
+3
+3.5
+4
+4.5
+5
+5.5Estimated support size
+105 Zipf(0.5), estimated support size
+WY, c0 = 0.558
+GT
+RWC, c0 = 0.558
+RWC-S, c0 = 0.558
+Ground truth
+0 1 2 3 4 5 6 7 8 9 10
+Number of samples 105
+4
+4.5
+5
+5.5
+6
+6.5
+7
+7.5Estimated support size
+105 Zipf(0.25), estimated support size
+WY, c0 = 0.558
+GT
+RWC, c0 = 0.558
+RWC-S, c0 = 0.558
+Ground truth
+Figure 10. Estimated support size for each distribution. The bar
+represents one standard deviation, while each line represe nts the
+mean. To avoid clutter, we only provide comparisons for c0 =
+0.558.
+0 500 1000 1500 2000 2500
+0
+0.2
+0.4
+0.6
+0.8
+1
+1.2
+1.4
+1.6
+1.8
+2 106
+0 20 40 60 80 100 120
+0
+0.2
+0.4
+0.6
+0.8
+1
+1.2
+1.4
+1.6
+1.8
+2 106
+0 5 10 15 20 25 30
+0
+0.2
+0.4
+0.6
+0.8
+1
+1.2
+1.4
+1.6
+1.8
+2 106
+Figure 11. The histogram of bacterial species in the human gut.
+The plots, listed from top to bottom, show the entire histogr am,
+the histogram for the 100 most frequently encountered types of
+bacteria, and the histogram for the 25 most frequently types of
+bacteria, respectively.

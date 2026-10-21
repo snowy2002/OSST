@@ -1,0 +1,9 @@
+{
+  "phase": "fixed",
+  "status": "complete",
+  "mode": "formal",
+  "started_at_utc": "2026-10-19T08:16:26.313093+00:00",
+  "protocol_sha256": "c7fcebcbcc8a7c46dcecfa4c7d4b8239eab5a8e393c4cbd620b9943ea9d8c196",
+  "elapsed_seconds": 368.7266818509961,
+  "finished_at_utc": "2026-10-19T08:22:35.039989+00:00"
+}

@@ -1,0 +1,32 @@
+C0 = 1025: concise proof note
+===========================
+
+Deliverables
+  c0_1025_note.tex  Self-contained English LaTeX source (inline bibliography).
+  c0_1025_note.pdf  PDF compiled from that source.
+
+Build from /home/snowy/OSST:
+  .tools/tectonic-0.17.0/tectonic --keep-logs artifacts/c0_1025_paper/c0_1025_note.tex
+
+Alternatively, run pdflatex on c0_1025_note.tex twice in its directory.
+Standard packages: geometry, fontenc, lmodern, amsmath, amssymb,
+amsthm, mathtools, microtype, hyperref, enumitem. No BibTeX step is needed.
+Tectonic downloads its TeX resources on the first build.
+
+Scope
+  Standalone theoretical note suitable for adaptation into a paper appendix.
+  No particular conference template or submission track was specified.
+  The result concerns Wang's unchanged construction, L0 = 1024, and a
+  per-promise error target below 1 percent. Integer optimality does not
+  assert minimax optimality across algorithms or optimality over real C0.
+  Epsilon is the distribution-distance parameter, not the failure rate.
+
+Related files in this repository
+  ../c0_reduction_proof.tex                  Extended proof.
+  ../c0_1025_audit/report.html               Detailed audit report.
+  ../c0_1025_audit/results.json              Independent numerical checks.
+  ../c0_1025_audit/exact_endpoint_certificates.py
+  ../c0_1025_audit/exact_endpoint_certificates.json
+
+Numerical checks supplement the analytic proof; they are not formal
+verification by a proof-assistant kernel.

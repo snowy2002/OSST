@@ -1,0 +1,32 @@
+OSST follow-up experimental artifact
+
+Open report.html for the Chinese report; manuscript.pdf/html/tex contain the English research draft.
+All figures are available as PNG and PDF. All experiment summaries are CSV; raw trial arrays are compressed NumPy files.
+
+Reproduce from the project root with Python 3.14 (the exact executed version is recorded in protocol.json):
+  python -m venv .venv
+  .venv/bin/python -m pip install -r results_publication/requirements-publication-lock.txt
+  .venv/bin/python run_large_benchmark.py --phase prepare
+  .venv/bin/python -c 'from fish_data import prepare_fish_data; prepare_fish_data()'
+  OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python -m publication.run --phase all --out results_reproduction
+
+For an isolated phase use --phase fixed/sequential/search/adversarial/stream/structure/sensitivity/reference/runtime.
+The adversarial phase requires completed search. To regenerate analysis only:
+  OPENBLAS_NUM_THREADS=1 .venv/bin/python -m publication.run --phase report
+
+Historical fish data for fish_2007_seine are prepared by the pinned-source command above.
+
+Source datasets and derived matrices are omitted from the archive. Obtain them from original publishers using the
+provided preparation scripts; observe their recorded terms. MovieLens redistribution is not authorized by this artifact.
+
+The original formal run was superseded because a rational audit found ulp-level boundary mislabelling. The correction,
+frozen original parameter selection, and complete rerun are disclosed in design.json. The superseded outputs remain on
+the working machine in results_publication_superseded_boundary_v1 and are not pooled with final results.
+
+Expected-cost proxies and actual labelled-stream costs are different metrics. Native-threshold FH-shaped and Chao1
+rows are heuristics. A fixed-budget failure to reject is Inconclusive. No field population census or optimal-order proof
+is claimed for the practical hybrid. This is a research draft and experimental artifact, not an acceptance certificate.
+
+Canonical lower-bound analysis uses tables/*_exact_metrics.csv. Raw simulation CSVs retain their floating diagnostic
+effective-support integers. effective_support_audit.json documents exact rational re-evaluation; no binary decisions,
+sample costs, parameters or random samples are changed by that derived-metric correction.

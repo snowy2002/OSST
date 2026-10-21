@@ -1,0 +1,111 @@
+C0 = 1025 experimental artifact
+==============================
+
+Start with report.html (Chinese) or experiment_paper.pdf (English, with
+the complete analytic proof appendix). experiments_only.pdf contains
+the experimental study without that appendix. Both are actually built
+from LaTeX, not screenshots or an unrelated PDF renderer.
+
+MAIN RESULT
+  645 synthetic cells; 236 empirical-population cells; 80 coefficient-sweep
+  cells, with four independent seed blocks in each. Primary totals:
+  9,130,000 independent Poisson-process paths and 39,720,000 paired
+  method-trial evaluations. Do not call the latter independent samples.
+  10 empirical populations from 7 biological groups. All practical n use
+  the observed-count branch because L0 = 1024 remains unchanged.
+
+  No observed C1025 errors on promised primary cells. Worst simultaneous
+  95% error upper bounds: about 0.107% synthetic and 0.0955% empirical.
+  The 99% count baseline needs 35.8--135.2 times fewer samples over the
+  synthetic grid. Only 2/236 original ecological files/configurations
+  contain as many records as the C1025 mean budget. Ecological resampling
+  is a finite empirical-distribution test, not an unknown-ecosystem census.
+
+ENVIRONMENT
+  Experiments executed with Python 3.14; exact installed versions are in
+  requirements-executed.txt. The focused dependency list is
+  c1025/requirements.txt at the artifact root. Use a recent Python with
+  compatible NumPy, SciPy and python-flint wheels.
+
+REPRODUCTION (from the artifact/project root)
+  python -m venv .venv
+  .venv/bin/python -m pip install -r c1025/requirements.txt
+  .venv/bin/python -m pytest -q
+
+  OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python -m c1025.run --phase all --out results_c1025_reproduced
+  OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python -m c1025.supplement --out results_c1025_reproduced
+  .venv/bin/python -m c1025.numeric_extra --out results_c1025_reproduced
+  .venv/bin/python -m c1025.report --out results_c1025_reproduced
+
+  Existing completed phases are skipped. Use a new output directory for
+  a fresh run. Seeds depend on scenario identifiers, not iteration order.
+  The primary protocol freezes source and prepared-data hashes before
+  simulation. Source hashes must match when resuming an existing run.
+
+PUBLIC FULL-REFERENCE ENTRY POINT
+  .venv/bin/python paper_reference.py plan --n 1000 --epsilon 0.1 --c0 1025
+  .venv/bin/python paper_reference.py demo --n 1000 --epsilon 0.1 --c0 1025
+  The default C0 remains 2^26 so existing original-baseline callers retain
+  their meaning. Passing 1025 is explicit, recorded, and does not mutate
+  the default. L0, polynomial degrees, corrections and output rules remain.
+
+LATEX
+  Change into results_c1025/ (or the reproduced output directory), then:
+    tectonic experiment_paper.tex
+    tectonic experiments_only.tex
+  Or run pdflatex twice on each main file. Main inputs:
+    experiment_body.tex, proof_appendix.tex, figures/*.pdf.
+  Compiler used here: Tectonic 0.17.0. No BibTeX step is required.
+  For the local original workspace, the installed compiler is at
+    .tools/tectonic-0.17.0/tectonic
+  The portable artifact includes source/PDF, not that compiler binary.
+
+FILES
+  protocol.json / protocol_initial.json: frozen design and amendment.
+  raw/*.npz: every primary trial's D, method budgets and population specs;
+             group split indices and actual-stream cost vectors.
+  *_seed_blocks.csv: separate random-seed results.
+  synthetic.csv / natural.csv / curves.csv: primary statistics.
+  risk_summary.csv / cost_summary.csv: main comparison tables.
+  natural_feasibility.csv: original N versus required m and overflow risk.
+  natural_exact_truth_audit.csv: exact integer-count ecological targets.
+  natural_group_stress.csv / dependence.csv: deliberately correlated data.
+  group_holdout.csv: training-group choices, held-out finite truth.
+  reference_api_runs.json / natural_public_api.json: complete API outputs.
+  finite_file_runs.json: actual finite-file subsampling, overflows retained.
+  runtime.csv: isolated process timings and RSS, excluding field acquisition.
+  sampler_validation.csv: independent finite-PGF/mean comparison.
+  algebra_audit/results.json: 43,801 independent algebra/numerical assertions.
+  algebra_audit/fractional_output.json: full-degree noninteger output check.
+  algebra_audit/exact_endpoint_certificates.json: 16 pure rational checks.
+  result_validation.json: audit of saved results and confidence bounds.
+  tests_final.log: 112 passing regression tests.
+  data_sources.json: pinned sources, versions, licensing and cleaning notes.
+  source_snapshot/: source at experiment execution.
+
+DISCLOSURES
+  Initial reference-API logging repeated n/epsilon/C0 dictionary keys and
+  failed before producing that stage's output. One logging-only correction
+  was recorded in protocol.json; the initial protocol/source are retained.
+  It changed no distributions, seeds, budgets, decisions or completed
+  statistical results. Supplemental natural-API, group and timing checks
+  were recorded after primary summary inspection; they are not disguised
+  as externally preregistered confirmatory results.
+
+  Classical confidence bounds are simultaneous within the stated suite,
+  with a separate family for lower-bound coverage. Gap cells have no binary
+  error label. No experiment empirically proves all-distribution validity,
+  astronomical-n minimality, actual ecosystem completeness or venue acceptance.
+  Numerical sampling is distributionally exact occupancy simulation in
+  real arithmetic, with binary64 probability evaluation and a PRNG.
+  Huge-degree checks execute the actual polynomial formula with arbitrary
+  precision; they do not simulate collecting 10^444 observations.
+
+DATA AND ATTRIBUTION
+  Keep data_sources.json and the cited upstream documentation with any
+  derived data. Raw snapshots and cleaned counts are provided for
+  reproducibility under the upstream package/data terms recorded there.
+  Different sites, treatment groups and fish years are not pooled together.
+  Sources with no event information do not receive invented group labels.
+  The supplied original manuscript is retained as an analysis input, not
+  represented as an author-created contribution to this artifact.

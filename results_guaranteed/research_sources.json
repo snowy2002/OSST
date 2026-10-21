@@ -1,0 +1,42 @@
+[
+  {
+    "title": "Wang: Optimal Support Size Testing",
+    "url": "https://arxiv.org/abs/2610.18723",
+    "finding": "原文多尺度切比雪夫构造及 Lemma 2.3 期望界是本实现的基础；原文常数没有被直接套到新规则。"
+  },
+  {
+    "title": "Ferreira Pinto Jr. & Harms: Testing Support Size More Efficiently Than Learning Histograms",
+    "url": "https://arxiv.org/abs/2410.18915",
+    "finding": "同一个支持集承诺检验问题，解释多项式逼近方法；不能据渐近阶直接得到实用常数。"
+  },
+  {
+    "title": "Wu & Yang: Chebyshev polynomials, moment matching, and optimal estimation of the unseen",
+    "url": "https://arxiv.org/abs/1504.01227",
+    "finding": "有理论与实证基础的多项式估计；其总支持集估计模型要求最小非零概率下界，不能直接套用到这里的无该假设问题。"
+  },
+  {
+    "title": "Chien & Milenkovic: Support Estimation via Regularized and Weighted Chebyshev Approximations",
+    "url": "https://arxiv.org/html/1901.07506v2",
+    "finding": "联合优化偏差与方差有助于改善实用参数；论文仍采用最小非零概率条件。本次没有把离散网格优化当作连续域保证。"
+  },
+  {
+    "title": "Howard et al.: Time-uniform, nonparametric, nonasymptotic confidence sequences",
+    "url": "https://arxiv.org/abs/1810.08240",
+    "finding": "反复查看数据需要对整个停止过程控制错误。本次采用有限个预定检查点与误差预算求和，未实现该论文的完整 confidence sequence。"
+  },
+  {
+    "title": "McAllester & Ortiz: Concentration Inequalities for the Missing Mass and for Histogram Rule Error",
+    "url": "https://www.jmlr.org/papers/v4/mcallester03a.html",
+    "finding": "缺失概率质量有专门的集中界；本实现用独立验证绕开直接认证 Good–Turing 缺失质量，F1/m 仅用于决定是否花验证成本。"
+  },
+  {
+    "title": "SciPy 官方文档：单侧精确二项检验",
+    "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.binomtest.html",
+    "finding": "验证集的 outside 次数对应单侧二项检验；本实现进一步用 Arb 认证所采用的尾概率阈值。"
+  },
+  {
+    "title": "python-flint 官方文档：Arb 实数区间",
+    "url": "https://python-flint.readthedocs.io/en/latest/arb.html",
+    "finding": "用于认证解析前提、尾概率、权重和阈值的上下界；最终 No 比较转换为整数算术。"
+  }
+]

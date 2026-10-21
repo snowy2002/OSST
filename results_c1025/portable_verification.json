@@ -1,0 +1,6 @@
+{
+  "passed": true,
+  "tests": "..................ssss.................................................. [ 64%]\n........................................                                 [100%]\n108 passed, 4 skipped in 5.30s",
+  "public_demo_passed": true,
+  "scope": "Fresh temporary directory, only bundled source/data; existing installed Python dependencies; no project-relative imports from original workspace"
+}

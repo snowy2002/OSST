@@ -1,0 +1,46 @@
+{
+  "joint_constants.pdf": {
+    "bytes": 123619,
+    "sha256": "76d9b012bc0668fa538ecd073b6def0f8a7676670fe42520d715a3209688384f"
+  },
+  "joint_constants.tex": {
+    "bytes": 26112,
+    "sha256": "d2329096b9c213dc26f2bf1bbc5a73124ef87ef4fac49ac76f1afc72dce5a459"
+  },
+  "中文证明导读.txt": {
+    "bytes": 7290,
+    "sha256": "2a4c138ca119a7b619366313ec585ce18751a741f9a76419f8486dd2dea85238"
+  },
+  "certify_constants.py": {
+    "bytes": 8950,
+    "sha256": "34d1a55c4aba78d67c22a7a469c9d00d4d73aacce6fb1d474a850922819f7537"
+  },
+  "audit_independently.py": {
+    "bytes": 4820,
+    "sha256": "e9685f0bd4fa23f6b8ecfed16cc9fc2c6e68f58d744131d4a00fbea7dc742f6f"
+  },
+  "certificates.json": {
+    "bytes": 9032,
+    "sha256": "a0cf35c0c3a5418f91c0a91b5a5023ef6dad08d5940b38e2df2ea05880589208"
+  },
+  "slabs_star.json": {
+    "bytes": 117486,
+    "sha256": "fc7d3e960b01ac082ecbd7cd727d14da0f727bf6665aa56e6bdb1cc3eefdbd1a"
+  },
+  "slabs_70.json": {
+    "bytes": 117545,
+    "sha256": "a823cea7bef87ea6beb7cd98652ae679b042ee3459c2f23d6fecf7296cfd1cad"
+  },
+  "independent_audit.json": {
+    "bytes": 379,
+    "sha256": "73712de18cb31c694cd441db96a91bed01e7b14731b8aa4330bfe9265b602b8b"
+  },
+  "requirements.txt": {
+    "bytes": 20,
+    "sha256": "4cef508304e84c21f73cf412712165dc26e40978cb784bc08a876948b559d90d"
+  },
+  "environment.json": {
+    "bytes": 311,
+    "sha256": "79155d038869d382989f89f44c532cddacf7dd101c349f9079ad9886c9369e3a"
+  }
+}

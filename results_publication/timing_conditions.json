@@ -1,0 +1,4 @@
+{
+  "final_timing": "Dedicated rerun after all other experiment phases finished; one process at a time and one BLAS thread. Preliminary timings preserved separately.",
+  "host": "Shared workstation; no claim of exclusive host ownership."
+}

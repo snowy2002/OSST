@@ -1,0 +1,39 @@
+{
+  "paper": {
+    "algorithm": "paper_section3_reference",
+    "n": 1000,
+    "epsilon": "1/10",
+    "C0": 67108864,
+    "L0": 1024,
+    "L": "[7.90775527898213705205397436405309262280330446588631892810 +/- 2.28e-57]",
+    "m": 84864619140,
+    "a0": "[1.250000000000000000000000000000000000000000000000000000000e-5 +/- 8.34e-63]",
+    "b": "[5.96357284087914863093150221965867327003727228200372044229e-9 +/- 5.81e-66]",
+    "J": null,
+    "branch": "observed_count",
+    "precision_bits": 192,
+    "parameter_rounding_certified": true,
+    "scales": [],
+    "note": "严格保留第 3 节常数与分支；区间文本包含舍入误差，不是近似后当成精确值。"
+  },
+  "tight_poisson": {
+    "n": 1000,
+    "epsilon": 0.1,
+    "alpha": 0.05,
+    "sampling": "poisson",
+    "m": 10537,
+    "miss_bound": 0.049695535441832105,
+    "markov_m": 200200,
+    "guarantee": "iid 和 Yes/No 承诺下：误报=0，漏报<=alpha"
+  },
+  "tight_fixed": {
+    "n": 1000,
+    "epsilon": 0.1,
+    "alpha": 0.05,
+    "sampling": "fixed",
+    "m": 10509,
+    "miss_bound": 0.04984881235076629,
+    "markov_m": 200200,
+    "guarantee": "iid 和 Yes/No 承诺下：误报=0，漏报<=alpha"
+  }
+}

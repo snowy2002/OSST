@@ -1,0 +1,28 @@
+.venv/
+.tools/
+__pycache__/
+.pytest_cache/
+*.pyc
+
+# Local compiler output and visual review previews.
+*.aux
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+/artifacts/**/*.log
+/artifacts/**/preview*.png
+
+# Downloaded cross-domain data; regenerate with the preparation scripts.
+# Keep the small BCI inputs used by the portable C0=1025 artifact.
+/data/large/raw/*
+!/data/large/raw/BCI.rda
+/data/large/prepared/*.npz
+!/data/large/prepared/bci_counts.npz
+!/data/large/prepared/bci_groups.npz
+
+# Local credentials and editor/OS state.
+.env
+.env.*
+!.env.example
+.DS_Store
+*.swp

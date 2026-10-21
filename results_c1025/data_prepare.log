@@ -1,0 +1,104 @@
+/home/snowy/OSST/.venv/lib/python3.14/site-packages/rdata/conversion/_conversion.py:302: UserWarning: Unknown encoding. Assumed ASCII.
+  warnings.warn("Unknown encoding. Assumed ASCII.")  # noqa: B028
+[
+  {
+    "dataset": "mite",
+    "N": 9800,
+    "S": 35,
+    "groups": 70,
+    "singleton_species": 0,
+    "sha256": "ad1b5a99eee1f4fe95dd62faa6f965b3283c71106e44ff02e59bf8a4d1037624",
+    "source": "https://vegandevs.github.io/vegan/reference/mite.html",
+    "scope": "Finite published empirical population only; no claim of full ecosystem support or iid field sampling"
+  },
+  {
+    "dataset": "bird_north",
+    "N": 202,
+    "S": 27,
+    "groups": 0,
+    "singleton_species": 6,
+    "sha256": "b761fd1b2f1db6d1157b17049b1bb879da716bddf3c7b14a27344643454b2cc3",
+    "source": "https://annechao.r-universe.dev/iNEXT/doc/manual.html",
+    "scope": "Finite published empirical population only; no claim of full ecosystem support or iid field sampling"
+  },
+  {
+    "dataset": "bird_south",
+    "N": 307,
+    "S": 38,
+    "groups": 0,
+    "singleton_species": 5,
+    "sha256": "88eea57330ae3a0a0d42bef2362d8ef0e74aee792415a20c275fb16c63a86f6e",
+    "source": "https://annechao.r-universe.dev/iNEXT/doc/manual.html",
+    "scope": "Finite published empirical population only; no claim of full ecosystem support or iid field sampling"
+  },
+  {
+    "dataset": "spider_girdled",
+    "N": 168,
+    "S": 26,
+    "groups": 0,
+    "singleton_species": 12,
+    "sha256": "7ff3d67d98a086b69792a186cd3d7186944100deb8326066a2821382614536b2",
+    "source": "https://annechao.r-universe.dev/iNEXT/doc/manual.html",
+    "scope": "Finite published empirical population only; no claim of full ecosystem support or iid field sampling"
+  },
+  {
+    "dataset": "spider_logged",
+    "N": 252,
+    "S": 37,
+    "groups": 0,
+    "singleton_species": 14,
+    "sha256": "bb4e2008d0bd3ef82c1d1b10f5ee9637527b70e5e21d912534316288550813a6",
+    "source": "https://annechao.r-universe.dev/iNEXT/doc/manual.html",
+    "scope": "Finite published empirical population only; no claim of full ecosystem support or iid field sampling"
+  },
+  {
+    "dataset": "moths",
+    "N": 15609,
+    "S": 240,
+    "groups": 0,
+    "singleton_species": 35,
+    "sha256": "a3cc88807471fd6cb28e0d95141a5e9469ff1d63dcb124af3784aada4d5ecd5e",
+    "source": "https://pilaboratory.r-universe.dev/sads/doc/manual.html",
+    "scope": "Finite published empirical population only; no claim of full ecosystem support or iid field sampling"
+  },
+  {
+    "dataset": "okland",
+    "N": 1689,
+    "S": 21,
+    "groups": 0,
+    "singleton_species": 0,
+    "sha256": "08c8f3d8106d580b7bff64d0f8bd8e12b5806947df39a55db9b0a499d6509fe8",
+    "source": "https://pilaboratory.r-universe.dev/sads/doc/manual.html",
+    "scope": "Finite published empirical population only; no claim of full ecosystem support or iid field sampling"
+  },
+  {
+    "dataset": "bci",
+    "N": 21457,
+    "S": 225,
+    "groups": 50,
+    "singleton_species": 19,
+    "sha256": "4a66148c4e7c499f0f7485d56179e21474099e7a04a96b85e76948bdcf581a13",
+    "source": "https://vegandevs.github.io/vegan/reference/BCI.html",
+    "scope": "Finite published empirical population only; no claim of full ecosystem support or iid field sampling"
+  },
+  {
+    "dataset": "fish_2007_seine",
+    "N": 1180,
+    "S": 8,
+    "groups": 15,
+    "singleton_species": 1,
+    "sha256": "c818df42a370bfc05a646a4d08136dda8dc5a904404eceafde6f93881cc8add7",
+    "source": "https://fishr-core-team.github.io/FSAdata/reference/InchLake1.html",
+    "scope": "Finite published empirical population only; no claim of full ecosystem support or iid field sampling"
+  },
+  {
+    "dataset": "fish_2008_seine",
+    "N": 330,
+    "S": 4,
+    "groups": 15,
+    "singleton_species": 0,
+    "sha256": "ecc75e6e1fdd25b1de371e2240c01bd3dba46455062d8e1709e879d65d53c396",
+    "source": "https://fishr-core-team.github.io/FSAdata/reference/InchLake1.html",
+    "scope": "Finite published empirical population only; no claim of full ecosystem support or iid field sampling"
+  }
+]

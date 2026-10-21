@@ -1,0 +1,47 @@
+fixed n=1000 eps=0.001: 924 method cells
+fixed n=1000 eps=0.005: 1848 method cells
+fixed n=1000 eps=0.01: 2772 method cells
+fixed n=1000 eps=0.02: 3696 method cells
+fixed n=1000 eps=0.05: 4620 method cells
+fixed n=1000 eps=0.1: 5544 method cells
+fixed n=1000 eps=0.2: 6468 method cells
+fixed n=10000 eps=0.001: 7392 method cells
+fixed n=10000 eps=0.005: 8316 method cells
+fixed n=10000 eps=0.01: 9240 method cells
+fixed n=10000 eps=0.02: 10164 method cells
+fixed n=10000 eps=0.05: 11088 method cells
+fixed n=10000 eps=0.1: 12012 method cells
+fixed n=10000 eps=0.2: 12936 method cells
+fixed n=100000 eps=0.001: 13860 method cells
+fixed n=100000 eps=0.005: 14784 method cells
+fixed n=100000 eps=0.01: 15708 method cells
+fixed n=100000 eps=0.02: 16632 method cells
+fixed n=100000 eps=0.05: 17556 method cells
+fixed n=100000 eps=0.1: 18480 method cells
+fixed n=100000 eps=0.2: 19404 method cells
+fixed n=1000000 eps=0.001: 20328 method cells
+fixed n=1000000 eps=0.005: 21252 method cells
+fixed n=1000000 eps=0.01: 22176 method cells
+fixed n=1000000 eps=0.02: 23100 method cells
+fixed n=1000000 eps=0.05: 24024 method cells
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/snowy/OSST/publication/run.py", line 75, in <module>
+    if __name__=="__main__":main()
+                            ~~~~^^
+  File "/home/snowy/OSST/publication/run.py", line 63, in main
+    PHASES[phase](configs,out,args.quick)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/snowy/OSST/publication/suites.py", line 163, in fixed_suite
+    rr,arrays,mm=fixed_cell(pop,n,eps,m,trials,configs,key)
+                 ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/snowy/OSST/publication/suites.py", line 121, in fixed_cell
+    values=np.minimum(n,fp.observed) if fam=="count" else certified_lower(fp,scales[fam],n)
+                                                          ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/snowy/OSST/publication/core.py", line 122, in certified_lower
+    raw = [int(D)*den + sum(a*int(f)*(den//c.denominator)
+                        ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+              for a, f in zip(c.coefficients, row)) - margin.numerator*(den//margin.denominator)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

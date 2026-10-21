@@ -1,0 +1,93 @@
+[
+  {
+    "name": "mite",
+    "url": "https://raw.githubusercontent.com/vegandevs/vegan/19643ae1a547c1789e54a993f42cdcd03b212990/data/mite.rda",
+    "commit": "19643ae1a547c1789e54a993f42cdcd03b212990",
+    "sha256": "072aabb3f03ee7a364ce8ac4b9e3a022cbac087dedb48b785ffd4ec36433e361",
+    "page": "https://vegandevs.github.io/vegan/reference/mite.html",
+    "license": "GPL-2",
+    "note": "soil mites; 70 spatial soil cores"
+  },
+  {
+    "name": "bird",
+    "url": "https://raw.githubusercontent.com/annechao/iNEXT/41a87952f6858f61f5681793e8eac6aa0cf5af75/data/bird.rda",
+    "commit": "41a87952f6858f61f5681793e8eac6aa0cf5af75",
+    "sha256": "eb4183b080af2d7ce2f2b39f3714f4ad01b50971b5dd94ddfdaf9612575af733",
+    "page": "https://annechao.r-universe.dev/iNEXT/doc/manual.html",
+    "license": "GPL >=3",
+    "note": "birds; Barrington Tops North and South sites kept separate"
+  },
+  {
+    "name": "spider",
+    "url": "https://raw.githubusercontent.com/annechao/iNEXT/41a87952f6858f61f5681793e8eac6aa0cf5af75/data/spider.rda",
+    "commit": "41a87952f6858f61f5681793e8eac6aa0cf5af75",
+    "sha256": "aba4a081cfcd8ecbd1d1b2ba78eb7fddb10f48d8b929b28fd7e6b9f2f384543e",
+    "page": "https://annechao.r-universe.dev/iNEXT/doc/manual.html",
+    "license": "GPL >=3",
+    "note": "spiders; Girdled and Logged treatments kept separate"
+  },
+  {
+    "name": "moths",
+    "url": "https://raw.githubusercontent.com/pilaboratory/sads/462e9d4e2febfeb679e240ea9a61adc34624f314/data/moths.rda",
+    "commit": "462e9d4e2febfeb679e240ea9a61adc34624f314",
+    "sha256": "df6af55671612c6b2e51583ec1d3748b3479cc2de099986e3e05f5ba1aa5226c",
+    "page": "https://pilaboratory.r-universe.dev/sads/doc/manual.html",
+    "license": "GPL-2",
+    "note": "moths; Rothamsted light-trap aggregate 1933--1936; no temporal rows available"
+  },
+  {
+    "name": "okland",
+    "url": "https://raw.githubusercontent.com/pilaboratory/sads/462e9d4e2febfeb679e240ea9a61adc34624f314/data/okland.rda",
+    "commit": "462e9d4e2febfeb679e240ea9a61adc34624f314",
+    "sha256": "6e06344d126e4a81dd0f0e19251a90d1c9e4d19e4a6a7c47900adec250e5cbba",
+    "page": "https://pilaboratory.r-universe.dev/sads/doc/manual.html",
+    "license": "GPL-2",
+    "note": "land snails; Norway historical abundance vector"
+  },
+  {
+    "name": "bci",
+    "dataset": "bci",
+    "raw_rows": 50,
+    "census": "1982, DBH>=10cm subset",
+    "sample_unit": "该次普查 DBH>=10cm 的一棵树",
+    "category": "发布者整理后的物种名",
+    "group_unit": "1ha spatial quadrat",
+    "filters": "原始 50 样方 x 225 物种计数矩阵全部使用；无需展开逐树标签",
+    "limitations": "这是 1982 年大树子集，非 2019 全档案；用于算法基准，不用于当代生态结论。样方内空间相关。",
+    "full_archive_attempt": "2019 Dryad 全档案 DOI:10.15146/5xcp-0d46 的公开文件下载返回 HTTP 403，API 下载返回 401，未使用该全档案，也未混合年份凑样本量。",
+    "records": 21457,
+    "support": 225,
+    "groups": 50,
+    "nonzero_group_category_pairs": 4539,
+    "min_category_count": 1,
+    "max_category_count": 1717,
+    "top10_mass": 0.4180919979493871,
+    "counts_sha256": "2f7b4f3f0037444dd9818fb724b638606f1bddb0988fdfb8dc41df9209bb7803",
+    "groups_sha256": "70542adcf8f0650b36cb8f1947cabb0329cbdf43814d4af484fe61cf4a93d452",
+    "reference_scope": "该数据文件清洗后的有限参考总体，不是未知外部总体的真实支持集"
+  },
+  {
+    "dataset": "InchLake1",
+    "creator": "Derek H. Ogle, personal collection",
+    "source_page": "https://fishr-core-team.github.io/FSAdata/reference/InchLake1.html",
+    "download_url": "https://raw.githubusercontent.com/fishR-Core-Team/FSAdata/2db85a9eaed25f9d13be5a3a5fde5dce0cf125c7/data-raw/InchLake1.csv",
+    "commit": "2db85a9eaed25f9d13be5a3a5fde5dce0cf125c7",
+    "sha256": "0bcf180122609e77a220a46626004776c36a5176a1e4f663a4c81372b0219584",
+    "verified_at_utc": "2026-10-21T08:26:14.199375+00:00",
+    "raw_records": 4894,
+    "fish_records": 4887,
+    "excluded": {
+      "Rusty Crayfish": 7
+    },
+    "observed_fish_species": 9,
+    "package_license": "GPL (>= 2), per upstream DESCRIPTION; attribution retained",
+    "cleaning": "只去除明确的非鱼类 Rusty Crayfish；不按相同行去重，不按体长筛选",
+    "sampling_caveats": [
+      "含多种渔具和 2007/2008 两年；按年份和渔具分层",
+      "netID 为捕获事件；同一网内的鱼可能相关",
+      "无逐鱼时间戳；CSV 顺序不认定为捕获时间顺序",
+      "记录的个体不保证跨事件从未重捕；没有可用于去重的鱼个体 ID",
+      "完整数据中的物种数不是全湖物种普查结果"
+    ]
+  }
+]

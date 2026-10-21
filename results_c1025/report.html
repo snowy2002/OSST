@@ -1,0 +1,30 @@
+<!doctype html><html lang="zh"><meta charset="utf-8"><title>C0=1025 实验报告</title><style>body{font:17px/1.8 system-ui;max-width:1080px;margin:40px auto;padding:0 24px;color:#172638}h1,h2{line-height:1.35}table{border-collapse:collapse;width:100%;font-size:14px}td,th{border-bottom:1px solid #ddd;padding:9px;text-align:left}img{max-width:100%}.card{background:#eef5fa;padding:20px;border-radius:8px}details{margin:25px 0}a{color:#0072b2}code{font-size:14px}</style><body>
+<h1>C₀ = 1025：完整实验与自然数据可行性</h1>
+<p><a href="experiment_paper.pdf">实验论文 PDF（含完整证明附录）</a> · <a href="experiments_only.pdf">仅实验章节 PDF</a> · <a href="experiment_paper.tex">LaTeX 主文件</a> · <a href="summary.json">机器可读结果</a></p>
+<div class="card">在 645 个合成配置和 236 个自然经验分布配置上，C₀=1025 的承诺检验未观察到错误。主设计共 9,130,000 条独立模拟路径、39,720,000 次配对方法评估；二者不混为独立试验次数。所有现实规模都进入计数分支。</div>
+<h2>首先看成功率</h2><p>Yes 表示支持数不超过 n；No 表示 n 个最高概率类别外的质量至少为 ε。Gap 不定义二元错误率。ε 是分离距离，不是错误概率。表中的上界是按整套测试网格校正后的单侧 95% 置信上界；零观察错误不等于真实错误率为零。</p>
+<table><tr><th>数据</th><th>方法</th><th>错误/承诺试验</th><th>最差错误率上界</th></tr>
+<tr><td>synthetic</td><td>C = 1024</td><td>0/5,550,000</td><td>0.107%</td></tr>
+<tr><td>synthetic</td><td>C = 1025</td><td>0/5,550,000</td><td>0.107%</td></tr>
+<tr><td>synthetic</td><td>Original C = 2^26</td><td>0/5,550,000</td><td>0.107%</td></tr>
+<tr><td>synthetic</td><td>99% count baseline</td><td>203/5,550,000</td><td>0.347%</td></tr>
+<tr><td>natural</td><td>C = 1024</td><td>0/1,760,000</td><td>0.095%</td></tr>
+<tr><td>natural</td><td>C = 1025</td><td>0/1,760,000</td><td>0.095%</td></tr>
+<tr><td>natural</td><td>Original C = 2^26</td><td>0/1,760,000</td><td>0.095%</td></tr>
+<tr><td>natural</td><td>99% count baseline</td><td>0/1,760,000</td><td>0.095%</td></tr>
+</table><h2>必须同时报告的限制</h2>
+<p>新常数比原来的理论预算小约 6.55 万倍，但仍比本实验的 99% 计数基线多用 35.8–135.2 倍样本。因此，实验支持常数改进和实现正确性，不能宣称现实采样效率超过这个基线。C=1024 在现实网格上同样通过，最小整数结论不能靠这组实验区分。</p>
+<p>十个真实总体来自七类生物，均为公开的有限丰度记录。236 个配置中只有 2 个原始记录数达到 C₀=1025 的平均预算，且都来自土壤螨数据。其他配置的结果是从经验分布生成新 iid 样本的算法基准，不能说已经验证了未知自然总体。已有数据中看见超过 n 个物种可以直接拒绝；看见不超过 n 个物种且样本不足则不能认证接受。</p>
+<p>保持边际物种概率但人为引入相关性后，最坏错误率分别达到 99.825%（重复观测）和 42.400%（真实分组内成块采样）。这说明 iid 假设实质重要，并非仅在报告里加一句免责声明。</p>
+<h2>每张图在说明什么</h2>
+<details open><summary>柱子是测试网格中最差单元的错误率置信上界，越低越好；虚线是 1% 目标。</summary><img src="figures/risk.png"><p>Worst cellwise error upper confidence bounds, Bonferroni-adjusted within each suite over all promised method cells. Zero observed errors are not zero risk.</p></details>
+<details><summary>左图比较理论样本预算；右图显示新常数仍比简单计数基线多用多少倍样本，不能把预算倍数说成运行加速。</summary><img src="figures/budgets.png"><p>Prescribed acquisition budgets, not simulator run times. The original coefficient decreases by about 65,472x, but a 99% Chernoff count baseline remains cheaper over all tested sizes.</p></details>
+<details><summary>展示常数过小时会失败，以及有限规模下远小于 1025 的常数也可能成功；不将网格阈值称为全局最优。</summary><img src="figures/constant_sweep.png"><p>Coefficient sensitivity for three alternatives at epsilon=0.01. Each point has 4,000 trials; the CSV includes simultaneous confidence bounds. Dashed horizontal line: 1% target. Vertical dotted line: C=1025.</p></details>
+<details><summary>真实数据涵盖七类生物、十个总体；曲线描述丰度不均匀程度，不是预测准确率。</summary><img src="figures/natural_shapes.png"><p>Rank-abundance distributions for ten published empirical populations spanning seven biological groups. These are observed finite populations, not complete ecosystem inventories.</p></details>
+<details open><summary>大于 1 表示原始记录数连理论平均预算都达不到；这里只能重采样验证经验分布，不能冒充新增野外观测。</summary><img src="figures/natural_feasibility.png"><p>Budget feasibility: ratios above one mean that the original file has fewer observations than the prescribed mean. Even ratios below one do not establish iid field sampling or guarantee a Poisson draw fits in the file.</p></details>
+<details><summary>即使每条观测的物种概率不变，重复或成组相关也可能破坏保证；这些是压力测试，不是测得的自然界相关强度。</summary><img src="figures/dependence.png"><p>Stress tests preserve the marginal category distribution but violate independence. Group selection is abundance-weighted. Error increases measure artificial perturbations, not an estimate of actual field correlation.</p></details>
+<details><summary>从实际逐条标签流检查早停成本，避免只比较批处理检查点而夸大采样效率。</summary><img src="figures/stream.png"><p>Actual label-stream simulation at epsilon=0.01 with 300 trials per cell. The count baseline stops immediately upon observing n+1 species; a prescribed Poisson cap controls acceptance. C1025 bars are prescribed means, not an additional simulated giant stream.</p></details>
+<details><summary>区分模拟生成数据的耗时和完整接口判定耗时；这些不是采集理论样本量的现实耗时。</summary><img src="figures/runtime.png"><p>Ten timed repetitions after one warm-up in each isolated process. Independent Poisson category-count generation and certified decision computation are separated. These timings exclude physical data acquisition.</p></details>
+<h2>核验与复现</h2><p>完整公开接口执行 1,428 次；巨大参数、多项式系数和完整输出的独立代数检查通过 43,801 项。原始逐次 D 值、四个种子块、所有失败结果和 Gap 单元均保留。自然数据标签与有效支持整数另用原始整数计数复核。数值核验不能替代对所有分布的数学证明。</p>
+<p><a href="result_validation.json">原始结果一致性审计</a> · <a href="protocol.json">冻结实验设计及日志修正说明</a> · <a href="data_sources.json">数据来源与许可</a> · <a href="natural_feasibility.csv">真实数据预算逐项表</a> · <a href="REPRODUCE.txt">复现说明</a></p>
+<p>当前材料是可审阅、可复现的实验论文稿；未指定具体会议模板，也不能由实验规模或排版推断达到某会议的录用标准。</p></body></html>

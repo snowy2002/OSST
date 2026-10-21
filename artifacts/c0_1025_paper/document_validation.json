@@ -1,0 +1,71 @@
+{
+  "page_count": 5,
+  "body_pages": 4,
+  "reference_pages": 1,
+  "pages": [
+    {
+      "page": 1,
+      "characters": 2707,
+      "dimensions": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ]
+    },
+    {
+      "page": 2,
+      "characters": 2546,
+      "dimensions": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ]
+    },
+    {
+      "page": 3,
+      "characters": 2234,
+      "dimensions": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ]
+    },
+    {
+      "page": 4,
+      "characters": 3138,
+      "dimensions": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ]
+    },
+    {
+      "page": 5,
+      "characters": 285,
+      "dimensions": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ]
+    }
+  ],
+  "labels": 25,
+  "references": 22,
+  "compiler_issues": [],
+  "checks": [
+    "environments balanced",
+    "all references defined",
+    "no unresolved PDF references",
+    "no text bounding boxes outside page",
+    "no compiler warnings or overflow"
+  ],
+  "hashes": {
+    "c0_1025_note.tex": "cf79fa3b39f61f6ce2189f97db54d77607faa2aab678ec4c2eec4a4c965792ec",
+    "c0_1025_note.pdf": "ce1a6079c99b1ccc4841d3fcdff8086e402d9423c80f89cc2a369bfc5ff0d292"
+  }
+}

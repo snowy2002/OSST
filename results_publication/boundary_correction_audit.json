@@ -1,0 +1,70 @@
+{
+  "old_invalid_nominal_boundary_cells": 9,
+  "failures": [
+    {
+      "n": 1000,
+      "epsilon": 0.001,
+      "old_exact_margin": "-365977/37778931862957163307852000",
+      "old_margin_float": -9.68733052929022e-21,
+      "corrected_exact_margin": "1499581/4722366482869645415044000"
+    },
+    {
+      "n": 1000,
+      "epsilon": 0.005,
+      "old_exact_margin": "-83303/755578637259143225997600",
+      "old_margin_float": -1.1025060250800777e-19,
+      "corrected_exact_margin": "204601/377789318629571613248800"
+    },
+    {
+      "n": 1000,
+      "epsilon": 0.01,
+      "old_exact_margin": "-211671/1888946593147858044509600",
+      "old_margin_float": -1.1205769436141563e-19,
+      "corrected_exact_margin": "373059/314824432191309674501600"
+    },
+    {
+      "n": 10000,
+      "epsilon": 0.001,
+      "old_exact_margin": "-4858401/120892581961462922034776000",
+      "old_margin_float": -4.018775115208242e-20,
+      "corrected_exact_margin": "6467/39353054023913711608000"
+    },
+    {
+      "n": 10000,
+      "epsilon": 0.01,
+      "old_exact_margin": "-963129/15111572745182865362110400",
+      "old_margin_float": -6.373453089500679e-20,
+      "corrected_exact_margin": "30647/19676527011956855972800"
+    },
+    {
+      "n": 1000000,
+      "epsilon": 0.001,
+      "old_exact_margin": "-14300297/146536462983591417112672000",
+      "old_margin_float": -9.758865956523934e-20,
+      "corrected_exact_margin": "8587221717/38685626227668134130245408000"
+    },
+    {
+      "n": 1000000,
+      "epsilon": 0.02,
+      "old_exact_margin": "-35115151/193428131138340678218092800",
+      "old_margin_float": -1.8154107571295037e-19,
+      "corrected_exact_margin": "224942427/96714065569170339359046400"
+    },
+    {
+      "n": 1000000,
+      "epsilon": 0.05,
+      "old_exact_margin": "-2366113/24178516392292583986364160",
+      "old_margin_float": -9.786014003548409e-20,
+      "corrected_exact_margin": "465267779/48357032784585168472728320"
+    },
+    {
+      "n": 1000000,
+      "epsilon": 0.1,
+      "old_exact_margin": "-5395629/2417851639229258447860480",
+      "old_margin_float": -2.23157985066444e-18,
+      "corrected_exact_margin": "26069581/1611901092819505665240320"
+    }
+  ],
+  "selected_configs_unchanged": true,
+  "note": "Correctness amendment only. All final formal suites rerun; superseded outcomes not pooled."
+}

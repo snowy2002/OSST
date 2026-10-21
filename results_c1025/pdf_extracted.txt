@@ -1,0 +1,861 @@
+Evaluating an Explicit Constant for Support-Size Testing
+Reproducible experiments for C0 = 1025, with proof appendix
+Abstract
+We evaluate the explicit coeﬃcient C0 = 1025 for Wang's support-size tester, conditional on the accom-
+panying proof and with L0 = 1024 unchanged. The frozen main design comprises 9,130,000 independent
+simulated Poisson-process paths and 39,720,000 paired method evaluations. Synthetic sizes range from 1
+to 1012 across ﬁve separation parameters and up to ﬁfteen distribution scenarios. Ten published empirical
+populations cover trees, mites, birds, spiders, moths, snails, and ﬁsh. No errors are observed for C0 = 1025 in
+the promised primary cells; worst simultaneous 95% error upper bounds are 0.107% on synthetic and 0.095%
+on empirical populations. However, all practical sizes use the observed-count branch, a simple certiﬁed count
+baseline requires fewer samples, and only 2 of 236 ecological conﬁgurations have as many original records as
+the prescribed mean. Correlation stress tests expose violations of the iid requirement. Full-degree interval
+checks and public-API executions support implementation ﬁdelity without substituting for a universal proof
+or a ﬁeld validation.
+1
+Question and claim boundaries
+We test the proposed constant reduction from 226 to 1025 in the supplied manuscript [1]. For integer n ≥1,
+separation 0 < ϵ < 1, and L = 1 + log n, the prescribed Poisson mean is m = ⌈C0n/(ϵL)⌉. The separation
+parameter ϵ is not the target error probability, which is 0.01. Yes instances satisfy S ≤n; No instances satisfy
+∆n(p) ≥ϵ.
+Gap instances satisfy neither promise and receive no classiﬁcation-error label.
+We also check
+min{eﬀϵ(p), n} ≤bS ≤S for every distribution, including Gap instances.
+The coeﬃcient reduction is an analytic reﬁnement of the same construction, not a new asymptotic sample-
+complexity rate. Empirical evidence addresses ﬁnite tested distributions. It cannot establish uniform correctness
+over all distributions or integer minimality. In particular, C0 = 1024 also succeeds on the tested practical grid;
+its theoretical obstruction lies near n = e1023 ≈10444.28. The accompanying proof is included in the appendix
+for a precise statement of scope.
+2
+Implementation and comparators
+The public reference interface now accepts an explicit sampling coeﬃcient and records it in every output, while
+retaining the original coeﬃcient as its default. Parameters, branch decisions, integer rounding and outputs are
+computed with Arb intervals and adaptive precision. The command python paper_reference.py demo –n
+1000 –epsilon 0.1 –c0 1025 runs the new coeﬃcient. All tested practical n satisfy L < 1024, so the literal
+algorithm is D > n for rejection and bS = min{max{D, 1}, n}. We do not force a polynomial branch at small n
+or attribute tuned practical variants to this theorem.
+Comparators are the original C0 = 226 construction, C0 = 1024 as a coeﬃcient control, and a count baseline
+with the same 1% target. For the latter, let a = log 100 and choose mcount = ⌈(n+a+
+√
+a2 + 2na)/ϵ⌉. Discovery-
+time domination and a Poisson Chernoﬀbound certify its type-II error below 1%; its type-I error is zero. This
+is a conservative analytic count baseline, not a data-tuned oracle. Constant sweeps below 1025 are sensitivity
+experiments without a claimed universal theorem.
+3
+Experimental protocol and statistical analysis
+The primary grid uses n ∈{1, 2, 10, 102, 103, 104, 106, 109, 1012} and ϵ ∈{0.001, 0.01, 0.05, 0.1, 0.25}. Scenarios
+include uniform and smaller-support nulls, dominant heads with extremely rare tails, piecewise power-law,
+lognormal, discrete Gaussian-shaped and geometric-shaped nulls, near-boundary uniform alternatives, diﬀuse
+and ultradiﬀuse tails, multiscale alternatives, clear alternatives, and two Gap controls. Blocked shapes are
+explicitly constructed discrete distributions, not claimed exact continuous Gaussian or lognormal laws. Invalid
+null variants at n = 1 are omitted prospectively. Promise labels and eﬀective-support integers are checked with
+rational arithmetic; empirical-data labels are additionally checked from integer counts.
+Each primary distribution/parameter cell has four independent blocks of 2,500 trials. Methods share nested
+Poisson-process occupancies within a trial for paired comparisons. For a group of g equal-probability categories,
+1
+
+Empirical population
+Records
+Species
+Natural groups
+Soil mites
+9,800
+35
+70
+Birds (North)
+202
+27
+–
+Birds (South)
+307
+38
+–
+Spiders (Girdled)
+168
+26
+–
+Spiders (Logged)
+252
+37
+–
+Moths
+15,609
+240
+–
+Land snails
+1,689
+21
+–
+Forest trees
+21,457
+225
+50
+Fish (2007 seine)
+1,180
+8
+15
+Fish (2008 seine)
+330
+4
+15
+Table 1: Published ﬁnite populations. Groups are spatial plots, soil cores or capture events; separate bird sites
+and spider treatments are not pooled.
+unseen categories are discovered over an increment ∆m by binomial thinning with probability 1 −e−p∆m. This
+is the exact joint occupancy law in real arithmetic; numerical random generation uses binary64. It does not
+materialize the nominal sample stream or recover its realized length M. We save every method's observed count,
+not just averages. The coeﬃcient sweep uses 4,000 trials per cell and fourteen coeﬃcients from 0.25 to 1025.
+For k failures in T trials, we report the one-sided Clopper–Pearson upper bound Beta−1(1 −α; k + 1, T −k),
+with value one when k = T. Bonferroni adjustment sets α = 0.05/K across all promised method cells within each
+suite. Lower-bound failures use a separate family over all cells, including Gap controls. These are suite-speciﬁc
+simultaneous statements, not a single global 95% statement across every analysis. No trial count or parameter
+was changed in response to observed errors. A saved protocol amendment ﬁxes duplicate output-log keys only; it
+does not change completed simulations. Supplemental API, runtime and group checks were separately recorded
+after primary summary inspection.
+4
+Natural abundance data and validation targets
+We use abundance counts rather than biomass, percentage cover, or incidence frequencies. BCI trees and soil
+mites come from vegan [3]; birds and two spider treatments from iNEXT [4]; moths and land snails from sads [5];
+seine-caught ﬁsh are stratiﬁed by year in InchLake1 [6]. Source commits, SHA256 digests, licensing notes and
+cleaning rules are saved in data_sources.json. BCI refers to the 1982 large-tree subset, not a modern full-forest
+inventory. Historical abundance vectors have no recoverable event order. No species are invented to enlarge a
+real dataset.
+The conﬁrmatory numerical target is each cleaned empirical distribution bpi = ci/ P
+j cj. Independent Poisson
+resampling provides known ﬁnite truth, but cannot discover species absent from the source ﬁle. For each ϵ,
+thresholds are the unique positive values among ⌊S/2⌋, eﬀϵ −1, eﬀϵ, S, and ⌈1.5S⌉. Truth is used to construct
+a benchmark and score results; the decision interface receives only the observed ﬁngerprint and predeclared
+n, ϵ, m. This is not a deployment procedure for choosing n from an unknown ecosystem.
+5
+Risk and acquisition-budget results
+The main experiment comprises 645 synthetic cells and 236 empirical cells, each evaluated by four methods.
+The C1025 joint lower-bound failure upper limits are 0.108% and 0.098%, respectively, below the theorem's
+2% joint target. The count baseline also meets the 1% error target on the tested grid. Thus the experiments
+support implementation correctness and conservative guarantees, not practical sample-eﬃciency dominance.
+Across the synthetic grid, the C1025 budget is 35.8–135.2 times the count-baseline budget. Reducing the
+original coeﬃcient changes its prescribed mean by approximately 65,472 times; this does not imply an equal
+wall-clock speedup or equal savings relative to a stronger ﬁnite-scale baseline. The coeﬃcient sweep ﬁnds much
+smaller suﬃcient tested constants on its restricted scenarios. Such selected grid values are not universal optima.
+2
+
+100
+101
+102
+Species abundance rank
+10−4
+10−3
+10−2
+10−1
+Empirical probability
+Published natural abundance distributions
+Soil mites
+Birds (North)
+Birds (South)
+Spiders (Girdled)
+Spiders (Logged)
+Moths
+Land snails
+Forest trees
+Fish (2007 seine)
+Fish (2008 seine)
+Figure 1: Rank-abundance distributions for ten published empirical populations spanning seven biological
+groups. These are observed ﬁnite populations, not complete ecosystem inventories.
+Suite
+Method
+Errors / trials
+Worst error
+Simultaneous upper
+Synthetic
+C = 1024
+0/5,550,000
+0.000%
+0.107%
+Synthetic
+C = 1025
+0/5,550,000
+0.000%
+0.107%
+Synthetic
+Original C = 2^26
+0/5,550,000
+0.000%
+0.107%
+Synthetic
+99% count baseline
+203/5,550,000
+0.130%
+0.347%
+Natural
+C = 1024
+0/1,760,000
+0.000%
+0.095%
+Natural
+C = 1025
+0/1,760,000
+0.000%
+0.095%
+Natural
+Original C = 2^26
+0/1,760,000
+0.000%
+0.095%
+Natural
+99% count baseline
+0/1,760,000
+0.000%
+0.095%
+Table 2: Errors on promised instances. “Worst error” is the largest cellwise observed rate, not a pooled rate.
+Conﬁdence families include all methods in the respective suite.
+Original
+C = 2^26
+C
+= 1025
+C
+= 1024
+99%
+count baseline
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+Worst simultaneous 95%
+error upper bound (%)
+Synthetic
+Original
+C = 2^26
+C
+= 1025
+C
+= 1024
+99%
+count baseline
+Empirical resampling
+Figure 2: Worst cellwise error upper conﬁdence bounds, Bonferroni-adjusted within each suite over all promised
+method cells. Zero observed errors are not zero risk.
+3
+
+100
+102
+104
+106
+108
+1010
+1012
+n
+103
+106
+109
+1012
+1015
+1018
+1021
+Prescribed Poisson mean
+epsilon = 0.01
+Original C = 2^26
+C = 1025
+99% count baseline
+100
+102
+104
+106
+108
+1010
+1012
+n
+0
+25
+50
+75
+100
+125
+C1025 budget / count-baseline budget
+Finite-scale conservatism
+Figure 3: Prescribed acquisition budgets, not simulator run times. The original coeﬃcient decreases by about
+65,472x, but a 99% Chernoﬀcount baseline remains cheaper over all tested sizes.
+0
+20
+40
+60
+80
+100
+False-negative rate (%)
+n = 10
+uniform
+diffuse
+multiscale
+n = 1,000
+100
+101
+102
+103
+Sampling coefficient C
+0
+20
+40
+60
+80
+100
+False-negative rate (%)
+n = 1,000,000
+100
+101
+102
+103
+Sampling coefficient C
+n = 1,000,000,000,000
+Figure 4: Coeﬃcient sensitivity for three alternatives at epsilon=0.01. Each point has 4,000 trials; the CSV
+includes simultaneous conﬁdence bounds. Dashed horizontal line: 1% target. Vertical dotted line: C=1025.
+4
+
+100
+101
+102
+Required mean budget / original record count
+Soil mites
+Forest trees
+Moths
+Fish (2007 seine)
+Land snails
+Fish (2008 seine)
+Spiders (Logged)
+Birds (South)
+Spiders (Girdled)
+Birds (North)
+Best tested n, epsilon
+n = observed support, epsilon = 0.1
+Figure 5: Budget feasibility: ratios above one mean that the original ﬁle has fewer observations than the
+prescribed mean. Even ratios below one do not establish iid ﬁeld sampling or guarantee a Poisson draw ﬁts in
+the ﬁle.
+6
+What can the original ecological records validate?
+Only 2/236 ecological conﬁgurations have N ≥m1025. We also report Pr{Poi(m) > N}, because N ≥m alone
+does not guarantee a feasible Poisson draw. The only mean-feasible conﬁgurations are from the mite dataset.
+We run 200 ﬁnite-ﬁle Poisson subsampling attempts for each and retain every overﬂow rather than redrawing.
+These without-replacement ﬁle analyses are descriptive: the underlying spatial core collection has not been
+established to be an iid sample from the desired external population. For insuﬃcient ﬁles, resampling with
+replacement does not create additional independent ecological evidence.
+In the mite conﬁgurations, (n, ϵ, m, N) = (6, 0.25, 8812, 9800) and (7, 0.25, 9743, 9800).
+The ﬁrst has no
+overﬂows in 200 attempts; the second has 52 in 200, consistent with its nominal overﬂow probability of about
+0.280. Both thresholds already lie below the 35 observed species, so these runs do not establish previously
+unknown ecological richness or certiﬁed acceptance.
+Observing more than n valid species directly refutes S ≤n without an iid assumption. Conversely, seeing
+at most n species in an inadequate or biased survey does not certify acceptance. In particular, neither a high
+empirical resampling success rate nor an algorithmic Yes proves a complete species inventory. Sampling eﬀort,
+detection bias, spatial clustering and the chosen biological sampling unit must be speciﬁed for a ﬁeld application.
+7
+Dependence, held-out groups and stopping rules
+We test two controlled departures from independence while retaining the same marginal species distribution:
+identical-label duplication and multiple labels drawn within real abundance-weighted groups.
+Their worst
+observed false-negative rates are 99.825% and 42.400%, respectively. These deliberate stresses are not estimates
+of natural ﬁeld dependence. Selecting a group independently for every individual with probability proportional
+to its abundance recovers the pooled empirical iid target; batching individuals within the same selected group
+does not.
+Five 70/30 group splits per grouped dataset select n using training groups only. Held-out ﬁnite populations
+are independently resampled and scored using their own truth. No errors are observed on promised held-out
+cells; 5 cells are Gap instances and are not silently assigned a failure label. This measures robustness to ﬁnite
+empirical heterogeneity, not unknown species outside both splits.
+5
+
+100
+101
+102
+103
+Repeated labels per parent
+0
+20
+40
+60
+80
+100
+False-negative rate (%)
+Artificial identical-label duplication
+Forest trees
+Fish (2007 seine)
+Fish (2008 seine)
+Soil mites
+100
+101
+102
+103
+104
+Labels per selected natural group
+Artificial sampling within real groups
+Figure 6: Stress tests preserve the marginal category distribution but violate independence. Group selection is
+abundance-weighted. Error increases measure artiﬁcial perturbations, not an estimate of actual ﬁeld correlation.
+10
+uniform null
+10
+uniform alt
+10
+diffuse alt
+100
+uniform null
+100
+uniform alt
+100
+diffuse alt
+1000
+uniform null
+1000
+uniform alt
+1000
+diffuse alt
+10−4
+10−3
+10−2
+10−1
+100
+Acquisition cost / C1025 mean
+C1025 fixed budget
+99% count fixed budget
+99% count, immediate rejection
+Figure 7: Actual label-stream simulation at epsilon=0.01 with 300 trials per cell. The count baseline stops im-
+mediately upon observing n+1 species; a prescribed Poisson cap controls acceptance. C1025 bars are prescribed
+means, not an additional simulated giant stream.
+A separate actual-label experiment uses n ∈{10, 100, 1000}, ϵ ∈{0.01, 0.1} and 300 repetitions. A count
+comparator stops immediately at the (n + 1)st distinct label, otherwise reaching its independent Poisson cap.
+Reporting this stopping rule prevents a batch-checkpoint comparison from overstating the value of the ﬁxed-
+budget construction.
+8
+Full-program and numerical veriﬁcation
+We executed 1,428 complete public-reference calls on actual independent Poisson category counts, including
+300 calls generated from natural empirical probabilities.
+The resulting decisions and integer lower bounds
+agree with the count-branch speciﬁcation. An independent ﬁnite occupancy generating-function convolution
+checks unsaturated small cases. All 43,801 independent algebraic assertions pass, including exact coeﬃcients,
+branch boundaries, large-degree weights, ﬁnal decisions, and intentional error controls. Large-parameter ﬁxtures
+exercise the complete prescribed polynomial degrees and all scales with adaptive interval precision; these are
+deterministic formula checks, not simulations of 10444 physical observations.
+An additional noninteger-output ﬁxture requires precision escalation from 1608 to 3216 bits; its 443-digit
+6
+
+102
+103
+104
+105
+106
+Number of explicit categories
+10−1
+100
+101
+102
+Median milliseconds
+Generate category counts
+C = 1025
+C = 67108864
+102
+103
+104
+105
+106
+Number of explicit categories
+10−1
+100
+Median milliseconds
+Full public reference decision
+Figure 8: Ten timed repetitions after one warm-up in each isolated process. Independent Poisson category-count
+generation and certiﬁed decision computation are separated. These timings exclude physical data acquisition.
+rounded lower bound matches a separately evaluated 4096-bit polynomial formula. This checks rounding after
+the polynomial, rather than only an easy clipped endpoint. The independent interval formulas share the FLINT
+arithmetic stack, so this is not an independent proof-assistant certiﬁcate.
+Runtime measurements isolate count generation from certiﬁed public-reference decisions.
+Every (n, C0)
+case runs in a separate process with one warm-up and ten timed repetitions; process peak RSS is retained.
+Compressed simulation time is reported as computation only. It must not be interpreted as the cost of obtaining
+the nominal number of observations in nature.
+9
+Reproducibility and limitations
+The artifact contains prospective design ﬁles, all primary trial occupancies, per-seed results, exact target audits,
+source snapshots, environment versions, source-data provenance, ﬁgures, code and LaTeX. Run python -m
+c1025.run –phase all, then python -m c1025.supplement, python -m c1025.numeric_extra, and python
+-m c1025.report.
+Existing completed stages are preserved.
+The new raw-output audit recomputes every
+primary decision, conﬁdence bound and lower-bound failure from saved trials. A local frozen protocol is not an
+external preregistration.
+The tested biological collections are diverse but small, historical, and nonrandomly selected; their reference
+supports omit undiscovered species. No new ﬁeld survey or external full-population inventory was obtained.
+The practical grid cannot distinguish 1024 from 1025 at the astronomical worst-case boundary. The proof is
+not certiﬁed by a proof-assistant kernel or independent peer review. The evidence supports a precise constant-
+reﬁnement evaluation with explicit negative results; publication novelty and ﬁt to a speciﬁc conference remain
+separate questions. No conference template or acceptance claim is implied.
+7
+
+A
+Construction and main result
+Let p be a probability distribution on a ﬁnite or countable alphabet. Write S = | supp(p)| ∈N ∪{∞} and
+∆r(p) = P
+i>r p(i), where the probabilities are in nonincreasing order, padded with zeros if necessary. Given
+an integer n ≥1 and 0 < ϵ < 1, support-size testing distinguishes S ≤n from ∆n(p) ≥ϵ. Deﬁne eﬀϵ(p) =
+min{k ≥1 : ∆k(p) ≤ϵ}. Here ϵ is the separation parameter, distinct from the target failure probability 0.01.
+All logarithms are natural unless explicitly subscripted.
+We retain the construction of Wang [1, Section 3], writing C for its sampling coeﬃcient C0. Set
+L = log(en),
+m = Cn
+ϵL ,
+M ∼Poi(m),
+Ni ∼Poi(mpi) independently,
+(1)
+where Ni counts label i among the M iid draws from p, and let D = P
+i 1{Ni > 0}. If L < 1024, set eS = D.
+Otherwise, put
+a0 = ϵ
+8n,
+b = 64L
+m ,
+J =
+
+log2
+b
+2a0
+
+,
+(2)
+aj = 2ja0,
+δj = 2−j−2,
+kj =
+q
+b/aj log(2/δj)
+
+(0 ≤j ≤J).
+(3)
+Let Tk be deﬁned by Tk(cos θ) = cos(kθ). For generic parameters (a, b, k, m), deﬁne the polynomial and weights
+P(x) = −ρTk
+b + a −2x
+b −a
+
+=
+k
+X
+ℓ=0
+cℓxℓ,
+ρ = Tk
+b + a
+b −a
+−1
+,
+(4)
+f(0) = 0,
+f(ℓ) = 1 + cℓℓ!/mℓ
+(1 ≤ℓ≤k),
+f(ℓ) = 1
+(ℓ> k).
+(5)
+Use subscripts j for (aj, b, kj, m), and set
+Zj =
+X
+i
+fj(Ni),
+eS = max
+
+D, max
+0≤j≤J
+Zj −δjn
+1 + δj
+
+.
+(6)
+The tester returns Yes iﬀeS ≤n. Its lower-bound output is bS = min{max{⌈eS⌉, 1}, n}.
+Theorem 1. For C = 1025, the construction above satisﬁes, uniformly over p, n, ϵ,
+S ≤n
+=⇒
+P(eS > S) < 0.01,
+(7)
+1 ≤r ≤n,
+∆r(p) ≥ϵ
+=⇒
+P(eS ≤r) < 0.01.
+(8)
+Thus the tester has error below 1% on each promise class, and
+P
+n
+min{eﬀϵ(p), n} ≤bS ≤S
+o
+≥0.98.
+(9)
+Only C changes from the original construction, which uses 226; the reduction in the Poisson mean is
+226/1025 > 65,472. Our proof replaces an intermediate weight bound rather than assuming that the origi-
+nal analysis remains valid after substituting a smaller constant. Integer optimality for this ﬁxed construction
+and error target is established in Theorem 2; it is not a minimax constant claim over all testers.
+B
+Two auxiliary bounds
+Lemma 1 (Discovery-time domination). If ∆r(p) ≥ϵ, then P(D ≤r) ≤P{Poi(mϵ) ≤r}.
+Proof. Embed sampling in a rate-one marked Poisson process. After k ≤r distinct labels have been discovered,
+their total mass is at most the mass of the r largest categories; hence the unseen mass qk is at least ϵ. Conditional
+on the discovered labels, the next discovery has waiting time Ek/qk, where Ek ∼Exp(1) is fresh and independent
+of the next label, drawn from the normalized unseen masses.
+This constructs the discovery process using
+independent E0, . . . , Er.
+Its ﬁrst r + 1 waiting times are bounded by Ek/ϵ, so their sum is stochastically
+dominated by Gamma(r + 1, ϵ). The latter’s survival probability at time m is the asserted Poisson tail.
+8
+
+Lemma 2 (Expectation and factorial-weight bounds). Let 0 < a < b ≤1, m > 0 and an integer k ≥1 be given,
+and deﬁne P, ρ, f by (4)–(5). If m
+p
+b(b −a) ≥k, then
+(1 −ρ) min{x/a, 1} ≤Q(x) := Ef(Poi(mx)) ≤1 + ρ
+(x ≥0).
+(10)
+Moreover, without the condition m
+p
+b(b −a) ≥k,
+∥f∥∞≤4 exp
+
+2k2
+m(b −a)
+
+.
+(11)
+Proof. The Poisson series gives Q(x) = 1 + e−mxP(x). On [0, a], P is nonpositive, increasing and concave, with
+P(0) = −1 and P(a) = −ρ; its chord yields (1 −ρ)x/a ≤Q(x) ≤1. On [a, b], |P(x)| ≤ρ. For x ≥b, put
+u = 2(x−b)/(b−a). The identities for Chebyshev polynomials [2, Section 18.5] give |P(x)| = ρTk(1+u) ≤ρek
+√
+2u.
+Since x2 ≥4b(x −b) and m
+p
+b(b −a) ≥k, we have mx ≥k
+√
+2u. Thus |Q(x) −1| ≤ρ, proving (10).
+For (11), let z0 = (b + a)/(b −a) > 1. The roots of Tk lie in (−1, 1), so every coeﬃcient of Tk(z0 + v) in v is
+positive. As c0 = −1, this gives
+∥f∥∞≤
+k
+X
+ℓ=0
+|cℓ|ℓ!/mℓ
+=
+Z ∞
+0
+e−s Tk(z0 + 2s/[m(b −a)])
+Tk(z0)
+ds.
+(12)
+The equality uses
+R ∞
+0
+e−ssℓds = ℓ!. For v, u ≥0, the identity arcosh(1 + 2v) = 2 arsinh √v and the 1-Lipschitz
+property of arsinh imply
+arcosh(1 + 2v + 2u) −arcosh(1 + 2v) ≤2√u.
+Using Tk(z) = cosh(k arcosh z), the ratio in (12) is at most 2 exp(2k
+p
+s/[m(b −a)]). Finally, 2k
+p
+s/[m(b −a)] ≤
+s/2 + 2k2/[m(b −a)]; integration of e−s/2 establishes (11).
+C
+Proof of Theorem 1
+The counting branch: L < 1024.
+For x > 1, the exponential Markov inequality gives
+P{Poi(nx) ≤n} ≤e−ng(x),
+g(x) = x −1 −log x,
+g(1 + h) ≥
+h2
+2(1 + h)
+(h ≥0).
+(13)
+Here g is increasing on (1, ∞) and the last inequality follows by integrating g′(1 + h) = h/(1 + h). If n < 108,
+then L < 20 and ng(1025/L) ≥g(1025/20) > 46. If n ≥108, then 1025/L > 1 + 1/1024, so
+ng(1025/L) >
+108
+2 · 1024 · 1025 > 47.
+Both exceed log 100. Lemma 1 and r ≤n prove (8); D ≤S proves (7) in this branch.
+Parameters in the polynomial branch: L ≥1024.
+The following bounds hold throughout 1024 ≤C ≤226.
+Since n = eL−1,
+b
+2a0
+= 256L2
+C
+≥4,
+0 < aj ≤b/2,
+b ≤
+L2
+16eL−1 < 1.
+(14)
+The last function is decreasing for L ≥1024. Furthermore,
+kj ≤
+p
+512/C L(j + 3) log 2
+2j/2
++ 1 ≤
+3 log 2
+√
+2
++
+1
+1024
+
+L < 3
+2L,
+because (j + 3)2−j/2 decreases for integers j ≥0. Consequently m
+p
+b(b −aj) ≥64L/
+√
+2 > kj and m(b −aj) ≥
+32L. Also
+ρj =
+1
+cosh(2kj artanh
+p
+aj/b)
+≤2e−2kj√
+aj/b ≤δ2
+j /2 ≤δj.
+(15)
+9
+
+Lemma 2 therefore yields
+(1 −δj)
+X
+i
+min{pi/aj, 1} ≤EZj ≤(1 + δj)S,
+(16)
+∥fj∥∞≤4e9L/64.
+(17)
+Simultaneous concentration.
+Independence and fj(0) = 0 give Var(Zj) ≤∥fj∥2
+∞ED. This remains valid
+on a countable alphabet: if a truncation omits mass τ, its error is bounded in absolute value by ∥fj∥∞Mtail,
+where Mtail ∼Poi(mτ); its second moment tends to zero. If ED ≤2n, Chebyshev’s inequality and (17) imply
+P{|Zj −EZj| > δjn} ≤32e9L/32
+nδ2
+j
+.
+Since δ−1
+J
+= 4 · 2J ≤1024L2/C ≤L2 and PJ
+j=0 δ−2
+j
+≤(4/3)L4, the event E = TJ
+j=0{|Zj −EZj| ≤δjn} satisﬁes
+P(Ec) ≤128e
+3
+L4e−23L/32 ≤128e
+3
+10244e−736 < 0.01.
+(18)
+The middle bound follows from 4/L−23/32 < 0. The ﬁnal inequality needs no delicate numerical approximation:
+2 < e < 3 bounds its left side by 2−689 < 1/100.
+Upper coverage.
+If S ≤n, then ED ≤n and, on E, (Zj −δjn)/(1 + δj) ≤EZj/(1 + δj) ≤S. Together with
+D ≤S, this proves (7).
+Power.
+Fix 1 ≤r ≤n with ∆r(p) ≥ϵ. If µ = ED > 2n, then Var(D) ≤µ and
+P(eS ≤r) ≤P(D ≤n) ≤
+µ
+(µ −n)2 ≤2
+n < 0.01.
+Otherwise ED ≤2n. Consider the following exhaustive cases.
+(i) p(r) ≥b/2. Observing all top r labels and any tail label forces D > r. Thus
+P(D ≤r) ≤re−mb/2 + e−m∆r(p) ≤ne−32L + e−Cn/L < 0.01.
+Indeed, ne−32L = e−31L−1 and Cn/L ≥1024eL−1/L ≥e1023.
+(ii) p(r) < a0. Equation (16) gives EZ0 ≥(1 −δ0)ϵ/a0 = 6n. On E, eS ≥(6n −2δ0n)/(1 + δ0) = 22n/5 > r.
+(iii) a0 ≤p(r) < b/2. Choose j ≤J such that aj ≤p(r) < 2aj. For tail labels, min{pi/aj, 1} ≥pi/p(r), hence
+EZj ≥(1 −δj)(r + ϵ/(2aj)). Since ajδj = ϵ/(32n), on E,
+eS ≥EZj −2δjn
+1 + δj
+≥r + δj
+ (14 −16δj)n −2r
+
+1 + δj
+> r,
+where δj ≤1/4 and r ≤n make the numerator strictly positive.
+These cases prove (8); their error bounds are not added, since the applicable case is determined by the ﬁxed
+distribution.
+The lower-bound output.
+If S ≥n, then bS ≤S automatically; otherwise (7) and integrality of S give this
+with probability at least 0.99. Set r = min{eﬀϵ(p), n}−1. If r = 0, the other inequality is automatic. Otherwise
+∆r(p) > ϵ, so (8) gives bS ≥r + 1 with probability at least 0.99. A union bound proves (9), completing the
+proof.
+Corollary 1 (Rounding and a deterministic sample cap). Theorem 1 remains valid when m is rounded up-
+ward and b is recomputed. A deterministic cap of ⌈4m⌉samples preserves the original main theorems’ success
+requirement of at least 2/3.
+Proof. Rounding only increases the count-branch budget. In the polynomial branch, it replaces C by C′ ∈
+[1025, 1025+ϵL/n); as L/n ≤1024e−1023 < 1, all bounds above still apply. For a sample cap, draw M ∼Poi(m)
+and abort with arbitrary output if M > 4m. Chernoﬀ’s inequality gives P(M > 4m) ≤e−m ≤e−1025, since
+n/ log(en) ≥1. The additional failure probability does not aﬀect the 2/3 requirement.
+10
+
+D
+Integer optimality for the unchanged construction
+Theorem 2. For every 0 < C ≤1024, there is a ﬁnite distribution with ∆n(p) = ϵ on which the unchanged
+tester has error greater than 0.06. Consequently 1025 is its smallest positive integer sampling coeﬃcient achieving
+uniform error below 1%.
+Proof. Let n = ⌈e1023⌉−1. Then 1023 < L < 1024, so the tester uses only D. At C = 1024, write
+1024n
+L
+= n + d,
+0 < d = n log(e1023/n)
+L
+≤1
+L <
+1
+1023.
+(19)
+To lower-bound a Poisson tail without an asymptotic approximation, let Y ∼Poi(n) and Z = n−Y . Its central
+moments satisfy EZ = 0, EZ2 = n, and EZ4 = 3n2 + n ≤4n2. Hölder and Cauchy–Schwarz give, respectively,
+E|Z| ≥(EZ2)3/2
+(EZ4)1/2 ≥
+√n
+2 ,
+P(Y < n) ≥(EZ+)2
+EZ2
++
+≥1
+16,
+where EZ+ = E|Z|/2 and EZ2
++ ≤n. Coupling an independent V ∼Poi(t) yields, for every t ≥0,
+P{Poi(n + t) ≤n −1} ≥e−t/16.
+(20)
+Set ϵ = 1/4, K = 100n2 + n −1, and deﬁne one head atom and K equal tail atoms by
+q =
+1
+400n2 ,
+p0 = 1 −Kq,
+pi = q (1 ≤i ≤K).
+Here p0 > q > 0, the masses sum to one, and ∆n(p) = (K −n + 1)q = ϵ. The number of tail observations is
+YK ∼Poi(mKq), and D ≤YK + 1. At C = 1024,
+mKq = (n + d)
+
+1 + n −1
+100n2
+
+= n + τ,
+0 < τ <
+1
+1023 + 1 + 1/1023
+100
+< 0.012.
+Therefore (20) gives P(D ≤n) ≥e−τ/16 > (1 −0.012)/16 > 0.06. For smaller C, the same distribution has a
+smaller tail mean and at least as large a failure probability. Combine with Theorem 1.
+The obstruction also survives rounding m upward: the tail mean then increases by less than Kq < 0.2525,
+giving failure probability greater than (1 −0.012 −0.2525)/16 > 0.01. Integer optimality is conditional on the
+ﬁxed threshold L0 = 1024 and the 1% target. It neither identiﬁes the optimal real coeﬃcient nor precludes
+smaller constants for a modiﬁed algorithm or a weaker success requirement.
+Veriﬁcation and implementation.
+Independent artifact checks cover exact-rational endpoint inequalities,
+polynomial coeﬃcients, ﬁnite-distribution probabilities, and ﬁnal outputs. They supplement the analytic proof
+and are not a proof-assistant certiﬁcate. Certiﬁed evaluation must escalate interval precision until the decision
+and, when applicable, the integer output are resolved.
+11
+
+References
+[1] Qisheng Wang. Optimal Support Size Testing. Supplied manuscript, arXiv:2610.18723v1, 2026.
+[2] NIST Digital Library of Mathematical Functions. Chapter 18, Sections 18.5 and 18.16. https://dlmf.nist.
+gov/18.5.
+[3] vegan developers. BCI and Oribatid mite data documentation; original sources Condit et al. (2002)
+and Borcard et al. (1992, 1994). https://vegandevs.github.io/vegan/reference/BCI.html; https:
+//vegandevs.github.io/vegan/reference/mite.html.
+[4] T. C. Hsieh, K. H. Ma, and Anne Chao. iNEXT package data documentation: bird and spider abun-
+dance data, citing Chao et al. (2015), Ellison et al. (2010), and Sackett et al. (2011). https://annechao.
+r-universe.dev/iNEXT/doc/manual.html.
+[5] Paulo I. Prado, Murilo Dantas Miranda, and Andre Chalom. sads package data documentation: Rothamsted
+moths and Okland land snails. https://pilaboratory.r-universe.dev/sads/doc/manual.html.
+[6] Derek H. Ogle. InchLake1, FSAdata package. https://fishr-core-team.github.io/FSAdata/reference/
+InchLake1.html.
+12

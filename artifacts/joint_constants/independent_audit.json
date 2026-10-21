@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "checks": 4634,
+  "rational_polynomial_fixtures": 90,
+  "precision_replay_bits": 512,
+  "replayed_slabs": 340,
+  "script_sha256": "e9685f0bd4fa23f6b8ecfed16cc9fc2c6e68f58d744131d4a00fbea7dc742f6f",
+  "scope": "Independent exact recurrence and coefficient checks; higher-precision replay shares the analytic certificate formulas. Not formal verification."
+}

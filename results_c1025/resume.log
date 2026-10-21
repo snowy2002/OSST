@@ -1,0 +1,29 @@
+/home/snowy/OSST/.venv/lib/python3.14/site-packages/rdata/conversion/_conversion.py:302: UserWarning: Unknown encoding. Assumed ASCII.
+  warnings.warn("Unknown encoding. Assumed ASCII.")  # noqa: B028
+synthetic already complete
+natural already complete
+curves already complete
+dependence already complete
+public API runs 1128
+PASS endpoints_and_symbolic_signs: 0.00s
+PASS exact_count_probabilities: 0.56s
+PASS exact_coefficients: 0.05s
+PASS branch_and_parameters
+PASS large_degree_weights_and_pipeline
+{
+  "passed": true,
+  "assertions": 43801,
+  "elapsed_seconds": 242.57101099099964,
+  "groups": {
+    "universal_bound_endpoints_and_exact_algebra": 83,
+    "independent_finite_distribution_count_probabilities": 2225,
+    "exact_rational_coefficients_and_expectations": 876,
+    "integer_branch_boundaries_and_parameters": 7910,
+    "large_degree_independent_weights_and_pipeline": 32696,
+    "explicit_finite_counterexample_for_C1024": 8,
+    "deliberate_error_controls": 3
+  }
+}
+stream 10
+stream 100
+stream 1000

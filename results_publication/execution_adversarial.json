@@ -1,0 +1,9 @@
+{
+  "phase": "adversarial",
+  "status": "complete",
+  "mode": "formal",
+  "started_at_utc": "2026-10-19T08:24:40.490554+00:00",
+  "protocol_sha256": "c7fcebcbcc8a7c46dcecfa4c7d4b8239eab5a8e393c4cbd620b9943ea9d8c196",
+  "elapsed_seconds": 164.0082553389948,
+  "finished_at_utc": "2026-10-19T08:27:24.499010+00:00"
+}

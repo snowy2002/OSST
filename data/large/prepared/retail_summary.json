@@ -1,0 +1,25 @@
+{
+  "dataset": "retail",
+  "raw_rows": 541909,
+  "removed_rows": {
+    "nonproduct_stockcode": 2379,
+    "cancellation": 9288,
+    "nonpositive_price": 1181,
+    "nonpositive_quantity": 1336
+  },
+  "sample_unit": "一条正数量、正价格的商品销售行（不是一件商品）",
+  "category": "StockCode",
+  "group_unit": "InvoiceNo",
+  "filters": "剔除取消、数量<=0、单价<=0、代码不匹配 [0-9]{5}[A-Z]* 的服务/特殊记录；缺失客户号不剔除；不擅自去重销售行",
+  "limitations": "订单内相关、季节变化；SKU 是商品编码，不是生物学物种。只对清洗后的记录分布定义支持集。",
+  "records": 527725,
+  "support": 3791,
+  "groups": 19773,
+  "nonzero_group_category_pairs": 517254,
+  "min_category_count": 1,
+  "max_category_count": 2332,
+  "top10_mass": 0.03178549433890757,
+  "counts_sha256": "6241fd99f730f8a0eafa37449ec938c4e646bc23b94ba7a631b31823a668f558",
+  "groups_sha256": "940d609a9fc5b819eb67961d529ba55c2adc3db96cbd9d77e365e54420b92d0c",
+  "reference_scope": "该数据文件清洗后的有限参考总体，不是未知外部总体的真实支持集"
+}

@@ -1,0 +1,40 @@
+{
+  "frozen_at": "2026-10-21T08:29:34.267112+00:00",
+  "source_sha256": "f6e3f9c377e01bb4c262d59569089109c11f0ff444c6b010c608b108fa44c402",
+  "disclosure": "Supplemental implementation/runtime checks added after primary summary inspection; no primary statistical design or parameters changed.",
+  "public_api": {
+    "datasets": "all ten",
+    "epsilons": [
+      0.01,
+      0.1,
+      0.25
+    ],
+    "n": [
+      "effective_support-1",
+      "S"
+    ],
+    "repetitions": 5
+  },
+  "group_blocks": [
+    1,
+    20,
+    100,
+    1000,
+    10000
+  ],
+  "group_trials": 1000,
+  "runtime": {
+    "n": [
+      100,
+      10000,
+      1000000
+    ],
+    "C0": [
+      1025,
+      67108864
+    ],
+    "repeats": 10,
+    "warmup": 1,
+    "isolated_processes": true
+  }
+}

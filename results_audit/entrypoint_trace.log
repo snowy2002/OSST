@@ -1,0 +1,189 @@
+合成实验：完成 m=2530，9 种分布 × 2 次
+合成实验：完成 m=5059，9 种分布 × 2 次
+合成实验：完成 m=10537，9 种分布 × 2 次
+{
+  "n": 1000,
+  "epsilon": 0.1,
+  "alpha": 0.05,
+  "seed": 20261016,
+  "trials": 2,
+  "budgets": [
+    2530,
+    5059,
+    10537
+  ],
+  "paper_m": 84864619140,
+  "count_poisson_m": 10537,
+  "seconds": 1.6767705880047288,
+  "parameter_selection": "预先固定 b_factor=1, max_degree=12, weight_cap=20；未按测试结果调优",
+  "bounded_method_note": "No/未拒绝；无统一漏报保证，failure_to_reject 不是已认证的 Yes",
+  "data": "/home/snowy/OSST/results_audit/smoke/synthetic_results.csv",
+  "plot": "/home/snowy/OSST/results_audit/smoke/synthetic_error_rates.png"
+}
+鱼类回测：完成 2007_seine，1180 条捕获记录，记录内 8 种鱼
+鱼类回测：完成 2008_seine，330 条捕获记录，记录内 4 种鱼
+鱼类回测：完成 2007_angling，154 条捕获记录，记录内 3 种鱼
+鱼类回测：完成 2008_miniWDNR，261 条捕获记录，记录内 7 种鱼
+{
+  "source": "https://fishr-core-team.github.io/FSAdata/reference/InchLake1.html",
+  "seed": 20261016,
+  "trials": 2,
+  "fish_records": 4887,
+  "observed_species_all_records": 9,
+  "groups": [
+    {
+      "year": 2007,
+      "gear": "seine",
+      "records": 1180,
+      "reference_species": 8,
+      "eff_005": 2,
+      "eff_001": 5
+    },
+    {
+      "year": 2008,
+      "gear": "seine",
+      "records": 330,
+      "reference_species": 4,
+      "eff_005": 2,
+      "eff_001": 4
+    },
+    {
+      "year": 2007,
+      "gear": "angling",
+      "records": 154,
+      "reference_species": 3,
+      "eff_005": 2,
+      "eff_001": 3
+    },
+    {
+      "year": 2008,
+      "gear": "miniWDNR",
+      "records": 261,
+      "reference_species": 7,
+      "eff_005": 4,
+      "eff_001": 5
+    }
+  ],
+  "data": "/home/snowy/OSST/results_audit/smoke/fish_subsample_results.csv",
+  "plot": "/home/snowy/OSST/results_audit/smoke/fish_richness.png",
+  "conclusion_scope": "只验证对参考捕获记录的恢复能力；全湖鱼种总数没有独立真值，不能验证"
+}
+{
+  "algorithm": "paper_section3_reference",
+  "n": 1000,
+  "epsilon": "1/10",
+  "C0": 67108864,
+  "L0": 1024,
+  "L": "[7.90775527898213705205397436405309262280330446588631892810 +/- 2.28e-57]",
+  "m": 84864619140,
+  "a0": "[1.250000000000000000000000000000000000000000000000000000000e-5 +/- 8.34e-63]",
+  "b": "[5.96357284087914863093150221965867327003727228200372044229e-9 +/- 5.81e-66]",
+  "J": null,
+  "branch": "observed_count",
+  "precision_bits": 192,
+  "parameter_rounding_certified": true,
+  "scales": [],
+  "note": "严格保留第 3 节常数与分支；区间文本包含舍入误差，不是近似后当成精确值。"
+}
+{
+  "n": 1000,
+  "epsilon": 0.1,
+  "alpha": 0.05,
+  "sampling": "fixed",
+  "m": 10509,
+  "miss_bound": 0.04984881235076629,
+  "markov_m": 200200,
+  "guarantee": "iid 和 Yes/No 承诺下：误报=0，漏报<=alpha"
+}
+{
+  "M": 300,
+  "observed_species": 7,
+  "singletons": 2,
+  "doubletons": 1,
+  "chao1_bc": 7.5,
+  "good_turing_coverage": 0.9933333333333333,
+  "point_estimate_note": "Chao1 和覆盖率是描述性估计；不能证明湖泊全部鱼种数",
+  "count_test": {
+    "decision": "Inconclusive",
+    "n": 8,
+    "epsilon": 0.01,
+    "alpha": 0.05,
+    "sampling": "fixed",
+    "budget": 300,
+    "observed": 7,
+    "worst_case_false_negative_bound": 0.9963972878499646,
+    "interpretation": "Yes/No 是承诺问题的判断；Yes 不排除支持集更大但尾部质量<epsilon"
+  },
+  "guarantee_status": "descriptive_only_iid_not_established",
+  "sampling_note": "真实捕获数据通常含渔具偏差/事件内相关；数学保证取决于采样模型"
+}
+{
+  "M": 300,
+  "observed_species": 7,
+  "singletons": 2,
+  "doubletons": 1,
+  "chao1_bc": 7.5,
+  "good_turing_coverage": 0.9933333333333333,
+  "point_estimate_note": "Chao1 和覆盖率是描述性估计；不能证明湖泊全部鱼种数",
+  "count_test": {
+    "decision": "Inconclusive",
+    "n": 8,
+    "epsilon": 0.01,
+    "alpha": 0.05,
+    "sampling": "fixed",
+    "budget": 300,
+    "observed": 7,
+    "worst_case_false_negative_bound": 0.9963972878499646,
+    "interpretation": "Yes/No 是承诺问题的判断；Yes 不排除支持集更大但尾部质量<epsilon"
+  },
+  "guarantee_status": "descriptive_only_iid_not_established",
+  "sampling_note": "真实捕获数据通常含渔具偏差/事件内相关；数学保证取决于采样模型",
+  "poissonized_polynomial": {
+    "pool_N": 300,
+    "m": 258.1901481437103,
+    "requested_M": 251,
+    "overflow_probability_bound": 0.005,
+    "full_observed_species": 7,
+    "n": 8,
+    "epsilon": 0.01,
+    "alpha": 0.05,
+    "guarantee": "整个流程在固定 N、iid 原始样本下单侧误报<=alpha；非 iid 时仅作描述性分析",
+    "status": "ok",
+    "used_M": 251,
+    "subset_observed_species": 7,
+    "score": 7.0,
+    "decision": "Inconclusive",
+    "support_lower_bound": 7,
+    "polynomial_scales": 6
+  }
+}
+{
+  "M": 300,
+  "observed_species": 7,
+  "singletons": 2,
+  "doubletons": 1,
+  "chao1_bc": 7.5,
+  "good_turing_coverage": 0.9933333333333333,
+  "point_estimate_note": "Chao1 和覆盖率是描述性估计；不能证明湖泊全部鱼种数",
+  "count_test": {
+    "decision": "Inconclusive",
+    "n": 8,
+    "epsilon": 0.01,
+    "alpha": 0.05,
+    "sampling": "poisson",
+    "budget": 300.0,
+    "observed": 7,
+    "worst_case_false_negative_bound": 0.996197007938324,
+    "interpretation": "Yes/No 是承诺问题的判断；Yes 不排除支持集更大但尾部质量<epsilon"
+  },
+  "guarantee_status": "descriptive_only_iid_not_established",
+  "sampling_note": "真实捕获数据通常含渔具偏差/事件内相关；数学保证取决于采样模型",
+  "practical_polynomial": {
+    "score": 7.0,
+    "decision": "Inconclusive",
+    "support_lower_bound": 7,
+    "alpha": 0.05,
+    "guarantee": "泊松化 iid 下的单侧误报控制；此预算没有统一漏报保证",
+    "scales": 6
+  }
+}

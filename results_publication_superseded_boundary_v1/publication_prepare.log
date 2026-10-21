@@ -1,0 +1,6 @@
+development n=1500 eps=0.005: complete
+development n=1500 eps=0.05: complete
+development n=1500 eps=0.2: complete
+development n=15000 eps=0.005: complete
+development n=15000 eps=0.05: complete
+development n=15000 eps=0.2: complete

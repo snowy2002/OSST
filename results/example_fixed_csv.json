@@ -1,0 +1,22 @@
+{
+  "M": 300,
+  "observed_species": 7,
+  "singletons": 2,
+  "doubletons": 1,
+  "chao1_bc": 7.5,
+  "good_turing_coverage": 0.9933333333333333,
+  "point_estimate_note": "Chao1 和覆盖率是描述性估计；不能证明湖泊全部鱼种数",
+  "count_test": {
+    "decision": "Inconclusive",
+    "n": 8,
+    "epsilon": 0.01,
+    "alpha": 0.05,
+    "sampling": "fixed",
+    "budget": 300,
+    "observed": 7,
+    "worst_case_false_negative_bound": 0.9963972878499646,
+    "interpretation": "Yes/No 是承诺问题的判断；Yes 不排除支持集更大但尾部质量<epsilon"
+  },
+  "guarantee_status": "descriptive_only_iid_not_established",
+  "sampling_note": "真实捕获数据通常含渔具偏差/事件内相关；数学保证取决于采样模型"
+}

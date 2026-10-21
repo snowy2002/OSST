@@ -1,0 +1,75 @@
+{
+  "development_seed": 20300036,
+  "trials_per_cell": 200,
+  "sizes": [
+    2000,
+    20000
+  ],
+  "epsilons": [
+    0.1,
+    0.2
+  ],
+  "criterion": "最小化开发集所有 No 场景/预算的等权平均未拒绝率；候选均有 alpha=.05 的误报界；max FP>.10 排除",
+  "ranking": [
+    {
+      "candidate": 0,
+      "b_factor": 0.5,
+      "max_degree": 12,
+      "weight_cap": 10.0,
+      "max_false_positive": 0.0,
+      "mean_false_negative": 0.3138125,
+      "eligible": true
+    },
+    {
+      "candidate": 1,
+      "b_factor": 0.5,
+      "max_degree": 12,
+      "weight_cap": 20.0,
+      "max_false_positive": 0.0,
+      "mean_false_negative": 0.3101875,
+      "eligible": true
+    },
+    {
+      "candidate": 2,
+      "b_factor": 1.0,
+      "max_degree": 12,
+      "weight_cap": 10.0,
+      "max_false_positive": 0.0,
+      "mean_false_negative": 0.330375,
+      "eligible": true
+    },
+    {
+      "candidate": 3,
+      "b_factor": 1.0,
+      "max_degree": 12,
+      "weight_cap": 20.0,
+      "max_false_positive": 0.0,
+      "mean_false_negative": 0.32987500000000003,
+      "eligible": true
+    },
+    {
+      "candidate": 4,
+      "b_factor": 2.0,
+      "max_degree": 16,
+      "weight_cap": 10.0,
+      "max_false_positive": 0.0,
+      "mean_false_negative": 0.33275,
+      "eligible": true
+    },
+    {
+      "candidate": 5,
+      "b_factor": 2.0,
+      "max_degree": 16,
+      "weight_cap": 20.0,
+      "max_false_positive": 0.0,
+      "mean_false_negative": 0.3375625,
+      "eligible": true
+    }
+  ],
+  "selected_config": {
+    "b_factor": 0.5,
+    "max_degree": 12,
+    "weight_cap": 20.0
+  },
+  "selected_before_test": true
+}

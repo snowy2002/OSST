@@ -1,0 +1,22 @@
+{
+  "primary_method_cells": 4644,
+  "primary_method_trial_evaluations": 39720000,
+  "primary_independent_poisson_paths": 9130000,
+  "synthetic_base_cells": 645,
+  "natural_base_cells": 236,
+  "natural_datasets": 10,
+  "public_api_runs": 1428,
+  "audit_assertions": 43801,
+  "new_to_count_ratio_min": 35.800221205129226,
+  "new_to_count_ratio_max": 135.1546096879573,
+  "original_to_new_ratio_min": 65459.25061932288,
+  "original_to_new_ratio_max": 65472.06243902439,
+  "natural_budget_sufficient_cells": 2,
+  "natural_budget_cells": 236,
+  "duplication_worst_error": 0.99825,
+  "group_stress_worst_error": 0.424,
+  "holdout_gap_cells": 5,
+  "holdout_worst_error": 0.0,
+  "finite_file_attempts": 400,
+  "finite_file_overflows": 52
+}

@@ -1,0 +1,9 @@
+{
+  "phase": "search",
+  "status": "complete",
+  "mode": "formal",
+  "started_at_utc": "2026-10-19T08:16:28.700416+00:00",
+  "protocol_sha256": "c7fcebcbcc8a7c46dcecfa4c7d4b8239eab5a8e393c4cbd620b9943ea9d8c196",
+  "elapsed_seconds": 32.082374744000845,
+  "finished_at_utc": "2026-10-19T08:17:00.783013+00:00"
+}

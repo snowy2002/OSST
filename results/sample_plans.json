@@ -1,0 +1,33 @@
+{
+  "paper": {
+    "n": 1000,
+    "epsilon": 0.1,
+    "L": "7.9077552789821370520539743640530926228033044658863189280999837029027178290320574",
+    "m": 84864619140,
+    "branch": "observed_count",
+    "C0": 67108864,
+    "L0": 1024,
+    "scales": [],
+    "note": "论文参数计划；不自动采样。"
+  },
+  "tight_poisson": {
+    "n": 1000,
+    "epsilon": 0.1,
+    "alpha": 0.05,
+    "sampling": "poisson",
+    "m": 10537,
+    "miss_bound": 0.049695535441832105,
+    "markov_m": 200200,
+    "guarantee": "iid 和 Yes/No 承诺下：误报=0，漏报<=alpha"
+  },
+  "tight_fixed": {
+    "n": 1000,
+    "epsilon": 0.1,
+    "alpha": 0.05,
+    "sampling": "fixed",
+    "m": 10509,
+    "miss_bound": 0.04984881235076629,
+    "markov_m": 200200,
+    "guarantee": "iid 和 Yes/No 承诺下：误报=0，漏报<=alpha"
+  }
+}

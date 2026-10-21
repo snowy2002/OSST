@@ -1,0 +1,5859 @@
+{
+  "1000/0.05": {
+    "algorithm": "certified_chebyshev_validation_count",
+    "n": 1000,
+    "epsilon": "1/20",
+    "delta": "1/20",
+    "config": {
+      "b_factor": 0.5,
+      "max_degree": 12,
+      "weight_cap": 20.0,
+      "validation_factor": 12.0,
+      "validation_gate": 0.75
+    },
+    "false_positive_bound": "1/20",
+    "false_negative_bound": "1/20",
+    "error_allocation": {
+      "polynomial_total": "1/20",
+      "early_accept_total": "1/40",
+      "final_count": "1/40"
+    },
+    "final_poisson_mean": 21280,
+    "final_count_tail_interval": "[0.0249152208589753320123472889712433170283661430102710633209319 +/- 4.56e-62]",
+    "baseline_poisson_mean": 21073,
+    "baseline_count_tail_interval": "[0.0498524862415365982762198583567508595017983156215991226832001 +/- 4.83e-62]",
+    "max_validation_samples": 4256,
+    "expected_sample_upper_bound": 25536,
+    "looks": [
+      {
+        "m": 1265,
+        "scales": 8,
+        "degrees": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "validation_r": 1064,
+        "accept_if_outside_at_most": 35,
+        "binomial_tail_interval": "[0.00438948398642101388706135597061822893423842040174875232048133 +/- 3.07e-63]"
+      },
+      {
+        "m": 2530,
+        "scales": 7,
+        "degrees": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "validation_r": 1064,
+        "accept_if_outside_at_most": 35,
+        "binomial_tail_interval": "[0.00438948398642101388706135597061822893423842040174875232048133 +/- 3.07e-63]"
+      },
+      {
+        "m": 5059,
+        "scales": 6,
+        "degrees": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "validation_r": 1064,
+        "accept_if_outside_at_most": 35,
+        "binomial_tail_interval": "[0.00438948398642101388706135597061822893423842040174875232048133 +/- 3.07e-63]"
+      },
+      {
+        "m": 10117,
+        "scales": 5,
+        "degrees": [
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "validation_r": 1064,
+        "accept_if_outside_at_most": 35,
+        "binomial_tail_interval": "[0.00438948398642101388706135597061822893423842040174875232048133 +/- 3.07e-63]"
+      }
+    ],
+    "guarantee_scope": "固定 n/epsilon/delta、固定分布 iid、采样随机化独立、Yes/No 承诺；不需最小非零概率假设。",
+    "complexity": "最坏期望观测量 O((n+log(1/delta))/epsilon)，未证明最优阶的缩常数版本。",
+    "numeric_policy": "参数和尾界由 Arb 认证，多项式最终比较使用整数；无法认证则拒绝配置。"
+  },
+  "1000/0.1": {
+    "algorithm": "certified_chebyshev_validation_count",
+    "n": 1000,
+    "epsilon": "1/10",
+    "delta": "1/20",
+    "config": {
+      "b_factor": 0.5,
+      "max_degree": 12,
+      "weight_cap": 20.0,
+      "validation_factor": 12.0,
+      "validation_gate": 0.75
+    },
+    "false_positive_bound": "1/20",
+    "false_negative_bound": "1/20",
+    "error_allocation": {
+      "polynomial_total": "1/20",
+      "early_accept_total": "1/40",
+      "final_count": "1/40"
+    },
+    "final_poisson_mean": 10640,
+    "final_count_tail_interval": "[0.0249152208589753320123472889712433170283661430102710633209319 +/- 4.56e-62]",
+    "baseline_poisson_mean": 10537,
+    "baseline_count_tail_interval": "[0.0496955354418322728555691220501371874194363926057351103463629 +/- 6.53e-63]",
+    "max_validation_samples": 2128,
+    "expected_sample_upper_bound": 12768,
+    "looks": [
+      {
+        "m": 633,
+        "scales": 8,
+        "degrees": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "validation_r": 532,
+        "accept_if_outside_at_most": 36,
+        "binomial_tail_interval": "[0.00581039602587551872337567358093982829145285723510834994673098 +/- 1.38e-64]"
+      },
+      {
+        "m": 1265,
+        "scales": 7,
+        "degrees": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "validation_r": 532,
+        "accept_if_outside_at_most": 36,
+        "binomial_tail_interval": "[0.00581039602587551872337567358093982829145285723510834994673098 +/- 1.38e-64]"
+      },
+      {
+        "m": 2530,
+        "scales": 6,
+        "degrees": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "validation_r": 532,
+        "accept_if_outside_at_most": 36,
+        "binomial_tail_interval": "[0.00581039602587551872337567358093982829145285723510834994673098 +/- 1.38e-64]"
+      },
+      {
+        "m": 5059,
+        "scales": 5,
+        "degrees": [
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "validation_r": 532,
+        "accept_if_outside_at_most": 36,
+        "binomial_tail_interval": "[0.00581039602587551872337567358093982829145285723510834994673098 +/- 1.38e-64]"
+      }
+    ],
+    "guarantee_scope": "固定 n/epsilon/delta、固定分布 iid、采样随机化独立、Yes/No 承诺；不需最小非零概率假设。",
+    "complexity": "最坏期望观测量 O((n+log(1/delta))/epsilon)，未证明最优阶的缩常数版本。",
+    "numeric_policy": "参数和尾界由 Arb 认证，多项式最终比较使用整数；无法认证则拒绝配置。"
+  },
+  "1000/0.2": {
+    "algorithm": "certified_chebyshev_validation_count",
+    "n": 1000,
+    "epsilon": "1/5",
+    "delta": "1/20",
+    "config": {
+      "b_factor": 0.5,
+      "max_degree": 12,
+      "weight_cap": 20.0,
+      "validation_factor": 12.0,
+      "validation_gate": 0.75
+    },
+    "false_positive_bound": "1/20",
+    "false_negative_bound": "1/20",
+    "error_allocation": {
+      "polynomial_total": "1/20",
+      "early_accept_total": "1/40",
+      "final_count": "1/40"
+    },
+    "final_poisson_mean": 5320,
+    "final_count_tail_interval": "[0.0249152208589753320123472889712433170283661430102710633209319 +/- 4.56e-62]",
+    "baseline_poisson_mean": 5269,
+    "baseline_count_tail_interval": "[0.0493828314588635601064895140488049468932031790352961151572877 +/- 4.31e-62]",
+    "max_validation_samples": 1064,
+    "expected_sample_upper_bound": 6384,
+    "looks": [
+      {
+        "m": 317,
+        "scales": 8,
+        "degrees": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "validation_r": 266,
+        "accept_if_outside_at_most": 36,
+        "binomial_tail_interval": "[0.00388809577371037473777289859493052640599361430967735745657557 +/- 1.29e-63]"
+      },
+      {
+        "m": 633,
+        "scales": 7,
+        "degrees": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "validation_r": 266,
+        "accept_if_outside_at_most": 36,
+        "binomial_tail_interval": "[0.00388809577371037473777289859493052640599361430967735745657557 +/- 1.29e-63]"
+      },
+      {
+        "m": 1265,
+        "scales": 6,
+        "degrees": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "validation_r": 266,
+        "accept_if_outside_at_most": 36,
+        "binomial_tail_interval": "[0.00388809577371037473777289859493052640599361430967735745657557 +/- 1.29e-63]"
+      },
+      {
+        "m": 2530,
+        "scales": 5,
+        "degrees": [
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "validation_r": 266,
+        "accept_if_outside_at_most": 36,
+        "binomial_tail_interval": "[0.00388809577371037473777289859493052640599361430967735745657557 +/- 1.29e-63]"
+      }
+    ],
+    "guarantee_scope": "固定 n/epsilon/delta、固定分布 iid、采样随机化独立、Yes/No 承诺；不需最小非零概率假设。",
+    "complexity": "最坏期望观测量 O((n+log(1/delta))/epsilon)，未证明最优阶的缩常数版本。",
+    "numeric_policy": "参数和尾界由 Arb 认证，多项式最终比较使用整数；无法认证则拒绝配置。"
+  },
+  "10000/0.05": {
+    "algorithm": "certified_chebyshev_validation_count",
+    "n": 10000,
+    "epsilon": "1/20",
+    "delta": "1/20",
+    "config": {
+      "b_factor": 0.5,
+      "max_degree": 12,
+      "weight_cap": 20.0,
+      "validation_factor": 12.0,
+      "validation_gate": 0.75
+    },
+    "false_positive_bound": "1/20",
+    "false_negative_bound": "1/20",
+    "error_allocation": {
+      "polynomial_total": "1/20",
+      "early_accept_total": "1/40",
+      "final_count": "1/40"
+    },
+    "final_poisson_mean": 203960,
+    "final_count_tail_interval": "[0.0249721064806185744882220595727593070062848918595765962754528 +/- 3.40e-62]",
+    "baseline_poisson_mean": 203322,
+    "baseline_count_tail_interval": "[0.0499593474615307641223292060948274473767837641614752966705508 +/- 2.63e-62]",
+    "max_validation_samples": 6360,
+    "expected_sample_upper_bound": 210320,
+    "looks": [
+      {
+        "m": 9794,
+        "scales": 9,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          5,
+          4,
+          4,
+          4
+        ],
+        "validation_r": 1272,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00331125855554899470400096821327416689940189830756717414785891 +/- 1.68e-63]"
+      },
+      {
+        "m": 19588,
+        "scales": 8,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          5,
+          4,
+          4,
+          4
+        ],
+        "validation_r": 1272,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00331125855554899470400096821327416689940189830756717414785891 +/- 1.68e-63]"
+      },
+      {
+        "m": 39176,
+        "scales": 7,
+        "degrees": [
+          4,
+          4,
+          4,
+          5,
+          4,
+          4,
+          4
+        ],
+        "validation_r": 1272,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00331125855554899470400096821327416689940189830756717414785891 +/- 1.68e-63]"
+      },
+      {
+        "m": 78352,
+        "scales": 6,
+        "degrees": [
+          4,
+          4,
+          5,
+          4,
+          4,
+          4
+        ],
+        "validation_r": 1272,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00331125855554899470400096821327416689940189830756717414785891 +/- 1.68e-63]"
+      },
+      {
+        "m": 156704,
+        "scales": 5,
+        "degrees": [
+          4,
+          5,
+          4,
+          4,
+          4
+        ],
+        "validation_r": 1272,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00331125855554899470400096821327416689940189830756717414785891 +/- 1.68e-63]"
+      }
+    ],
+    "guarantee_scope": "固定 n/epsilon/delta、固定分布 iid、采样随机化独立、Yes/No 承诺；不需最小非零概率假设。",
+    "complexity": "最坏期望观测量 O((n+log(1/delta))/epsilon)，未证明最优阶的缩常数版本。",
+    "numeric_policy": "参数和尾界由 Arb 认证，多项式最终比较使用整数；无法认证则拒绝配置。"
+  },
+  "10000/0.1": {
+    "algorithm": "certified_chebyshev_validation_count",
+    "n": 10000,
+    "epsilon": "1/10",
+    "delta": "1/20",
+    "config": {
+      "b_factor": 0.5,
+      "max_degree": 12,
+      "weight_cap": 20.0,
+      "validation_factor": 12.0,
+      "validation_gate": 0.75
+    },
+    "false_positive_bound": "1/20",
+    "false_negative_bound": "1/20",
+    "error_allocation": {
+      "polynomial_total": "1/20",
+      "early_accept_total": "1/40",
+      "final_count": "1/40"
+    },
+    "final_poisson_mean": 101980,
+    "final_count_tail_interval": "[0.0249721064806185744882220595727593070062848918595765962754528 +/- 3.40e-62]",
+    "baseline_poisson_mean": 101661,
+    "baseline_count_tail_interval": "[0.0499593474615307641223292060948274473767837641614752966705508 +/- 2.63e-62]",
+    "max_validation_samples": 3180,
+    "expected_sample_upper_bound": 105160,
+    "looks": [
+      {
+        "m": 4897,
+        "scales": 9,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          5,
+          4,
+          4,
+          4
+        ],
+        "validation_r": 636,
+        "accept_if_outside_at_most": 44,
+        "binomial_tail_interval": "[0.00420039092047132097986673345666806339998501700474865624022808 +/- 3.03e-63]"
+      },
+      {
+        "m": 9794,
+        "scales": 8,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          5,
+          4,
+          4,
+          4
+        ],
+        "validation_r": 636,
+        "accept_if_outside_at_most": 44,
+        "binomial_tail_interval": "[0.00420039092047132097986673345666806339998501700474865624022808 +/- 3.03e-63]"
+      },
+      {
+        "m": 19588,
+        "scales": 7,
+        "degrees": [
+          4,
+          4,
+          4,
+          5,
+          4,
+          4,
+          4
+        ],
+        "validation_r": 636,
+        "accept_if_outside_at_most": 44,
+        "binomial_tail_interval": "[0.00420039092047132097986673345666806339998501700474865624022808 +/- 3.03e-63]"
+      },
+      {
+        "m": 39176,
+        "scales": 6,
+        "degrees": [
+          4,
+          4,
+          5,
+          4,
+          4,
+          4
+        ],
+        "validation_r": 636,
+        "accept_if_outside_at_most": 44,
+        "binomial_tail_interval": "[0.00420039092047132097986673345666806339998501700474865624022808 +/- 3.03e-63]"
+      },
+      {
+        "m": 78352,
+        "scales": 5,
+        "degrees": [
+          4,
+          5,
+          4,
+          4,
+          4
+        ],
+        "validation_r": 636,
+        "accept_if_outside_at_most": 44,
+        "binomial_tail_interval": "[0.00420039092047132097986673345666806339998501700474865624022808 +/- 3.03e-63]"
+      }
+    ],
+    "guarantee_scope": "固定 n/epsilon/delta、固定分布 iid、采样随机化独立、Yes/No 承诺；不需最小非零概率假设。",
+    "complexity": "最坏期望观测量 O((n+log(1/delta))/epsilon)，未证明最优阶的缩常数版本。",
+    "numeric_policy": "参数和尾界由 Arb 认证，多项式最终比较使用整数；无法认证则拒绝配置。"
+  },
+  "10000/0.2": {
+    "algorithm": "certified_chebyshev_validation_count",
+    "n": 10000,
+    "epsilon": "1/5",
+    "delta": "1/20",
+    "config": {
+      "b_factor": 0.5,
+      "max_degree": 12,
+      "weight_cap": 20.0,
+      "validation_factor": 12.0,
+      "validation_gate": 0.75
+    },
+    "false_positive_bound": "1/20",
+    "false_negative_bound": "1/20",
+    "error_allocation": {
+      "polynomial_total": "1/20",
+      "early_accept_total": "1/40",
+      "final_count": "1/40"
+    },
+    "final_poisson_mean": 50990,
+    "final_count_tail_interval": "[0.0249721064806185744882220595727593070062848918595765962754528 +/- 3.40e-62]",
+    "baseline_poisson_mean": 50831,
+    "baseline_count_tail_interval": "[0.0498574855221866940006203014979800667083078750785555200116231 +/- 8.57e-63]",
+    "max_validation_samples": 1590,
+    "expected_sample_upper_bound": 52580,
+    "looks": [
+      {
+        "m": 2449,
+        "scales": 9,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          5,
+          4,
+          4,
+          4
+        ],
+        "validation_r": 318,
+        "accept_if_outside_at_most": 45,
+        "binomial_tail_interval": "[0.00430684495992354255650052394865455258102531520867745322318652 +/- 3.92e-63]"
+      },
+      {
+        "m": 4897,
+        "scales": 8,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          5,
+          4,
+          4,
+          4
+        ],
+        "validation_r": 318,
+        "accept_if_outside_at_most": 45,
+        "binomial_tail_interval": "[0.00430684495992354255650052394865455258102531520867745322318652 +/- 3.92e-63]"
+      },
+      {
+        "m": 9794,
+        "scales": 7,
+        "degrees": [
+          4,
+          4,
+          4,
+          5,
+          4,
+          4,
+          4
+        ],
+        "validation_r": 318,
+        "accept_if_outside_at_most": 45,
+        "binomial_tail_interval": "[0.00430684495992354255650052394865455258102531520867745322318652 +/- 3.92e-63]"
+      },
+      {
+        "m": 19588,
+        "scales": 6,
+        "degrees": [
+          4,
+          4,
+          5,
+          4,
+          4,
+          4
+        ],
+        "validation_r": 318,
+        "accept_if_outside_at_most": 45,
+        "binomial_tail_interval": "[0.00430684495992354255650052394865455258102531520867745322318652 +/- 3.92e-63]"
+      },
+      {
+        "m": 39176,
+        "scales": 5,
+        "degrees": [
+          4,
+          5,
+          4,
+          4,
+          4
+        ],
+        "validation_r": 318,
+        "accept_if_outside_at_most": 45,
+        "binomial_tail_interval": "[0.00430684495992354255650052394865455258102531520867745322318652 +/- 3.92e-63]"
+      }
+    ],
+    "guarantee_scope": "固定 n/epsilon/delta、固定分布 iid、采样随机化独立、Yes/No 承诺；不需最小非零概率假设。",
+    "complexity": "最坏期望观测量 O((n+log(1/delta))/epsilon)，未证明最优阶的缩常数版本。",
+    "numeric_policy": "参数和尾界由 Arb 认证，多项式最终比较使用整数；无法认证则拒绝配置。"
+  },
+  "100000/0.05": {
+    "algorithm": "certified_chebyshev_validation_count",
+    "n": 100000,
+    "epsilon": "1/20",
+    "delta": "1/20",
+    "config": {
+      "b_factor": 0.5,
+      "max_degree": 12,
+      "weight_cap": 20.0,
+      "validation_factor": 12.0,
+      "validation_gate": 0.75
+    },
+    "false_positive_bound": "1/20",
+    "false_negative_bound": "1/20",
+    "error_allocation": {
+      "polynomial_total": "1/20",
+      "early_accept_total": "1/40",
+      "final_count": "1/40"
+    },
+    "final_poisson_mean": 2012435,
+    "final_count_tail_interval": "[0.0249990318242135074768254113923576129202817229821308890673905 +/- 3.80e-62]",
+    "baseline_poisson_mean": 2010435,
+    "baseline_count_tail_interval": "[0.0499898871060965895298218463981715154122691702318483852664337 +/- 3.44e-62]",
+    "max_validation_samples": 6360,
+    "expected_sample_upper_bound": 2018795,
+    "looks": [
+      {
+        "m": 79918,
+        "scales": 10,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          5,
+          5,
+          5,
+          5,
+          5,
+          4
+        ],
+        "validation_r": 1272,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00331125855554899470400096821327416689940189830756717414785891 +/- 1.68e-63]"
+      },
+      {
+        "m": 159835,
+        "scales": 9,
+        "degrees": [
+          4,
+          4,
+          4,
+          5,
+          5,
+          5,
+          5,
+          5,
+          4
+        ],
+        "validation_r": 1272,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00331125855554899470400096821327416689940189830756717414785891 +/- 1.68e-63]"
+      },
+      {
+        "m": 319670,
+        "scales": 8,
+        "degrees": [
+          4,
+          4,
+          5,
+          5,
+          5,
+          5,
+          5,
+          4
+        ],
+        "validation_r": 1272,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00331125855554899470400096821327416689940189830756717414785891 +/- 1.68e-63]"
+      },
+      {
+        "m": 639339,
+        "scales": 7,
+        "degrees": [
+          4,
+          5,
+          5,
+          5,
+          5,
+          5,
+          4
+        ],
+        "validation_r": 1272,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00331125855554899470400096821327416689940189830756717414785891 +/- 1.68e-63]"
+      },
+      {
+        "m": 1278678,
+        "scales": 6,
+        "degrees": [
+          5,
+          5,
+          5,
+          5,
+          5,
+          4
+        ],
+        "validation_r": 1272,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00331125855554899470400096821327416689940189830756717414785891 +/- 1.68e-63]"
+      }
+    ],
+    "guarantee_scope": "固定 n/epsilon/delta、固定分布 iid、采样随机化独立、Yes/No 承诺；不需最小非零概率假设。",
+    "complexity": "最坏期望观测量 O((n+log(1/delta))/epsilon)，未证明最优阶的缩常数版本。",
+    "numeric_policy": "参数和尾界由 Arb 认证，多项式最终比较使用整数；无法认证则拒绝配置。"
+  },
+  "100000/0.1": {
+    "algorithm": "certified_chebyshev_validation_count",
+    "n": 100000,
+    "epsilon": "1/10",
+    "delta": "1/20",
+    "config": {
+      "b_factor": 0.5,
+      "max_degree": 12,
+      "weight_cap": 20.0,
+      "validation_factor": 12.0,
+      "validation_gate": 0.75
+    },
+    "false_positive_bound": "1/20",
+    "false_negative_bound": "1/20",
+    "error_allocation": {
+      "polynomial_total": "1/20",
+      "early_accept_total": "1/40",
+      "final_count": "1/40"
+    },
+    "final_poisson_mean": 1006218,
+    "final_count_tail_interval": "[0.0249898306514739993858732440492148131585736807246608302268052 +/- 2.66e-62]",
+    "baseline_poisson_mean": 1005218,
+    "baseline_count_tail_interval": "[0.0499736411004125352915396078189891604974720665946358590255075 +/- 3.96e-62]",
+    "max_validation_samples": 3180,
+    "expected_sample_upper_bound": 1009398,
+    "looks": [
+      {
+        "m": 39959,
+        "scales": 10,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          5,
+          5,
+          5,
+          5,
+          5,
+          4
+        ],
+        "validation_r": 636,
+        "accept_if_outside_at_most": 44,
+        "binomial_tail_interval": "[0.00420039092047132097986673345666806339998501700474865624022808 +/- 3.03e-63]"
+      },
+      {
+        "m": 79918,
+        "scales": 9,
+        "degrees": [
+          4,
+          4,
+          4,
+          5,
+          5,
+          5,
+          5,
+          5,
+          4
+        ],
+        "validation_r": 636,
+        "accept_if_outside_at_most": 44,
+        "binomial_tail_interval": "[0.00420039092047132097986673345666806339998501700474865624022808 +/- 3.03e-63]"
+      },
+      {
+        "m": 159835,
+        "scales": 8,
+        "degrees": [
+          4,
+          4,
+          5,
+          5,
+          5,
+          5,
+          5,
+          4
+        ],
+        "validation_r": 636,
+        "accept_if_outside_at_most": 44,
+        "binomial_tail_interval": "[0.00420039092047132097986673345666806339998501700474865624022808 +/- 3.03e-63]"
+      },
+      {
+        "m": 319670,
+        "scales": 7,
+        "degrees": [
+          4,
+          5,
+          5,
+          5,
+          5,
+          5,
+          4
+        ],
+        "validation_r": 636,
+        "accept_if_outside_at_most": 44,
+        "binomial_tail_interval": "[0.00420039092047132097986673345666806339998501700474865624022808 +/- 3.03e-63]"
+      },
+      {
+        "m": 639339,
+        "scales": 6,
+        "degrees": [
+          5,
+          5,
+          5,
+          5,
+          5,
+          4
+        ],
+        "validation_r": 636,
+        "accept_if_outside_at_most": 44,
+        "binomial_tail_interval": "[0.00420039092047132097986673345666806339998501700474865624022808 +/- 3.03e-63]"
+      }
+    ],
+    "guarantee_scope": "固定 n/epsilon/delta、固定分布 iid、采样随机化独立、Yes/No 承诺；不需最小非零概率假设。",
+    "complexity": "最坏期望观测量 O((n+log(1/delta))/epsilon)，未证明最优阶的缩常数版本。",
+    "numeric_policy": "参数和尾界由 Arb 认证，多项式最终比较使用整数；无法认证则拒绝配置。"
+  },
+  "100000/0.2": {
+    "algorithm": "certified_chebyshev_validation_count",
+    "n": 100000,
+    "epsilon": "1/5",
+    "delta": "1/20",
+    "config": {
+      "b_factor": 0.5,
+      "max_degree": 12,
+      "weight_cap": 20.0,
+      "validation_factor": 12.0,
+      "validation_gate": 0.75
+    },
+    "false_positive_bound": "1/20",
+    "false_negative_bound": "1/20",
+    "error_allocation": {
+      "polynomial_total": "1/20",
+      "early_accept_total": "1/40",
+      "final_count": "1/40"
+    },
+    "final_poisson_mean": 503109,
+    "final_count_tail_interval": "[0.0249898306514739993858732440492148131585736807246608302268052 +/- 2.66e-62]",
+    "baseline_poisson_mean": 502609,
+    "baseline_count_tail_interval": "[0.0499736411004125352915396078189891604974720665946358590255075 +/- 3.96e-62]",
+    "max_validation_samples": 1590,
+    "expected_sample_upper_bound": 504699,
+    "looks": [
+      {
+        "m": 19980,
+        "scales": 10,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          5,
+          5,
+          5,
+          5,
+          5,
+          4
+        ],
+        "validation_r": 318,
+        "accept_if_outside_at_most": 45,
+        "binomial_tail_interval": "[0.00430684495992354255650052394865455258102531520867745322318652 +/- 3.92e-63]"
+      },
+      {
+        "m": 39959,
+        "scales": 9,
+        "degrees": [
+          4,
+          4,
+          4,
+          5,
+          5,
+          5,
+          5,
+          5,
+          4
+        ],
+        "validation_r": 318,
+        "accept_if_outside_at_most": 45,
+        "binomial_tail_interval": "[0.00430684495992354255650052394865455258102531520867745322318652 +/- 3.92e-63]"
+      },
+      {
+        "m": 79918,
+        "scales": 8,
+        "degrees": [
+          4,
+          4,
+          5,
+          5,
+          5,
+          5,
+          5,
+          4
+        ],
+        "validation_r": 318,
+        "accept_if_outside_at_most": 45,
+        "binomial_tail_interval": "[0.00430684495992354255650052394865455258102531520867745322318652 +/- 3.92e-63]"
+      },
+      {
+        "m": 159835,
+        "scales": 7,
+        "degrees": [
+          4,
+          5,
+          5,
+          5,
+          5,
+          5,
+          4
+        ],
+        "validation_r": 318,
+        "accept_if_outside_at_most": 45,
+        "binomial_tail_interval": "[0.00430684495992354255650052394865455258102531520867745322318652 +/- 3.92e-63]"
+      },
+      {
+        "m": 319670,
+        "scales": 6,
+        "degrees": [
+          5,
+          5,
+          5,
+          5,
+          5,
+          4
+        ],
+        "validation_r": 318,
+        "accept_if_outside_at_most": 45,
+        "binomial_tail_interval": "[0.00430684495992354255650052394865455258102531520867745322318652 +/- 3.92e-63]"
+      }
+    ],
+    "guarantee_scope": "固定 n/epsilon/delta、固定分布 iid、采样随机化独立、Yes/No 承诺；不需最小非零概率假设。",
+    "complexity": "最坏期望观测量 O((n+log(1/delta))/epsilon)，未证明最优阶的缩常数版本。",
+    "numeric_policy": "参数和尾界由 Arb 认证，多项式最终比较使用整数；无法认证则拒绝配置。"
+  },
+  "1000000/0.05": {
+    "algorithm": "certified_chebyshev_validation_count",
+    "n": 1000000,
+    "epsilon": "1/20",
+    "delta": "1/20",
+    "config": {
+      "b_factor": 0.5,
+      "max_degree": 12,
+      "weight_cap": 20.0,
+      "validation_factor": 12.0,
+      "validation_gate": 0.75
+    },
+    "false_positive_bound": "1/20",
+    "false_negative_bound": "1/20",
+    "error_allocation": {
+      "polynomial_total": "1/20",
+      "early_accept_total": "1/40",
+      "final_count": "1/40"
+    },
+    "final_poisson_mean": 20039239,
+    "final_count_tail_interval": "[0.0249977788845830097352624640431941747977112407094597494428603 +/- 5.70e-63]",
+    "baseline_poisson_mean": 20032929,
+    "baseline_count_tail_interval": "[0.0499971945114816698157851047028451080290166607057496933333715 +/- 3.69e-62]",
+    "max_validation_samples": 6360,
+    "expected_sample_upper_bound": 20045599,
+    "looks": [
+      {
+        "m": 674969,
+        "scales": 10,
+        "degrees": [
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          6,
+          7,
+          6,
+          6
+        ],
+        "validation_r": 1272,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00331125855554899470400096821327416689940189830756717414785891 +/- 1.68e-63]"
+      },
+      {
+        "m": 1349937,
+        "scales": 9,
+        "degrees": [
+          5,
+          5,
+          5,
+          5,
+          5,
+          6,
+          7,
+          6,
+          6
+        ],
+        "validation_r": 1272,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00331125855554899470400096821327416689940189830756717414785891 +/- 1.68e-63]"
+      },
+      {
+        "m": 2699874,
+        "scales": 8,
+        "degrees": [
+          5,
+          5,
+          5,
+          5,
+          6,
+          7,
+          6,
+          6
+        ],
+        "validation_r": 1272,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00331125855554899470400096821327416689940189830756717414785891 +/- 1.68e-63]"
+      },
+      {
+        "m": 5399747,
+        "scales": 7,
+        "degrees": [
+          5,
+          5,
+          5,
+          6,
+          7,
+          6,
+          6
+        ],
+        "validation_r": 1272,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00331125855554899470400096821327416689940189830756717414785891 +/- 1.68e-63]"
+      },
+      {
+        "m": 10799493,
+        "scales": 6,
+        "degrees": [
+          5,
+          5,
+          6,
+          7,
+          6,
+          5
+        ],
+        "validation_r": 1272,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00331125855554899470400096821327416689940189830756717414785891 +/- 1.68e-63]"
+      }
+    ],
+    "guarantee_scope": "固定 n/epsilon/delta、固定分布 iid、采样随机化独立、Yes/No 承诺；不需最小非零概率假设。",
+    "complexity": "最坏期望观测量 O((n+log(1/delta))/epsilon)，未证明最优阶的缩常数版本。",
+    "numeric_policy": "参数和尾界由 Arb 认证，多项式最终比较使用整数；无法认证则拒绝配置。"
+  },
+  "1000000/0.1": {
+    "algorithm": "certified_chebyshev_validation_count",
+    "n": 1000000,
+    "epsilon": "1/10",
+    "delta": "1/20",
+    "config": {
+      "b_factor": 0.5,
+      "max_degree": 12,
+      "weight_cap": 20.0,
+      "validation_factor": 12.0,
+      "validation_gate": 0.75
+    },
+    "false_positive_bound": "1/20",
+    "false_negative_bound": "1/20",
+    "error_allocation": {
+      "polynomial_total": "1/20",
+      "early_accept_total": "1/40",
+      "final_count": "1/40"
+    },
+    "final_poisson_mean": 10019620,
+    "final_count_tail_interval": "[0.0249948608065827981893374264140005267878045686794930881900796 +/- 6.17e-63]",
+    "baseline_poisson_mean": 10016465,
+    "baseline_count_tail_interval": "[0.0499920438230070669451432517842623685708554826137613358609064 +/- 1.04e-62]",
+    "max_validation_samples": 3180,
+    "expected_sample_upper_bound": 10022800,
+    "looks": [
+      {
+        "m": 337485,
+        "scales": 10,
+        "degrees": [
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          6,
+          7,
+          6,
+          6
+        ],
+        "validation_r": 636,
+        "accept_if_outside_at_most": 44,
+        "binomial_tail_interval": "[0.00420039092047132097986673345666806339998501700474865624022808 +/- 3.03e-63]"
+      },
+      {
+        "m": 674969,
+        "scales": 9,
+        "degrees": [
+          5,
+          5,
+          5,
+          5,
+          5,
+          6,
+          7,
+          6,
+          6
+        ],
+        "validation_r": 636,
+        "accept_if_outside_at_most": 44,
+        "binomial_tail_interval": "[0.00420039092047132097986673345666806339998501700474865624022808 +/- 3.03e-63]"
+      },
+      {
+        "m": 1349937,
+        "scales": 8,
+        "degrees": [
+          5,
+          5,
+          5,
+          5,
+          6,
+          7,
+          6,
+          6
+        ],
+        "validation_r": 636,
+        "accept_if_outside_at_most": 44,
+        "binomial_tail_interval": "[0.00420039092047132097986673345666806339998501700474865624022808 +/- 3.03e-63]"
+      },
+      {
+        "m": 2699874,
+        "scales": 7,
+        "degrees": [
+          5,
+          5,
+          5,
+          6,
+          7,
+          6,
+          6
+        ],
+        "validation_r": 636,
+        "accept_if_outside_at_most": 44,
+        "binomial_tail_interval": "[0.00420039092047132097986673345666806339998501700474865624022808 +/- 3.03e-63]"
+      },
+      {
+        "m": 5399747,
+        "scales": 6,
+        "degrees": [
+          5,
+          5,
+          6,
+          7,
+          6,
+          5
+        ],
+        "validation_r": 636,
+        "accept_if_outside_at_most": 44,
+        "binomial_tail_interval": "[0.00420039092047132097986673345666806339998501700474865624022808 +/- 3.03e-63]"
+      }
+    ],
+    "guarantee_scope": "固定 n/epsilon/delta、固定分布 iid、采样随机化独立、Yes/No 承诺；不需最小非零概率假设。",
+    "complexity": "最坏期望观测量 O((n+log(1/delta))/epsilon)，未证明最优阶的缩常数版本。",
+    "numeric_policy": "参数和尾界由 Arb 认证，多项式最终比较使用整数；无法认证则拒绝配置。"
+  },
+  "1000000/0.2": {
+    "algorithm": "certified_chebyshev_validation_count",
+    "n": 1000000,
+    "epsilon": "1/5",
+    "delta": "1/20",
+    "config": {
+      "b_factor": 0.5,
+      "max_degree": 12,
+      "weight_cap": 20.0,
+      "validation_factor": 12.0,
+      "validation_gate": 0.75
+    },
+    "false_positive_bound": "1/20",
+    "false_negative_bound": "1/20",
+    "error_allocation": {
+      "polynomial_total": "1/20",
+      "early_accept_total": "1/40",
+      "final_count": "1/40"
+    },
+    "final_poisson_mean": 5009810,
+    "final_count_tail_interval": "[0.0249948608065827981893374264140005267878045686794930881900796 +/- 6.17e-63]",
+    "baseline_poisson_mean": 5008233,
+    "baseline_count_tail_interval": "[0.0499817437159839440887651955329024599389145256907386505542150 +/- 1.96e-62]",
+    "max_validation_samples": 1590,
+    "expected_sample_upper_bound": 5011400,
+    "looks": [
+      {
+        "m": 168743,
+        "scales": 10,
+        "degrees": [
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          6,
+          7,
+          6,
+          6
+        ],
+        "validation_r": 318,
+        "accept_if_outside_at_most": 45,
+        "binomial_tail_interval": "[0.00430684495992354255650052394865455258102531520867745322318652 +/- 3.92e-63]"
+      },
+      {
+        "m": 337485,
+        "scales": 9,
+        "degrees": [
+          5,
+          5,
+          5,
+          5,
+          5,
+          6,
+          7,
+          6,
+          6
+        ],
+        "validation_r": 318,
+        "accept_if_outside_at_most": 45,
+        "binomial_tail_interval": "[0.00430684495992354255650052394865455258102531520867745322318652 +/- 3.92e-63]"
+      },
+      {
+        "m": 674969,
+        "scales": 8,
+        "degrees": [
+          5,
+          5,
+          5,
+          5,
+          6,
+          7,
+          6,
+          6
+        ],
+        "validation_r": 318,
+        "accept_if_outside_at_most": 45,
+        "binomial_tail_interval": "[0.00430684495992354255650052394865455258102531520867745322318652 +/- 3.92e-63]"
+      },
+      {
+        "m": 1349937,
+        "scales": 7,
+        "degrees": [
+          5,
+          5,
+          5,
+          6,
+          7,
+          6,
+          6
+        ],
+        "validation_r": 318,
+        "accept_if_outside_at_most": 45,
+        "binomial_tail_interval": "[0.00430684495992354255650052394865455258102531520867745322318652 +/- 3.92e-63]"
+      },
+      {
+        "m": 2699874,
+        "scales": 6,
+        "degrees": [
+          5,
+          5,
+          6,
+          7,
+          6,
+          5
+        ],
+        "validation_r": 318,
+        "accept_if_outside_at_most": 45,
+        "binomial_tail_interval": "[0.00430684495992354255650052394865455258102531520867745322318652 +/- 3.92e-63]"
+      }
+    ],
+    "guarantee_scope": "固定 n/epsilon/delta、固定分布 iid、采样随机化独立、Yes/No 承诺；不需最小非零概率假设。",
+    "complexity": "最坏期望观测量 O((n+log(1/delta))/epsilon)，未证明最优阶的缩常数版本。",
+    "numeric_policy": "参数和尾界由 Arb 认证，多项式最终比较使用整数；无法认证则拒绝配置。"
+  },
+  "10323/0.01": {
+    "algorithm": "certified_chebyshev_validation_count",
+    "n": 10323,
+    "epsilon": "1/100",
+    "delta": "1/20",
+    "config": {
+      "b_factor": 0.5,
+      "max_degree": 12,
+      "weight_cap": 20.0,
+      "validation_factor": 12.0,
+      "validation_gate": 0.75
+    },
+    "false_positive_bound": "1/20",
+    "false_negative_bound": "1/20",
+    "error_allocation": {
+      "polynomial_total": "1/20",
+      "early_accept_total": "1/40",
+      "final_count": "1/40"
+    },
+    "final_poisson_mean": 1052410,
+    "final_count_tail_interval": "[0.0249952776377548042383842345309363064157321664685922012750295 +/- 3.91e-62]",
+    "baseline_poisson_mean": 1049170,
+    "baseline_count_tail_interval": "[0.0499953456275472696208855699862572059803983582841437646466285 +/- 3.71e-62]",
+    "max_validation_samples": 31790,
+    "expected_sample_upper_bound": 1084200,
+    "looks": [
+      {
+        "m": 50395,
+        "scales": 9,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          5,
+          4,
+          4,
+          4
+        ],
+        "validation_r": 6358,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00388253612347676246434904272211194155727567864308097243853056 +/- 4.22e-63]"
+      },
+      {
+        "m": 100790,
+        "scales": 8,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          5,
+          4,
+          4,
+          4
+        ],
+        "validation_r": 6358,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00388253612347676246434904272211194155727567864308097243853056 +/- 4.22e-63]"
+      },
+      {
+        "m": 201580,
+        "scales": 7,
+        "degrees": [
+          4,
+          4,
+          4,
+          5,
+          4,
+          4,
+          4
+        ],
+        "validation_r": 6358,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00388253612347676246434904272211194155727567864308097243853056 +/- 4.22e-63]"
+      },
+      {
+        "m": 403159,
+        "scales": 6,
+        "degrees": [
+          4,
+          4,
+          5,
+          4,
+          4,
+          4
+        ],
+        "validation_r": 6358,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00388253612347676246434904272211194155727567864308097243853056 +/- 4.22e-63]"
+      },
+      {
+        "m": 806317,
+        "scales": 5,
+        "degrees": [
+          4,
+          5,
+          4,
+          4,
+          4
+        ],
+        "validation_r": 6358,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00388253612347676246434904272211194155727567864308097243853056 +/- 4.22e-63]"
+      }
+    ],
+    "guarantee_scope": "固定 n/epsilon/delta、固定分布 iid、采样随机化独立、Yes/No 承诺；不需最小非零概率假设。",
+    "complexity": "最坏期望观测量 O((n+log(1/delta))/epsilon)，未证明最优阶的缩常数版本。",
+    "numeric_policy": "参数和尾界由 Arb 认证，多项式最终比较使用整数；无法认证则拒绝配置。"
+  },
+  "12375/0.01": {
+    "algorithm": "certified_chebyshev_validation_count",
+    "n": 12375,
+    "epsilon": "1/100",
+    "delta": "1/20",
+    "config": {
+      "b_factor": 0.5,
+      "max_degree": 12,
+      "weight_cap": 20.0,
+      "validation_factor": 12.0,
+      "validation_gate": 0.75
+    },
+    "false_positive_bound": "1/20",
+    "false_negative_bound": "1/20",
+    "error_allocation": {
+      "polynomial_total": "1/20",
+      "early_accept_total": "1/40",
+      "final_count": "1/40"
+    },
+    "final_poisson_mean": 1259499,
+    "final_count_tail_interval": "[0.0249982553283487205063868527261146279025679016830337981029891 +/- 1.21e-62]",
+    "baseline_poisson_mean": 1255956,
+    "baseline_count_tail_interval": "[0.0499931664086099858249049540453459871775030047890512084445542 +/- 1.03e-62]",
+    "max_validation_samples": 31790,
+    "expected_sample_upper_bound": 1291289,
+    "looks": [
+      {
+        "m": 59362,
+        "scales": 9,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          5,
+          5,
+          4,
+          4
+        ],
+        "validation_r": 6358,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00388253612347676246434904272211194155727567864308097243853056 +/- 4.22e-63]"
+      },
+      {
+        "m": 118723,
+        "scales": 8,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          5,
+          5,
+          4,
+          4
+        ],
+        "validation_r": 6358,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00388253612347676246434904272211194155727567864308097243853056 +/- 4.22e-63]"
+      },
+      {
+        "m": 237446,
+        "scales": 7,
+        "degrees": [
+          4,
+          4,
+          4,
+          5,
+          5,
+          4,
+          4
+        ],
+        "validation_r": 6358,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00388253612347676246434904272211194155727567864308097243853056 +/- 4.22e-63]"
+      },
+      {
+        "m": 474892,
+        "scales": 6,
+        "degrees": [
+          4,
+          4,
+          5,
+          5,
+          4,
+          4
+        ],
+        "validation_r": 6358,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00388253612347676246434904272211194155727567864308097243853056 +/- 4.22e-63]"
+      },
+      {
+        "m": 949783,
+        "scales": 5,
+        "degrees": [
+          4,
+          5,
+          5,
+          4,
+          4
+        ],
+        "validation_r": 6358,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00388253612347676246434904272211194155727567864308097243853056 +/- 4.22e-63]"
+      }
+    ],
+    "guarantee_scope": "固定 n/epsilon/delta、固定分布 iid、采样随机化独立、Yes/No 承诺；不需最小非零概率假设。",
+    "complexity": "最坏期望观测量 O((n+log(1/delta))/epsilon)，未证明最优阶的缩常数版本。",
+    "numeric_policy": "参数和尾界由 Arb 认证，多项式最终比较使用整数；无法认证则拒绝配置。"
+  },
+  "11349/0.01": {
+    "algorithm": "certified_chebyshev_validation_count",
+    "n": 11349,
+    "epsilon": "1/100",
+    "delta": "1/20",
+    "config": {
+      "b_factor": 0.5,
+      "max_degree": 12,
+      "weight_cap": 20.0,
+      "validation_factor": 12.0,
+      "validation_gate": 0.75
+    },
+    "false_positive_bound": "1/20",
+    "false_negative_bound": "1/20",
+    "error_allocation": {
+      "polynomial_total": "1/20",
+      "early_accept_total": "1/40",
+      "final_count": "1/40"
+    },
+    "final_poisson_mean": 1155976,
+    "final_count_tail_interval": "[0.0249962057274096859860313462031622932918085979641027931301260 +/- 4.60e-63]",
+    "baseline_poisson_mean": 1152581,
+    "baseline_count_tail_interval": "[0.0499936943427300698328077298551982859001432741238258290294264 +/- 2.42e-62]",
+    "max_validation_samples": 31790,
+    "expected_sample_upper_bound": 1187766,
+    "looks": [
+      {
+        "m": 54896,
+        "scales": 9,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          5,
+          4,
+          4,
+          4
+        ],
+        "validation_r": 6358,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00388253612347676246434904272211194155727567864308097243853056 +/- 4.22e-63]"
+      },
+      {
+        "m": 109792,
+        "scales": 8,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          5,
+          4,
+          4,
+          4
+        ],
+        "validation_r": 6358,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00388253612347676246434904272211194155727567864308097243853056 +/- 4.22e-63]"
+      },
+      {
+        "m": 219583,
+        "scales": 7,
+        "degrees": [
+          4,
+          4,
+          4,
+          5,
+          4,
+          4,
+          4
+        ],
+        "validation_r": 6358,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00388253612347676246434904272211194155727567864308097243853056 +/- 4.22e-63]"
+      },
+      {
+        "m": 439166,
+        "scales": 6,
+        "degrees": [
+          4,
+          4,
+          5,
+          4,
+          4,
+          4
+        ],
+        "validation_r": 6358,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00388253612347676246434904272211194155727567864308097243853056 +/- 4.22e-63]"
+      },
+      {
+        "m": 878331,
+        "scales": 5,
+        "degrees": [
+          4,
+          5,
+          4,
+          4,
+          4
+        ],
+        "validation_r": 6358,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00388253612347676246434904272211194155727567864308097243853056 +/- 4.22e-63]"
+      }
+    ],
+    "guarantee_scope": "固定 n/epsilon/delta、固定分布 iid、采样随机化独立、Yes/No 承诺；不需最小非零概率假设。",
+    "complexity": "最坏期望观测量 O((n+log(1/delta))/epsilon)，未证明最优阶的缩常数版本。",
+    "numeric_policy": "参数和尾界由 Arb 认证，多项式最终比较使用整数；无法认证则拒绝配置。"
+  },
+  "6184/0.05": {
+    "algorithm": "certified_chebyshev_validation_count",
+    "n": 6184,
+    "epsilon": "1/20",
+    "delta": "1/20",
+    "config": {
+      "b_factor": 0.5,
+      "max_degree": 12,
+      "weight_cap": 20.0,
+      "validation_factor": 12.0,
+      "validation_gate": 0.75
+    },
+    "false_positive_bound": "1/20",
+    "false_negative_bound": "1/20",
+    "error_allocation": {
+      "polynomial_total": "1/20",
+      "early_accept_total": "1/40",
+      "final_count": "1/40"
+    },
+    "final_poisson_mean": 126802,
+    "final_count_tail_interval": "[0.0249896758604582915703465589282588693372836853407407234105355 +/- 2.17e-62]",
+    "baseline_poisson_mean": 126299,
+    "baseline_count_tail_interval": "[0.0499678697457734271365924773105606976114603113516078599959589 +/- 3.49e-62]",
+    "max_validation_samples": 4876,
+    "expected_sample_upper_bound": 131678,
+    "looks": [
+      {
+        "m": 6356,
+        "scales": 9,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "validation_r": 1219,
+        "accept_if_outside_at_most": 42,
+        "binomial_tail_interval": "[0.00558411001043374611866060131475864919066606329430612271752015 +/- 5.86e-64]"
+      },
+      {
+        "m": 12712,
+        "scales": 8,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "validation_r": 1219,
+        "accept_if_outside_at_most": 42,
+        "binomial_tail_interval": "[0.00558411001043374611866060131475864919066606329430612271752015 +/- 5.86e-64]"
+      },
+      {
+        "m": 25424,
+        "scales": 7,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "validation_r": 1219,
+        "accept_if_outside_at_most": 42,
+        "binomial_tail_interval": "[0.00558411001043374611866060131475864919066606329430612271752015 +/- 5.86e-64]"
+      },
+      {
+        "m": 50847,
+        "scales": 6,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "validation_r": 1219,
+        "accept_if_outside_at_most": 42,
+        "binomial_tail_interval": "[0.00558411001043374611866060131475864919066606329430612271752015 +/- 5.86e-64]"
+      }
+    ],
+    "guarantee_scope": "固定 n/epsilon/delta、固定分布 iid、采样随机化独立、Yes/No 承诺；不需最小非零概率假设。",
+    "complexity": "最坏期望观测量 O((n+log(1/delta))/epsilon)，未证明最优阶的缩常数版本。",
+    "numeric_policy": "参数和尾界由 Arb 认证，多项式最终比较使用整数；无法认证则拒绝配置。"
+  },
+  "12375/0.05": {
+    "algorithm": "certified_chebyshev_validation_count",
+    "n": 12375,
+    "epsilon": "1/20",
+    "delta": "1/20",
+    "config": {
+      "b_factor": 0.5,
+      "max_degree": 12,
+      "weight_cap": 20.0,
+      "validation_factor": 12.0,
+      "validation_gate": 0.75
+    },
+    "false_positive_bound": "1/20",
+    "false_negative_bound": "1/20",
+    "error_allocation": {
+      "polynomial_total": "1/20",
+      "early_accept_total": "1/40",
+      "final_count": "1/40"
+    },
+    "final_poisson_mean": 251900,
+    "final_count_tail_interval": "[0.0249930635185184541338862201739078477213213381468207681185875 +/- 1.19e-62]",
+    "baseline_poisson_mean": 251192,
+    "baseline_count_tail_interval": "[0.0499564599467836453028137794705459876064376397181111874229590 +/- 2.78e-62]",
+    "max_validation_samples": 6360,
+    "expected_sample_upper_bound": 258260,
+    "looks": [
+      {
+        "m": 11873,
+        "scales": 9,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          5,
+          5,
+          4,
+          4
+        ],
+        "validation_r": 1272,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00331125855554899470400096821327416689940189830756717414785891 +/- 1.68e-63]"
+      },
+      {
+        "m": 23745,
+        "scales": 8,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          5,
+          5,
+          4,
+          4
+        ],
+        "validation_r": 1272,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00331125855554899470400096821327416689940189830756717414785891 +/- 1.68e-63]"
+      },
+      {
+        "m": 47490,
+        "scales": 7,
+        "degrees": [
+          4,
+          4,
+          4,
+          5,
+          5,
+          4,
+          4
+        ],
+        "validation_r": 1272,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00331125855554899470400096821327416689940189830756717414785891 +/- 1.68e-63]"
+      },
+      {
+        "m": 94979,
+        "scales": 6,
+        "degrees": [
+          4,
+          4,
+          5,
+          5,
+          4,
+          4
+        ],
+        "validation_r": 1272,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00331125855554899470400096821327416689940189830756717414785891 +/- 1.68e-63]"
+      },
+      {
+        "m": 189957,
+        "scales": 5,
+        "degrees": [
+          4,
+          5,
+          5,
+          4,
+          4
+        ],
+        "validation_r": 1272,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00331125855554899470400096821327416689940189830756717414785891 +/- 1.68e-63]"
+      }
+    ],
+    "guarantee_scope": "固定 n/epsilon/delta、固定分布 iid、采样随机化独立、Yes/No 承诺；不需最小非零概率假设。",
+    "complexity": "最坏期望观测量 O((n+log(1/delta))/epsilon)，未证明最优阶的缩常数版本。",
+    "numeric_policy": "参数和尾界由 Arb 认证，多项式最终比较使用整数；无法认证则拒绝配置。"
+  },
+  "9279/0.05": {
+    "algorithm": "certified_chebyshev_validation_count",
+    "n": 9279,
+    "epsilon": "1/20",
+    "delta": "1/20",
+    "config": {
+      "b_factor": 0.5,
+      "max_degree": 12,
+      "weight_cap": 20.0,
+      "validation_factor": 12.0,
+      "validation_gate": 0.75
+    },
+    "false_positive_bound": "1/20",
+    "false_negative_bound": "1/20",
+    "error_allocation": {
+      "polynomial_total": "1/20",
+      "early_accept_total": "1/40",
+      "final_count": "1/40"
+    },
+    "final_poisson_mean": 189396,
+    "final_count_tail_interval": "[0.0249725346651625375388583453555377085429875833799465665548502 +/- 5.25e-63]",
+    "baseline_poisson_mean": 188781,
+    "baseline_count_tail_interval": "[0.0499679955747334615529901366232153067991238028799220264389093 +/- 4.72e-62]",
+    "max_validation_samples": 6360,
+    "expected_sample_upper_bound": 195756,
+    "looks": [
+      {
+        "m": 9155,
+        "scales": 9,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "validation_r": 1272,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00331125855554899470400096821327416689940189830756717414785891 +/- 1.68e-63]"
+      },
+      {
+        "m": 18310,
+        "scales": 8,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "validation_r": 1272,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00331125855554899470400096821327416689940189830756717414785891 +/- 1.68e-63]"
+      },
+      {
+        "m": 36620,
+        "scales": 7,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "validation_r": 1272,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00331125855554899470400096821327416689940189830756717414785891 +/- 1.68e-63]"
+      },
+      {
+        "m": 73240,
+        "scales": 6,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "validation_r": 1272,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00331125855554899470400096821327416689940189830756717414785891 +/- 1.68e-63]"
+      },
+      {
+        "m": 146480,
+        "scales": 5,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "validation_r": 1272,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00331125855554899470400096821327416689940189830756717414785891 +/- 1.68e-63]"
+      }
+    ],
+    "guarantee_scope": "固定 n/epsilon/delta、固定分布 iid、采样随机化独立、Yes/No 承诺；不需最小非零概率假设。",
+    "complexity": "最坏期望观测量 O((n+log(1/delta))/epsilon)，未证明最优阶的缩常数版本。",
+    "numeric_policy": "参数和尾界由 Arb 认证，多项式最终比较使用整数；无法认证则拒绝配置。"
+  },
+  "3925/0.1": {
+    "algorithm": "certified_chebyshev_validation_count",
+    "n": 3925,
+    "epsilon": "1/10",
+    "delta": "1/20",
+    "config": {
+      "b_factor": 0.5,
+      "max_degree": 12,
+      "weight_cap": 20.0,
+      "validation_factor": 12.0,
+      "validation_gate": 0.75
+    },
+    "false_positive_bound": "1/20",
+    "false_negative_bound": "1/20",
+    "error_allocation": {
+      "polynomial_total": "1/20",
+      "early_accept_total": "1/40",
+      "final_count": "1/40"
+    },
+    "final_poisson_mean": 40498,
+    "final_count_tail_interval": "[0.0249556502524855558324089690651767228511649956174022883651045 +/- 2.14e-62]",
+    "baseline_poisson_mean": 40297,
+    "baseline_count_tail_interval": "[0.0498840969605679144323186332910132448034661887922193235995637 +/- 3.35e-62]",
+    "max_validation_samples": 2440,
+    "expected_sample_upper_bound": 42938,
+    "looks": [
+      {
+        "m": 2116,
+        "scales": 9,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "validation_r": 610,
+        "accept_if_outside_at_most": 42,
+        "binomial_tail_interval": "[0.00456137135490223551438690130030145927678916494371909891644128 +/- 2.24e-64]"
+      },
+      {
+        "m": 4232,
+        "scales": 8,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "validation_r": 610,
+        "accept_if_outside_at_most": 42,
+        "binomial_tail_interval": "[0.00456137135490223551438690130030145927678916494371909891644128 +/- 2.24e-64]"
+      },
+      {
+        "m": 8464,
+        "scales": 7,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "validation_r": 610,
+        "accept_if_outside_at_most": 42,
+        "binomial_tail_interval": "[0.00456137135490223551438690130030145927678916494371909891644128 +/- 2.24e-64]"
+      },
+      {
+        "m": 16928,
+        "scales": 6,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "validation_r": 610,
+        "accept_if_outside_at_most": 42,
+        "binomial_tail_interval": "[0.00456137135490223551438690130030145927678916494371909891644128 +/- 2.24e-64]"
+      }
+    ],
+    "guarantee_scope": "固定 n/epsilon/delta、固定分布 iid、采样随机化独立、Yes/No 承诺；不需最小非零概率假设。",
+    "complexity": "最坏期望观测量 O((n+log(1/delta))/epsilon)，未证明最优阶的缩常数版本。",
+    "numeric_policy": "参数和尾界由 Arb 认证，多项式最终比较使用整数；无法认证则拒绝配置。"
+  },
+  "12375/0.1": {
+    "algorithm": "certified_chebyshev_validation_count",
+    "n": 12375,
+    "epsilon": "1/10",
+    "delta": "1/20",
+    "config": {
+      "b_factor": 0.5,
+      "max_degree": 12,
+      "weight_cap": 20.0,
+      "validation_factor": 12.0,
+      "validation_gate": 0.75
+    },
+    "false_positive_bound": "1/20",
+    "false_negative_bound": "1/20",
+    "error_allocation": {
+      "polynomial_total": "1/20",
+      "early_accept_total": "1/40",
+      "final_count": "1/40"
+    },
+    "final_poisson_mean": 125950,
+    "final_count_tail_interval": "[0.0249930635185184541338862201739078477213213381468207681185875 +/- 1.19e-62]",
+    "baseline_poisson_mean": 125596,
+    "baseline_count_tail_interval": "[0.0499564599467836453028137794705459876064376397181111874229590 +/- 2.78e-62]",
+    "max_validation_samples": 3180,
+    "expected_sample_upper_bound": 129130,
+    "looks": [
+      {
+        "m": 5937,
+        "scales": 9,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          5,
+          5,
+          4,
+          4
+        ],
+        "validation_r": 636,
+        "accept_if_outside_at_most": 44,
+        "binomial_tail_interval": "[0.00420039092047132097986673345666806339998501700474865624022808 +/- 3.03e-63]"
+      },
+      {
+        "m": 11873,
+        "scales": 8,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          5,
+          5,
+          4,
+          4
+        ],
+        "validation_r": 636,
+        "accept_if_outside_at_most": 44,
+        "binomial_tail_interval": "[0.00420039092047132097986673345666806339998501700474865624022808 +/- 3.03e-63]"
+      },
+      {
+        "m": 23745,
+        "scales": 7,
+        "degrees": [
+          4,
+          4,
+          4,
+          5,
+          5,
+          4,
+          4
+        ],
+        "validation_r": 636,
+        "accept_if_outside_at_most": 44,
+        "binomial_tail_interval": "[0.00420039092047132097986673345666806339998501700474865624022808 +/- 3.03e-63]"
+      },
+      {
+        "m": 47490,
+        "scales": 6,
+        "degrees": [
+          4,
+          4,
+          5,
+          5,
+          4,
+          4
+        ],
+        "validation_r": 636,
+        "accept_if_outside_at_most": 44,
+        "binomial_tail_interval": "[0.00420039092047132097986673345666806339998501700474865624022808 +/- 3.03e-63]"
+      },
+      {
+        "m": 94979,
+        "scales": 5,
+        "degrees": [
+          4,
+          5,
+          5,
+          4,
+          4
+        ],
+        "validation_r": 636,
+        "accept_if_outside_at_most": 44,
+        "binomial_tail_interval": "[0.00420039092047132097986673345666806339998501700474865624022808 +/- 3.03e-63]"
+      }
+    ],
+    "guarantee_scope": "固定 n/epsilon/delta、固定分布 iid、采样随机化独立、Yes/No 承诺；不需最小非零概率假设。",
+    "complexity": "最坏期望观测量 O((n+log(1/delta))/epsilon)，未证明最优阶的缩常数版本。",
+    "numeric_policy": "参数和尾界由 Arb 认证，多项式最终比较使用整数；无法认证则拒绝配置。"
+  },
+  "8150/0.1": {
+    "algorithm": "certified_chebyshev_validation_count",
+    "n": 8150,
+    "epsilon": "1/10",
+    "delta": "1/20",
+    "config": {
+      "b_factor": 0.5,
+      "max_degree": 12,
+      "weight_cap": 20.0,
+      "validation_factor": 12.0,
+      "validation_gate": 0.75
+    },
+    "false_positive_bound": "1/20",
+    "false_negative_bound": "1/20",
+    "error_allocation": {
+      "polynomial_total": "1/20",
+      "early_accept_total": "1/40",
+      "final_count": "1/40"
+    },
+    "final_poisson_mean": 83289,
+    "final_count_tail_interval": "[0.0249977349812453403988091076720064946295692851917521059724703 +/- 8.15e-63]",
+    "baseline_poisson_mean": 83001,
+    "baseline_count_tail_interval": "[0.0499644288206849481865706216091243225465484639661253505093966 +/- 2.22e-62]",
+    "max_validation_samples": 3180,
+    "expected_sample_upper_bound": 86469,
+    "looks": [
+      {
+        "m": 4073,
+        "scales": 9,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "validation_r": 636,
+        "accept_if_outside_at_most": 44,
+        "binomial_tail_interval": "[0.00420039092047132097986673345666806339998501700474865624022808 +/- 3.03e-63]"
+      },
+      {
+        "m": 8146,
+        "scales": 8,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "validation_r": 636,
+        "accept_if_outside_at_most": 44,
+        "binomial_tail_interval": "[0.00420039092047132097986673345666806339998501700474865624022808 +/- 3.03e-63]"
+      },
+      {
+        "m": 16291,
+        "scales": 7,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "validation_r": 636,
+        "accept_if_outside_at_most": 44,
+        "binomial_tail_interval": "[0.00420039092047132097986673345666806339998501700474865624022808 +/- 3.03e-63]"
+      },
+      {
+        "m": 32582,
+        "scales": 6,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "validation_r": 636,
+        "accept_if_outside_at_most": 44,
+        "binomial_tail_interval": "[0.00420039092047132097986673345666806339998501700474865624022808 +/- 3.03e-63]"
+      },
+      {
+        "m": 65163,
+        "scales": 5,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "validation_r": 636,
+        "accept_if_outside_at_most": 44,
+        "binomial_tail_interval": "[0.00420039092047132097986673345666806339998501700474865624022808 +/- 3.03e-63]"
+      }
+    ],
+    "guarantee_scope": "固定 n/epsilon/delta、固定分布 iid、采样随机化独立、Yes/No 承诺；不需最小非零概率假设。",
+    "complexity": "最坏期望观测量 O((n+log(1/delta))/epsilon)，未证明最优阶的缩常数版本。",
+    "numeric_policy": "参数和尾界由 Arb 认证，多项式最终比较使用整数；无法认证则拒绝配置。"
+  },
+  "22474/0.01": {
+    "algorithm": "certified_chebyshev_validation_count",
+    "n": 22474,
+    "epsilon": "1/100",
+    "delta": "1/20",
+    "config": {
+      "b_factor": 0.5,
+      "max_degree": 12,
+      "weight_cap": 20.0,
+      "validation_factor": 12.0,
+      "validation_gate": 0.75
+    },
+    "false_positive_bound": "1/20",
+    "false_negative_bound": "1/20",
+    "error_allocation": {
+      "polynomial_total": "1/20",
+      "early_accept_total": "1/40",
+      "final_count": "1/40"
+    },
+    "final_poisson_mean": 2276978,
+    "final_count_tail_interval": "[0.02499892747011072072101829186606195318193418379944 +/- 5.47e-51]",
+    "baseline_poisson_mean": 2272216,
+    "baseline_count_tail_interval": "[0.04999872910001111882719609023060439862811763029275493 +/- 9.18e-54]",
+    "max_validation_samples": 31790,
+    "expected_sample_upper_bound": 2308768,
+    "looks": [
+      {
+        "m": 101969,
+        "scales": 9,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          5,
+          5,
+          5,
+          4
+        ],
+        "validation_r": 6358,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00388253612347676246434904272211194155727567864308097243853056 +/- 4.22e-63]"
+      },
+      {
+        "m": 203937,
+        "scales": 8,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          5,
+          5,
+          5,
+          4
+        ],
+        "validation_r": 6358,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00388253612347676246434904272211194155727567864308097243853056 +/- 4.22e-63]"
+      },
+      {
+        "m": 407873,
+        "scales": 7,
+        "degrees": [
+          4,
+          4,
+          4,
+          5,
+          5,
+          5,
+          4
+        ],
+        "validation_r": 6358,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00388253612347676246434904272211194155727567864308097243853056 +/- 4.22e-63]"
+      },
+      {
+        "m": 815745,
+        "scales": 6,
+        "degrees": [
+          4,
+          4,
+          5,
+          5,
+          5,
+          4
+        ],
+        "validation_r": 6358,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00388253612347676246434904272211194155727567864308097243853056 +/- 4.22e-63]"
+      },
+      {
+        "m": 1631490,
+        "scales": 5,
+        "degrees": [
+          4,
+          5,
+          5,
+          5,
+          4
+        ],
+        "validation_r": 6358,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00388253612347676246434904272211194155727567864308097243853056 +/- 4.22e-63]"
+      }
+    ],
+    "guarantee_scope": "固定 n/epsilon/delta、固定分布 iid、采样随机化独立、Yes/No 承诺；不需最小非零概率假设。",
+    "complexity": "最坏期望观测量 O((n+log(1/delta))/epsilon)，未证明最优阶的缩常数版本。",
+    "numeric_policy": "参数和尾界由 Arb 认证，多项式最终比较使用整数；无法认证则拒绝配置。"
+  },
+  "28099/0.01": {
+    "algorithm": "certified_chebyshev_validation_count",
+    "n": 28099,
+    "epsilon": "1/100",
+    "delta": "1/20",
+    "config": {
+      "b_factor": 0.5,
+      "max_degree": 12,
+      "weight_cap": 20.0,
+      "validation_factor": 12.0,
+      "validation_gate": 0.75
+    },
+    "false_positive_bound": "1/20",
+    "false_negative_bound": "1/20",
+    "error_allocation": {
+      "polynomial_total": "1/20",
+      "early_accept_total": "1/40",
+      "final_count": "1/40"
+    },
+    "final_poisson_mean": 2842950,
+    "final_count_tail_interval": "[0.0249986016216176071150169822609645795894 +/- 8.13e-41]",
+    "baseline_poisson_mean": 2837630,
+    "baseline_count_tail_interval": "[0.04999697721530142990320747532066048212721 +/- 2.39e-42]",
+    "max_validation_samples": 31790,
+    "expected_sample_upper_bound": 2874740,
+    "looks": [
+      {
+        "m": 124957,
+        "scales": 9,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          5,
+          5,
+          5,
+          4
+        ],
+        "validation_r": 6358,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00388253612347676246434904272211194155727567864308097243853056 +/- 4.22e-63]"
+      },
+      {
+        "m": 249914,
+        "scales": 8,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          5,
+          5,
+          5,
+          4
+        ],
+        "validation_r": 6358,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00388253612347676246434904272211194155727567864308097243853056 +/- 4.22e-63]"
+      },
+      {
+        "m": 499828,
+        "scales": 7,
+        "degrees": [
+          4,
+          4,
+          4,
+          5,
+          5,
+          5,
+          4
+        ],
+        "validation_r": 6358,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00388253612347676246434904272211194155727567864308097243853056 +/- 4.22e-63]"
+      },
+      {
+        "m": 999655,
+        "scales": 6,
+        "degrees": [
+          4,
+          4,
+          5,
+          5,
+          5,
+          4
+        ],
+        "validation_r": 6358,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00388253612347676246434904272211194155727567864308097243853056 +/- 4.22e-63]"
+      },
+      {
+        "m": 1999309,
+        "scales": 5,
+        "degrees": [
+          4,
+          5,
+          5,
+          5,
+          4
+        ],
+        "validation_r": 6358,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00388253612347676246434904272211194155727567864308097243853056 +/- 4.22e-63]"
+      }
+    ],
+    "guarantee_scope": "固定 n/epsilon/delta、固定分布 iid、采样随机化独立、Yes/No 承诺；不需最小非零概率假设。",
+    "complexity": "最坏期望观测量 O((n+log(1/delta))/epsilon)，未证明最优阶的缩常数版本。",
+    "numeric_policy": "参数和尾界由 Arb 认证，多项式最终比较使用整数；无法认证则拒绝配置。"
+  },
+  "25286/0.01": {
+    "algorithm": "certified_chebyshev_validation_count",
+    "n": 25286,
+    "epsilon": "1/100",
+    "delta": "1/20",
+    "config": {
+      "b_factor": 0.5,
+      "max_degree": 12,
+      "weight_cap": 20.0,
+      "validation_factor": 12.0,
+      "validation_gate": 0.75
+    },
+    "false_positive_bound": "1/20",
+    "false_negative_bound": "1/20",
+    "error_allocation": {
+      "polynomial_total": "1/20",
+      "early_accept_total": "1/40",
+      "final_count": "1/40"
+    },
+    "final_poisson_mean": 2559962,
+    "final_count_tail_interval": "[0.02499902329529552114777019443456744319914751 +/- 4.22e-45]",
+    "baseline_poisson_mean": 2554914,
+    "baseline_count_tail_interval": "[0.0499935842425477006420208944553938706019908569 +/- 5.74e-47]",
+    "max_validation_samples": 31790,
+    "expected_sample_upper_bound": 2591752,
+    "looks": [
+      {
+        "m": 113513,
+        "scales": 9,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          5,
+          5,
+          5,
+          4
+        ],
+        "validation_r": 6358,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00388253612347676246434904272211194155727567864308097243853056 +/- 4.22e-63]"
+      },
+      {
+        "m": 227025,
+        "scales": 8,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          5,
+          5,
+          5,
+          4
+        ],
+        "validation_r": 6358,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00388253612347676246434904272211194155727567864308097243853056 +/- 4.22e-63]"
+      },
+      {
+        "m": 454049,
+        "scales": 7,
+        "degrees": [
+          4,
+          4,
+          4,
+          5,
+          5,
+          5,
+          4
+        ],
+        "validation_r": 6358,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00388253612347676246434904272211194155727567864308097243853056 +/- 4.22e-63]"
+      },
+      {
+        "m": 908098,
+        "scales": 6,
+        "degrees": [
+          4,
+          4,
+          5,
+          5,
+          5,
+          4
+        ],
+        "validation_r": 6358,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00388253612347676246434904272211194155727567864308097243853056 +/- 4.22e-63]"
+      },
+      {
+        "m": 1816196,
+        "scales": 5,
+        "degrees": [
+          4,
+          5,
+          5,
+          5,
+          4
+        ],
+        "validation_r": 6358,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00388253612347676246434904272211194155727567864308097243853056 +/- 4.22e-63]"
+      }
+    ],
+    "guarantee_scope": "固定 n/epsilon/delta、固定分布 iid、采样随机化独立、Yes/No 承诺；不需最小非零概率假设。",
+    "complexity": "最坏期望观测量 O((n+log(1/delta))/epsilon)，未证明最优阶的缩常数版本。",
+    "numeric_policy": "参数和尾界由 Arb 认证，多项式最终比较使用整数；无法认证则拒绝配置。"
+  },
+  "11900/0.05": {
+    "algorithm": "certified_chebyshev_validation_count",
+    "n": 11900,
+    "epsilon": "1/20",
+    "delta": "1/20",
+    "config": {
+      "b_factor": 0.5,
+      "max_degree": 12,
+      "weight_cap": 20.0,
+      "validation_factor": 12.0,
+      "validation_gate": 0.75
+    },
+    "false_positive_bound": "1/20",
+    "false_negative_bound": "1/20",
+    "error_allocation": {
+      "polynomial_total": "1/20",
+      "early_accept_total": "1/40",
+      "final_count": "1/40"
+    },
+    "final_poisson_mean": 242316,
+    "final_count_tail_interval": "[0.0249795632579961294376848546010007594467482736093911652570044 +/- 3.69e-63]",
+    "baseline_poisson_mean": 241621,
+    "baseline_count_tail_interval": "[0.0499593903626880162211819907195098158174768528579355034931703 +/- 1.89e-62]",
+    "max_validation_samples": 6360,
+    "expected_sample_upper_bound": 248676,
+    "looks": [
+      {
+        "m": 11460,
+        "scales": 9,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          5,
+          4,
+          4,
+          4
+        ],
+        "validation_r": 1272,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00331125855554899470400096821327416689940189830756717414785891 +/- 1.68e-63]"
+      },
+      {
+        "m": 22920,
+        "scales": 8,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          5,
+          4,
+          4,
+          4
+        ],
+        "validation_r": 1272,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00331125855554899470400096821327416689940189830756717414785891 +/- 1.68e-63]"
+      },
+      {
+        "m": 45839,
+        "scales": 7,
+        "degrees": [
+          4,
+          4,
+          4,
+          5,
+          4,
+          4,
+          4
+        ],
+        "validation_r": 1272,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00331125855554899470400096821327416689940189830756717414785891 +/- 1.68e-63]"
+      },
+      {
+        "m": 91677,
+        "scales": 6,
+        "degrees": [
+          4,
+          4,
+          5,
+          4,
+          4,
+          4
+        ],
+        "validation_r": 1272,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00331125855554899470400096821327416689940189830756717414785891 +/- 1.68e-63]"
+      },
+      {
+        "m": 183354,
+        "scales": 5,
+        "degrees": [
+          4,
+          5,
+          4,
+          4,
+          4
+        ],
+        "validation_r": 1272,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00331125855554899470400096821327416689940189830756717414785891 +/- 1.68e-63]"
+      }
+    ],
+    "guarantee_scope": "固定 n/epsilon/delta、固定分布 iid、采样随机化独立、Yes/No 承诺；不需最小非零概率假设。",
+    "complexity": "最坏期望观测量 O((n+log(1/delta))/epsilon)，未证明最优阶的缩常数版本。",
+    "numeric_policy": "参数和尾界由 Arb 认证，多项式最终比较使用整数；无法认证则拒绝配置。"
+  },
+  "28099/0.05": {
+    "algorithm": "certified_chebyshev_validation_count",
+    "n": 28099,
+    "epsilon": "1/20",
+    "delta": "1/20",
+    "config": {
+      "b_factor": 0.5,
+      "max_degree": 12,
+      "weight_cap": 20.0,
+      "validation_factor": 12.0,
+      "validation_gate": 0.75
+    },
+    "false_positive_bound": "1/20",
+    "false_negative_bound": "1/20",
+    "error_allocation": {
+      "polynomial_total": "1/20",
+      "early_accept_total": "1/40",
+      "final_count": "1/40"
+    },
+    "final_poisson_mean": 568590,
+    "final_count_tail_interval": "[0.0249986016216176071150169822609645795894 +/- 8.13e-41]",
+    "baseline_poisson_mean": 567526,
+    "baseline_count_tail_interval": "[0.04999697721530142990320747532066048212721 +/- 2.39e-42]",
+    "max_validation_samples": 6360,
+    "expected_sample_upper_bound": 574950,
+    "looks": [
+      {
+        "m": 24992,
+        "scales": 9,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          5,
+          5,
+          5,
+          4
+        ],
+        "validation_r": 1272,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00331125855554899470400096821327416689940189830756717414785891 +/- 1.68e-63]"
+      },
+      {
+        "m": 49983,
+        "scales": 8,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          5,
+          5,
+          5,
+          4
+        ],
+        "validation_r": 1272,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00331125855554899470400096821327416689940189830756717414785891 +/- 1.68e-63]"
+      },
+      {
+        "m": 99966,
+        "scales": 7,
+        "degrees": [
+          4,
+          4,
+          4,
+          5,
+          5,
+          5,
+          4
+        ],
+        "validation_r": 1272,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00331125855554899470400096821327416689940189830756717414785891 +/- 1.68e-63]"
+      },
+      {
+        "m": 199931,
+        "scales": 6,
+        "degrees": [
+          4,
+          4,
+          5,
+          5,
+          5,
+          4
+        ],
+        "validation_r": 1272,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00331125855554899470400096821327416689940189830756717414785891 +/- 1.68e-63]"
+      },
+      {
+        "m": 399862,
+        "scales": 5,
+        "degrees": [
+          4,
+          5,
+          5,
+          5,
+          4
+        ],
+        "validation_r": 1272,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00331125855554899470400096821327416689940189830756717414785891 +/- 1.68e-63]"
+      }
+    ],
+    "guarantee_scope": "固定 n/epsilon/delta、固定分布 iid、采样随机化独立、Yes/No 承诺；不需最小非零概率假设。",
+    "complexity": "最坏期望观测量 O((n+log(1/delta))/epsilon)，未证明最优阶的缩常数版本。",
+    "numeric_policy": "参数和尾界由 Arb 认证，多项式最终比较使用整数；无法认证则拒绝配置。"
+  },
+  "19999/0.05": {
+    "algorithm": "certified_chebyshev_validation_count",
+    "n": 19999,
+    "epsilon": "1/20",
+    "delta": "1/20",
+    "config": {
+      "b_factor": 0.5,
+      "max_degree": 12,
+      "weight_cap": 20.0,
+      "validation_factor": 12.0,
+      "validation_gate": 0.75
+    },
+    "false_positive_bound": "1/20",
+    "false_negative_bound": "1/20",
+    "error_allocation": {
+      "polynomial_total": "1/20",
+      "early_accept_total": "1/40",
+      "final_count": "1/40"
+    },
+    "final_poisson_mean": 405563,
+    "final_count_tail_interval": "[0.024990459943724767974625182362371668338526332402611533090 +/- 4.71e-58]",
+    "baseline_poisson_mean": 404664,
+    "baseline_count_tail_interval": "[0.04998882486012752654806889684246270192229347606880824958275 +/- 5.27e-60]",
+    "max_validation_samples": 6360,
+    "expected_sample_upper_bound": 411923,
+    "looks": [
+      {
+        "m": 18342,
+        "scales": 9,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          5,
+          5,
+          5,
+          4
+        ],
+        "validation_r": 1272,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00331125855554899470400096821327416689940189830756717414785891 +/- 1.68e-63]"
+      },
+      {
+        "m": 36684,
+        "scales": 8,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          5,
+          5,
+          5,
+          4
+        ],
+        "validation_r": 1272,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00331125855554899470400096821327416689940189830756717414785891 +/- 1.68e-63]"
+      },
+      {
+        "m": 73368,
+        "scales": 7,
+        "degrees": [
+          4,
+          4,
+          4,
+          5,
+          5,
+          5,
+          4
+        ],
+        "validation_r": 1272,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00331125855554899470400096821327416689940189830756717414785891 +/- 1.68e-63]"
+      },
+      {
+        "m": 146736,
+        "scales": 6,
+        "degrees": [
+          4,
+          4,
+          5,
+          5,
+          5,
+          4
+        ],
+        "validation_r": 1272,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00331125855554899470400096821327416689940189830756717414785891 +/- 1.68e-63]"
+      },
+      {
+        "m": 293471,
+        "scales": 5,
+        "degrees": [
+          4,
+          5,
+          5,
+          5,
+          4
+        ],
+        "validation_r": 1272,
+        "accept_if_outside_at_most": 43,
+        "binomial_tail_interval": "[0.00331125855554899470400096821327416689940189830756717414785891 +/- 1.68e-63]"
+      }
+    ],
+    "guarantee_scope": "固定 n/epsilon/delta、固定分布 iid、采样随机化独立、Yes/No 承诺；不需最小非零概率假设。",
+    "complexity": "最坏期望观测量 O((n+log(1/delta))/epsilon)，未证明最优阶的缩常数版本。",
+    "numeric_policy": "参数和尾界由 Arb 认证，多项式最终比较使用整数；无法认证则拒绝配置。"
+  },
+  "7108/0.1": {
+    "algorithm": "certified_chebyshev_validation_count",
+    "n": 7108,
+    "epsilon": "1/10",
+    "delta": "1/20",
+    "config": {
+      "b_factor": 0.5,
+      "max_degree": 12,
+      "weight_cap": 20.0,
+      "validation_factor": 12.0,
+      "validation_gate": 0.75
+    },
+    "false_positive_bound": "1/20",
+    "false_negative_bound": "1/20",
+    "error_allocation": {
+      "polynomial_total": "1/20",
+      "early_accept_total": "1/40",
+      "final_count": "1/40"
+    },
+    "final_poisson_mean": 72752,
+    "final_count_tail_interval": "[0.0249994838363067415036911965864245300432901528816948143570236 +/- 3.92e-62]",
+    "baseline_poisson_mean": 72483,
+    "baseline_count_tail_interval": "[0.0499418601746821001540270089760511522546415436520769980300404 +/- 3.78e-62]",
+    "max_validation_samples": 3180,
+    "expected_sample_upper_bound": 75932,
+    "looks": [
+      {
+        "m": 3602,
+        "scales": 9,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "validation_r": 636,
+        "accept_if_outside_at_most": 44,
+        "binomial_tail_interval": "[0.00420039092047132097986673345666806339998501700474865624022808 +/- 3.03e-63]"
+      },
+      {
+        "m": 7203,
+        "scales": 8,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "validation_r": 636,
+        "accept_if_outside_at_most": 44,
+        "binomial_tail_interval": "[0.00420039092047132097986673345666806339998501700474865624022808 +/- 3.03e-63]"
+      },
+      {
+        "m": 14405,
+        "scales": 7,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "validation_r": 636,
+        "accept_if_outside_at_most": 44,
+        "binomial_tail_interval": "[0.00420039092047132097986673345666806339998501700474865624022808 +/- 3.03e-63]"
+      },
+      {
+        "m": 28810,
+        "scales": 6,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "validation_r": 636,
+        "accept_if_outside_at_most": 44,
+        "binomial_tail_interval": "[0.00420039092047132097986673345666806339998501700474865624022808 +/- 3.03e-63]"
+      },
+      {
+        "m": 57619,
+        "scales": 5,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "validation_r": 636,
+        "accept_if_outside_at_most": 44,
+        "binomial_tail_interval": "[0.00420039092047132097986673345666806339998501700474865624022808 +/- 3.03e-63]"
+      }
+    ],
+    "guarantee_scope": "固定 n/epsilon/delta、固定分布 iid、采样随机化独立、Yes/No 承诺；不需最小非零概率假设。",
+    "complexity": "最坏期望观测量 O((n+log(1/delta))/epsilon)，未证明最优阶的缩常数版本。",
+    "numeric_policy": "参数和尾界由 Arb 认证，多项式最终比较使用整数；无法认证则拒绝配置。"
+  },
+  "28099/0.1": {
+    "algorithm": "certified_chebyshev_validation_count",
+    "n": 28099,
+    "epsilon": "1/10",
+    "delta": "1/20",
+    "config": {
+      "b_factor": 0.5,
+      "max_degree": 12,
+      "weight_cap": 20.0,
+      "validation_factor": 12.0,
+      "validation_gate": 0.75
+    },
+    "false_positive_bound": "1/20",
+    "false_negative_bound": "1/20",
+    "error_allocation": {
+      "polynomial_total": "1/20",
+      "early_accept_total": "1/40",
+      "final_count": "1/40"
+    },
+    "final_poisson_mean": 284295,
+    "final_count_tail_interval": "[0.0249986016216176071150169822609645795894 +/- 8.13e-41]",
+    "baseline_poisson_mean": 283763,
+    "baseline_count_tail_interval": "[0.04999697721530142990320747532066048212721 +/- 2.39e-42]",
+    "max_validation_samples": 3180,
+    "expected_sample_upper_bound": 287475,
+    "looks": [
+      {
+        "m": 12496,
+        "scales": 9,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          5,
+          5,
+          5,
+          4
+        ],
+        "validation_r": 636,
+        "accept_if_outside_at_most": 44,
+        "binomial_tail_interval": "[0.00420039092047132097986673345666806339998501700474865624022808 +/- 3.03e-63]"
+      },
+      {
+        "m": 24992,
+        "scales": 8,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          5,
+          5,
+          5,
+          4
+        ],
+        "validation_r": 636,
+        "accept_if_outside_at_most": 44,
+        "binomial_tail_interval": "[0.00420039092047132097986673345666806339998501700474865624022808 +/- 3.03e-63]"
+      },
+      {
+        "m": 49983,
+        "scales": 7,
+        "degrees": [
+          4,
+          4,
+          4,
+          5,
+          5,
+          5,
+          4
+        ],
+        "validation_r": 636,
+        "accept_if_outside_at_most": 44,
+        "binomial_tail_interval": "[0.00420039092047132097986673345666806339998501700474865624022808 +/- 3.03e-63]"
+      },
+      {
+        "m": 99966,
+        "scales": 6,
+        "degrees": [
+          4,
+          4,
+          5,
+          5,
+          5,
+          4
+        ],
+        "validation_r": 636,
+        "accept_if_outside_at_most": 44,
+        "binomial_tail_interval": "[0.00420039092047132097986673345666806339998501700474865624022808 +/- 3.03e-63]"
+      },
+      {
+        "m": 199931,
+        "scales": 5,
+        "degrees": [
+          4,
+          5,
+          5,
+          5,
+          4
+        ],
+        "validation_r": 636,
+        "accept_if_outside_at_most": 44,
+        "binomial_tail_interval": "[0.00420039092047132097986673345666806339998501700474865624022808 +/- 3.03e-63]"
+      }
+    ],
+    "guarantee_scope": "固定 n/epsilon/delta、固定分布 iid、采样随机化独立、Yes/No 承诺；不需最小非零概率假设。",
+    "complexity": "最坏期望观测量 O((n+log(1/delta))/epsilon)，未证明最优阶的缩常数版本。",
+    "numeric_policy": "参数和尾界由 Arb 认证，多项式最终比较使用整数；无法认证则拒绝配置。"
+  },
+  "17603/0.1": {
+    "algorithm": "certified_chebyshev_validation_count",
+    "n": 17603,
+    "epsilon": "1/10",
+    "delta": "1/20",
+    "config": {
+      "b_factor": 0.5,
+      "max_degree": 12,
+      "weight_cap": 20.0,
+      "validation_factor": 12.0,
+      "validation_gate": 0.75
+    },
+    "false_positive_bound": "1/20",
+    "false_negative_bound": "1/20",
+    "error_allocation": {
+      "polynomial_total": "1/20",
+      "early_accept_total": "1/40",
+      "final_count": "1/40"
+    },
+    "final_poisson_mean": 178650,
+    "final_count_tail_interval": "[0.0249973848869930303183816132812488112412381543346832943756604 +/- 2.10e-62]",
+    "baseline_poisson_mean": 178229,
+    "baseline_count_tail_interval": "[0.0499278205537535241054012454646850779357880559737618528374281 +/- 1.39e-62]",
+    "max_validation_samples": 3180,
+    "expected_sample_upper_bound": 181830,
+    "looks": [
+      {
+        "m": 8168,
+        "scales": 9,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          5,
+          5,
+          5,
+          4
+        ],
+        "validation_r": 636,
+        "accept_if_outside_at_most": 44,
+        "binomial_tail_interval": "[0.00420039092047132097986673345666806339998501700474865624022808 +/- 3.03e-63]"
+      },
+      {
+        "m": 16336,
+        "scales": 8,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          5,
+          5,
+          5,
+          4
+        ],
+        "validation_r": 636,
+        "accept_if_outside_at_most": 44,
+        "binomial_tail_interval": "[0.00420039092047132097986673345666806339998501700474865624022808 +/- 3.03e-63]"
+      },
+      {
+        "m": 32672,
+        "scales": 7,
+        "degrees": [
+          4,
+          4,
+          4,
+          5,
+          5,
+          5,
+          4
+        ],
+        "validation_r": 636,
+        "accept_if_outside_at_most": 44,
+        "binomial_tail_interval": "[0.00420039092047132097986673345666806339998501700474865624022808 +/- 3.03e-63]"
+      },
+      {
+        "m": 65343,
+        "scales": 6,
+        "degrees": [
+          4,
+          4,
+          5,
+          5,
+          5,
+          4
+        ],
+        "validation_r": 636,
+        "accept_if_outside_at_most": 44,
+        "binomial_tail_interval": "[0.00420039092047132097986673345666806339998501700474865624022808 +/- 3.03e-63]"
+      },
+      {
+        "m": 130686,
+        "scales": 5,
+        "degrees": [
+          4,
+          5,
+          5,
+          5,
+          4
+        ],
+        "validation_r": 636,
+        "accept_if_outside_at_most": 44,
+        "binomial_tail_interval": "[0.00420039092047132097986673345666806339998501700474865624022808 +/- 3.03e-63]"
+      }
+    ],
+    "guarantee_scope": "固定 n/epsilon/delta、固定分布 iid、采样随机化独立、Yes/No 承诺；不需最小非零概率假设。",
+    "complexity": "最坏期望观测量 O((n+log(1/delta))/epsilon)，未证明最优阶的缩常数版本。",
+    "numeric_policy": "参数和尾界由 Arb 认证，多项式最终比较使用整数；无法认证则拒绝配置。"
+  },
+  "2827/0.01": {
+    "algorithm": "certified_chebyshev_validation_count",
+    "n": 2827,
+    "epsilon": "1/100",
+    "delta": "1/20",
+    "config": {
+      "b_factor": 0.5,
+      "max_degree": 12,
+      "weight_cap": 20.0,
+      "validation_factor": 12.0,
+      "validation_gate": 0.75
+    },
+    "false_positive_bound": "1/20",
+    "false_negative_bound": "1/20",
+    "error_allocation": {
+      "polynomial_total": "1/20",
+      "early_accept_total": "1/40",
+      "final_count": "1/40"
+    },
+    "final_poisson_mean": 293318,
+    "final_count_tail_interval": "[0.0249921803642331081645602334776376350833753329357852018767615 +/- 3.24e-62]",
+    "baseline_poisson_mean": 291604,
+    "baseline_count_tail_interval": "[0.0499931436562290377258869666516573141614212659456238793778069 +/- 1.49e-62]",
+    "max_validation_samples": 24364,
+    "expected_sample_upper_bound": 317682,
+    "looks": [
+      {
+        "m": 15799,
+        "scales": 9,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "validation_r": 6091,
+        "accept_if_outside_at_most": 41,
+        "binomial_tail_interval": "[0.00427026772347804915083088847426243901238375596819829695468394 +/- 4.91e-63]"
+      },
+      {
+        "m": 31598,
+        "scales": 8,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "validation_r": 6091,
+        "accept_if_outside_at_most": 41,
+        "binomial_tail_interval": "[0.00427026772347804915083088847426243901238375596819829695468394 +/- 4.91e-63]"
+      },
+      {
+        "m": 63195,
+        "scales": 7,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "validation_r": 6091,
+        "accept_if_outside_at_most": 41,
+        "binomial_tail_interval": "[0.00427026772347804915083088847426243901238375596819829695468394 +/- 4.91e-63]"
+      },
+      {
+        "m": 126390,
+        "scales": 6,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "validation_r": 6091,
+        "accept_if_outside_at_most": 41,
+        "binomial_tail_interval": "[0.00427026772347804915083088847426243901238375596819829695468394 +/- 4.91e-63]"
+      }
+    ],
+    "guarantee_scope": "固定 n/epsilon/delta、固定分布 iid、采样随机化独立、Yes/No 承诺；不需最小非零概率假设。",
+    "complexity": "最坏期望观测量 O((n+log(1/delta))/epsilon)，未证明最优阶的缩常数版本。",
+    "numeric_policy": "参数和尾界由 Arb 认证，多项式最终比较使用整数；无法认证则拒绝配置。"
+  },
+  "3706/0.01": {
+    "algorithm": "certified_chebyshev_validation_count",
+    "n": 3706,
+    "epsilon": "1/100",
+    "delta": "1/20",
+    "config": {
+      "b_factor": 0.5,
+      "max_degree": 12,
+      "weight_cap": 20.0,
+      "validation_factor": 12.0,
+      "validation_gate": 0.75
+    },
+    "false_positive_bound": "1/20",
+    "false_negative_bound": "1/20",
+    "error_allocation": {
+      "polynomial_total": "1/20",
+      "early_accept_total": "1/40",
+      "final_count": "1/40"
+    },
+    "final_poisson_mean": 382728,
+    "final_count_tail_interval": "[0.0249971692681702795672271587186884204172020696226533843950075 +/- 3.92e-62]",
+    "baseline_poisson_mean": 380772,
+    "baseline_count_tail_interval": "[0.0499873938312763822800829038666502239996980021595760967283986 +/- 1.46e-62]",
+    "max_validation_samples": 24364,
+    "expected_sample_upper_bound": 407092,
+    "looks": [
+      {
+        "m": 20103,
+        "scales": 9,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "validation_r": 6091,
+        "accept_if_outside_at_most": 41,
+        "binomial_tail_interval": "[0.00427026772347804915083088847426243901238375596819829695468394 +/- 4.91e-63]"
+      },
+      {
+        "m": 40206,
+        "scales": 8,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "validation_r": 6091,
+        "accept_if_outside_at_most": 41,
+        "binomial_tail_interval": "[0.00427026772347804915083088847426243901238375596819829695468394 +/- 4.91e-63]"
+      },
+      {
+        "m": 80411,
+        "scales": 7,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "validation_r": 6091,
+        "accept_if_outside_at_most": 41,
+        "binomial_tail_interval": "[0.00427026772347804915083088847426243901238375596819829695468394 +/- 4.91e-63]"
+      },
+      {
+        "m": 160821,
+        "scales": 6,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "validation_r": 6091,
+        "accept_if_outside_at_most": 41,
+        "binomial_tail_interval": "[0.00427026772347804915083088847426243901238375596819829695468394 +/- 4.91e-63]"
+      }
+    ],
+    "guarantee_scope": "固定 n/epsilon/delta、固定分布 iid、采样随机化独立、Yes/No 承诺；不需最小非零概率假设。",
+    "complexity": "最坏期望观测量 O((n+log(1/delta))/epsilon)，未证明最优阶的缩常数版本。",
+    "numeric_policy": "参数和尾界由 Arb 认证，多项式最终比较使用整数；无法认证则拒绝配置。"
+  },
+  "3266/0.01": {
+    "algorithm": "certified_chebyshev_validation_count",
+    "n": 3266,
+    "epsilon": "1/100",
+    "delta": "1/20",
+    "config": {
+      "b_factor": 0.5,
+      "max_degree": 12,
+      "weight_cap": 20.0,
+      "validation_factor": 12.0,
+      "validation_gate": 0.75
+    },
+    "false_positive_bound": "1/20",
+    "false_negative_bound": "1/20",
+    "error_allocation": {
+      "polynomial_total": "1/20",
+      "early_accept_total": "1/40",
+      "final_count": "1/40"
+    },
+    "final_poisson_mean": 337998,
+    "final_count_tail_interval": "[0.0249911159844940018763610419740106690341134109086252400504301 +/- 4.16e-62]",
+    "baseline_poisson_mean": 336159,
+    "baseline_count_tail_interval": "[0.0499842169255060518021354240424408394236956711669983354785437 +/- 4.92e-62]",
+    "max_validation_samples": 24364,
+    "expected_sample_upper_bound": 362362,
+    "looks": [
+      {
+        "m": 17963,
+        "scales": 9,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "validation_r": 6091,
+        "accept_if_outside_at_most": 41,
+        "binomial_tail_interval": "[0.00427026772347804915083088847426243901238375596819829695468394 +/- 4.91e-63]"
+      },
+      {
+        "m": 35925,
+        "scales": 8,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "validation_r": 6091,
+        "accept_if_outside_at_most": 41,
+        "binomial_tail_interval": "[0.00427026772347804915083088847426243901238375596819829695468394 +/- 4.91e-63]"
+      },
+      {
+        "m": 71849,
+        "scales": 7,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "validation_r": 6091,
+        "accept_if_outside_at_most": 41,
+        "binomial_tail_interval": "[0.00427026772347804915083088847426243901238375596819829695468394 +/- 4.91e-63]"
+      },
+      {
+        "m": 143698,
+        "scales": 6,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "validation_r": 6091,
+        "accept_if_outside_at_most": 41,
+        "binomial_tail_interval": "[0.00427026772347804915083088847426243901238375596819829695468394 +/- 4.91e-63]"
+      }
+    ],
+    "guarantee_scope": "固定 n/epsilon/delta、固定分布 iid、采样随机化独立、Yes/No 承诺；不需最小非零概率假设。",
+    "complexity": "最坏期望观测量 O((n+log(1/delta))/epsilon)，未证明最优阶的缩常数版本。",
+    "numeric_policy": "参数和尾界由 Arb 认证，多项式最终比较使用整数；无法认证则拒绝配置。"
+  },
+  "2103/0.05": {
+    "algorithm": "certified_chebyshev_validation_count",
+    "n": 2103,
+    "epsilon": "1/20",
+    "delta": "1/20",
+    "config": {
+      "b_factor": 0.5,
+      "max_degree": 12,
+      "weight_cap": 20.0,
+      "validation_factor": 12.0,
+      "validation_gate": 0.75
+    },
+    "false_positive_bound": "1/20",
+    "false_negative_bound": "1/20",
+    "error_allocation": {
+      "polynomial_total": "1/20",
+      "early_accept_total": "1/40",
+      "final_count": "1/40"
+    },
+    "final_poisson_mean": 43897,
+    "final_count_tail_interval": "[0.0249946789684426470721838979468154875246127514897624915648306 +/- 3.91e-62]",
+    "baseline_poisson_mean": 43601,
+    "baseline_count_tail_interval": "[0.0499180095160984738808916319534925299130767248481544424979801 +/- 2.79e-62]",
+    "max_validation_samples": 4876,
+    "expected_sample_upper_bound": 48773,
+    "looks": [
+      {
+        "m": 2431,
+        "scales": 9,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          3,
+          3
+        ],
+        "validation_r": 1219,
+        "accept_if_outside_at_most": 42,
+        "binomial_tail_interval": "[0.00558411001043374611866060131475864919066606329430612271752015 +/- 5.86e-64]"
+      },
+      {
+        "m": 4862,
+        "scales": 8,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          3,
+          3
+        ],
+        "validation_r": 1219,
+        "accept_if_outside_at_most": 42,
+        "binomial_tail_interval": "[0.00558411001043374611866060131475864919066606329430612271752015 +/- 5.86e-64]"
+      },
+      {
+        "m": 9724,
+        "scales": 7,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          3,
+          3
+        ],
+        "validation_r": 1219,
+        "accept_if_outside_at_most": 42,
+        "binomial_tail_interval": "[0.00558411001043374611866060131475864919066606329430612271752015 +/- 5.86e-64]"
+      },
+      {
+        "m": 19448,
+        "scales": 6,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          3,
+          3
+        ],
+        "validation_r": 1219,
+        "accept_if_outside_at_most": 42,
+        "binomial_tail_interval": "[0.00558411001043374611866060131475864919066606329430612271752015 +/- 5.86e-64]"
+      }
+    ],
+    "guarantee_scope": "固定 n/epsilon/delta、固定分布 iid、采样随机化独立、Yes/No 承诺；不需最小非零概率假设。",
+    "complexity": "最坏期望观测量 O((n+log(1/delta))/epsilon)，未证明最优阶的缩常数版本。",
+    "numeric_policy": "参数和尾界由 Arb 认证，多项式最终比较使用整数；无法认证则拒绝配置。"
+  },
+  "3706/0.05": {
+    "algorithm": "certified_chebyshev_validation_count",
+    "n": 3706,
+    "epsilon": "1/20",
+    "delta": "1/20",
+    "config": {
+      "b_factor": 0.5,
+      "max_degree": 12,
+      "weight_cap": 20.0,
+      "validation_factor": 12.0,
+      "validation_gate": 0.75
+    },
+    "false_positive_bound": "1/20",
+    "false_negative_bound": "1/20",
+    "error_allocation": {
+      "polynomial_total": "1/20",
+      "early_accept_total": "1/40",
+      "final_count": "1/40"
+    },
+    "final_poisson_mean": 76546,
+    "final_count_tail_interval": "[0.0249783825176913056625982309691072833827001495893523021494392 +/- 4.98e-62]",
+    "baseline_poisson_mean": 76155,
+    "baseline_count_tail_interval": "[0.0499375052485405112418989470176054290645559174213743578624489 +/- 3.76e-62]",
+    "max_validation_samples": 4876,
+    "expected_sample_upper_bound": 81422,
+    "looks": [
+      {
+        "m": 4021,
+        "scales": 9,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "validation_r": 1219,
+        "accept_if_outside_at_most": 42,
+        "binomial_tail_interval": "[0.00558411001043374611866060131475864919066606329430612271752015 +/- 5.86e-64]"
+      },
+      {
+        "m": 8042,
+        "scales": 8,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "validation_r": 1219,
+        "accept_if_outside_at_most": 42,
+        "binomial_tail_interval": "[0.00558411001043374611866060131475864919066606329430612271752015 +/- 5.86e-64]"
+      },
+      {
+        "m": 16083,
+        "scales": 7,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "validation_r": 1219,
+        "accept_if_outside_at_most": 42,
+        "binomial_tail_interval": "[0.00558411001043374611866060131475864919066606329430612271752015 +/- 5.86e-64]"
+      },
+      {
+        "m": 32165,
+        "scales": 6,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "validation_r": 1219,
+        "accept_if_outside_at_most": 42,
+        "binomial_tail_interval": "[0.00558411001043374611866060131475864919066606329430612271752015 +/- 5.86e-64]"
+      }
+    ],
+    "guarantee_scope": "固定 n/epsilon/delta、固定分布 iid、采样随机化独立、Yes/No 承诺；不需最小非零概率假设。",
+    "complexity": "最坏期望观测量 O((n+log(1/delta))/epsilon)，未证明最优阶的缩常数版本。",
+    "numeric_policy": "参数和尾界由 Arb 认证，多项式最终比较使用整数；无法认证则拒绝配置。"
+  },
+  "2904/0.05": {
+    "algorithm": "certified_chebyshev_validation_count",
+    "n": 2904,
+    "epsilon": "1/20",
+    "delta": "1/20",
+    "config": {
+      "b_factor": 0.5,
+      "max_degree": 12,
+      "weight_cap": 20.0,
+      "validation_factor": 12.0,
+      "validation_gate": 0.75
+    },
+    "false_positive_bound": "1/20",
+    "false_negative_bound": "1/20",
+    "error_allocation": {
+      "polynomial_total": "1/20",
+      "early_accept_total": "1/40",
+      "final_count": "1/40"
+    },
+    "final_poisson_mean": 60232,
+    "final_count_tail_interval": "[0.0249811405820925915315981676010047386705090078837750478006326 +/- 3.06e-63]",
+    "baseline_poisson_mean": 59885,
+    "baseline_count_tail_interval": "[0.0499423963019581961948824810324915284263347852487054360498348 +/- 3.36e-62]",
+    "max_validation_samples": 4876,
+    "expected_sample_upper_bound": 65108,
+    "looks": [
+      {
+        "m": 3237,
+        "scales": 9,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "validation_r": 1219,
+        "accept_if_outside_at_most": 42,
+        "binomial_tail_interval": "[0.00558411001043374611866060131475864919066606329430612271752015 +/- 5.86e-64]"
+      },
+      {
+        "m": 6473,
+        "scales": 8,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "validation_r": 1219,
+        "accept_if_outside_at_most": 42,
+        "binomial_tail_interval": "[0.00558411001043374611866060131475864919066606329430612271752015 +/- 5.86e-64]"
+      },
+      {
+        "m": 12945,
+        "scales": 7,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "validation_r": 1219,
+        "accept_if_outside_at_most": 42,
+        "binomial_tail_interval": "[0.00558411001043374611866060131475864919066606329430612271752015 +/- 5.86e-64]"
+      },
+      {
+        "m": 25889,
+        "scales": 6,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "validation_r": 1219,
+        "accept_if_outside_at_most": 42,
+        "binomial_tail_interval": "[0.00558411001043374611866060131475864919066606329430612271752015 +/- 5.86e-64]"
+      }
+    ],
+    "guarantee_scope": "固定 n/epsilon/delta、固定分布 iid、采样随机化独立、Yes/No 承诺；不需最小非零概率假设。",
+    "complexity": "最坏期望观测量 O((n+log(1/delta))/epsilon)，未证明最优阶的缩常数版本。",
+    "numeric_policy": "参数和尾界由 Arb 认证，多项式最终比较使用整数；无法认证则拒绝配置。"
+  },
+  "1680/0.1": {
+    "algorithm": "certified_chebyshev_validation_count",
+    "n": 1680,
+    "epsilon": "1/10",
+    "delta": "1/20",
+    "config": {
+      "b_factor": 0.5,
+      "max_degree": 12,
+      "weight_cap": 20.0,
+      "validation_factor": 12.0,
+      "validation_gate": 0.75
+    },
+    "false_positive_bound": "1/20",
+    "false_negative_bound": "1/20",
+    "error_allocation": {
+      "polynomial_total": "1/20",
+      "early_accept_total": "1/40",
+      "final_count": "1/40"
+    },
+    "final_poisson_mean": 17624,
+    "final_count_tail_interval": "[0.0248641684297642390855121434965621300288400833578649993197793 +/- 4.18e-62]",
+    "baseline_poisson_mean": 17491,
+    "baseline_count_tail_interval": "[0.0497621011735721856584977424043297591444265618687913642468454 +/- 4.65e-62]",
+    "max_validation_samples": 2440,
+    "expected_sample_upper_bound": 20064,
+    "looks": [
+      {
+        "m": 997,
+        "scales": 9,
+        "degrees": [
+          3,
+          4,
+          4,
+          4,
+          4,
+          4,
+          3,
+          3,
+          3
+        ],
+        "validation_r": 610,
+        "accept_if_outside_at_most": 42,
+        "binomial_tail_interval": "[0.00456137135490223551438690130030145927678916494371909891644128 +/- 2.24e-64]"
+      },
+      {
+        "m": 1994,
+        "scales": 8,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          3,
+          3,
+          3
+        ],
+        "validation_r": 610,
+        "accept_if_outside_at_most": 42,
+        "binomial_tail_interval": "[0.00456137135490223551438690130030145927678916494371909891644128 +/- 2.24e-64]"
+      },
+      {
+        "m": 3988,
+        "scales": 7,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          3,
+          3,
+          3
+        ],
+        "validation_r": 610,
+        "accept_if_outside_at_most": 42,
+        "binomial_tail_interval": "[0.00456137135490223551438690130030145927678916494371909891644128 +/- 2.24e-64]"
+      },
+      {
+        "m": 7975,
+        "scales": 6,
+        "degrees": [
+          4,
+          4,
+          4,
+          3,
+          3,
+          3
+        ],
+        "validation_r": 610,
+        "accept_if_outside_at_most": 42,
+        "binomial_tail_interval": "[0.00456137135490223551438690130030145927678916494371909891644128 +/- 2.24e-64]"
+      }
+    ],
+    "guarantee_scope": "固定 n/epsilon/delta、固定分布 iid、采样随机化独立、Yes/No 承诺；不需最小非零概率假设。",
+    "complexity": "最坏期望观测量 O((n+log(1/delta))/epsilon)，未证明最优阶的缩常数版本。",
+    "numeric_policy": "参数和尾界由 Arb 认证，多项式最终比较使用整数；无法认证则拒绝配置。"
+  },
+  "3706/0.1": {
+    "algorithm": "certified_chebyshev_validation_count",
+    "n": 3706,
+    "epsilon": "1/10",
+    "delta": "1/20",
+    "config": {
+      "b_factor": 0.5,
+      "max_degree": 12,
+      "weight_cap": 20.0,
+      "validation_factor": 12.0,
+      "validation_gate": 0.75
+    },
+    "false_positive_bound": "1/20",
+    "false_negative_bound": "1/20",
+    "error_allocation": {
+      "polynomial_total": "1/20",
+      "early_accept_total": "1/40",
+      "final_count": "1/40"
+    },
+    "final_poisson_mean": 38273,
+    "final_count_tail_interval": "[0.0249783825176913056625982309691072833827001495893523021494392 +/- 4.98e-62]",
+    "baseline_poisson_mean": 38078,
+    "baseline_count_tail_interval": "[0.0498544464391102077452774049893366500685356974050831446855258 +/- 4.35e-62]",
+    "max_validation_samples": 2440,
+    "expected_sample_upper_bound": 40713,
+    "looks": [
+      {
+        "m": 2011,
+        "scales": 9,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "validation_r": 610,
+        "accept_if_outside_at_most": 42,
+        "binomial_tail_interval": "[0.00456137135490223551438690130030145927678916494371909891644128 +/- 2.24e-64]"
+      },
+      {
+        "m": 4021,
+        "scales": 8,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "validation_r": 610,
+        "accept_if_outside_at_most": 42,
+        "binomial_tail_interval": "[0.00456137135490223551438690130030145927678916494371909891644128 +/- 2.24e-64]"
+      },
+      {
+        "m": 8042,
+        "scales": 7,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "validation_r": 610,
+        "accept_if_outside_at_most": 42,
+        "binomial_tail_interval": "[0.00456137135490223551438690130030145927678916494371909891644128 +/- 2.24e-64]"
+      },
+      {
+        "m": 16083,
+        "scales": 6,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "validation_r": 610,
+        "accept_if_outside_at_most": 42,
+        "binomial_tail_interval": "[0.00456137135490223551438690130030145927678916494371909891644128 +/- 2.24e-64]"
+      }
+    ],
+    "guarantee_scope": "固定 n/epsilon/delta、固定分布 iid、采样随机化独立、Yes/No 承诺；不需最小非零概率假设。",
+    "complexity": "最坏期望观测量 O((n+log(1/delta))/epsilon)，未证明最优阶的缩常数版本。",
+    "numeric_policy": "参数和尾界由 Arb 认证，多项式最终比较使用整数；无法认证则拒绝配置。"
+  },
+  "2693/0.1": {
+    "algorithm": "certified_chebyshev_validation_count",
+    "n": 2693,
+    "epsilon": "1/10",
+    "delta": "1/20",
+    "config": {
+      "b_factor": 0.5,
+      "max_degree": 12,
+      "weight_cap": 20.0,
+      "validation_factor": 12.0,
+      "validation_gate": 0.75
+    },
+    "false_positive_bound": "1/20",
+    "false_negative_bound": "1/20",
+    "error_allocation": {
+      "polynomial_total": "1/20",
+      "early_accept_total": "1/40",
+      "final_count": "1/40"
+    },
+    "final_poisson_mean": 27967,
+    "final_count_tail_interval": "[0.0249706994361829811416200251142124871779310595318797917326618 +/- 3.92e-62]",
+    "baseline_poisson_mean": 27800,
+    "baseline_count_tail_interval": "[0.0498810349077286292460849389323057362308867653083834363673492 +/- 3.29e-62]",
+    "max_validation_samples": 2440,
+    "expected_sample_upper_bound": 30407,
+    "looks": [
+      {
+        "m": 1514,
+        "scales": 9,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          3,
+          3
+        ],
+        "validation_r": 610,
+        "accept_if_outside_at_most": 42,
+        "binomial_tail_interval": "[0.00456137135490223551438690130030145927678916494371909891644128 +/- 2.24e-64]"
+      },
+      {
+        "m": 3027,
+        "scales": 8,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          3,
+          3
+        ],
+        "validation_r": 610,
+        "accept_if_outside_at_most": 42,
+        "binomial_tail_interval": "[0.00456137135490223551438690130030145927678916494371909891644128 +/- 2.24e-64]"
+      },
+      {
+        "m": 6053,
+        "scales": 7,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          3,
+          3
+        ],
+        "validation_r": 610,
+        "accept_if_outside_at_most": 42,
+        "binomial_tail_interval": "[0.00456137135490223551438690130030145927678916494371909891644128 +/- 2.24e-64]"
+      },
+      {
+        "m": 12106,
+        "scales": 6,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          3,
+          3
+        ],
+        "validation_r": 610,
+        "accept_if_outside_at_most": 42,
+        "binomial_tail_interval": "[0.00456137135490223551438690130030145927678916494371909891644128 +/- 2.24e-64]"
+      }
+    ],
+    "guarantee_scope": "固定 n/epsilon/delta、固定分布 iid、采样随机化独立、Yes/No 承诺；不需最小非零概率假设。",
+    "complexity": "最坏期望观测量 O((n+log(1/delta))/epsilon)，未证明最优阶的缩常数版本。",
+    "numeric_policy": "参数和尾界由 Arb 认证，多项式最终比较使用整数；无法认证则拒绝配置。"
+  },
+  "2930/0.01": {
+    "algorithm": "certified_chebyshev_validation_count",
+    "n": 2930,
+    "epsilon": "1/100",
+    "delta": "1/20",
+    "config": {
+      "b_factor": 0.5,
+      "max_degree": 12,
+      "weight_cap": 20.0,
+      "validation_factor": 12.0,
+      "validation_gate": 0.75
+    },
+    "false_positive_bound": "1/20",
+    "false_negative_bound": "1/20",
+    "error_allocation": {
+      "polynomial_total": "1/20",
+      "early_accept_total": "1/40",
+      "final_count": "1/40"
+    },
+    "final_poisson_mean": 303806,
+    "final_count_tail_interval": "[0.0249935464986986143735866206492965779959466807048465098714253 +/- 4.72e-63]",
+    "baseline_poisson_mean": 302062,
+    "baseline_count_tail_interval": "[0.0499909158336222225924755109092573159191468243715621422358751 +/- 2.21e-62]",
+    "max_validation_samples": 24364,
+    "expected_sample_upper_bound": 328170,
+    "looks": [
+      {
+        "m": 16310,
+        "scales": 9,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "validation_r": 6091,
+        "accept_if_outside_at_most": 41,
+        "binomial_tail_interval": "[0.00427026772347804915083088847426243901238375596819829695468394 +/- 4.91e-63]"
+      },
+      {
+        "m": 32619,
+        "scales": 8,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "validation_r": 6091,
+        "accept_if_outside_at_most": 41,
+        "binomial_tail_interval": "[0.00427026772347804915083088847426243901238375596819829695468394 +/- 4.91e-63]"
+      },
+      {
+        "m": 65237,
+        "scales": 7,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "validation_r": 6091,
+        "accept_if_outside_at_most": 41,
+        "binomial_tail_interval": "[0.00427026772347804915083088847426243901238375596819829695468394 +/- 4.91e-63]"
+      },
+      {
+        "m": 130473,
+        "scales": 6,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "validation_r": 6091,
+        "accept_if_outside_at_most": 41,
+        "binomial_tail_interval": "[0.00427026772347804915083088847426243901238375596819829695468394 +/- 4.91e-63]"
+      }
+    ],
+    "guarantee_scope": "固定 n/epsilon/delta、固定分布 iid、采样随机化独立、Yes/No 承诺；不需最小非零概率假设。",
+    "complexity": "最坏期望观测量 O((n+log(1/delta))/epsilon)，未证明最优阶的缩常数版本。",
+    "numeric_policy": "参数和尾界由 Arb 认证，多项式最终比较使用整数；无法认证则拒绝配置。"
+  },
+  "3791/0.01": {
+    "algorithm": "certified_chebyshev_validation_count",
+    "n": 3791,
+    "epsilon": "1/100",
+    "delta": "1/20",
+    "config": {
+      "b_factor": 0.5,
+      "max_degree": 12,
+      "weight_cap": 20.0,
+      "validation_factor": 12.0,
+      "validation_gate": 0.75
+    },
+    "false_positive_bound": "1/20",
+    "false_negative_bound": "1/20",
+    "error_allocation": {
+      "polynomial_total": "1/20",
+      "early_accept_total": "1/40",
+      "final_count": "1/40"
+    },
+    "final_poisson_mean": 391364,
+    "final_count_tail_interval": "[0.0249975750885781763862983778089089355197134750818290191838739 +/- 2.40e-62]",
+    "baseline_poisson_mean": 389386,
+    "baseline_count_tail_interval": "[0.0499903232684768911333451602736039406778814030496521225582658 +/- 3.84e-62]",
+    "max_validation_samples": 24364,
+    "expected_sample_upper_bound": 415728,
+    "looks": [
+      {
+        "m": 20514,
+        "scales": 9,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "validation_r": 6091,
+        "accept_if_outside_at_most": 41,
+        "binomial_tail_interval": "[0.00427026772347804915083088847426243901238375596819829695468394 +/- 4.91e-63]"
+      },
+      {
+        "m": 41027,
+        "scales": 8,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "validation_r": 6091,
+        "accept_if_outside_at_most": 41,
+        "binomial_tail_interval": "[0.00427026772347804915083088847426243901238375596819829695468394 +/- 4.91e-63]"
+      },
+      {
+        "m": 82053,
+        "scales": 7,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "validation_r": 6091,
+        "accept_if_outside_at_most": 41,
+        "binomial_tail_interval": "[0.00427026772347804915083088847426243901238375596819829695468394 +/- 4.91e-63]"
+      },
+      {
+        "m": 164106,
+        "scales": 6,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "validation_r": 6091,
+        "accept_if_outside_at_most": 41,
+        "binomial_tail_interval": "[0.00427026772347804915083088847426243901238375596819829695468394 +/- 4.91e-63]"
+      }
+    ],
+    "guarantee_scope": "固定 n/epsilon/delta、固定分布 iid、采样随机化独立、Yes/No 承诺；不需最小非零概率假设。",
+    "complexity": "最坏期望观测量 O((n+log(1/delta))/epsilon)，未证明最优阶的缩常数版本。",
+    "numeric_policy": "参数和尾界由 Arb 认证，多项式最终比较使用整数；无法认证则拒绝配置。"
+  },
+  "3360/0.01": {
+    "algorithm": "certified_chebyshev_validation_count",
+    "n": 3360,
+    "epsilon": "1/100",
+    "delta": "1/20",
+    "config": {
+      "b_factor": 0.5,
+      "max_degree": 12,
+      "weight_cap": 20.0,
+      "validation_factor": 12.0,
+      "validation_gate": 0.75
+    },
+    "false_positive_bound": "1/20",
+    "false_negative_bound": "1/20",
+    "error_allocation": {
+      "polynomial_total": "1/20",
+      "early_accept_total": "1/40",
+      "final_count": "1/40"
+    },
+    "final_poisson_mean": 347558,
+    "final_count_tail_interval": "[0.0249915008187692293225435127009802345222601671964823038633289 +/- 2.90e-62]",
+    "baseline_poisson_mean": 345693,
+    "baseline_count_tail_interval": "[0.0499896690539658909923771128493626705255508210727829331120924 +/- 7.11e-63]",
+    "max_validation_samples": 24364,
+    "expected_sample_upper_bound": 371922,
+    "looks": [
+      {
+        "m": 18422,
+        "scales": 9,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "validation_r": 6091,
+        "accept_if_outside_at_most": 41,
+        "binomial_tail_interval": "[0.00427026772347804915083088847426243901238375596819829695468394 +/- 4.91e-63]"
+      },
+      {
+        "m": 36844,
+        "scales": 8,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "validation_r": 6091,
+        "accept_if_outside_at_most": 41,
+        "binomial_tail_interval": "[0.00427026772347804915083088847426243901238375596819829695468394 +/- 4.91e-63]"
+      },
+      {
+        "m": 73687,
+        "scales": 7,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "validation_r": 6091,
+        "accept_if_outside_at_most": 41,
+        "binomial_tail_interval": "[0.00427026772347804915083088847426243901238375596819829695468394 +/- 4.91e-63]"
+      },
+      {
+        "m": 147374,
+        "scales": 6,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "validation_r": 6091,
+        "accept_if_outside_at_most": 41,
+        "binomial_tail_interval": "[0.00427026772347804915083088847426243901238375596819829695468394 +/- 4.91e-63]"
+      }
+    ],
+    "guarantee_scope": "固定 n/epsilon/delta、固定分布 iid、采样随机化独立、Yes/No 承诺；不需最小非零概率假设。",
+    "complexity": "最坏期望观测量 O((n+log(1/delta))/epsilon)，未证明最优阶的缩常数版本。",
+    "numeric_policy": "参数和尾界由 Arb 认证，多项式最终比较使用整数；无法认证则拒绝配置。"
+  },
+  "2217/0.05": {
+    "algorithm": "certified_chebyshev_validation_count",
+    "n": 2217,
+    "epsilon": "1/20",
+    "delta": "1/20",
+    "config": {
+      "b_factor": 0.5,
+      "max_degree": 12,
+      "weight_cap": 20.0,
+      "validation_factor": 12.0,
+      "validation_gate": 0.75
+    },
+    "false_positive_bound": "1/20",
+    "false_negative_bound": "1/20",
+    "error_allocation": {
+      "polynomial_total": "1/20",
+      "early_accept_total": "1/40",
+      "final_count": "1/40"
+    },
+    "final_poisson_mean": 46225,
+    "final_count_tail_interval": "[0.0249990870572602013065890224911439325783007371888039010247470 +/- 1.68e-62]",
+    "baseline_poisson_mean": 45921,
+    "baseline_count_tail_interval": "[0.0499567447353240857797226714735402793698343401738974723239738 +/- 9.61e-63]",
+    "max_validation_samples": 4876,
+    "expected_sample_upper_bound": 51101,
+    "looks": [
+      {
+        "m": 2548,
+        "scales": 9,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          3,
+          3
+        ],
+        "validation_r": 1219,
+        "accept_if_outside_at_most": 42,
+        "binomial_tail_interval": "[0.00558411001043374611866060131475864919066606329430612271752015 +/- 5.86e-64]"
+      },
+      {
+        "m": 5095,
+        "scales": 8,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          3,
+          3
+        ],
+        "validation_r": 1219,
+        "accept_if_outside_at_most": 42,
+        "binomial_tail_interval": "[0.00558411001043374611866060131475864919066606329430612271752015 +/- 5.86e-64]"
+      },
+      {
+        "m": 10189,
+        "scales": 7,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          3,
+          3
+        ],
+        "validation_r": 1219,
+        "accept_if_outside_at_most": 42,
+        "binomial_tail_interval": "[0.00558411001043374611866060131475864919066606329430612271752015 +/- 5.86e-64]"
+      },
+      {
+        "m": 20378,
+        "scales": 6,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          3,
+          3
+        ],
+        "validation_r": 1219,
+        "accept_if_outside_at_most": 42,
+        "binomial_tail_interval": "[0.00558411001043374611866060131475864919066606329430612271752015 +/- 5.86e-64]"
+      }
+    ],
+    "guarantee_scope": "固定 n/epsilon/delta、固定分布 iid、采样随机化独立、Yes/No 承诺；不需最小非零概率假设。",
+    "complexity": "最坏期望观测量 O((n+log(1/delta))/epsilon)，未证明最优阶的缩常数版本。",
+    "numeric_policy": "参数和尾界由 Arb 认证，多项式最终比较使用整数；无法认证则拒绝配置。"
+  },
+  "3791/0.05": {
+    "algorithm": "certified_chebyshev_validation_count",
+    "n": 3791,
+    "epsilon": "1/20",
+    "delta": "1/20",
+    "config": {
+      "b_factor": 0.5,
+      "max_degree": 12,
+      "weight_cap": 20.0,
+      "validation_factor": 12.0,
+      "validation_gate": 0.75
+    },
+    "false_positive_bound": "1/20",
+    "false_negative_bound": "1/20",
+    "error_allocation": {
+      "polynomial_total": "1/20",
+      "early_accept_total": "1/40",
+      "final_count": "1/40"
+    },
+    "final_poisson_mean": 78273,
+    "final_count_tail_interval": "[0.0249882837670724892775301461948559435391629955111893608464303 +/- 4.52e-62]",
+    "baseline_poisson_mean": 77878,
+    "baseline_count_tail_interval": "[0.0499245470763981757024780127434813833612463948630542912997741 +/- 3.98e-62]",
+    "max_validation_samples": 4876,
+    "expected_sample_upper_bound": 83149,
+    "looks": [
+      {
+        "m": 4103,
+        "scales": 9,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "validation_r": 1219,
+        "accept_if_outside_at_most": 42,
+        "binomial_tail_interval": "[0.00558411001043374611866060131475864919066606329430612271752015 +/- 5.86e-64]"
+      },
+      {
+        "m": 8206,
+        "scales": 8,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "validation_r": 1219,
+        "accept_if_outside_at_most": 42,
+        "binomial_tail_interval": "[0.00558411001043374611866060131475864919066606329430612271752015 +/- 5.86e-64]"
+      },
+      {
+        "m": 16411,
+        "scales": 7,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "validation_r": 1219,
+        "accept_if_outside_at_most": 42,
+        "binomial_tail_interval": "[0.00558411001043374611866060131475864919066606329430612271752015 +/- 5.86e-64]"
+      },
+      {
+        "m": 32822,
+        "scales": 6,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "validation_r": 1219,
+        "accept_if_outside_at_most": 42,
+        "binomial_tail_interval": "[0.00558411001043374611866060131475864919066606329430612271752015 +/- 5.86e-64]"
+      }
+    ],
+    "guarantee_scope": "固定 n/epsilon/delta、固定分布 iid、采样随机化独立、Yes/No 承诺；不需最小非零概率假设。",
+    "complexity": "最坏期望观测量 O((n+log(1/delta))/epsilon)，未证明最优阶的缩常数版本。",
+    "numeric_policy": "参数和尾界由 Arb 认证，多项式最终比较使用整数；无法认证则拒绝配置。"
+  },
+  "3004/0.05": {
+    "algorithm": "certified_chebyshev_validation_count",
+    "n": 3004,
+    "epsilon": "1/20",
+    "delta": "1/20",
+    "config": {
+      "b_factor": 0.5,
+      "max_degree": 12,
+      "weight_cap": 20.0,
+      "validation_factor": 12.0,
+      "validation_gate": 0.75
+    },
+    "false_positive_bound": "1/20",
+    "false_negative_bound": "1/20",
+    "error_allocation": {
+      "polynomial_total": "1/20",
+      "early_accept_total": "1/40",
+      "final_count": "1/40"
+    },
+    "final_poisson_mean": 62268,
+    "final_count_tail_interval": "[0.0249844517814397721430008898039863213979379588733586805799415 +/- 2.61e-63]",
+    "baseline_poisson_mean": 61915,
+    "baseline_count_tail_interval": "[0.0499673868683179654048697700224797904062842118564271694004809 +/- 6.87e-63]",
+    "max_validation_samples": 4876,
+    "expected_sample_upper_bound": 67144,
+    "looks": [
+      {
+        "m": 3335,
+        "scales": 9,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "validation_r": 1219,
+        "accept_if_outside_at_most": 42,
+        "binomial_tail_interval": "[0.00558411001043374611866060131475864919066606329430612271752015 +/- 5.86e-64]"
+      },
+      {
+        "m": 6670,
+        "scales": 8,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "validation_r": 1219,
+        "accept_if_outside_at_most": 42,
+        "binomial_tail_interval": "[0.00558411001043374611866060131475864919066606329430612271752015 +/- 5.86e-64]"
+      },
+      {
+        "m": 13340,
+        "scales": 7,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "validation_r": 1219,
+        "accept_if_outside_at_most": 42,
+        "binomial_tail_interval": "[0.00558411001043374611866060131475864919066606329430612271752015 +/- 5.86e-64]"
+      },
+      {
+        "m": 26680,
+        "scales": 6,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "validation_r": 1219,
+        "accept_if_outside_at_most": 42,
+        "binomial_tail_interval": "[0.00558411001043374611866060131475864919066606329430612271752015 +/- 5.86e-64]"
+      }
+    ],
+    "guarantee_scope": "固定 n/epsilon/delta、固定分布 iid、采样随机化独立、Yes/No 承诺；不需最小非零概率假设。",
+    "complexity": "最坏期望观测量 O((n+log(1/delta))/epsilon)，未证明最优阶的缩常数版本。",
+    "numeric_policy": "参数和尾界由 Arb 认证，多项式最终比较使用整数；无法认证则拒绝配置。"
+  },
+  "1791/0.1": {
+    "algorithm": "certified_chebyshev_validation_count",
+    "n": 1791,
+    "epsilon": "1/10",
+    "delta": "1/20",
+    "config": {
+      "b_factor": 0.5,
+      "max_degree": 12,
+      "weight_cap": 20.0,
+      "validation_factor": 12.0,
+      "validation_gate": 0.75
+    },
+    "false_positive_bound": "1/20",
+    "false_negative_bound": "1/20",
+    "error_allocation": {
+      "polynomial_total": "1/20",
+      "early_accept_total": "1/40",
+      "final_count": "1/40"
+    },
+    "final_poisson_mean": 18760,
+    "final_count_tail_interval": "[0.0248827706652896547880868164594470532461688806129392021212349 +/- 1.92e-62]",
+    "baseline_poisson_mean": 18622,
+    "baseline_count_tail_interval": "[0.0499853743997491245686482097236137418946659217780657182810132 +/- 1.43e-62]",
+    "max_validation_samples": 2440,
+    "expected_sample_upper_bound": 21200,
+    "looks": [
+      {
+        "m": 1055,
+        "scales": 9,
+        "degrees": [
+          3,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          3,
+          3
+        ],
+        "validation_r": 610,
+        "accept_if_outside_at_most": 42,
+        "binomial_tail_interval": "[0.00456137135490223551438690130030145927678916494371909891644128 +/- 2.24e-64]"
+      },
+      {
+        "m": 2110,
+        "scales": 8,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          3,
+          3
+        ],
+        "validation_r": 610,
+        "accept_if_outside_at_most": 42,
+        "binomial_tail_interval": "[0.00456137135490223551438690130030145927678916494371909891644128 +/- 2.24e-64]"
+      },
+      {
+        "m": 4219,
+        "scales": 7,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          3,
+          3
+        ],
+        "validation_r": 610,
+        "accept_if_outside_at_most": 42,
+        "binomial_tail_interval": "[0.00456137135490223551438690130030145927678916494371909891644128 +/- 2.24e-64]"
+      },
+      {
+        "m": 8438,
+        "scales": 6,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          3,
+          3
+        ],
+        "validation_r": 610,
+        "accept_if_outside_at_most": 42,
+        "binomial_tail_interval": "[0.00456137135490223551438690130030145927678916494371909891644128 +/- 2.24e-64]"
+      }
+    ],
+    "guarantee_scope": "固定 n/epsilon/delta、固定分布 iid、采样随机化独立、Yes/No 承诺；不需最小非零概率假设。",
+    "complexity": "最坏期望观测量 O((n+log(1/delta))/epsilon)，未证明最优阶的缩常数版本。",
+    "numeric_policy": "参数和尾界由 Arb 认证，多项式最终比较使用整数；无法认证则拒绝配置。"
+  },
+  "3791/0.1": {
+    "algorithm": "certified_chebyshev_validation_count",
+    "n": 3791,
+    "epsilon": "1/10",
+    "delta": "1/20",
+    "config": {
+      "b_factor": 0.5,
+      "max_degree": 12,
+      "weight_cap": 20.0,
+      "validation_factor": 12.0,
+      "validation_gate": 0.75
+    },
+    "false_positive_bound": "1/20",
+    "false_negative_bound": "1/20",
+    "error_allocation": {
+      "polynomial_total": "1/20",
+      "early_accept_total": "1/40",
+      "final_count": "1/40"
+    },
+    "final_poisson_mean": 39137,
+    "final_count_tail_interval": "[0.0249418708162056072767388619547073552083148476979993640322631 +/- 4.37e-62]",
+    "baseline_poisson_mean": 38939,
+    "baseline_count_tail_interval": "[0.0499245470763981757024780127434813833612463948630542912997741 +/- 3.98e-62]",
+    "max_validation_samples": 2440,
+    "expected_sample_upper_bound": 41577,
+    "looks": [
+      {
+        "m": 2052,
+        "scales": 9,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "validation_r": 610,
+        "accept_if_outside_at_most": 42,
+        "binomial_tail_interval": "[0.00456137135490223551438690130030145927678916494371909891644128 +/- 2.24e-64]"
+      },
+      {
+        "m": 4103,
+        "scales": 8,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "validation_r": 610,
+        "accept_if_outside_at_most": 42,
+        "binomial_tail_interval": "[0.00456137135490223551438690130030145927678916494371909891644128 +/- 2.24e-64]"
+      },
+      {
+        "m": 8206,
+        "scales": 7,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "validation_r": 610,
+        "accept_if_outside_at_most": 42,
+        "binomial_tail_interval": "[0.00456137135490223551438690130030145927678916494371909891644128 +/- 2.24e-64]"
+      },
+      {
+        "m": 16411,
+        "scales": 6,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        "validation_r": 610,
+        "accept_if_outside_at_most": 42,
+        "binomial_tail_interval": "[0.00456137135490223551438690130030145927678916494371909891644128 +/- 2.24e-64]"
+      }
+    ],
+    "guarantee_scope": "固定 n/epsilon/delta、固定分布 iid、采样随机化独立、Yes/No 承诺；不需最小非零概率假设。",
+    "complexity": "最坏期望观测量 O((n+log(1/delta))/epsilon)，未证明最优阶的缩常数版本。",
+    "numeric_policy": "参数和尾界由 Arb 认证，多项式最终比较使用整数；无法认证则拒绝配置。"
+  },
+  "2791/0.1": {
+    "algorithm": "certified_chebyshev_validation_count",
+    "n": 2791,
+    "epsilon": "1/10",
+    "delta": "1/20",
+    "config": {
+      "b_factor": 0.5,
+      "max_degree": 12,
+      "weight_cap": 20.0,
+      "validation_factor": 12.0,
+      "validation_gate": 0.75
+    },
+    "false_positive_bound": "1/20",
+    "false_negative_bound": "1/20",
+    "error_allocation": {
+      "polynomial_total": "1/20",
+      "early_accept_total": "1/40",
+      "final_count": "1/40"
+    },
+    "final_poisson_mean": 28966,
+    "final_count_tail_interval": "[0.0248999566091461740501319962775979490824828054915735567652058 +/- 1.98e-62]",
+    "baseline_poisson_mean": 28795,
+    "baseline_count_tail_interval": "[0.0499576307529111455393072879881370759864774736745372493483323 +/- 2.71e-62]",
+    "max_validation_samples": 2440,
+    "expected_sample_upper_bound": 31406,
+    "looks": [
+      {
+        "m": 1562,
+        "scales": 9,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          3,
+          3
+        ],
+        "validation_r": 610,
+        "accept_if_outside_at_most": 42,
+        "binomial_tail_interval": "[0.00456137135490223551438690130030145927678916494371909891644128 +/- 2.24e-64]"
+      },
+      {
+        "m": 3124,
+        "scales": 8,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          3,
+          3
+        ],
+        "validation_r": 610,
+        "accept_if_outside_at_most": 42,
+        "binomial_tail_interval": "[0.00456137135490223551438690130030145927678916494371909891644128 +/- 2.24e-64]"
+      },
+      {
+        "m": 6248,
+        "scales": 7,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          3,
+          3
+        ],
+        "validation_r": 610,
+        "accept_if_outside_at_most": 42,
+        "binomial_tail_interval": "[0.00456137135490223551438690130030145927678916494371909891644128 +/- 2.24e-64]"
+      },
+      {
+        "m": 12496,
+        "scales": 6,
+        "degrees": [
+          4,
+          4,
+          4,
+          4,
+          3,
+          3
+        ],
+        "validation_r": 610,
+        "accept_if_outside_at_most": 42,
+        "binomial_tail_interval": "[0.00456137135490223551438690130030145927678916494371909891644128 +/- 2.24e-64]"
+      }
+    ],
+    "guarantee_scope": "固定 n/epsilon/delta、固定分布 iid、采样随机化独立、Yes/No 承诺；不需最小非零概率假设。",
+    "complexity": "最坏期望观测量 O((n+log(1/delta))/epsilon)，未证明最优阶的缩常数版本。",
+    "numeric_policy": "参数和尾界由 Arb 认证，多项式最终比较使用整数；无法认证则拒绝配置。"
+  },
+  "159/0.01": {
+    "algorithm": "certified_chebyshev_validation_count",
+    "n": 159,
+    "epsilon": "1/100",
+    "delta": "1/20",
+    "config": {
+      "b_factor": 0.5,
+      "max_degree": 12,
+      "weight_cap": 20.0,
+      "validation_factor": 12.0,
+      "validation_gate": 0.75
+    },
+    "false_positive_bound": "1/20",
+    "false_negative_bound": "1/20",
+    "error_allocation": {
+      "polynomial_total": "1/20",
+      "early_accept_total": "1/40",
+      "final_count": "1/40"
+    },
+    "final_poisson_mean": 18573,
+    "final_count_tail_interval": "[0.0249788723525552585167740797397304516660718256820477805785557 +/- 9.54e-63]",
+    "baseline_poisson_mean": 18136,
+    "baseline_count_tail_interval": "[0.0499906384013136791205649659718985325702185116093250150715206 +/- 5.39e-63]",
+    "max_validation_samples": 3712,
+    "expected_sample_upper_bound": 22285,
+    "looks": [
+      {
+        "m": 1310,
+        "scales": 8,
+        "degrees": [
+          3,
+          3,
+          3,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "validation_r": 928,
+        "accept_if_outside_at_most": 2,
+        "binomial_tail_interval": "[0.00482991343362565096420551660139242275680878490249229844879196 +/- 1.49e-63]"
+      },
+      {
+        "m": 2620,
+        "scales": 7,
+        "degrees": [
+          3,
+          3,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "validation_r": 928,
+        "accept_if_outside_at_most": 2,
+        "binomial_tail_interval": "[0.00482991343362565096420551660139242275680878490249229844879196 +/- 1.49e-63]"
+      },
+      {
+        "m": 5240,
+        "scales": 6,
+        "degrees": [
+          3,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "validation_r": 928,
+        "accept_if_outside_at_most": 2,
+        "binomial_tail_interval": "[0.00482991343362565096420551660139242275680878490249229844879196 +/- 1.49e-63]"
+      },
+      {
+        "m": 10480,
+        "scales": 5,
+        "degrees": [
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "validation_r": 928,
+        "accept_if_outside_at_most": 2,
+        "binomial_tail_interval": "[0.00482991343362565096420551660139242275680878490249229844879196 +/- 1.49e-63]"
+      }
+    ],
+    "guarantee_scope": "固定 n/epsilon/delta、固定分布 iid、采样随机化独立、Yes/No 承诺；不需最小非零概率假设。",
+    "complexity": "最坏期望观测量 O((n+log(1/delta))/epsilon)，未证明最优阶的缩常数版本。",
+    "numeric_policy": "参数和尾界由 Arb 认证，多项式最终比较使用整数；无法认证则拒绝配置。"
+  },
+  "225/0.01": {
+    "algorithm": "certified_chebyshev_validation_count",
+    "n": 225,
+    "epsilon": "1/100",
+    "delta": "1/20",
+    "config": {
+      "b_factor": 0.5,
+      "max_degree": 12,
+      "weight_cap": 20.0,
+      "validation_factor": 12.0,
+      "validation_gate": 0.75
+    },
+    "false_positive_bound": "1/20",
+    "false_negative_bound": "1/20",
+    "error_allocation": {
+      "polynomial_total": "1/20",
+      "early_accept_total": "1/40",
+      "final_count": "1/40"
+    },
+    "final_poisson_mean": 25641,
+    "final_count_tail_interval": "[0.0249647777528153281090267774564366598303510719610731956536449 +/- 1.39e-62]",
+    "baseline_poisson_mean": 25129,
+    "baseline_count_tail_interval": "[0.0499546383433993378697295958603838715957374963485374217425914 +/- 1.44e-62]",
+    "max_validation_samples": 5128,
+    "expected_sample_upper_bound": 30769,
+    "looks": [
+      {
+        "m": 1754,
+        "scales": 8,
+        "degrees": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          2,
+          2
+        ],
+        "validation_r": 1282,
+        "accept_if_outside_at_most": 4,
+        "binomial_tail_interval": "[0.00412255985147730912212933103394980788627104495809838354658700 +/- 1.67e-63]"
+      },
+      {
+        "m": 3507,
+        "scales": 7,
+        "degrees": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          2,
+          2
+        ],
+        "validation_r": 1282,
+        "accept_if_outside_at_most": 4,
+        "binomial_tail_interval": "[0.00412255985147730912212933103394980788627104495809838354658700 +/- 1.67e-63]"
+      },
+      {
+        "m": 7014,
+        "scales": 6,
+        "degrees": [
+          3,
+          3,
+          3,
+          3,
+          2,
+          2
+        ],
+        "validation_r": 1282,
+        "accept_if_outside_at_most": 4,
+        "binomial_tail_interval": "[0.00412255985147730912212933103394980788627104495809838354658700 +/- 1.67e-63]"
+      },
+      {
+        "m": 14028,
+        "scales": 5,
+        "degrees": [
+          3,
+          3,
+          3,
+          2,
+          2
+        ],
+        "validation_r": 1282,
+        "accept_if_outside_at_most": 4,
+        "binomial_tail_interval": "[0.00412255985147730912212933103394980788627104495809838354658700 +/- 1.67e-63]"
+      }
+    ],
+    "guarantee_scope": "固定 n/epsilon/delta、固定分布 iid、采样随机化独立、Yes/No 承诺；不需最小非零概率假设。",
+    "complexity": "最坏期望观测量 O((n+log(1/delta))/epsilon)，未证明最优阶的缩常数版本。",
+    "numeric_policy": "参数和尾界由 Arb 认证，多项式最终比较使用整数；无法认证则拒绝配置。"
+  },
+  "192/0.01": {
+    "algorithm": "certified_chebyshev_validation_count",
+    "n": 192,
+    "epsilon": "1/100",
+    "delta": "1/20",
+    "config": {
+      "b_factor": 0.5,
+      "max_degree": 12,
+      "weight_cap": 20.0,
+      "validation_factor": 12.0,
+      "validation_gate": 0.75
+    },
+    "false_positive_bound": "1/20",
+    "false_negative_bound": "1/20",
+    "error_allocation": {
+      "polynomial_total": "1/20",
+      "early_accept_total": "1/40",
+      "final_count": "1/40"
+    },
+    "final_poisson_mean": 22117,
+    "final_count_tail_interval": "[0.0249735865494428366859352210988341673488888054628154861037915 +/- 3.62e-62]",
+    "baseline_poisson_mean": 21641,
+    "baseline_count_tail_interval": "[0.0499674873739782205974546211148003047037822985819965996919533 +/- 4.10e-62]",
+    "max_validation_samples": 4420,
+    "expected_sample_upper_bound": 26537,
+    "looks": [
+      {
+        "m": 1535,
+        "scales": 8,
+        "degrees": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          2,
+          2,
+          2
+        ],
+        "validation_r": 1105,
+        "accept_if_outside_at_most": 3,
+        "binomial_tail_interval": "[0.00459127771609856204214212374901450662932380569575104387419268 +/- 3.25e-63]"
+      },
+      {
+        "m": 3069,
+        "scales": 7,
+        "degrees": [
+          3,
+          3,
+          3,
+          3,
+          2,
+          2,
+          2
+        ],
+        "validation_r": 1105,
+        "accept_if_outside_at_most": 3,
+        "binomial_tail_interval": "[0.00459127771609856204214212374901450662932380569575104387419268 +/- 3.25e-63]"
+      },
+      {
+        "m": 6137,
+        "scales": 6,
+        "degrees": [
+          3,
+          3,
+          3,
+          2,
+          2,
+          2
+        ],
+        "validation_r": 1105,
+        "accept_if_outside_at_most": 3,
+        "binomial_tail_interval": "[0.00459127771609856204214212374901450662932380569575104387419268 +/- 3.25e-63]"
+      },
+      {
+        "m": 12274,
+        "scales": 5,
+        "degrees": [
+          3,
+          3,
+          2,
+          2,
+          2
+        ],
+        "validation_r": 1105,
+        "accept_if_outside_at_most": 3,
+        "binomial_tail_interval": "[0.00459127771609856204214212374901450662932380569575104387419268 +/- 3.25e-63]"
+      }
+    ],
+    "guarantee_scope": "固定 n/epsilon/delta、固定分布 iid、采样随机化独立、Yes/No 承诺；不需最小非零概率假设。",
+    "complexity": "最坏期望观测量 O((n+log(1/delta))/epsilon)，未证明最优阶的缩常数版本。",
+    "numeric_policy": "参数和尾界由 Arb 认证，多项式最终比较使用整数；无法认证则拒绝配置。"
+  },
+  "108/0.05": {
+    "algorithm": "certified_chebyshev_validation_count",
+    "n": 108,
+    "epsilon": "1/20",
+    "delta": "1/20",
+    "config": {
+      "b_factor": 0.5,
+      "max_degree": 12,
+      "weight_cap": 20.0,
+      "validation_factor": 12.0,
+      "validation_gate": 0.75
+    },
+    "false_positive_bound": "1/20",
+    "false_negative_bound": "1/20",
+    "error_allocation": {
+      "polynomial_total": "1/20",
+      "early_accept_total": "1/40",
+      "final_count": "1/40"
+    },
+    "final_poisson_mean": 2608,
+    "final_count_tail_interval": "[0.0249637871152408964657404492867042755171409295903347897999692 +/- 9.76e-63]",
+    "baseline_poisson_mean": 2535,
+    "baseline_count_tail_interval": "[0.0497522616836557447821603077480831850979507325451980874381907 +/- 8.43e-63]",
+    "max_validation_samples": 520,
+    "expected_sample_upper_bound": 3128,
+    "looks": [
+      {
+        "m": 191,
+        "scales": 8,
+        "degrees": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "validation_r": 130,
+        "accept_if_outside_at_most": 0,
+        "binomial_tail_interval": "[0.00127077507374053909449122541184145081234517436890598278805040 +/- 1.22e-63]"
+      },
+      {
+        "m": 381,
+        "scales": 7,
+        "degrees": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "validation_r": 130,
+        "accept_if_outside_at_most": 0,
+        "binomial_tail_interval": "[0.00127077507374053909449122541184145081234517436890598278805040 +/- 1.22e-63]"
+      },
+      {
+        "m": 761,
+        "scales": 6,
+        "degrees": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "validation_r": 130,
+        "accept_if_outside_at_most": 0,
+        "binomial_tail_interval": "[0.00127077507374053909449122541184145081234517436890598278805040 +/- 1.22e-63]"
+      },
+      {
+        "m": 1521,
+        "scales": 5,
+        "degrees": [
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "validation_r": 130,
+        "accept_if_outside_at_most": 0,
+        "binomial_tail_interval": "[0.00127077507374053909449122541184145081234517436890598278805040 +/- 1.22e-63]"
+      }
+    ],
+    "guarantee_scope": "固定 n/epsilon/delta、固定分布 iid、采样随机化独立、Yes/No 承诺；不需最小非零概率假设。",
+    "complexity": "最坏期望观测量 O((n+log(1/delta))/epsilon)，未证明最优阶的缩常数版本。",
+    "numeric_policy": "参数和尾界由 Arb 认证，多项式最终比较使用整数；无法认证则拒绝配置。"
+  },
+  "225/0.05": {
+    "algorithm": "certified_chebyshev_validation_count",
+    "n": 225,
+    "epsilon": "1/20",
+    "delta": "1/20",
+    "config": {
+      "b_factor": 0.5,
+      "max_degree": 12,
+      "weight_cap": 20.0,
+      "validation_factor": 12.0,
+      "validation_gate": 0.75
+    },
+    "false_positive_bound": "1/20",
+    "false_negative_bound": "1/20",
+    "error_allocation": {
+      "polynomial_total": "1/20",
+      "early_accept_total": "1/40",
+      "final_count": "1/40"
+    },
+    "final_poisson_mean": 5129,
+    "final_count_tail_interval": "[0.0248222946302486472378812179780817992124886313568558816217802 +/- 8.84e-63]",
+    "baseline_poisson_mean": 5026,
+    "baseline_count_tail_interval": "[0.0498907849925970935967318569437300968376836968604955706507257 +/- 3.62e-62]",
+    "max_validation_samples": 1024,
+    "expected_sample_upper_bound": 6153,
+    "looks": [
+      {
+        "m": 351,
+        "scales": 8,
+        "degrees": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          2,
+          2
+        ],
+        "validation_r": 256,
+        "accept_if_outside_at_most": 4,
+        "binomial_tail_interval": "[0.00366597364129987345969192652298784949830372598634762952233601 +/- 1.77e-63]"
+      },
+      {
+        "m": 702,
+        "scales": 7,
+        "degrees": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          2,
+          2
+        ],
+        "validation_r": 256,
+        "accept_if_outside_at_most": 4,
+        "binomial_tail_interval": "[0.00366597364129987345969192652298784949830372598634762952233601 +/- 1.77e-63]"
+      },
+      {
+        "m": 1403,
+        "scales": 6,
+        "degrees": [
+          3,
+          3,
+          3,
+          3,
+          2,
+          2
+        ],
+        "validation_r": 256,
+        "accept_if_outside_at_most": 4,
+        "binomial_tail_interval": "[0.00366597364129987345969192652298784949830372598634762952233601 +/- 1.77e-63]"
+      },
+      {
+        "m": 2806,
+        "scales": 5,
+        "degrees": [
+          3,
+          3,
+          3,
+          2,
+          2
+        ],
+        "validation_r": 256,
+        "accept_if_outside_at_most": 4,
+        "binomial_tail_interval": "[0.00366597364129987345969192652298784949830372598634762952233601 +/- 1.77e-63]"
+      }
+    ],
+    "guarantee_scope": "固定 n/epsilon/delta、固定分布 iid、采样随机化独立、Yes/No 承诺；不需最小非零概率假设。",
+    "complexity": "最坏期望观测量 O((n+log(1/delta))/epsilon)，未证明最优阶的缩常数版本。",
+    "numeric_policy": "参数和尾界由 Arb 认证，多项式最终比较使用整数；无法认证则拒绝配置。"
+  },
+  "166/0.05": {
+    "algorithm": "certified_chebyshev_validation_count",
+    "n": 166,
+    "epsilon": "1/20",
+    "delta": "1/20",
+    "config": {
+      "b_factor": 0.5,
+      "max_degree": 12,
+      "weight_cap": 20.0,
+      "validation_factor": 12.0,
+      "validation_gate": 0.75
+    },
+    "false_positive_bound": "1/20",
+    "false_negative_bound": "1/20",
+    "error_allocation": {
+      "polynomial_total": "1/20",
+      "early_accept_total": "1/40",
+      "final_count": "1/40"
+    },
+    "final_poisson_mean": 3866,
+    "final_count_tail_interval": "[0.0248434981608802732715448159749854738878806573003498302076075 +/- 1.75e-62]",
+    "baseline_poisson_mean": 3777,
+    "baseline_count_tail_interval": "[0.0497016978870937680313393827017164765620926686450447467926880 +/- 1.54e-62]",
+    "max_validation_samples": 772,
+    "expected_sample_upper_bound": 4638,
+    "looks": [
+      {
+        "m": 272,
+        "scales": 8,
+        "degrees": [
+          3,
+          3,
+          3,
+          3,
+          2,
+          2,
+          2,
+          2
+        ],
+        "validation_r": 193,
+        "accept_if_outside_at_most": 2,
+        "binomial_tail_interval": "[0.00313625021979022963716911233583418375725262032274403808311270 +/- 3.80e-63]"
+      },
+      {
+        "m": 544,
+        "scales": 7,
+        "degrees": [
+          3,
+          3,
+          3,
+          2,
+          2,
+          2,
+          2
+        ],
+        "validation_r": 193,
+        "accept_if_outside_at_most": 2,
+        "binomial_tail_interval": "[0.00313625021979022963716911233583418375725262032274403808311270 +/- 3.80e-63]"
+      },
+      {
+        "m": 1087,
+        "scales": 6,
+        "degrees": [
+          3,
+          3,
+          2,
+          2,
+          2,
+          2
+        ],
+        "validation_r": 193,
+        "accept_if_outside_at_most": 2,
+        "binomial_tail_interval": "[0.00313625021979022963716911233583418375725262032274403808311270 +/- 3.80e-63]"
+      },
+      {
+        "m": 2173,
+        "scales": 5,
+        "degrees": [
+          3,
+          2,
+          2,
+          2,
+          2
+        ],
+        "validation_r": 193,
+        "accept_if_outside_at_most": 2,
+        "binomial_tail_interval": "[0.00313625021979022963716911233583418375725262032274403808311270 +/- 3.80e-63]"
+      }
+    ],
+    "guarantee_scope": "固定 n/epsilon/delta、固定分布 iid、采样随机化独立、Yes/No 承诺；不需最小非零概率假设。",
+    "complexity": "最坏期望观测量 O((n+log(1/delta))/epsilon)，未证明最优阶的缩常数版本。",
+    "numeric_policy": "参数和尾界由 Arb 认证，多项式最终比较使用整数；无法认证则拒绝配置。"
+  },
+  "78/0.1": {
+    "algorithm": "certified_chebyshev_validation_count",
+    "n": 78,
+    "epsilon": "1/10",
+    "delta": "1/20",
+    "config": {
+      "b_factor": 0.5,
+      "max_degree": 12,
+      "weight_cap": 20.0,
+      "validation_factor": 12.0,
+      "validation_gate": 0.75
+    },
+    "false_positive_bound": "1/20",
+    "false_negative_bound": "1/20",
+    "error_allocation": {
+      "polynomial_total": "1/20",
+      "early_accept_total": "1/40",
+      "final_count": "1/40"
+    },
+    "final_poisson_mean": 974,
+    "final_count_tail_interval": "[0.0247011275979715904157009846164000740557357828156171140894794 +/- 8.74e-63]",
+    "baseline_poisson_mean": 942,
+    "baseline_count_tail_interval": "[0.0496483294769498371010731282701474804480539753457264403568455 +/- 1.94e-62]",
+    "max_validation_samples": 0,
+    "expected_sample_upper_bound": 974,
+    "looks": [
+      {
+        "m": 73,
+        "scales": 7,
+        "degrees": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "validation_r": 0,
+        "accept_if_outside_at_most": -1,
+        "binomial_tail_interval": "0"
+      },
+      {
+        "m": 146,
+        "scales": 6,
+        "degrees": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "validation_r": 0,
+        "accept_if_outside_at_most": -1,
+        "binomial_tail_interval": "0"
+      },
+      {
+        "m": 292,
+        "scales": 5,
+        "degrees": [
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "validation_r": 0,
+        "accept_if_outside_at_most": -1,
+        "binomial_tail_interval": "0"
+      },
+      {
+        "m": 583,
+        "scales": 4,
+        "degrees": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "validation_r": 0,
+        "accept_if_outside_at_most": -1,
+        "binomial_tail_interval": "0"
+      }
+    ],
+    "guarantee_scope": "固定 n/epsilon/delta、固定分布 iid、采样随机化独立、Yes/No 承诺；不需最小非零概率假设。",
+    "complexity": "最坏期望观测量 O((n+log(1/delta))/epsilon)，未证明最优阶的缩常数版本。",
+    "numeric_policy": "参数和尾界由 Arb 认证，多项式最终比较使用整数；无法认证则拒绝配置。"
+  },
+  "225/0.1": {
+    "algorithm": "certified_chebyshev_validation_count",
+    "n": 225,
+    "epsilon": "1/10",
+    "delta": "1/20",
+    "config": {
+      "b_factor": 0.5,
+      "max_degree": 12,
+      "weight_cap": 20.0,
+      "validation_factor": 12.0,
+      "validation_gate": 0.75
+    },
+    "false_positive_bound": "1/20",
+    "false_negative_bound": "1/20",
+    "error_allocation": {
+      "polynomial_total": "1/20",
+      "early_accept_total": "1/40",
+      "final_count": "1/40"
+    },
+    "final_poisson_mean": 2565,
+    "final_count_tail_interval": "[0.0246451708980029756598893569934251618979641162790588286352416 +/- 2.99e-62]",
+    "baseline_poisson_mean": 2513,
+    "baseline_count_tail_interval": "[0.0498907849925970935967318569437300968376836968604955706507257 +/- 3.62e-62]",
+    "max_validation_samples": 512,
+    "expected_sample_upper_bound": 3077,
+    "looks": [
+      {
+        "m": 176,
+        "scales": 8,
+        "degrees": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          2,
+          2
+        ],
+        "validation_r": 128,
+        "accept_if_outside_at_most": 4,
+        "binomial_tail_interval": "[0.00307183573059987814522797609547820928343909660997380090430351 +/- 2.16e-63]"
+      },
+      {
+        "m": 351,
+        "scales": 7,
+        "degrees": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          2,
+          2
+        ],
+        "validation_r": 128,
+        "accept_if_outside_at_most": 4,
+        "binomial_tail_interval": "[0.00307183573059987814522797609547820928343909660997380090430351 +/- 2.16e-63]"
+      },
+      {
+        "m": 702,
+        "scales": 6,
+        "degrees": [
+          3,
+          3,
+          3,
+          3,
+          2,
+          2
+        ],
+        "validation_r": 128,
+        "accept_if_outside_at_most": 4,
+        "binomial_tail_interval": "[0.00307183573059987814522797609547820928343909660997380090430351 +/- 2.16e-63]"
+      },
+      {
+        "m": 1403,
+        "scales": 5,
+        "degrees": [
+          3,
+          3,
+          3,
+          2,
+          2
+        ],
+        "validation_r": 128,
+        "accept_if_outside_at_most": 4,
+        "binomial_tail_interval": "[0.00307183573059987814522797609547820928343909660997380090430351 +/- 2.16e-63]"
+      }
+    ],
+    "guarantee_scope": "固定 n/epsilon/delta、固定分布 iid、采样随机化独立、Yes/No 承诺；不需最小非零概率假设。",
+    "complexity": "最坏期望观测量 O((n+log(1/delta))/epsilon)，未证明最优阶的缩常数版本。",
+    "numeric_policy": "参数和尾界由 Arb 认证，多项式最终比较使用整数；无法认证则拒绝配置。"
+  },
+  "151/0.1": {
+    "algorithm": "certified_chebyshev_validation_count",
+    "n": 151,
+    "epsilon": "1/10",
+    "delta": "1/20",
+    "config": {
+      "b_factor": 0.5,
+      "max_degree": 12,
+      "weight_cap": 20.0,
+      "validation_factor": 12.0,
+      "validation_gate": 0.75
+    },
+    "false_positive_bound": "1/20",
+    "false_negative_bound": "1/20",
+    "error_allocation": {
+      "polynomial_total": "1/20",
+      "early_accept_total": "1/40",
+      "final_count": "1/40"
+    },
+    "final_poisson_mean": 1771,
+    "final_count_tail_interval": "[0.0249864387177388312471473065256949996292611911637987211328410 +/- 1.79e-63]",
+    "baseline_poisson_mean": 1729,
+    "baseline_count_tail_interval": "[0.0494762841088289651694874871742509955967760984270828220537799 +/- 1.87e-62]",
+    "max_validation_samples": 352,
+    "expected_sample_upper_bound": 2123,
+    "looks": [
+      {
+        "m": 126,
+        "scales": 8,
+        "degrees": [
+          3,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "validation_r": 88,
+        "accept_if_outside_at_most": 2,
+        "binomial_tail_interval": "[0.00545815749372988737062949260805690833392389866472580124675402 +/- 1.66e-63]"
+      },
+      {
+        "m": 251,
+        "scales": 7,
+        "degrees": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "validation_r": 88,
+        "accept_if_outside_at_most": 2,
+        "binomial_tail_interval": "[0.00545815749372988737062949260805690833392389866472580124675402 +/- 1.66e-63]"
+      },
+      {
+        "m": 502,
+        "scales": 6,
+        "degrees": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "validation_r": 88,
+        "accept_if_outside_at_most": 2,
+        "binomial_tail_interval": "[0.00545815749372988737062949260805690833392389866472580124675402 +/- 1.66e-63]"
+      },
+      {
+        "m": 1004,
+        "scales": 5,
+        "degrees": [
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "validation_r": 88,
+        "accept_if_outside_at_most": 2,
+        "binomial_tail_interval": "[0.00545815749372988737062949260805690833392389866472580124675402 +/- 1.66e-63]"
+      }
+    ],
+    "guarantee_scope": "固定 n/epsilon/delta、固定分布 iid、采样随机化独立、Yes/No 承诺；不需最小非零概率假设。",
+    "complexity": "最坏期望观测量 O((n+log(1/delta))/epsilon)，未证明最优阶的缩常数版本。",
+    "numeric_policy": "参数和尾界由 Arb 认证，多项式最终比较使用整数；无法认证则拒绝配置。"
+  }
+}

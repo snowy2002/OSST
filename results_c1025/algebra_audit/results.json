@@ -1,0 +1,519 @@
+{
+  "passed": true,
+  "precision_bits": 4096,
+  "elapsed_seconds": 242.57101099099964,
+  "python": "3.14.4",
+  "checks_by_group": {
+    "universal_bound_endpoints_and_exact_algebra": 83,
+    "independent_finite_distribution_count_probabilities": 2225,
+    "exact_rational_coefficients_and_expectations": 876,
+    "integer_branch_boundaries_and_parameters": 7910,
+    "large_degree_independent_weights_and_pipeline": 32696,
+    "explicit_finite_counterexample_for_C1024": 8,
+    "deliberate_error_controls": 3
+  },
+  "total_assertions": 43801,
+  "details": {
+    "universal_bound_endpoints_and_exact_algebra": {
+      "count_small_exponent": "[46.3132843819814824403669415367 +/- 4.73e-29]",
+      "count_large_exponent": "[47.6371951219512195121951219512 +/- 1.96e-29]",
+      "count_uniform_error_upper": "[7.69832344620865530140809290921e-21 +/- 1.59e-51]",
+      "polynomial_uniform_error_upper": "[2.91638155347009060682921962523e-306 +/- 6.67e-337]"
+    },
+    "independent_finite_distribution_count_probabilities": {
+      "distributions": 55,
+      "general_bound_comparisons": 1650,
+      "formal_C1025_alternative_cells": 150,
+      "method": "Arb Poisson-binomial dynamic programming; no sampling"
+    },
+    "exact_rational_coefficients_and_expectations": {
+      "parameter_pairs": 4,
+      "degrees": [
+        1,
+        2,
+        3,
+        5,
+        8,
+        12,
+        20,
+        40
+      ],
+      "individual_coefficients": 396,
+      "oracle": "exact fmpq_poly recurrence vs positive T_k(1+u) series"
+    },
+    "integer_branch_boundaries_and_parameters": {
+      "parameter_cells": 140,
+      "scale_cells": 950,
+      "largest_degree": 3386,
+      "boundary_n": "1919795578122873427132426074589070938513938747804516257079783793067410941005292503639739710573023933385653865464940834120563639632030328122718254879836126009015048676617441244793823358494667777892756570493459153534112078366675573130048788281330815195795150741301209654855081360426301931090261872742658781884901954114865628568119794758750853822781799057322443631405474666687963126881124521411802001107123535158759646198986163118920268386552431550",
+      "selected_cases": [
+        {
+          "n_digits": 1,
+          "branch": "count",
+          "L": "1.000000000000000000000",
+          "J": null,
+          "degrees": []
+        },
+        {
+          "n_digits": 1,
+          "branch": "count",
+          "L": "[1.693147180559945309417 +/- 2.33e-22]",
+          "J": null,
+          "degrees": []
+        },
+        {
+          "n_digits": 4,
+          "branch": "count",
+          "L": "[7.907755278982137052054 +/- 2.57e-23]",
+          "J": null,
+          "degrees": []
+        },
+        {
+          "n_digits": 7,
+          "branch": "count",
+          "L": "[14.81551055796427410411 +/- 2.06e-21]",
+          "J": null,
+          "degrees": []
+        },
+        {
+          "n_digits": 8,
+          "branch": "count",
+          "L": "[19.42068073395236542214 +/- 3.94e-21]",
+          "J": null,
+          "degrees": []
+        },
+        {
+          "n_digits": 9,
+          "branch": "count",
+          "L": "[19.42068074395236547214 +/- 3.94e-21]",
+          "J": null,
+          "degrees": []
+        },
+        {
+          "n_digits": 9,
+          "branch": "count",
+          "L": "[19.42068075395236542214 +/- 3.94e-21]",
+          "J": null,
+          "degrees": []
+        },
+        {
+          "n_digits": 445,
+          "branch": "count",
+          "L": "[1024.000000000000000000 +/- 3e-23]",
+          "J": null,
+          "degrees": []
+        },
+        {
+          "n_digits": 445,
+          "branch": "count",
+          "L": "[1024.000000000000000000 +/- 3e-23]",
+          "J": null,
+          "degrees": []
+        },
+        {
+          "n_digits": 445,
+          "branch": "polynomial",
+          "L": "[1024.000000000000000000 +/- 1e-23]",
+          "J": 17,
+          "degrees": [
+            1505,
+            1419,
+            1255,
+            1065,
+            878,
+            710,
+            565,
+            444,
+            345,
+            267,
+            204,
+            156,
+            118,
+            89,
+            67,
+            50,
+            38,
+            28
+          ]
+        },
+        {
+          "n_digits": 445,
+          "branch": "polynomial",
+          "L": "[1024.000000000000000000 +/- 1e-23]",
+          "J": 17,
+          "degrees": [
+            1505,
+            1419,
+            1255,
+            1065,
+            878,
+            710,
+            565,
+            444,
+            345,
+            267,
+            204,
+            156,
+            118,
+            89,
+            67,
+            50,
+            38,
+            28
+          ]
+        },
+        {
+          "n_digits": 446,
+          "branch": "polynomial",
+          "L": "[1025.650366382350329388 +/- 6.21e-21]",
+          "J": 18,
+          "degrees": [
+            1508,
+            1422,
+            1257,
+            1066,
+            880,
+            711,
+            566,
+            445,
+            346,
+            267,
+            205,
+            156,
+            118,
+            89,
+            67,
+            50,
+            38,
+            28,
+            21
+          ]
+        },
+        {
+          "n_digits": 501,
+          "branch": "polynomial",
+          "L": "[1152.292546497022842009 +/- 4.30e-21]",
+          "J": 18,
+          "degrees": [
+            1694,
+            1597,
+            1412,
+            1198,
+            988,
+            799,
+            636,
+            499,
+            389,
+            300,
+            230,
+            175,
+            133,
+            100,
+            75,
+            57,
+            42,
+            32,
+            24
+          ]
+        },
+        {
+          "n_digits": 1001,
+          "branch": "polynomial",
+          "L": "[2303.585092994045684018 +/- 8.57e-21]",
+          "J": 20,
+          "degrees": [
+            3386,
+            3192,
+            2822,
+            2394,
+            1975,
+            1596,
+            1270,
+            998,
+            776,
+            599,
+            459,
+            350,
+            265,
+            200,
+            150,
+            113,
+            84,
+            63,
+            47,
+            35,
+            26
+          ]
+        }
+      ]
+    },
+    "large_degree_independent_weights_and_pipeline": {
+      "weight_coefficients_compared": 16062,
+      "expectation_points": 208,
+      "pipeline_fixtures": 5,
+      "precision_events": [
+        {
+          "initial_bits": 1608,
+          "high_bits": 4096,
+          "initial_relative_difference_bound": "nan",
+          "high_relative_difference_bound": "[7.53435296785722683969635e-657 +/- 4.00e-681]"
+        }
+      ],
+      "public_adaptive_calls": [
+        {
+          "expected": "No",
+          "returned": "No",
+          "initial_bits": 1608,
+          "final_bits": 3216
+        },
+        {
+          "expected": "Yes",
+          "returned": "Yes",
+          "initial_bits": 1608,
+          "final_bits": 1608
+        }
+      ],
+      "full_degree_cases": [
+        {
+          "n_digits": 445,
+          "j": 0,
+          "k": 1505,
+          "max_abs_weight": "[25381822214273.1773269345 +/- 4.82e-11]",
+          "coefficient_sum": "[374913994306442.872733025 +/- 3.71e-10]",
+          "integral_bound": "[4.18685951866949783070313e+30 +/- 5.92e+5]"
+        },
+        {
+          "n_digits": 445,
+          "j": 1,
+          "k": 1419,
+          "max_abs_weight": "[154738008964.709022898185 +/- 1.51e-13]",
+          "coefficient_sum": "[2161752657913.03175222070 +/- 4.92e-13]",
+          "integral_bound": "[1.94592339261200835337388e+27 +/- 3.93e+3]"
+        },
+        {
+          "n_digits": 445,
+          "j": 2,
+          "k": 1255,
+          "max_abs_weight": "[61128784.8080133758824959 +/- 8.39e-18]",
+          "coefficient_sum": "[760285523.327051868414880 +/- 1.55e-16]",
+          "integral_bound": "[2999132168282151017204.53 +/- 4.85e-3]"
+        },
+        {
+          "n_digits": 445,
+          "j": 3,
+          "k": 1065,
+          "max_abs_weight": "[29747.9941925494855792309 +/- 7.83e-21]",
+          "coefficient_sum": "[319018.727217961402270699 +/- 2.00e-19]",
+          "integral_bound": "[4313918706045082.92432782 +/- 2.37e-9]"
+        },
+        {
+          "n_digits": 445,
+          "j": 4,
+          "k": 878,
+          "max_abs_weight": "[75.1425687047187583680768 +/- 1.56e-23]",
+          "coefficient_sum": "[703.418027117744190643441 +/- 3.94e-22]",
+          "integral_bound": "[65973944529.6019771783329 +/- 2.18e-14]"
+        },
+        {
+          "n_digits": 445,
+          "j": 5,
+          "k": 710,
+          "max_abs_weight": "[3.01756903912880531238135 +/- 3.97e-24]",
+          "coefficient_sum": "[16.4006662732596747550327 +/- 1.62e-23]",
+          "integral_bound": "[19213917.1835707804104847 +/- 6.64e-18]"
+        },
+        {
+          "n_digits": 445,
+          "j": 6,
+          "k": 565,
+          "max_abs_weight": "[1.77992265288156738297611 +/- 6.25e-25]",
+          "coefficient_sum": "[3.18184446716781963694879 +/- 1.96e-26]",
+          "integral_bound": "[68149.4761701603633730788 +/- 1.02e-20]"
+        },
+        {
+          "n_digits": 445,
+          "j": 7,
+          "k": 444,
+          "max_abs_weight": "[1.43338218924012436492204 +/- 2.28e-24]",
+          "coefficient_sum": "[1.70562015605715874528231 +/- 1.05e-24]",
+          "integral_bound": "[1642.34144628394650702639 +/- 2.48e-21]"
+        },
+        {
+          "n_digits": 445,
+          "j": 8,
+          "k": 345,
+          "max_abs_weight": "[1.23811797809886120279185 +/- 5.34e-25]",
+          "coefficient_sum": "[1.30473141005391641784214 +/- 4.82e-24]",
+          "integral_bound": "[151.475713980186967749572 +/- 1.88e-23]"
+        },
+        {
+          "n_digits": 445,
+          "j": 9,
+          "k": 267,
+          "max_abs_weight": "[1.13030748257580487380703 +/- 3.93e-24]",
+          "coefficient_sum": "[1.14832965031347828818518 +/- 1.33e-24]",
+          "integral_bound": "[35.3038040464254129499301 +/- 3.49e-23]"
+        },
+        {
+          "n_digits": 445,
+          "j": 10,
+          "k": 204,
+          "max_abs_weight": "[1.07040009787271464249929 +/- 1.23e-24]",
+          "coefficient_sum": "[1.07539348451869751528611 +/- 3.1e-27]",
+          "integral_bound": "[14.2791679063842602685868 +/- 2.15e-23]"
+        },
+        {
+          "n_digits": 445,
+          "j": 11,
+          "k": 156,
+          "max_abs_weight": "[1.03806735446034772765173 +/- 1.31e-24]",
+          "coefficient_sum": "[1.03949057319335346172659 +/- 5.00e-24]",
+          "integral_bound": "[8.43074760351047068100124 +/- 3.30e-24]"
+        },
+        {
+          "n_digits": 445,
+          "j": 12,
+          "k": 118,
+          "max_abs_weight": "[1.02036081262004983156453 +/- 3.05e-24]",
+          "coefficient_sum": "[1.02076276211214396161279 +/- 2.76e-24]",
+          "integral_bound": "[6.13843787556797357945882 +/- 1.74e-24]"
+        },
+        {
+          "n_digits": 445,
+          "j": 13,
+          "k": 89,
+          "max_abs_weight": "[1.01085895688131714049268 +/- 6.71e-25]",
+          "coefficient_sum": "[1.01097261755734021012022 +/- 9.90e-25]",
+          "integral_bound": "[5.11340173334472060416311 +/- 4.57e-24]"
+        },
+        {
+          "n_digits": 445,
+          "j": 14,
+          "k": 67,
+          "max_abs_weight": "[1.00578040019298024879934 +/- 1.78e-24]",
+          "coefficient_sum": "[1.00581252910470558476276 +/- 1.50e-24]",
+          "integral_bound": "[4.60761959327864896213413 +/- 3.91e-24]"
+        },
+        {
+          "n_digits": 445,
+          "j": 15,
+          "k": 50,
+          "max_abs_weight": "[1.00305026878688683721727 +/- 2.76e-24]",
+          "coefficient_sum": "[1.00305920264316690024423 +/- 2.25e-24]",
+          "integral_bound": "[4.33915603833361496373874 +/- 3.57e-24]"
+        },
+        {
+          "n_digits": 445,
+          "j": 16,
+          "k": 38,
+          "max_abs_weight": "[1.00163921796517350339086 +/- 2.26e-24]",
+          "coefficient_sum": "[1.00164179641943375085833 +/- 2.38e-24]",
+          "integral_bound": "[4.20663950396740987159178 +/- 2.64e-24]"
+        },
+        {
+          "n_digits": 445,
+          "j": 17,
+          "k": 28,
+          "max_abs_weight": "[1.00085407526032831442083 +/- 4.94e-24]",
+          "coefficient_sum": "[1.00085477269283970958827 +/- 1.79e-24]",
+          "integral_bound": "[4.12970423506022625915808 +/- 3.90e-24]"
+        },
+        {
+          "n_digits": 446,
+          "j": 0,
+          "k": 1508,
+          "max_abs_weight": "[27477207482375.7305849549 +/- 4.15e-11]",
+          "coefficient_sum": "[406737284190739.108489065 +/- 3.16e-10]",
+          "integral_bound": "[4.93390081575744683372526e+30 +/- 3.66e+6]"
+        },
+        {
+          "n_digits": 446,
+          "j": 1,
+          "k": 1422,
+          "max_abs_weight": "[167202683623.376248303288 +/- 2.20e-14]",
+          "coefficient_sum": "[2338304949789.08461003620 +/- 4.31e-14]",
+          "integral_bound": "[2.28540243163173786187715e+27 +/- 3.53e+3]"
+        },
+        {
+          "n_digits": 446,
+          "j": 9,
+          "k": 267,
+          "max_abs_weight": "[1.13030748257580482893388 +/- 4.79e-24]",
+          "coefficient_sum": "[1.14832730438865892213212 +/- 4.17e-24]",
+          "integral_bound": "[35.1800712871101258035024 +/- 1.07e-23]"
+        },
+        {
+          "n_digits": 446,
+          "j": 18,
+          "k": 21,
+          "max_abs_weight": "[1.00045294180616636277905 +/- 4.05e-24]",
+          "coefficient_sum": "[1.00045313667597613612931 +/- 4.62e-24]",
+          "integral_bound": "[4.10870311251183320358092 +/- 4.77e-25]"
+        },
+        {
+          "n_digits": 501,
+          "j": 0,
+          "k": 1694,
+          "max_abs_weight": "[1940979038707040.33729521 +/- 1.84e-9]",
+          "coefficient_sum": "[30354166802724801.5714712 +/- 4.66e-8]",
+          "integral_bound": "[2.51585795389027740464366e+34 +/- 2.88e+10]"
+        },
+        {
+          "n_digits": 501,
+          "j": 1,
+          "k": 1597,
+          "max_abs_weight": "[7142338384356.27861764822 +/- 4.58e-12]",
+          "coefficient_sum": "[105602969439889.169800694 +/- 1.92e-10]",
+          "integral_bound": "[4.37391028518150423188879e+30 +/- 2.35e+6]"
+        },
+        {
+          "n_digits": 501,
+          "j": 9,
+          "k": 300,
+          "max_abs_weight": "[1.14641290177056722479633 +/- 4.36e-25]",
+          "coefficient_sum": "[1.16952807579493281103832 +/- 1.48e-24]",
+          "integral_bound": "[46.0149545369665123036753 +/- 3.43e-23]"
+        },
+        {
+          "n_digits": 501,
+          "j": 18,
+          "k": 24,
+          "max_abs_weight": "[1.00051764777847584317606 +/- 1.77e-24]",
+          "coefficient_sum": "[1.00051790346863898452911 +/- 2.33e-24]",
+          "integral_bound": "[4.10466768544180116063185 +/- 7.62e-25]"
+        }
+      ],
+      "note": "Deterministic formula checks, not simulations with 10^444 observations"
+    },
+    "explicit_finite_counterexample_for_C1024": {
+      "n_digits": 445,
+      "tail_categories_digits": 891,
+      "K_formula": "100*n^2+n-1",
+      "epsilon": "1/4",
+      "q_formula": "1/(400*n^2)",
+      "tail_mean_minus_n": "[0.0105645412446324780808299622898 +/- 3.54e-32]",
+      "rigorous_error_lower_bound": "[0.0618431917201191272403698235494 +/- 4.03e-32]",
+      "rounded_mean_error_lower_bound": "[0.0481907241127228927285597497146 +/- 1.27e-33]"
+    },
+    "deliberate_error_controls": {
+      "controls": [
+        "missing factorial detected",
+        "wrong correction sign detected",
+        "tiny increment lost in binary64 detected"
+      ]
+    }
+  },
+  "sha256": {
+    "artifacts/audit_c0_1025.py": "453f8c635ab36f95a2e852b09755f42ed6f65922cf1e4c1e55ce7fd1f0b51906",
+    "artifacts/c0_reduction_proof.tex": "94807bcf20737c4e0dd253d1470f8a7e850733c2c168db4a6732a7731c59e015",
+    "paper_reference.py": "be678f4fbab15b55170a28fc8437c614f5bb4f88cecac4afa37add2090b8ac0b",
+    "2610.18723v1.pdf": "ee5509c4fdc637773a37b28d7c080f275f6c2e129f3f122f848cd858556f2720"
+  },
+  "limitations": [
+    "Not a machine-checked formal proof",
+    "Universal validity comes from the analytic proof, not finite grids",
+    "Independent formula implementations share the Python/FLINT arithmetic stack",
+    "Huge-scale tests use compressed algebra, not physical sampling",
+    "No third-party mathematical review has been performed"
+  ]
+}

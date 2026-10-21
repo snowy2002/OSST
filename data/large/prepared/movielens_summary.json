@@ -1,0 +1,19 @@
+{
+  "dataset": "movielens",
+  "raw_rows": 1000209,
+  "sample_unit": "一条实际评分记录",
+  "category": "movieID",
+  "group_unit": "user",
+  "filters": "保留所有评分，不使用 users.dat 人口属性，也不把未被评分的电影计入支持集",
+  "limitations": "评分选择偏差、同用户相关、时间变化；有限电影曝光分布不代表所有电影。原始和派生数据不进分发包。",
+  "records": 1000209,
+  "support": 3706,
+  "groups": 6040,
+  "nonzero_group_category_pairs": 1000209,
+  "min_category_count": 1,
+  "max_category_count": 3428,
+  "top10_mass": 0.028011145670554852,
+  "counts_sha256": "f05515cded311c26eea47d1f63b4525e4caa16f2f494316e19d607df171fb9f1",
+  "groups_sha256": "8d90f2d2600c145ff387f67ba2b7646d9bf683673ec25b603d16bd576d0e8f83",
+  "reference_scope": "该数据文件清洗后的有限参考总体，不是未知外部总体的真实支持集"
+}

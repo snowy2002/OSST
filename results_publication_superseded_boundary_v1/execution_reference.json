@@ -1,0 +1,9 @@
+{
+  "phase": "reference",
+  "status": "complete",
+  "mode": "formal",
+  "started_at_utc": "2026-10-19T08:10:26.864422+00:00",
+  "protocol_sha256": "6b1786d707178c089506a8a8b76863fb5bd28616d121de45bcb6c7e01448840b",
+  "elapsed_seconds": 26.409857559003285,
+  "finished_at_utc": "2026-10-19T08:10:53.274543+00:00"
+}

@@ -1,0 +1,7 @@
+{
+  "b_factor": 0.5,
+  "max_degree": 12,
+  "weight_cap": 20.0,
+  "validation_factor": 12.0,
+  "validation_gate": 0.75
+}

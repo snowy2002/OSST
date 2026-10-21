@@ -1,0 +1,2 @@
+/home/snowy/OSST/.venv/lib/python3.14/site-packages/rdata/conversion/_conversion.py:302: UserWarning: Unknown encoding. Assumed ASCII.
+  warnings.warn("Unknown encoding. Assumed ASCII.")  # noqa: B028

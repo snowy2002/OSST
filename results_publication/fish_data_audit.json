@@ -1,0 +1,8 @@
+{
+  "raw_sha256": "0bcf180122609e77a220a46626004776c36a5176a1e4f663a4c81372b0219584",
+  "derived_sha256": "94b4bf3dac738abd369321edf0e53cd6a3c2ef48e28cfc4093c1a619a08156b7",
+  "raw_records": 4894,
+  "derived_records": 4887,
+  "matches_pinned_cleaning": true,
+  "scope": "Post-run independent verification against pre-existing pinned raw-source hash."
+}

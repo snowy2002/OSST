@@ -1,0 +1,46 @@
+{
+  "submission_proof.pdf": {
+    "bytes": 152898,
+    "sha256": "f6bb321dd53bc9369a7b57293f4f88662fc4d6b4d5b01f86b21a3e938fb938bf"
+  },
+  "submission_proof.tex": {
+    "bytes": 34354,
+    "sha256": "557c582364c9bb9a64ea50d7f296c9a4877104fccf3f445d1887b53e04343c79"
+  },
+  "arithmetic_appendix.tex": {
+    "bytes": 10326,
+    "sha256": "505721163eed1e940c3827fd40f0d5ed3057a0a090d23009ccca645b1b05b5f3"
+  },
+  "rational_interval.py": {
+    "bytes": 5955,
+    "sha256": "ef381a84fd95cb3c154f1680d88324cf174c469d72d1dc8cd60106522340322a"
+  },
+  "exact_certificate.py": {
+    "bytes": 10785,
+    "sha256": "541d6598dc299e754235b8d43929b273d4cff9a166e32dea6729c45badaec561"
+  },
+  "exact_certificate.json": {
+    "bytes": 1428975,
+    "sha256": "28e2680e3f51240087f521fd7391677f8a5eec76297b0b742099182c020ecbf9"
+  },
+  "audit_exact.py": {
+    "bytes": 8598,
+    "sha256": "aa78bae81dd7637797522f5ece134df753619465dbd6add4750e0dd0e96b3b1b"
+  },
+  "audit_exact.json": {
+    "bytes": 1307,
+    "sha256": "bb06752c74dad77c07c681d57181a2d359dd18820f17473f6329e51733a05a9a"
+  },
+  "certificate_table.tex": {
+    "bytes": 634,
+    "sha256": "19e0de210c917589508cfcf9109c101105426fd8e154f0ae473429b4c82cdc99"
+  },
+  "提交说明.txt": {
+    "bytes": 4160,
+    "sha256": "6c9237a9148e1fe837983792df9b837fc3086ae7e9f556f30d0fc06cfd79ff08"
+  },
+  "environment.json": {
+    "bytes": 343,
+    "sha256": "304a6cc21cadb63202f1c4f1f19510c8faa91844278972eb1fe630710cae7061"
+  }
+}

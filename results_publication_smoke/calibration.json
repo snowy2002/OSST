@@ -1,0 +1,665 @@
+{
+  "configs": {
+    "multi": {
+      "b_factor": 0.25,
+      "max_degree": 12,
+      "weight_cap": 10.0,
+      "single_j": 0,
+      "validation_factor": 12.0,
+      "validation_gate": 0.75,
+      "density": 1,
+      "fh_a": 0.125,
+      "fh_b": 0.5,
+      "fh_k": 0.5
+    },
+    "single": {
+      "b_factor": 0.5,
+      "max_degree": 12,
+      "weight_cap": 20.0,
+      "single_j": 0,
+      "validation_factor": 12.0,
+      "validation_gate": 0.75,
+      "density": 1,
+      "fh_a": 0.125,
+      "fh_b": 0.5,
+      "fh_k": 0.5
+    },
+    "fh_certified": {
+      "b_factor": 0.5,
+      "max_degree": 12,
+      "weight_cap": 20.0,
+      "single_j": 0,
+      "validation_factor": 12.0,
+      "validation_gate": 0.75,
+      "density": 1,
+      "fh_a": 0.03125,
+      "fh_b": 1.0,
+      "fh_k": 0.5
+    },
+    "fh_native_tuned": {
+      "b_factor": 0.5,
+      "max_degree": 12,
+      "weight_cap": 20.0,
+      "single_j": 0,
+      "validation_factor": 12.0,
+      "validation_gate": 0.75,
+      "density": 1,
+      "fh_a": 0.03125,
+      "fh_b": 0.25,
+      "fh_k": 0.25
+    }
+  },
+  "ranking": [
+    {
+      "family": "multi",
+      "candidate": 0,
+      "loss": 0.3333333333333333,
+      "max_fp": 0.0,
+      "mean_fn": 0.3333333333333333,
+      "config": {
+        "b_factor": 0.25,
+        "max_degree": 12,
+        "weight_cap": 10.0,
+        "single_j": 0,
+        "validation_factor": 12.0,
+        "validation_gate": 0.75,
+        "density": 1,
+        "fh_a": 0.125,
+        "fh_b": 0.5,
+        "fh_k": 0.5
+      }
+    },
+    {
+      "family": "multi",
+      "candidate": 1,
+      "loss": 0.3333333333333333,
+      "max_fp": 0.0,
+      "mean_fn": 0.3333333333333333,
+      "config": {
+        "b_factor": 0.25,
+        "max_degree": 12,
+        "weight_cap": 20.0,
+        "single_j": 0,
+        "validation_factor": 12.0,
+        "validation_gate": 0.75,
+        "density": 1,
+        "fh_a": 0.125,
+        "fh_b": 0.5,
+        "fh_k": 0.5
+      }
+    },
+    {
+      "family": "multi",
+      "candidate": 2,
+      "loss": 0.3333333333333333,
+      "max_fp": 0.0,
+      "mean_fn": 0.3333333333333333,
+      "config": {
+        "b_factor": 0.5,
+        "max_degree": 12,
+        "weight_cap": 10.0,
+        "single_j": 0,
+        "validation_factor": 12.0,
+        "validation_gate": 0.75,
+        "density": 1,
+        "fh_a": 0.125,
+        "fh_b": 0.5,
+        "fh_k": 0.5
+      }
+    },
+    {
+      "family": "multi",
+      "candidate": 3,
+      "loss": 0.3333333333333333,
+      "max_fp": 0.0,
+      "mean_fn": 0.3333333333333333,
+      "config": {
+        "b_factor": 0.5,
+        "max_degree": 12,
+        "weight_cap": 20.0,
+        "single_j": 0,
+        "validation_factor": 12.0,
+        "validation_gate": 0.75,
+        "density": 1,
+        "fh_a": 0.125,
+        "fh_b": 0.5,
+        "fh_k": 0.5
+      }
+    },
+    {
+      "family": "multi",
+      "candidate": 4,
+      "loss": 0.3333333333333333,
+      "max_fp": 0.0,
+      "mean_fn": 0.3333333333333333,
+      "config": {
+        "b_factor": 1.0,
+        "max_degree": 12,
+        "weight_cap": 10.0,
+        "single_j": 0,
+        "validation_factor": 12.0,
+        "validation_gate": 0.75,
+        "density": 1,
+        "fh_a": 0.125,
+        "fh_b": 0.5,
+        "fh_k": 0.5
+      }
+    },
+    {
+      "family": "multi",
+      "candidate": 5,
+      "loss": 0.3333333333333333,
+      "max_fp": 0.0,
+      "mean_fn": 0.3333333333333333,
+      "config": {
+        "b_factor": 1.0,
+        "max_degree": 12,
+        "weight_cap": 20.0,
+        "single_j": 0,
+        "validation_factor": 12.0,
+        "validation_gate": 0.75,
+        "density": 1,
+        "fh_a": 0.125,
+        "fh_b": 0.5,
+        "fh_k": 0.5
+      }
+    },
+    {
+      "family": "multi",
+      "candidate": 6,
+      "loss": 0.3333333333333333,
+      "max_fp": 0.0,
+      "mean_fn": 0.3333333333333333,
+      "config": {
+        "b_factor": 2.0,
+        "max_degree": 12,
+        "weight_cap": 10.0,
+        "single_j": 0,
+        "validation_factor": 12.0,
+        "validation_gate": 0.75,
+        "density": 1,
+        "fh_a": 0.125,
+        "fh_b": 0.5,
+        "fh_k": 0.5
+      }
+    },
+    {
+      "family": "multi",
+      "candidate": 7,
+      "loss": 0.3333333333333333,
+      "max_fp": 0.0,
+      "mean_fn": 0.3333333333333333,
+      "config": {
+        "b_factor": 2.0,
+        "max_degree": 12,
+        "weight_cap": 20.0,
+        "single_j": 0,
+        "validation_factor": 12.0,
+        "validation_gate": 0.75,
+        "density": 1,
+        "fh_a": 0.125,
+        "fh_b": 0.5,
+        "fh_k": 0.5
+      }
+    },
+    {
+      "family": "single",
+      "candidate": 0,
+      "loss": 0.3333333333333333,
+      "max_fp": 0.0,
+      "mean_fn": 0.3333333333333333,
+      "config": {
+        "b_factor": 0.5,
+        "max_degree": 12,
+        "weight_cap": 20.0,
+        "single_j": 0,
+        "validation_factor": 12.0,
+        "validation_gate": 0.75,
+        "density": 1,
+        "fh_a": 0.125,
+        "fh_b": 0.5,
+        "fh_k": 0.5
+      }
+    },
+    {
+      "family": "single",
+      "candidate": 1,
+      "loss": 0.3333333333333333,
+      "max_fp": 0.0,
+      "mean_fn": 0.3333333333333333,
+      "config": {
+        "b_factor": 0.5,
+        "max_degree": 12,
+        "weight_cap": 20.0,
+        "single_j": 2,
+        "validation_factor": 12.0,
+        "validation_gate": 0.75,
+        "density": 1,
+        "fh_a": 0.125,
+        "fh_b": 0.5,
+        "fh_k": 0.5
+      }
+    },
+    {
+      "family": "single",
+      "candidate": 2,
+      "loss": 0.3333333333333333,
+      "max_fp": 0.0,
+      "mean_fn": 0.3333333333333333,
+      "config": {
+        "b_factor": 0.5,
+        "max_degree": 12,
+        "weight_cap": 20.0,
+        "single_j": 4,
+        "validation_factor": 12.0,
+        "validation_gate": 0.75,
+        "density": 1,
+        "fh_a": 0.125,
+        "fh_b": 0.5,
+        "fh_k": 0.5
+      }
+    },
+    {
+      "family": "single",
+      "candidate": 4,
+      "loss": 0.3333333333333333,
+      "max_fp": 0.0,
+      "mean_fn": 0.3333333333333333,
+      "config": {
+        "b_factor": 1.0,
+        "max_degree": 12,
+        "weight_cap": 20.0,
+        "single_j": 0,
+        "validation_factor": 12.0,
+        "validation_gate": 0.75,
+        "density": 1,
+        "fh_a": 0.125,
+        "fh_b": 0.5,
+        "fh_k": 0.5
+      }
+    },
+    {
+      "family": "single",
+      "candidate": 5,
+      "loss": 0.3333333333333333,
+      "max_fp": 0.0,
+      "mean_fn": 0.3333333333333333,
+      "config": {
+        "b_factor": 1.0,
+        "max_degree": 12,
+        "weight_cap": 20.0,
+        "single_j": 2,
+        "validation_factor": 12.0,
+        "validation_gate": 0.75,
+        "density": 1,
+        "fh_a": 0.125,
+        "fh_b": 0.5,
+        "fh_k": 0.5
+      }
+    },
+    {
+      "family": "single",
+      "candidate": 6,
+      "loss": 0.3333333333333333,
+      "max_fp": 0.0,
+      "mean_fn": 0.3333333333333333,
+      "config": {
+        "b_factor": 1.0,
+        "max_degree": 12,
+        "weight_cap": 20.0,
+        "single_j": 4,
+        "validation_factor": 12.0,
+        "validation_gate": 0.75,
+        "density": 1,
+        "fh_a": 0.125,
+        "fh_b": 0.5,
+        "fh_k": 0.5
+      }
+    },
+    {
+      "family": "single",
+      "candidate": 7,
+      "loss": 0.45625000000000004,
+      "max_fp": 0.0,
+      "mean_fn": 0.45625000000000004,
+      "config": {
+        "b_factor": 1.0,
+        "max_degree": 12,
+        "weight_cap": 20.0,
+        "single_j": 6,
+        "validation_factor": 12.0,
+        "validation_gate": 0.75,
+        "density": 1,
+        "fh_a": 0.125,
+        "fh_b": 0.5,
+        "fh_k": 0.5
+      }
+    },
+    {
+      "family": "single",
+      "candidate": 3,
+      "loss": 0.5333333333333333,
+      "max_fp": 0.0,
+      "mean_fn": 0.5333333333333333,
+      "config": {
+        "b_factor": 0.5,
+        "max_degree": 12,
+        "weight_cap": 20.0,
+        "single_j": 6,
+        "validation_factor": 12.0,
+        "validation_gate": 0.75,
+        "density": 1,
+        "fh_a": 0.125,
+        "fh_b": 0.5,
+        "fh_k": 0.5
+      }
+    },
+    {
+      "family": "fh_certified",
+      "candidate": 3,
+      "loss": 0.3333333333333333,
+      "max_fp": 0.0,
+      "mean_fn": 0.3333333333333333,
+      "config": {
+        "b_factor": 0.5,
+        "max_degree": 12,
+        "weight_cap": 20.0,
+        "single_j": 0,
+        "validation_factor": 12.0,
+        "validation_gate": 0.75,
+        "density": 1,
+        "fh_a": 0.03125,
+        "fh_b": 1.0,
+        "fh_k": 0.5
+      }
+    },
+    {
+      "family": "fh_certified",
+      "candidate": 7,
+      "loss": 0.3333333333333333,
+      "max_fp": 0.0,
+      "mean_fn": 0.3333333333333333,
+      "config": {
+        "b_factor": 0.5,
+        "max_degree": 12,
+        "weight_cap": 20.0,
+        "single_j": 0,
+        "validation_factor": 12.0,
+        "validation_gate": 0.75,
+        "density": 1,
+        "fh_a": 0.125,
+        "fh_b": 1.0,
+        "fh_k": 0.5
+      }
+    },
+    {
+      "family": "fh_certified",
+      "candidate": 2,
+      "loss": 0.4166666666666667,
+      "max_fp": 0.0,
+      "mean_fn": 0.4166666666666667,
+      "config": {
+        "b_factor": 0.5,
+        "max_degree": 12,
+        "weight_cap": 20.0,
+        "single_j": 0,
+        "validation_factor": 12.0,
+        "validation_gate": 0.75,
+        "density": 1,
+        "fh_a": 0.03125,
+        "fh_b": 1.0,
+        "fh_k": 0.25
+      }
+    },
+    {
+      "family": "fh_certified",
+      "candidate": 6,
+      "loss": 0.4166666666666667,
+      "max_fp": 0.0,
+      "mean_fn": 0.4166666666666667,
+      "config": {
+        "b_factor": 0.5,
+        "max_degree": 12,
+        "weight_cap": 20.0,
+        "single_j": 0,
+        "validation_factor": 12.0,
+        "validation_gate": 0.75,
+        "density": 1,
+        "fh_a": 0.125,
+        "fh_b": 1.0,
+        "fh_k": 0.25
+      }
+    },
+    {
+      "family": "fh_certified",
+      "candidate": 0,
+      "loss": 0.5,
+      "max_fp": 0.0,
+      "mean_fn": 0.5,
+      "config": {
+        "b_factor": 0.5,
+        "max_degree": 12,
+        "weight_cap": 20.0,
+        "single_j": 0,
+        "validation_factor": 12.0,
+        "validation_gate": 0.75,
+        "density": 1,
+        "fh_a": 0.03125,
+        "fh_b": 0.25,
+        "fh_k": 0.25
+      }
+    },
+    {
+      "family": "fh_certified",
+      "candidate": 1,
+      "loss": 0.5,
+      "max_fp": 0.0,
+      "mean_fn": 0.5,
+      "config": {
+        "b_factor": 0.5,
+        "max_degree": 12,
+        "weight_cap": 20.0,
+        "single_j": 0,
+        "validation_factor": 12.0,
+        "validation_gate": 0.75,
+        "density": 1,
+        "fh_a": 0.03125,
+        "fh_b": 0.25,
+        "fh_k": 0.5
+      }
+    },
+    {
+      "family": "fh_certified",
+      "candidate": 4,
+      "loss": 0.5,
+      "max_fp": 0.0,
+      "mean_fn": 0.5,
+      "config": {
+        "b_factor": 0.5,
+        "max_degree": 12,
+        "weight_cap": 20.0,
+        "single_j": 0,
+        "validation_factor": 12.0,
+        "validation_gate": 0.75,
+        "density": 1,
+        "fh_a": 0.125,
+        "fh_b": 0.25,
+        "fh_k": 0.25
+      }
+    },
+    {
+      "family": "fh_certified",
+      "candidate": 5,
+      "loss": 0.5,
+      "max_fp": 0.0,
+      "mean_fn": 0.5,
+      "config": {
+        "b_factor": 0.5,
+        "max_degree": 12,
+        "weight_cap": 20.0,
+        "single_j": 0,
+        "validation_factor": 12.0,
+        "validation_gate": 0.75,
+        "density": 1,
+        "fh_a": 0.125,
+        "fh_b": 0.25,
+        "fh_k": 0.5
+      }
+    },
+    {
+      "family": "fh_native_tuned",
+      "candidate": 0,
+      "loss": 9.5,
+      "max_fp": 1.0,
+      "mean_fn": 0.0,
+      "config": {
+        "b_factor": 0.5,
+        "max_degree": 12,
+        "weight_cap": 20.0,
+        "single_j": 0,
+        "validation_factor": 12.0,
+        "validation_gate": 0.75,
+        "density": 1,
+        "fh_a": 0.03125,
+        "fh_b": 0.25,
+        "fh_k": 0.25
+      }
+    },
+    {
+      "family": "fh_native_tuned",
+      "candidate": 2,
+      "loss": 9.5,
+      "max_fp": 1.0,
+      "mean_fn": 0.0,
+      "config": {
+        "b_factor": 0.5,
+        "max_degree": 12,
+        "weight_cap": 20.0,
+        "single_j": 0,
+        "validation_factor": 12.0,
+        "validation_gate": 0.75,
+        "density": 1,
+        "fh_a": 0.03125,
+        "fh_b": 1.0,
+        "fh_k": 0.25
+      }
+    },
+    {
+      "family": "fh_native_tuned",
+      "candidate": 4,
+      "loss": 9.5,
+      "max_fp": 1.0,
+      "mean_fn": 0.0,
+      "config": {
+        "b_factor": 0.5,
+        "max_degree": 12,
+        "weight_cap": 20.0,
+        "single_j": 0,
+        "validation_factor": 12.0,
+        "validation_gate": 0.75,
+        "density": 1,
+        "fh_a": 0.125,
+        "fh_b": 0.25,
+        "fh_k": 0.25
+      }
+    },
+    {
+      "family": "fh_native_tuned",
+      "candidate": 3,
+      "loss": 9.510416666666666,
+      "max_fp": 1.0,
+      "mean_fn": 0.010416666666666666,
+      "config": {
+        "b_factor": 0.5,
+        "max_degree": 12,
+        "weight_cap": 20.0,
+        "single_j": 0,
+        "validation_factor": 12.0,
+        "validation_gate": 0.75,
+        "density": 1,
+        "fh_a": 0.03125,
+        "fh_b": 1.0,
+        "fh_k": 0.5
+      }
+    },
+    {
+      "family": "fh_native_tuned",
+      "candidate": 7,
+      "loss": 9.510416666666666,
+      "max_fp": 1.0,
+      "mean_fn": 0.010416666666666666,
+      "config": {
+        "b_factor": 0.5,
+        "max_degree": 12,
+        "weight_cap": 20.0,
+        "single_j": 0,
+        "validation_factor": 12.0,
+        "validation_gate": 0.75,
+        "density": 1,
+        "fh_a": 0.125,
+        "fh_b": 1.0,
+        "fh_k": 0.5
+      }
+    },
+    {
+      "family": "fh_native_tuned",
+      "candidate": 6,
+      "loss": 9.5125,
+      "max_fp": 1.0,
+      "mean_fn": 0.012499999999999999,
+      "config": {
+        "b_factor": 0.5,
+        "max_degree": 12,
+        "weight_cap": 20.0,
+        "single_j": 0,
+        "validation_factor": 12.0,
+        "validation_gate": 0.75,
+        "density": 1,
+        "fh_a": 0.125,
+        "fh_b": 1.0,
+        "fh_k": 0.25
+      }
+    },
+    {
+      "family": "fh_native_tuned",
+      "candidate": 5,
+      "loss": 9.55625,
+      "max_fp": 1.0,
+      "mean_fn": 0.05625,
+      "config": {
+        "b_factor": 0.5,
+        "max_degree": 12,
+        "weight_cap": 20.0,
+        "single_j": 0,
+        "validation_factor": 12.0,
+        "validation_gate": 0.75,
+        "density": 1,
+        "fh_a": 0.125,
+        "fh_b": 0.25,
+        "fh_k": 0.5
+      }
+    },
+    {
+      "family": "fh_native_tuned",
+      "candidate": 1,
+      "loss": 9.5625,
+      "max_fp": 1.0,
+      "mean_fn": 0.0625,
+      "config": {
+        "b_factor": 0.5,
+        "max_degree": 12,
+        "weight_cap": 20.0,
+        "single_j": 0,
+        "validation_factor": 12.0,
+        "validation_gate": 0.75,
+        "density": 1,
+        "fh_a": 0.03125,
+        "fh_b": 0.25,
+        "fh_k": 0.5
+      }
+    }
+  ],
+  "seed": 8726101901,
+  "trials": 40,
+  "criterion": "Mean failure-to-reject over all No development cells; heuristic adds 10*max(0,max_FP-.05). Eight candidates per family. No formal-data tuning."
+}

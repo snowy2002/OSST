@@ -1,0 +1,335 @@
+\section{Construction and main result}
+Let $p$ be a probability distribution on a finite or countable alphabet.
+Write $S=|\supp(p)|\in\mathbb N\cup\{\infty\}$ and
+$\Delta_r(p)=\sum_{i>r}p_{(i)}$, where the probabilities are in nonincreasing
+order, padded with zeros if necessary. Given an integer $n\ge1$ and
+$0<\epsilon<1$, support-size testing distinguishes
+$S\le n$ from $\Delta_n(p)\ge\epsilon$. Define
+$\eff_\epsilon(p)=\min\{k\ge1:\Delta_k(p)\le\epsilon\}$.
+Here $\epsilon$ is the separation parameter, distinct from the target
+failure probability $0.01$.
+All logarithms are natural unless explicitly subscripted.
+
+We retain the construction of Wang~\cite[Section~3]{wang}, writing $C$ for
+its sampling coefficient $C_0$. Set
+\begin{equation}
+ L=\log(en),\qquad m=\frac{Cn}{\epsilon L},\qquad
+ M\sim\Poi(m),\qquad N_i\sim\Poi(mp_i)\ \text{independently},
+ \label{eq:budget}
+\end{equation}
+where $N_i$ counts label $i$ among the $M$ iid draws from $p$, and let
+$D=\sum_i\ind\{N_i>0\}$. If $L<1024$, set $\widetilde S=D$.
+Otherwise, put
+\begin{align}
+ a_0&=\frac{\epsilon}{8n},& b&=\frac{64L}{m},&
+ J&=\left\lfloor\log_2\frac b{2a_0}\right\rfloor,\label{eq:scales1}\\
+ a_j&=2^ja_0,& \delta_j&=2^{-j-2},&
+ k_j&=\left\lceil\sqrt{b/a_j}\log(2/\delta_j)\right\rceil
+ \quad(0\le j\le J).\label{eq:scales2}
+\end{align}
+Let $T_k$ be defined by $T_k(\cos\theta)=\cos(k\theta)$.
+For generic parameters $(a,b,k,m)$, define the polynomial and weights
+\begin{align}
+ P(x)&=-\rho T_k\!\left(\frac{b+a-2x}{b-a}\right)
+       =\sum_{\ell=0}^k c_\ell x^\ell,
+ &\rho&=T_k\!\left(\frac{b+a}{b-a}\right)^{-1},\label{eq:polynomial}\\
+ f(0)&=0,\qquad
+ f(\ell)=1+c_\ell\ell!/m^\ell\quad(1\le\ell\le k),
+ & f(\ell)&=1\quad(\ell>k).\label{eq:weights}
+\end{align}
+Use subscripts $j$ for $(a_j,b,k_j,m)$, and set
+\begin{equation}
+ Z_j=\sum_i f_j(N_i),\qquad
+ \widetilde S=\max\left\{D,\max_{0\le j\le J}
+                  \frac{Z_j-\delta_jn}{1+\delta_j}\right\}.
+ \label{eq:statistic}
+\end{equation}
+The tester returns Yes iff $\widetilde S\le n$. Its lower-bound output is
+$\widehat S=\min\{\max\{\lceil\widetilde S\rceil,1\},n\}$.
+
+\begin{theorem}\label{thm:main}
+For $C=1025$, the construction above satisfies, uniformly over $p,n,\epsilon$,
+\begin{align}
+ S\le n&\quad\Longrightarrow\quad
+     \Prob(\widetilde S>S)<0.01,\label{eq:upper}\\
+ 1\le r\le n,\quad\Delta_r(p)\ge\epsilon
+     &\quad\Longrightarrow\quad
+     \Prob(\widetilde S\le r)<0.01.\label{eq:lower}
+\end{align}
+Thus the tester has error below $1\%$ on each promise class, and
+\begin{equation}
+ \Prob\!\left\{\min\{\eff_\epsilon(p),n\}\le\widehat S\le S\right\}
+ \ge0.98.\label{eq:coverage}
+\end{equation}
+\end{theorem}
+
+Only $C$ changes from the original construction, which uses $2^{26}$;
+the reduction in the Poisson mean is $2^{26}/1025>65{,}472$.
+Our proof replaces an intermediate weight bound rather than assuming
+that the original analysis remains valid after substituting a smaller
+constant. Integer optimality for this fixed construction and error target
+is established in Theorem~\ref{thm:integer}; it is not a minimax constant
+claim over all testers.
+
+\section{Two auxiliary bounds}
+\begin{lemma}[Discovery-time domination]\label{lem:count}
+If $\Delta_r(p)\ge\epsilon$, then
+$\Prob(D\le r)\le\Prob\{\Poi(m\epsilon)\le r\}$.
+\end{lemma}
+\begin{proof}
+Embed sampling in a rate-one marked Poisson process. After $k\le r$
+distinct labels have been discovered, their total mass is at most the mass
+of the $r$ largest categories; hence the unseen mass $q_k$ is at least
+$\epsilon$. Conditional on the discovered labels, the next discovery has
+waiting time $E_k/q_k$, where $E_k\sim\mathrm{Exp}(1)$ is fresh and
+independent of the next label, drawn from the normalized unseen masses.
+This constructs the discovery process using independent $E_0,\ldots,E_r$.
+Its first $r+1$ waiting times are bounded by $E_k/\epsilon$, so their sum
+is stochastically dominated by $\mathrm{Gamma}(r+1,\epsilon)$.
+The latter's survival probability at time $m$ is the asserted Poisson tail.
+\end{proof}
+
+\begin{lemma}[Expectation and factorial-weight bounds]\label{lem:weights}
+Let $0<a<b\le1$, $m>0$ and an integer $k\ge1$ be given, and define $P,\rho,f$ by
+\eqref{eq:polynomial}--\eqref{eq:weights}. If $m\sqrt{b(b-a)}\ge k$, then
+\begin{equation}
+ (1-\rho)\min\{x/a,1\}
+ \le Q(x):=\E f(\Poi(mx))\le1+\rho\qquad(x\ge0).
+ \label{eq:expectation}
+\end{equation}
+Moreover, without the condition $m\sqrt{b(b-a)}\ge k$,
+\begin{equation}
+ \|f\|_\infty\le4\exp\!\left(\frac{2k^2}{m(b-a)}\right).
+ \label{eq:norm}
+\end{equation}
+\end{lemma}
+\begin{proof}
+The Poisson series gives $Q(x)=1+e^{-mx}P(x)$. On $[0,a]$, $P$ is
+nonpositive, increasing and concave, with $P(0)=-1$ and $P(a)=-\rho$;
+its chord yields $(1-\rho)x/a\le Q(x)\le1$. On $[a,b]$, $|P(x)|\le\rho$.
+For $x\ge b$, put $u=2(x-b)/(b-a)$. The identities for Chebyshev
+polynomials~\cite[Section~18.5]{dlmf} give
+$|P(x)|=\rho T_k(1+u)\le\rho e^{k\sqrt{2u}}$.
+Since $x^2\ge4b(x-b)$ and $m\sqrt{b(b-a)}\ge k$, we have
+$mx\ge k\sqrt{2u}$. Thus $|Q(x)-1|\le\rho$, proving
+\eqref{eq:expectation}.
+
+For \eqref{eq:norm}, let $z_0=(b+a)/(b-a)>1$. The roots of $T_k$ lie
+in $(-1,1)$, so every coefficient of $T_k(z_0+v)$ in $v$ is positive.
+As $c_0=-1$, this gives
+\begin{align}
+ \|f\|_\infty
+ &\le \sum_{\ell=0}^k |c_\ell|\ell!/m^\ell\notag\\
+ &=\int_0^\infty e^{-s}
+ \frac{T_k(z_0+2s/[m(b-a)])}{T_k(z_0)}\,ds.
+ \label{eq:integral}
+\end{align}
+The equality uses $\int_0^\infty e^{-s}s^\ell ds=\ell!$.
+For $v,u\ge0$, the identity
+$\arcosh(1+2v)=2\arsinh\sqrt v$ and the $1$-Lipschitz property of
+$\arsinh$ imply
+\[
+ \arcosh(1+2v+2u)-\arcosh(1+2v)\le2\sqrt u.
+\]
+Using $T_k(z)=\cosh(k\arcosh z)$, the ratio in \eqref{eq:integral} is
+at most $2\exp(2k\sqrt{s/[m(b-a)]})$. Finally,
+$2k\sqrt{s/[m(b-a)]}\le s/2+2k^2/[m(b-a)]$; integration of $e^{-s/2}$
+establishes \eqref{eq:norm}.
+\end{proof}
+
+\section{Proof of Theorem~\ref{thm:main}}
+\paragraph{The counting branch: $L<1024$.}
+For $x>1$, the exponential Markov inequality gives
+\begin{equation}
+ \Prob\{\Poi(nx)\le n\}\le e^{-ng(x)},\qquad
+ g(x)=x-1-\log x,\quad
+ g(1+h)\ge\frac{h^2}{2(1+h)}\quad(h\ge0).
+ \label{eq:chernoff}
+\end{equation}
+Here $g$ is increasing on $(1,\infty)$ and the last inequality follows by
+integrating $g'(1+h)=h/(1+h)$. If $n<10^8$, then $L<20$ and
+$ng(1025/L)\ge g(1025/20)>46$. If $n\ge10^8$, then $1025/L>1+1/1024$,
+so
+\[
+ ng(1025/L)>\frac{10^8}{2\cdot1024\cdot1025}>47.
+\]
+Both exceed $\log100$. Lemma~\ref{lem:count} and $r\le n$ prove
+\eqref{eq:lower}; $D\le S$ proves \eqref{eq:upper} in this branch.
+
+\paragraph{Parameters in the polynomial branch: $L\ge1024$.}
+The following bounds hold throughout $1024\le C\le2^{26}$.
+Since $n=e^{L-1}$,
+\begin{equation}
+ \frac b{2a_0}=\frac{256L^2}{C}\ge4,\qquad
+ 0<a_j\le b/2,\qquad b\le\frac{L^2}{16e^{L-1}}<1.
+ \label{eq:parameters}
+\end{equation}
+The last function is decreasing for $L\ge1024$. Furthermore,
+\[
+ k_j\le\sqrt{512/C}\,L\frac{(j+3)\log2}{2^{j/2}}+1
+ \le\left(\frac{3\log2}{\sqrt2}+\frac1{1024}\right)L<\frac32L,
+\]
+because $(j+3)2^{-j/2}$ decreases for integers $j\ge0$.
+Consequently $m\sqrt{b(b-a_j)}\ge64L/\sqrt2>k_j$ and
+$m(b-a_j)\ge32L$. Also
+\begin{equation}
+ \rho_j=\frac1{\cosh(2k_j\artanh\sqrt{a_j/b})}
+ \le2e^{-2k_j\sqrt{a_j/b}}\le\delta_j^2/2\le\delta_j.
+ \label{eq:rho}
+\end{equation}
+Lemma~\ref{lem:weights} therefore yields
+\begin{align}
+ (1-\delta_j)\sum_i\min\{p_i/a_j,1\}
+ &\le\E Z_j\le(1+\delta_j)S,\label{eq:means}\\
+ \|f_j\|_\infty&\le4e^{9L/64}.\label{eq:uniformnorm}
+\end{align}
+
+\paragraph{Simultaneous concentration.}
+Independence and $f_j(0)=0$ give
+$\Var(Z_j)\le\|f_j\|_\infty^2\E D$.
+This remains valid on a countable alphabet: if a truncation omits mass
+$\tau$, its error is bounded in absolute value by $\|f_j\|_\infty M_{\rm tail}$,
+where $M_{\rm tail}\sim\Poi(m\tau)$; its second moment tends to zero.
+If $\E D\le2n$, Chebyshev's inequality and \eqref{eq:uniformnorm} imply
+\[
+ \Prob\{|Z_j-\E Z_j|>\delta_jn\}
+ \le\frac{32e^{9L/32}}{n\delta_j^2}.
+\]
+Since $\delta_J^{-1}=4\cdot2^J\le1024L^2/C\le L^2$ and
+$\sum_{j=0}^J\delta_j^{-2}\le(4/3)L^4$, the event
+$\mathcal E=\bigcap_{j=0}^J\{|Z_j-\E Z_j|\le\delta_jn\}$ satisfies
+\begin{equation}
+ \Prob(\mathcal E^c)\le\frac{128e}{3}L^4e^{-23L/32}
+ \le\frac{128e}{3}\,1024^4e^{-736}<0.01.
+ \label{eq:concentration}
+\end{equation}
+The middle bound follows from $4/L-23/32<0$. The final inequality needs
+no delicate numerical approximation: $2<e<3$ bounds its left side by
+$2^{-689}<1/100$.
+
+\paragraph{Upper coverage.}
+If $S\le n$, then $\E D\le n$ and, on $\mathcal E$,
+$(Z_j-\delta_jn)/(1+\delta_j)\le\E Z_j/(1+\delta_j)\le S$.
+Together with $D\le S$, this proves \eqref{eq:upper}.
+
+\paragraph{Power.}
+Fix $1\le r\le n$ with $\Delta_r(p)\ge\epsilon$. If $\mu=\E D>2n$,
+then $\Var(D)\le\mu$ and
+\[
+ \Prob(\widetilde S\le r)\le\Prob(D\le n)
+ \le\frac{\mu}{(\mu-n)^2}\le\frac2n<0.01.
+\]
+Otherwise $\E D\le2n$. Consider the following exhaustive cases.
+\begin{enumerate}[label=(\roman*)]
+\item $p_{(r)}\ge b/2$. Observing all top $r$ labels and any tail label
+forces $D>r$. Thus
+\[
+ \Prob(D\le r)\le re^{-mb/2}+e^{-m\Delta_r(p)}
+ \le ne^{-32L}+e^{-Cn/L}<0.01.
+\]
+Indeed, $ne^{-32L}=e^{-31L-1}$ and
+$Cn/L\ge1024e^{L-1}/L\ge e^{1023}$.
+\item $p_{(r)}<a_0$. Equation~\eqref{eq:means} gives
+$\E Z_0\ge(1-\delta_0)\epsilon/a_0=6n$. On $\mathcal E$,
+$\widetilde S\ge(6n-2\delta_0n)/(1+\delta_0)=22n/5>r$.
+\item $a_0\le p_{(r)}<b/2$. Choose $j\le J$ such that
+$a_j\le p_{(r)}<2a_j$. For tail labels,
+$\min\{p_i/a_j,1\}\ge p_i/p_{(r)}$, hence
+$\E Z_j\ge(1-\delta_j)(r+\epsilon/(2a_j))$. Since
+$a_j\delta_j=\epsilon/(32n)$, on $\mathcal E$,
+\[
+ \widetilde S\ge\frac{\E Z_j-2\delta_jn}{1+\delta_j}
+ \ge r+\frac{\delta_j\bigl((14-16\delta_j)n-2r\bigr)}{1+\delta_j}>r,
+\]
+where $\delta_j\le1/4$ and $r\le n$ make the numerator strictly positive.
+\end{enumerate}
+These cases prove \eqref{eq:lower}; their error bounds are not added,
+since the applicable case is determined by the fixed distribution.
+
+\paragraph{The lower-bound output.}
+If $S\ge n$, then $\widehat S\le S$ automatically; otherwise
+\eqref{eq:upper} and integrality of $S$ give this with probability at least
+$0.99$. Set $r=\min\{\eff_\epsilon(p),n\}-1$. If $r=0$, the other
+inequality is automatic. Otherwise $\Delta_r(p)>\epsilon$, so
+\eqref{eq:lower} gives $\widehat S\ge r+1$ with probability at least $0.99$.
+A union bound proves \eqref{eq:coverage}, completing the proof.
+\qed
+
+\begin{corollary}[Rounding and a deterministic sample cap]\label{cor:rounding}
+Theorem~\ref{thm:main} remains valid when $m$ is rounded upward and $b$ is
+recomputed. A deterministic cap of $\lceil4m\rceil$ samples preserves the
+original main theorems' success requirement of at least $2/3$.
+\end{corollary}
+\begin{proof}
+Rounding only increases the count-branch budget. In the polynomial branch,
+it replaces $C$ by $C'\in[1025,1025+\epsilon L/n)$; as
+$L/n\le1024e^{-1023}<1$, all bounds above still apply.
+For a sample cap, draw $M\sim\Poi(m)$ and abort with arbitrary output if
+$M>4m$. Chernoff's inequality gives
+$\Prob(M>4m)\le e^{-m}\le e^{-1025}$, since $n/\log(en)\ge1$.
+The additional failure probability does not affect the $2/3$ requirement.
+\end{proof}
+
+\section{Integer optimality for the unchanged construction}
+\begin{theorem}\label{thm:integer}
+For every $0<C\le1024$, there is a finite distribution with
+$\Delta_n(p)=\epsilon$ on which the unchanged tester has error greater
+than $0.06$. Consequently $1025$ is its smallest positive integer sampling
+coefficient achieving uniform error below $1\%$.
+\end{theorem}
+\begin{proof}
+Let $n=\lceil e^{1023}\rceil-1$. Then $1023<L<1024$, so the tester uses
+only $D$. At $C=1024$, write
+\begin{equation}
+ \frac{1024n}{L}=n+d,\qquad
+ 0<d=\frac{n\log(e^{1023}/n)}{L}\le\frac1L<\frac1{1023}.
+ \label{eq:excess}
+\end{equation}
+To lower-bound a Poisson tail without an asymptotic approximation, let
+$Y\sim\Poi(n)$ and $Z=n-Y$. Its central moments satisfy
+$\E Z=0$, $\E Z^2=n$, and $\E Z^4=3n^2+n\le4n^2$.
+H\"older and Cauchy--Schwarz give, respectively,
+\[
+ \E|Z|\ge\frac{(\E Z^2)^{3/2}}{(\E Z^4)^{1/2}}\ge\frac{\sqrt n}{2},
+ \qquad
+ \Prob(Y<n)\ge\frac{(\E Z_+)^2}{\E Z_+^2}\ge\frac1{16},
+\]
+where $\E Z_+=\E|Z|/2$ and $\E Z_+^2\le n$. Coupling an independent
+$V\sim\Poi(t)$ yields, for every $t\ge0$,
+\begin{equation}
+ \Prob\{\Poi(n+t)\le n-1\}\ge e^{-t}/16.
+ \label{eq:poissonlower}
+\end{equation}
+
+Set $\epsilon=1/4$, $K=100n^2+n-1$, and define one head atom and $K$
+equal tail atoms by
+\[
+ q=\frac1{400n^2},\qquad p_0=1-Kq,\qquad p_i=q\ (1\le i\le K).
+\]
+Here $p_0>q>0$, the masses sum to one, and
+$\Delta_n(p)=(K-n+1)q=\epsilon$. The number of tail observations is
+$Y_K\sim\Poi(mKq)$, and $D\le Y_K+1$. At $C=1024$,
+\[
+ mKq=(n+d)\left(1+\frac{n-1}{100n^2}\right)=n+\tau,\qquad
+ 0<\tau<\frac1{1023}+\frac{1+1/1023}{100}<0.012.
+\]
+Therefore \eqref{eq:poissonlower} gives
+$\Prob(D\le n)\ge e^{-\tau}/16>(1-0.012)/16>0.06$.
+For smaller $C$, the same distribution has a smaller tail mean and at
+least as large a failure probability. Combine with Theorem~\ref{thm:main}.
+\end{proof}
+
+The obstruction also survives rounding $m$ upward: the tail mean then
+increases by less than $Kq<0.2525$, giving failure probability greater
+than $(1-0.012-0.2525)/16>0.01$. Integer optimality is conditional on the
+fixed threshold $L_0=1024$ and the $1\%$ target. It neither identifies the
+optimal real coefficient nor precludes smaller constants for a modified
+algorithm or a weaker success requirement.
+
+\paragraph{Verification and implementation.}
+Independent artifact checks cover exact-rational endpoint inequalities,
+polynomial coefficients, finite-distribution probabilities, and final
+outputs. They supplement the analytic proof and are not a proof-assistant
+certificate. Certified evaluation must escalate interval precision until
+the decision and, when applicable, the integer output are resolved.
+

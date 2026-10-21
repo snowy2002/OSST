@@ -1,0 +1,68 @@
+{
+  "nips": {
+    "url": "https://archive.ics.uci.edu/ml/machine-learning-databases/bag-of-words/docword.nips.txt.gz",
+    "filename": "docword.nips.txt.gz",
+    "domain": "scientific_text",
+    "page": "https://archive.ics.uci.edu/dataset/164/bag+of+words",
+    "citation": "Newman, D. (2008). Bag of Words. UCI. DOI:10.24432/C5ZG6P",
+    "license": "CC BY 4.0",
+    "redistributable": true,
+    "sha256": "d45f9f7ceeadf118117e14346f018273007b765593a4dbe02915d37a1faa58b7",
+    "bytes": 2288169,
+    "local_file": "raw/docword.nips.txt.gz",
+    "checked_at_utc": "2026-10-16T08:13:43.215939+00:00"
+  },
+  "enron": {
+    "url": "https://archive.ics.uci.edu/ml/machine-learning-databases/bag-of-words/docword.enron.txt.gz",
+    "filename": "docword.enron.txt.gz",
+    "domain": "email_text",
+    "page": "https://archive.ics.uci.edu/dataset/164/bag+of+words",
+    "citation": "Newman, D. (2008). Bag of Words. UCI. DOI:10.24432/C5ZG6P",
+    "license": "CC BY 4.0",
+    "redistributable": true,
+    "sha256": "bc8b51ddb8329b04f0777266fb076585db9f93808b1214b76ca2bc9c472567c0",
+    "bytes": 12313965,
+    "local_file": "raw/docword.enron.txt.gz",
+    "checked_at_utc": "2026-10-16T08:13:43.243294+00:00"
+  },
+  "movielens": {
+    "url": "https://files.grouplens.org/datasets/movielens/ml-1m.zip",
+    "filename": "ml-1m.zip",
+    "domain": "recommendation",
+    "page": "https://grouplens.org/datasets/movielens/1m/",
+    "citation": "Harper, F. M. & Konstan, J. A. (2015). The MovieLens Datasets. DOI:10.1145/2827872",
+    "license": "GroupLens research-use terms; redistribution requires permission",
+    "license_url": "https://files.grouplens.org/datasets/movielens/ml-1m-README.txt",
+    "redistributable": false,
+    "sha256": "a6898adb50b9ca05aa231689da44c217cb524e7ebd39d264c56e2832f2c54e20",
+    "bytes": 5917549,
+    "local_file": "raw/ml-1m.zip",
+    "checked_at_utc": "2026-10-16T08:13:43.229946+00:00"
+  },
+  "retail": {
+    "url": "https://archive.ics.uci.edu/static/public/352/online+retail.zip",
+    "filename": "online_retail.zip",
+    "domain": "retail_transactions",
+    "page": "https://archive.ics.uci.edu/dataset/352/online+retail",
+    "citation": "Chen, D. (2015). Online Retail. UCI. DOI:10.24432/C5BW33",
+    "license": "CC BY 4.0",
+    "redistributable": true,
+    "sha256": "f5385cbb54bbebf7196389109c6b0621faab0c304e3702548165e71c84aede8b",
+    "bytes": 23715478,
+    "local_file": "raw/online_retail.zip",
+    "checked_at_utc": "2026-10-16T08:13:43.263430+00:00"
+  },
+  "bci": {
+    "url": "https://raw.githubusercontent.com/vegandevs/vegan/19643ae1a547c1789e54a993f42cdcd03b212990/data/BCI.rda",
+    "filename": "BCI.rda",
+    "domain": "forest_ecology",
+    "page": "https://vegandevs.github.io/vegan/reference/BCI.html",
+    "citation": "Condit et al. (2002). Beta-diversity in tropical forest trees. DOI:10.1126/science.1066854; BCI matrix distributed by vegan",
+    "license": "vegan distribution: GPL-2; cite original ecological data source",
+    "redistributable": true,
+    "sha256": "9730c9a9db6eb455ae97c61c863a2ca6a074f7d00a3062b9a3a9a873158a5fd1",
+    "bytes": 8759,
+    "local_file": "raw/BCI.rda",
+    "checked_at_utc": "2026-10-16T08:13:43.216393+00:00"
+  }
+}

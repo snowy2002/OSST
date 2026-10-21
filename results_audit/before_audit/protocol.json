@@ -1,0 +1,70 @@
+{
+  "frozen_at_utc": "2026-10-16T08:13:50.185193+00:00",
+  "version": 1,
+  "synthetic_sizes": [
+    1000,
+    10000,
+    100000,
+    1000000
+  ],
+  "synthetic_epsilons": [
+    0.05,
+    0.1,
+    0.2
+  ],
+  "real_epsilons": [
+    0.01,
+    0.05,
+    0.1
+  ],
+  "sample_factors": [
+    0.5,
+    1.0,
+    2.0,
+    4.0,
+    8.0,
+    16.0
+  ],
+  "additional_budget": "最小整数 m 使 PoissonCDF(n,m*epsilon)<=.05",
+  "alpha": 0.05,
+  "trials_per_test_cell": 500,
+  "stress_trials": 200,
+  "test_seed": 20261017,
+  "development_seed": 20300036,
+  "config": {
+    "b_factor": 0.5,
+    "max_degree": 12,
+    "weight_cap": 20.0
+  },
+  "methods": {
+    "observed_count": "Observed categories",
+    "bounded_multiscale": "Bounded multiscale",
+    "bounded_single_scale": "Bounded single scale",
+    "naive_chebyshev": "Naive small constants",
+    "chao1_point": "Chao1 point estimate"
+  },
+  "profile_max_count": 16,
+  "calibration_sha256": "eb5669e4ab2a29f28fc87e5dc22c591f53800dc7f5c4fff6c08cda29f446e685",
+  "source_hashes": {
+    "support_size.py": "774dd1b77aee5bb227191ed65dabf3dfb0535ddf888ce14084b755bfd4650a95",
+    "benchmark_core.py": "49b24b3d7840ec7e11ae647efda93e959251692167d638a396bdd468a1dd85a2",
+    "benchmark_data.py": "fe5df6c9c4b4c2b0951f263192a0f32573f8eb8c5389d84a44b50057fac3b139",
+    "large_experiments.py": "d4581683f49e733674645df363bab1186ee2263e2fff3b8d73829d9e6e496284",
+    "run_large_benchmark.py": "9e44daca1f807ee63a2d845a49b775510855e9339fdca3998a8734374589aabb",
+    "report_large.py": "7cdefa8ed83d76a5db3dc4dec875567f7857429dd67e9dc8158d3aa971be7be3",
+    "test_support_size.py": "2775116c93b4f5f220088910e305b4f15f7eced535e601a7668e672a6fa592c6",
+    "test_benchmark.py": "bb8b302af562bb5db329678e77f2944c1efd4a3db699bbc26ac5f51fce157e0c",
+    "requirements-lock.txt": "9f63fc9eca1c2eb04fd9537ee1b688e9ef163aa51d195c0cb348638a0c961d1e"
+  },
+  "data_summaries_sha256": "12c733968c6b6186b0ebbf7bfd7a93a63e610cc1d113547a5cbb41816115046e",
+  "decision_rule": "score>n 拒绝支持集<=n；No 样本未拒绝记为 failure_to_reject；Gap 不计错",
+  "confidence": "各单元给 95% Wilson 区间；另对所有正式 iid 单元/方法给 Bonferroni 95% 同时单侧 Clopper-Pearson 上界",
+  "data_use": "真实频数定义有限经验总体；抽样 iid with replacement + Poissonization。原记录从未被直接假定为 iid。",
+  "real_views": {
+    "native_boundary": "n=eff_epsilon(p)-1，保留完整经验分布，No",
+    "topn_null": "把同一个完整经验分布限制到 top-n 并归一化，合成 Yes 对照",
+    "native_null": "完整经验分布，查询 n=S，Yes",
+    "native_gap": "n 取 boundary_n 和 S 的内部中点，完整经验分布，Gap"
+  },
+  "interpretation": "统计检验和置信下界的实证验证，不是总类别数的一致精确估计，也不能以有限测试代替最优阶证明。"
+}

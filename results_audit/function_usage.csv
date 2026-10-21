@@ -1,0 +1,101 @@
+file,function,line,doc,paper_original,legacy_entrypoints_smoke,batch_evaluate_smoke,tests,status,static_candidate_calls
+benchmark_core.py,Population.__post_init__,23,,0,0,154,888,实际入口已调用,
+benchmark_core.py,Population.support,38,,0,0,1013,408,实际入口已调用,
+benchmark_core.py,Population.from_counts,42,,0,0,5,6,实际入口已调用,experiments.py:196; experiments.py:236; large_experiments.py:166; large_experiments.py:212; large_experiments.py:238; support_size.py:105; support_size.py:327; support_size.py:342; support_size_demo.py:60; test_benchmark.py:117; test_benchmark.py:19; test_benchmark.py:61; test_paper_reference.py:130; test_paper_reference.py:75; test_support_size.py:102; test_support_size.py:106; test_support_size.py:165; test_support_size.py:72
+benchmark_core.py,Population.tail_mass,49,直接加总被排除类别的质量，避免 1-topmass 的相消。,0,0,364,915,实际入口已调用,benchmark_core.py:164; benchmark_core.py:204; benchmark_core.py:79; test_benchmark.py:22; test_benchmark.py:83
+benchmark_core.py,Population.effective_support,57,,0,0,47,20,实际入口已调用,benchmark_core.py:155; experiments.py:186; large_experiments.py:156; large_experiments.py:214; test_benchmark.py:24; test_support_size.py:152; test_support_size.py:153
+benchmark_core.py,Population.restrict_top,69,,0,0,5,16,实际入口已调用,large_experiments.py:158; test_benchmark.py:25
+benchmark_core.py,Population.truth,78,,0,0,64,324,实际入口已调用,benchmark_core.py:154; benchmark_core.py:234; large_experiments.py:170; test_benchmark.py:121; test_benchmark.py:81
+benchmark_core.py,Profiles.trials,88,,0,0,42,0,实际入口已调用,
+benchmark_core.py,stable_rng,92,按实验键产生固定子流；增删其他场景不会改变已有场景的样本。,0,0,44,15,实际入口已调用,benchmark_core.py:212; large_experiments.py:146; large_experiments.py:174; large_experiments.py:218; large_experiments.py:243; large_experiments.py:61; test_benchmark.py:33; test_benchmark.py:52; test_benchmark.py:89
+benchmark_core.py,sample_profiles,98,"精确分组法：组内 (F0,...,FK,F>K) ~ Multinomial(g, Poi(mp) 的分箱概率)。",0,0,42,2,实际入口已调用,large_experiments.py:121; large_experiments.py:220; large_experiments.py:243; large_experiments.py:61; test_benchmark.py:33; test_benchmark.py:52
+benchmark_core.py,score_profiles,125,仅接收观测统计量和事先固定的参数；不接收真实分布或真值标签。,0,0,42,1,实际入口已调用,large_experiments.py:124; large_experiments.py:223; large_experiments.py:244; large_experiments.py:63; test_benchmark.py:65
+benchmark_core.py,summarize_scores,152,,0,0,42,0,实际入口已调用,large_experiments.py:126; large_experiments.py:224; large_experiments.py:64
+benchmark_core.py,uniform,180,,0,0,6,36,实际入口已调用,benchmark_core.py:220; benchmark_core.py:225; benchmark_core.py:226; experiments.py:48; experiments.py:53; experiments.py:54
+benchmark_core.py,headtail,184,,0,0,10,61,实际入口已调用,benchmark_core.py:221; benchmark_core.py:222; benchmark_core.py:227; benchmark_core.py:228; benchmark_core.py:230; experiments.py:49; experiments.py:50; experiments.py:55; experiments.py:56; test_benchmark.py:51
+benchmark_core.py,rank_blocks,188,明确构造的分段等概率幂律分布；不冒充精确逐类别 Zipf 分布。,0,0,4,24,实际入口已调用,benchmark_core.py:198; benchmark_core.py:223
+benchmark_core.py,shaped_boundary,196,多尺度重尾：用二分固定尾质量恰为 1.01 epsilon，真值仅用于构造。,0,0,2,12,实际入口已调用,benchmark_core.py:229
+benchmark_core.py,shaped_boundary.<locals>.mix,199,,0,0,122,732,实际入口已调用,benchmark_core.py:204; benchmark_core.py:208
+benchmark_core.py,synthetic_cases,211,,0,0,2,12,实际入口已调用,large_experiments.py:143; large_experiments.py:58; test_benchmark.py:79
+benchmark_data.py,sha256,74,,0,0,0,10,此次仅在测试调用,benchmark_core.py:94; benchmark_data.py:105; benchmark_data.py:136; benchmark_data.py:137; benchmark_data.py:244; benchmark_data.py:75; fish_data.py:28; large_experiments.py:103; large_experiments.py:104; large_experiments.py:105; run_all.py:36; run_all.py:48; run_large_benchmark.py:47; run_large_benchmark.py:57; run_large_benchmark.py:90; test_benchmark.py:114; test_benchmark.py:116
+benchmark_data.py,save_json,82,,0,0,0,0,此次未覆盖；需结合静态入口,benchmark_data.py:139; benchmark_data.py:237; benchmark_data.py:251; large_experiments.py:115; large_experiments.py:398; large_experiments.py:80; run_large_benchmark.py:108
+benchmark_data.py,download,86,,0,0,0,0,此次未覆盖；需结合静态入口,benchmark_data.py:236
+benchmark_data.py,save_population,113,"matrix[自然分组, 类别] 是计数。只保留正频数的行列。",0,0,0,0,此次未覆盖；需结合静态入口,benchmark_data.py:151; benchmark_data.py:166; benchmark_data.py:209; benchmark_data.py:222
+benchmark_data.py,prepare_words,144,,0,0,0,0,此次未覆盖；需结合静态入口,benchmark_data.py:247
+benchmark_data.py,prepare_movies,159,,0,0,0,0,此次未覆盖；需结合静态入口,
+benchmark_data.py,retail_reason,173,互斥的剔除原因，顺序固定；样本按销售行计，不按 Quantity 扩展。,0,0,0,4,此次仅在测试调用,benchmark_data.py:200; test_benchmark.py:100; test_benchmark.py:96; test_benchmark.py:97; test_benchmark.py:98
+benchmark_data.py,prepare_retail,187,,0,0,0,0,此次未覆盖；需结合静态入口,
+benchmark_data.py,prepare_bci,217,,0,0,0,0,此次未覆盖；需结合静态入口,
+benchmark_data.py,prepare_all,231,,0,0,0,0,此次未覆盖；需结合静态入口,benchmark_data.py:260; run_large_benchmark.py:76
+experiments.py,write_csv,19,,0,10,0,0,实际入口已调用,experiments.py:112; experiments.py:113; experiments.py:124; experiments.py:272; experiments.py:273; experiments.py:274; experiments.py:275; experiments.py:276; experiments.py:277; experiments.py:283; large_experiments.py:150; large_experiments.py:178; large_experiments.py:229; large_experiments.py:256; large_experiments.py:290; large_experiments.py:384; large_experiments.py:385; large_experiments.py:79
+experiments.py,write_json,28,,0,3,0,0,实际入口已调用,experiments.py:125; experiments.py:153; experiments.py:309; run_all.py:82; run_all.py:95
+experiments.py,pyplot,32,,0,2,0,0,实际入口已调用,experiments.py:127; experiments.py:285; large_experiments.py:295
+experiments.py,synthetic_populations,40,,0,1,0,0,实际入口已调用,experiments.py:77
+experiments.py,promise_label,60,,0,159,0,0,实际入口已调用,experiments.py:257; experiments.py:88
+experiments.py,run_synthetic,66,,0,1,0,0,实际入口已调用,run_all.py:71; support_size_demo.py:50
+experiments.py,metric_row,157,,0,38,0,0,实际入口已调用,experiments.py:200; experiments.py:241
+experiments.py,run_fish,168,,0,1,0,0,实际入口已调用,run_all.py:73; support_size_demo.py:53
+fish_data.py,prepare_fish_data,20,,0,1,0,1,实际入口已调用,experiments.py:172; fish_data.py:101; test_support_size.py:181
+fish_data.py,load_counts_csv,76,"兼容逐条标签 CSV 或 species,count 的汇总 CSV；拒绝无意义/分数计数。",0,3,0,2,实际入口已调用,support_size_demo.py:59; test_support_size.py:171; test_support_size.py:174
+large_experiments.py,budgets,41,,0,0,0,0,此次未覆盖；需结合静态入口,large_experiments.py:144; large_experiments.py:172
+large_experiments.py,calibrate,47,候选和损失函数在测试前定义；仅用开发集的均匀加权漏报率选参数。,0,0,0,0,此次未覆盖；需结合静态入口,run_large_benchmark.py:87
+large_experiments.py,write_protocol,89,,0,0,0,0,此次未覆盖；需结合静态入口,run_large_benchmark.py:98
+large_experiments.py,evaluate,119,,0,0,42,0,实际入口已调用,large_experiments.py:145; large_experiments.py:173
+large_experiments.py,run_synthetic_large,139,,0,0,0,0,此次未覆盖；需结合静态入口,run_large_benchmark.py:99
+large_experiments.py,real_views,155,,0,0,5,15,实际入口已调用,large_experiments.py:168; test_benchmark.py:119
+large_experiments.py,run_real_large,162,,0,0,0,0,此次未覆盖；需结合静态入口,run_large_benchmark.py:100
+large_experiments.py,clustered_profiles,183,故意违反独立性：先抽 M~Poi(m)，每 block_size 条从同一自然分组取样。,0,0,0,1,此次仅在测试调用,large_experiments.py:222; test_benchmark.py:89
+large_experiments.py,run_dependence_stress,208,,0,0,0,0,此次未覆盖；需结合静态入口,run_large_benchmark.py:101
+large_experiments.py,run_richness,234,,0,0,0,0,此次未覆盖；需结合静态入口,run_large_benchmark.py:102
+large_experiments.py,simultaneous_intervals,260,,0,0,0,0,此次未覆盖；需结合静态入口,large_experiments.py:383
+large_experiments.py,sample_efficiency,273,,0,0,0,0,此次未覆盖；需结合静态入口,large_experiments.py:386
+large_experiments.py,render_figures,294,,0,0,0,0,此次未覆盖；需结合静态入口,large_experiments.py:387
+large_experiments.py,finish_results,382,,0,0,0,0,此次未覆盖；需结合静态入口,run_large_benchmark.py:106
+paper_reference.py,exact_inputs,33,,23,3,0,49,实际入口已调用,paper_reference.py:138; paper_reference.py:198; test_paper_reference.py:175
+paper_reference.py,_as_arb,46,,89,3,0,130,实际入口已调用,paper_reference.py:105; paper_reference.py:124; paper_reference.py:128; paper_reference.py:184
+paper_reference.py,certified_integer,50,floor/ceil 的区间只含唯一整数时才能返回该整数。,66,3,0,96,实际入口已调用,paper_reference.py:112; paper_reference.py:118; paper_reference.py:124; paper_reference.py:212; test_paper_reference.py:109; test_paper_reference.py:168
+paper_reference.py,ReferencePlan.branch,86,,11,3,0,15,实际入口已调用,
+paper_reference.py,ReferencePlan.as_dict,89,,1,3,0,5,实际入口已调用,paper_reference.py:240; paper_reference.py:254; support_size.py:29
+paper_reference.py,_plan_at_precision,103,调用者必须已进入 ctx.workprec(bits)。,23,3,0,39,实际入口已调用,paper_reference.py:143; paper_reference.py:206
+paper_reference.py,reference_parameters,136,逐项对应第 3 节。精度是计算资源，不是统计参数。,13,3,0,32,实际入口已调用,paper_reference.py:199; paper_reference.py:238; support_size.py:29; test_paper_reference.py:110; test_paper_reference.py:111; test_paper_reference.py:117; test_paper_reference.py:128; test_paper_reference.py:155; test_paper_reference.py:161; test_paper_reference.py:165; test_paper_reference.py:86
+paper_reference.py,reference_weights,149,等价于式 (2)(3) 的阶乘系数递推；保持当前 Arb 精度，不转 float。,12,0,0,25,实际入口已调用,paper_reference.py:179; test_paper_reference.py:134; test_paper_reference.py:39; test_paper_reference.py:54
+paper_reference.py,reference_statistic,171,原文 tilde S；包括所有规定尺度，degree 上限超出就报错，不截断。,10,0,0,13,实际入口已调用,paper_reference.py:207; test_paper_reference.py:131; test_paper_reference.py:78
+paper_reference.py,reference_test,191,m 必须显式给出且等于论文预算，防止用小样本冒充严格原版。,10,0,0,14,实际入口已调用,paper_reference.py:246; paper_reference.py:257; test_paper_reference.py:118; test_paper_reference.py:138; test_paper_reference.py:149; test_paper_reference.py:151; test_paper_reference.py:163
+paper_reference.py,main,228,,1,0,0,2,实际入口已调用,paper_reference.py:265; run_all.py:102; run_large_benchmark.py:119; support_size_demo.py:56; support_size_demo.py:91; test_paper_reference.py:181; test_paper_reference.py:186
+report_large.py,pct,16,,0,0,0,0,此次未覆盖；需结合静态入口,report_large.py:103; report_large.py:129; report_large.py:130; report_large.py:142; report_large.py:154; report_large.py:52; report_large.py:53
+report_large.py,table,20,,0,0,0,0,此次未覆盖；需结合静态入口,report_large.py:105; report_large.py:116; report_large.py:131; report_large.py:143; report_large.py:155; report_large.py:64
+report_large.py,image_tag,25,,0,0,0,0,此次未覆盖；需结合静态入口,report_large.py:108; report_large.py:119; report_large.py:132; report_large.py:144; report_large.py:156; report_large.py:75
+report_large.py,generate_report,30,,0,0,0,0,此次未覆盖；需结合静态入口,report_large.py:220; run_large_benchmark.py:111
+run_all.py,build_bundle,24,打包项目文件与结果，排除环境、下载工具和临时研究页面。,0,0,0,0,此次未覆盖；需结合静态入口,run_all.py:96
+run_all.py,main,52,,0,0,0,0,此次未覆盖；需结合静态入口,paper_reference.py:265; run_all.py:102; run_large_benchmark.py:119; support_size_demo.py:56; support_size_demo.py:91; test_paper_reference.py:181; test_paper_reference.py:186
+run_large_benchmark.py,read_rows,22,,0,0,0,0,此次未覆盖；需结合静态入口,report_large.py:36; run_large_benchmark.py:104
+run_large_benchmark.py,bundle,40,便携包只有程序、协议、汇总和图，不分发任何跨领域原始/派生数据。,0,0,0,0,此次未覆盖；需结合静态入口,run_large_benchmark.py:112
+run_large_benchmark.py,main,61,,0,0,0,0,此次未覆盖；需结合静态入口,paper_reference.py:265; run_all.py:102; run_large_benchmark.py:119; support_size_demo.py:56; support_size_demo.py:91; test_paper_reference.py:181; test_paper_reference.py:186
+support_size.py,validate_problem,19,,0,612,84,72,实际入口已调用,experiments.py:68; support_size.py:163; support_size.py:244; support_size.py:279; support_size.py:325; support_size.py:35; support_size.py:50
+support_size.py,paper_plan,26,兼容原入口；现在用 Arb 区间认证第 3 节参数，仍不自动抽样。,0,3,0,5,实际入口已调用,experiments.py:116; experiments.py:125; support_size.py:165; support_size_demo.py:42; test_support_size.py:16; test_support_size.py:19
+support_size.py,count_miss_bound,32,No 情形下 P(D<=n) 的上界；固定样本用二项分布，泊松样本用泊松分布。,0,54,0,45,实际入口已调用,support_size.py:288; support_size.py:54; support_size.py:58; support_size.py:63; test_support_size.py:27; test_support_size.py:44; test_support_size.py:47
+support_size.py,count_plan,47,二分查找满足尾界的最小整数预算；不使用宽松的 Markov 界。,0,3,0,2,实际入口已调用,experiments.py:126; experiments.py:74; large_experiments.py:288; large_experiments.py:44; support_size_demo.py:44; test_support_size.py:25
+support_size.py,Fingerprint.__post_init__,73,,10,214,0,28,实际入口已调用,
+support_size.py,Fingerprint.observed,84,,42,2594,0,128,实际入口已调用,
+support_size.py,Fingerprint.total,88,,10,90,0,16,实际入口已调用,
+support_size.py,Fingerprint.from_counts,92,,0,103,0,19,实际入口已调用,experiments.py:196; experiments.py:236; large_experiments.py:166; large_experiments.py:212; large_experiments.py:238; support_size.py:105; support_size.py:327; support_size.py:342; support_size_demo.py:60; test_benchmark.py:117; test_benchmark.py:19; test_benchmark.py:61; test_paper_reference.py:130; test_paper_reference.py:75; test_support_size.py:102; test_support_size.py:106; test_support_size.py:165; test_support_size.py:72
+support_size.py,Fingerprint.from_labels,104,,0,0,0,1,此次仅在测试调用,test_support_size.py:100
+support_size.py,chebyshev_weights,108,"直接递推 u[t,l]=l! [y^l] T_t((B+A-2y)/(B-A))，A=ma，B=mb。",0,660,617,314,实际入口已调用,support_size.py:206; support_size.py:210; test_paper_reference.py:46; test_support_size.py:52; test_support_size.py:58; test_support_size.py:67; test_support_size.py:68
+support_size.py,Scale.width,150,,0,1308,288,35,实际入口已调用,
+support_size.py,make_scales,154,practical 保持多尺度结构，降低阶数以限制权重幅度，同时保留 Lemma 2.3 条件。,0,170,84,12,实际入口已调用,benchmark_core.py:129; benchmark_core.py:130; experiments.py:249; experiments.py:80; experiments.py:81; support_size.py:343; support_size_demo.py:68; test_benchmark.py:66; test_benchmark.py:67; test_paper_reference.py:153; test_paper_reference.py:154; test_paper_reference.py:157; test_support_size.py:70; test_support_size.py:79; test_support_size.py:93; test_support_size.py:96
+support_size.py,raw_score,219,,0,1596,0,49,实际入口已调用,support_size.py:232; support_size.py:254; test_support_size.py:74
+support_size.py,paper_correction,224,第 3 节的原修正，支持 float、NumPy 数组和 Arb 区间；不掺入 Hoeffding。,12,324,288,41,实际入口已调用,benchmark_core.py:140; paper_reference.py:184; support_size.py:232
+support_size.py,paper_statistic,229,原文修正公式；传入缩小参数的 scales 时，这只是实验统计量。,0,54,0,3,实际入口已调用,experiments.py:95; test_benchmark.py:71
+support_size.py,hoeffding_statistic,235,有限样本误报控制：S<=n 时，P(score>n)<=alpha（泊松化 iid）。,0,350,0,7,实际入口已调用,experiments.py:255; experiments.py:96; support_size.py:344; support_size_demo.py:69; test_benchmark.py:69; test_benchmark.py:70
+support_size.py,clipped_paper_lower_bound,258,论文数值输出；不要用这个已截断到 n 的量做 >n 检验。,7,0,0,6,实际入口已调用,paper_reference.py:212; test_support_size.py:113; test_support_size.py:114
+support_size.py,chao1,263,偏差修正的 Chao1 点估计；不是逐次成立的下界，也不是置信界。,0,41,0,6,实际入口已调用,experiments.py:198; experiments.py:238; support_size.py:272; test_benchmark.py:72; test_support_size.py:154; test_support_size.py:155
+support_size.py,describe_sample,269,,0,3,0,1,实际入口已调用,support_size_demo.py:61; test_support_size.py:156
+support_size.py,count_test,277,,0,3,0,4,实际入口已调用,support_size_demo.py:62; test_support_size.py:108; test_support_size.py:109; test_support_size.py:111; test_support_size.py:112
+support_size.py,poisson_mean_for_pool,297,对预定大小为 N 的 iid 样本池，选择 Pr(Poi(m)>N)<=overflow_prob 的 m。,0,8,0,1,实际入口已调用,support_size.py:329; test_support_size.py:118
+support_size.py,poissonized_fixed_test,316,固定样本池的泊松化适配器，不通过重抽 M 强行满足 M<=N。,0,31,0,2,实际入口已调用,experiments.py:211; support_size_demo.py:78; test_support_size.py:123; test_support_size.py:143
+support_size.py,normalize_probabilities,352,,2,584,0,21,实际入口已调用,support_size.py:369; support_size.py:377; support_size.py:386; test_support_size.py:159
+support_size.py,poisson_fingerprint,361,模拟 N_i~Poi(mp_i)，与先抽 M 再抽标签完全同分布。,2,111,0,0,实际入口已调用,experiments.py:121; experiments.py:252; experiments.py:92; paper_reference.py:256
+support_size.py,delta_n,376,,0,465,0,10,实际入口已调用,experiments.py:103; experiments.py:263; experiments.py:63; test_benchmark.py:22; test_support_size.py:151
+support_size.py,effective_support,383,,0,8,0,7,实际入口已调用,benchmark_core.py:155; experiments.py:186; large_experiments.py:156; large_experiments.py:214; test_benchmark.py:24; test_support_size.py:152; test_support_size.py:153
+support_size.py,wilson_interval,392,二项比例的 95% Wilson 区间；用于重复实验，不用于真实物种数。,0,345,210,0,实际入口已调用,benchmark_core.py:162; experiments.py:101; experiments.py:261
+support_size_demo.py,main,16,,0,7,0,0,实际入口已调用,paper_reference.py:265; run_all.py:102; run_large_benchmark.py:119; support_size_demo.py:56; support_size_demo.py:91; test_paper_reference.py:181; test_paper_reference.py:186

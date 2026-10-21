@@ -1,0 +1,10 @@
+supplement mite
+supplement bci
+supplement fish_2007_seine
+supplement fish_2008_seine
+runtime 100 1025
+runtime 100 67108864
+runtime 10000 1025
+runtime 10000 67108864
+runtime 1000000 1025
+runtime 1000000 67108864

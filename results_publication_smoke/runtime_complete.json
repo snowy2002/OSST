@@ -1,0 +1,4 @@
+{
+  "rows": 3,
+  "scope": "Fresh Python process per configuration; peak RSS includes interpreter, dependencies and sampler. No GPU; BLAS threads=1. Nine timed scoring batches; compilation separated."
+}

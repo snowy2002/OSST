@@ -1,0 +1,42 @@
+/home/snowy/OSST/.venv/lib/python3.14/site-packages/rdata/conversion/_conversion.py:302: UserWarning: Unknown encoding. Assumed ASCII.
+  warnings.warn("Unknown encoding. Assumed ASCII.")  # noqa: B028
+synthetic 1 180
+synthetic 2 480
+synthetic 10 780
+synthetic 100 1080
+synthetic 1000 1380
+synthetic 10000 1680
+synthetic 1000000 1980
+synthetic 1000000000 2280
+synthetic 1000000000000 2580
+natural mite 96
+natural bird_north 192
+natural bird_south 288
+natural spider_girdled 384
+natural spider_logged 476
+natural moths 576
+natural okland 668
+natural bci 768
+natural fish_2007_seine 864
+natural fish_2008_seine 944
+curves 10 280
+curves 1000 560
+curves 1000000 840
+curves 1000000000000 1120
+dependence bci
+dependence mite
+dependence fish_2007_seine
+dependence fish_2008_seine
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/snowy/OSST/c1025/run.py", line 292, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/home/snowy/OSST/c1025/run.py", line 286, in main
+    try:phases[name](out)
+        ~~~~~~~~~~~~^^^^^
+  File "/home/snowy/OSST/c1025/run.py", line 218, in reference
+    rows.append(dict(scenario=name,n=n,epsilon=eps,repeat=rep,C0=c,elapsed=elapsed,**actual))
+                ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: dict() got multiple values for keyword argument 'n'

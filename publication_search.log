@@ -1,0 +1,6 @@
+adversarial search n=1000 eps=0.001: 44 candidates
+adversarial search n=1000 eps=0.01: 44 candidates
+adversarial search n=1000 eps=0.1: 40 candidates
+adversarial search n=10000 eps=0.001: 44 candidates
+adversarial search n=10000 eps=0.01: 44 candidates
+adversarial search n=10000 eps=0.1: 38 candidates

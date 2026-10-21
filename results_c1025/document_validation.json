@@ -1,0 +1,18 @@
+[
+  {
+    "name": "experiment_paper",
+    "pages": 12,
+    "compiler_issues": [],
+    "all_references_resolved": true,
+    "all_text_inside_page": true,
+    "pdf_sha256": "a7fdce2aaf7029df241bee8aa74031809937e6e5697f6d149d23a1c1d009f153"
+  },
+  {
+    "name": "experiments_only",
+    "pages": 8,
+    "compiler_issues": [],
+    "all_references_resolved": true,
+    "all_text_inside_page": true,
+    "pdf_sha256": "b9a965902a38b993e58d3d04a3449550564a6fcaeb2058e618da96b3d81ece06"
+  }
+]

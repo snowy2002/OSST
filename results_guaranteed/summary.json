@@ -1,0 +1,19 @@
+{
+  "config": {
+    "b_factor": 0.5,
+    "max_degree": 12,
+    "weight_cap": 20.0,
+    "validation_factor": 12.0,
+    "validation_gate": 0.75
+  },
+  "cells_per_method": 192,
+  "trials_per_cell": 1000,
+  "method_decisions": 768000,
+  "max_false_positive": 0.0,
+  "max_false_negative": 0.004,
+  "max_simultaneous_upper95": 0.01800537220626769,
+  "mean_relative_budget": 0.38840257583745585,
+  "mean_relative_budget_yes": 0.3356932615942146,
+  "mean_relative_budget_no": 0.45165375292934545,
+  "worst_relative_budget": 1.0339702760084926
+}
