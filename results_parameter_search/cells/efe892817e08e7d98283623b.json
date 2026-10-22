@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      9999
+    ],
+    "probabilities_exact": [
+      "326133126377143/326466426377143",
+      "100000000/979399279131429"
+    ],
+    "support": 10000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C40_lambda4",
+      "cell": "efe892817e08e7d98283623b",
+      "C": "40",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".001",
+      "S": 10000,
+      "effective": 207,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 39175971.16525716,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 9816.585,
+      "mean_lower_lo": 9816.585,
+      "mean_lower_hi": 9816.585,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.00036299898056313396,
+      "scoring_seconds": 0.00034559701452963054
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C40_lambda4",
+      "cell": "efe892817e08e7d98283623b",
+      "C": "70",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".001",
+      "S": 10000,
+      "effective": 207,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 68557949.53920002,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 9990.8875,
+      "mean_lower_lo": 9990.8875,
+      "mean_lower_hi": 9990.8875,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.00035159901017323136,
+      "scoring_seconds": 0.00030579802114516497
+    }
+  ],
+  "raw_file": "raw/efe892817e08e7d98283623b.npz",
+  "raw_sha256": "ae307ced1b3540bae92a397faefe27f67104b81343e0685fd55f7a5e3ce53588"
+}

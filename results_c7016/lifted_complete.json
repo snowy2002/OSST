@@ -1,0 +1,8 @@
+{
+  "base_cells": 120,
+  "method_cells": 832,
+  "method_trial_evaluations": 1664000,
+  "independent_sampling_paths": 1200000,
+  "primary_trials": 240000,
+  "full_arb_audits": 960
+}

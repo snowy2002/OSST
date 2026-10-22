@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      9999
+    ],
+    "probabilities_exact": [
+      "326424763877143/326466426377143",
+      "12500000/979399279131429"
+    ],
+    "support": 10000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C40_lambda.5",
+      "cell": "65b875e245d5d52009fde1d3",
+      "C": "40",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".001",
+      "S": 10000,
+      "effective": 1,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 39175971.16525716,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 3934.6275,
+      "mean_lower_lo": 3934.6275,
+      "mean_lower_hi": 3934.6275,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.00036079902201890945,
+      "scoring_seconds": 0.00038519801455549896
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C40_lambda.5",
+      "cell": "65b875e245d5d52009fde1d3",
+      "C": "70",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".001",
+      "S": 10000,
+      "effective": 1,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 68557949.53920002,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 5832.4525,
+      "mean_lower_lo": 5832.4525,
+      "mean_lower_hi": 5832.4525,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.00027839900576509535,
+      "scoring_seconds": 0.00026809796690940857
+    }
+  ],
+  "raw_file": "raw/65b875e245d5d52009fde1d3.npz",
+  "raw_sha256": "69c97604a922d03642213e32ccef193390ba518669bda0196fedfd8e3309f6ff"
+}

@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      9999
+    ],
+    "probabilities_exact": [
+      "320911426377143/326466426377143",
+      "5000000000/2938197837394287"
+    ],
+    "support": 10000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C60_lambda1",
+      "cell": "d849d6f2fe3b838f92ae4934",
+      "C": "60",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".1",
+      "S": 10000,
+      "effective": 1,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 587639.5674788574,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 6322.2465,
+      "mean_lower_lo": 6322.2465,
+      "mean_lower_hi": 6322.2465,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.0003310979809612036,
+      "scoring_seconds": 0.00030239802435971797
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C60_lambda1",
+      "cell": "d849d6f2fe3b838f92ae4934",
+      "C": "70",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".1",
+      "S": 10000,
+      "effective": 1,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 685579.4953920003,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 6886.1425,
+      "mean_lower_lo": 6886.1425,
+      "mean_lower_hi": 6886.1425,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.0002938989782705903,
+      "scoring_seconds": 0.0002829970035236329
+    }
+  ],
+  "raw_file": "raw/d849d6f2fe3b838f92ae4934.npz",
+  "raw_sha256": "ae4b4ffa11e194e4bd02d5120639b0aee12a006a7c49494939ded4b7f146c8bd"
+}

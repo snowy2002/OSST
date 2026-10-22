@@ -1,0 +1,32 @@
+synthetic complete n= 1 rows 108
+synthetic complete n= 2 rows 324
+synthetic complete n= 10 rows 540
+synthetic complete n= 1000 rows 756
+synthetic complete n= 442413 rows 972
+synthetic complete n= 442414 rows 1188
+synthetic complete n= 1202604 rows 1404
+synthetic complete n= 1202605 rows 1620
+synthetic complete n= 3269017 rows 1836
+synthetic complete n= 3269018 rows 2052
+synthetic complete n= 24154952 rows 2268
+synthetic complete n= 24154953 rows 2484
+synthetic complete n= 1000000000 rows 2700
+synthetic complete n= 1000000000000 rows 2916
+natural/lifted complete mite rows 3000
+natural/lifted complete bird_north rows 3084
+natural/lifted complete bird_south rows 3168
+natural/lifted complete spider_girdled rows 3252
+natural/lifted complete spider_logged rows 3330
+natural/lifted complete moths rows 3414
+natural/lifted complete okland rows 3498
+natural/lifted complete bci rows 3582
+natural/lifted complete fish_2007_seine rows 3660
+natural/lifted complete fish_2008_seine rows 3732
+adversarial complete C= 6 rows 3824
+adversarial complete C= 10 rows 3922
+adversarial complete C= 20 rows 4026
+adversarial complete C= 40 rows 4136
+adversarial complete C= 60 rows 4250
+adversarial complete C= 69 rows 4366
+adversarial complete C= 70 rows 4424
+ALL EXPERIMENTS COMPLETE 4424

@@ -1,0 +1,790 @@
+\documentclass[10pt]{article}
+\usepackage[margin=0.88in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,microtype,booktabs}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Prb}{\mathbb P}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\Poi}{\operatorname{Poi}}
+\newcommand{\eff}{\operatorname{eff}}
+\newcommand{\ind}{\mathbf 1}
+\DeclareMathOperator{\arcosh}{arcosh}
+\DeclareMathOperator{\arsinh}{arsinh}
+\DeclareMathOperator{\artanh}{artanh}
+\title{Explicit Constants for Support-Size Testing:\\An Exact-Certificate Analysis}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+We revisit both the sampling constant and the branch threshold in Wang's
+support-size tester. Keeping all other scales, degrees, weights and decision
+rules fixed, we establish the sufficient pair
+$C_0=144(\log 2)^2=69.1852340042\ldots$, $L_0=16$.
+Both the promised binary test and the joint support-bound guarantee succeed
+with probability greater than $2/3$, uniformly over all finite or countably
+supported distributions, all positive integers $n$, and all $0<\epsilon<1$.
+The integer pair $(70,16)$ is also certified. The pair $(C_0,15)$ has success
+greater than $3/5$. A practical alternative, $(70,20)$, has success at least
+$0.92$, so five independent runs and majority/median aggregation have failure
+below $0.005$ at total expected sampling coefficient $350$.
+The proof combines individual coefficient bounds, a range-based variance
+bound, one-sided concentration, and exact rational certificates on
+$15\le L\le32$; the entire unbounded range $L\ge32$ is handled analytically.
+The certificate verifier uses only integer and rational arithmetic, with
+explicitly proved transcendental enclosures. We also give a bounded-sample
+implementation with the same stated success guarantees. These are sufficient
+constants, not globally minimal constants.
+\end{abstract}
+
+\section{Model, unchanged construction, and precise guarantees}
+Write $C_*=144(\log2)^2$ throughout.
+Let $p$ be a probability distribution on a finite or countable alphabet.
+Write $S=|\operatorname{supp}(p)|$, possibly infinite, and let $p_{(i)}$ be
+its nonincreasing rearrangement, padded with zeros when needed. Set
+\[
+ \Delta_r=\sum_{i>r}p_{(i)},\qquad
+ \eff_\epsilon(p)=\min\{k\ge1:\Delta_k\le\epsilon\}.
+\]
+Here $\eff_\epsilon(p)$ is finite because $\Delta_k\downarrow0$.
+All logarithms are natural unless explicitly subscripted. The separation
+parameter $\epsilon$ is not the algorithm's failure probability.
+The distributions in this paper are discrete; no claim about arbitrary
+non-atomic probability spaces is needed.
+
+\begin{lemma}[Distance interpretation]\label{lem:tv}
+For an integer $n\ge1$, let $\mathcal P_n$ be the set of distributions supported on at most $n$
+labels. With $d_{\rm TV}(p,q)=\tfrac12\sum_i|p_i-q_i|$,
+$\inf_{q\in\mathcal P_n}d_{\rm TV}(p,q)=\Delta_n$.
+\end{lemma}
+\begin{proof}
+For any support set $A$ of size at most $n$,
+$d_{\rm TV}(p,q)\ge p(A^c)\ge\Delta_n$.
+Conversely, if $S\le n$, choose $q=p$. If $S>n$, take $A$ to contain the
+$n$ largest positive masses and normalize the
+restriction of $p$ to $A$. Its mass is positive, and the total removed mass
+and total added mass both equal $\Delta_n$, so its TV distance is $\Delta_n$.
+\end{proof}
+
+For an integer $n\ge1$ and $0<\epsilon<1$, define
+\begin{equation}\label{eq:model}
+ L=1+\log n,\qquad m=\frac{Cn}{\epsilon L},\qquad
+ M\sim\Poi(m),\qquad N_i\sim\Poi(mp_i)\text{ independently},\qquad
+ D=\sum_i\ind\{N_i>0\}.
+\end{equation}
+This is equivalent to $M$ independent draws from $p$ with an independent
+Poisson sample count. A real Poisson mean is allowed; no rounding is needed.
+For completeness, the joint probability generating function of any finite
+collection of counts is
+$\exp(m\sum_i p_i(z_i-1))$, which factors into the Poisson generating
+functions. The total count is finite almost surely. The estimator below
+therefore involves finitely many nonzero summands, even on an infinite
+alphabet. Probabilities in all theorems are over these counts. We analyze
+the ideal statistic with exact real arithmetic; bit complexity and
+floating-point approximations are separate questions.
+If $L<L_0$, let $\widetilde S=D$. If $L\ge L_0$, use
+\begin{align}
+ a_0&=\frac{\epsilon}{8n},& b&=\frac{64L}{m},&
+ J&=\left\lfloor\log_2\frac{b}{2a_0}\right\rfloor,
+ &a_j&=2^ja_0,\label{eq:parameters}\\
+ \delta_j&=2^{-j-2},&q_j&=(j+3)\log2,&
+ k_j&=\left\lceil\sqrt{b/a_j}\,q_j\right\rceil
+ &&(0\le j\le J).\notag
+\end{align}
+For each scale, define
+\begin{align}
+ P_j(x)&=-\rho_j T_{k_j}\left(\frac{b+a_j-2x}{b-a_j}\right)
+       =\sum_{\ell=0}^{k_j}c_{j,\ell}x^\ell,
+ &\rho_j&=T_{k_j}\left(\frac{b+a_j}{b-a_j}\right)^{-1},\label{eq:weights}\\
+ f_j(0)&=0,&f_j(\ell)&=1+c_{j,\ell}\ell!/m^\ell\quad(1\le\ell\le k_j),\notag\\
+ f_j(\ell)&=1\quad(\ell>k_j),&Z_j&=\sum_i f_j(N_i),\notag\\
+ \widetilde S&=\max\left\{D,\max_{0\le j\le J}
+                    \frac{Z_j-\delta_j n}{1+\delta_j}\right\}.
+ \label{eq:statistic}
+\end{align}
+Here $T_k(\cos\theta)=\cos(k\theta)$ is the Chebyshev polynomial
+\cite[18.5.1]{dlmf}.
+Return Yes exactly when $\widetilde S\le n$, and return the integer bound
+\begin{equation}\label{eq:output}
+ \widehat S=\min\{\max\{\lceil\widetilde S\rceil,1\},n\}.
+\end{equation}
+Only $C$ and $L_0$ differ from the construction of Wang~\cite[Section 3]{wang}.
+The definitions at the branch boundary use $L\ge L_0$, and equality in the
+test statistic is resolved as Yes. All degree and scale roundings are part
+of the algorithm.
+The binary problem has the two promises $S\le n$ and $\Delta_n\ge\epsilon$.
+No binary correctness label is prescribed when $S>n$ and
+$\Delta_n<\epsilon$; the support-bound guarantee below nevertheless applies
+to those distributions as well.
+
+\begin{theorem}[Certified sufficient pairs]\label{thm:main}
+For every $p,n,\epsilon$ as above, every row in Table~\ref{tab:constants}
+has the following three guarantees, with the indicated common upper bound $B$:
+\begin{align}
+ S\le n&\implies\Prb(\widetilde S>n)<B,\label{eq:null}\\
+ \Delta_n\ge\epsilon&\implies\Prb(\widetilde S\le n)<B,\label{eq:alternative}\\
+ \Prb\{\min(\eff_\epsilon(p),n)\le\widehat S\le S\}&>1-B.
+ \label{eq:joint}
+\end{align}
+In particular, $(144(\log2)^2,16)$ and $(70,16)$ have success greater than
+$2/3$ for both tasks. The respective pairs with $L_0=15$ have success
+greater than $3/5$. Every displayed finite decimal $B$ is an exact rational
+upper bound, proved by the integer-arithmetic certificate in
+Appendix~\ref{app:arithmetic}. The table gives three individual guarantees;
+simultaneous correctness of both outputs is addressed below.
+\end{theorem}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{rrrl}
+\toprule
+$C$ & $L_0$ & rational failure upper bound $B$ & success guarantee\\
+\midrule
+$144(\log2)^2$ &15&0.392089&$3/5$\\
+$144(\log2)^2$ &16&0.317480&$2/3$\\
+$144(\log2)^2$ &20&0.087747&$0.91$\\
+70&15&0.376264&$3/5$\\
+70&16&0.282612&$2/3$\\
+70&19&0.090185&$0.90$\\
+70&20&0.072224&$0.92$\\
+\bottomrule
+\end{tabular}
+\caption{Uniform sufficient bounds. Each probability statement includes all
+distributions in its stated class, not just distributions used in experiments.}
+\label{tab:constants}
+\end{table}
+
+\section{Expectation and weight bounds}
+We provide the analytic ingredients in full. Their improvements concern
+the analysis, not the estimator.
+
+\begin{lemma}[Expectation]\label{lem:expect}
+For a generic scale $0<a<b\le1$, let $P,\rho,f$ be as in
+\eqref{eq:weights}. If $m\sqrt{b(b-a)}\ge k$, then
+\[
+ (1-\rho)\min\{x/a,1\}\le Q(x):=\E f(\Poi(mx))\le1+\rho
+ \qquad(x\ge0).
+\]
+For the construction, $\rho_j\le\delta_j^2/2$.
+\end{lemma}
+\begin{proof}
+The Poisson series yields $Q(x)=1+e^{-mx}P(x)$. On $[0,a]$, $P$ is
+nonpositive, increasing, and concave: $T_k$ and its first two derivatives
+are nonnegative on $[1,\infty)$ (expand about its roots, all in $(-1,1)$).
+The chord from $P(0)=-1$ to $P(a)=-\rho$ proves the lower bound, since
+$Q\ge1+P$ there; also $Q\le1$.
+On $[a,b]$, $|P|\le\rho$. For $x\ge b$,
+\[
+ |P(x)|\le\rho\exp\left(2k\sqrt{\frac{x-b}{b-a}}\right).
+\]
+This follows from $T_k(1+u)=\cosh(k\arcosh(1+u))$ and
+$\arcosh(1+u)\le\sqrt{2u}$. The inequalities
+$x^2\ge4b(x-b)$ and $m\sqrt{b(b-a)}\ge k$ imply
+$|e^{-mx}P(x)|\le\rho$.
+Finally, $\arcosh((b+a)/(b-a))=2\artanh\sqrt{a/b}$, so
+\[
+ \rho_j\le2e^{-2k_j\sqrt{a_j/b}}\le2e^{-2q_j}
+ =\delta_j^2/2.
+\]
+\end{proof}
+
+Write
+\[
+ B_0=m(b-a),\quad v=\frac{a}{b-a},\quad h=\frac{k}{\sqrt{B_0}},
+ \quad A=ma,\quad
+ u_\ell=|c_\ell|\ell!/m^\ell\quad(0\le\ell\le k).
+\]
+The notation $B_0$ in this section is unrelated to the failure bound $B$.
+The signs alternate: $c_\ell=(-1)^{\ell+1}|c_\ell|$ and $u_0=1$.
+
+\begin{lemma}[Integral and range bounds]\label{lem:integral}
+Let $I=\sum_{\ell=0}^k u_\ell$. Then $\|f\|_\infty\le I$ and the
+range length of $f$ is at most $I$. Moreover,
+\begin{align}
+ I&\le1+2\sqrt\pi h e^{h^2},\label{eq:coarse}\\
+ I&\le1+2\sqrt\pi h\exp(h^2-2k\sqrt v+A),\label{eq:refined}\\
+ I&\le\frac1{1-\theta}\quad\text{if }\theta=\frac{k}{m\sqrt{ab}}<1.
+ \label{eq:derivative}
+\end{align}
+\end{lemma}
+\begin{proof}
+Positivity of the coefficients of $T_k(z_0+x)$ for $z_0=(b+a)/(b-a)>1$
+gives the exact factorial-weight identity
+\[
+ I=\int_0^\infty e^{-s}\frac{T_k(z_0+2s/B_0)}{T_k(z_0)}\,ds.
+\]
+For $t,u\ge0$, the identity $\arcosh(1+2t)=2\arsinh\sqrt t$ gives
+\[
+ \arcosh(1+2t+2u)-\arcosh(1+2t)
+ \le2(\sqrt{t+u}-\sqrt t)\le2\sqrt u.
+\]
+Also $\cosh(x+y)/\cosh x\le e^y$ for $x,y\ge0$.
+Thus the integral is at most
+\[
+ \int_0^\infty e^{-s+2h\sqrt s}\,ds
+ \le1+2\sqrt\pi h e^{h^2},
+\]
+and, retaining the subtraction, at most
+\[
+ \int_0^\infty e^{-s+2h(\sqrt{s+A}-\sqrt A)}\,ds
+ =1+\sqrt\pi h e^{(h-\sqrt A)^2}\operatorname{erfc}(\sqrt A-h).
+\]
+Using $\operatorname{erfc}\le2$ proves \eqref{eq:refined} because
+$h\sqrt A=k\sqrt v$.
+Alternatively, concavity of $\arcosh$ bounds the log of the polynomial
+ratio by $\theta s$, proving \eqref{eq:derivative}.
+For the range claim, use the convention that a maximum over an empty
+set of nonnegative corrections equals zero. The largest positive correction is at most
+$\max_{\ell\text{ odd}}u_\ell$, and the largest negative correction
+is at most $\max_{\ell\text{ even},\ell\ge2}u_\ell$.
+If the latter is at most one, the range length is at most
+$1+\max_{\ell\text{ odd}}u_\ell\le I$; otherwise it is at most the sum
+of these two maxima, also at most $I$. Include the values $f(0)=0$ and
+$f(\ell)=1$ for $\ell>k$ in this argument.
+\end{proof}
+
+\begin{lemma}[Individual coefficients]\label{lem:coefficient}
+Put $t=k^2/B_0$ and $w=k^2v$. For $1\le\ell\le k$,
+\begin{equation}\label{eq:individual}
+ u_\ell\le\rho\frac{(4t)^\ell\ell!}{(2\ell)!}
+                   \exp\left(\frac{2w}{2\ell+1}\right),\qquad
+ \frac{(4t)^\ell\ell!}{(2\ell)!}\le e^t.
+\end{equation}
+In particular, at scale zero,
+\begin{equation}\label{eq:coefficientF}
+ \|f_0\|_\infty\le\mathcal F(t,w):=
+ 1+\frac1{32}\max\left\{e^{t+2w/17},
+ \max_{1\le\ell\le7}\frac{(4t)^\ell\ell!}{(2\ell)!}e^{2w/(2\ell+1)}\right\}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+The polynomial identity
+\[
+ T_k(1+2x)=1+\sum_{\ell=1}^k
+ \frac{4^\ell}{(2\ell)!}k^2\prod_{r=1}^{\ell-1}(k^2-r^2)x^\ell
+\]
+follows, for example, by substitution into
+$(z^2-1)T_k''+zT_k'-k^2T_k=0$ and $T_k(1)=1$.
+More explicitly, if $T_k(1+2x)=\sum_{\ell\ge0}a_\ell x^\ell$,
+the differential equation becomes
+$x(1+x)y''+(x+1/2)y'-k^2y=0$ and gives
+$a_{\ell+1}=2(k^2-\ell^2)a_\ell/((\ell+1)(2\ell+1))$.
+Starting with $a_0=1$ proves the displayed product formula, including its
+termination at degree $k$.
+Its coefficients are bounded coefficientwise by those of
+$\cosh(2k\sqrt x)$. Substituting $x=v+s/B_0$ preserves this order.
+The latter entire power series has nonnegative coefficients, so its
+translated coefficients are obtained by absolutely convergent sums.
+The coefficient of $s^\ell$, multiplied by $\ell!$, is at most
+\[
+ \frac{(4t)^\ell\ell!}{(2\ell)!}
+ \sum_{r\ge0}\frac{(4w)^r}{r!}
+ \frac{(\ell+r)!(2\ell)!}{\ell!(2\ell+2r)!}
+ \le\frac{(4t)^\ell\ell!}{(2\ell)!}e^{2w/(2\ell+1)},
+\]
+since each factor of the last factorial ratio is
+$1/[2(2\ell+2s-1)]\le1/[2(2\ell+1)]$.
+Multiply by $\rho$ to obtain the first assertion.
+For the second, midpoint concavity of $\log$ gives
+\[
+ \log\prod_{i=1}^\ell(i-1/2)\ge\int_0^\ell\log x\,dx
+ =\ell\log\ell-\ell.
+\]
+Because this product is $(2\ell)!/(4^\ell\ell!)$, the desired quantity
+is at most $(et/\ell)^\ell\le e^t$, using $1+\log y\le y$.
+Finally $\rho_0\le1/32$ and $|f(\ell)|\le1+u_\ell$.
+Split the indices at $\ell=8$ to obtain \eqref{eq:coefficientF}.
+\end{proof}
+
+\section{From moments to distribution-uniform error bounds}
+Suppose $F_j$ bounds $\|f_j\|_\infty$, and $V_j$ bounds
+$\Var(f_j(N))$ for every Poisson mean. Lemma~\ref{lem:integral} permits
+$V_j=I_j^2/4$, while the coefficient bound permits $V_0\le F_0^2$.
+Indeed, a variable in an interval of length $d$ has variance at most $d^2/4$:
+take its second moment about the interval midpoint and minimize over centers.
+Independence gives
+\begin{equation}\label{eq:variance}
+ \Var Z_j\le S V_j\quad(S<\infty),\qquad
+ \Var Z_j\le F_j^2\E D\quad\text{in general}.
+\end{equation}
+For a countable alphabet, truncate it. An omitted mass $\tau$ contributes
+in absolute value at most $F_j M_{\rm tail}$, where
+$M_{\rm tail}\sim\Poi(m\tau)$. Its second moment is at most
+$F_j^2(m\tau+(m\tau)^2)\to0$, justifying the limit and all moment formulas.
+Also $\sum_i\E|f_j(N_i)|\le F_j\sum_i\Prb(N_i>0)\le F_jm$,
+so the expectation series is absolutely summable. The expression
+$\sum_i\min(p_i/a_j,1)$ is finite, being at most $1/a_j$.
+
+We use the one-sided variance bound
+\begin{equation}\label{eq:cantelli}
+ \Prb(X-\E X\ge t)\le\frac{\Var X}{\Var X+t^2}\quad(t>0),
+\end{equation}
+and the same bound for the lower tail. To prove it, apply Markov to
+$(X-\E X+a)^2$ and minimize $(\Var X+a^2)/(t+a)^2$ at
+$a=\Var X/t$.
+When the variance is zero the statement follows directly. This argument
+applies to either weak one-sided tail, so equality at the decision threshold
+introduces no exceptional event.
+
+Define the dimensionless quantities
+\[
+ v_j=\frac{V_j}{n\delta_j^2},\quad w_j=\frac{F_j^2}{n\delta_j^2},\quad
+ d_j=2-\delta_j/2,\quad \kappa_j=14-\delta_j/2-8\delta_j^2\ge13.375.
+\]
+If $S\le n$, the upper error $\widetilde S>S$ can only arise at a scale.
+Its threshold is $(1+\delta_j)S+\delta_jn$, whereas
+$\E Z_j\le(1+\rho_j)S$. Writing $u=S/n\in(0,1]$, we have
+\[
+ \frac{u}{(1+(1-\delta_j/2)u)^2}\le\frac1{(2-\delta_j/2)^2}.
+\]
+Indeed, the derivative of $u/(1+cu)^2$ is $(1-cu)/(1+cu)^3\ge0$ for
+$0\le u\le1$ and $c=1-\delta_j/2\in[7/8,1)$.
+Apply \eqref{eq:cantelli}, \eqref{eq:variance}, and a union bound:
+\begin{equation}\label{eq:upperbound}
+ \Prb(\widetilde S>S)\le U:=\sum_{j=0}^J\frac{v_j}{v_j+d_j^2}.
+\end{equation}
+
+For power, fix $1\le r\le n$ with $\Delta_r\ge\epsilon$.
+If $\mu=\E D>2n$, then $\Var D\le\mu$ and
+\begin{equation}\label{eq:largeocc}
+ \Prb(\widetilde S\le r)\le\Prb(D\le n)
+ \le\frac\mu{(\mu-n)^2}\le\frac2n.
+\end{equation}
+Otherwise $\mu\le2n$. There are three exhaustive cases.
+\begin{enumerate}
+\item If $p_{(r)}\ge b/2$, observing all of the first $r$ categories and
+any tail category implies $D>r$. A union bound gives
+\begin{equation}\label{eq:heavy}
+ \Prb(D\le r)\le r e^{-mb/2}+e^{-m\Delta_r}
+ \le H(L):=e^{-31L-1}+e^{-C}.
+\end{equation}
+Here $n/L\ge1$, since $n\ge1+\log n$.
+\item If $p_{(r)}<a_0$, the tail alone gives
+$\E Z_0\ge(1-1/32)\epsilon/a_0\ge7.75n$.
+The rejection threshold at $r$ is at most $1.5n$, so its margin is at least
+$6.25n=25\delta_0n>\kappa_0\delta_0n$.
+\item If $a_0\le p_{(r)}<b/2$, choose $j$ with
+$a_j\le p_{(r)}<2a_j$. Such a $j\le J$ exists. For every tail mass $x$,
+$\min(x/a_j,1)\ge x/p_{(r)}$, while each of the first $r$ masses
+contributes one. Since $a_j\delta_j=\epsilon/(32n)$,
+\[
+ \E Z_j\ge(1-\rho_j)(r+16\delta_j n).
+\]
+Subtracting $(1+\delta_j)r+\delta_jn$ leaves a margin at least
+\[
+ \bigl[14\delta_j-\rho_j(1+16\delta_j)\bigr]n
+ \ge\kappa_j\delta_jn.
+\]
+\end{enumerate}
+These are cases for one fixed distribution, so their error bounds are
+maximized, not summed. Consequently
+\begin{align}
+ \Prb(\widetilde S\le r)&\le R:=
+ \max\left\{H(L),\frac2n,\max_j\frac{2w_j}{2w_j+\kappa_j^2}\right\},
+ \label{eq:powergeneral}\\
+ S\le n\quad\Longrightarrow\quad
+ \Prb(\widetilde S\le r)&\le R_f:=
+ \max\left\{H(L),\max_j\frac{v_j}{v_j+\kappa_j^2}\right\}.
+ \label{eq:powerfinite}
+\end{align}
+For the second statement, $\mu>2n$ is impossible and
+$\Var Z_j\le nV_j$.
+
+To prove the joint guarantee, let $t=\min(\eff_\epsilon(p),n)$.
+If $t=1$, its lower constraint is automatic. Otherwise take $r=t-1$;
+then $\Delta_r>\epsilon$ and $\widetilde S>r$ implies $\widehat S\ge t$.
+In this case $1\le r\le n-1$, so the previously proved power inequality
+applies. Since $S\ge1$, clipping the output below at one preserves its
+upper bound whenever $\widetilde S\le S$.
+If $S\ge n$, the upper constraint $\widehat S\le S$ is automatic.
+If $S<n$, combine \eqref{eq:upperbound} and \eqref{eq:powerfinite}.
+Thus a common error bound for both binary promises and joint coverage is
+\begin{equation}\label{eq:common}
+ B(L)=\max\{U+R_f,R\}.
+\end{equation}
+This use of $R_f$ is essential: a binary-test guarantee alone does not imply
+the same joint-coverage guarantee.
+
+\section{Uniform parameter certification}
+The following covers all $n$ and $\epsilon$, not a grid of sampled inputs.
+The only remaining numerical obligations are finitely many exact rational
+inequalities. All intervals between endpoints and the infinite tail are
+covered by the displayed analytic inequalities. Appendix~\ref{app:arithmetic}
+proves the soundness of the rational enclosures used for these obligations.
+
+\subsection{Well-defined parameters and the counting branch}
+For $C\in\{144(\log2)^2,70\}$ and $L\ge15$,
+\[
+ 69<C\le70,\qquad \frac b{2a_0}=\frac{256L^2}{C}>1,\qquad
+ a_j\le b/2,\qquad b\le\frac{64L^2}{Ce^{L-1}}<1.
+\]
+The last function decreases for $L>2$. Moreover,
+\[
+ k_j\le\alpha_j L+1,\quad
+ \alpha_j=\sqrt{512/C}\,\frac{q_j}{2^{j/2}},\quad
+ k_j<6L<\frac{64L}{\sqrt2}\le m\sqrt{b(b-a_j)}.
+\]
+Here $(j+3)2^{-j/2}$ decreases for integers $j\ge0$.
+For explicit elementary bounds, $693/1000<\log2<694/1000$ implies
+$69<144(\log2)^2<70$, while
+$\sqrt{512/69}<11/4$ gives
+$k_j/L<(11/4)\cdot3\cdot(7/10)+1/15<6$.
+At $L=15$, the bound $b<1$ already follows from $e^{14}>1000$.
+Thus Lemma~\ref{lem:expect} applies throughout.
+
+If $\Delta_r\ge\epsilon$, the discovery process has unseen mass at least
+$\epsilon$ before its $(r+1)$st distinct label. Its inter-discovery times
+can be coupled as $E_k/q_k\le E_k/\epsilon$, where the $E_k$ are independent
+unit exponentials. This follows by the memoryless property of a marked
+Poisson process; the next unseen label is sampled independently of that
+waiting time from normalized unseen masses. Hence
+\[
+ \Prb(D\le r)\le\Prb\{\Poi(m\epsilon)\le r\}
+ \le\Prb\{\Poi(Cn/L)\le n\}.
+\]
+For $x>1$, exponential Markov gives
+$\Prb\{\Poi(nx)\le n\}\le e^{-ng(x)}$, $g(x)=x-1-\log x$.
+When $n<100$, $L<6$; when $n\ge100$ and $L<L_0\le20$, $L<20$.
+Therefore, for every listed pair, counting failure is at most
+\begin{equation}\label{eq:countcert}
+ \max\{e^{-g(C/6)},e^{-100g(C/L_0)}\}<10^{-3}.
+\end{equation}
+The upper error in this branch is zero because $D\le S$.
+No numerical logarithm is needed for \eqref{eq:countcert}:
+$e^5>100$ implies $1+\log100<6$;
+$e^{5/2}>23/2$ implies $g(C/6)>g(23/2)>8$;
+and $e^{29/20}>69/20$ implies $g(C/L_0)>g(69/20)>1$.
+Finally $e^8>1000$. These four inequalities follow from the positive Taylor
+partial sums of degrees $8,8,5,12$, respectively, and are verified as
+exact fractions by the certificate.
+
+\subsection{Complete finite intervals: $15\le L\le32$}
+Partition this interval into the 170 closed intervals
+$[a,b]=[i/10,(i+1)/10]$, $i=150,\ldots,319$.
+To avoid confusing $b$ here with the polynomial endpoint, use the following
+slab-specific formulas solely in this subsection. Include all integer scales
+$j\ge0$ with $2^j\le256b^2/C$. Even if a scale does not exist everywhere in
+the slab, including its nonnegative error bound is safe. Define
+\begin{align*}
+ \bar k_j&=\alpha_j b+1,&
+ \bar u_j&=\min\left\{\tfrac12,\frac{C2^j}{512a^2}\right\},&
+ T_j&=\frac{\bar k_j^2}{64a(1-\bar u_j)},\\
+ W_j&=\frac{\bar k_j^2\bar u_j}{1-\bar u_j},&
+ \Theta_j&=\frac{\bar k_j}{\sqrt{8C2^j}},&
+ A_j^+&=\frac{C2^j}{8a}.
+\end{align*}
+Throughout the slab, $h_j^2\le T_j$, $k_j^2a_j/(b_{\rm poly}-a_j)\le W_j$,
+$ma_j\le A_j^+$, and $k_j\sqrt{a_j/(b_{\rm poly}-a_j)}\ge q_j$.
+By Lemma~\ref{lem:integral} an upper bound for $I_j$ is
+\[
+ \bar I_j=\min\left\{
+ 1+2\sqrt{\pi T_j}e^{T_j},\quad
+ 1+2\sqrt{\pi T_j}e^{T_j-2q_j+A_j^+},\quad
+ \frac1{1-\Theta_j}\ \text{if }\Theta_j<1\right\}.
+\]
+Use $\bar F_j=\bar I_j$, $\bar V_j=\bar I_j^2/4$ for $j\ge1$;
+at scale zero use
+\[
+ \bar F_0=\min\{\bar I_0,\mathcal F(T_0,W_0)\},\qquad
+ \bar V_0=\min\{\bar I_0^2/4,\mathcal F(T_0,W_0)^2\}.
+\]
+Insert $v_j\le\bar V_j e^{1-a}\delta_j^{-2}$,
+$w_j\le\bar F_j^2 e^{1-a}\delta_j^{-2}$, $H(L)\le H(a)$, and
+$2/n\le2e^{1-a}$ into \eqref{eq:common}.
+These formulas are monotone in their error arguments. They cover all
+degree-ceiling and scale-floor discontinuities without evaluating those
+discontinuities numerically.
+
+\subsection{The entire half-line: $L\ge32$}
+Put $H=32$. For $0\le j\le7$, define
+\[
+ \xi_j=\frac{C2^j}{512},\qquad
+ t_j=\frac{\alpha_j^2}{64}=\frac{8q_j^2}{C2^j},\qquad
+ d_j^+=\frac{(\alpha_jH+1)^2}{64H(1-\xi_j/H^2)}-t_jH.
+\]
+Then, for every $L\ge H$,
+\begin{equation}\label{eq:affine}
+ h_j^2\le\frac{(\alpha_jL+1)^2}{64L(1-\xi_j/L^2)}
+ \le t_jL+d_j^+.
+\end{equation}
+Indeed, after subtracting $t_jL$, the middle expression equals
+\[
+ \frac{2\alpha_j+(1+\alpha_j^2\xi_j)/L}
+      {64(1-\xi_j/L^2)},
+\]
+which decreases with $L$. At scale zero also
+\[
+ k_0^2\frac{a_0}{b-a_0}\le
+ W_0^+=\frac{(\alpha_0+1/H)^2 C}{512(1-C/(512H^2))}.
+\]
+Now the particular constant emerges:
+\begin{equation}\label{eq:critical}
+ 2t_0=\frac{144(\log2)^2}{C}\le1.
+\end{equation}
+For $C=144(\log2)^2$ this is exact equality; it is not a numerical
+comparison of nearly equal floating-point numbers.
+Using \eqref{eq:coefficientF}, the bound
+$e^{1-L}\mathcal F(t_0L+d_0^+,W_0^+)^2$ is nonincreasing on $L\ge H$.
+For its exponential term this follows from $2t_0\le1$; for the seven
+polynomial terms it follows from $H\ge2\cdot7$.
+To see this without an asymptotic argument, write each candidate as
+$1+A e^{t_0L}$ or $1+A(t_0L+d_0^+)^\ell$, $A>0$.
+For the first, the square times $e^{-L}$ expands into three exponentials
+with nonpositive exponents. For the second, its logarithmic derivative
+after multiplication by $e^{-L}$ is at most $2\ell/L-1\le0$.
+The maximum of finitely many nonincreasing functions is nonincreasing.
+Thus its value at $H$ bounds the entire scale-zero contribution.
+
+For $1\le j\le7$, let
+\[
+ z_j=\min\left\{d_j^+,\ d_j^+-2q_j+\frac{C2^j}{8H}\right\}.
+\]
+Then $I_j\le1+2\sqrt{\pi(t_jL+d_j^+)}e^{t_jL+z_j}$.
+The square of this bound multiplied by $e^{1-L}$ is nonincreasing on
+$L\ge H$: expand its three terms and use
+$H(1-2t_j)>1$, verified by the certificate. Hence each can be bounded at $H$.
+For the square-root cross term its logarithmic derivative is at most
+$1/(2L)-(1-t_j)<0$; for the last term it is at most
+$1/L-(1-2t_j)<0$. The constant term times $e^{-L}$ decreases as well.
+Here $d_j^+>0$ follows from the explicit expression below
+\eqref{eq:affine}.
+
+Finally, for every active $j\ge8$,
+\[
+ h_j^2\le\beta^2L,\qquad
+ \beta^2=\frac{(\alpha_8+1/H)^2}{32},\qquad
+ I_j\le1+2\sqrt\pi\beta\sqrt L e^{\beta^2L}.
+\]
+This uses $m(b-a_j)\ge32L$ and the monotonicity of $\alpha_j$.
+Since $\delta_J^{-1}\le1024L^2/C$,
+\begin{equation}\label{eq:tail}
+ \sum_{j=8}^J\frac{F_j^2}{n\delta_j^2}
+ \le T(L):=\frac43\left(\frac{1024L^2}{C}\right)^2
+ e^{1-L}\left(1+2\sqrt\pi\beta\sqrt L e^{\beta^2L}\right)^2
+ \le T(H).
+\end{equation}
+The derivative signs follow by expanding into powers $L^4,L^{9/2},L^5$
+and using $H(1-2\beta^2)>5$.
+The geometric-sum factor is justified by
+$\sum_{j=8}^J\delta_j^{-2}\le\sum_{j=0}^J16\cdot4^j
+\le(4/3)\delta_J^{-2}$, with the empty sum interpreted as zero.
+For the low scales conservatively take $V_j\le F_j^2$.
+In \eqref{eq:upperbound}, the omitted scales contribute at most $T(H)$;
+in \eqref{eq:powerfinite} at most $T(H)/81$; in
+\eqref{eq:powergeneral} at most $2T(H)/81$, since $\kappa_j>9$.
+For the upper-error contribution we also used $d_j\ge15/8>1$.
+This yields the certified half-line bounds
+\[
+ \sup_{L\ge32}B(L)<
+ \begin{cases}
+ 0.070579,&C=144(\log2)^2,\\
+ 0.051553,&C=70.
+ \end{cases}
+\]
+
+\subsection{Certificate and proof status}
+The verifier \texttt{exact\_certificate.py}, together with the small arithmetic
+module \texttt{rational\_interval.py}, evaluates the displayed expressions
+using integer endpoints with denominator $2^{160}$. Every division and
+square root is rounded outward by integer floor/ceiling operations;
+exponentials, $\log2$, and $\pi$ use rational series with proved remainders.
+Appendix~\ref{app:arithmetic} proves these enclosure rules. No numerical
+library, Monte Carlo sample, or floating-point transcendental function is
+used in these certificates.
+
+For each $C$, ten slab bounds are grouped into each row of
+Table~\ref{tab:slabs}. The entries are rational numbers rounded upward,
+not estimates. The file \texttt{exact\_certificate.json} contains the rational
+inputs and output inequalities. A separate Fraction-based audit
+recalculates the risk aggregation from those inputs and checks the printed
+claims. The maxima over the applicable rows, together with the counting
+bound $1/1000$, give Table~\ref{tab:constants}. This proves
+Theorem~\ref{thm:main}.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{lrr}
+\toprule
+Entire $L$ interval & $C=144(\log2)^2$ & $C=70$\\
+\midrule
+$[15,16]$ & 0.392089 & 0.376264 \\
+$[16,17]$ & 0.317480 & 0.282612 \\
+$[17,18]$ & 0.247691 & 0.232405 \\
+$[18,19]$ & 0.147401 & 0.131984 \\
+$[19,20]$ & 0.105619 & 0.090185 \\
+$[20,21]$ & 0.087747 & 0.072224 \\
+$[21,22]$ & 0.079410 & 0.063748 \\
+$[22,23]$ & 0.074918 & 0.059079 \\
+$[23,24]$ & 0.072069 & 0.056023 \\
+$[24,25]$ & 0.070445 & 0.054169 \\
+$[25,26]$ & 0.068530 & 0.052005 \\
+$[26,27]$ & 0.067068 & 0.050277 \\
+$[27,28]$ & 0.065872 & 0.048801 \\
+$[28,29]$ & 0.064857 & 0.047495 \\
+$[29,30]$ & 0.063978 & 0.046315 \\
+$[30,31]$ & 0.063209 & 0.045238 \\
+$[31,32]$ & 0.062534 & 0.044245 \\
+$[32,\infty)$ & 0.070579 & 0.051553 \\
+\bottomrule
+\end{tabular}
+\caption{Exact rational upper bounds on $B(L)$ over complete intervals.
+The last row is obtained by analytic monotonicity on an unbounded interval.}
+\label{tab:slabs}
+\end{table}
+
+This is a mathematical proof with a finite exact-arithmetic component.
+It is not an end-to-end formalization in a proof-assistant kernel. Its
+analytic lemmas and the source of the certificate verifier remain explicit
+objects for mathematical review; a successful program run alone is not
+offered as a substitute for those lemmas.
+
+\section{Confidence amplification and its actual cost}
+\begin{theorem}[Confidence amplification]\label{thm:amplification}
+Let $1/2<q\le1$ be a uniform lower bound on single-run success, independent of
+$p,n,\epsilon$. Run an odd number $r$ of independent copies, each with its
+own Poisson sample count and fresh independent data.
+Use majority voting for the Yes/No output and the median for
+$\widehat S$. Either aggregated failure is at most
+\begin{equation}\label{eq:binomial}
+ \sum_{k=(r+1)/2}^r {r\choose k}(1-q)^kq^{r-k}
+ \le [4q(1-q)]^{r/2}
+ \le e^{-2r(q-1/2)^2}.
+\end{equation}
+\end{theorem}
+\begin{proof}
+The case $q=1$ is immediate, so assume $q<1$.
+If more than half of the support-bound outputs belong to the fixed interval
+$[\min(\eff_\epsilon(p),n),S]$, their median belongs to that interval.
+This interval is nonempty: for finite $S$, $\eff_\epsilon(p)\le S$,
+and for infinite $S$ there is no finite upper constraint.
+The corresponding implication for binary majority voting is immediate.
+If $X_i$ is a failure indicator with probability at most
+$1-q$, exponential Markov at $\lambda=\log(q/(1-q))$ bounds
+$\Prb(\sum X_i\ge r/2)$ by
+\[
+ e^{-\lambda r/2}[q+(1-q)e^\lambda]^r=[4q(1-q)]^{r/2}.
+\]
+The last inequality in \eqref{eq:binomial} uses
+$4q(1-q)=1-4(q-1/2)^2$ and $1-x\le e^{-x}$.
+The exact binomial bound follows by coupling each failure indicator to an
+independent Bernoulli variable of parameter $1-q$.
+\end{proof}
+
+Expected total samples equal $rm=rCn/(\epsilon L)$.
+For target failure $\eta$, the sufficient repetition count is the least odd
+integer at least $\log(1/\eta)/(2(q-1/2)^2)$; exact binomial tails improve it.
+For example, exact rational calculations give
+\begin{center}
+\begin{tabular}{rrr}
+\toprule
+guaranteed $q$ & repeats $r$ & failure upper bound\\
+\midrule
+$2/3$&47&0.009002915\\
+$3/5$&133&0.009785038\\
+$0.92$&5&0.0045252608\\
+\bottomrule
+\end{tabular}
+\end{center}
+Therefore $(C,L_0)=(70,20)$ with five copies has expected coefficient
+$5C=350$, while relying only on $q\ge2/3$ and 47 copies would give
+coefficient $3290$. Minimizing the single-run coefficient alone is not the
+same optimization problem as minimizing total samples at a fixed confidence.
+The two amplified guarantees are individual statements. If one requires
+the binary output and the support bound to be correct simultaneously, a
+union bound gives twice the displayed failure bound; allocate $\eta/2$ to
+each when needed.
+
+Merely having success $>1/2$ for each separate input is insufficient for a
+uniform constant repetition budget. One needs a fixed margin
+$\gamma=q-1/2>0$. Reusing the same data with fresh random seeds does not
+provide the independent-copy hypothesis. Bootstrap resampling likewise does
+not supply this guarantee about the unknown underlying distribution.
+
+\begin{corollary}[Deterministic sample cap]\label{cor:cap}
+In a single run, draw $M\sim\Poi(m)$ before accessing the sample oracle.
+If $M>K:=\lceil2m\rceil$, return any fixed allowed outputs without querying
+the oracle; otherwise perform the original run. This algorithm uses at most
+$K$ samples, has expected sample use at most $m$, and has each error bound
+of Theorem~\ref{thm:main} increased by less than $10^{-9}$.
+All convenient success guarantees in Table~\ref{tab:constants} remain valid.
+In particular, five independent capped runs with $(C,L_0)=(70,20)$ have
+individual binary and support-bound failure at most $0.0045252608$,
+joint failure of either output at most $0.0090505216$, expected total samples
+at most $350n/(\epsilon L)$, and total samples always at most
+$700n/(\epsilon L)+5$.
+\end{corollary}
+\begin{proof}
+Couple the capped run to the original run. Their outputs agree unless
+$M>K$. The Poisson moment generating function and exponential Markov at
+$\log2$ give
+\[
+ \Prb(M>K)\le\Prb(M\ge2m)
+ \le\exp\{-m(2\log2-1)\}.
+\]
+Since $n/L\ge1$ and $\epsilon<1$, $m>C\ge C_*>69$.
+The elementary bounds above give
+$m(2\log2-1)>69(2\cdot693/1000-1)>24$ and
+$e^{24}=(e^8)^3>10^9$. A union bound proves the error increase.
+The rational slack in every row of Table~\ref{tab:constants} exceeds
+$10^{-9}$ relative to its stated convenient success guarantee.
+For the five-run claim use $q=23/25$ in \eqref{eq:binomial}:
+the exact failure is at most $44192/9765625=0.0045252608$ per task.
+Apply one union bound for both outputs. Finally,
+$5\lceil2m\rceil\le10m+5$ and the expected number queried is at most $5m$.
+No independence claim is made conditional on the no-abort event; the proof
+uses the unconditional coupling instead. Different capped runs use
+independent randomness and samples, as required by amplification.
+\end{proof}
+
+\section{What is optimized, and what remains open}
+The new constant is over fourteen times smaller than $1025$, and the
+polynomial branch starts near $n=e^{15}\approx3.27\times10^6$ for $L_0=16$,
+instead of near $e^{1023}$. For $L_0=15$, the threshold is $e^{14}$;
+for $L_0=20$, it is $e^{19}$. These are thresholds in $n$, not guarantees
+that the required sample budget is practical for every $\epsilon$.
+
+Equation~\eqref{eq:critical} explains why this particular proof gives
+$144(\log2)^2$. Below it, the scale-zero leading upper bound used here grows
+like $\exp((144(\log2)^2/C-1)L)$. This is a limitation of this bound, not a
+counterexample to the algorithm. A sharper coefficient or distribution-aware
+variance argument might lower $C$ further. Nor have we proved that $L_0=16$
+is the smallest threshold achieving $2/3$ success. Parameters have a tradeoff;
+there is no justified claim here that one pair minimizes both globally.
+
+A weak necessary condition illustrates the remaining gap. If $L_0>1$, the
+input $n=1$ uses the counting branch. On the uniform distribution on $K$
+labels take $\epsilon=1-1/K$, so $\Delta_1=\epsilon$. As $K\to\infty$,
+$m\to C$, collisions vanish, and the error probability tends to
+$e^{-C}(1+C)$. Hence uniform success at least $2/3$ requires
+$e^{-C}(1+C)\le1/3$, or $C\ge2.2892814\ldots$.
+A uniform success constant strictly above $1/2$ requires
+$C>1.6783469\ldots$. These necessary conditions are far below our sufficient
+constant and are not tight optimality results.
+
+\paragraph{Implementation scope.}
+The proof uses the real mean in \eqref{eq:model}, exact polynomial weights,
+and independent Poissonized samples. It does not certify arbitrary
+floating-point approximations, an integer-rounded mean with recomputed
+weights, or old experiments with other constants. If only integer Poisson
+means are supported, draw $\Poi(\lceil m\rceil)$ samples and independently
+retain each with probability $m/\lceil m\rceil$; the retained counts have
+exactly the law in \eqref{eq:model}. Compute weights from $m$ and use retained
+counts. This costs less than one extra expected sample per run.
+These mathematical guarantees do not by themselves establish numerical
+stability of a floating-point implementation or measured performance on
+empirical distributions.
+
+\begin{thebibliography}{2}
+\bibitem{wang} Qisheng Wang. \emph{Optimal Support Size Testing}.
+arXiv:2610.18723v1, 2026. \url{https://arxiv.org/abs/2610.18723v1}.
+\bibitem{dlmf} NIST Digital Library of Mathematical Functions.
+Section 18.5, Explicit Representations.
+\url{https://dlmf.nist.gov/18.5}. Accessed October 21, 2026.
+\end{thebibliography}
+\appendix
+\input{arithmetic_appendix.tex}
+\end{document}

@@ -1,0 +1,116 @@
+{
+  "passed": true,
+  "supplementary_checks": 14880,
+  "categories": {
+    "constant_set": 2,
+    "result_set_no_duplicates": 1,
+    "continuous_domain_no_gaps_or_duplicates": 2,
+    "half_line_meets_slabs": 2,
+    "parameter_lemma": 8,
+    "scale_vector_lengths": 520,
+    "all_active_scales_included": 520,
+    "last_scale_not_accidentally_extra": 520,
+    "tail_margin_constants": 6130,
+    "degree_ceiling_envelope": 6130,
+    "half_line_shift": 16,
+    "scale_zero_decay": 2,
+    "scale_zero_polynomial_decay": 2,
+    "low_scale_decay": 14,
+    "omitted_scale_decay": 2,
+    "counting_rate_positive": 472,
+    "counting_recomputed_bound": 472,
+    "counting_target": 8,
+    "selected_domain": 8,
+    "exact_aggregation": 32,
+    "advertised_target": 8,
+    "positive_series_domain": 4,
+    "independent_critical_root_sign": 4,
+    "existing_arb_formula_audit": 1
+  },
+  "existing_arb_formula_checks": 20507,
+  "results": [
+    {
+      "C": "star",
+      "L0": 14,
+      "counting_upper": 2.5802693551487186e-12,
+      "joint_upper": 0.0014522181243532975,
+      "target": "3/2000"
+    },
+    {
+      "C": "star",
+      "L0": 15,
+      "counting_upper": 2.5802693551487186e-12,
+      "joint_upper": 0.000376058669474608,
+      "target": "19/50000"
+    },
+    {
+      "C": "star",
+      "L0": 16,
+      "counting_upper": 2.5802693551487186e-12,
+      "joint_upper": 0.00030681209395968937,
+      "target": "31/100000"
+    },
+    {
+      "C": "star",
+      "L0": 18,
+      "counting_upper": 2.5802693551487186e-12,
+      "joint_upper": 0.00027389720462564683,
+      "target": "7/25000"
+    },
+    {
+      "C": "70",
+      "L0": 14,
+      "counting_upper": 1.8628220042200464e-12,
+      "joint_upper": 0.0008794011635031739,
+      "target": "9/10000"
+    },
+    {
+      "C": "70",
+      "L0": 15,
+      "counting_upper": 1.8628220042200464e-12,
+      "joint_upper": 7.962574534073948e-05,
+      "target": "81/1000000"
+    },
+    {
+      "C": "70",
+      "L0": 16,
+      "counting_upper": 1.8628220042200464e-12,
+      "joint_upper": 5.6194050562205936e-05,
+      "target": "57/1000000"
+    },
+    {
+      "C": "70",
+      "L0": 18,
+      "counting_upper": 1.8628220042200464e-12,
+      "joint_upper": 3.891500781855941e-05,
+      "target": "1/25000"
+    }
+  ],
+  "independent_gamma_brackets": {
+    "69": {
+      "lower": "[0.5000453280107935724434326520759980886430998500840857937448421605434937393188923241519458296433650570469293207861876056962095408319274593930235373985254 +/- 2.53e-152]",
+      "upper": "[0.5000453280107935724434326520759980886430998500840857937448421605434937393188923241519458296433650570469293207861876056962095408319274593930235373985254 +/- 2.53e-152]"
+    },
+    "69.00627138": {
+      "lower": "[0.5000000000087097774064958774195900645518554956519107259105896079944728092364279665389334516124623232668370448203148131891484971787499180149231145062273 +/- 6.34e-152]",
+      "upper": "[0.5000000000087097774064958774195900645518554956519107259105896079944728092364279665389334516124623232668370448203148131891484971787499180149231145062273 +/- 6.34e-152]"
+    },
+    "69.00627139": {
+      "lower": "[0.4999999999364387730598202542121333093462278126255964026146786509299199293152331237864433132073315941362861356414230577590606853614530383020548261035108 +/- 4.82e-152]",
+      "upper": "[0.4999999999364387730598202542121333093462278126255964026146786509299199293152331237864433132073315941362861356414230577590606853614530383020548261035108 +/- 4.82e-152]"
+    },
+    "70": {
+      "lower": "[0.4929199202809152244767138045921423898864658745190737665216903759971317160397394336642079883387459996035761809604611923734458267976830019333582168407771 +/- 4.01e-152]",
+      "upper": "[0.4929199202809152244767138045921423898864658745190737665216903759971317160397394336642079883387459996035761809604611923734458267976830019333582168407771 +/- 4.01e-152]"
+    }
+  },
+  "source_sha256": {
+    "parameter_search/review_proof.py": "a54380cf56f9e28e1feb3dad66dc0bafe7500a31d7ae412dd7c42e727ba1a3b9",
+    "parameter_search/audit.py": "bc01a06025ace9f38dc84b30a0711478fccb3cf620edcbd920f86a2c7df7d772",
+    "results_parameter_search/proof.tex": "1912704b751800288a1fd8367729c14bd558ee98f1d4b6f27dd49a19e71cc0de",
+    "results_parameter_search/certificate.json": "f0ae63840def635685b31bbcba2e12e9bc7e6d02ee672db0d07936a82cfe4e43",
+    "results_parameter_search/lower_bound_certificate.json": "803c733d153bea8a8cf9ca649ccd74fd6ed5f0c5dac846f760bf148c99643194",
+    "artifacts/joint_constants_submission/submission_proof.tex": "557c582364c9bb9a64ea50d7f296c9a4877104fccf3f445d1887b53e04343c79"
+  },
+  "scope": "Arithmetic and coverage audit. Analytic inequalities and asymptotic probability arguments are reviewed in review.tex; no claim of proof-assistant formal verification."
+}

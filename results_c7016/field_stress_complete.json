@@ -1,0 +1,7 @@
+{
+  "finite_cells": 60,
+  "duplicate_cells": 32,
+  "group_cells": 8,
+  "holdout_cells": 40,
+  "public_api_calls": 152
+}

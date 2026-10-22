@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      9999
+    ],
+    "probabilities_exact": [
+      "324244426377143/326466426377143",
+      "2000000000/2938197837394287"
+    ],
+    "support": 10000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C6_lambda4",
+      "cell": "c46766647b5fc4e79fe3c1a5",
+      "C": "6",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".001",
+      "S": 10000,
+      "effective": 8531,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 5876395.674788574,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 9816.709,
+      "mean_lower_lo": 9816.709,
+      "mean_lower_hi": 9816.709,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.0004276969702914357,
+      "scoring_seconds": 0.0004033959994558245
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C6_lambda4",
+      "cell": "c46766647b5fc4e79fe3c1a5",
+      "C": "70",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".001",
+      "S": 10000,
+      "effective": 8531,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 68557949.53920002,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 10000.0,
+      "mean_lower_lo": 10000.0,
+      "mean_lower_hi": 10000.0,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.000246796989813447,
+      "scoring_seconds": 0.0003252990427426994
+    }
+  ],
+  "raw_file": "raw/c46766647b5fc4e79fe3c1a5.npz",
+  "raw_sha256": "6f81b42bf7b0e586e2399f352356b24537ff04714b218b636e825fda6a81eac9"
+}

@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      9999
+    ],
+    "probabilities_exact": [
+      "293136426377143/326466426377143",
+      "10000000000/979399279131429"
+    ],
+    "support": 10000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C10_lambda1",
+      "cell": "78d1f72eaf4f2af1343e7231",
+      "C": "10",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".1",
+      "S": 10000,
+      "effective": 207,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 97939.9279131429,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 6320.456,
+      "mean_lower_lo": 6320.456,
+      "mean_lower_hi": 6320.456,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.00037909901584498584,
+      "scoring_seconds": 0.000378697004634887
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C10_lambda1",
+      "cell": "78d1f72eaf4f2af1343e7231",
+      "C": "70",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".1",
+      "S": 10000,
+      "effective": 207,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 685579.4953920003,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 9990.908,
+      "mean_lower_lo": 9990.908,
+      "mean_lower_hi": 9990.908,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.0003432990051805973,
+      "scoring_seconds": 0.00035759698948822916
+    }
+  ],
+  "raw_file": "raw/78d1f72eaf4f2af1343e7231.npz",
+  "raw_sha256": "0207183f62ef12b7eeb3d421688352128be4de9d1a3fd1bc5336b9b52e2e45a5"
+}

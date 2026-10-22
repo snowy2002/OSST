@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      9999
+    ],
+    "probabilities_exact": [
+      "318133926377143/326466426377143",
+      "2500000000/979399279131429"
+    ],
+    "support": 10000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C40_lambda1",
+      "cell": "0d32f158c3d27da980a793e9",
+      "C": "40",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".1",
+      "S": 10000,
+      "effective": 1,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 391759.7116525716,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 6322.6175,
+      "mean_lower_lo": 6322.6175,
+      "mean_lower_hi": 6322.6175,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.00031269999453797936,
+      "scoring_seconds": 0.00031259702518582344
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C40_lambda1",
+      "cell": "0d32f158c3d27da980a793e9",
+      "C": "70",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".1",
+      "S": 10000,
+      "effective": 1,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 685579.4953920003,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 8261.089,
+      "mean_lower_lo": 8261.089,
+      "mean_lower_hi": 8261.089,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.0003053969412576407,
+      "scoring_seconds": 0.0002717990137171
+    }
+  ],
+  "raw_file": "raw/0d32f158c3d27da980a793e9.npz",
+  "raw_sha256": "a1ff8e897bca6769a797c921ef56c93d7256e0f4ac323ceb7e0d21ac515d64b5"
+}

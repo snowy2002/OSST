@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      9999
+    ],
+    "probabilities_exact": [
+      "255362426377143/326466426377143",
+      "64000000000/2938197837394287"
+    ],
+    "support": 10000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C6_lambda128",
+      "cell": "c98f2779650b788485094e12",
+      "C": "6",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".001",
+      "S": 10000,
+      "effective": 9955,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 5876395.674788574,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 10000.0,
+      "mean_lower_lo": 10000.0,
+      "mean_lower_hi": 10000.0,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.0003452979726716876,
+      "scoring_seconds": 0.0003832959628198296
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C6_lambda128",
+      "cell": "c98f2779650b788485094e12",
+      "C": "70",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".001",
+      "S": 10000,
+      "effective": 9955,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 68557949.53920002,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 10000.0,
+      "mean_lower_lo": 10000.0,
+      "mean_lower_hi": 10000.0,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.0002254969731438905,
+      "scoring_seconds": 0.00030279901693575084
+    }
+  ],
+  "raw_file": "raw/c98f2779650b788485094e12.npz",
+  "raw_sha256": "cfb9ba3df48d869d58588f8ec93246f085dc8f024762add3259a0457d6218734"
+}

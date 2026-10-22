@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      9999
+    ],
+    "probabilities_exact": [
+      "337092831300343/337892751300343",
+      "80000000/337892751300343"
+    ],
+    "support": 10000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C69_lambda16",
+      "cell": "95ebf7f6f135b2d67ce6520d",
+      "C": "69",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".001",
+      "S": 10000,
+      "effective": 5777,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 67578550.2600686,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 9999.9995,
+      "mean_lower_lo": 9999.9995,
+      "mean_lower_hi": 9999.9995,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.0003050970262847841,
+      "scoring_seconds": 0.00035429999115876853
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C69_lambda16",
+      "cell": "95ebf7f6f135b2d67ce6520d",
+      "C": "70",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".001",
+      "S": 10000,
+      "effective": 5777,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 68557949.53920002,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 10000.0,
+      "mean_lower_lo": 10000.0,
+      "mean_lower_hi": 10000.0,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.00022929901024326682,
+      "scoring_seconds": 0.0003249970031902194
+    }
+  ],
+  "raw_file": "raw/95ebf7f6f135b2d67ce6520d.npz",
+  "raw_sha256": "8b4b569c03258cd48e511c5d6c9f56e101b92e68849485b9d1c5c322b52cb359"
+}

@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      9999
+    ],
+    "probabilities_exact": [
+      "237586426377143/326466426377143",
+      "80000000000/2938197837394287"
+    ],
+    "support": 10000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C60_lambda16",
+      "cell": "d6cc1fdb98ad4456ed793158",
+      "C": "60",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".1",
+      "S": 10000,
+      "effective": 6328,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 587639.5674788574,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 9999.999,
+      "mean_lower_lo": 9999.999,
+      "mean_lower_hi": 9999.999,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.00026259999140165746,
+      "scoring_seconds": 0.0003625969693530351
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C60_lambda16",
+      "cell": "d6cc1fdb98ad4456ed793158",
+      "C": "70",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".1",
+      "S": 10000,
+      "effective": 6328,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 685579.4953920003,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 10000.0,
+      "mean_lower_lo": 10000.0,
+      "mean_lower_hi": 10000.0,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.0002638970036059618,
+      "scoring_seconds": 0.0003071990213356912
+    }
+  ],
+  "raw_file": "raw/d6cc1fdb98ad4456ed793158.npz",
+  "raw_sha256": "b14e7f694def8f7898cdeee4db3849aa335aef2fcc5cf05fa7a7cbf397b40571"
+}

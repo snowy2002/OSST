@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      9999
+    ],
+    "probabilities_exact": [
+      "326355326377143/326466426377143",
+      "100000000/2938197837394287"
+    ],
+    "support": 10000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C60_lambda2",
+      "cell": "7ab11f2ecf1699e7d3cb237c",
+      "C": "60",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".001",
+      "S": 10000,
+      "effective": 1,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 58763956.74788574,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 8647.084,
+      "mean_lower_lo": 8647.084,
+      "mean_lower_hi": 8647.084,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.00037399795837700367,
+      "scoring_seconds": 0.000326198001857847
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C60_lambda2",
+      "cell": "7ab11f2ecf1699e7d3cb237c",
+      "C": "70",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".001",
+      "S": 10000,
+      "effective": 1,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 68557949.53920002,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 9030.1285,
+      "mean_lower_lo": 9030.1285,
+      "mean_lower_hi": 9030.1285,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.0002846970164682716,
+      "scoring_seconds": 0.0002952990180347115
+    }
+  ],
+  "raw_file": "raw/7ab11f2ecf1699e7d3cb237c.npz",
+  "raw_sha256": "1271fdbc83e80d8471eb65c320197b8fc1c80cc4eb1707c5215118ee35fae7c4"
+}

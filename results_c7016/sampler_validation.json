@@ -1,0 +1,61 @@
+[
+  {
+    "kind": "poisson_probability",
+    "mean": 4e-14,
+    "max_absolute_error": 6.310887241768095e-30
+  },
+  {
+    "kind": "poisson_probability",
+    "mean": 1e-06,
+    "max_absolute_error": 1.2705494208814505e-21
+  },
+  {
+    "kind": "poisson_probability",
+    "mean": 0.01,
+    "max_absolute_error": 6.938893903907228e-18
+  },
+  {
+    "kind": "poisson_probability",
+    "mean": 0.1,
+    "max_absolute_error": 1.3877787807814457e-17
+  },
+  {
+    "kind": "poisson_probability",
+    "mean": 1.0,
+    "max_absolute_error": 2.7755575615628914e-17
+  },
+  {
+    "kind": "poisson_probability",
+    "mean": 5.0,
+    "max_absolute_error": 2.7755575615628914e-17
+  },
+  {
+    "kind": "poisson_probability",
+    "mean": 20.0,
+    "max_absolute_error": 4.163336342344337e-16
+  },
+  {
+    "kind": "poisson_probability",
+    "mean": 80.0,
+    "max_absolute_error": 3.3029134982598407e-15
+  },
+  {
+    "kind": "poisson_probability",
+    "mean": 160.0,
+    "max_absolute_error": 3.2751579226442118e-15
+  },
+  {
+    "kind": "poisson_probability",
+    "mean": 500.0,
+    "max_absolute_error": 1.0825957055349948e-83
+  },
+  {
+    "kind": "huge_diffuse",
+    "support": 1000000000000000,
+    "mean": 40,
+    "trials": 50000,
+    "observed_mean": 40.0184,
+    "observed_variance": 39.76234144,
+    "max_bin_mass_defect": 0.0
+  }
+]

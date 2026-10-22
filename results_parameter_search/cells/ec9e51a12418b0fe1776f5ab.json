@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      9999
+    ],
+    "probabilities_exact": [
+      "59826426377143/326466426377143",
+      "80000000000/979399279131429"
+    ],
+    "support": 10000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C40_lambda32",
+      "cell": "ec9e51a12418b0fe1776f5ab",
+      "C": "40",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".1",
+      "S": 10000,
+      "effective": 8776,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 391759.7116525716,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 10000.0,
+      "mean_lower_lo": 10000.0,
+      "mean_lower_hi": 10000.0,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.00026249801157973707,
+      "scoring_seconds": 0.000324698950862512
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C40_lambda32",
+      "cell": "ec9e51a12418b0fe1776f5ab",
+      "C": "70",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".1",
+      "S": 10000,
+      "effective": 8776,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 685579.4953920003,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 10000.0,
+      "mean_lower_lo": 10000.0,
+      "mean_lower_hi": 10000.0,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.00022950000129640102,
+      "scoring_seconds": 0.000343196967151016
+    }
+  ],
+  "raw_file": "raw/ec9e51a12418b0fe1776f5ab.npz",
+  "raw_sha256": "d4bc67aefb5595382da790aac3bb0946655b9a82530a2649c11c0b7729cd2bbb"
+}

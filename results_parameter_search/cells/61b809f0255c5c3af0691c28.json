@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      999999
+    ],
+    "probabilities_exact": [
+      "32512456571123/32568400571123",
+      "8000000/4657281281670589"
+    ],
+    "support": 1000000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C69_lambda8",
+      "cell": "61b809f0255c5c3af0691c28",
+      "C": "69",
+      "L0": 14,
+      "n": 1000000,
+      "epsilon": ".001",
+      "S": 1000000,
+      "effective": 417840,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 4657281281.670589,
+      "branch": "chebyshev",
+      "degree": 84,
+      "scales": 10,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 999665.272,
+      "mean_lower_lo": 999665.272,
+      "mean_lower_hi": 999665.272,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 1.9984014443252818e-15,
+      "sampling_seconds": 0.008999446989037097,
+      "scoring_seconds": 0.005898964940570295
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C69_lambda8",
+      "cell": "61b809f0255c5c3af0691c28",
+      "C": "70",
+      "L0": 14,
+      "n": 1000000,
+      "epsilon": ".001",
+      "S": 1000000,
+      "effective": 417840,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 4724778111.839728,
+      "branch": "chebyshev",
+      "degree": 84,
+      "scales": 10,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 999701.6555,
+      "mean_lower_lo": 999701.6555,
+      "mean_lower_hi": 999701.6555,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 1.5543122344752192e-15,
+      "sampling_seconds": 0.008608747011749074,
+      "scoring_seconds": 0.005897666036617011
+    }
+  ],
+  "raw_file": "raw/61b809f0255c5c3af0691c28.npz",
+  "raw_sha256": "38324315a56a3608dfc5eac9fb306015d778b94f4bf6e87e027d580a016154ee"
+}

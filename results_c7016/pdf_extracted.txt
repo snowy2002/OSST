@@ -1,0 +1,283 @@
+Experiments with C0 = 70 and L0 = 16
+Natural Empirical and Constructed Distributions
+OSST project experimental artifact
+22 October 2026
+Abstract
+We execute the real-mean (70, 16) support-size construction on 756 constructed, 236 natural
+empirical, and 120 empirically shaped synthetic conﬁgurations. The primary method is evaluated
+4,208,000 times, including 1,672,000 actual polynomial-branch trials. No promised binary error or
+support-bound failure is observed. However, the same-budget count ablation also has no binary errors,
+and a 99%-guaranteed count baseline uses 2.44–8.39 times fewer expected samples on the synthetic
+grid.
+Polynomial corrections improve 554,000 lower bounds.
+We preserve negative comparisons,
+ﬁnite-ﬁle failures and dependence stress.
+1
+Protocol and statistical scope
+We implement the construction in Qisheng Wang’s Optimal Support Size Testing (supplied manuscript
+2610.18723v1) with the project’s certiﬁed constants. The algorithm uses L = 1 + ln n, real Poisson
+mean m = 70n/(ϵL), and the unchanged polynomial construction when L ≥16.
+Its ﬁrst integer
+polynomial input is n = 3, 269, 018. We retain all scales, degrees, corrections and decision thresholds;
+the largest tested degree is 162. The supplied theorem gives individual failure below 0.282612 for the
+binary promise problem and for support-bound coverage. ϵ is the distribution separation parameter,
+not the failure probability.
+Synthetic sizes range from 1 to 1012 and include three consecutive integers at the branch boundary.
+Four epsilons are 0.001, 0.01, 0.1 and 0.25. Uniform, concentrated-head, sparse-tail, power, lognormal,
+Gaussian-block, geometric-block, boundary and gap distributions are included. Natural data add ϵ =
+0.05. Each primary synthetic/natural cell has four independent blocks of 1000 trials; lifted-shape cells
+have four blocks of 500. Exact rational tail masses determine promise labels. Gap inputs have no
+binary error label. Code/data hashes were frozen before primary simulation, with no error-dependent
+stopping. Diﬀerent budgets use independent streams; same-budget ablations share ﬁngerprints. Method
+evaluations are not all independent samples.
+Suite
+Cells
+Outputs
+Errors
+Worst 95% bound
+Synthetic
+756
+3,024,000
+0
+0.2817%
+Natural empirical
+236
+944,000
+0
+0.2441%
+Lifted (synthetic)
+120
+240,000
+0
+0.4660%
+27 independent runs
+50
+50,000
+0
+0.7848%
+Table 1: Primary method or ampliﬁed outputs. The last column is a percentage: the worst cell’s one-
+sided Clopper–Pearson upper bound with Bonferroni correction across all non-gap method cells in its
+suite. Zero observed errors do not establish zero risk. Support-bound coverage is checked separately.
+1
+
+Synthetic
+Natural empirical
+Lifted shapes
+(synthetic)
+27 independent runs
+0.0
+0.2
+0.4
+0.6
+0.8
+Worst cell error upper bound (%)
+0.282%
+0.244%
+0.466%
+0.785%
+C=70, L0=16: simultaneous 95% error bounds
+Observed error rate (zero)
+Figure 1: Simultaneous error bounds, including the separate ampliﬁcation experiment.
+2
+Samples, lower bounds and conﬁdence
+Single-run samples are about 14.64 times fewer than for (1025, 1024), but the uniform single-run conﬁ-
+dence guarantees diﬀer. At the same theoretical conﬁdence target, a certiﬁed count baseline still uses
+2.44–16.30 times fewer samples. Even the 99% count baseline uses 2.44–8.39 times fewer samples. This
+practical grid has 70/(1 + ln n) ≥2.44, so the count statistic already receives a substantial budget. The
+polynomial changes improve lower bounds, not binary rejection counts, on this grid.
+On the rare-tail null with n = 1012, ϵ = 0.1 and tail mass 0.1ϵ, the mean observed fraction is
+about 0.2169 while the new lower bound is about 0.5786n. Here the eﬀective support is only one; this
+illustrates extra information, not recovery from a failed eﬀective-support guarantee.
+Using only (70, 16), 27 independent repetitions, majority voting and median aggregation give per-
+task failure at most 0.008175637833.
+The expected total coeﬃcient is 1890, about 1.844 times the
+older coeﬃcient 1025. A union bound for either output failing is 0.016351275666, so we do not claim
+simultaneous 99% correctness for both outputs. Fifty conﬁgurations each use 1000 aggregated trials.
+The earlier (70, 20) results are not mixed into this experiment.
+2
+
+100
+102
+104
+106
+108
+1010
+1012
+n
+101
+103
+105
+107
+109
+1011
+1013
+1015
+Expected sample budget
+Single run, epsilon=0.1
+C=70, L0=16
+Count (matched confidence)
+Count (99% guarantee)
+C=1025, L0=1024
+100
+102
+104
+106
+108
+1010
+1012
+n
+0
+50
+100
+150
+200
+Sample-budget ratio
+Lower is cheaper; 27 runs give <1% risk
+70/16 single run / count-99
+70/16 x27 / count-99
+Figure 2: Expected sample costs and conﬁdence-aligned repeated-run comparisons.
+102
+104
+106
+108
+1010
+1012
+n
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+Mean lower bound / true support
+Tail mass = 0.1 epsilon
+Full statistic
+Count, same samples
+Branch boundary
+102
+104
+106
+108
+1010
+1012
+n
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+Mean lower bound / true support
+Tail mass = 0.5 epsilon
+Full statistic
+Count, same samples
+Branch boundary
+Rare-category nulls: sharper lower bounds, no added binary rejections
+Figure 3: Sharper lower bounds on rare-category nulls. The branch change is prescribed.
+3
+Natural data and dependence
+Ten ﬁnite empirical populations cover mites, birds at two sites, spiders under two treatments, moths,
+land snails, BCI trees and ﬁsh from two year/gear strata. Sources, pinned versions, hashes and licenses
+are retained in data_sources.json. No diﬀerent years/sites/treatments are pooled. All original natural
+populations use the count branch. Splitting each observed category into equally probable synthetic
+clones creates separate lifted-shape tests around 107 and 109 support; these are explicitly synthetic, not
+new species observations. There are 116 polynomial lifted-shape conﬁgurations.
+Only 42 of 236 natural conﬁgurations have enough original records to reach the mean budget. Fixed-
+ﬁle tests retain every Poisson overﬂow as Inconclusive, never truncate or resample until success. Suc-
+cessful without-replacement subsamples are descriptive and do not establish unconditional iid risk for
+an unknown ecosystem. Group holdouts and whole-group compound-Poisson resampling are separate
+stress tests. Artiﬁcially duplicated observations produce failure rates up to 100%, despite preserving
+marginal labels and expected record count.
+3
+
+mite
+bird_north
+bird_south
+spider_girdled
+spider_logged
+moths
+okland
+bci
+fish_2007_seine
+fish_2008_seine
+10−1
+100
+101
+102
+103
+Required mean / available records
+Natural-data feasibility: 42 of 236 settings reach the mean budget
+Available records = expected budget
+Figure 4: Original record budgets across natural conﬁgurations.
+100
+101
+102
+103
+Repeated copies per independent observation
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+Failure to reject
+Dependence stress: same expected records, fewer independent labels
+mite
+bci
+fish_2007_seine
+fish_2008_seine
+Figure 5: Artiﬁcial dependence invalidates the independent-sampling hypothesis.
+4
+Numerical validation and reproducibility
+Arb certiﬁes real-mean parameters and full polynomial weights. Batched dot products use outward
+enclosures and conservative IEEE-754 roundoﬀbounds; unresolved event thresholds are reﬁned with
+Arb. Every binary decision and coverage event is certiﬁed on its supplied counts. Some exact integer
+lower outputs remain enclosed in intervals; their means are reported as intervals, not guessed integers.
+The public single-ﬁngerprint interface increases precision until it certiﬁes the exact integer output or
+raises an error.
+There are 8896 full-Arb primary checks, 476 further saved-proﬁle checks at 1024 bits, and 18 explicit
+4
+
+full-ﬁngerprint API runs (12 polynomial). All 125 regression tests pass. The analytic proof’s 428 exact
+obligations and 2491 independent arithmetic checks are recomputed with byte-identical results. The
+ﬁnal audit includes 113,951 checks. This is not an end-to-end proof-assistant formalization.
+Grouped multinomial ﬁngerprints have the same law as independent Poisson category counts in real
+arithmetic. Probability evaluation and pseudorandom generation remain binary64 approximations. The
+high-count bucket retains category counts without fabricating total observations M. No compressed
+simulation timing is represented as physical sample-acquisition time.
+104
+106
+108
+1010
+1012
+n
+0
+20
+40
+60
+80
+100
+120
+140
+160
+Maximum polynomial degree
+Full degrees retained
+104
+106
+108
+1010
+1012
+n
+10−1
+100
+Microseconds per fingerprint
+Local batch scoring; excludes sampling
+Figure 6: Full degree and local scoring cost, excluding physical data collection.
+Artifact.
+Start with the Chinese report.html, then REPRODUCE.txt, protocol.json, CSV sum-
+maries, exact population speciﬁcations in cells/, and per-trial ﬁngerprints in raw/. The source snap-
+shot and ﬁnal manifest permit independent reruns.
+Statistical success on this ﬁnite grid does not
+prove globally minimal constants, improved asymptotic complexity, ecosystem completeness or a venue-
+acceptance claim.
+5

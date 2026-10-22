@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "case": "missing interval",
+      "rejected": true,
+      "reason": "Proof review failed: continuous_domain_no_gaps_or_duplicates"
+    },
+    {
+      "case": "duplicate interval",
+      "rejected": true,
+      "reason": "Proof review failed: continuous_domain_no_gaps_or_duplicates"
+    },
+    {
+      "case": "missing active scale",
+      "rejected": true,
+      "reason": "Proof review failed: all_active_scales_included"
+    },
+    {
+      "case": "tail starts after finite slabs",
+      "rejected": true,
+      "reason": "Proof review failed: half_line_meets_slabs"
+    },
+    {
+      "case": "missing result row",
+      "rejected": true,
+      "reason": "Proof review failed: result_set_no_duplicates"
+    },
+    {
+      "case": "understated counting bound",
+      "rejected": true,
+      "reason": "Proof review failed: counting_recomputed_bound"
+    },
+    {
+      "case": "understated aggregate bound",
+      "rejected": true,
+      "reason": "Proof review failed: exact_aggregation"
+    }
+  ]
+}

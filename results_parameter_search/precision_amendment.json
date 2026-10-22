@@ -1,0 +1,6 @@
+{
+  "reason": "The exploratory C=6, n=10^12 polynomial recurrence at 512 bits enclosed its normalizer through zero, producing nonfinite weights. The run stopped instead of guessing. Compiling binary64 endpoints now retries at 1024, 2048 and 4096 bits.",
+  "preserved": "All completed raw files, seeds, distributions, budgets, thresholds and outcomes are unchanged. Only unresolved numerical weight conversion receives higher precision.",
+  "original_protocol": "experiment_protocol_initial.json",
+  "original_source": "source_snapshot_before_precision_fix/parameter_search/algorithm.py"
+}

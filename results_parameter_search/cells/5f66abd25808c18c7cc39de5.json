@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      999999
+    ],
+    "probabilities_exact": [
+      "99988618796869/245443018796869",
+      "1600000000/2699873206765559"
+    ],
+    "support": 1000000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C20_lambda8",
+      "cell": "5f66abd25808c18c7cc39de5",
+      "C": "20",
+      "L0": 14,
+      "n": 1000000,
+      "epsilon": ".1",
+      "S": 1000000,
+      "effective": 831258,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 13499366.033827795,
+      "branch": "chebyshev",
+      "degree": 156,
+      "scales": 12,
+      "trials": 2000,
+      "errors": 1383,
+      "coverage_errors": 0,
+      "mean_D": 999664.4395,
+      "mean_lower_lo": 999896.495,
+      "mean_lower_hi": 999896.495,
+      "improvements": 1384,
+      "extra_rejects": 1383,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 1.1102230246251565e-15,
+      "sampling_seconds": 0.013277925027068704,
+      "scoring_seconds": 0.009680445946287364
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C20_lambda8",
+      "cell": "5f66abd25808c18c7cc39de5",
+      "C": "70",
+      "L0": 14,
+      "n": 1000000,
+      "epsilon": ".1",
+      "S": 1000000,
+      "effective": 831258,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 47247781.11839728,
+      "branch": "chebyshev",
+      "degree": 84,
+      "scales": 10,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 1000000.0,
+      "mean_lower_lo": 1000000.0,
+      "mean_lower_hi": 1000000.0,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 2.886579864025407e-15,
+      "sampling_seconds": 0.013124125020112842,
+      "scoring_seconds": 0.008128754940116778
+    }
+  ],
+  "raw_file": "raw/5f66abd25808c18c7cc39de5.npz",
+  "raw_sha256": "55b18364319cdf8402351274bb8001b4d661013dfc2da9bb974ced444b076593"
+}

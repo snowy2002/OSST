@@ -1,8 +1,34 @@
 这个目录把《Optimal Support Size Testing》中的公式、可执行的有限样本方案和鱼类数据实验放在一起。论文原文保留为 `2610.18723v1.pdf`；抽取的文本在 `artifacts/paper.txt`。当前代码是依据 PDF 和分析编写的实现。
 
-**最新：C₀、L₀ 联合优化的完整证明与精确算术证书。** 入口为 [证明 PDF](artifacts/joint_constants_submission/submission_proof.pdf)、[LaTeX 主文件](artifacts/joint_constants_submission/submission_proof.tex)、[算术附录](artifacts/joint_constants_submission/arithmetic_appendix.tex)、[中文说明](artifacts/joint_constants_submission/提交说明.txt) 和 [完整证明包](artifacts/osst_publication_proof.zip)。
+**最新投稿前审查：理论适用范围、原始数据与论文整合。** 入口为 [完整中文审查报告](results_submission_audit/review_report.html)、[理论边界与补充证明](results_submission_audit/theory_scope.pdf)、[英文实验章节预览](results_submission_audit/paper_insert_preview.pdf)、[可整合的 LaTeX 源码](results_submission_audit/paper_insert.tex) 和 [整合说明](results_submission_audit/INTEGRATION.txt)。此前的新证明专项复核保存在 `results_proof_review/`。审查列出 27 项问题及修订建议；以下历史报告应结合这次审查阅读。
 
-证明覆盖有限或可数离散分布、所有 n≥1 和 ε∈(0,1)，在文中规定的独立同分布泊松采样及算法条件下成立。C₀=144(ln 2)²≈69.185234 可以向上取整为 70；配合 L₀=16，单次失败概率严格小于 0.282612，因此成功概率超过 2/3。配合 L₀=20，单次失败概率严格小于 0.072224。独立重复与多数表决/中位数放大见证明。这里给出的是充分参数，不声称全局最小，也没有认证向下取整为 69。
+原论文的匹配下界需要明确 ε 的适用范围，不能对整个 ε∈(0,1) 作统一最优性断言；新常数需要连同新的系数与集中界证明一起整合。当前 `(70,14)` 的 1,994,000 次试验中，承诺范围内的二元检验有 1,792,000 次；同预算计数消融同样没有错误，多项式的已观察收益是提高支持下界，尚未展示额外的二元判定优势。补充证明还给出：在 n≤10¹²、ε∈(0,1) 和 C₀=70 的预算下，纯计数的统一误差界已小于 1.863×10⁻¹²。零观测错误不能代替最坏情形理论保证，自然经验总体的重采样也不等同于新的野外独立观测。英文章节和整合说明明确保留这些限制；本仓库材料尚不代表论文已提交或通过同行评审。
+
+**2026-10-22 后续探索：推荐 `(C₀,L₀)=(70,14)`，单次运行；整数 C₀ 的上下界已对齐。** 见 [新的中文比较报告](results_parameter_search/report.html)、[充分界与必要界证明 PDF](results_parameter_search/proof.pdf)、[结论摘要](results_parameter_search/conclusions.json) 和 [复现说明](results_parameter_search/REPRODUCE.txt)。新的集中不等式分析证明 `(70,14)` 单次失败概率小于 **0.09%**，`(70,16)` 小于 **0.0057%**，因此达到 1% 不再需要之前依据旧界给出的 27 次或 5 次重复。与 C₀=1025 相比，期望样本量减少约 93.17%；这不是相同比例的 CPU 加速结论。
+
+新的渐近反例把必要常数夹在 **69.00627138～69.00627139**；在保持原统计量、固定有限 L₀>1、要求所有 n 和 ε 统一可靠的范围内，C₀≤69 不可行，故 **70 是最小可行整数 C₀**。固定奇数次独立多数表决也不能消除该反例。充分实数常数仍为 144(ln 2)²≈69.185234，与必要下界相差不足 0.26%。这不是所有算法的信息论最优结论；**L₀=14 已证明充分，但没有证明最小**。只需二元判定时，保留 `(70,16)` 可减少中间规模的多项式计算；需要更早提高支持下界时，`(70,14)` 从 n=442,414 开始启用多项式。
+
+本轮新增 5,116,000 条独立模拟路径、8,848,000 次配对方法评估，覆盖十个自然经验总体、构造数据、切换边界及困难样例。`(70,14)` 的 1,994,000 次试验未观察到检验错误或下界失效；C₀=60 的困难样例错误率达到 6.35%。充分界通过 32,752 项精确算术检查，独立公式/原始数据审计通过 60,725 项检查；必要界另有精确级数证书和 Arb 交叉核验。推导及证书不是证明助手形式化或外部同行评审。源码在 `parameter_search/`，原有 `results_c7016/` 保持为历史实验记录。
+
+**2026-10-22：C₀=70、L₀=16 已接入并完成自然/构造数据实验。** 入口为 [中文实验报告](results_c7016/report.html)、[英文 PDF](results_c7016/experiment_report.pdf)、[结果摘要](results_c7016/summary.json) 和 [完整复现说明](results_c7016/REPRODUCE.txt)。独立实现位于 `c7016/algorithm.py`，保留证明中的实数泊松均值、全部尺度和完整阶数；不通过修改旧版默认常数套用新定理。
+
+主实验覆盖 756 个构造配置、10 个自然经验总体的 236 个配置，以及 120 个保留自然丰度形状的扩展构造配置。新算法共运行 4,208,000 次，其中 1,672,000 次实际进入多项式分支；未观察到承诺检验错误或支持下界失效。三套实验最坏单元的同时 95% 检验错误率上界分别约为 0.2818%、0.2441%、0.4660%。自然数据主实验均为计数分支；扩展类别的结果明确属于合成数据。
+
+相同预算的计数消融也没有承诺检验错误，多项式主要在 554,000 次试验中提高了下界。构造网格上，新单次方案仍比 99% 保证的计数基线多用约 2.44–8.39 倍样本。历史实验按旧误差界将 `(70,16)` 独立运行 27 次，总期望系数为 1890，高于旧版 1025；该重复实验仍保留，但顶部的新证明已经取消达到 1% 时的这项重复开销。自然数据有 42/236 个配置的原始记录数达到平均预算，人工复制观测的相关性压力测试最坏漏报率为 100%。
+
+完整数值接口、原始频数、精确真值、四个独立种子块、置信区间、代码/数据快照、复核结果均保留。125 项回归测试通过；18 次逐类别泊松计数的完整接口核验包含 12 次多项式分支。所有二元判定与下界覆盖事件经过数值认证，部分精确整数下界保存为认证区间。精确理论证书另已从头重算。重复实验路径数的一次纯统计口径修订记录在 `results_c7016/protocol.json`，初版协议和修改前源码保留，未改变任何原始试验或判定。
+
+```bash
+.venv/bin/python -m c7016.algorithm plan --n 3269018 --epsilon 0.1
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python -m c7016.run --phase all --out results_c7016_reproduced
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python -m c7016.diagnostics --out results_c7016_reproduced
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python -m c7016.validate --out results_c7016_reproduced --proof-and-tests
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python -m c7016.report --out results_c7016_reproduced
+```
+
+**前版：C₀、L₀ 联合优化的完整证明与精确算术证书。** 入口为 [证明 PDF](artifacts/joint_constants_submission/submission_proof.pdf)、[LaTeX 主文件](artifacts/joint_constants_submission/submission_proof.tex)、[算术附录](artifacts/joint_constants_submission/arithmetic_appendix.tex)、[中文说明](artifacts/joint_constants_submission/提交说明.txt) 和 [完整证明包](artifacts/osst_publication_proof.zip)。其参数、系数与期望引理继续用于顶部的新证明；以下误差界为前版较松的充分界。
+
+证明覆盖有限或可数离散分布、所有 n≥1 和 ε∈(0,1)，在文中规定的独立同分布泊松采样及算法条件下成立。C₀=144(ln 2)²≈69.185234 配合 L₀=16 时，单次失败概率严格小于 0.317480；整数方案 (70,16) 的上界为 0.282612，两者成功概率均超过 2/3。(70,20) 的单次失败概率严格小于 0.072224。独立重复与多数表决/中位数放大见证明。这里给出的是充分参数，不声称全局最小，也没有认证向下取整为 69。
 
 精确证书通过 428 项义务检查，独立审计通过 2,491 项检查；验证只使用 Python 标准库的整数和有理数运算。这是数学证明及可复算证书，不是 Lean/Coq 内核形式化，也不代表会议录用保证。
 
@@ -14,7 +40,7 @@ python3 -O audit_exact.py
 tectonic submission_proof.tex
 ```
 
-**实现与实验版本边界：** 当前 `paper_reference.py` 仍默认 C₀=2²⁶、L₀=1024；现有 C₀=1025 实验也保留 L₀=1024。新的 (70,16)/(70,20) 是证明结果，尚未接入该参考接口或重跑实验，不能仅传入 `--c0 70` 就视为运行新定理。不同版本的结果、源码快照和证明分别保留。仓库排除虚拟环境、编译工具缓存及大型跨领域下载/清洗数据；后者可按下方复现命令重新准备，数据来源和摘要保留。
+**实现与实验版本边界：** 当前 `paper_reference.py` 仍默认 C₀=2²⁶、L₀=1024；现有 C₀=1025 实验也保留 L₀=1024。(70,16) 使用新的 `c7016` 接口与 `results_c7016/`，(70,20) 仍只有证明结果，尚未重跑对应实验。不能仅给旧接口传入 `--c0 70` 就视为运行新定理。不同版本的结果、源码快照和证明分别保留。仓库排除虚拟环境、编译工具缓存及大型跨领域下载/清洗数据；后者可按下方复现命令重新准备，数据来源和摘要保留。
 
 **2026-10-21：C₀=1025 的独立完整实验。** 新入口为 [中文结果与读图说明](results_c1025/report.html)、[实验论文及完整证明 PDF](results_c1025/experiment_paper.pdf)、[LaTeX 主文件](results_c1025/experiment_paper.tex) 和 [复现说明](results_c1025/REPRODUCE.txt)。主实验覆盖 n=1 至 10¹²、五个 epsilon、最多十五种分布场景，以及七类生物的十个公开经验总体。共 9,130,000 条独立模拟路径、39,720,000 次配对方法评估；方法评估次数不等于独立试验次数。完整参考接口执行 1,428 次，代数核验通过 43,801 项，回归测试 112 项通过。
 

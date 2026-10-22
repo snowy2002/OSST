@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      9999
+    ],
+    "probabilities_exact": [
+      "325910926377143/326466426377143",
+      "500000000/2938197837394287"
+    ],
+    "support": 10000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C6_lambda1",
+      "cell": "1a9ea0eac6700592c7e54d48",
+      "C": "6",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".001",
+      "S": 10000,
+      "effective": 4124,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 5876395.674788574,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 6319.644,
+      "mean_lower_lo": 6319.644,
+      "mean_lower_hi": 6319.644,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.00040629503200761974,
+      "scoring_seconds": 0.0004262970178388059
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C6_lambda1",
+      "cell": "1a9ea0eac6700592c7e54d48",
+      "C": "70",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".001",
+      "S": 10000,
+      "effective": 4124,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 68557949.53920002,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 9999.925,
+      "mean_lower_lo": 9999.925,
+      "mean_lower_hi": 9999.925,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.00023969798348844051,
+      "scoring_seconds": 0.00031169800786301494
+    }
+  ],
+  "raw_file": "raw/1a9ea0eac6700592c7e54d48.npz",
+  "raw_sha256": "afb36fb17d6196d41bcc3f0c6e906b5778638720411708a84a6d0ff1f1f076ad"
+}

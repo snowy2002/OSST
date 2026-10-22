@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      999999999999
+    ],
+    "probabilities_exact": [
+      "4787946848602831/4819946848602799",
+      "32/4819946848602799"
+    ],
+    "support": 1000000000000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C69_lambda16",
+      "cell": "791879391d3bd47b03b1d141",
+      "C": "69",
+      "L0": 14,
+      "n": 1000000000000,
+      "epsilon": ".001",
+      "S": 1000000000000,
+      "effective": 849376660982,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 2409973424301399.5,
+      "branch": "chebyshev",
+      "degree": 163,
+      "scales": 12,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 999999887449.0966,
+      "mean_lower_lo": 999999887449.0966,
+      "mean_lower_hi": 999999887449.0966,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 1.9984014443252818e-15,
+      "sampling_seconds": 0.013979415991343558,
+      "scoring_seconds": 0.012332226062426344
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C69_lambda16",
+      "cell": "791879391d3bd47b03b1d141",
+      "C": "70",
+      "L0": 14,
+      "n": 1000000000000,
+      "epsilon": ".001",
+      "S": 1000000000000,
+      "effective": 849376660982,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 2444900575378231.5,
+      "branch": "chebyshev",
+      "degree": 162,
+      "scales": 12,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 999999910750.423,
+      "mean_lower_lo": 999999910750.423,
+      "mean_lower_hi": 999999910750.423,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 2.55351295663786e-15,
+      "sampling_seconds": 0.01441161404363811,
+      "scoring_seconds": 0.012243425968335941
+    }
+  ],
+  "raw_file": "raw/791879391d3bd47b03b1d141.npz",
+  "raw_sha256": "35862c56701209d7b1d9c8beaace982c69a93d792adfbd23fa86c3b7ccb405c7"
+}

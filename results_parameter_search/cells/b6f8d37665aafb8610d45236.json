@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      9999
+    ],
+    "probabilities_exact": [
+      "325799826377143/326466426377143",
+      "200000000/979399279131429"
+    ],
+    "support": 10000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C20_lambda4",
+      "cell": "b6f8d37665aafb8610d45236",
+      "C": "20",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".001",
+      "S": 10000,
+      "effective": 5104,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 19587985.58262858,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 9816.345,
+      "mean_lower_lo": 9816.345,
+      "mean_lower_hi": 9816.345,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.00044629897456616163,
+      "scoring_seconds": 0.00037219596561044455
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C20_lambda4",
+      "cell": "b6f8d37665aafb8610d45236",
+      "C": "70",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".001",
+      "S": 10000,
+      "effective": 5104,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 68557949.53920002,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 9999.9885,
+      "mean_lower_lo": 9999.9885,
+      "mean_lower_hi": 9999.9885,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.0002509990008547902,
+      "scoring_seconds": 0.00030309800058603287
+    }
+  ],
+  "raw_file": "raw/b6f8d37665aafb8610d45236.npz",
+  "raw_sha256": "aacb4d3ef2e0aadf1e913087e6f6696461d999dbab0cf88c5cd74eb727de693f"
+}

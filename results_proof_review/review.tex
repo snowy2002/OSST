@@ -1,0 +1,320 @@
+\documentclass[10pt]{article}
+\usepackage[margin=0.85in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,hyperref,microtype}
+\setlength{\emergencystretch}{1em}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Prb}{\mathbb P}
+\newcommand{\Var}{\operatorname{Var}}
+\title{Review of the New Constant Proof: Analytic Checks and Audit Supplement}
+\author{}\date{October 22, 2026}
+\begin{document}\maketitle
+
+\noindent\textbf{Verdict.} The sufficient guarantees and the necessary integer
+constant conclusion in \path{results_parameter_search/proof.tex} survive
+this review, under that manuscript's explicit model and quantifiers.
+No mathematical counterexample or invalid implication was found. This is
+an analytical review plus exact/ball arithmetic verification, not a proof
+assistant formalization. Several compressed steps are expanded below.
+The earlier independent numerical auditor did not separately check domain
+completeness, counting-branch bounds, or final aggregation; the supplementary
+auditor now checks those. This was an audit-coverage limitation, not a
+discovered false inequality. Frozen proof, certificates, and experiments
+have not been edited.
+
+\section{What is and is not established}
+The statistic is the original multi-scale Chebyshev statistic, with
+$m=Cn/(\epsilon(1+\log n))$, independent Poisson counts, no sample cap,
+no polynomial truncation, and exact real arithmetic. Here $n$ ranges over
+all positive integers and $\epsilon$ over $(0,1)$. The distribution may
+have countable support. On the binary promises $S\le n$ and
+$\Delta_n\ge\epsilon$, the two outputs have simultaneous correctness
+with the claimed probability. In the gap, only the support-bound guarantee
+is asserted.
+
+\begin{center}
+\begin{tabular}{rrr}
+\toprule $C$ & $L_0$ & strict single-run failure bound\\\midrule
+70&14&$0.0009$\\
+70&15&$0.000081$\\
+70&16&$0.000057$\\
+70&18&$0.000040$\\\bottomrule
+\end{tabular}
+\end{center}
+The necessary result is about this unchanged construction with fixed
+finite $L_0>1$. It is not a lower bound for every support tester, for a
+modified score, or for a restricted finite experimental domain.
+It establishes $C\ge C_{\rm crit}$ as a necessary condition, where
+\[
+69.00627138<C_{\rm crit}<69.00627139.
+\]
+The sufficient $(70,14)$ pair therefore proves the smallest admissible
+\emph{integer} $C$ is 70. At $C=C_{\rm crit}$ the argument makes no
+claim. More precisely, the infimum of admissible real constants lies in
+$[C_{\rm crit},144(\log2)^2]$; attainment of that infimum is not proved.
+The latter endpoint is approximately $69.185234004221$.
+Neither the minimal $L_0$ nor the fastest practical implementation is
+determined. Fourteen is a sufficient branch threshold.
+
+\section{Concentration: range, centering, and dependence}
+Let $I_j=\sum_{\ell=0}^{k_j}|c_{j,\ell}|\ell!/m^\ell$, with constant
+term of absolute value one. Alternating coefficient signs give both
+$\|f_j\|_\infty\le I_j$ and range length at most $I_j$.
+The scale-zero coefficient envelope $F_{\rm coef}$ also bounds absolute
+value, hence its range is at most $2F_{\rm coef}$. Consequently
+\[
+\operatorname{range}(f_0)^2\le
+4\min(I_0^2/4,F_{\rm coef}^2)=4V_0.
+\]
+This point matters: a variance upper bound alone would not justify the
+Hoeffding term. Here the squared-range upper bound is actually available.
+For the other scales $V_j=I_j^2/4$ has the same property.
+
+Put $\delta=\delta_j$, $\bar\rho=\delta^2/2$, $d=2-\delta/2$.
+If $S\le n$, the upper-error threshold has gap
+$x=\delta n+(\delta-\bar\rho)S$ above $(1+\bar\rho)S$.
+For $u=S/n\in(0,1]$,
+\[
+\frac{S}{x^2}=\frac{1}{n\delta^2}
+\frac{u}{(1+(1-\delta/2)u)^2}
+\le\frac{1}{n\delta^2d^2},\qquad
+\frac1x\le\frac1{\delta n}.
+\]
+The derivative of the fraction is nonnegative on $[0,1]$.
+This validates the reduction used for both Cantelli and Hoeffding.
+
+For the new endpoint Bernstein bound, set $G=I_j-1>0$ and
+$A=1+\bar\rho+\max(0,G-1)$. The variable
+$Y=f_j(N)-(1+\bar\rho)$ has $\E Y\le0$ and lies in $[-A,G]$.
+For $t\ge0$, the chord inequality is
+\[
+e^{ty}\le\frac{G-y}{A+G}e^{-tA}
+             +\frac{A+y}{A+G}e^{tG}.
+\]
+The right side's expectation is increasing in $\E Y$, so replacing it
+by zero only increases the bound. The resulting two-point distribution
+has mean zero and variance $AG$. Independence across labels thus gives
+\[
+\Prb\{\textstyle\sum_{i=1}^S Y_i\ge x\}
+\le \exp\left\{-\frac{x^2}{2SAG+2Gx/3}\right\}
+\le \exp\left\{-\left[
+\frac{2AG}{n\delta^2d^2}+\frac{2G}{3\delta n}\right]^{-1}\right\}.
+\]
+It is legitimate to take the minimum with Cantelli and Hoeffding since
+each bounds the same event. It is also legitimate to sum over scales
+by a union bound. No independence between scales is assumed or needed.
+
+For the lower error, $f_j(0)=0$ implies
+\[
+\sum_i\Var f_j(N_i)\le F_j^2\E D.
+\]
+If $\E D\le\alpha n$, $\alpha=33/32$, the centered lower-tail summands
+are at most $2F_j$. Bernstein at the expectation margin
+$\kappa_j\delta_j n$ gives exactly
+\[
+\exp\left\{-\frac{\kappa_j^2}
+ {2\alpha w_j+(4/3)\kappa_j\sqrt{w_j/n}}\right\},
+\quad w_j=\frac{F_j^2}{n\delta_j^2}.
+\]
+If $\E D>\alpha n$, the independent Bernoulli occupancy indicators give
+$\Prb(D\le n)\le\exp[-n(\alpha-1-\log\alpha)]\le e^{-n/2112}$.
+The inherited heavy-mass, small-mass, and intermediate-mass expectation
+arguments are exhaustive cases for a fixed distribution. Taking a maximum
+of their bounds, rather than adding them, is correct.
+
+\section{Countable support and simultaneous outputs}
+Here is an explicit justification of the manuscript's passage to infinite
+sums. For a fixed scale and input, $F_j<\infty$ and $m<\infty$.
+As $\sum_i\Prb(N_i>0)=\E D\le m$,
+\[
+\sum_i\E|f_j(N_i)|\le F_jm<\infty.
+\]
+Tonelli implies absolute almost-sure convergence. In fact the total
+sample count is finite almost surely, so only finitely many scores are
+nonzero. The sum of expectations is absolutely convergent as well.
+For a tail set of labels of total probability $\tau$, let $D_{\rm tail}$
+be its occupancy count. Independence gives
+\[
+\E D_{\rm tail}^2\le m\tau+(m\tau)^2,\qquad
+\E\left|\sum_{\rm tail}f_j(N_i)\right|^2
+ \le F_j^2[m\tau+(m\tau)^2]\longrightarrow0.
+\]
+Thus partial sums also converge in $L^2$. Centered finite partial sums
+have the Bernstein moment-generating bound with a common finite variance
+proxy. Apply Fatou to their nonnegative exponentials and then exponential
+Markov to obtain the same bound for the limit. This avoids any unsupported
+claim that an infinite sum of range lengths is finite: Hoeffding is only
+used in the finite-support case $S\le n$.
+
+Write $t=\min(e_\epsilon,n)$. If $t>1$, then
+$\Delta_{t-1}>\epsilon$. Hence the lower-error bound applies at $r=t-1$.
+For $S\le n$, the event
+$\widetilde S\le S$ and $\widetilde S>t-1$ ensures both correct outputs;
+when $t=1$ the lower constraint is automatic. This costs at most $U+R_f$.
+Under the alternative, $\widetilde S>n$ implies rejection and
+$\widehat S=n$, so the single bound $R$ ensures both outputs. In the gap
+the upper support bound is automatic since $S>n$ and only the lower
+constraint is required. Thus the common bound
+$\max(U+R_f,R)$ is correct, including equality conventions.
+
+\section{Why the asymptotic obstruction really excludes 69}
+Fix $C\ge1$ and write $L=1+\log n$,
+$a=\sqrt{512/C}\,3\log2$, $k=\lceil aL\rceil$,
+$A=C/(8L)$, and $B=64L$. These parameters, and the dimensionless
+factorial weights $u_\ell$, do not depend on $\epsilon$.
+The exact integral identity is
+\[
+I_L=\int_0^\infty e^{-s}
+\frac{T_k(z_L+2s/(B-A))}{T_k(z_L)}\,ds,
+\qquad z_L=(B+A)/(B-A).
+\]
+We have $k\operatorname{arcosh}z_L\to6\log2$.
+For $s=yL$, uniformly on compact subsets of $y>0$,
+the logarithm of the integrand divided by $L$ converges to
+\[
+\phi(y)=-y+a\operatorname{arcosh}(1+y/32).
+\]
+To justify uniformity explicitly, the arguments of arcosh converge
+uniformly to a compact subset of $(1,\infty)$, $k/L\to a$, and
+$|\log\cosh z-z|\le\log2$ for $z\ge0$. The denominator's logarithm
+is $O(1)$. The positive maximizer and maximum are
+\[
+y_* = \sqrt{1024+a^2}-32,\qquad
+\gamma(C)=a\operatorname{arsinh}(a/32)-\sqrt{1024+a^2}+32.
+\]
+For any $\eta>0$, choose a compact interval $K$ about $y_*$ where
+$\phi\ge\gamma-\eta/3$. Uniform convergence gives integrand at least
+$\exp[(\gamma-2\eta/3)L]$ there for large $L$. The substitution contributes
+the prefactor $L|K|$, which is at least $e^{-\eta L/3}$ eventually.
+Therefore $I_L\ge e^{(\gamma-\eta)L}$. Only this lower bound is needed.
+
+Choose a maximizing $\ell_L\in\{1,\ldots,k\}$ and let
+\[
+p_n=(1/2,1/[2(n-1)],\ldots,1/[2(n-1)]),\quad
+\epsilon_n=\frac{Cn}{2(n-1)\ell_LL}.
+\]
+This is a null distribution with exactly $n$ labels. The parameter choice
+is not circular because the weights determining $\ell_L$ are independent
+of $\epsilon$. Moreover $0<\epsilon_n\le C/L<1$ eventually, and the
+prescribed sample mean is $m=2(n-1)\ell_L$. The rare-label counts are
+independent Poisson variables of integer mean $\ell_L$.
+
+Let $X_L=f_0(\operatorname{Poi}(\ell_L))$, with mean $\mu_L$ and
+variance $\sigma_L^2$. The expectation lemma applies eventually because
+$a(C)<64$ for $C\ge1$, $\sqrt{B(B-A)}/L\to64$, and $b\to0$.
+It gives $0\le\mu_L\le33/32$; also $|X_L|\le I_L$.
+The integer mode of a Poisson variable satisfies
+$\Prb(\operatorname{Poi}(\ell)=\ell)\ge3/(20\sqrt\ell)$:
+Chebyshev puts at least $3/4$ of the mass in at most $5\sqrt\ell$
+integers, and the mode dominates their individual masses.
+Since $u_{\ell_L}\ge(I_L-1)/k$, eventually
+$|f_0(\ell_L)|\ge I_L/(4k)$. Thus
+\[
+\sigma_L^2\ge\frac{3I_L^2}{320k^{5/2}}-(33/32)^2
+\ge c\frac{I_L^2}{k^{5/2}}.
+\]
+Take $s_n=\sqrt{n-1}\,\sigma_L$. The centered rare scores satisfy
+\[
+\max_i\frac{|X_{n,i}-\mu_L|}{s_n}
+ \le O\left(\frac{k^{5/4}}{\sqrt n}\right)\to0,
+\qquad \sum_{i=2}^n\Var\frac{X_{n,i}-\mu_L}{s_n}=1.
+\]
+The Lindeberg sum is therefore exactly zero eventually for every fixed
+positive cutoff. This explicitly verifies the triangular-array CLT
+hypothesis; an ordinary fixed-distribution iid CLT would be insufficient.
+The reference theorem was rechecked in
+\href{https://people.eecs.berkeley.edu/~jordan/courses/210B-spring07/lectures/stat210b_lecture_2.pdf}
+{Jordan--Kleiner, Stat210B Lecture 2, Theorem 9}.
+
+If $\gamma(C)>1/2$, choose $0<\eta<\gamma(C)-1/2$. Then
+\[
+\frac n{s_n}\le O\left(\frac{\sqrt n\,k^{5/4}}{I_L}\right)
+\le O\left(L^{5/4}e^{-(\gamma-\eta-1/2)L}\right)\to0.
+\]
+The head count has mean $\lambda_n=(n-1)\ell_L\ge n-1$.
+For large $n$, Chebyshev bounds
+$\Prb(N_1\le k)\le\lambda_n/(\lambda_n-k)^2\to0$,
+so its score is one with probability tending to one.
+The standardized threshold
+$(3n/2-1-(n-1)\mu_L)/s_n$ tends to zero. Combining the CLT and the
+vanishing probability of an exceptional head score proves
+\[
+\Prb(Z_0>3n/2)\to1/2.
+\]
+Because $\delta_0=1/4$, this event implies $\widetilde S>n$.
+For the full maximum statistic the justified statement is
+$\liminf\Prb(\text{false rejection})\ge1/2$, not necessarily equality.
+Every fixed finite $L_0$ eventually activates the polynomial branch.
+
+The derivative of $\gamma$ with respect to $a$ is
+$\operatorname{arsinh}(a/32)>0$, while $a$ decreases with $C$.
+The unique root of $\gamma=1/2$ has the bracket stated above;
+$\gamma(69)\approx0.500045328>1/2$.
+The strict excess is small, and this proof gives no useful finite-size
+failure threshold for 69. Finite successful experiments do not contradict it.
+For $0<C\le1$, the $n=1$ counting-branch alternative in the manuscript
+has limiting error $(1+C)e^{-C}\ge2/e>1/2$.
+For any fixed odd repetition count, the majority-error polynomial is
+continuous, increasing, and takes value $1/2$ at input $1/2$.
+Thus fixed odd majority repetition cannot remove either uniform obstruction.
+
+\section{Arithmetic and domain verification}
+The review checks the inherited expectation, integral/range, coefficient,
+and half-line inequalities, including their side conditions and the
+directions of monotonic substitutions. On $14\le L\le40$, the 260
+closed slabs for each constant cover every possible real $L$ without gaps.
+The saved scale vectors include every active $j$, and
+$k_j=\lceil\alpha_jL\rceil\le\alpha_jL_{\rm right}+1$ includes every
+degree transition. For $L\ge40$, the finite low-scale envelopes and the
+geometric omitted-scale sum have the required derivative signs. The
+equality $2t_0=1$ at $C=144(\log2)^2$ is treated symbolically.
+
+In the counting branch, before the $(r+1)$st discovered label the unseen
+probability mass is at least $\Delta_r\ge\epsilon$. Conditional exponential
+waiting times can therefore be coupled with rate-$\epsilon$ waiting times.
+This gives
+$\Prb(D\le r)\le\Prb(\operatorname{Poi}(m\epsilon)\le r)
+\le\Prb(\operatorname{Poi}(Cn/L)\le n)$.
+The quarter-width slab Chernoff bounds have now been independently
+recomputed. Their largest certified bounds are approximately
+$2.580270\cdot10^{-12}$ for $C_*$ and $1.862823\cdot10^{-12}$ for 70.
+These are safely below $10^{-10}$.
+
+The supplementary program \texttt{parameter\_search/review\_proof.py}
+also verifies exact rational equality between each saved final upper
+endpoint and the maximum over its counting bound, selected slabs, and
+half-line bound. It checks the critical root using the positive-series
+identity
+\[
+\operatorname{arsinh}x=2\operatorname{artanh}z,
+\quad z=\frac{x}{1+\sqrt{1+x^2}},\quad
+0\le 2\operatorname{artanh}z-2\sum_{k=0}^{N-1}
+ \frac{z^{2k+1}}{2k+1}
+\le\frac{2z^{2N+1}}{(2N+1)(1-z^2)}.
+\]
+This differs from the original alternating asinh series. At 512-bit Arb
+precision it confirms both root endpoints, exclusion of 69, and the
+opposite sign at 70.
+
+The supplementary audit passes 14,880 explicit checks; the separate
+existing Arb formula audit passes 20,507 checks. These counts are code
+obligations, not counts of independent mathematical theorems. A fresh
+isolated rerun of the original exact certificate and root certificate is
+recorded in \texttt{reproduction\_comparison.json}; the rerun does not
+overwrite the frozen artifacts. The exact verifier checks 32,752
+obligations using outward dyadic/rational arithmetic. The check scripts
+cannot by themselves establish the CLT, infinite-sum limits, or the
+analytical reduction; those arguments are reviewed explicitly above.
+
+\section{Practical interpretation}
+The stronger result changes the certified error analysis, not the estimator
+or its per-run sample mean. At the same $(C,L_0)$, one run is the same
+mathematical procedure as before. Its older loose error bound requiring
+many repetitions has been replaced by a sharper bound.
+The theorem covers an ideal Poissonized statistic. An implementation's
+degree cap, resource limits, floating-point input domain, or abort policy
+needs its own correctness statement; those restrictions are not silently
+included in this theorem. Sample savings do not establish CPU-time savings.
+The supported conclusion is integer optimality of $C$ within the stated
+construction and uniform domain, together with certified sufficient $L_0$
+values. Joint global optimality of both parameters remains unproved.
+\end{document}

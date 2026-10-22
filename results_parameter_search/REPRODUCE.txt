@@ -1,0 +1,36 @@
+复现与证据说明（工作目录为 OSST 仓库根目录）
+
+1. 搜索候选（浮点探索，不作为证明）：
+   .venv/bin/python -m parameter_search.explore
+2. 从头计算充分界的精确有理数证书：
+   .venv/bin/python -m parameter_search.certify
+3. 从头计算必要下界的根区间，同时用 Arb 交叉检查：
+   .venv/bin/python -m parameter_search.lower_bound
+4. 重新核验全部原始频数、事件、哈希和充分界公式：
+   OPENBLAS_NUM_THREADS=1 .venv/bin/python -m parameter_search.audit
+5. 运行测试：
+   .venv/bin/python -m pytest -q
+6. 重建图表与中文报告：
+   .venv/bin/python -m parameter_search.report
+   .tools/tectonic-0.17.0/tectonic results_parameter_search/proof.tex --outdir results_parameter_search
+
+实验主程序默认断点续跑当前冻结目录，不会把复用旧单元算成新试验。
+若要从零重跑到新目录，保留当前证据，运行：
+   OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python - <<'PY'
+   from pathlib import Path
+   from parameter_search import experiments as e
+   e.OUT=Path('results_parameter_search_reproduced').resolve()
+   e.main()
+   PY
+同一冻结种子会复现同一组伪随机试验；时间字段、压缩文件元数据可能不同。
+需要新随机试验时，在新的输出目录中另设 e.DESIGN['seed']，不要修改已有协议。
+
+自然数据沿用 data/c1025/ 固定来源与许可；源数据/准备文件哈希在实验协议中。
+完整原始数据在 raw/，精确概率和单元摘要在 cells/。results_c7016/ 未改动。
+算法权重在小 C 的压力测试中需要更高精度，修订历史见 precision_amendment.json。
+计数随机数和分组多项式分布由 NumPy/SciPy 双精度生成；数学概率保证不由 PRNG 认证。
+数学证书认证有限算术义务；解析证明、渐近下界与标准中心极限定理见 proof.pdf。
+这不是 Lean/Coq 形式化，也不是外部同行评审结论。
+
+证据文件哈希核验：
+   .venv/bin/python -m parameter_search.package --verify

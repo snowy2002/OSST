@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      9999
+    ],
+    "probabilities_exact": [
+      "321133626377143/326466426377143",
+      "1600000000/979399279131429"
+    ],
+    "support": 10000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C20_lambda32",
+      "cell": "11a2bf1dbe45f33df78cdce1",
+      "C": "20",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".001",
+      "S": 10000,
+      "effective": 9388,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 19587985.58262858,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 10000.0,
+      "mean_lower_lo": 10000.0,
+      "mean_lower_hi": 10000.0,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.00030839897226542234,
+      "scoring_seconds": 0.00035099696833640337
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C20_lambda32",
+      "cell": "11a2bf1dbe45f33df78cdce1",
+      "C": "70",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".001",
+      "S": 10000,
+      "effective": 9388,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 68557949.53920002,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 10000.0,
+      "mean_lower_lo": 10000.0,
+      "mean_lower_hi": 10000.0,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.0002476989757269621,
+      "scoring_seconds": 0.0003715990169439465
+    }
+  ],
+  "raw_file": "raw/11a2bf1dbe45f33df78cdce1.npz",
+  "raw_sha256": "abde8c8fd02e1d0f9c8c973a265bc83db61ef1030c66273f7d5bc60944ef7cf4"
+}

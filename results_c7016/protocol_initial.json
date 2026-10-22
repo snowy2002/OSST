@@ -1,0 +1,165 @@
+{
+  "design": {
+    "version": 1,
+    "C0": 70,
+    "L0": 16,
+    "mean": "70*n/(epsilon*(1+ln(n))); real, not ceil",
+    "sizes": [
+      1,
+      10,
+      1000,
+      100000,
+      1000000,
+      3269017,
+      3269018,
+      3269019,
+      10000000,
+      1000000000,
+      1000000000000
+    ],
+    "epsilons": [
+      "0.001",
+      "0.01",
+      "0.1",
+      "0.25"
+    ],
+    "seed_blocks": 4,
+    "trials_per_block": 1000,
+    "natural_epsilons": [
+      "0.001",
+      "0.01",
+      "0.05",
+      "0.1",
+      "0.25"
+    ],
+    "natural_n_rules": [
+      "floor(S/2)",
+      "eff_epsilon-1",
+      "eff_epsilon",
+      "S",
+      "ceil(1.5S)"
+    ],
+    "lifted_target_supports": [
+      10000000,
+      1000000000
+    ],
+    "lifted_epsilons": [
+      "0.01",
+      "0.1"
+    ],
+    "lifted_trials_per_block": 500,
+    "lifted_n_rules": [
+      "eff_epsilon-1",
+      "eff_epsilon",
+      "S"
+    ],
+    "baselines": [
+      "count_matched_confidence",
+      "count_99",
+      "C1025_L1024",
+      "original"
+    ],
+    "ablations": [
+      "count_same_budget",
+      "scale0_same_budget"
+    ],
+    "amplification_repeats": 27,
+    "amplification_trials_per_block": 250,
+    "amplification_sizes": [
+      1000,
+      3269018,
+      1000000000
+    ],
+    "amplification_epsilons": [
+      "0.01",
+      "0.1"
+    ],
+    "amplification_scenarios": [
+      "uniform_null",
+      "epsilon_scaled_rare_1/2_null",
+      "diffuse_boundary",
+      "multiscale_boundary",
+      "gap_near"
+    ],
+    "finite_file_trials": 300,
+    "finite_file_epsilons": [
+      "0.01",
+      "0.1",
+      "0.25"
+    ],
+    "group_datasets": [
+      "mite",
+      "bci",
+      "fish_2007_seine",
+      "fish_2008_seine"
+    ],
+    "group_splits": 5,
+    "group_trials": 2000,
+    "duplication_factors": [
+      1,
+      10,
+      100,
+      1000
+    ],
+    "numerical_audit_profiles_per_block": 2,
+    "seeds": {
+      "synthetic": 70162201,
+      "natural": 70162202,
+      "lifted": 70162203,
+      "amplification": 70162204,
+      "finite": 70162205,
+      "groups": 70162206
+    },
+    "statistics": "One-sided Clopper-Pearson 95%, Bonferroni across all non-Gap method cells within each iid suite; a separate family for support-bound failure. Four independent seed blocks. No error-dependent stopping.",
+    "truth": "Exact rational probabilities and exact tail/effective-support classification; Gap inputs have no binary error label.",
+    "sampling": "Grouped independent Poisson-category counts via multinomial fingerprints. Exact law in real arithmetic, binary64 probability evaluation and PRNG. M is not inferred from a coarsened high-count bucket.",
+    "numeric": "Arb parameter/weight enclosures, outward binary64 statistics with dot-product roundoff bounds, Arb refinement for unresolved event thresholds. Full arbitrary-precision spot checks are independent of the batch arithmetic.",
+    "natural_scope": "Iid resampling from published finite empirical populations; natural field sampling is not assumed iid. Cloned empirical shapes are explicitly synthetic.",
+    "disclosure": "Locally frozen follow-up informed by prior proof/experiments, not external preregistration. Natural groups/files are descriptive stress tests, not validation of unseen ecosystem truth."
+  },
+  "source_hashes": {
+    "paper_reference.py": "be678f4fbab15b55170a28fc8437c614f5bb4f88cecac4afa37add2090b8ac0b",
+    "support_size.py": "3a37f0f41db6f6e06fa832b39ae41f779dc4570a8a83a26e917a2d593028ff54",
+    "benchmark_core.py": "9ac85b03b0e5502b450da4d6dc9e8894eb6e2da36f7f9931f307e2efcb4926d8",
+    "guaranteed.py": "a7c26f702f9f6b0c43eb61b9c3907bc6b06a1a4ae5e2d86a3ed89708d19f59b9",
+    "guaranteed_experiments.py": "b01ca889efb1add53fef8cf80b6fe3da5288452de11ff49a191392287b9ecd6f",
+    "publication/core.py": "051498343ac64f8f46b259f34a4ee8cadc041b91abcd854ac5916164117f4266",
+    "c1025/core.py": "e24c816c06e8b447d8f2b11855aed39b85c5f3e555269df50203646f910f4bad",
+    "c1025/data.py": "a78f005794a2ee357c77294e7218ac5b1f72390502327f42a538b1063163ed98",
+    "test_c7016.py": "24bc2cd094280a51668f23c67476d12d6b5cf54d22a89808548c7aebde1b6d21",
+    "c7016/__init__.py": "6785172d52d08325e8b293f9ab9de840af169629e1c18027b6e2f405e595fafc",
+    "c7016/algorithm.py": "3a17b8ae705e166e9f63ccd6078c510156261ccbe4623c2548fadf9a12cf0fac",
+    "c7016/populations.py": "3213bac31dbb1853411f2cf527d73f724232dbd2c8eec89e948a0f7b9e9979c5",
+    "c7016/run.py": "0146162e611f400a2ad92627a26621634f39fb34482876abf581046f5ecaec0f",
+    "artifacts/joint_constants_submission/submission_proof.tex": "557c582364c9bb9a64ea50d7f296c9a4877104fccf3f445d1887b53e04343c79",
+    "artifacts/joint_constants_submission/arithmetic_appendix.tex": "505721163eed1e940c3827fd40f0d5ed3057a0a090d23009ccca645b1b05b5f3",
+    "artifacts/joint_constants_submission/exact_certificate.py": "541d6598dc299e754235b8d43929b273d4cff9a166e32dea6729c45badaec561",
+    "artifacts/joint_constants_submission/rational_interval.py": "ef381a84fd95cb3c154f1680d88324cf174c469d72d1dc8cd60106522340322a",
+    "artifacts/joint_constants_submission/audit_exact.py": "aa78bae81dd7637797522f5ece134df753619465dbd6add4750e0dd0e96b3b1b",
+    "artifacts/joint_constants_submission/exact_certificate.json": "28e2680e3f51240087f521fd7391677f8a5eec76297b0b742099182c020ecbf9",
+    "artifacts/joint_constants_submission/audit_exact.json": "bb06752c74dad77c07c681d57181a2d359dd18820f17473f6329e51733a05a9a"
+  },
+  "data_hashes": {
+    "bci.npz": "4a66148c4e7c499f0f7485d56179e21474099e7a04a96b85e76948bdcf581a13",
+    "bci_groups.npz": "70542adcf8f0650b36cb8f1947cabb0329cbdf43814d4af484fe61cf4a93d452",
+    "bird_north.npz": "b761fd1b2f1db6d1157b17049b1bb879da716bddf3c7b14a27344643454b2cc3",
+    "bird_south.npz": "88eea57330ae3a0a0d42bef2362d8ef0e74aee792415a20c275fb16c63a86f6e",
+    "fish_2007_seine.npz": "c818df42a370bfc05a646a4d08136dda8dc5a904404eceafde6f93881cc8add7",
+    "fish_2007_seine_groups.npz": "6ffff84f14375095f1df4e19eee25ad41960bdf08ce8760010880311e5b3011b",
+    "fish_2008_seine.npz": "ecc75e6e1fdd25b1de371e2240c01bd3dba46455062d8e1709e879d65d53c396",
+    "fish_2008_seine_groups.npz": "6211bc5eacad625daa285568745edd923d2fcc8c46dfcd58ce635a160cf69077",
+    "mite.npz": "ad1b5a99eee1f4fe95dd62faa6f965b3283c71106e44ff02e59bf8a4d1037624",
+    "mite_groups.npz": "1a7598e06d68b8f640749a376d7556934fd9739aacfcfb767b6b0134805aa2cf",
+    "moths.npz": "a3cc88807471fd6cb28e0d95141a5e9469ff1d63dcb124af3784aada4d5ecd5e",
+    "okland.npz": "08c8f3d8106d580b7bff64d0f8bd8e12b5806947df39a55db9b0a499d6509fe8",
+    "spider_girdled.npz": "7ff3d67d98a086b69792a186cd3d7186944100deb8326066a2821382614536b2",
+    "spider_logged.npz": "bb4e2008d0bd3ef82c1d1b10f5ee9637527b70e5e21d912534316288550813a6"
+  },
+  "frozen_at": "2026-10-22T03:31:59.751750+00:00",
+  "environment": {
+    "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+    "platform": "Linux-6.18.54.1-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+    "cpu_count": 12,
+    "openblas_threads": "1"
+  }
+}

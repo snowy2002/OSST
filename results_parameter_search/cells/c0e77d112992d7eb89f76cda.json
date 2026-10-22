@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      9999
+    ],
+    "probabilities_exact": [
+      "334693071300343/337892751300343",
+      "320000000/337892751300343"
+    ],
+    "support": 10000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C69_lambda64",
+      "cell": "c0e77d112992d7eb89f76cda",
+      "C": "69",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".001",
+      "S": 10000,
+      "effective": 8945,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 67578550.2600686,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 10000.0,
+      "mean_lower_lo": 10000.0,
+      "mean_lower_hi": 10000.0,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.00029249899671413004,
+      "scoring_seconds": 0.0003438969433773309
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C69_lambda64",
+      "cell": "c0e77d112992d7eb89f76cda",
+      "C": "70",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".001",
+      "S": 10000,
+      "effective": 8945,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 68557949.53920002,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 10000.0,
+      "mean_lower_lo": 10000.0,
+      "mean_lower_hi": 10000.0,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.0002461970434524119,
+      "scoring_seconds": 0.00030759902438148856
+    }
+  ],
+  "raw_file": "raw/c0e77d112992d7eb89f76cda.npz",
+  "raw_sha256": "a618f26b2baef69e338ef05463c026a39f1c50da578240957984996202e5f3c5"
+}

@@ -1,0 +1,28 @@
+{
+  "design": {
+    "scope": "Supplementary full-fingerprint integration and isolated kernel timings.\n\nThese deterministic coverage choices are disclosed as post-primary numerical\nchecks, not additional confirmatory statistical risk trials.\n",
+    "sizes": [
+      3269017,
+      3269018,
+      10000000
+    ],
+    "epsilon": "0.1",
+    "scenarios": [
+      "uniform_null",
+      "uniform_boundary",
+      "epsilon_scaled_rare_1/10_null"
+    ],
+    "replicates": 2,
+    "timing_sizes": [
+      1000,
+      3269018,
+      1000000000,
+      1000000000000
+    ],
+    "timing_trials": 1000,
+    "timing_repeats": 5,
+    "seed": 70168822,
+    "source_sha256": "d7ce60d5d936975d84c0d29897144e7d26bdded2c3ccea8c1853783d209138aa"
+  },
+  "frozen_at": "2026-10-22T03:37:22.534203+00:00"
+}

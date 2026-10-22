@@ -1,0 +1,136 @@
+{
+  "files": [
+    {
+      "path": "INTEGRATION.txt",
+      "bytes": 5129,
+      "sha256": "9b52e5828d4ce874021337ab5e743914e8eb604cb1f5d71db4e818af717292ae"
+    },
+    {
+      "path": "audit.log",
+      "bytes": 4385,
+      "sha256": "756b715141b469333bef52b81c1fb231259aab2bb4b29a956000e7e636219c9a"
+    },
+    {
+      "path": "audit_summary.json",
+      "bytes": 4385,
+      "sha256": "756b715141b469333bef52b81c1fb231259aab2bb4b29a956000e7e636219c9a"
+    },
+    {
+      "path": "capped_certificate.json",
+      "bytes": 4485,
+      "sha256": "5d874ee50587c041819a0b33f47178346b72377ddea245932aa86b35ac5ab5e1"
+    },
+    {
+      "path": "collision_boundary_examples.json",
+      "bytes": 1149,
+      "sha256": "4694d8df46c09ed76cd8203383e5e3717819cf91efe8db67542e82bffe6b2b59"
+    },
+    {
+      "path": "document_validation.json",
+      "bytes": 284,
+      "sha256": "b2878c7dc8da6c1cf47c547bf49c5cc666388332f3e455268ed9f3badca1268e"
+    },
+    {
+      "path": "finite_counting_arb_audit.json",
+      "bytes": 62,
+      "sha256": "bf324c3dd138337436c893062970392de142f0badb97204feebd35c7c308c3b8"
+    },
+    {
+      "path": "finite_counting_certificate.json",
+      "bytes": 1297,
+      "sha256": "6892efb07ffa36cfbdb00ddffb52ab6164d2b96558cc1aad924448ba5306f9f7"
+    },
+    {
+      "path": "initial_audit.log",
+      "bytes": 4385,
+      "sha256": "75e7ca048a6d042bea1b77596874dc5f5780dd6f325333745dec42774d591be0"
+    },
+    {
+      "path": "issues.json",
+      "bytes": 14028,
+      "sha256": "2a1d258541562527104c58324221ff6e9f14107e0d535ae5317da9c6bb7fdbea"
+    },
+    {
+      "path": "natural_budget_feasibility.csv",
+      "bytes": 4564,
+      "sha256": "c94468b7f920b28a36d45fe6f1f62b8c8ea6124a027694ff252a5de7e4829f5a"
+    },
+    {
+      "path": "paired_gain_intervals.csv",
+      "bytes": 52407,
+      "sha256": "310c1cf230b30585686b8626e427e162a7b0cc8a9f3c91e2750614ada7574c48"
+    },
+    {
+      "path": "paper_insert.tex",
+      "bytes": 7639,
+      "sha256": "ef9c09d99975fc8c54ba33f9d3202eb3da52150fffa9fd2b98b293cfed8d7c0a"
+    },
+    {
+      "path": "paper_insert_build.log",
+      "bytes": 261,
+      "sha256": "61037fcc817945992b99253233a3cab5437bdd03f7ee4301d6d12401a05df7e1"
+    },
+    {
+      "path": "paper_insert_preview.pdf",
+      "bytes": 41709,
+      "sha256": "3978a0a59f486350f1b8239700b3e9238ecfa4b09e947791dc8d12b5c19b8777"
+    },
+    {
+      "path": "paper_insert_preview.tex",
+      "bytes": 354,
+      "sha256": "fca1ec0c11447b6a2e43eeb071d851a0774c919bf18d51f9fcaabd3241f3692d"
+    },
+    {
+      "path": "paper_insert_preview_preview.png",
+      "bytes": 102163,
+      "sha256": "1721067e1ba9fd14eea6e37da50e72b1c5bfe94f72221105429cab23af50a51f"
+    },
+    {
+      "path": "reconstructed_events.csv",
+      "bytes": 702516,
+      "sha256": "609bae9e6ba9529d8d8bf6e82e8b4dbf35c65b8e12c6c8e1c92d63b671d4cb96"
+    },
+    {
+      "path": "review_report.html",
+      "bytes": 26252,
+      "sha256": "8315a4ed615249b9e8d3f77c92fcc19fa67aff5e1cedbcee556535d1a1b0548e"
+    },
+    {
+      "path": "source_snapshot/parameter_search/submission_audit.py",
+      "bytes": 11117,
+      "sha256": "dd058c5dafea8ef576c97c85816f2f28d2fcc399680771c539f74c51cf5bc872"
+    },
+    {
+      "path": "source_snapshot/parameter_search/submission_boundaries.py",
+      "bytes": 2699,
+      "sha256": "a036b04389ab6e48e698706eb5fbb17f95d7f162045314f4685d421e588a5339"
+    },
+    {
+      "path": "source_snapshot/parameter_search/submission_report.py",
+      "bytes": 24862,
+      "sha256": "bf7f425e55e0bf4fcfd9c0963c383d2112d799abca0dea7f4ce37d714bfe0e48"
+    },
+    {
+      "path": "theory_build.log",
+      "bytes": 270,
+      "sha256": "95bf1da8aadadc9ce9d86af914ed9c86ee64ab8572bae6924d6bde019aac9107"
+    },
+    {
+      "path": "theory_scope.pdf",
+      "bytes": 66335,
+      "sha256": "f34ba735a2ce1e2df07934d28898f07934b32f922e38cb46ad52639e0ec2ca7a"
+    },
+    {
+      "path": "theory_scope.tex",
+      "bytes": 10628,
+      "sha256": "3d5a1585bc6fdef921caa2746359a955f0c1314f03bea2a8f42a88519f72b0d8"
+    },
+    {
+      "path": "theory_scope_preview.png",
+      "bytes": 90728,
+      "sha256": "d7017bb7dc475a42a2c3fd0f54171dddd903d7cb87532344662a7e100e6acd66"
+    }
+  ],
+  "total_bytes": 1184093,
+  "scope": "Read-only derivative audit and manuscript insertion draft; original evidence retained separately."
+}

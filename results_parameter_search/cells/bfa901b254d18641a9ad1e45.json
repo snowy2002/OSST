@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      9999
+    ],
+    "probabilities_exact": [
+      "337842756300343/337892751300343",
+      "5000000/337892751300343"
+    ],
+    "support": 10000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C69_lambda1",
+      "cell": "bfa901b254d18641a9ad1e45",
+      "C": "69",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".001",
+      "S": 10000,
+      "effective": 1,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 67578550.2600686,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 6322.0265,
+      "mean_lower_lo": 6322.0265,
+      "mean_lower_hi": 6322.0265,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.0003615989990066737,
+      "scoring_seconds": 0.00036229699617251754
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C69_lambda1",
+      "cell": "bfa901b254d18641a9ad1e45",
+      "C": "70",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".001",
+      "S": 10000,
+      "effective": 1,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 68557949.53920002,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 6373.17,
+      "mean_lower_lo": 6373.17,
+      "mean_lower_hi": 6373.17,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.0003173990116920322,
+      "scoring_seconds": 0.0002868979936465621
+    }
+  ],
+  "raw_file": "raw/bfa901b254d18641a9ad1e45.npz",
+  "raw_sha256": "ce602dfde5d48c6d6b4055e7e7bf640a9e4d1508603f361988e32b1176ee7839"
+}

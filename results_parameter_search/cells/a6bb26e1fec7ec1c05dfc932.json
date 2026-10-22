@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      9999
+    ],
+    "probabilities_exact": [
+      "325133226377143/326466426377143",
+      "400000000/979399279131429"
+    ],
+    "support": 10000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C10_lambda4",
+      "cell": "a6bb26e1fec7ec1c05dfc932",
+      "C": "10",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".001",
+      "S": 10000,
+      "effective": 7552,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 9793992.79131429,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 9817.16,
+      "mean_lower_lo": 9817.16,
+      "mean_lower_hi": 9817.16,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.00041439899359829724,
+      "scoring_seconds": 0.0003971960104536265
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C10_lambda4",
+      "cell": "a6bb26e1fec7ec1c05dfc932",
+      "C": "70",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".001",
+      "S": 10000,
+      "effective": 7552,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 68557949.53920002,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 10000.0,
+      "mean_lower_lo": 10000.0,
+      "mean_lower_hi": 10000.0,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.00023529899772256613,
+      "scoring_seconds": 0.0002988980268128216
+    }
+  ],
+  "raw_file": "raw/a6bb26e1fec7ec1c05dfc932.npz",
+  "raw_sha256": "43a31211e110184a74a1d1fdadf110addfa0642c3a677a2bdd5b07fca1ad140a"
+}

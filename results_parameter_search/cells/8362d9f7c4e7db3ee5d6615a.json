@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      999999
+    ],
+    "probabilities_exact": [
+      "32456512571123/32568400571123",
+      "16000000/4657281281670589"
+    ],
+    "support": 1000000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C69_lambda16",
+      "cell": "8362d9f7c4e7db3ee5d6615a",
+      "C": "69",
+      "L0": 14,
+      "n": 1000000,
+      "epsilon": ".001",
+      "S": 1000000,
+      "effective": 708920,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 4657281281.670589,
+      "branch": "chebyshev",
+      "degree": 84,
+      "scales": 10,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 999999.885,
+      "mean_lower_lo": 999999.885,
+      "mean_lower_hi": 999999.885,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 1.9984014443252818e-15,
+      "sampling_seconds": 0.011283231957349926,
+      "scoring_seconds": 0.0074713549693115056
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C69_lambda16",
+      "cell": "8362d9f7c4e7db3ee5d6615a",
+      "C": "70",
+      "L0": 14,
+      "n": 1000000,
+      "epsilon": ".001",
+      "S": 1000000,
+      "effective": 708920,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 4724778111.839728,
+      "branch": "chebyshev",
+      "degree": 84,
+      "scales": 10,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 999999.908,
+      "mean_lower_lo": 999999.908,
+      "mean_lower_hi": 999999.908,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 2.55351295663786e-15,
+      "sampling_seconds": 0.011364731966750696,
+      "scoring_seconds": 0.007054157962556928
+    }
+  ],
+  "raw_file": "raw/8362d9f7c4e7db3ee5d6615a.npz",
+  "raw_sha256": "7378879aa05d0ecaa11427ca7d96c351246411da04c0caece335d4049f8ac6a3"
+}

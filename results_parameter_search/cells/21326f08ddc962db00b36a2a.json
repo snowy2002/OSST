@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      999999999999
+    ],
+    "probabilities_exact": [
+      "1394419376406611/1397086043073275",
+      "8/4191258129219825"
+    ],
+    "support": 1000000000000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C60_lambda4",
+      "cell": "21326f08ddc962db00b36a2a",
+      "C": "60",
+      "L0": 14,
+      "n": 1000000000000,
+      "epsilon": ".001",
+      "S": 1000000000000,
+      "effective": 476092733848,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 2095629064609912.5,
+      "branch": "chebyshev",
+      "degree": 174,
+      "scales": 12,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 981684361954.3945,
+      "mean_lower_lo": 988569697683.0525,
+      "mean_lower_hi": 988569697683.0735,
+      "improvements": 2000,
+      "extra_rejects": 0,
+      "nonunique_bounds": 42,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 1.1102230246251565e-16,
+      "sampling_seconds": 0.012997123034438118,
+      "scoring_seconds": 0.01254082503146492
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C60_lambda4",
+      "cell": "21326f08ddc962db00b36a2a",
+      "C": "70",
+      "L0": 14,
+      "n": 1000000000000,
+      "epsilon": ".001",
+      "S": 1000000000000,
+      "effective": 476092733848,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 2444900575378231.5,
+      "branch": "chebyshev",
+      "degree": 162,
+      "scales": 12,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 990596438187.9716,
+      "mean_lower_lo": 992144868526.524,
+      "mean_lower_hi": 992144868526.5295,
+      "improvements": 2000,
+      "extra_rejects": 0,
+      "nonunique_bounds": 11,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 6.661338147750939e-16,
+      "sampling_seconds": 0.01228582696057856,
+      "scoring_seconds": 0.012587024946697056
+    }
+  ],
+  "raw_file": "raw/21326f08ddc962db00b36a2a.npz",
+  "raw_sha256": "dd6e7f0a46adcb68a0712ca616df84bceaada130e5e6855cc04801198626bf7d"
+}

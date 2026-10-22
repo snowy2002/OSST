@@ -1,0 +1,11 @@
+{
+  "seconds": 0.4556779520062264,
+  "finished_at": "2026-10-22T03:45:56.138542+00:00",
+  "command": [
+    "/home/snowy/OSST/c7016/run.py",
+    "--phase",
+    "amplification",
+    "--out",
+    "results_c7016"
+  ]
+}

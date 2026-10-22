@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      999999999999
+    ],
+    "probabilities_exact": [
+      "1365086043073307/1397086043073275",
+      "32/1397086043073275"
+    ],
+    "support": 1000000000000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C10_lambda8",
+      "cell": "1db9439d728c0f6aabdc386f",
+      "C": "10",
+      "L0": 14,
+      "n": 1000000000000,
+      "epsilon": ".001",
+      "S": 1000000000000,
+      "effective": 956341061154,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 349271510768318.75,
+      "branch": "chebyshev",
+      "degree": 427,
+      "scales": 15,
+      "trials": 2000,
+      "errors": 1689,
+      "coverage_errors": 0,
+      "mean_D": 999664536975.3925,
+      "mean_lower_lo": 999950360842.8085,
+      "mean_lower_hi": 999950360854.9716,
+      "improvements": 2000,
+      "extra_rejects": 1689,
+      "nonunique_bounds": 2,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 1.9984014443252818e-15,
+      "sampling_seconds": 0.03409560598083772,
+      "scoring_seconds": 0.03559279802720994
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C10_lambda8",
+      "cell": "1db9439d728c0f6aabdc386f",
+      "C": "70",
+      "L0": 14,
+      "n": 1000000000000,
+      "epsilon": ".001",
+      "S": 1000000000000,
+      "effective": 956341061154,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 2444900575378231.5,
+      "branch": "chebyshev",
+      "degree": 162,
+      "scales": 12,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 1000000000000.0,
+      "mean_lower_lo": 1000000000000.0,
+      "mean_lower_hi": 1000000000000.0,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 1.6209256159527285e-14,
+      "sampling_seconds": 0.019681386969750747,
+      "scoring_seconds": 0.014307020988781005
+    }
+  ],
+  "raw_file": "raw/1db9439d728c0f6aabdc386f.npz",
+  "raw_sha256": "5fab5c40005f7190e45e92f1e98cde2ec40e787c2ee6a73ab1cb45c6318af801"
+}

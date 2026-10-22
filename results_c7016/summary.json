@@ -1,0 +1,365 @@
+{
+  "C0": 70,
+  "L0": 16,
+  "suites": {
+    "synthetic": {
+      "cells": 756,
+      "trials": 3024000,
+      "promised_trials": 2672000,
+      "errors": 0,
+      "lower_errors": 0,
+      "worst_error_upper95_simultaneous": 0.0028172165195731362,
+      "worst_lower_upper95_simultaneous": 0.0028478284586320205,
+      "polynomial_cells": 360,
+      "polynomial_trials": 1440000,
+      "extra_rejects_beyond_count": 0,
+      "certified_lower_improvements": 528000,
+      "unresolved_integer_outputs": 24499,
+      "threshold_refinements": 0,
+      "full_arb_audits": 6048,
+      "max_degree": 162,
+      "max_score_enclosure_width": 259.53515625,
+      "max_poisson_bin_mass_defect": 5.906386491005833e-14
+    },
+    "natural": {
+      "cells": 236,
+      "trials": 944000,
+      "promised_trials": 704000,
+      "errors": 0,
+      "lower_errors": 0,
+      "worst_error_upper95_simultaneous": 0.0024409296198617584,
+      "worst_lower_upper95_simultaneous": 0.002514084879494355,
+      "polynomial_cells": 0,
+      "polynomial_trials": 0,
+      "extra_rejects_beyond_count": 0,
+      "certified_lower_improvements": 0,
+      "unresolved_integer_outputs": 0,
+      "threshold_refinements": 0,
+      "full_arb_audits": 1888,
+      "max_degree": 0,
+      "max_score_enclosure_width": 0.0,
+      "max_poisson_bin_mass_defect": 0.0
+    },
+    "lifted": {
+      "cells": 120,
+      "trials": 240000,
+      "promised_trials": 164000,
+      "errors": 0,
+      "lower_errors": 0,
+      "worst_error_upper95_simultaneous": 0.004659793633441947,
+      "worst_lower_upper95_simultaneous": 0.004847992720995286,
+      "polynomial_cells": 116,
+      "polynomial_trials": 232000,
+      "extra_rejects_beyond_count": 0,
+      "certified_lower_improvements": 26000,
+      "unresolved_integer_outputs": 0,
+      "threshold_refinements": 0,
+      "full_arb_audits": 960,
+      "max_degree": 123,
+      "max_score_enclosure_width": 0.0004849433898925781,
+      "max_poisson_bin_mass_defect": 6.861178292183467e-14
+    },
+    "amplification": {
+      "cells": 50,
+      "trials": 50000,
+      "promised_trials": 44000,
+      "errors": 0,
+      "lower_errors": 0,
+      "worst_error_upper95_simultaneous": 0.007847579890462536,
+      "worst_lower_upper95_simultaneous": 0.007974401973156919
+    }
+  },
+  "risk_by_method": {
+    "synthetic": [
+      {
+        "method": "C70_L16",
+        "promised_cells": 668,
+        "trials": 2672000,
+        "errors": 0,
+        "worst_observed_error": 0.0,
+        "worst_upper95_simultaneous": 0.0028172165195731362
+      },
+      {
+        "method": "count_matched_confidence",
+        "promised_cells": 668,
+        "trials": 2672000,
+        "errors": 4545,
+        "worst_observed_error": 0.058,
+        "worst_upper95_simultaneous": 0.07506730929141955
+      },
+      {
+        "method": "count_99",
+        "promised_cells": 668,
+        "trials": 2672000,
+        "errors": 33,
+        "worst_observed_error": 0.0015,
+        "worst_upper95_simultaneous": 0.006001306266704214
+      },
+      {
+        "method": "C1025_L1024",
+        "promised_cells": 668,
+        "trials": 2672000,
+        "errors": 0,
+        "worst_observed_error": 0.0,
+        "worst_upper95_simultaneous": 0.0028172165195731362
+      },
+      {
+        "method": "original",
+        "promised_cells": 668,
+        "trials": 2672000,
+        "errors": 0,
+        "worst_observed_error": 0.0,
+        "worst_upper95_simultaneous": 0.0028172165195731362
+      },
+      {
+        "method": "count_same_budget",
+        "promised_cells": 320,
+        "trials": 1280000,
+        "errors": 0,
+        "worst_observed_error": 0.0,
+        "worst_upper95_simultaneous": 0.0028172165195731362
+      },
+      {
+        "method": "scale0_same_budget",
+        "promised_cells": 320,
+        "trials": 1280000,
+        "errors": 0,
+        "worst_observed_error": 0.0,
+        "worst_upper95_simultaneous": 0.0028172165195731362
+      }
+    ],
+    "natural": [
+      {
+        "method": "C70_L16",
+        "promised_cells": 176,
+        "trials": 704000,
+        "errors": 0,
+        "worst_observed_error": 0.0,
+        "worst_upper95_simultaneous": 0.0024409296198617584
+      },
+      {
+        "method": "count_matched_confidence",
+        "promised_cells": 176,
+        "trials": 704000,
+        "errors": 3,
+        "worst_observed_error": 0.00025,
+        "worst_upper95_simultaneous": 0.0030877497174565264
+      },
+      {
+        "method": "count_99",
+        "promised_cells": 176,
+        "trials": 704000,
+        "errors": 0,
+        "worst_observed_error": 0.0,
+        "worst_upper95_simultaneous": 0.0024409296198617584
+      },
+      {
+        "method": "C1025_L1024",
+        "promised_cells": 176,
+        "trials": 704000,
+        "errors": 0,
+        "worst_observed_error": 0.0,
+        "worst_upper95_simultaneous": 0.0024409296198617584
+      },
+      {
+        "method": "original",
+        "promised_cells": 176,
+        "trials": 704000,
+        "errors": 0,
+        "worst_observed_error": 0.0,
+        "worst_upper95_simultaneous": 0.0024409296198617584
+      }
+    ],
+    "lifted": [
+      {
+        "method": "C70_L16",
+        "promised_cells": 82,
+        "trials": 164000,
+        "errors": 0,
+        "worst_observed_error": 0.0,
+        "worst_upper95_simultaneous": 0.004659793633441947
+      },
+      {
+        "method": "count_same_budget",
+        "promised_cells": 80,
+        "trials": 160000,
+        "errors": 0,
+        "worst_observed_error": 0.0,
+        "worst_upper95_simultaneous": 0.004659793633441947
+      },
+      {
+        "method": "scale0_same_budget",
+        "promised_cells": 80,
+        "trials": 160000,
+        "errors": 0,
+        "worst_observed_error": 0.0,
+        "worst_upper95_simultaneous": 0.004659793633441947
+      },
+      {
+        "method": "count_matched_confidence",
+        "promised_cells": 82,
+        "trials": 164000,
+        "errors": 0,
+        "worst_observed_error": 0.0,
+        "worst_upper95_simultaneous": 0.004659793633441947
+      },
+      {
+        "method": "count_99",
+        "promised_cells": 82,
+        "trials": 164000,
+        "errors": 0,
+        "worst_observed_error": 0.0,
+        "worst_upper95_simultaneous": 0.004659793633441947
+      },
+      {
+        "method": "C1025_L1024",
+        "promised_cells": 82,
+        "trials": 164000,
+        "errors": 0,
+        "worst_observed_error": 0.0,
+        "worst_upper95_simultaneous": 0.004659793633441947
+      },
+      {
+        "method": "original",
+        "promised_cells": 82,
+        "trials": 164000,
+        "errors": 0,
+        "worst_observed_error": 0.0,
+        "worst_upper95_simultaneous": 0.004659793633441947
+      }
+    ],
+    "amplification": [
+      {
+        "method": "C70_L16_x27",
+        "promised_cells": 44,
+        "trials": 44000,
+        "errors": 0,
+        "worst_observed_error": 0.0,
+        "worst_upper95_simultaneous": 0.007847579890462536
+      },
+      {
+        "method": "count_99",
+        "promised_cells": 44,
+        "trials": 44000,
+        "errors": 1,
+        "worst_observed_error": 0.001,
+        "worst_upper95_simultaneous": 0.010255867190038792
+      },
+      {
+        "method": "C1025_L1024",
+        "promised_cells": 44,
+        "trials": 44000,
+        "errors": 0,
+        "worst_observed_error": 0.0,
+        "worst_upper95_simultaneous": 0.007847579890462536
+      }
+    ]
+  },
+  "primary_trials": 4208000,
+  "primary_cells": 1112,
+  "primary_method_trial_evaluations": 24384000,
+  "primary_independent_sampling_paths": 21040000,
+  "polynomial_trials": 1672000,
+  "certified_lower_improvements": 554000,
+  "full_arb_primary_audits": 8896,
+  "synthetic_cost_ratios": {
+    "C1025_L1024": {
+      "min": 0.06829002806117751,
+      "max": 0.06829268292682927
+    },
+    "count_99": {
+      "min": 2.4448931554722346,
+      "max": 8.394264340391276
+    },
+    "count_matched_confidence": {
+      "min": 2.4448966885572676,
+      "max": 16.29802095459837
+    },
+    "original": {
+      "min": 1.043081282724846e-06,
+      "max": 1.0430812835693361e-06
+    }
+  },
+  "max_certified_mean_lower_gain_fraction_of_n": 0.3617191419562332,
+  "multiscale_mean_better_than_scale0_cells": 145,
+  "max_mean_gain_over_scale0_fraction_of_n": 0.25968464053933776,
+  "natural_feasible_cells": 42,
+  "natural_budget_cells": 236,
+  "finite_file_trials": 18000,
+  "finite_file_completed": 4799,
+  "finite_file_overflows": 13201,
+  "duplication_worst_error": 1.0,
+  "whole_group_worst_error": 0.0,
+  "amplification_theory": {
+    "repeats": 27,
+    "single_failure": "70653/250000",
+    "per_task_failure_exact": "2269195340733733591171162648766344916192157994003728414819883381700123480720123571902585436317512489822080276528058619503081737896995026241689/277555756156289135105907917022705078125000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "per_task_failure": 0.008175637832767447,
+    "either_output_failure_upper": 0.016351275665534893,
+    "expected_coefficient": 1890,
+    "independent_single_run_paths": 1450000
+  },
+  "validation": {
+    "passed": true,
+    "checks": 113951,
+    "categories": {
+      "frozen source matches working source": 20,
+      "frozen source snapshot hash": 20,
+      "natural data hash": 14,
+      "raw fingerprint hash": 1112,
+      "exact promise truth": 6512,
+      "saved trial count": 6512,
+      "valid statistic enclosure": 6512,
+      "valid integer-output enclosure": 6512,
+      "decision agrees with enclosure": 6512,
+      "binary errors reconstructed": 5430,
+      "binary simultaneous confidence bound": 5430,
+      "lower-bound errors reconstructed": 6512,
+      "lower simultaneous confidence bound": 6512,
+      "upper coverage agrees with enclosure": 6512,
+      "lower coverage agrees with enclosure": 6512,
+      "reject count": 6512,
+      "all full-degree frequencies retained": 1112,
+      "real mean recorded": 1112,
+      "branch matches theorem": 1112,
+      "literal count decision": 4924,
+      "seed-block coverage count": 26048,
+      "no invented Gap error label": 1082,
+      "1024-bit saved-profile cross-check": 476,
+      "1024-bit decision cross-check": 476,
+      "suite cell count": 3,
+      "independent path accounting": 3,
+      "amplification raw hash": 50,
+      "independent-copy majority reconstructed": 50,
+      "amplified coverage reconstructed": 150,
+      "amplified binary errors reconstructed": 132,
+      "independent amplified path accounting": 1,
+      "aggregated outputs not confused with individual runs": 1,
+      "Poisson PMF against Arb": 70,
+      "huge diffuse sampler mean": 1,
+      "huge diffuse sampler variance": 1,
+      "no normalization-induced high-frequency ghosts": 1
+    },
+    "raw_files": 1162,
+    "additional_full_arb_scores": 476,
+    "seconds": 30.83390430500731,
+    "scope": "Saved data and numerical/analytic certificate checks; not a proof-assistant formalization"
+  },
+  "diagnostics": {
+    "full_api_calls": 18,
+    "explicit_category_poisson_draws": 102903340,
+    "polynomial_api_calls": 12,
+    "timing_cells": 4
+  },
+  "limitations": [
+    "Zero observed errors do not mean zero population risk or prove universal correctness.",
+    "Finite empirical resampling does not certify iid field sampling or unseen ecosystem support.",
+    "Cloned empirical shapes are synthetic and are reported separately.",
+    "Binary64 probability evaluation/PRNG is not an exact real-valued sampler.",
+    "All binary decisions and coverage events are enclosed/certified; some exact integer lower outputs are retained as intervals.",
+    "Poisson fingerprint simulation does not reconstruct M or measure physical sample acquisition.",
+    "The original, C1025, and C70 constants have different uniform single-run confidence guarantees.",
+    "Natural dependence experiments are descriptive stress tests outside the iid theorem.",
+    "No optimality, new asymptotic rate, proof-assistant formalization, or publication acceptance claim."
+  ]
+}

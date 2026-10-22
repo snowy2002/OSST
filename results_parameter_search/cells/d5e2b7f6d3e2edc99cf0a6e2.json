@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      9999
+    ],
+    "probabilities_exact": [
+      "215366426377143/326466426377143",
+      "100000000000/2938197837394287"
+    ],
+    "support": 10000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C6_lambda2",
+      "cell": "d5e2b7f6d3e2edc99cf0a6e2",
+      "C": "6",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".1",
+      "S": 10000,
+      "effective": 7062,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 58763.95674788574,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 8647.802,
+      "mean_lower_lo": 8647.802,
+      "mean_lower_hi": 8647.802,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.00041929702274501324,
+      "scoring_seconds": 0.0003868959902320057
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C6_lambda2",
+      "cell": "d5e2b7f6d3e2edc99cf0a6e2",
+      "C": "70",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".1",
+      "S": 10000,
+      "effective": 7062,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 685579.4953920003,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 10000.0,
+      "mean_lower_lo": 10000.0,
+      "mean_lower_hi": 10000.0,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.0002269999822601676,
+      "scoring_seconds": 0.0003002960002049804
+    }
+  ],
+  "raw_file": "raw/d5e2b7f6d3e2edc99cf0a6e2.npz",
+  "raw_sha256": "af2225a125a0918ad266f386eb0d7ac92b0ceb400d552a3a3096d75da18ce13d"
+}

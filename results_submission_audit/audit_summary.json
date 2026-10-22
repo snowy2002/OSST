@@ -1,0 +1,143 @@
+{
+  "passed": true,
+  "mode": "post-hoc read-only audit; no additional Monte Carlo trials",
+  "csv_method_rows": 4424,
+  "promised_method_rows": 3818,
+  "raw_population_cells": 997,
+  "C70_L14": {
+    "coverage_trials": 1994000,
+    "promised_binary_trials": 1792000,
+    "joint_errors": 0,
+    "max_joint_upper95_grid": 0.005679078626365537,
+    "extra_rejects": 0,
+    "ambiguous_integer_outputs": 37071
+  },
+  "inventory": [
+    {
+      "suite": "adversarial",
+      "cells": 347,
+      "labels": {
+        "Yes": 347
+      },
+      "coverage_trials": 694000,
+      "promised_binary_trials": 694000,
+      "polynomial_trials": 450000,
+      "binary_errors": 0,
+      "joint_errors": 0,
+      "count_binary_errors": 0,
+      "count_coverage_errors": 0,
+      "extra_rejects": 0,
+      "improved_lower_outputs": 204000,
+      "ambiguous_integer_outputs": 31845
+    },
+    {
+      "suite": "diffuse_control",
+      "cells": 28,
+      "labels": {
+        "No": 28
+      },
+      "coverage_trials": 56000,
+      "promised_binary_trials": 56000,
+      "polynomial_trials": 0,
+      "binary_errors": 0,
+      "joint_errors": 0,
+      "count_binary_errors": 0,
+      "count_coverage_errors": 0,
+      "extra_rejects": 0,
+      "improved_lower_outputs": 0,
+      "ambiguous_integer_outputs": 0
+    },
+    {
+      "suite": "lifted",
+      "cells": 60,
+      "labels": {
+        "Gap": 20,
+        "Yes": 20,
+        "No": 20
+      },
+      "coverage_trials": 120000,
+      "promised_binary_trials": 80000,
+      "polynomial_trials": 100000,
+      "binary_errors": 0,
+      "joint_errors": 0,
+      "count_binary_errors": 0,
+      "count_coverage_errors": 0,
+      "extra_rejects": 0,
+      "improved_lower_outputs": 24000,
+      "ambiguous_integer_outputs": 0
+    },
+    {
+      "suite": "natural",
+      "cells": 76,
+      "labels": {
+        "Yes": 20,
+        "No": 31,
+        "Gap": 25
+      },
+      "coverage_trials": 152000,
+      "promised_binary_trials": 102000,
+      "polynomial_trials": 0,
+      "binary_errors": 0,
+      "joint_errors": 0,
+      "count_binary_errors": 0,
+      "count_coverage_errors": 0,
+      "extra_rejects": 0,
+      "improved_lower_outputs": 0,
+      "ambiguous_integer_outputs": 0
+    },
+    {
+      "suite": "synthetic",
+      "cells": 486,
+      "labels": {
+        "Yes": 290,
+        "No": 140,
+        "Gap": 56
+      },
+      "coverage_trials": 972000,
+      "promised_binary_trials": 860000,
+      "polynomial_trials": 648000,
+      "binary_errors": 0,
+      "joint_errors": 0,
+      "count_binary_errors": 0,
+      "count_coverage_errors": 0,
+      "extra_rejects": 0,
+      "improved_lower_outputs": 214000,
+      "ambiguous_integer_outputs": 5226
+    }
+  ],
+  "paired_main_cells": 622,
+  "paired_positive_sample_mean_cells": 50,
+  "paired_positive_expected_gain_cells_hoeffding95": 14,
+  "inference_scope": "Joint event intervals form one family over all rows. Binary and coverage intervals additionally provided as one combined family of N+K endpoints. Paired expectation intervals are a separate explicitly identified 95% family; dependence across methods does not invalidate Bonferroni.",
+  "natural_datasets": 10,
+  "natural_original_records": 50994,
+  "natural_support_min": 4,
+  "natural_support_max": 240,
+  "natural_cells": 76,
+  "natural_mean_budget_within_records": 13,
+  "rare_event_power": [
+    {
+      "target": 0.0009,
+      "zero_error_trials_pointwise95": 3328,
+      "zero_error_trials_grid95": 12651
+    },
+    {
+      "target": 5.7e-05,
+      "zero_error_trials_pointwise95": 52556,
+      "zero_error_trials_grid95": 199829
+    }
+  ],
+  "sources_sha256": {
+    "parameter_search/submission_audit.py": "dd058c5dafea8ef576c97c85816f2f28d2fcc399680771c539f74c51cf5bc872",
+    "results_parameter_search/experiments.csv": "618d2747f4539230278228586dea4853ae5a3dafb46fc42ca935d9bedbb928b6",
+    "results_parameter_search/experiment_protocol.json": "1b206cde6b13dd37be5413b20e3971c19db0ca27bddba923696b34d997845a8a",
+    "data/c1025/datasets.json": "a321dc2888aa7c42fecc4f5859af7b4f326bba66eee891971ffdb1713978f886",
+    "results_parameter_search/conclusions.json": "a3e324d310fd765b35ee1fcef56068e310e01c46fdbadadb08c78e15170f278c"
+  },
+  "audit_environment": {
+    "python": "3.14.4",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "note": "Environment recorded at audit time; not proof of historical execution settings."
+  }
+}

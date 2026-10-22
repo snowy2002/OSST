@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      999999
+    ],
+    "probabilities_exact": [
+      "40098098501483387/40498098101483387",
+      "400000000/40498098101483387"
+    ],
+    "support": 1000000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C6_lambda4",
+      "cell": "8f571d2e1af473cb02ed2714",
+      "C": "6",
+      "L0": 14,
+      "n": 1000000,
+      "epsilon": ".001",
+      "S": 1000000,
+      "effective": 898755,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 404980981.01483387,
+      "branch": "chebyshev",
+      "degree": 285,
+      "scales": 14,
+      "trials": 2000,
+      "errors": 1611,
+      "coverage_errors": 0,
+      "mean_D": 981686.3745,
+      "mean_lower_lo": 999388.084,
+      "mean_lower_hi": 999388.084,
+      "improvements": 2000,
+      "extra_rejects": 1611,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 1.1102230246251565e-16,
+      "sampling_seconds": 0.021637724013999104,
+      "scoring_seconds": 0.015051278023747727
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C6_lambda4",
+      "cell": "8f571d2e1af473cb02ed2714",
+      "C": "70",
+      "L0": 14,
+      "n": 1000000,
+      "epsilon": ".001",
+      "S": 1000000,
+      "effective": 898755,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 4724778111.839728,
+      "branch": "chebyshev",
+      "degree": 84,
+      "scales": 10,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 1000000.0,
+      "mean_lower_lo": 1000000.0,
+      "mean_lower_hi": 1000000.0,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 1.3322676295501878e-15,
+      "sampling_seconds": 0.01379238796653226,
+      "scoring_seconds": 0.007003843988059089
+    }
+  ],
+  "raw_file": "raw/8f571d2e1af473cb02ed2714.npz",
+  "raw_sha256": "b5c7243d0cda863e6d7fb0b6d4417606fa89b0d56c9bfa8e07ad8d1dc04ca17d"
+}

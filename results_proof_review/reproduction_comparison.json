@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "files": [
+    {
+      "file": "certificate.json",
+      "byte_identical": true,
+      "sha256": "f0ae63840def635685b31bbcba2e12e9bc7e6d02ee672db0d07936a82cfe4e43"
+    },
+    {
+      "file": "lower_bound_certificate.json",
+      "byte_identical": true,
+      "sha256": "803c733d153bea8a8cf9ca649ccd74fd6ed5f0c5dac846f760bf148c99643194"
+    }
+  ]
+}

@@ -1,0 +1,412 @@
+\documentclass[10pt]{article}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,hyperref,microtype}
+\setlength{\emergencystretch}{1em}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Prb}{\mathbb P}
+\newcommand{\Var}{\operatorname{Var}}
+\title{A Single-Run Refinement of the Support-Testing Constants}
+\author{}\date{October 22, 2026}
+\begin{document}\maketitle
+\begin{abstract}
+Keeping the statistic and all polynomial parameters unchanged, we strengthen
+the concentration step of the accompanying exact-certificate analysis.
+The integer pair $(C_0,L_0)=(70,14)$ has uniform single-run failure below
+$0.0009$, and $(70,16)$ has failure below $0.000057$.
+Thus the previously sufficient 27 repetitions of $(70,16)$ are unnecessary
+for a one-percent guarantee. The real pair $(144(\log2)^2,14)$ is also certified.
+An asymptotic null construction also forces $C\ge69.00627138\ldots$ for
+this unchanged tester, proving that 70 is its smallest feasible integer
+sampling constant for uniform one-percent error. The best real constant
+and smallest branch threshold are not determined.
+The proof includes the infinite range of input sizes; simulation does not
+establish the theorem. It builds on the unchanged expectation, coefficient,
+and interval lemmas in the repository's previous full manuscript.
+\end{abstract}
+
+\section{Construction and exact statement}
+Let $p$ be any finite or countably supported discrete distribution. For an
+integer $n\ge1$ and $0<\epsilon<1$, put
+$L=1+\log n$, $m=Cn/(\epsilon L)$, and draw independent
+$N_i\sim\operatorname{Poi}(mp_i)$. Write $D=\sum_i1_{N_i>0}$,
+$S=|\operatorname{supp}p|$, $\Delta_r=\sum_{i>r}p_{(i)}$, and
+$e_\epsilon=\min\{r\ge1:\Delta_r\le\epsilon\}$.
+For $L<L_0$ use $\widetilde S=D$. Otherwise use exactly the previous construction:
+\[
+ a_0=\epsilon/(8n),\quad b=64L/m,\quad
+ J=\lfloor\log_2(256L^2/C)\rfloor,\quad a_j=2^ja_0,\quad
+ \delta_j=2^{-j-2},\quad k_j=\lceil\sqrt{b/a_j}(j+3)\log2\rceil.
+\]
+Set $P_j(x)=-\rho_jT_{k_j}((b+a_j-2x)/(b-a_j))=\sum_\ell c_{j,\ell}x^\ell$,
+with $\rho_j=T_{k_j}((b+a_j)/(b-a_j))^{-1}$; put $f_j(0)=0$,
+$f_j(\ell)=1+c_{j,\ell}\ell!/m^\ell$ for $1\le\ell\le k_j$, and
+$f_j(\ell)=1$ otherwise. Then
+\[
+ Z_j=\sum_i f_j(N_i),\qquad
+ \widetilde S=\max\{D,\max_j(Z_j-\delta_j n)/(1+\delta_j)\}.
+\]
+The binary decision is Yes iff $\widetilde S\le n$; the integer output is
+$\widehat S=\min\{n,\max\{1,\lceil\widetilde S\rceil\}\}$.
+There is no budget ceiling or degree truncation in this theorem.
+
+\begin{theorem}
+For every row below, uniformly over $p,n,\epsilon$, the promised binary test
+has error less than $B$, and
+$\Prb\{\min(e_\epsilon,n)\le\widehat S\le S\}>1-B$.
+On either binary promise these two outputs are simultaneously correct with
+probability greater than $1-B$.
+The promises are $S\le n$ and $\Delta_n\ge\epsilon$; no binary correctness
+label is assigned in the intervening gap.
+\begin{center}
+\begin{tabular}{rrr}
+\toprule $C$&$L_0$&exact rational upper bound $B$\\\midrule
+$144(\log2)^2$&14&0.0015\\
+$144(\log2)^2$&15&0.00038\\
+$144(\log2)^2$&16&0.00031\\
+$144(\log2)^2$&18&0.00028\\
+70&14&0.0009\\70&15&0.000081\\70&16&0.000057\\70&18&0.000040\\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{theorem}
+
+\section{What is inherited, and what changes}
+The unchanged analytic ingredients are proved in the
+\href{../artifacts/joint_constants_submission/submission_proof.pdf}{earlier exact-certificate manuscript},
+especially its expectation, integral/range, individual-coefficient, and
+variance lemmas. They give $\E f_j(N_i)\le1+\rho_j$,
+$\rho_j\le\delta_j^2/2$, an envelope $F_j\ge\|f_j\|_\infty$, and
+a factorial-coefficient sum $I_j$ which bounds the range length of $f_j$.
+The certificate uses $V_j=I_j^2/4$, improved at scale zero to
+$V_0=\min(I_0^2/4,F_0^2)$ using the individual-coefficient envelope.
+Thus variance is at most $V_j$, and squared range is at most $4V_j$. Also
+\[
+ \sum_i\Var f_j(N_i)\le F_j^2\E D.
+\]
+The latter follows from $f_j(0)=0$ and
+$\Var f_j(N_i)\le\E f_j(N_i)^2\le F_j^2\Prb(N_i>0)$.
+Only concentration inequalities and the cutoff in the occupancy case split
+are strengthened here. Neither the sampling rule nor the estimator changes.
+
+The original parameter lemma extends to $L\ge14$: for $69<C\le70$,
+$256L^2/C>1$, $64L^2/(Ce^{L-1})<1$, and
+\[
+ k_j/L\le\sqrt{512/C}\,3\log2+1/14<6<64/\sqrt2.
+\]
+The first two expressions are monotone on this range. The inequalities at
+14 are certified using outward rational intervals, so all expectation
+lemmas continue to apply.
+
+\section{Concentration lemmas with explicit constants}
+For independent variables of range lengths $r_i$, Hoeffding's argument gives
+\[
+ \Prb\{\textstyle\sum_i(X_i-\E X_i)\ge x\}
+ \le\exp\{-2x^2/\textstyle\sum_i r_i^2\}.
+\]
+For completeness, if $X\in[a,b]$, the second derivative of
+$\log\E e^{tX}$ is a variance under exponential tilting, at most
+$(b-a)^2/4$. Integrating twice at zero bounds the centered log moment
+generating function by $t^2(b-a)^2/8$; exponential Markov and optimization
+prove the display. The lower tail follows by negation.
+
+We will also use the following Bernstein form: if independent centered
+$Y_i\le B$ have total variance at most $\sigma^2$, then
+\[
+ \Prb\{\textstyle\sum_iY_i\ge x\}
+ \le\exp\{-x^2/(2\sigma^2+2Bx/3)\}.
+\]
+One derivation uses
+\[
+ e^{ty}\le1+ty+\frac{y^2}{B^2}(e^{tB}-1-tB)\quad(y\le B,t\ge0),
+\]
+which follows by the integral remainder formula and monotonicity in $y$.
+Since $k!\ge2\cdot3^{k-2}$ for $k\ge2$, the log moment generating
+function is at most $\sigma^2t^2/[2(1-tB/3)]$. Choosing
+$t=x/(\sigma^2+Bx/3)$ proves the stated bound.
+
+An endpoint variant is useful for the upper tail. If $Y\in[-A,B]$,
+$A,B>0$, and $\E Y\le0$, convexity bounds its moment generating function
+by that of the mean-zero distribution on $\{-A,B\}$. This distribution
+has variance $AB$ and upper endpoint $B$. Thus the same Bernstein bound
+holds with variance proxy $AB$, even when $Y$ itself is not centered.
+
+\section{Uniform upper and lower errors}
+Define, as in the previous proof,
+\[
+ v_j=V_j/(n\delta_j^2),\quad w_j=F_j^2/(n\delta_j^2),\quad
+ d_j=2-\delta_j/2,\quad\kappa_j=14-\delta_j/2-8\delta_j^2.
+\]
+For $S\le n$, the event $\widetilde S>S$ requires a scale's threshold
+$(1+\delta_j)S+\delta_j n$ to be exceeded. Its gap above
+$(1+\delta_j^2/2)S$ is at least
+$x=\delta_j n+(\delta_j-\delta_j^2/2)S$.
+For $0<S/n\le1$, the previous elementary maximization gives
+$S/x^2\le1/(n\delta_j^2d_j^2)$, and $1/x\le1/(\delta_j n)$.
+
+Writing $G_j=I_j-1$, positivity of absolute coefficients implies
+$\min(0,1-G_j)\le f_j\le1+G_j$. Centering at
+$1+\delta_j^2/2$ therefore permits the endpoint envelope
+\[
+ A_j=1+\delta_j^2/2+\max(0,G_j-1),\qquad B_j=G_j.
+\]
+Let
+\[
+ U=\sum_j\min\left\{
+ \frac{v_j}{v_j+d_j^2},\ e^{-d_j^2/(2v_j)},\
+ \exp\left[-\left(\frac{2A_jG_j}{n\delta_j^2d_j^2}
+                  +\frac{2G_j}{3\delta_j n}\right)^{-1}\right]\right\}.
+\]
+The three terms are respectively the old Cantelli bound, the range-based
+Hoeffding bound, and the endpoint Bernstein bound just proved. Their minimum
+is valid because each bounds the same event. A union bound gives
+$\Prb(\widetilde S>S)\le U$.
+
+For the lower error fix $r\le n$ with $\Delta_r\ge\epsilon$.
+Use the previous three-case expectation argument, whose heavy-category
+case has failure at most $H(L)=e^{-31L-1}+e^{-C}$ and whose other two cases
+have rejection margin at least $\kappa_j\delta_j n$ at some scale $j$.
+Change the occupancy split to $\alpha=33/32$. If $\mu=\E D>\alpha n$,
+independence of occupancy indicators and exponential Markov give
+\[
+ \Prb(D\le n)\le e^{-n(\alpha-1-\log\alpha)}
+ \le e^{-n/2112}.
+\]
+Here $g(x)=x-1-\log x\ge(x-1)^2/(2x)$ for $x\ge1$; subtracting the
+right side from $g$ gives derivative $(1-1/x)^2/2\ge0$.
+If $\mu\le\alpha n$, the variance is at most $\alpha n F_j^2$ and
+the centered summands in the lower tail have upper bound $2F_j$.
+Consequently a valid general lower-error bound is
+\[
+ R=\max\left\{H(L),e^{-n/2112},
+ \max_j\min\left[\frac{\alpha w_j}{\alpha w_j+\kappa_j^2},
+ \exp\left(-\frac{\kappa_j^2}{2\alpha w_j+(4/3)\kappa_j\sqrt{w_j/n}}\right)
+ \right]\right\}.
+\]
+For $S\le n$, the finite-support variance and Hoeffding bounds instead give
+\[
+ R_f=\max\left\{H(L),\max_j\min\left[
+ \frac{v_j}{v_j+\kappa_j^2},e^{-\kappa_j^2/(2v_j)}\right]\right\}.
+\]
+All infinite sums above are legitimate: $\E D\le m<\infty$,
+$\sum_i\E|f_j(N_i)|\le F_j\E D$, and the centered series converges in
+$L^2$. The finite-sum exponential bounds pass to the limit by Fatou's
+lemma. No finite-alphabet assumption is added.
+
+The common bound is $B(L)=\max\{U+R_f,R\}$. For $S\le n$, the event
+$\widetilde S\le S$ and $\widetilde S>\min(e_\epsilon,n)-1$ (when the
+minimum exceeds one) ensures both outputs are correct, so $U+R_f$ suffices.
+For $S>n$ under the alternative, rejection $\widetilde S>n$ ensures both
+outputs are correct; $R$ suffices. In the gap only the support bound is
+required and the same $R$ argument applies. This proves the simultaneous
+statement, without adding two separate failure bounds.
+
+\section{Exact verification on all input sizes}
+On $14\le L\le40$, the interval envelopes from the previous manuscript are
+used on all 260 closed slabs $[i/10,(i+1)/10]$. Each slab includes every
+possibly active scale and upper bounds every degree ceiling; there is no
+unchecked gap at a scale or degree transition. The new probability formulas
+are increasing in their variance, coefficient, and inverse-$n$ arguments,
+so substituting their slab upper bounds is sound.
+
+On $L\ge H=40$ the previous half-line proof is unchanged except for the
+choice of $H$. For scales $j\le7$, its decreasing envelopes bound $w_j$;
+we conservatively use $v_j\le w_j$ and omit the endpoint Bernstein option
+for the upper tail. At scale zero the condition is exactly
+$144(\log2)^2/C\le1$, including symbolic equality for $C=C_*$.
+The other derivative signs and $H\ge14$ are checked exactly.
+For $j\ge8$ the old decreasing sum envelope $T(H)$ bounds
+$\sum_j w_j$. These omitted scales contribute at most $T(H)$ to $U$,
+$T(H)/81$ to $R_f$, and $\alpha T(H)/81$ to $R$, using Cantelli and
+$d_j>1$, $\kappa_j>9$. The maximum inverse-$n$ is $e^{1-H}$.
+Thus the entire unbounded half-line is certified, not sampled on a grid.
+
+In the counting branch the discovery coupling from the previous proof gives
+$\Prb(D\le r)\le\Prb\{\operatorname{Poi}(Cn/L)\le n\}$.
+Partition $1\le L\le L_0$ into intervals of width $1/4$. On a slab $[a,b]$,
+use $n\ge e^{a-1}$ and $x=C/L\ge C/b>1$ to bound this probability by
+\[
+ \exp\{-e^{a-1}(C/b-1)^2/(2C/b)\}.
+\]
+Every such bound is certified below $10^{-10}$ for the listed pairs.
+The counting branch never overestimates $S$.
+
+The certificate uses only the previous 160-bit dyadic interval library,
+integer operations, and rational operations; its logarithm, square-root,
+exponential, and $\pi$ enclosures are proved in the previous arithmetic
+appendix. For extremely negative exponents we safely enclose
+$e^x$ in $[0,2^{-128}]$ when $x\le-128$, using $e>2$.
+This avoids enormous intermediate integers and does not round a probability
+down to zero. All asserted rational targets are strictly larger than the
+certified upper endpoints. A separate 512-bit Arb implementation recomputes
+the envelopes and probability expressions and audits the saved data.
+
+\section{A necessary constant: ruling out 69}
+This section concerns the unchanged tester above, not all possible support
+testers. Both $C$ and $L_0>1$ are fixed finite constants.
+Define
+\[
+ a(C)=\sqrt{512/C}\,3\log2,\qquad
+ \gamma(C)=a(C)\operatorname{arsinh}(a(C)/32)
+                -\sqrt{1024+a(C)^2}+32.
+\]
+The function $\gamma$ is continuous and strictly decreasing in $C>0$:
+its derivative with respect to $a$ is $\operatorname{arsinh}(a/32)>0$,
+and $a$ decreases in $C$. It decreases from infinity to zero, so there is
+a unique $C_{\rm crit}$ such that $\gamma(C_{\rm crit})=1/2$.
+
+\begin{theorem}[Necessary constant for the unchanged construction]
+If $1\le C<C_{\rm crit}$, there are null distributions $p_n$ with support
+exactly $n$ and $\epsilon_n\in(0,1)$ such that the false-rejection probability
+has limit inferior at least $1/2$ as $n\to\infty$.
+If $0<C\le1$, a counting-branch alternative has error above $1/2$.
+These obstructions persist under any fixed odd number of independent runs
+with majority aggregation. Moreover,
+\[
+ 69.00627138<C_{\rm crit}<69.00627139.
+\]
+Consequently 70 is the smallest integer $C$ admitting a uniform one-percent
+guarantee with any fixed finite $L_0>1$ and this unchanged single-run rule.
+Among integer $C$ and fixed odd majority repetition counts, the minimal
+feasible total sampling coefficient is also 70.
+\end{theorem}
+
+\begin{proof}
+Fix $1\le C<C_{\rm crit}$. Only scale zero is needed. Its dimensionless
+parameters are $A=C/(8L)$, $B=64L$, $k=\lceil a(C)L\rceil$.
+Let $u_\ell=|c_{0,\ell}|\ell!/m^\ell$ and
+$I_L=\sum_{\ell=0}^k u_\ell$, where $u_0=1$.
+These quantities do not depend on $\epsilon$, because $A$ and $B$ do not.
+The exact factorial-weight integral identity from the previous proof is
+\[
+ I_L=\int_0^\infty e^{-s}
+ \frac{T_k(z_L+2s/(B-A))}{T_k(z_L)}\,ds,
+ \qquad z_L=(B+A)/(B-A).
+\]
+The denominator tends to $\cosh(6\log2)$, since
+$k\operatorname{arcosh}z_L\to6\log2$.
+Writing $s=yL$, the logarithm of the integrand divided by $L$ tends,
+uniformly on compact neighborhoods of every $y>0$, to
+\[
+ \phi(y)=-y+a(C)\operatorname{arcosh}(1+y/32).
+\]
+This follows directly from $T_k(z)=\cosh(k\operatorname{arcosh}z)$ for
+$z>1$ and the limits of $k/L$, $(B-A)/L$, and $z_L$.
+Differentiating $\phi$ shows that its positive maximizer is
+$y_*=\sqrt{1024+a(C)^2}-32$, with maximum $\gamma(C)$.
+For any $\eta>0$, integration over a sufficiently short fixed neighborhood
+of $y_*$ therefore yields, for all sufficiently large $L$,
+\[
+ I_L\ge\exp\{(\gamma(C)-\eta)L\}.
+\]
+Choose $\eta$ so that $\gamma(C)-\eta>1/2$.
+No unproved upper version of Laplace's method is needed here.
+
+Choose $\ell_L\in\{1,\ldots,k\}$ maximizing $u_\ell$, so
+$u_{\ell_L}\ge(I_L-1)/k$. Define the exact null distribution
+\[
+ p_n=(1/2,\underbrace{1/[2(n-1)],\ldots,1/[2(n-1)]}_{n-1\text{ entries}}),
+ \qquad
+ \epsilon_n=\frac{Cn}{2(n-1)\ell_L L}.
+\]
+Since $\ell_L\ge1$, the chosen $\epsilon_n$ is in $(0,1)$ eventually.
+Its prescribed mean is exactly $m=2(n-1)\ell_L$, so each rare label has
+Poisson mean $\ell_L$, and the head label has mean $(n-1)\ell_L$.
+This choice is not circular: the weights determining $\ell_L$ depend only
+on $C,L$, as noted above.
+
+Let $X_L=f_0(\operatorname{Poi}(\ell_L))$, with mean $\mu_L$ and variance
+$\sigma_L^2$. The expectation lemma applies for large $L$: for $C\ge1$,
+$a(C)<64$, while $\sqrt{B(B-A)}/L\to64$; also the endpoint $b<1$
+eventually. It implies $0\le\mu_L\le1+\rho_0\le33/32$.
+Also $|X_L|\le I_L$.
+
+For an integer $\ell\ge1$, the Poisson mass at $\ell$ is a mode. Chebyshev's
+inequality gives probability at least $3/4$ to the interval of radius
+$2\sqrt\ell$, containing at most $4\sqrt\ell+1$ integers. Thus
+$\Prb\{\operatorname{Poi}(\ell)=\ell\}\ge3/(20\sqrt\ell)$.
+At $\ell_L$, the alternating-sign formula for $f_0$ gives
+$|f_0(\ell_L)|\ge u_{\ell_L}-1\ge I_L/(4k)$ eventually. Hence
+\[
+ \sigma_L^2\ge\frac{3I_L^2}{320k^{5/2}}-(33/32)^2
+              \ge c\,\frac{I_L^2}{k^{5/2}}
+\]
+for an absolute positive $c$ and all sufficiently large $L$.
+
+The $n-1$ rare-label scores are independent copies of $X_L$. Put
+$s_n=\sqrt{n-1}\,\sigma_L$. Their largest possible centered magnitude
+divided by $s_n$ is at most
+\[
+ \frac{2I_L}{\sqrt{n-1}\,\sigma_L}
+       =O\left(\frac{k^{5/4}}{\sqrt n}\right)\longrightarrow0.
+\]
+Their normalized variances sum to one. Thus the Lindeberg condition is
+eventually zero for each fixed cutoff, and the triangular-array central
+limit theorem gives
+\[
+ \frac{\sum_{i=2}^n f_0(N_i)-(n-1)\mu_L}{s_n}
+       \ \Longrightarrow\ \mathcal N(0,1).
+\]
+For a reference statement see Theorem 9 in
+\href{https://people.eecs.berkeley.edu/~jordan/courses/210B-spring07/lectures/stat210b_lecture_2.pdf}
+{Jordan--Kleiner, Berkeley Stat210B, Lecture 2 (2007)}.
+The bounded normalized summands above explicitly verify its hypothesis.
+The exponential lower bound on $I_L$ and $k=O(L)$ imply $n/s_n\to0$.
+The head score equals 1 with probability tending to one, since its mean
+$(n-1)\ell_L\ge n-1$ greatly exceeds $k=O(\log n)$.
+It follows that
+\[
+ \Prb\{Z_0>3n/2\}\longrightarrow1/2.
+\]
+But $Z_0>3n/2$ alone implies $\widetilde S>n$, since $\delta_0=1/4$.
+The polynomial branch is eventually active for every fixed finite $L_0$,
+proving the claimed false-rejection obstruction.
+
+For $0<C\le1$, take $n=1$, a uniform distribution on $K$ labels, and
+$\epsilon=1-1/K$. This is an alternative and uses the counting branch
+because $L_0>1$. As $K\to\infty$, collisions vanish and the error tends to
+$\Prb\{\operatorname{Poi}(C)\le1\}=(1+C)e^{-C}\ge2/e>1/2$.
+For fixed odd $r$, the binomial majority-error polynomial is increasing
+and equals $1/2$ at single-run error $1/2$. Neither obstruction can be
+removed by such repetition.
+
+Finally, the root bracket is certified by
+\texttt{parameter\_search/lower\_bound.py}. It writes
+$\gamma(C)=32[x\operatorname{arsinh}x-\sqrt{1+x^2}+1]$ with
+$x^2=(9/2)(\log2)^2/C$, and encloses $\operatorname{arsinh}x$ using the
+alternating binomial series on $0<x<1$. Even and odd partial sums give
+rational upper and lower bounds, respectively. The resulting sign tests
+at both rational endpoints and at 69 are also independently recomputed
+with 512-bit Arb. The positive theorem at $(70,14)$ completes the integer
+optimality conclusion.
+\end{proof}
+
+\section{Scope of the optimization claim}
+The exploratory search considers $C=C_*$ and every integer $70\le C\le150$,
+with integer $10\le L_0\le30$, followed by exact verification of the listed
+candidates. In this search and certificate family, $C_*$ has the lowest
+sampling coefficient; 70 is the smallest covered integer. Fourteen is the
+smallest integer threshold passing the explored bound at either of those
+sampling constants. Failure of an upper-bound calculation at a smaller
+parameter does not prove that the algorithm fails there.
+In particular, $C\ge C_*$ is a limitation of the sufficient half-line
+envelope. The separate necessary result above is $C\ge C_{\rm crit}$.
+The best real sampling constant for this construction lies between
+$69.00627138\ldots$ and $69.18523400\ldots$; the multiplicative gap is
+less than $0.26\%$. Neither result is an information-theoretic bound over
+all algorithms. The smallest feasible $L_0$ at $C=70$ remains unresolved;
+14 is sufficient, not proved necessary. Finite empirical success for 69
+does not contradict its asymptotic obstruction.
+
+For implementation a useful compromise is $(70,14)$: it preserves a sizable
+margin below one-percent error while activating the polynomial at
+$n=442414$. Keeping $(70,16)$ activates it at $n=3269018$, has a smaller
+certified error bound, and avoids polynomial computation in between.
+Both use the same single-run expected sample count $70n/(\epsilon L)$.
+Relative to the previously certified coefficient 1025 this is a reduction
+of approximately $93.17\%$ in expected samples. It is not a claim of
+the same factor in CPU time or simulation wall time. All statements assume
+the iid Poisson model and exact statistic, with numerical certification
+handled separately by the implementation.
+\end{document}

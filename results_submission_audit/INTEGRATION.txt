@@ -1,0 +1,67 @@
+原论文扩展：审查、插入稿与复现说明
+日期：2026-10-22
+
+本次任务是投稿前分析和材料准备。没有投稿、上传或联系审稿人；没有改动原 PDF、
+旧算法、冻结实验或旧证明。新文件是派生审计结果和待作者核对的论文插入稿。
+
+主要文件
+  review_report.html             中文完整审查，27 项问题及证据、优先级和处理建议
+  issues.json                    同一问题清单的结构化版本
+  theory_scope.tex/pdf           ε→1 的碰撞检验、预算封顶、旧/新证明衔接、有限范围计数界
+  paper_insert.tex               可插入原始 LaTeX 的英文实验章节
+  paper_insert_preview.tex/pdf   独立预览；不是已整合好的最终投稿论文
+  audit_summary.json             由全部保存事件重建的统计摘要
+  reconstructed_events.csv      联合失效、同预算计数反事实、置信界
+  paired_gain_intervals.csv      配对 L0 增益：样本均值区间与期望增益置信下界
+  natural_budget_feasibility.csv 新网格的自然记录量/期望预算对照
+  finite_counting_certificate.json 116 个区间认证 n≤10^12 同预算计数风险
+  capped_certificate.json       八组参数的封顶预算误差余量
+  collision_boundary_examples.json 碰撞检验引理的数值例子，不是 Monte Carlo 数据
+
+必须先解决的整合问题
+1. 原 Theorem 1.1 的最优性要明确 ε 范围。全 ε∈(0,1) 的充分上界成立，不等于全区间
+   都有统一的匹配下界。若使用 BGY26 Theorem 4.4，应保留充分大 n、0<ε<1/32 及固定
+   成功概率等条件并注明引用。更广范围须另证。原 Theorem 1.2/1.3 的最优性也要同步核对。
+2. 不能仅将原稿 C0=2^26 换成 70 而保留原 Lemma 4.1：k_j<L/64 不再成立。
+   路线 A：保留旧构造证明，增加独立的参数化构造和有限常数定理；路线 B：统一重写
+   相应引理及其依赖。新必要界与半直线证书也应与新定理一起提交。
+3. 原主文仍以用户的原创理论贡献为主。实验插入稿的“our finite-constant theorem”
+   要指向实际合并后的定理，不得只留下工作目录中的链接。
+4. 最少合并的证明依赖：原问题定义与距离等价、期望/积分/系数/方差引理、新集中界、
+   可数支持极限、有限区间与无穷尾、计数分支、必要常数与 CLT、标量证书。
+   参考旧 results_parameter_search/proof.tex、artifacts/joint_constants_submission/
+   submission_proof.tex 与 arithmetic_appendix.tex、results_proof_review/review.tex。
+5. 实验插入稿只使用已执行数据。需要补做的共同网格比较、运行时基准等是计划，不是结果。
+   当前最大规模下纯计数已经极可靠，不应把“跑更多次”视为展示多项式二元优势的方案。
+6. 数据集引用、环境、修订历史放入完整附录；工具包许可与底层数据来源信息分别记录。
+   十个经验总体包含同来源的不同年份、地区或处理，不能当成十项独立外部场景研究。
+7. 重新核对目标会议本届 CFP、稿件状态与贡献增量；作者核验 AI 辅助的新内容后更新
+   方法披露。已查阅 STOC 2027 与 NeurIPS checklist，未将任何材料对外提交。
+
+从项目根目录复现（不覆盖历史结果）
+  .venv/bin/python -m parameter_search.submission_audit
+  .venv/bin/python -m parameter_search.submission_boundaries
+  .venv/bin/python -m parameter_search.submission_report
+  .tools/tectonic-0.17.0/tectonic --outdir results_submission_audit results_submission_audit/theory_scope.tex
+  cd results_submission_audit
+  ../.tools/tectonic-0.17.0/tectonic paper_insert_preview.tex
+
+复核历史冻结包（回到项目根目录）
+  .venv/bin/python -m parameter_search.package --verify
+
+统计口径
+  原报告分别控制二元指标族与覆盖指标族的 95% 置信度，这本身没有错误。
+  joint_upper95_grid：本轮直接对“任一必需输出失败”做 4424 单元同时 95% 覆盖；Gap
+  只要求覆盖。binary/coverage_upper95_two_families：把两类指标放在 N+K=8242 个端点
+  中统一校正。paired_gain 的 622 单元置信界是另一个明确标注的声明族，不宣称整篇
+  所有置信声明合并后仍有 95% 概率。
+  50 个正样本均值不等于 50 个显著正期望。本轮保守配对 Hoeffding 界支持其中 14 个。
+  这属于事后派生分析，不是独立新样本或外部预注册。
+  所有 MC 置信区间以模拟试次独立及其生成模型为基础，不涵盖未知自然总体与 PRNG
+  的所有误差。Arb 分数认证不等于随机采样器的形式化验证。
+
+审查范围
+  已审查原稿的主张与新常数证明依赖、读取并核对全部新实验保存事件、核对相关文献
+  的模型和部分关键定理。没有把所有外部文献逐行重新证明，也没有进行 Lean/Coq 形式化。
+  原论文 LaTeX 主源未在当前工作区中发现；因此交付插入块和修订指导，不声称已经
+  完成原稿全部重排与最终会议格式化。

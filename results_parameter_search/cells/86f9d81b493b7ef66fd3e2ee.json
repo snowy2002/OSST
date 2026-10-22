@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      999999
+    ],
+    "probabilities_exact": [
+      "227261218796869/245443018796869",
+      "200000000/2699873206765559"
+    ],
+    "support": 1000000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C20_lambda1",
+      "cell": "86f9d81b493b7ef66fd3e2ee",
+      "C": "20",
+      "L0": 14,
+      "n": 1000000,
+      "epsilon": ".1",
+      "S": 1000000,
+      "effective": 1,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 13499366.033827795,
+      "branch": "chebyshev",
+      "degree": 156,
+      "scales": 12,
+      "trials": 2000,
+      "errors": 920,
+      "coverage_errors": 0,
+      "mean_D": 632126.443,
+      "mean_lower_lo": 962681.3505,
+      "mean_lower_hi": 962681.3505,
+      "improvements": 2000,
+      "extra_rejects": 920,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 1.1102230246251565e-16,
+      "sampling_seconds": 0.010500742035219446,
+      "scoring_seconds": 0.008419852034421638
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C20_lambda1",
+      "cell": "86f9d81b493b7ef66fd3e2ee",
+      "C": "70",
+      "L0": 14,
+      "n": 1000000,
+      "epsilon": ".1",
+      "S": 1000000,
+      "effective": 1,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 47247781.11839728,
+      "branch": "chebyshev",
+      "degree": 84,
+      "scales": 10,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 969804.0215,
+      "mean_lower_lo": 975819.759,
+      "mean_lower_hi": 975819.759,
+      "improvements": 2000,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 2.220446049250313e-16,
+      "sampling_seconds": 0.008718650991795585,
+      "scoring_seconds": 0.007029461005004123
+    }
+  ],
+  "raw_file": "raw/86f9d81b493b7ef66fd3e2ee.npz",
+  "raw_sha256": "46857657c08830a29c3a1b475dbd07f08804b340f3024f132f62d13fd7d279f0"
+}

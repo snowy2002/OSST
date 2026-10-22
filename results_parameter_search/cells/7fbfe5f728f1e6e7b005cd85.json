@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      9999
+    ],
+    "probabilities_exact": [
+      "309801426377143/326466426377143",
+      "5000000000/979399279131429"
+    ],
+    "support": 10000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C20_lambda1",
+      "cell": "7fbfe5f728f1e6e7b005cd85",
+      "C": "20",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".1",
+      "S": 10000,
+      "effective": 1,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 195879.8558262858,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 6321.152,
+      "mean_lower_lo": 6321.152,
+      "mean_lower_hi": 6321.152,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.00035399600164964795,
+      "scoring_seconds": 0.00035180000122636557
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C20_lambda1",
+      "cell": "7fbfe5f728f1e6e7b005cd85",
+      "C": "70",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".1",
+      "S": 10000,
+      "effective": 1,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 685579.4953920003,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 9698.3215,
+      "mean_lower_lo": 9698.3215,
+      "mean_lower_hi": 9698.3215,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.0004405970103107393,
+      "scoring_seconds": 0.00031429901719093323
+    }
+  ],
+  "raw_file": "raw/7fbfe5f728f1e6e7b005cd85.npz",
+  "raw_sha256": "b2ad38aa8cc44244ba4ebf92dd01e9afb68d3adbc8ee7d53b9515b3777cc790d"
+}

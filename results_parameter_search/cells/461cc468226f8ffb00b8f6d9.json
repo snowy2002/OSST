@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      9999
+    ],
+    "probabilities_exact": [
+      "337880252550343/337892751300343",
+      "1250000/337892751300343"
+    ],
+    "support": 10000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C69_lambda.25",
+      "cell": "461cc468226f8ffb00b8f6d9",
+      "C": "69",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".001",
+      "S": 10000,
+      "effective": 1,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 67578550.2600686,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 2210.2265,
+      "mean_lower_lo": 2210.2265,
+      "mean_lower_hi": 2210.2265,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.0003290969762019813,
+      "scoring_seconds": 0.0003074000123888254
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C69_lambda.25",
+      "cell": "461cc468226f8ffb00b8f6d9",
+      "C": "70",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".001",
+      "S": 10000,
+      "effective": 1,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 68557949.53920002,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 2241.6655,
+      "mean_lower_lo": 2241.6655,
+      "mean_lower_hi": 2241.6655,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.0002737980103120208,
+      "scoring_seconds": 0.0002657979493960738
+    }
+  ],
+  "raw_file": "raw/461cc468226f8ffb00b8f6d9.npz",
+  "raw_sha256": "b1f28eee5e57c2d7393b0859713d50d63e97c5182402443cdc5aed876c40abec"
+}

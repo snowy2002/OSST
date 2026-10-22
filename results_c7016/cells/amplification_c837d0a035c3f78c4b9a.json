@@ -1,0 +1,213 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "probabilities_exact": [
+      "53/110",
+      "26/55",
+      "1/33",
+      "1/66"
+    ],
+    "support": 4
+  },
+  "plan": {
+    "algorithm": "joint_constants_70_16",
+    "C0": 70,
+    "L0": 16,
+    "n": 1,
+    "epsilon": "1/10",
+    "branch": "observed_count",
+    "mean_expression": "70*1/((1/10)*(1+ln(1)))",
+    "mean_interval": "[700.00000000000000000000000000000000000000000000000000000000000000 +/- 1e-66]",
+    "mean_for_binary64_rng": 700.0,
+    "mean_rounding": "real expression; no integer ceiling",
+    "L_interval": "1.0000000000000000000000000000000000000000000000000000000000000000",
+    "precision_bits": 512,
+    "max_degree": 0,
+    "scales": []
+  },
+  "rows": [
+    {
+      "suite": "amplification",
+      "cell": "c837d0a035c3f78c4b9a",
+      "scenario": "fish_2008_seine",
+      "origin": "natural",
+      "n": 1,
+      "epsilon": "0.1",
+      "S": 4,
+      "truth": "No",
+      "delta_n_exact": "57/110",
+      "effective_support": 2,
+      "method": "C70_L16_x27",
+      "m": 18900.0,
+      "repeats": 27,
+      "trials": 1000,
+      "errors": 0,
+      "error_rate": 0.0,
+      "lower_errors": 0,
+      "mean_lower_low": 1.0,
+      "mean_lower_high": 1.0,
+      "raw_file": "raw/amplification_c837d0a035c3f78c4b9a.npz"
+    },
+    {
+      "suite": "amplification",
+      "cell": "c837d0a035c3f78c4b9a",
+      "scenario": "fish_2008_seine",
+      "origin": "natural",
+      "n": 1,
+      "epsilon": "0.1",
+      "S": 4,
+      "truth": "No",
+      "delta_n_exact": "57/110",
+      "effective_support": 2,
+      "method": "count_99",
+      "m": 112,
+      "repeats": 1,
+      "trials": 1000,
+      "errors": 0,
+      "error_rate": 0.0,
+      "lower_errors": 0,
+      "mean_lower_low": 1.0,
+      "mean_lower_high": 1.0,
+      "raw_file": "raw/amplification_c837d0a035c3f78c4b9a.npz"
+    },
+    {
+      "suite": "amplification",
+      "cell": "c837d0a035c3f78c4b9a",
+      "scenario": "fish_2008_seine",
+      "origin": "natural",
+      "n": 1,
+      "epsilon": "0.1",
+      "S": 4,
+      "truth": "No",
+      "delta_n_exact": "57/110",
+      "effective_support": 2,
+      "method": "C1025_L1024",
+      "m": 10250,
+      "repeats": 1,
+      "trials": 1000,
+      "errors": 0,
+      "error_rate": 0.0,
+      "lower_errors": 0,
+      "mean_lower_low": 1.0,
+      "mean_lower_high": 1.0,
+      "raw_file": "raw/amplification_c837d0a035c3f78c4b9a.npz"
+    }
+  ],
+  "blocks": [
+    {
+      "suite": "amplification",
+      "cell": "c837d0a035c3f78c4b9a",
+      "method": "C70_L16_x27",
+      "block": 0,
+      "trials": 250,
+      "errors": 0,
+      "lower_errors": 0
+    },
+    {
+      "suite": "amplification",
+      "cell": "c837d0a035c3f78c4b9a",
+      "method": "C70_L16_x27",
+      "block": 1,
+      "trials": 250,
+      "errors": 0,
+      "lower_errors": 0
+    },
+    {
+      "suite": "amplification",
+      "cell": "c837d0a035c3f78c4b9a",
+      "method": "C70_L16_x27",
+      "block": 2,
+      "trials": 250,
+      "errors": 0,
+      "lower_errors": 0
+    },
+    {
+      "suite": "amplification",
+      "cell": "c837d0a035c3f78c4b9a",
+      "method": "C70_L16_x27",
+      "block": 3,
+      "trials": 250,
+      "errors": 0,
+      "lower_errors": 0
+    },
+    {
+      "suite": "amplification",
+      "cell": "c837d0a035c3f78c4b9a",
+      "method": "count_99",
+      "block": 0,
+      "trials": 250,
+      "errors": 0,
+      "lower_errors": 0
+    },
+    {
+      "suite": "amplification",
+      "cell": "c837d0a035c3f78c4b9a",
+      "method": "count_99",
+      "block": 1,
+      "trials": 250,
+      "errors": 0,
+      "lower_errors": 0
+    },
+    {
+      "suite": "amplification",
+      "cell": "c837d0a035c3f78c4b9a",
+      "method": "count_99",
+      "block": 2,
+      "trials": 250,
+      "errors": 0,
+      "lower_errors": 0
+    },
+    {
+      "suite": "amplification",
+      "cell": "c837d0a035c3f78c4b9a",
+      "method": "count_99",
+      "block": 3,
+      "trials": 250,
+      "errors": 0,
+      "lower_errors": 0
+    },
+    {
+      "suite": "amplification",
+      "cell": "c837d0a035c3f78c4b9a",
+      "method": "C1025_L1024",
+      "block": 0,
+      "trials": 250,
+      "errors": 0,
+      "lower_errors": 0
+    },
+    {
+      "suite": "amplification",
+      "cell": "c837d0a035c3f78c4b9a",
+      "method": "C1025_L1024",
+      "block": 1,
+      "trials": 250,
+      "errors": 0,
+      "lower_errors": 0
+    },
+    {
+      "suite": "amplification",
+      "cell": "c837d0a035c3f78c4b9a",
+      "method": "C1025_L1024",
+      "block": 2,
+      "trials": 250,
+      "errors": 0,
+      "lower_errors": 0
+    },
+    {
+      "suite": "amplification",
+      "cell": "c837d0a035c3f78c4b9a",
+      "method": "C1025_L1024",
+      "block": 3,
+      "trials": 250,
+      "errors": 0,
+      "lower_errors": 0
+    }
+  ],
+  "raw_file": "raw/amplification_c837d0a035c3f78c4b9a.npz",
+  "raw_sha256": "70d266513cbf49ed17320c98077fdc43b93d1fa3fb6a45bc81ee56306fbc7ce7"
+}

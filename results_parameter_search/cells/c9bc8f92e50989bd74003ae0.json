@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      9999
+    ],
+    "probabilities_exact": [
+      "323800026377143/326466426377143",
+      "800000000/979399279131429"
+    ],
+    "support": 10000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C40_lambda32",
+      "cell": "c9bc8f92e50989bd74003ae0",
+      "C": "40",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".001",
+      "S": 10000,
+      "effective": 8776,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 39175971.16525716,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 10000.0,
+      "mean_lower_lo": 10000.0,
+      "mean_lower_hi": 10000.0,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.0002943969739135355,
+      "scoring_seconds": 0.0004133990441914648
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C40_lambda32",
+      "cell": "c9bc8f92e50989bd74003ae0",
+      "C": "70",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".001",
+      "S": 10000,
+      "effective": 8776,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 68557949.53920002,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 10000.0,
+      "mean_lower_lo": 10000.0,
+      "mean_lower_hi": 10000.0,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.0003791979979723692,
+      "scoring_seconds": 0.00031599801150150597
+    }
+  ],
+  "raw_file": "raw/c9bc8f92e50989bd74003ae0.npz",
+  "raw_sha256": "d4bc67aefb5595382da790aac3bb0946655b9a82530a2649c11c0b7729cd2bbb"
+}

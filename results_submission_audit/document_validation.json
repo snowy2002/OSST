@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "pdfs": [
+    {
+      "file": "theory_scope.pdf",
+      "pages": 4,
+      "margin_violations": 0
+    },
+    {
+      "file": "paper_insert_preview.pdf",
+      "pages": 3,
+      "margin_violations": 0
+    }
+  ],
+  "local_links_checked": 8,
+  "overfull_boxes": 0
+}

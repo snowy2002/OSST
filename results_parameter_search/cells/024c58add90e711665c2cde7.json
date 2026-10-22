@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      9999
+    ],
+    "probabilities_exact": [
+      "323800026377143/326466426377143",
+      "800000000/979399279131429"
+    ],
+    "support": 10000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C10_lambda8",
+      "cell": "024c58add90e711665c2cde7",
+      "C": "10",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".001",
+      "S": 10000,
+      "effective": 8776,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 9793992.79131429,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 9996.689,
+      "mean_lower_lo": 9996.689,
+      "mean_lower_hi": 9996.689,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.0003467000206001103,
+      "scoring_seconds": 0.00038219598354771733
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C10_lambda8",
+      "cell": "024c58add90e711665c2cde7",
+      "C": "70",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".001",
+      "S": 10000,
+      "effective": 8776,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 68557949.53920002,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 10000.0,
+      "mean_lower_lo": 10000.0,
+      "mean_lower_hi": 10000.0,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.0002274990256410092,
+      "scoring_seconds": 0.0002957989345304668
+    }
+  ],
+  "raw_file": "raw/024c58add90e711665c2cde7.npz",
+  "raw_sha256": "cdcaf66ca3456c22adff6961d54aed74f419bf0e17a9da323bbfa9c57a92ea4f"
+}

@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      9999
+    ],
+    "probabilities_exact": [
+      "322300176377143/326466426377143",
+      "1250000000/979399279131429"
+    ],
+    "support": 10000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C40_lambda.5",
+      "cell": "bbcc1fd88210ee08ef55f826",
+      "C": "40",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".1",
+      "S": 10000,
+      "effective": 1,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 391759.7116525716,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 3934.5805,
+      "mean_lower_lo": 3934.5805,
+      "mean_lower_hi": 3934.5805,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.0003493989643175155,
+      "scoring_seconds": 0.000327096990076825
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C40_lambda.5",
+      "cell": "bbcc1fd88210ee08ef55f826",
+      "C": "70",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".1",
+      "S": 10000,
+      "effective": 1,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 685579.4953920003,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 5830.373,
+      "mean_lower_lo": 5830.373,
+      "mean_lower_hi": 5830.373,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.0002823969698511064,
+      "scoring_seconds": 0.00030369998421519995
+    }
+  ],
+  "raw_file": "raw/bbcc1fd88210ee08ef55f826.npz",
+  "raw_sha256": "21fe682fde9d1baa2a501142501cd925dc54c79040e26f230a7499af87b3d7fd"
+}

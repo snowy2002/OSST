@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "local_links": 15,
+  "missing_links": [],
+  "javascript": {
+    "budget": "期望样本量约 47,247,781.12；简单计数分支；单次失败概率 < 0.005700%。",
+    "matches": " 216 条（显示前 300 条）"
+  },
+  "pdf_pages": 6,
+  "pdf_text_inside_page": true
+}

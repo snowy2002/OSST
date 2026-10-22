@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "local_links": 12,
+  "missing_links": [],
+  "filter_check": "84 个配置 filter passed",
+  "pdf_pages": 5,
+  "pdf_required_text": true,
+  "pdf_text_inside_pages": true,
+  "no_overfull_tex_boxes": true
+}

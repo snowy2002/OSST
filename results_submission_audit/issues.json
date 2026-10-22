@@ -1,0 +1,218 @@
+[
+  {
+    "id": "T01",
+    "severity": "P0",
+    "title": "最优阶的 ε 范围",
+    "finding": "原论文 Theorem 1.1 未明确最优性所适用的 ε 区间。若把 Θ(n/(ε log n)) 理解为全 (0,1) 上的统一 minimax 下界，该解读有碰撞检验反例。",
+    "evidence": "theory_scope.pdf，第 1 节；原 PDF 第 1 页",
+    "action": "保留全 ε 的上界；将匹配下界单独写出准确范围、成功概率和 n 的条件。"
+  },
+  {
+    "id": "T02",
+    "severity": "P0",
+    "title": "不能只替换原稿常数",
+    "finding": "原 Lemma 4.1 用 k_j<L/64 推出 ||f_j||∞≤4n^(1/16)。换成 C=70 后，k_0/L 趋近大于 5 的常数，旧前提不成立。新证明已采用另一套系数、范围和集中界，但必须真正并入论文。",
+    "evidence": "原 PDF 第 7 页；results_parameter_search/proof.tex",
+    "action": "保留旧证明作为旧参数版本，另陈述新常数定理；或整体替换旧 Lemma 4.1 及后续依赖。"
+  },
+  {
+    "id": "T03",
+    "severity": "P0",
+    "title": "匹配下界的归约过于简写",
+    "finding": "WY19 是带最小概率条件的支持数估计下界，不是直接与本问题同模型的结论。必须写清困难先验、支持数间隔及产生 1/ε 的稀释归约。",
+    "evidence": "原 PDF 第 1–2 页；WY19 Proposition 1；BGY26 Theorem 4.4",
+    "action": "补一个明确引理及其归约，或准确引用已给出该模型和参数范围的定理。0<ε<1/32 是已查到的明确充分引用范围，不是声称最大适用范围。"
+  },
+  {
+    "id": "T04",
+    "severity": "P1",
+    "title": "期望预算与最大样本量",
+    "finding": "70 是泊松均值系数，不是确定性的样本上限。原阶结论可容忍常数因子，新常数比较必须区分两种预算。",
+    "evidence": "capped_certificate.json；theory_scope.pdf，第 2 节",
+    "action": "已补上 M>ceil(2m) 时中止的耦合推论；八组误差目标均保留。最大预算系数写 140，期望系数写 70。"
+  },
+  {
+    "id": "T05",
+    "severity": "P0",
+    "title": "提交稿尚不是自包含证明",
+    "finding": "新稿仍依赖早期工作目录中的期望、积分、系数、半直线和算术附录；相对 PDF 链接不等于正式提交的完整证明链。",
+    "evidence": "results_parameter_search/proof.tex；results_proof_review/review.pdf",
+    "action": "将必要引理与完整证明置于同一提交包，统一编号、符号、边界约定及最终常数表。"
+  },
+  {
+    "id": "T06",
+    "severity": "范围",
+    "title": "70 的最优性不能扩大",
+    "finding": "整数最小性限于固定统计量、固定有限 L0>1、对 n 和 ε 统一的保证。实数最优值、最小 L0、固定 ε 的最优常数、最佳 CPU 时间均未确定。",
+    "evidence": "results_parameter_search/proof.tex，必要界与 Scope",
+    "action": "现有证明已正确限定；并稿时保留这些限定，尤其不能写“C0、L0 联合全局最优”。"
+  },
+  {
+    "id": "T07",
+    "severity": "范围",
+    "title": "69 的渐近失效不是有限实验预测",
+    "finding": "必要下界的 ε_n 随 n 变化，CLT 是渐近论证。没有给出常用 n、固定 ε 下的具体失败阈值。",
+    "evidence": "results_proof_review/review.pdf，第 4 节",
+    "action": "保留 69 的零错误结果；不将其删去，也不声称当前实验已经观察到临界相变。"
+  },
+  {
+    "id": "E01",
+    "severity": "P0",
+    "title": "当前预算无法显示二元检验的多项式优势",
+    "finding": "推荐参数所有单元的额外拒绝次数均为 0；同预算纯计数的二元及覆盖错误也均为 0。进一步证明在 n≤10^12 的整个范围内，纯计数失败已小于 1.863e-12。",
+    "evidence": "reconstructed_events.csv；finite_counting_certificate.json",
+    "action": "把当前实验目标定位为常数缩减、实现核验、支持下界强度与失效模式。不能靠追加相同预算试次证明二元样本优势。"
+  },
+  {
+    "id": "E02",
+    "severity": "P0",
+    "title": "零错误的分辨率不足以验证小数点后的理论风险",
+    "finding": "每单元 2000 次；全 4424 单元校正后，零错误上界约 0.56791%，高于理论的 0.09% 和 0.0057%。异质单元合并不能直接给出最坏情形风险。",
+    "evidence": "audit_summary.json，rare_event_power",
+    "action": "理论界与经验区间分表。若要单独验证精细风险，预先固定少数实例和目标精度；不把数百万方法评估当成同一分布的重复。"
+  },
+  {
+    "id": "E03",
+    "severity": "P1",
+    "title": "二元试验分母必须排除 Gap",
+    "finding": "(70,14) 的总覆盖试验是 1,994,000 次，其中二元承诺试验为 1,792,000 次；202,000 次属于 Gap。",
+    "evidence": "audit_summary.json；paper_insert.tex 的表格",
+    "action": "正文和表格同时列出两种分母。Gap 不计作二元成功，也不计作二元错误。"
+  },
+  {
+    "id": "E04",
+    "severity": "P0",
+    "title": "自然数据没有进入多项式分支",
+    "finding": "10 个经验总体只有 4–240 个观测类别；76 个配置均为计数分支。原生自然数据的成功不能验证多项式效果。",
+    "evidence": "data/c1025/datasets.json；audit_summary.json",
+    "action": "明确命名 empirical-distribution resampling。扩展类别归入 synthetic。若论文不主张真实场景多项式优势，这项限制可诚实保留，不必强行寻找巨大自然数据。"
+  },
+  {
+    "id": "E05",
+    "severity": "P1",
+    "title": "观测记录不等于未知总体真值或可用 iid 预算",
+    "finding": "10 个数据集共有 50,994 条原始记录；仅 13/76 个新配置的期望预算不超过原文件记录数。重采样次数不增加真实独立观测。",
+    "evidence": "natural_budget_feasibility.csv",
+    "action": "区分已知经验分布、未知自然总体、分组依赖与预算可行性；需要自然总体结论时另做采样设计和缺失质量分析。"
+  },
+  {
+    "id": "E06",
+    "severity": "P1",
+    "title": "配对复用与“独立次数”",
+    "finding": "相同 C=70 的 L0 变体共享频数；4 个块各 500 次是 2000 个 MC 试次，不是算法做 4 次投票。",
+    "evidence": "experiment_protocol.json；parameter_search/experiments.py",
+    "action": "现有独立路径计数正确，写入论文时维持 5,116,000 条路径与 8,848,000 次方法评估的区别。"
+  },
+  {
+    "id": "E07",
+    "severity": "补齐",
+    "title": "联合事件与多重比较",
+    "finding": "原报告明确按指标族分别给 95% 覆盖，这本身正确，但不能改写成所有指标共同 95%。本轮已从原始事件重建二元或覆盖失效的联合事件。",
+    "evidence": "reconstructed_events.csv",
+    "action": "论文可直接使用新的 joint_upper95_grid；另提供了二元与覆盖合并为一个指标族的修正界。不同声明族仍需在图注中注明。"
+  },
+  {
+    "id": "E08",
+    "severity": "P1",
+    "title": "数值认证的样本增益不等于期望增益显著",
+    "finding": "50 个配置的样本平均下界提高。对 622 个配对主配置做 Hoeffding+Bonferroni 后，14 个配置可认证期望增益为正。",
+    "evidence": "paired_gain_intervals.csv",
+    "action": "分别报告数值范围、MC 不确定性和分布间泛化；其余配置不显著不代表无收益。当前补充分析属于事后审计，不能称为事前预注册结果。"
+  },
+  {
+    "id": "E09",
+    "severity": "P1",
+    "title": "困难分布随 C 改变",
+    "finding": "各 C 的目标泊松均值构造和合法配置数量不同；各自最大错误率不能当作同一网格的风险曲线。C=70 与每个困难分布有同总体对照。",
+    "evidence": "parameter_search/experiments.py:181；experiments.csv",
+    "action": "保留各自压力测试的命名；若要比较 C 曲线，冻结共同分布集，再用新种子确认，全部失败结果照录。"
+  },
+  {
+    "id": "E10",
+    "severity": "P1",
+    "title": "只与原大常数比较不足以支撑效率优势",
+    "finding": "1025 是本项目的历史常数，并非全部竞争算法。旧 (70,16) 结果中，1% 计数基线还少用约 2.44–8.39 倍样本。",
+    "evidence": "results_c7016/summary.json，synthetic_cost_ratios",
+    "action": "加入同风险目标的强计数基线、同预算消融，并与 FH/BGY 结果做模型和保证对照；没有忠实实现时保留理论比较，不伪造实测性能。"
+  },
+  {
+    "id": "E11",
+    "severity": "P0",
+    "title": "不同算法版本的好结果不能混入原统计量",
+    "finding": "results_publication 的 31.2%/14.9% 标签流节省来自带验证和回退的 hybrid，证明复杂度为 O((n+log(1/δ))/ε)，并非当前 C=70 原统计量。",
+    "evidence": "results_publication/manuscript.tex，第 3–4 节",
+    "action": "这些结果放入独立的 practical extension 并给出自己的定理；主实验不要借用其加速结论。旧 27 次重复也只能作为历史分析，不能混进当前单次成本。"
+  },
+  {
+    "id": "E12",
+    "severity": "P1",
+    "title": "现有时间字段不能直接做公平运行时排名",
+    "finding": "分组模拟跳过实际逐样本获取；相同采样时间记入多个方法；缓存与固定评估顺序影响编译和评分成本。",
+    "evidence": "parameter_search/experiments.py:80–100；algorithm.py 的缓存",
+    "action": "分别测冷启动、热缓存、逐样本计数、指纹评分、内存和数值重试，固定线程并交错方法顺序。已有 c7016 孤立计时可作基础，但尚非新网格完整基准。"
+  },
+  {
+    "id": "E13",
+    "severity": "P1",
+    "title": "并非所有整数下界均已唯一求出",
+    "finding": "推荐参数有 37,071 次保存为整数区间。判定和覆盖事件仍可确定，不能写成每次完整整数输出都精确重建。",
+    "evidence": "audit_summary.json；reconstructed_events.csv",
+    "action": "区间端点保守分析已保留；若发布接口承诺唯一整数，则补做高精度细化并单列成本，不用中点代替。"
+  },
+  {
+    "id": "E14",
+    "severity": "范围",
+    "title": "Arb 评分不认证随机采样器",
+    "finding": "分组指纹法在实数运算下等价；实际 SciPy/NumPy 的概率与 PRNG 用 binary64。PMF 总质量误差小不等于全指纹分布误差已全局控制。",
+    "evidence": "c7016/populations.py:100；results_c7016/sampler_validation.json",
+    "action": "当前已披露双精度，这是合理的科学计算范围。保留概率高精度抽查、矩检验与逐类别小规模交叉验证；不要把评分区间认证扩写为端到端精确随机数认证。"
+  },
+  {
+    "id": "E15",
+    "severity": "P1",
+    "title": "同一权重递推的高精度复算不等于外部独立审查",
+    "finding": "Arb 与二进制评分交叉检查共享部分 reference_weights 逻辑。14,880 等计数是程序义务数，不是独立定理或专家审稿数量。",
+    "evidence": "paper_reference.py:155；parameter_search/algorithm.py:140",
+    "action": "以正系数闭式或另一种递推补充代表性对照，保持已有多实现算术审计；投稿前由作者及同领域研究者逐步核验关键新证明。"
+  },
+  {
+    "id": "E16",
+    "severity": "范围",
+    "title": "协议有修订，但不是发现数据造假",
+    "finding": "已有冻结源、原始事件、精确真值、哈希和精度修订历史；本轮重建与保存结果一致。旧版边界修订也明确保留了 superseded 输出。",
+    "evidence": "precision_amendment.json；results_publication/boundary_correction_audit.json",
+    "action": "这些是可保留的证据优点。不能称外部预注册；文章需说明最终版本、修订原因和哪些结果用于探索。"
+  },
+  {
+    "id": "P01",
+    "severity": "P0",
+    "title": "论文贡献主线要保持为原创理论",
+    "finding": "作者已说明原论文属于自己的成果。新增实验应服务于最优阶构造、pretty-good 下界和显式常数，而不是改写成他人论文的复现稿。",
+    "evidence": "原 PDF Abstract/Theorem 1.1–1.3",
+    "action": "主文保持原创定理；加入常数定理与可解释实验。避免以试验总次数代替贡献或把“实验验证定理”作为正确性来源。"
+  },
+  {
+    "id": "P02",
+    "severity": "P1",
+    "title": "并行工作的贡献边界需具体",
+    "finding": "原稿已承认 BGY26 的并行最优支持检验。只说有限字母表与可数字母表不同，可能不足以独立支撑重大差异；需核对是否可经截断扩展。",
+    "evidence": "原 PDF 第 5 页；BGY26 第 3 节和 4.1 节",
+    "action": "比较直接计数接口、统计量、模型、pretty-good 数值保证、复杂度和显式常数，不淡化同期结果。此处是进一步比较任务，未证明两种方法等价。"
+  },
+  {
+    "id": "P03",
+    "severity": "待明确",
+    "title": "投稿类型与原稿状态",
+    "finding": "当前可见公开预印本；这不等于已经确认从未正式发表或没有在审。用户尚未指定会议。",
+    "evidence": "官方 CFP 链接见报告末尾",
+    "action": "本审查按扩展现有预印本处理。若已有正式发表版本，须核对新稿的实质增量及 prior-publication 规则；若在审，先遵守该轮政策。"
+  },
+  {
+    "id": "P04",
+    "severity": "P1",
+    "title": "AI 方法披露需反映新增工作的实际来源",
+    "finding": "原文已有 AI 使用说明。新阶段工具实际参与代码、推导、实验设计、数据分析和文字草稿，不能只沿用“头脑风暴/润色”的窄描述。",
+    "evidence": "原 PDF Acknowledgment；STOC 2027 CFP",
+    "action": "作者复核全部数学和结果后，按目标会议要求更新披露、责任与具体受影响章节。不是要求把 AI 列为作者。"
+  }
+]

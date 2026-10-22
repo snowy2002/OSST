@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      9999
+    ],
+    "probabilities_exact": [
+      "326244226377143/326466426377143",
+      "200000000/2938197837394287"
+    ],
+    "support": 10000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C60_lambda4",
+      "cell": "b8a8a82bb57adcf06e660638",
+      "C": "60",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".001",
+      "S": 10000,
+      "effective": 1,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 58763956.74788574,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 9817.1085,
+      "mean_lower_lo": 9817.1085,
+      "mean_lower_hi": 9817.1085,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.0003766980080399662,
+      "scoring_seconds": 0.0003477970021776855
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C60_lambda4",
+      "cell": "b8a8a82bb57adcf06e660638",
+      "C": "70",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".001",
+      "S": 10000,
+      "effective": 1,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 68557949.53920002,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 9905.8935,
+      "mean_lower_lo": 9905.8935,
+      "mean_lower_hi": 9905.8935,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.0003186000103596598,
+      "scoring_seconds": 0.0002962969883810729
+    }
+  ],
+  "raw_file": "raw/b8a8a82bb57adcf06e660638.npz",
+  "raw_sha256": "75879195f453a76e9bccec43a56615e35f7668a566774262ef61290ea210a702"
+}

@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      999999
+    ],
+    "probabilities_exact": [
+      "1916561338971299/2249894338971299",
+      "1000000000/6749683016913897"
+    ],
+    "support": 1000000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C10_lambda1",
+      "cell": "86fefa5e6ae76e8564558b06",
+      "C": "10",
+      "L0": 14,
+      "n": 1000000,
+      "epsilon": ".1",
+      "S": 1000000,
+      "effective": 325032,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 6749683.016913897,
+      "branch": "chebyshev",
+      "degree": 221,
+      "scales": 13,
+      "trials": 2000,
+      "errors": 1247,
+      "coverage_errors": 0,
+      "mean_D": 632098.4305,
+      "mean_lower_lo": 984527.815,
+      "mean_lower_hi": 984527.815,
+      "improvements": 2000,
+      "extra_rejects": 1247,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.01651180803310126,
+      "scoring_seconds": 0.012965427013114095
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C10_lambda1",
+      "cell": "86fefa5e6ae76e8564558b06",
+      "C": "70",
+      "L0": 14,
+      "n": 1000000,
+      "epsilon": ".1",
+      "S": 1000000,
+      "effective": 325032,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 47247781.11839728,
+      "branch": "chebyshev",
+      "degree": 84,
+      "scales": 10,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 999088.1225,
+      "mean_lower_lo": 999088.1225,
+      "mean_lower_hi": 999088.1225,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.009498447005171329,
+      "scoring_seconds": 0.006528062978759408
+    }
+  ],
+  "raw_file": "raw/86fefa5e6ae76e8564558b06.npz",
+  "raw_sha256": "24f71e4bdf59fe14cf5aa8e22ad24272a14b2e3c9eace071951d346af49f5062"
+}

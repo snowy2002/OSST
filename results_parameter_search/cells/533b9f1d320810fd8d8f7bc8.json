@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      9999
+    ],
+    "probabilities_exact": [
+      "312578926377143/326466426377143",
+      "12500000000/2938197837394287"
+    ],
+    "support": 10000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C6_lambda.25",
+      "cell": "533b9f1d320810fd8d8f7bc8",
+      "C": "6",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".1",
+      "S": 10000,
+      "effective": 1,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 58763.95674788574,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 2214.4545,
+      "mean_lower_lo": 2214.4545,
+      "mean_lower_hi": 2214.4545,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.0004546960408333689,
+      "scoring_seconds": 0.0005014960188418627
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C6_lambda.25",
+      "cell": "533b9f1d320810fd8d8f7bc8",
+      "C": "70",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".1",
+      "S": 10000,
+      "effective": 1,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 685579.4953920003,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 9458.0255,
+      "mean_lower_lo": 9458.0255,
+      "mean_lower_hi": 9458.0255,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.0004911970172543079,
+      "scoring_seconds": 0.0005132950027473271
+    }
+  ],
+  "raw_file": "raw/533b9f1d320810fd8d8f7bc8.npz",
+  "raw_sha256": "c7f21987e3754135b31ade66ed7847b088fae044dbd2262141ea91cace44ec7a"
+}

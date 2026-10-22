@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      999999
+    ],
+    "probabilities_exact": [
+      "40473098126483387/40498098101483387",
+      "25000000/40498098101483387"
+    ],
+    "support": 1000000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C6_lambda.25",
+      "cell": "8dc0330edc278cb72c372451",
+      "C": "6",
+      "L0": 14,
+      "n": 1000000,
+      "epsilon": ".001",
+      "S": 1000000,
+      "effective": 1,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 404980981.01483387,
+      "branch": "chebyshev",
+      "degree": 285,
+      "scales": 14,
+      "trials": 2000,
+      "errors": 1311,
+      "coverage_errors": 0,
+      "mean_D": 221198.786,
+      "mean_lower_lo": 941521.44,
+      "mean_lower_hi": 941521.44,
+      "improvements": 2000,
+      "extra_rejects": 1311,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.01794505401630886,
+      "scoring_seconds": 0.02997715800302103
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C6_lambda.25",
+      "cell": "8dc0330edc278cb72c372451",
+      "C": "70",
+      "L0": 14,
+      "n": 1000000,
+      "epsilon": ".001",
+      "S": 1000000,
+      "effective": 1,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 4724778111.839728,
+      "branch": "chebyshev",
+      "degree": 84,
+      "scales": 10,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 945886.958,
+      "mean_lower_lo": 962857.7455,
+      "mean_lower_hi": 962857.7455,
+      "improvements": 2000,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 2.220446049250313e-16,
+      "sampling_seconds": 0.008619229978648946,
+      "scoring_seconds": 0.006594147038413212
+    }
+  ],
+  "raw_file": "raw/8dc0330edc278cb72c372451.npz",
+  "raw_sha256": "84d1e6e64260cae5e7767214a84ec43c7efcb1a86623aac9294e78086b451633"
+}

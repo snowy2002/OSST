@@ -1,0 +1,210 @@
+\section{Exact arithmetic certificate and its soundness}\label{app:arithmetic}
+
+This appendix specifies all numerical operations needed in the proof and
+proves that their outputs enclose the corresponding real expressions.
+The numerical part of the argument is a finite sequence of integer
+inequalities; it does not assume correctness of a floating-point error
+estimate. The source files and complete rational records accompany the paper.
+
+\subsection{Dyadic representation and elementary operations}
+Fix $P=160$ and $D=2^P$. An enclosure is a pair of integers $(a,b)$,
+$a\le b$, representing $[a/D,b/D]$.
+An exact fraction $s/t$, $t>0$, is enclosed by
+\[
+ \left(\left\lfloor\frac{sD}{t}\right\rfloor,
+       \left\lceil\frac{sD}{t}\right\rceil\right).
+\]
+Addition and negation act exactly on endpoints. To multiply two enclosures,
+take the minimum and maximum of the four integer endpoint products, divide
+by $D$, and round the lower endpoint down and the upper endpoint up.
+If $0<a\le b$, the reciprocal enclosure is
+\[
+ \left(\left\lfloor\frac{D^2}{b}\right\rfloor,
+       \left\lceil\frac{D^2}{a}\right\rceil\right).
+\]
+For a strictly negative interval use sign reversal; division is rejected if
+the denominator interval contains zero. Integer powers are evaluated by
+repeated squaring, using these same enclosure operations.
+For square roots of $0\le a\le b$, let
+\[
+ u=\lfloor\sqrt{aD}\rfloor,\qquad v=\lfloor\sqrt{bD}\rfloor.
+\]
+The integer witnesses $u^2\le aD<(u+1)^2$ and
+$v^2\le bD<(v+1)^2$ are checked explicitly. The resulting enclosure is
+$(u,v)$ if $v^2=bD$, and $(u,v+1)$ otherwise.
+
+For intervals $X_i=[a_i,b_i]$, the minimum and maximum of their unknown
+values are enclosed, respectively, by
+$[\min_i a_i,\min_i b_i]$ and $[\max_i a_i,\max_i b_i]$.
+These rules do not require independence among the unknown values.
+Likewise, reusing an uncertain expression may widen an interval but cannot
+invalidate its enclosure. A strict comparison $X<Y$ is accepted only when
+the upper endpoint of $X$ is below the lower endpoint of $Y$.
+
+\begin{lemma}[Elementary enclosure invariant]\label{lem:invariant}
+Every elementary operation just specified encloses its real result whenever
+its operands are valid enclosures and its stated domain conditions hold.
+\end{lemma}
+\begin{proof}
+For multiplication, a bilinear function attains its extrema on a rectangle
+at corners. Reciprocal is decreasing on each of its sign domains, square
+root is increasing on $[0,\infty)$, and minimum and maximum are coordinatewise
+increasing. The floor and ceiling definitions preserve the appropriate
+one-sided bounds. Addition and negation are immediate. Induction on the
+number of multiplications proves the integer-power claim.
+\end{proof}
+
+\subsection{Exponential enclosures}
+For a nonnegative exact rational $x$, choose an integer $r\ge0$ so that
+$y=x/2^r\le1/8$. With $N=40$, define the exact fractions
+\[
+ S_N(y)=\sum_{k=0}^N\frac{y^k}{k!},\qquad
+ R_N(y)=\frac{y^{N+1}}{(N+1)!}\frac1{1-y/(N+2)}.
+\]
+Then
+\begin{equation}\label{eq:exp-enclosure}
+ S_N(y)\le e^y\le S_N(y)+R_N(y).
+\end{equation}
+Indeed, all terms are nonnegative, and the ratio of consecutive terms after
+the first omitted one is at most $y/(N+2)<1$, so a geometric series bounds
+the tail. Enclose both endpoints as dyadic fractions and square the result
+$r$ times. This encloses $e^x$ by Lemma~\ref{lem:invariant}. For negative
+$x$, enclose $e^{-x}$ first and take the reciprocal. For an input interval
+$[a,b]$, enclose $e^a$ and $e^b$ separately and retain the outer endpoints,
+using monotonicity of $\exp$.
+
+All Taylor coefficients and remainders in the implementation are computed
+with exact fractions. Thus the finite series length affects enclosure width,
+not validity. Very small positive exponentials may be enclosed by an interval
+whose lower endpoint is zero; this is a valid enclosure, not a replacement
+of a positive real number by zero. A subsequent division by such an interval
+would be rejected.
+
+\subsection{Logarithm and circle-constant enclosures}
+Let $z=1/3$ and $N=80$. Integrating the geometric series for $1/(1-z^2)$
+gives
+\[
+ \log2=2\sum_{k=0}^\infty\frac{z^{2k+1}}{2k+1}.
+\]
+Its remainder after $N$ terms is positive and at most
+\begin{equation}\label{eq:log-enclosure}
+ \frac{2z^{2N+1}}{(2N+1)(1-z^2)}.
+\end{equation}
+Consequently this partial sum and remainder give an exact rational enclosure
+for $\log2$. Squaring and multiplying by 144 gives one for $C_*$.
+At the critical scale the identity $2t_0=1$ is simplified symbolically
+before evaluation: for $C=C_*$,
+\[
+ t_j=\frac{(j+3)^2}{18\cdot2^j}.
+\]
+Thus the endpoint sign condition does not depend on rounding a number close
+to one.
+
+To enclose $\pi$ we use Machin's identity
+\begin{equation}\label{eq:machin}
+ \pi=16\arctan(1/5)-4\arctan(1/239).
+\end{equation}
+Here is a direct verification. If $\theta=\arctan(1/5)$ and
+$\phi=\arctan(1/239)$, double-angle formulas give
+$\tan(2\theta)=5/12$ and $\tan(4\theta)=120/119$; therefore
+$\tan(4\theta-\phi)=1$. Also $0<4\theta-\phi<4/5<\pi/2$:
+positivity follows from $\theta>\phi>0$, and
+$\theta<1/5$ follows from the integral formula for arctangent.
+The elementary bound $\pi/2>1$ follows from
+$\pi/4=\int_0^1(1+x^2)^{-1}dx>1/2$.
+Injectivity of tangent on this interval gives $4\theta-\phi=\pi/4$.
+
+For $z\in\{1/5,1/239\}$, the alternating expansion
+\[
+ \arctan z=\sum_{k=0}^{N-1}(-1)^k\frac{z^{2k+1}}{2k+1}+R_N,
+ \qquad 0\le R_N\le\frac{z^{2N+1}}{2N+1},\qquad N=50,
+\]
+follows by integrating the finite geometric expansion of $1/(1+x^2)$;
+$N$ is even. Combining these rational enclosures in \eqref{eq:machin}
+encloses $\pi$.
+
+\begin{lemma}[Soundness of the certificate arithmetic]\label{lem:soundness}
+Every enclosure produced by \texttt{rational\_interval.py} for an expression
+used in the certificate contains the exact real value of that expression.
+Every strict numerical inequality accepted by \texttt{exact\_certificate.py}
+is therefore a true real inequality.
+\end{lemma}
+\begin{proof}
+The leaf constants are exact rationals, the logarithm enclosure
+\eqref{eq:log-enclosure}, and the circle-constant enclosure
+\eqref{eq:machin}. They are sound by the preceding arguments.
+Structural induction on the expression tree uses Lemma~\ref{lem:invariant}
+for elementary operations and \eqref{eq:exp-enclosure} for exponentials.
+Every division checks separation from zero, every square root checks its
+nonnegative domain and integer witnesses, and conditional use of
+$1/(1-\Theta_j)$ requires a certified strict inequality $\Theta_j<1$.
+The last assertion follows from disjoint interval endpoints.
+\end{proof}
+
+\subsection{Finite specification of the obligations}
+The verification comprises the following explicitly bounded operations.
+\begin{enumerate}
+\item Establish $693/1000<\log2<694/1000$, $69<C_*<70$, the parameter
+inequalities, and the four positive Taylor inequalities in the counting proof.
+\item For each of the two values $C\in\{C_*,70\}$ and each integer
+$i\in\{150,\ldots,319\}$, evaluate the slab expressions on
+$[i/10,(i+1)/10]$. Include scales until the first $j+1$ for which
+$2^{j+1}$ is certified greater than $256((i+1)/10)^2/C$.
+This can include an unnecessary scale if a comparison is inconclusive;
+including additional nonnegative error terms is conservative.
+\item For each $C$, evaluate the eight low-scale expressions at $H=32$,
+check their derivative conditions, and evaluate the omitted-scale bound.
+For $C=C_*$ use the exact rational formula for $t_j$ above.
+\item For each row of Table~\ref{tab:constants}, take maxima over all slabs
+starting at or above its $L_0$, the corresponding half-line bound, and
+$1/1000$. Check all three required error bounds against the printed rational
+$B$. Check that $B+10^{-9}$ is still below the failure threshold associated
+with the table's convenient success guarantee.
+\item Compute each amplification probability as an exact finite sum of
+fractions, and compare it with $1/100$.
+\end{enumerate}
+All loops have explicit finite limits, except scale inclusion, which terminates
+because its fixed finite comparison bound is eventually exceeded by $2^j$.
+The exact intervals are retained in the certificate file. In particular,
+there is no extrapolation from a sampled distribution, no test of only
+selected integer $n$, and no truncation of the half-line $L\ge32$.
+
+\subsection{Independent risk aggregation and reproducibility}
+For every slab the certificate records rational upper bounds
+$v_j^+,w_j^+,h^+,o^+$ for $v_j,w_j,H(L),2/n$.
+The separate script \texttt{audit\_exact.py} reconstructs, using the standard
+exact Fraction type,
+\begin{align*}
+ U^+&=\sum_j\frac{v_j^+}{v_j^++d_j^2},\\
+ R_f^+&=\max\left\{h^+,\max_j\frac{v_j^+}{v_j^++\kappa_j^2}\right\},\\
+ R^+&=\max\left\{h^+,o^+,\max_j\frac{2w_j^+}{2w_j^++\kappa_j^2}\right\},\\
+ B^+&=\max\{U^++R_f^+,R^+\}.
+\end{align*}
+These are valid bounds because the displayed rational functions are
+coordinatewise nondecreasing for nonnegative arguments.
+The auditor similarly reconstructs the half-line aggregation, checks that
+the complete set of slabs is present, verifies the source hashes, and checks
+all claimed thresholds. It also tests the arithmetic operations against
+independent Fraction calculations and checks exact Chebyshev coefficient
+identities. Those tests complement the mathematical soundness proof;
+they do not replace it.
+
+From the artifact directory, the commands are
+\begin{verbatim}
+python3 exact_certificate.py
+python3 audit_exact.py
+tectonic submission_proof.tex
+\end{verbatim}
+Only Python's standard library is needed for the first two commands.
+The checker rejects float inputs and does not call a logarithm, exponential,
+or trigonometric routine from a numerical library. Its checks raise explicit
+exceptions and remain active under Python's optimization flag.
+
+\paragraph{Scope of formalization.}
+The theorem, reduction to a finite family of rational inequalities, and
+soundness of the enclosure rules are mathematical proofs supplied in this
+document. The artifact executes those finite checks. There is no claim that
+the complete probability and real-analysis development has been encoded in
+Lean, Coq, Isabelle, or another foundational proof assistant, and no new
+axiom asserting the desired statistical theorem is introduced. A full
+proof-assistant formalization would be an additional deliverable.

@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      999999
+    ],
+    "probabilities_exact": [
+      "39858098741483383/40498098101483383",
+      "640000000/40498098101483383"
+    ],
+    "support": 1000000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C60_lambda64",
+      "cell": "11175677013160a903871c69",
+      "C": "60",
+      "L0": 14,
+      "n": 1000000,
+      "epsilon": ".001",
+      "S": 1000000,
+      "effective": 936722,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 4049809810.1483383,
+      "branch": "chebyshev",
+      "degree": 90,
+      "scales": 10,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 1000000.0,
+      "mean_lower_lo": 1000000.0,
+      "mean_lower_hi": 1000000.0,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 2.2537527399890678e-14,
+      "sampling_seconds": 0.012768726999638602,
+      "scoring_seconds": 0.0068057609896641225
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C60_lambda64",
+      "cell": "11175677013160a903871c69",
+      "C": "70",
+      "L0": 14,
+      "n": 1000000,
+      "epsilon": ".001",
+      "S": 1000000,
+      "effective": 936722,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 4724778111.839728,
+      "branch": "chebyshev",
+      "degree": 84,
+      "scales": 10,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 1000000.0,
+      "mean_lower_lo": 1000000.0,
+      "mean_lower_hi": 1000000.0,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 1.176836406102666e-14,
+      "sampling_seconds": 0.012572428968269378,
+      "scoring_seconds": 0.007432857033563778
+    }
+  ],
+  "raw_file": "raw/11175677013160a903871c69.npz",
+  "raw_sha256": "a51b982941fcb42a7aeab2d3760009c6953b86a59ac1a83b73dee7ce51550dc4"
+}

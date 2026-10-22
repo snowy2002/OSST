@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      999999999999
+    ],
+    "probabilities_exact": [
+      "1365086043073307/1397086043073275",
+      "32/1397086043073275"
+    ],
+    "support": 1000000000000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C40_lambda32",
+      "cell": "1463d19f0a81d5cf2d70bddd",
+      "C": "40",
+      "L0": 14,
+      "n": 1000000000000,
+      "epsilon": ".001",
+      "S": 1000000000000,
+      "effective": 956341061154,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 1397086043073275.0,
+      "branch": "chebyshev",
+      "degree": 214,
+      "scales": 13,
+      "trials": 2000,
+      "errors": 1092,
+      "coverage_errors": 0,
+      "mean_D": 999999999999.9875,
+      "mean_lower_lo": 999999999999.9945,
+      "mean_lower_hi": 999999999999.9945,
+      "improvements": 14,
+      "extra_rejects": 1092,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 5.773159728050814e-15,
+      "sampling_seconds": 0.02138117901631631,
+      "scoring_seconds": 0.020877878996543586
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C40_lambda32",
+      "cell": "1463d19f0a81d5cf2d70bddd",
+      "C": "70",
+      "L0": 14,
+      "n": 1000000000000,
+      "epsilon": ".001",
+      "S": 1000000000000,
+      "effective": 956341061154,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 2444900575378231.5,
+      "branch": "chebyshev",
+      "degree": 162,
+      "scales": 12,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 1000000000000.0,
+      "mean_lower_lo": 1000000000000.0,
+      "mean_lower_hi": 1000000000000.0,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 1.6209256159527285e-14,
+      "sampling_seconds": 0.02086138099548407,
+      "scoring_seconds": 0.01626870798645541
+    }
+  ],
+  "raw_file": "raw/1463d19f0a81d5cf2d70bddd.npz",
+  "raw_sha256": "c402328ac8777c99a7ad61a213242634232742860b5835489f7699d6f3c3df82"
+}

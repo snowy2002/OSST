@@ -1,0 +1,233 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      1,
+      2,
+      1,
+      1,
+      2,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      4,
+      6
+    ],
+    "probabilities_exact": [
+      "41/202",
+      "9/101",
+      "8/101",
+      "15/202",
+      "6/101",
+      "11/202",
+      "9/202",
+      "4/101",
+      "7/202",
+      "5/202",
+      "2/101",
+      "3/202",
+      "1/101",
+      "1/202"
+    ],
+    "support": 27
+  },
+  "plan": {
+    "algorithm": "joint_constants_70_16",
+    "C0": 70,
+    "L0": 16,
+    "n": 27,
+    "epsilon": "1/10",
+    "branch": "observed_count",
+    "mean_expression": "70*27/((1/10)*(1+ln(27)))",
+    "mean_interval": "[4399.6084091478518841894524300309449740998179831538013542810539604 +/- 1.45e-62]",
+    "mean_for_binary64_rng": 4399.6084091478515,
+    "mean_rounding": "real expression; no integer ceiling",
+    "L_interval": "[4.2958368660043290741857357107675771139424716734682483552040830009 +/- 1.25e-65]",
+    "precision_bits": 512,
+    "max_degree": 0,
+    "scales": []
+  },
+  "rows": [
+    {
+      "suite": "amplification",
+      "cell": "c40271ec83f7a1756aab",
+      "scenario": "bird_north",
+      "origin": "natural",
+      "n": 27,
+      "epsilon": "0.1",
+      "S": 27,
+      "truth": "Yes",
+      "delta_n_exact": "0",
+      "effective_support": 15,
+      "method": "C70_L16_x27",
+      "m": 118789.42704699199,
+      "repeats": 27,
+      "trials": 1000,
+      "errors": 0,
+      "error_rate": 0.0,
+      "lower_errors": 0,
+      "mean_lower_low": 27.0,
+      "mean_lower_high": 27.0,
+      "raw_file": "raw/amplification_c40271ec83f7a1756aab.npz"
+    },
+    {
+      "suite": "amplification",
+      "cell": "c40271ec83f7a1756aab",
+      "scenario": "bird_north",
+      "origin": "natural",
+      "n": 27,
+      "epsilon": "0.1",
+      "S": 27,
+      "truth": "Yes",
+      "delta_n_exact": "0",
+      "effective_support": 15,
+      "method": "count_99",
+      "m": 481,
+      "repeats": 1,
+      "trials": 1000,
+      "errors": 0,
+      "error_rate": 0.0,
+      "lower_errors": 0,
+      "mean_lower_low": 26.423,
+      "mean_lower_high": 26.423,
+      "raw_file": "raw/amplification_c40271ec83f7a1756aab.npz"
+    },
+    {
+      "suite": "amplification",
+      "cell": "c40271ec83f7a1756aab",
+      "scenario": "bird_north",
+      "origin": "natural",
+      "n": 27,
+      "epsilon": "0.1",
+      "S": 27,
+      "truth": "Yes",
+      "delta_n_exact": "0",
+      "effective_support": 15,
+      "method": "C1025_L1024",
+      "m": 64423,
+      "repeats": 1,
+      "trials": 1000,
+      "errors": 0,
+      "error_rate": 0.0,
+      "lower_errors": 0,
+      "mean_lower_low": 27.0,
+      "mean_lower_high": 27.0,
+      "raw_file": "raw/amplification_c40271ec83f7a1756aab.npz"
+    }
+  ],
+  "blocks": [
+    {
+      "suite": "amplification",
+      "cell": "c40271ec83f7a1756aab",
+      "method": "C70_L16_x27",
+      "block": 0,
+      "trials": 250,
+      "errors": 0,
+      "lower_errors": 0
+    },
+    {
+      "suite": "amplification",
+      "cell": "c40271ec83f7a1756aab",
+      "method": "C70_L16_x27",
+      "block": 1,
+      "trials": 250,
+      "errors": 0,
+      "lower_errors": 0
+    },
+    {
+      "suite": "amplification",
+      "cell": "c40271ec83f7a1756aab",
+      "method": "C70_L16_x27",
+      "block": 2,
+      "trials": 250,
+      "errors": 0,
+      "lower_errors": 0
+    },
+    {
+      "suite": "amplification",
+      "cell": "c40271ec83f7a1756aab",
+      "method": "C70_L16_x27",
+      "block": 3,
+      "trials": 250,
+      "errors": 0,
+      "lower_errors": 0
+    },
+    {
+      "suite": "amplification",
+      "cell": "c40271ec83f7a1756aab",
+      "method": "count_99",
+      "block": 0,
+      "trials": 250,
+      "errors": 0,
+      "lower_errors": 0
+    },
+    {
+      "suite": "amplification",
+      "cell": "c40271ec83f7a1756aab",
+      "method": "count_99",
+      "block": 1,
+      "trials": 250,
+      "errors": 0,
+      "lower_errors": 0
+    },
+    {
+      "suite": "amplification",
+      "cell": "c40271ec83f7a1756aab",
+      "method": "count_99",
+      "block": 2,
+      "trials": 250,
+      "errors": 0,
+      "lower_errors": 0
+    },
+    {
+      "suite": "amplification",
+      "cell": "c40271ec83f7a1756aab",
+      "method": "count_99",
+      "block": 3,
+      "trials": 250,
+      "errors": 0,
+      "lower_errors": 0
+    },
+    {
+      "suite": "amplification",
+      "cell": "c40271ec83f7a1756aab",
+      "method": "C1025_L1024",
+      "block": 0,
+      "trials": 250,
+      "errors": 0,
+      "lower_errors": 0
+    },
+    {
+      "suite": "amplification",
+      "cell": "c40271ec83f7a1756aab",
+      "method": "C1025_L1024",
+      "block": 1,
+      "trials": 250,
+      "errors": 0,
+      "lower_errors": 0
+    },
+    {
+      "suite": "amplification",
+      "cell": "c40271ec83f7a1756aab",
+      "method": "C1025_L1024",
+      "block": 2,
+      "trials": 250,
+      "errors": 0,
+      "lower_errors": 0
+    },
+    {
+      "suite": "amplification",
+      "cell": "c40271ec83f7a1756aab",
+      "method": "C1025_L1024",
+      "block": 3,
+      "trials": 250,
+      "errors": 0,
+      "lower_errors": 0
+    }
+  ],
+  "raw_file": "raw/amplification_c40271ec83f7a1756aab.npz",
+  "raw_sha256": "a5260fb68eeb7d696156300e4fc72c1589d85dd87e4b93c76b44819a8cf75bd5"
+}

@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      999999999999
+    ],
+    "probabilities_exact": [
+      "51883441722935/55883441722931",
+      "4/55883441722931"
+    ],
+    "support": 1000000000000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C20_lambda.5",
+      "cell": "3d3aaa2eee163441a07a9201",
+      "C": "20",
+      "L0": 14,
+      "n": 1000000000000,
+      "epsilon": ".1",
+      "S": 1000000000000,
+      "effective": 1,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 6985430215366.375,
+      "branch": "chebyshev",
+      "degree": 302,
+      "scales": 14,
+      "trials": 2000,
+      "errors": 7,
+      "coverage_errors": 0,
+      "mean_D": 393469340001.014,
+      "mean_lower_lo": 928072234672.0985,
+      "mean_lower_hi": 928072234677.988,
+      "improvements": 2000,
+      "extra_rejects": 7,
+      "nonunique_bounds": 1993,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.019230892008636147,
+      "scoring_seconds": 0.02351246401667595
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C20_lambda.5",
+      "cell": "3d3aaa2eee163441a07a9201",
+      "C": "70",
+      "L0": 14,
+      "n": 1000000000000,
+      "epsilon": ".1",
+      "S": 1000000000000,
+      "effective": 1,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 24449005753782.312,
+      "branch": "chebyshev",
+      "degree": 162,
+      "scales": 12,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 826226052249.9554,
+      "mean_lower_lo": 944396001763.9075,
+      "mean_lower_hi": 944396001764.1165,
+      "improvements": 2000,
+      "extra_rejects": 0,
+      "nonunique_bounds": 418,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.01344262299244292,
+      "scoring_seconds": 0.014051221020054072
+    }
+  ],
+  "raw_file": "raw/3d3aaa2eee163441a07a9201.npz",
+  "raw_sha256": "a9c73d238f7561f4fed33cd22babd500d5ef7a14b3679416165156f756434250"
+}

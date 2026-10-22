@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      9999
+    ],
+    "probabilities_exact": [
+      "293136426377143/326466426377143",
+      "10000000000/979399279131429"
+    ],
+    "support": 10000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C40_lambda4",
+      "cell": "c43f347d6fb03d6ae4432e23",
+      "C": "40",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".1",
+      "S": 10000,
+      "effective": 207,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 391759.7116525716,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 9816.7625,
+      "mean_lower_lo": 9816.7625,
+      "mean_lower_hi": 9816.7625,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.0003895969712175429,
+      "scoring_seconds": 0.00035869903513230383
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C40_lambda4",
+      "cell": "c43f347d6fb03d6ae4432e23",
+      "C": "70",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".1",
+      "S": 10000,
+      "effective": 207,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 685579.4953920003,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 9990.8265,
+      "mean_lower_lo": 9990.8265,
+      "mean_lower_hi": 9990.8265,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.0003327990125399083,
+      "scoring_seconds": 0.0002993979724124074
+    }
+  ],
+  "raw_file": "raw/c43f347d6fb03d6ae4432e23.npz",
+  "raw_sha256": "66a7682c127a9de24b16abb590152396e8a499b5218da76983f12aa2f6c61726"
+}

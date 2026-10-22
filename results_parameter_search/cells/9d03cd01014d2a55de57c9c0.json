@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      999999999999
+    ],
+    "probabilities_exact": [
+      "1393086043073279/1397086043073275",
+      "4/1397086043073275"
+    ],
+    "support": 1000000000000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C10_lambda1",
+      "cell": "9d03cd01014d2a55de57c9c0",
+      "C": "10",
+      "L0": 14,
+      "n": 1000000000000,
+      "epsilon": ".001",
+      "S": 1000000000000,
+      "effective": 650728489232,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 349271510768318.75,
+      "branch": "chebyshev",
+      "degree": 427,
+      "scales": 15,
+      "trials": 2000,
+      "errors": 1189,
+      "coverage_errors": 0,
+      "mean_D": 632120567488.6176,
+      "mean_lower_lo": 992968585030.547,
+      "mean_lower_hi": 992968585042.123,
+      "improvements": 2000,
+      "extra_rejects": 1189,
+      "nonunique_bounds": 811,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.027929442992899567,
+      "scoring_seconds": 0.03886507800780237
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C10_lambda1",
+      "cell": "9d03cd01014d2a55de57c9c0",
+      "C": "70",
+      "L0": 14,
+      "n": 1000000000000,
+      "epsilon": ".001",
+      "S": 1000000000000,
+      "effective": 650728489232,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 2444900575378231.5,
+      "branch": "chebyshev",
+      "degree": 162,
+      "scales": 12,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 999088118012.9425,
+      "mean_lower_lo": 999088118012.9425,
+      "mean_lower_hi": 999088118012.9425,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 8.881784197001252e-16,
+      "sampling_seconds": 0.01314672501757741,
+      "scoring_seconds": 0.012205231003463268
+    }
+  ],
+  "raw_file": "raw/9d03cd01014d2a55de57c9c0.npz",
+  "raw_sha256": "58c2e9664eebd610ea0d58117fef58364a253b32ca4890ea52893105f03b9c53"
+}

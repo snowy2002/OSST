@@ -1,0 +1,206 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,hyperref,microtype}
+\newtheorem{proposition}{Proposition}
+\newcommand{\Prb}{\mathbb P}
+\title{Submission Audit: Parameter Scope and Sampling-Model Clarifications}
+\author{}\date{October 22, 2026}
+\begin{document}\maketitle
+\noindent These notes supplement the earlier review of the refined
+$(C,L_0)$ theorem. They address the original manuscript's optimal-order
+statement and the integration of new constants into a standard sample
+complexity theorem. They do not contradict the uniform sufficient bound
+for the refined algorithm.
+
+\section{A missing qualification on the matching lower bound}
+The original manuscript states optimal complexity
+$\Theta(n/(\epsilon\log n))$ without an explicit restriction on $\epsilon$
+in Theorem 1.1. If interpreted as a two-parameter minimax statement with
+universal constants on the whole interval $(0,1)$, this cannot be correct.
+The issue is the matching lower bound, not the sufficient upper bound.
+
+\begin{proposition}[Collision test near separation one]
+For every integer $n\ge16$, let $\epsilon_n=1-n^{-2}$. There exists a
+tester of $S\le n$ versus $\Delta_n\ge\epsilon_n$ using
+$t=\lceil2\sqrt n\rceil+1$ independent samples and having both errors
+less than $1/3$.
+\end{proposition}
+\begin{proof}
+Return Yes when at least two samples coincide, and No otherwise.
+Under the null, pad the distribution by zeros to a vector of length $n$.
+The probability of all samples being distinct is $t!e_t(p_1,\ldots,p_n)$,
+where $e_t$ is the elementary symmetric polynomial. It is maximized at
+the uniform vector. One elementary proof chooses, among maximizers on
+the simplex, a vector minimizing $\sum_i p_i^2$. For a pair of coordinates
+$a,b$, with all others fixed,
+\[
+e_t=e_t(\mathrm{rest})+(a+b)e_{t-1}(\mathrm{rest})
+                     +ab\,e_{t-2}(\mathrm{rest}).
+\]
+Replacing unequal $a,b$ by their average cannot decrease $e_t$ and strictly
+decreases the sum of squares; hence the chosen maximizer must be uniform.
+Therefore
+\[
+\Prb(\text{false No})\le \frac{(n)_t}{n^t}
+\le \exp\left(-\frac{t(t-1)}{2n}\right)\le e^{-2}<\frac13.
+\]
+Here $t\le n$ for $n\ge16$, and the exponential inequality uses
+$1-u\le e^{-u}$.
+
+Under the alternative, let $q=\sum_{i=1}^n p_{(i)}\le n^{-2}$.
+The tail probabilities satisfy $p_{(i)}\le q/n$ for $i>n$. Thus
+\[
+\sum_i p_i^2
+\le q^2+\frac qn(1-q)
+\le n^{-4}+n^{-3}.
+\]
+A union bound over sample pairs gives
+\[
+\Prb(\text{false Yes})\le {t\choose2}(n^{-4}+n^{-3})
+\le\frac{25}{8}(n^{-3}+n^{-2})<\frac13,
+\]
+where $t\le2\sqrt n+2\le(5/2)\sqrt n$ for $n\ge16$.
+The argument also holds for countable alphabets.
+\end{proof}
+
+Since $\epsilon_n\to1$, the asserted expression
+$n/(\epsilon_n\log n)$ is of order $n/\log n$, while the tester above
+uses $O(\sqrt n)=o(n/\log n)$ samples. Thus a universal matching lower
+bound on all $(n,\epsilon)$ is ruled out. If the intended statement fixes
+$\epsilon$ or bounds it above by a sufficiently small constant, that
+restriction must be stated. Replacing $\log n$ by $\log(en)$ also removes
+the notation's singularity at $n=1$ without changing asymptotic order.
+
+\paragraph{A concrete route to a repaired statement.}
+Retain the sufficient upper bound for all $n\ge1$, $0<\epsilon<1$.
+State the matching lower bound separately with its justified parameter
+range. For example, the already cited concurrent paper of Bao, Gao, and
+Yao states in Theorem 4.4 a support-testing lower bound
+$\Omega(s/(\delta\log s))$ for all sufficiently large $s$ and
+$0<\delta<1/32$, on an alphabet of size $2s$, with fixed success above
+$1/2$; Appendix A supplies the moment-matching and dilution argument.
+See \href{https://arxiv.org/html/2609.37926v1#S4.SS1}{the source theorem}.
+That result, if adopted with its hypotheses and attribution, is sufficient
+for a matching lower-bound statement on $0<\epsilon<1/32$.
+A broader parameter range should be proved, not inferred from an
+unqualified citation to an estimation lower bound.
+
+Wu--Yang Proposition 1 concerns support \emph{estimation} with a minimum
+positive mass condition and restrictions on its own approximation
+parameter. Converting it into the present support \emph{testing} problem
+requires a separated pair of priors and the dilution step producing
+$1/\epsilon$. Parameter symbols in the two problems must not be identified
+without that reduction. See
+\href{https://arxiv.org/pdf/1504.01227}{Wu--Yang, Proposition 1 and its model}.
+Similarly, the original pretty-good-bound optimality reduction uses
+$2\epsilon$ as a testing separation, so its stated range must be compatible
+with a nonempty alternative and with the chosen lower-bound theorem.
+
+\section{Expected samples versus a deterministic cap}
+The refined theorem uses $M\sim\operatorname{Poi}(m)$ with
+$m=Cn/(\epsilon\log(en))$. The coefficient 70 describes its mean and
+does not impose a maximum sample count. The following coupling supplies
+a standard capped-sample version without conditioning on completion.
+
+\begin{proposition}[Cap conversion]
+Let $b(C,L_0)$ be the computed certified common error endpoint in the new
+certificate. Draw $M$ before querying the oracle. If
+$M>K=\lceil2m\rceil$, return any allowed fixed outputs without queries;
+otherwise run the original statistic. The capped algorithm uses at most
+$K$ samples, expected sample use at most $m$, and joint error at most
+\[
+b(C,L_0)+\exp\{-C(2\log2-1)\}.
+\]
+For all eight certified parameter pairs this is still strictly below
+their advertised rational error target.
+\end{proposition}
+\begin{proof}
+Couple both algorithms using the same potential full sample sequence.
+Their outputs agree unless $M>K$. Exponential Markov with parameter
+$\log2$ gives $\Prb(M>K)\le e^{-m(2\log2-1)}$.
+Because $n/\log(en)\ge1$ and $\epsilon<1$, $m>C$.
+The error event for either required output in the capped experiment is
+contained in the original joint error event union the overflow event.
+No conditional independence claim is made. Finally, compare the displayed
+sum with each target by outward Arb arithmetic; the results are saved in
+\texttt{capped\_certificate.json}.
+\end{proof}
+
+Consequently $(70,14)$ can be stated as expected sample use at most
+$70n/(\epsilon\log(en))$ and a deterministic maximum of
+$\lceil140n/(\epsilon\log(en))\rceil$, with failure below $0.0009$.
+It must not be described as a maximum-sample coefficient of 70.
+Nor does the existing integer-minimality theorem prove a smallest possible
+deterministic-cap constant over all algorithms.
+
+\section{The scope of the refined necessary constant is different}
+The new $C_{\rm crit}$ obstruction concerns one fixed Chebyshev tester,
+with fixed finite $L_0>1$, over all input sizes and separations. Its
+counterexample uses $\epsilon_n\to0$, not $\epsilon_n\to1$. It therefore
+still excludes integer $C\le69$ even if the admissible separations are
+restricted to $(0,1/32)$. There is no conflict with the collision example:
+one is a limitation of a fixed construction in a small-separation regime;
+the other concerns the global minimax rate in a large-separation regime.
+
+The interval $(69.00627138,69.00627139)$ is a certified root bracket;
+it does not prove an error lower bound for $C=69$ at the finite sizes
+tested experimentally, or for an arbitrary fixed separation bounded away
+from zero. The sufficient real constant is $144(\log2)^2$, so the exact
+real optimum and the smallest sufficient $L_0$ remain open.
+
+\section{Proof packaging before submission}
+Changing the constants in the original algorithm block is not by itself
+a valid integration. The original Lemma 4.1 uses $k_j<L/64$ to obtain
+$\|f_j\|_\infty\le4n^{1/16}$. At $C=70$, scale zero instead has
+$k_0/L\to\sqrt{512/70}\,3\log2>5$, so that premise fails.
+The new coefficient/range envelopes and concentration proof must replace
+the corresponding old argument, or the old theorem and the new
+finite-constant theorem must be clearly stated as separate results.
+
+The new concentration manuscript relies on the earlier expectation,
+integral, coefficient, and half-line lemmas. A submission must include
+these arguments or stable theorem-level references within the submitted
+supplement; a relative link into a development directory is insufficient.
+The infinite-support limit, Lindeberg verification, scale/degree coverage,
+and scalar-root certificate should be separate named steps. Distinguish
+analytic reasoning from finite arithmetic obligations: program-check counts
+do not establish the mathematical reduction on their own.
+
+Attribution should also preserve the distinction between the original
+optimal-order theorem, concurrent results, refined constants for the same
+statistic, and optional engineered hybrids. Neither a smaller constant
+nor extensive simulation alone establishes a new general minimax lower
+bound or guarantees acceptance at a particular conference.
+
+\section{Why the current finite-size experiments cannot show binary gains}
+For $n\le10^{12}$, $L=1+\log n<30$ and $70/L\ge2.4449$.
+At mean $m=70n/(\epsilon L)$, the pure observed-count decision is already
+uniformly very reliable. Its null error is zero; under $\Delta_r\ge\epsilon$
+the discovery coupling gives
+\[
+\Prb(D\le r)\le\Prb\{\operatorname{Poi}(70n/L)\le n\}.
+\]
+On each quarter-width slab $L\in[a,b]\subset[1,30]$, exponential Markov
+and $x-1-\log x\ge(x-1)^2/(2x)$ give the bound
+\[
+\exp\left\{-e^{a-1}\frac{(70/b-1)^2}{2(70/b)}\right\}.
+\]
+Outward rational arithmetic on all 116 slabs certifies their maximum to
+be less than $1.863\times10^{-12}$. The exact endpoint is saved in
+\texttt{finite\_counting\_certificate.json}. The same argument gives
+the pretty-good coverage guarantee for the clipped count, by taking
+$r=\min(e_\epsilon,n)-1$ when positive. It also gives simultaneous binary
+and coverage correctness on the promises.
+
+This explains the observed absence of any additional correct rejection
+from the polynomial in the current $C=70$ experiments. At their maximum
+sample size, the simple count already succeeds with an exceedingly small
+uniform failure bound. More Monte Carlo repetitions or more distributions
+in this same range will not yield a useful binary-power separation at the
+same certified budget. The observed increase in the \emph{size} of the
+support lower bound is a distinct and valid experimental outcome.
+Reduced-budget exploration must be labelled separately from the uniformly
+certified $C=70$ theorem. Conversely this finite-range count bound cannot
+be extended to all $n$; it does not contradict the asymptotic need for
+extrapolation or the necessary constant for the unchanged tester.
+\end{document}

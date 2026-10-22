@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      9999
+    ],
+    "probabilities_exact": [
+      "297896751300343/337892751300343",
+      "4000000000/337892751300343"
+    ],
+    "support": 10000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C69_lambda8",
+      "cell": "673b188e3e5e06d3a5d57470",
+      "C": "69",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".1",
+      "S": 10000,
+      "effective": 1553,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 675785.502600686,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 9996.596,
+      "mean_lower_lo": 9996.596,
+      "mean_lower_hi": 9996.596,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.0003113000129815191,
+      "scoring_seconds": 0.0003733960329554975
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C69_lambda8",
+      "cell": "673b188e3e5e06d3a5d57470",
+      "C": "70",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".1",
+      "S": 10000,
+      "effective": 1553,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 685579.4953920003,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 9997.0285,
+      "mean_lower_lo": 9997.0285,
+      "mean_lower_hi": 9997.0285,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.0002871000033337623,
+      "scoring_seconds": 0.00030529600917361677
+    }
+  ],
+  "raw_file": "raw/673b188e3e5e06d3a5d57470.npz",
+  "raw_sha256": "bfc49d5eb6aa6ccd9f1203ef6e279d3ed7a7925c09b14c547d3bf19bd266bb1f"
+}

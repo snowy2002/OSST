@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      9999
+    ],
+    "probabilities_exact": [
+      "270916426377143/326466426377143",
+      "50000000000/2938197837394287"
+    ],
+    "support": 10000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C6_lambda1",
+      "cell": "26b9fc3a1a56993b7dc176d7",
+      "C": "6",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".1",
+      "S": 10000,
+      "effective": 4124,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 58763.95674788574,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 6323.103,
+      "mean_lower_lo": 6323.103,
+      "mean_lower_hi": 6323.103,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.0003640970098786056,
+      "scoring_seconds": 0.000362597027560696
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C6_lambda1",
+      "cell": "26b9fc3a1a56993b7dc176d7",
+      "C": "70",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".1",
+      "S": 10000,
+      "effective": 4124,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 685579.4953920003,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 9999.9175,
+      "mean_lower_lo": 9999.9175,
+      "mean_lower_hi": 9999.9175,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.00022999703651294112,
+      "scoring_seconds": 0.00030439894180744886
+    }
+  ],
+  "raw_file": "raw/26b9fc3a1a56993b7dc176d7.npz",
+  "raw_sha256": "21d6a9e67e5d7bd81b2bb5ec3a5b96d0552348d4b919b8b0b79d3d72ce1b1df4"
+}

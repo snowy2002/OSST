@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      9999
+    ],
+    "probabilities_exact": [
+      "321133626377143/326466426377143",
+      "1600000000/979399279131429"
+    ],
+    "support": 10000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C10_lambda16",
+      "cell": "64cc6772880ac5311fb7ca2b",
+      "C": "10",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".001",
+      "S": 10000,
+      "effective": 9388,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 9793992.79131429,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 9999.997,
+      "mean_lower_lo": 9999.997,
+      "mean_lower_hi": 9999.997,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.0003074979758821428,
+      "scoring_seconds": 0.00034759804839268327
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C10_lambda16",
+      "cell": "64cc6772880ac5311fb7ca2b",
+      "C": "70",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".001",
+      "S": 10000,
+      "effective": 9388,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 68557949.53920002,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 10000.0,
+      "mean_lower_lo": 10000.0,
+      "mean_lower_hi": 10000.0,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.000267497991444543,
+      "scoring_seconds": 0.0002997979463543743
+    }
+  ],
+  "raw_file": "raw/64cc6772880ac5311fb7ca2b.npz",
+  "raw_sha256": "fb4081062194d856c148d6f726d66a7ffde8caf6263c62a1cfb341d428228a8a"
+}

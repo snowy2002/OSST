@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      999999
+    ],
+    "probabilities_exact": [
+      "2236561018971299/2249894338971299",
+      "40000000/6749683016913897"
+    ],
+    "support": 1000000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C10_lambda4",
+      "cell": "1f0a08cdbb2f4c7742dabce8",
+      "C": "10",
+      "L0": 14,
+      "n": 1000000,
+      "epsilon": ".001",
+      "S": 1000000,
+      "effective": 831258,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 674968301.6913897,
+      "branch": "chebyshev",
+      "degree": 221,
+      "scales": 13,
+      "trials": 2000,
+      "errors": 1555,
+      "coverage_errors": 0,
+      "mean_D": 981684.011,
+      "mean_lower_lo": 998915.9635,
+      "mean_lower_hi": 998915.9635,
+      "improvements": 2000,
+      "extra_rejects": 1555,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 1.1102230246251565e-16,
+      "sampling_seconds": 0.01607580902054906,
+      "scoring_seconds": 0.013767623022431508
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C10_lambda4",
+      "cell": "1f0a08cdbb2f4c7742dabce8",
+      "C": "70",
+      "L0": 14,
+      "n": 1000000,
+      "epsilon": ".001",
+      "S": 1000000,
+      "effective": 831258,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 4724778111.839728,
+      "branch": "chebyshev",
+      "degree": 84,
+      "scales": 10,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 1000000.0,
+      "mean_lower_lo": 1000000.0,
+      "mean_lower_hi": 1000000.0,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 8.659739592076221e-15,
+      "sampling_seconds": 0.014093920006416738,
+      "scoring_seconds": 0.008662350970553234
+    }
+  ],
+  "raw_file": "raw/1f0a08cdbb2f4c7742dabce8.npz",
+  "raw_sha256": "d92e83c8ac8f7913d81b865ddceae40d0224f5bffa94ab6f7bc50efe12d89286"
+}

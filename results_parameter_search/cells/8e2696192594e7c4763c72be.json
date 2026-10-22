@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      999999
+    ],
+    "probabilities_exact": [
+      "37298101301483387/40498098101483387",
+      "3200000000/40498098101483387"
+    ],
+    "support": 1000000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C6_lambda32",
+      "cell": "8e2696192594e7c4763c72be",
+      "C": "6",
+      "L0": 14,
+      "n": 1000000,
+      "epsilon": ".001",
+      "S": 1000000,
+      "effective": 987345,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 404980981.01483387,
+      "branch": "chebyshev",
+      "degree": 285,
+      "scales": 14,
+      "trials": 2000,
+      "errors": 1870,
+      "coverage_errors": 0,
+      "mean_D": 1000000.0,
+      "mean_lower_lo": 1000000.0,
+      "mean_lower_hi": 1000000.0,
+      "improvements": 0,
+      "extra_rejects": 1870,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 5.773159728050814e-15,
+      "sampling_seconds": 0.02718837998691015,
+      "scoring_seconds": 0.018422951019601896
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C6_lambda32",
+      "cell": "8e2696192594e7c4763c72be",
+      "C": "70",
+      "L0": 14,
+      "n": 1000000,
+      "epsilon": ".001",
+      "S": 1000000,
+      "effective": 987345,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 4724778111.839728,
+      "branch": "chebyshev",
+      "degree": 84,
+      "scales": 10,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 1000000.0,
+      "mean_lower_lo": 1000000.0,
+      "mean_lower_hi": 1000000.0,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.006167151004774496,
+      "scoring_seconds": 0.00461266198544763
+    }
+  ],
+  "raw_file": "raw/8e2696192594e7c4763c72be.npz",
+  "raw_sha256": "59427e2c9a931b442668891e68c3838f776149e875facaba5604edceaa604b2a"
+}

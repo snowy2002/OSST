@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      999999
+    ],
+    "probabilities_exact": [
+      "99988618796869/245443018796869",
+      "1600000000/2699873206765559"
+    ],
+    "support": 1000000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C40_lambda16",
+      "cell": "9012ec87f918b89496ae6b09",
+      "C": "40",
+      "L0": 14,
+      "n": 1000000,
+      "epsilon": ".1",
+      "S": 1000000,
+      "effective": 831258,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 26998732.06765559,
+      "branch": "chebyshev",
+      "degree": 111,
+      "scales": 11,
+      "trials": 2000,
+      "errors": 978,
+      "coverage_errors": 0,
+      "mean_D": 999999.878,
+      "mean_lower_lo": 999999.9395,
+      "mean_lower_hi": 999999.9395,
+      "improvements": 121,
+      "extra_rejects": 978,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 2.220446049250313e-16,
+      "sampling_seconds": 0.012467229971662164,
+      "scoring_seconds": 0.007868054992286488
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C40_lambda16",
+      "cell": "9012ec87f918b89496ae6b09",
+      "C": "70",
+      "L0": 14,
+      "n": 1000000,
+      "epsilon": ".1",
+      "S": 1000000,
+      "effective": 831258,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 47247781.11839728,
+      "branch": "chebyshev",
+      "degree": 84,
+      "scales": 10,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 1000000.0,
+      "mean_lower_lo": 1000000.0,
+      "mean_lower_hi": 1000000.0,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 2.886579864025407e-15,
+      "sampling_seconds": 0.011726833006832749,
+      "scoring_seconds": 0.0062240650004241616
+    }
+  ],
+  "raw_file": "raw/9012ec87f918b89496ae6b09.npz",
+  "raw_sha256": "5921ee9a5e57971ddbfefbb3fc4df0c700579659788942498db4ce13da50f22d"
+}

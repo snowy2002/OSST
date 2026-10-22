@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      999999999999
+    ],
+    "probabilities_exact": [
+      "258083875281343/279417208614655",
+      "64/838251625843965"
+    ],
+    "support": 1000000000000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C6_lambda16",
+      "cell": "a2be158fbe36d7659fe18944",
+      "C": "6",
+      "L0": 14,
+      "n": 1000000000000,
+      "epsilon": ".001",
+      "S": 1000000000000,
+      "effective": 986902318347,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 209562906460991.25,
+      "branch": "chebyshev",
+      "degree": 550,
+      "scales": 16,
+      "trials": 2000,
+      "errors": 1858,
+      "coverage_errors": 0,
+      "mean_D": 999999887461.066,
+      "mean_lower_lo": 999999992009.757,
+      "mean_lower_hi": 999999992009.757,
+      "improvements": 1858,
+      "extra_rejects": 1858,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 2.220446049250313e-16,
+      "sampling_seconds": 0.03845008200732991,
+      "scoring_seconds": 0.03493920399341732
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C6_lambda16",
+      "cell": "a2be158fbe36d7659fe18944",
+      "C": "70",
+      "L0": 14,
+      "n": 1000000000000,
+      "epsilon": ".001",
+      "S": 1000000000000,
+      "effective": 986902318347,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 2444900575378231.5,
+      "branch": "chebyshev",
+      "degree": 162,
+      "scales": 12,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 1000000000000.0,
+      "mean_lower_lo": 1000000000000.0,
+      "mean_lower_hi": 1000000000000.0,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 2.220446049250313e-16,
+      "sampling_seconds": 0.015514011029154062,
+      "scoring_seconds": 0.00927174903335981
+    }
+  ],
+  "raw_file": "raw/a2be158fbe36d7659fe18944.npz",
+  "raw_sha256": "9e8b8fdcad276e29b550b214d185f2d141e8e729a80f14af6e74b0736ef7c08e"
+}

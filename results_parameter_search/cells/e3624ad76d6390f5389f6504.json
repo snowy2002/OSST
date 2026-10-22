@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      999999999999
+    ],
+    "probabilities_exact": [
+      "1375752709739963/1397086043073275",
+      "64/4191258129219825"
+    ],
+    "support": 1000000000000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C60_lambda32",
+      "cell": "e3624ad76d6390f5389f6504",
+      "C": "60",
+      "L0": 14,
+      "n": 1000000000000,
+      "epsilon": ".001",
+      "S": 1000000000000,
+      "effective": 934511591731,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 2095629064609912.5,
+      "branch": "chebyshev",
+      "degree": 174,
+      "scales": 12,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 999999999999.9865,
+      "mean_lower_lo": 999999999999.9865,
+      "mean_lower_hi": 999999999999.9865,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 5.551115123125783e-15,
+      "sampling_seconds": 0.017657994001638144,
+      "scoring_seconds": 0.013591019000159577
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C60_lambda32",
+      "cell": "e3624ad76d6390f5389f6504",
+      "C": "70",
+      "L0": 14,
+      "n": 1000000000000,
+      "epsilon": ".001",
+      "S": 1000000000000,
+      "effective": 934511591731,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 2444900575378231.5,
+      "branch": "chebyshev",
+      "degree": 162,
+      "scales": 12,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 1000000000000.0,
+      "mean_lower_lo": 1000000000000.0,
+      "mean_lower_hi": 1000000000000.0,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 1.7763568394002505e-15,
+      "sampling_seconds": 0.01771109300898388,
+      "scoring_seconds": 0.013114621979184449
+    }
+  ],
+  "raw_file": "raw/e3624ad76d6390f5389f6504.npz",
+  "raw_sha256": "1ee93e4f2e00feb76bcdfe5a71f91802416eda56a8754a9f2941dd38beb3e5b0"
+}

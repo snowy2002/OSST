@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      9999
+    ],
+    "probabilities_exact": [
+      "317578426377143/326466426377143",
+      "8000000000/2938197837394287"
+    ],
+    "support": 10000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C6_lambda16",
+      "cell": "22a2565ef7d3c953d9cb92ab",
+      "C": "6",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".001",
+      "S": 10000,
+      "effective": 9633,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 5876395.674788574,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 9999.998,
+      "mean_lower_lo": 9999.998,
+      "mean_lower_hi": 9999.998,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.000431794993346557,
+      "scoring_seconds": 0.0005726960371248424
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C6_lambda16",
+      "cell": "22a2565ef7d3c953d9cb92ab",
+      "C": "70",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".001",
+      "S": 10000,
+      "effective": 9633,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 68557949.53920002,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 10000.0,
+      "mean_lower_lo": 10000.0,
+      "mean_lower_hi": 10000.0,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.0003760969848372042,
+      "scoring_seconds": 0.0005052959895692766
+    }
+  ],
+  "raw_file": "raw/22a2565ef7d3c953d9cb92ab.npz",
+  "raw_sha256": "00570522f30db826a95bd4011aa616529cb1728d454fb94449bce93edf17a1f0"
+}

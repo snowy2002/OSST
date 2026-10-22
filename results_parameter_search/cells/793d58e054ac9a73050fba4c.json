@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      9999
+    ],
+    "probabilities_exact": [
+      "327893751300343/337892751300343",
+      "1000000000/337892751300343"
+    ],
+    "support": 10000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C69_lambda2",
+      "cell": "793d58e054ac9a73050fba4c",
+      "C": "69",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".1",
+      "S": 10000,
+      "effective": 1,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 675785.502600686,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 8646.956,
+      "mean_lower_lo": 8646.956,
+      "mean_lower_hi": 8646.956,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.0004938970087096095,
+      "scoring_seconds": 0.0005121960130054504
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C69_lambda2",
+      "cell": "793d58e054ac9a73050fba4c",
+      "C": "70",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".1",
+      "S": 10000,
+      "effective": 1,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 685579.4953920003,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 8684.274,
+      "mean_lower_lo": 8684.274,
+      "mean_lower_hi": 8684.274,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.00036239702603779733,
+      "scoring_seconds": 0.0003408989869058132
+    }
+  ],
+  "raw_file": "raw/793d58e054ac9a73050fba4c.npz",
+  "raw_sha256": "cd8634986984b5a30347b34b2ba487104825a313ac1fd149d9ee820c6287f791"
+}

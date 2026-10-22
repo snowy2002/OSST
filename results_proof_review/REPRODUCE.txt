@@ -1,0 +1,47 @@
+新的证明理论审查（2026-10-22）
+
+审查结论：在文稿规定的固定构造、独立泊松采样、精确统计量、所有 n≥1
+及 ε∈(0,1) 的条件下，充分界和“70 是最小可行整数 C”通过本轮审查。
+没有发现推翻主定理的错误。这是逐步数学审查与算术证书复核，不是证明助手
+形式化，也不是外部独立同行评审。
+
+必须保留的范围：
+1. C=70、L0=14 单次失败概率 <0.0009；L0=16 时 <0.000057。
+2. 必要临界值 Ccrit 在 (69.00627138,69.00627139) 内。
+   该下界针对原统计量和固定有限 L0>1；反例允许 ε 随 n 改变。
+   对 C=69，没有由此给出实用规模下的具体失败阈值。
+3. C=70 的整数最小性成立；实数 C 的最佳值、L0 的最小值仍未确定。
+4. 不包含工程实现的采样上限、阶数截断、数值失败或资源限制。
+5. 较小的期望样本量不等于相同比例的 CPU 加速。
+
+review.pdf / review.tex：完整审查补充，包括无穷字母表的极限、端点
+Bernstein 界、三角阵列 CLT 条件、必要下界量词和证书覆盖。
+audit.json：14,880 项补充检查及 20,507 项原独立 Arb 公式检查。
+negative_controls.json：删除区间、遗漏尺度、伪造汇总等 7 个损坏证书均被拒绝。
+reproduction_comparison.json：充分界、必要界证书从头复算，均与原文件逐字节一致。
+certificate_rerun.log：32,752 项原精确算术检查通过，用时约 122 秒。
+
+原独立审计主要重算已保存行的公式，没有单独检查区间完整性、计数分支和
+最终最大值汇总。本轮已补齐这些程序审计项；原精确证书本身并未发现错误。
+原 results_parameter_search 下的冻结证明、证书、实验数据均未修改。
+
+从项目根目录复算补充审计：
+  .venv/bin/python -m parameter_search.review_proof
+
+复算原算术证书而不覆盖原结果：
+  cd results_proof_review/reproduction
+  /home/snowy/OSST/.venv/bin/python -m parameter_search.certify
+  /home/snowy/OSST/.venv/bin/python -m parameter_search.lower_bound
+  cd /home/snowy/OSST
+  cmp results_parameter_search/certificate.json results_proof_review/reproduction/results_parameter_search/certificate.json
+  cmp results_parameter_search/lower_bound_certificate.json results_proof_review/reproduction/results_parameter_search/lower_bound_certificate.json
+
+验证冻结的原结果包：
+  .venv/bin/python -m parameter_search.package --verify
+
+重建审查 PDF：
+  .tools/tectonic-0.17.0/tectonic --outdir results_proof_review results_proof_review/review.tex
+
+补充程序依赖 python-flint（本次为 0.9.0）；已有公式审计模块还导入 numpy。
+代码检查通过不能替代 review.tex 中的数学推导。未新增或改动算法，未重复运行
+与本次证明审查无关的蒙特卡洛实验。

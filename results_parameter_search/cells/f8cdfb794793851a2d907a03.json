@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      999999999999
+    ],
+    "probabilities_exact": [
+      "1381086043073291/1397086043073275",
+      "16/1397086043073275"
+    ],
+    "support": 1000000000000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C10_lambda4",
+      "cell": "f8cdfb794793851a2d907a03",
+      "C": "10",
+      "L0": 14,
+      "n": 1000000000000,
+      "epsilon": ".001",
+      "S": 1000000000000,
+      "effective": 912682122308,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 349271510768318.75,
+      "branch": "chebyshev",
+      "degree": 427,
+      "scales": 15,
+      "trials": 2000,
+      "errors": 1579,
+      "coverage_errors": 0,
+      "mean_D": 981684364667.3625,
+      "mean_lower_lo": 999405578332.0065,
+      "mean_lower_hi": 999405578332.042,
+      "improvements": 2000,
+      "extra_rejects": 1579,
+      "nonunique_bounds": 71,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 1.1102230246251565e-16,
+      "sampling_seconds": 0.03512479999335483,
+      "scoring_seconds": 0.04081156899337657
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C10_lambda4",
+      "cell": "f8cdfb794793851a2d907a03",
+      "C": "70",
+      "L0": 14,
+      "n": 1000000000000,
+      "epsilon": ".001",
+      "S": 1000000000000,
+      "effective": 912682122308,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 2444900575378231.5,
+      "branch": "chebyshev",
+      "degree": 162,
+      "scales": 12,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 999999999999.284,
+      "mean_lower_lo": 999999999999.284,
+      "mean_lower_hi": 999999999999.284,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 6.661338147750939e-16,
+      "sampling_seconds": 0.022125174989923835,
+      "scoring_seconds": 0.01872979401377961
+    }
+  ],
+  "raw_file": "raw/f8cdfb794793851a2d907a03.npz",
+  "raw_sha256": "b6b617ef2dbd54359472685c509b51fb289852696f6ea8d58f08d591786e78e6"
+}

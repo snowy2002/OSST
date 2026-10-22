@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      999999
+    ],
+    "probabilities_exact": [
+      "26988732077655587/26998732067655587",
+      "10000000/26998732067655587"
+    ],
+    "support": 1000000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C40_lambda1",
+      "cell": "51f204336f6d6b42b37c1182",
+      "C": "40",
+      "L0": 14,
+      "n": 1000000,
+      "epsilon": ".001",
+      "S": 1000000,
+      "effective": 1,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 2699873206.7655587,
+      "branch": "chebyshev",
+      "degree": 111,
+      "scales": 11,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 632136.442,
+      "mean_lower_lo": 875670.998,
+      "mean_lower_hi": 875670.998,
+      "improvements": 2000,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.008836250024614856,
+      "scoring_seconds": 0.006848160963272676
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C40_lambda1",
+      "cell": "51f204336f6d6b42b37c1182",
+      "C": "70",
+      "L0": 14,
+      "n": 1000000,
+      "epsilon": ".001",
+      "S": 1000000,
+      "effective": 1,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 4724778111.839728,
+      "branch": "chebyshev",
+      "degree": 84,
+      "scales": 10,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 826238.4995,
+      "mean_lower_lo": 909247.657,
+      "mean_lower_hi": 909247.657,
+      "improvements": 2000,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.010142743005417287,
+      "scoring_seconds": 0.00862605101428926
+    }
+  ],
+  "raw_file": "raw/51f204336f6d6b42b37c1182.npz",
+  "raw_sha256": "38e07220661f27f5895782469fe4a24cee2d92982e19291de468fe56e71e1a50"
+}

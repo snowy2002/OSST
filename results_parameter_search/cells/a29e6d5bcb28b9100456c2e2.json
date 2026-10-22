@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      9999
+    ],
+    "probabilities_exact": [
+      "326133126377143/326466426377143",
+      "100000000/979399279131429"
+    ],
+    "support": 10000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C20_lambda2",
+      "cell": "a29e6d5bcb28b9100456c2e2",
+      "C": "20",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".001",
+      "S": 10000,
+      "effective": 207,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 19587985.58262858,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 8646.713,
+      "mean_lower_lo": 8646.713,
+      "mean_lower_hi": 8646.713,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.0005297959432937205,
+      "scoring_seconds": 0.0005855979979969561
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C20_lambda2",
+      "cell": "a29e6d5bcb28b9100456c2e2",
+      "C": "70",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".001",
+      "S": 10000,
+      "effective": 207,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 68557949.53920002,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 9990.84,
+      "mean_lower_lo": 9990.84,
+      "mean_lower_hi": 9990.84,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.0004865970404352993,
+      "scoring_seconds": 0.000575096026295796
+    }
+  ],
+  "raw_file": "raw/a29e6d5bcb28b9100456c2e2.npz",
+  "raw_sha256": "14e382a1eca15fc80a7878831528ac2dbb43576303f99af2d326c33215c4f0f9"
+}

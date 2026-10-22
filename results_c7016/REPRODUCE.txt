@@ -1,0 +1,76 @@
+C0=70, L0=16 experiment (2026-10-22)
+==================================
+Start with report.html (self-contained Chinese report) or experiment_report.pdf.
+This artifact implements the real-mean theorem in c7016/algorithm.py; the older
+paper_reference.py remains the original/1025 reference and is not relabeled.
+
+FULL REPRODUCTION (from OSST project root)
+  python3 -m venv .venv
+  .venv/bin/python -m pip install -r requirements.txt
+  OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python -m c7016.run --phase all --out results_c7016_reproduced
+  OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python -m c7016.diagnostics --out results_c7016_reproduced
+  OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python -m c7016.validate --out results_c7016_reproduced --proof-and-tests
+  OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python -m c7016.report --out results_c7016_reproduced
+Use requirements-executed.txt for the exact executed environment. The primary
+code/data are frozen in protocol.json and source_snapshot/. Changed source/data
+must use a new output directory. Completed cells are resumed only after a raw
+file hash check. Seeds depend on fixed experiment identifiers, not scheduling.
+
+QUICK CHECK
+  .venv/bin/python -m pytest -q
+  OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python -m c7016.run --smoke --out /tmp/osst_c7016_smoke_new
+
+PUBLIC API (the required sampling mean is the real expression in plan output)
+  .venv/bin/python -m c7016.algorithm plan --n 3269018 --epsilon 0.1
+  .venv/bin/python -m c7016.algorithm test --n 3269018 --epsilon 0.1 --fingerprint fingerprint.json
+  .venv/bin/python -m c7016.algorithm demo --n 3269018 --epsilon 0.1
+The caller must meet the independent Poisson sampling model at the predeclared
+real mean. M is observed total, not a substitute for the mean. The RNG is a
+binary64 approximation; numerical certification concerns the supplied counts.
+
+BUILD ENGLISH PDF
+  cd results_c7016_reproduced
+  ../.tools/tectonic-0.17.0/tectonic experiment_report.tex --keep-logs
+The figures also have standalone PDF and PNG versions. report.html embeds its
+images but links to CSV/raw files in the same output directory.
+
+FINAL ARTIFACT MANIFEST (after building the PDF)
+  .venv/bin/python -m c7016.package --out results_c7016_reproduced
+  .venv/bin/python -m c7016.package --out results_c7016_reproduced --verify
+
+CONTENTS
+  protocol.json: frozen primary protocol, input hashes, environment.
+  diagnostics_protocol.json: disclosed post-primary numerical integration checks.
+  synthetic/natural/lifted.csv: primary risk, coverage, costs and numerical widths.
+  *_seed_blocks.csv: four independent random-seed blocks.
+  amplification.csv: actual independent 27-copy majority/median experiments.
+  natural_feasibility.csv: original record counts versus expected budgets.
+  finite_files.csv: all fixed-file attempts, retaining Poisson overflows.
+  duplication_stress/group_stress/group_holdout.csv: dependence/holdout checks.
+  public_fingerprint_runs.json: natural iid and descriptive fixed-file API calls.
+  full_polynomial_api_runs.json: explicit per-category Poisson simulations near
+    the branch threshold and at n=10^7, actual total M and exact API outputs.
+  runtime.csv: local parameter compilation, grouped sampling and scoring costs.
+  sampler_validation.json: Arb PMF checks and huge diffuse-population sampler test.
+  validation.json: independent raw-output, truth and confidence-bound audit.
+  proof_recheck/: recomputed exact analytic certificates, audit and logs.
+  tests_final.txt: all regression tests.
+  cells/: exact rational populations, real mean/scale details, raw hashes.
+  raw/: per-trial D, full required F1..FK, decision/coverage flags and score
+    enclosures. Counts above K are coarsened without claiming an observed M.
+    In amplified files each run is independent; median output is not a median
+    of raw scores from an unrelated method.
+  data_sources.json: pinned natural data and upstream license/attribution.
+
+LIMITS
+  Natural experiments resample finite observed empirical populations. They do
+  not discover unseen ecosystem support or verify iid field sampling.
+  Lifted empirical shapes are explicitly synthetic category splitting.
+  Fixed-file subsampling and dependence tests are outside the ideal iid claim.
+  Zero observed failures do not mean zero risk. Gap cases have no binary label.
+  Single-run confidence differs from the original and 1025 constants; use the
+  repeated-run comparison for a theoretical per-task 99% guarantee.
+  Every decision/coverage event is numerically enclosed; some exact integer
+  lower outputs are retained as intervals, with endpoints in the raw data.
+  Full-field acquisition time is not measured by compressed simulation speed.
+  No global constant-optimality or proof-assistant formalization is claimed.

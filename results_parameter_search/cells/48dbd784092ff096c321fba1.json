@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      999999999999
+    ],
+    "probabilities_exact": [
+      "1389086043073283/1397086043073275",
+      "8/1397086043073275"
+    ],
+    "support": 1000000000000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C40_lambda8",
+      "cell": "48dbd784092ff096c321fba1",
+      "C": "40",
+      "L0": 14,
+      "n": 1000000000000,
+      "epsilon": ".001",
+      "S": 1000000000000,
+      "effective": 825364244616,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 1397086043073275.0,
+      "branch": "chebyshev",
+      "degree": 214,
+      "scales": 13,
+      "trials": 2000,
+      "errors": 1092,
+      "coverage_errors": 0,
+      "mean_D": 999664536449.581,
+      "mean_lower_lo": 999847699860.18,
+      "mean_lower_hi": 999847699860.18,
+      "improvements": 1092,
+      "extra_rejects": 1092,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 1.9984014443252818e-15,
+      "sampling_seconds": 0.0171765020058956,
+      "scoring_seconds": 0.018990092008607462
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C40_lambda8",
+      "cell": "48dbd784092ff096c321fba1",
+      "C": "70",
+      "L0": 14,
+      "n": 1000000000000,
+      "epsilon": ".001",
+      "S": 1000000000000,
+      "effective": 825364244616,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 2444900575378231.5,
+      "branch": "chebyshev",
+      "degree": 162,
+      "scales": 12,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 999999168467.8955,
+      "mean_lower_lo": 999999168467.8955,
+      "mean_lower_hi": 999999168467.8955,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 3.3306690738754696e-15,
+      "sampling_seconds": 0.017542101006256416,
+      "scoring_seconds": 0.015453911008080468
+    }
+  ],
+  "raw_file": "raw/48dbd784092ff096c321fba1.npz",
+  "raw_sha256": "e2fdbfe4fc57cf7f6ec20b84c09320251fb3e4889fb5e172442fc9b4a641172b"
+}

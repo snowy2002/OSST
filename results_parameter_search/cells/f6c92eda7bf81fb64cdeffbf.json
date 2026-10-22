@@ -1,0 +1,48 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      999999999999
+    ],
+    "probabilities_exact": [
+      "852041906407763/1018708573074263",
+      "500/3056125719222789"
+    ],
+    "support": 1000000000000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C70_lambda4",
+      "cell": "f6c92eda7bf81fb64cdeffbf",
+      "C": "70",
+      "L0": 14,
+      "n": 1000000000000,
+      "epsilon": ".1",
+      "S": 1000000000000,
+      "effective": 388774856156,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 24449005753782.312,
+      "branch": "chebyshev",
+      "degree": 162,
+      "scales": 12,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 981684361906.4875,
+      "mean_lower_lo": 987550520692.366,
+      "mean_lower_hi": 987550520692.3795,
+      "improvements": 2000,
+      "extra_rejects": 0,
+      "nonunique_bounds": 27,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 1.1102230246251565e-16,
+      "sampling_seconds": 0.011794728023232892,
+      "scoring_seconds": 0.01133313201717101
+    }
+  ],
+  "raw_file": "raw/f6c92eda7bf81fb64cdeffbf.npz",
+  "raw_sha256": "1d7eb32b7585b8a83c8f71c8f95a17ac456b6dec37da7b3b5672a4d2b60cccae"
+}

@@ -1,0 +1,130 @@
+% Drop-in experimental section. Requires amsmath, amssymb, booktabs, hyperref.
+% Use only after integrating the finite-constant proof; see INTEGRATION.txt.
+\section{Finite-constant implementation and empirical evaluation}
+\label{sec:finite-experiments}
+We evaluate the original statistic with the refined constants
+$(C_0,L_0)=(70,14)$ and compare alternative branch thresholds.
+The sampling rule remains $M\sim\operatorname{Poi}(m)$ with
+$m=C_0n/(\varepsilon\log(en))$; all prescribed polynomial scales and
+degrees are retained. The finite-constant analysis gives single-run
+failure below $0.0009$ for $(70,14)$ and below $0.000057$ for $(70,16)$.
+These are analytic guarantees, not estimates obtained from the simulations.
+The expected sample coefficient is reduced by $93.17\%$ relative to the
+previous certified value 1025. This comparison concerns sampling means,
+not measured running time or dominance over other testers.
+
+\paragraph{Design and scope.}
+The primary constructed grid uses $n\in\mathcal N$, where
+\[
+\begin{aligned}
+\mathcal N=\{&1,2,10,10^3,442413,442414,1202604,1202605,\\
+             &3269017,3269018,24154952,24154953,10^9,10^{12}\},
+\end{aligned}
+\]
+and $\varepsilon\in\{0.001,0.1\}$, including both sides of each tested branch
+transition. We additionally use ten published abundance datasets as finite
+empirical distributions, category-split variants of those distributions,
+targeted head-and-rare-tail nulls, and diffuse alternative controls.
+Category splitting creates synthetic distributions; it does not add
+natural observations. The natural experiments use
+$\varepsilon\in\{0.01,0.1\}$ and thresholds chosen from the empirical
+support and effective-support boundaries. These choices use population
+truth to design evaluation instances, not to compute the tested statistic.
+
+Each method--configuration cell has 2,000 Monte Carlo trials in four
+independently keyed blocks of 500. A trial is one algorithm run, not a
+majority vote over the blocks. The four $C_0=70$ threshold variants share
+their sampled fingerprints; different constants use separate random
+streams. In total there are 4,424 method cells, 8,848,000 method--trial
+evaluations, and 5,116,000 independently generated simulation paths.
+The methods are $C_*=144(\log2)^2,L_0=14$, $C_0=70$ with
+$L_0\in\{14,15,16,18\}$, and $C_0=1025,L_0=1024$, with smaller
+constants included only in designated stress tests.
+
+\begin{table}[htbp]\centering\small
+\caption{Evaluation inventory for $(70,14)$. Binary trials exclude promise-gap
+instances. Coverage is assessed on all trials. The additional-rejection
+count beyond the observed-count decision is zero in every row.}
+\label{tab:finite-inventory}
+\begin{tabular}{lrrrr}
+\toprule
+Suite & Cells & All trials & Binary trials & Polynomial trials\\\midrule
+Constructed grid &486&972,000&860,000&648,000\\
+Empirical distributions &76&152,000&102,000&0\\
+Category-split empirical shapes &60&120,000&80,000&100,000\\
+Targeted null stress tests &347&694,000&694,000&450,000\\
+Diffuse alternative controls &28&56,000&56,000&0\\\midrule
+Total &997&1,994,000&1,792,000&1,198,000\\\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Risk and statistical precision.}
+The recommended pair has no observed binary error in 1,792,000 promised
+trials and no support-bound failure in 1,994,000 coverage trials.
+For each cell we also reconstruct the event that either required output
+fails; on gap instances only coverage is required. One-sided
+Clopper--Pearson bounds with Bonferroni correction over all 4,424 method
+cells give a simultaneous 95\% upper bound of approximately $0.56791\%$
+for every zero-error cell. This finite-grid uncertainty is larger than the
+analytic risk guarantees. We therefore do not interpret the absence of
+errors as empirical confirmation of their precise numerical values or as
+a distribution-free empirical proof. Heterogeneous cells are not pooled
+to assert a worst-case risk bound.
+
+\paragraph{What the polynomial contributes on this grid.}
+At the same sampling mean, returning the clipped observed count also has
+no observed binary or coverage failures on the recommended method's grid.
+Indeed, for all $n\le10^{12}$ and $0<\varepsilon<1$, a separate discovery
+coupling and interval-certified Poisson bound give pure-count error below
+$1.863\times10^{-12}$ at this mean. Thus the current experiments cannot
+demonstrate a binary-power advantage of the polynomial at the certified
+budget. Their positive polynomial result concerns the magnitude of the
+reported support lower bound: 442,000 of the recommended method's trials
+have a numerically certified increase over the clipped observed count.
+In the 622 paired primary configurations, lowering $L_0$ from 16 to 14
+gives a strictly positive certified sample-mean increase in 50 configurations.
+A post-hoc one-sided Hoeffding analysis of paired gains normalized by $n$,
+with simultaneous 95\% coverage over all 622 configurations, establishes
+a positive expected gain in 14 configurations. This conservative result
+does not imply an absence of expected gain in the other configurations.
+
+\paragraph{Stress tests and natural-data limitations.}
+The targeted head-and-rare-tail nulls expose false rejection for smaller
+constants. For example, a tested $C_0=60,L_0=14$ configuration has 127
+errors in 2,000 trials ($6.35\%$), whereas its $C_0=70$ comparator has
+none on the same population. The targeted population grids differ across
+constants, so their maxima are stress diagnostics rather than a common-grid
+risk curve. The finite tests at 69 also show no failures; this is compatible
+with the necessary-constant theorem, which uses an asymptotic sequence
+with $\varepsilon$ depending on $n$.
+
+The ten empirical datasets contain 50,994 original records and between
+4 and 240 observed categories each. All unmodified empirical instances
+use the counting branch. Their iid resampling experiments assess finite
+empirical populations and cannot establish the number of unseen species
+or independence of field observations. Only 13 of the 76 empirical
+configurations have expected budgets no larger than the available record
+count, and even those do not guarantee completion of a Poisson draw from
+a fixed file. Sampling with replacement from a file supplies more
+simulation trials, not more independent field observations.
+
+\paragraph{Numerics and reproducibility.}
+Equal-probability category groups allow multinomial fingerprint simulation
+without enumerating every category. This implements the ideal Poisson
+fingerprint law in real arithmetic; the sampling probabilities and random
+generator are standard binary64 approximations. Scores and relevant
+decision thresholds are enclosed using outward floating bounds with Arb
+refinement. In 37,071 recommended-method trials the saved integer lower
+output is an interval rather than a single resolved integer; the binary
+and coverage events are nevertheless resolved. Lower-bound comparisons
+use conservative interval endpoints, not their midpoints.
+
+The artifact contains exact rational populations and truth labels, keyed
+seeds, raw fingerprints, event arrays, source/data hashes, and code for
+reconstructing all reported counts. A documented precision amendment for
+the $C_0=6$ stress test increased arithmetic precision after a numerical
+failure; completed raw outcomes were retained. Grouped simulation timings
+do not measure physical sample collection, and cached batch scoring is not
+an end-to-end runtime comparison. The current experiments support a
+finite-constant and lower-bound-strength study; they do not establish
+universal empirical superiority over counting or prior support testers.

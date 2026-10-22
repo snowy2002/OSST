@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      9999
+    ],
+    "probabilities_exact": [
+      "335393001300343/337892751300343",
+      "250000000/337892751300343"
+    ],
+    "support": 10000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C69_lambda.5",
+      "cell": "67a84f9b000ef0b0082976c2",
+      "C": "69",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".1",
+      "S": 10000,
+      "effective": 1,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 675785.502600686,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 3936.3075,
+      "mean_lower_lo": 3936.3075,
+      "mean_lower_hi": 3936.3075,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.00035489900619722903,
+      "scoring_seconds": 0.00032579799881204963
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C69_lambda.5",
+      "cell": "67a84f9b000ef0b0082976c2",
+      "C": "70",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".1",
+      "S": 10000,
+      "effective": 1,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 685579.4953920003,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 3977.6375,
+      "mean_lower_lo": 3977.6375,
+      "mean_lower_hi": 3977.6375,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.00047839703620411456,
+      "scoring_seconds": 0.000520495988894254
+    }
+  ],
+  "raw_file": "raw/67a84f9b000ef0b0082976c2.npz",
+  "raw_sha256": "1f340f9423827320f333e873bdd67ad83055bec7d562fb98b087b2ed3ea874bb"
+}

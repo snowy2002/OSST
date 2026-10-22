@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "checks": 60725,
+  "complete_slabs": 520,
+  "half_lines": 2,
+  "experiment_cells": 997,
+  "method_rows": 4424,
+  "scope": "Independent 512-bit Arb formulas, raw hashes, exact truth and event consistency; not formal verification."
+}

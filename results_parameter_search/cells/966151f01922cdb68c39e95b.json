@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      9999
+    ],
+    "probabilities_exact": [
+      "326022026377143/326466426377143",
+      "400000000/2938197837394287"
+    ],
+    "support": 10000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C60_lambda8",
+      "cell": "966151f01922cdb68c39e95b",
+      "C": "60",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".001",
+      "S": 10000,
+      "effective": 2655,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 58763956.74788574,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 9996.6455,
+      "mean_lower_lo": 9996.6455,
+      "mean_lower_hi": 9996.6455,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.0003052979882340878,
+      "scoring_seconds": 0.0003281979588791728
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C60_lambda8",
+      "cell": "966151f01922cdb68c39e95b",
+      "C": "70",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".001",
+      "S": 10000,
+      "effective": 2655,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 68557949.53920002,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 9999.105,
+      "mean_lower_lo": 9999.105,
+      "mean_lower_hi": 9999.105,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.0002691989648155868,
+      "scoring_seconds": 0.0003018980205524713
+    }
+  ],
+  "raw_file": "raw/966151f01922cdb68c39e95b.npz",
+  "raw_sha256": "0da415bceba48528fc6e604885ad47dd3398ae27f297d6a355b62735b9168c31"
+}

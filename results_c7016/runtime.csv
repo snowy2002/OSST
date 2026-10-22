@@ -1,0 +1,5 @@
+n,branch,degree,scales,trials,compile_seconds,grouped_sampling_seconds,scoring_seconds_median,scoring_seconds_min,scoring_seconds_max,scope
+1000,observed_count,0,0,1000,0.0001332889951299876,0.00017948501044884324,5.119599518366158e-05,4.469600389711559e-05,6.569401011802256e-05,"Local compute only, excludes physical sample collection and file writing"
+3269018,chebyshev,90,10,1000,0.028503012988949195,0.0032631270005367696,0.002795365988276899,0.002495891007129103,0.003555601986590773,"Local compute only, excludes physical sample collection and file writing"
+1000000000,chebyshev,123,11,1000,0.06553111100220121,0.00395196900353767,0.0037328869802877307,0.003542003018083051,0.003952368977479637,"Local compute only, excludes physical sample collection and file writing"
+1000000000000,chebyshev,162,12,1000,0.07988820801256225,0.005619730014586821,0.007091306004440412,0.006306972005404532,0.00987127298139967,"Local compute only, excludes physical sample collection and file writing"

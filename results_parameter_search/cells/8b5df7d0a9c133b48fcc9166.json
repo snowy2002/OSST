@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      9999
+    ],
+    "probabilities_exact": [
+      "326133126377143/326466426377143",
+      "100000000/979399279131429"
+    ],
+    "support": 10000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C10_lambda1",
+      "cell": "8b5df7d0a9c133b48fcc9166",
+      "C": "10",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".001",
+      "S": 10000,
+      "effective": 207,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 9793992.79131429,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 6321.261,
+      "mean_lower_lo": 6321.261,
+      "mean_lower_hi": 6321.261,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.0003479979932308197,
+      "scoring_seconds": 0.00040599802741780877
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C10_lambda1",
+      "cell": "8b5df7d0a9c133b48fcc9166",
+      "C": "70",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".001",
+      "S": 10000,
+      "effective": 207,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 68557949.53920002,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 9990.9995,
+      "mean_lower_lo": 9990.9995,
+      "mean_lower_hi": 9990.9995,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.00033709799754433334,
+      "scoring_seconds": 0.00030049800989218056
+    }
+  ],
+  "raw_file": "raw/8b5df7d0a9c133b48fcc9166.npz",
+  "raw_sha256": "a516bae1d38c57c06e262b672fba8759563b5c83f2197cdae39efd8c6261b539"
+}

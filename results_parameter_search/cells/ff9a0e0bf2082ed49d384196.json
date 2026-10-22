@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      9999
+    ],
+    "probabilities_exact": [
+      "298691426377143/326466426377143",
+      "25000000000/2938197837394287"
+    ],
+    "support": 10000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C6_lambda.5",
+      "cell": "ff9a0e0bf2082ed49d384196",
+      "C": "6",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".1",
+      "S": 10000,
+      "effective": 1,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 58763.95674788574,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 3936.193,
+      "mean_lower_lo": 3936.193,
+      "mean_lower_hi": 3936.193,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.0003582969948183745,
+      "scoring_seconds": 0.0003354969958309084
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C6_lambda.5",
+      "cell": "ff9a0e0bf2082ed49d384196",
+      "C": "70",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".1",
+      "S": 10000,
+      "effective": 1,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 685579.4953920003,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 9970.64,
+      "mean_lower_lo": 9970.64,
+      "mean_lower_hi": 9970.64,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.0005293950089253485,
+      "scoring_seconds": 0.0003036980051547289
+    }
+  ],
+  "raw_file": "raw/ff9a0e0bf2082ed49d384196.npz",
+  "raw_sha256": "59703ef404b53035a2b9181c70ee96fc549f0b05e60cc43f4d49d4f45afcbed3"
+}

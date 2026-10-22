@@ -1,0 +1,123 @@
+{
+  "design": {
+    "seed": 202610224142,
+    "blocks": 4,
+    "trials_per_block": 500,
+    "ns": [
+      1,
+      2,
+      10,
+      1000,
+      442413,
+      442414,
+      1202604,
+      1202605,
+      3269017,
+      3269018,
+      24154952,
+      24154953,
+      1000000000,
+      1000000000000
+    ],
+    "epsilons": [
+      ".001",
+      ".1"
+    ],
+    "natural_epsilons": [
+      ".01",
+      ".1"
+    ],
+    "lifted_targets": [
+      1000000,
+      1000000000
+    ],
+    "adversarial_C": [
+      "6",
+      "10",
+      "20",
+      "40",
+      "60",
+      "69",
+      "70"
+    ],
+    "adversarial_n": [
+      10000,
+      1000000,
+      1000000000000
+    ],
+    "adversarial_eps": [
+      ".001",
+      ".1"
+    ],
+    "adversarial_lambda": [
+      ".25",
+      ".5",
+      "1",
+      "2",
+      "4",
+      "8",
+      "16",
+      "32",
+      "64",
+      "128"
+    ],
+    "methods": [
+      [
+        "star",
+        14
+      ],
+      [
+        "70",
+        14
+      ],
+      [
+        "70",
+        15
+      ],
+      [
+        "70",
+        16
+      ],
+      [
+        "70",
+        18
+      ],
+      [
+        "1025",
+        1024
+      ]
+    ],
+    "sampling": "Independent Poisson category counts via grouped fingerprints; binary64 RNG.",
+    "pairing": "C=70 branches share each fingerprint. Different C uses independent streams.",
+    "natural_scope": "Iid draws from empirical distributions; lifted labels are constructed data.",
+    "timing_scope": "Grouped simulation and scoring only; not physical data collection.",
+    "inferential_scope": "Per-cell exact binomial intervals; not a distribution-free empirical proof."
+  },
+  "source_sha256": {
+    "parameter_search/experiments.py": "5b95b961500b7d940fb2a801ed9e90658db214bc638207fa4520496cd7ea9c10",
+    "parameter_search/algorithm.py": "a09b9902bf1425fdec76b776ea24639e319ae53965f13871b552c5492318dba0",
+    "c7016/populations.py": "3213bac31dbb1853411f2cf527d73f724232dbd2c8eec89e948a0f7b9e9979c5",
+    "c7016/algorithm.py": "cae079786afdddfee2e1d0ba9d1791850dcbc279781b4f6e8b3ff210d7bad866",
+    "paper_reference.py": "be678f4fbab15b55170a28fc8437c614f5bb4f88cecac4afa37add2090b8ac0b",
+    "guaranteed.py": "a7c26f702f9f6b0c43eb61b9c3907bc6b06a1a4ae5e2d86a3ed89708d19f59b9",
+    "benchmark_core.py": "9ac85b03b0e5502b450da4d6dc9e8894eb6e2da36f7f9931f307e2efcb4926d8",
+    "c1025/core.py": "e24c816c06e8b447d8f2b11855aed39b85c5f3e555269df50203646f910f4bad",
+    "c1025/data.py": "a78f005794a2ee357c77294e7218ac5b1f72390502327f42a538b1063163ed98"
+  },
+  "data_sha256": {
+    "bci.npz": "4a66148c4e7c499f0f7485d56179e21474099e7a04a96b85e76948bdcf581a13",
+    "bci_groups.npz": "70542adcf8f0650b36cb8f1947cabb0329cbdf43814d4af484fe61cf4a93d452",
+    "bird_north.npz": "b761fd1b2f1db6d1157b17049b1bb879da716bddf3c7b14a27344643454b2cc3",
+    "bird_south.npz": "88eea57330ae3a0a0d42bef2362d8ef0e74aee792415a20c275fb16c63a86f6e",
+    "fish_2007_seine.npz": "c818df42a370bfc05a646a4d08136dda8dc5a904404eceafde6f93881cc8add7",
+    "fish_2007_seine_groups.npz": "6ffff84f14375095f1df4e19eee25ad41960bdf08ce8760010880311e5b3011b",
+    "fish_2008_seine.npz": "ecc75e6e1fdd25b1de371e2240c01bd3dba46455062d8e1709e879d65d53c396",
+    "fish_2008_seine_groups.npz": "6211bc5eacad625daa285568745edd923d2fcc8c46dfcd58ce635a160cf69077",
+    "mite.npz": "ad1b5a99eee1f4fe95dd62faa6f965b3283c71106e44ff02e59bf8a4d1037624",
+    "mite_groups.npz": "1a7598e06d68b8f640749a376d7556934fd9739aacfcfb767b6b0134805aa2cf",
+    "moths.npz": "a3cc88807471fd6cb28e0d95141a5e9469ff1d63dcb124af3784aada4d5ecd5e",
+    "okland.npz": "08c8f3d8106d580b7bff64d0f8bd8e12b5806947df39a55db9b0a499d6509fe8",
+    "spider_girdled.npz": "7ff3d67d98a086b69792a186cd3d7186944100deb8326066a2821382614536b2",
+    "spider_logged.npz": "bb4e2008d0bd3ef82c1d1b10f5ee9637527b70e5e21d912534316288550813a6"
+  }
+}

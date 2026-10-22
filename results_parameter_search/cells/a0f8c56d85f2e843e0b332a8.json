@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      9999
+    ],
+    "probabilities_exact": [
+      "193146426377143/326466426377143",
+      "40000000000/979399279131429"
+    ],
+    "support": 10000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C10_lambda4",
+      "cell": "a0f8c56d85f2e843e0b332a8",
+      "C": "10",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".1",
+      "S": 10000,
+      "effective": 7552,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 97939.9279131429,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 9816.773,
+      "mean_lower_lo": 9816.773,
+      "mean_lower_hi": 9816.773,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.0003960970207117498,
+      "scoring_seconds": 0.0003586999955587089
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C10_lambda4",
+      "cell": "a0f8c56d85f2e843e0b332a8",
+      "C": "70",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".1",
+      "S": 10000,
+      "effective": 7552,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 685579.4953920003,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 10000.0,
+      "mean_lower_lo": 10000.0,
+      "mean_lower_hi": 10000.0,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.00030759599758312106,
+      "scoring_seconds": 0.0003383000148460269
+    }
+  ],
+  "raw_file": "raw/a0f8c56d85f2e843e0b332a8.npz",
+  "raw_sha256": "0a55b4657ba89918b9400ba1eda55d12e5e95523ec208ec5fa9ea973041f8ed7"
+}

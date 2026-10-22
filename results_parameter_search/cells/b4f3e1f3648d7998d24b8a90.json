@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      999999
+    ],
+    "probabilities_exact": [
+      "2248227673971299/2249894338971299",
+      "5000000/6749683016913897"
+    ],
+    "support": 1000000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C10_lambda.5",
+      "cell": "b4f3e1f3648d7998d24b8a90",
+      "C": "10",
+      "L0": 14,
+      "n": 1000000,
+      "epsilon": ".001",
+      "S": 1000000,
+      "effective": 1,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 674968301.6913897,
+      "branch": "chebyshev",
+      "degree": 221,
+      "scales": 13,
+      "trials": 2000,
+      "errors": 1069,
+      "coverage_errors": 0,
+      "mean_D": 393474.5395,
+      "mean_lower_lo": 955242.997,
+      "mean_lower_hi": 955242.997,
+      "improvements": 2000,
+      "extra_rejects": 1069,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.0159705089754425,
+      "scoring_seconds": 0.011707134981406853
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C10_lambda.5",
+      "cell": "b4f3e1f3648d7998d24b8a90",
+      "C": "70",
+      "L0": 14,
+      "n": 1000000,
+      "epsilon": ".001",
+      "S": 1000000,
+      "effective": 1,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 4724778111.839728,
+      "branch": "chebyshev",
+      "degree": 84,
+      "scales": 10,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 969809.323,
+      "mean_lower_lo": 975824.095,
+      "mean_lower_hi": 975824.095,
+      "improvements": 2000,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 2.220446049250313e-16,
+      "sampling_seconds": 0.00790135600254871,
+      "scoring_seconds": 0.0055453680397477
+    }
+  ],
+  "raw_file": "raw/b4f3e1f3648d7998d24b8a90.npz",
+  "raw_sha256": "f3bb73edab626efc2cf4b371650217417cb1a4374ae76bcae0faf3089fca414d"
+}

@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      9999
+    ],
+    "probabilities_exact": [
+      "323800026377143/326466426377143",
+      "800000000/979399279131429"
+    ],
+    "support": 10000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C20_lambda16",
+      "cell": "7fe8f7cce2b8e30f975aa65a",
+      "C": "20",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".001",
+      "S": 10000,
+      "effective": 8776,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 19587985.58262858,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 9999.999,
+      "mean_lower_lo": 9999.999,
+      "mean_lower_hi": 9999.999,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.0003396980173420161,
+      "scoring_seconds": 0.0004138980293646455
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C20_lambda16",
+      "cell": "7fe8f7cce2b8e30f975aa65a",
+      "C": "70",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".001",
+      "S": 10000,
+      "effective": 8776,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 68557949.53920002,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 10000.0,
+      "mean_lower_lo": 10000.0,
+      "mean_lower_hi": 10000.0,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.0002453989873174578,
+      "scoring_seconds": 0.00032189799821935594
+    }
+  ],
+  "raw_file": "raw/7fe8f7cce2b8e30f975aa65a.npz",
+  "raw_sha256": "536f125fb706461ab483a6f173a2ab58e3e35bf8f3c095ef05e44228aaf44637"
+}

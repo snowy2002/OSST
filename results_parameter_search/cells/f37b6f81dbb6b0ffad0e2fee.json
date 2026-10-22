@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      9999
+    ],
+    "probabilities_exact": [
+      "337492791300343/337892751300343",
+      "40000000/337892751300343"
+    ],
+    "support": 10000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C69_lambda8",
+      "cell": "f37b6f81dbb6b0ffad0e2fee",
+      "C": "69",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".001",
+      "S": 10000,
+      "effective": 1553,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 67578550.2600686,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 9996.7,
+      "mean_lower_lo": 9996.7,
+      "mean_lower_hi": 9996.7,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.00039400000241585076,
+      "scoring_seconds": 0.0004459950141608715
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C69_lambda8",
+      "cell": "f37b6f81dbb6b0ffad0e2fee",
+      "C": "70",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".001",
+      "S": 10000,
+      "effective": 1553,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 68557949.53920002,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 9996.9165,
+      "mean_lower_lo": 9996.9165,
+      "mean_lower_hi": 9996.9165,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.0003032989625353366,
+      "scoring_seconds": 0.00030799699015915394
+    }
+  ],
+  "raw_file": "raw/f37b6f81dbb6b0ffad0e2fee.npz",
+  "raw_sha256": "500f685fb60172da6e74d83fe1a2b9d784065251057c71b16b7f46819be534b0"
+}

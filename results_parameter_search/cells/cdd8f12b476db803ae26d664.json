@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      999999999999
+    ],
+    "probabilities_exact": [
+      "45216775056275/55883441722931",
+      "32/167650325168793"
+    ],
+    "support": 1000000000000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C60_lambda4",
+      "cell": "cdd8f12b476db803ae26d664",
+      "C": "60",
+      "L0": 14,
+      "n": 1000000000000,
+      "epsilon": ".1",
+      "S": 1000000000000,
+      "effective": 476092733848,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 20956290646099.125,
+      "branch": "chebyshev",
+      "degree": 174,
+      "scales": 12,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 981684357253.654,
+      "mean_lower_lo": 988569692449.265,
+      "mean_lower_hi": 988569692449.2875,
+      "improvements": 2000,
+      "extra_rejects": 0,
+      "nonunique_bounds": 45,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 1.1102230246251565e-16,
+      "sampling_seconds": 0.012394124991260469,
+      "scoring_seconds": 0.012122227984946221
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C60_lambda4",
+      "cell": "cdd8f12b476db803ae26d664",
+      "C": "70",
+      "L0": 14,
+      "n": 1000000000000,
+      "epsilon": ".1",
+      "S": 1000000000000,
+      "effective": 476092733848,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 24449005753782.312,
+      "branch": "chebyshev",
+      "degree": 162,
+      "scales": 12,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 990596435372.156,
+      "mean_lower_lo": 992144864536.1295,
+      "mean_lower_hi": 992144864536.1324,
+      "improvements": 2000,
+      "extra_rejects": 0,
+      "nonunique_bounds": 6,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 4.440892098500626e-16,
+      "sampling_seconds": 0.011863030027598143,
+      "scoring_seconds": 0.011219233041629195
+    }
+  ],
+  "raw_file": "raw/cdd8f12b476db803ae26d664.npz",
+  "raw_sha256": "4e5a7cd61598c0aa3cd5320a186c2d77974693e336b25df353674a1e2f846e27"
+}

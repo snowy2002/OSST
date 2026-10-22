@@ -1,0 +1,38 @@
+{
+  "passed": true,
+  "examples": [
+    {
+      "n": 16,
+      "epsilon_exact": "255/256",
+      "samples": 9,
+      "null_error_bound": 0.10539922456186433,
+      "alternative_error_bound_exact": "153/16384",
+      "alternative_error_bound": 0.00933837890625
+    },
+    {
+      "n": 100,
+      "epsilon_exact": "9999/10000",
+      "samples": 21,
+      "null_error_bound": 0.1224564282529819,
+      "alternative_error_bound_exact": "2121/10000000",
+      "alternative_error_bound": 0.0002121
+    },
+    {
+      "n": 10000,
+      "epsilon_exact": "99999999/100000000",
+      "samples": 201,
+      "null_error_bound": 0.13398867466880499,
+      "alternative_error_bound_exact": "2010201/100000000000000",
+      "alternative_error_bound": 2.010201e-08
+    },
+    {
+      "n": 1000000,
+      "epsilon_exact": "999999999999/1000000000000",
+      "samples": 2001,
+      "null_error_bound": 0.13520001559846748,
+      "alternative_error_bound_exact": "2001002001/1000000000000000000000",
+      "alternative_error_bound": 2.001002001e-12
+    }
+  ],
+  "scope": "Numerical examples of the analytic collision-test lemma in theory_scope.tex; not simulation."
+}

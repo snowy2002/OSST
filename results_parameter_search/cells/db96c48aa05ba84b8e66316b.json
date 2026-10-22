@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      9999
+    ],
+    "probabilities_exact": [
+      "326438651377143/326466426377143",
+      "25000000/2938197837394287"
+    ],
+    "support": 10000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C60_lambda.5",
+      "cell": "db96c48aa05ba84b8e66316b",
+      "C": "60",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".001",
+      "S": 10000,
+      "effective": 1,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 58763956.74788574,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 3935.031,
+      "mean_lower_lo": 3935.031,
+      "mean_lower_hi": 3935.031,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.00035589898470789194,
+      "scoring_seconds": 0.00031539698829874396
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C60_lambda.5",
+      "cell": "db96c48aa05ba84b8e66316b",
+      "C": "70",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".001",
+      "S": 10000,
+      "effective": 1,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 68557949.53920002,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 4420.0095,
+      "mean_lower_lo": 4420.0095,
+      "mean_lower_hi": 4420.0095,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.0002726979728322476,
+      "scoring_seconds": 0.00029189797351136804
+    }
+  ],
+  "raw_file": "raw/db96c48aa05ba84b8e66316b.npz",
+  "raw_sha256": "41ce16d2cb1a04b89f719951fe1b44f44ad6e652f40c39078b2bf85fae631921"
+}

@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      9999
+    ],
+    "probabilities_exact": [
+      "104266426377143/326466426377143",
+      "200000000000/2938197837394287"
+    ],
+    "support": 10000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C6_lambda4",
+      "cell": "8929f2e0fe9af3d6501a522e",
+      "C": "6",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".1",
+      "S": 10000,
+      "effective": 8531,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 58763.95674788574,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 9816.686,
+      "mean_lower_lo": 9816.686,
+      "mean_lower_hi": 9816.686,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.00037089697434566915,
+      "scoring_seconds": 0.0003559970064088702
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C6_lambda4",
+      "cell": "8929f2e0fe9af3d6501a522e",
+      "C": "70",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".1",
+      "S": 10000,
+      "effective": 8531,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 685579.4953920003,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 10000.0,
+      "mean_lower_lo": 10000.0,
+      "mean_lower_hi": 10000.0,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.00039549695793539286,
+      "scoring_seconds": 0.0006364940200001001
+    }
+  ],
+  "raw_file": "raw/8929f2e0fe9af3d6501a522e.npz",
+  "raw_sha256": "bdd07e5200ef7d22c6c1615650c1e61ae0bd057289b5b514f0f2557883bb70fa"
+}

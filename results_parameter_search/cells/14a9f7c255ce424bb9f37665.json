@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      9999
+    ],
+    "probabilities_exact": [
+      "309801426377143/326466426377143",
+      "5000000000/979399279131429"
+    ],
+    "support": 10000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C10_lambda.5",
+      "cell": "14a9f7c255ce424bb9f37665",
+      "C": "10",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".1",
+      "S": 10000,
+      "effective": 1,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 97939.9279131429,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 3935.7805,
+      "mean_lower_lo": 3935.7805,
+      "mean_lower_hi": 3935.7805,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.00033839698880910873,
+      "scoring_seconds": 0.0003100989852100611
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C10_lambda.5",
+      "cell": "14a9f7c255ce424bb9f37665",
+      "C": "70",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".1",
+      "S": 10000,
+      "effective": 1,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 685579.4953920003,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 9697.586,
+      "mean_lower_lo": 9697.586,
+      "mean_lower_hi": 9697.586,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.00046899798326194286,
+      "scoring_seconds": 0.0004286969779059291
+    }
+  ],
+  "raw_file": "raw/14a9f7c255ce424bb9f37665.npz",
+  "raw_sha256": "ec97b943d15c99751976ce209fb801cd6ee68b7e6f7619cb37e0af64f954e252"
+}

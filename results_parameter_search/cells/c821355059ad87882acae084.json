@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      9999
+    ],
+    "probabilities_exact": [
+      "325077676377143/326466426377143",
+      "1250000000/2938197837394287"
+    ],
+    "support": 10000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C60_lambda.25",
+      "cell": "c821355059ad87882acae084",
+      "C": "60",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".1",
+      "S": 10000,
+      "effective": 1,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 587639.5674788574,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 2214.939,
+      "mean_lower_lo": 2214.939,
+      "mean_lower_hi": 2214.939,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.0003288959851488471,
+      "scoring_seconds": 0.000299000006634742
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C60_lambda.25",
+      "cell": "c821355059ad87882acae084",
+      "C": "70",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".1",
+      "S": 10000,
+      "effective": 1,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 685579.4953920003,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 2529.756,
+      "mean_lower_lo": 2529.756,
+      "mean_lower_hi": 2529.756,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.00029279899899847806,
+      "scoring_seconds": 0.0002983979939017445
+    }
+  ],
+  "raw_file": "raw/c821355059ad87882acae084.npz",
+  "raw_sha256": "8e72a8384448aabaf6a7ad87ed80ce2b03614e66f44bde597205ee8f5149a3fd"
+}

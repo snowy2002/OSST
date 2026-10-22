@@ -1,0 +1,9 @@
+dataset,n,epsilon,truth,m,trials,errors,error_rate,mean_realized_records,scope,error_upper95_simultaneous
+mite,28,0.01,No,45242.55481006212,2000,0,0.0,45257.204,compound-Poisson whole-group resampling,0.0025343699556337916
+mite,15,0.1,No,2831.6768734357743,2000,0,0.0,2804.6395,compound-Poisson whole-group resampling,0.0025343699556337916
+bci,159,0.01,No,183393.89829103302,2000,0,0.0,183040.5935,compound-Poisson whole-group resampling,0.0025343699556337916
+bci,78,0.1,No,10192.82581273741,2000,0,0.0,10189.726,compound-Poisson whole-group resampling,0.0025343699556337916
+fish_2007_seine,4,0.01,No,11733.673957499346,2000,0,0.0,11693.76,compound-Poisson whole-group resampling,0.0025343699556337916
+fish_2007_seine,1,0.1,No,700.0,2000,0,0.0,695.47,compound-Poisson whole-group resampling,0.0025343699556337916
+fish_2008_seine,3,0.01,No,10006.612518850592,2000,0,0.0,10042.403,compound-Poisson whole-group resampling,0.0025343699556337916
+fish_2008_seine,1,0.1,No,700.0,2000,0,0.0,708.864,compound-Poisson whole-group resampling,0.0025343699556337916

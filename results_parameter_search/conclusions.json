@@ -1,0 +1,29 @@
+{
+  "recommendation": {
+    "C": 70,
+    "L0": 14,
+    "repeats": 1,
+    "failure_upper": 0.0009
+  },
+  "binary_only_alternative": {
+    "C": 70,
+    "L0": 16,
+    "repeats": 1,
+    "failure_upper": 5.7e-05
+  },
+  "integer_C_optimality_scope": "Unchanged construction, fixed finite L0>1, all n and epsilon, fixed odd majority amplification.",
+  "necessary_C_interval": [
+    "69.00627138",
+    "69.00627139"
+  ],
+  "sufficient_real_C": "144*(ln 2)^2",
+  "L0_minimality": "Unresolved; 14 is sufficient.",
+  "recommended_trials": 1994000,
+  "recommended_poly_trials": 1198000,
+  "recommended_errors": 0,
+  "recommended_coverage_errors": 0,
+  "paired_improved_cells": 50,
+  "independent_sample_paths": 5116000,
+  "exact_checks": 32752,
+  "audit_checks": 60725
+}

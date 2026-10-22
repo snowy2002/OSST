@@ -1,0 +1,79 @@
+{
+  "population": {
+    "multiplicities": [
+      1,
+      9999
+    ],
+    "probabilities_exact": [
+      "337692771300343/337892751300343",
+      "20000000/337892751300343"
+    ],
+    "support": 10000
+  },
+  "rows": [
+    {
+      "suite": "adversarial",
+      "scenario": "target_C69_lambda4",
+      "cell": "b31204fb9083f7cc0e1016f4",
+      "C": "69",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".001",
+      "S": 10000,
+      "effective": 1,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 67578550.2600686,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 9817.2595,
+      "mean_lower_lo": 9817.2595,
+      "mean_lower_hi": 9817.2595,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.00034739598049782217,
+      "scoring_seconds": 0.000331100047333166
+    },
+    {
+      "suite": "adversarial",
+      "scenario": "target_C69_lambda4",
+      "cell": "b31204fb9083f7cc0e1016f4",
+      "C": "70",
+      "L0": 14,
+      "n": 10000,
+      "epsilon": ".001",
+      "S": 10000,
+      "effective": 1,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "mean": 68557949.53920002,
+      "branch": "observed_count",
+      "degree": 0,
+      "scales": 0,
+      "trials": 2000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "mean_D": 9827.1195,
+      "mean_lower_lo": 9827.1195,
+      "mean_lower_hi": 9827.1195,
+      "improvements": 0,
+      "extra_rejects": 0,
+      "nonunique_bounds": 0,
+      "refinements": 0,
+      "arb_audits": 1,
+      "pmf_defect": 0.0,
+      "sampling_seconds": 0.0003110980032943189,
+      "scoring_seconds": 0.000301197957014665
+    }
+  ],
+  "raw_file": "raw/b31204fb9083f7cc0e1016f4.npz",
+  "raw_sha256": "7d2be1c2e6983592dc157517220ee65d50052452f7b14e72ad96cea1f9c56f9c"
+}
