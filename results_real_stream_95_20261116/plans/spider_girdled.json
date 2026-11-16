@@ -1,0 +1,51 @@
+{
+  "population": "spider_girdled",
+  "plans": [
+    {
+      "single": null,
+      "amplified": null,
+      "count95": null
+    },
+    {
+      "single": null,
+      "amplified": null,
+      "count95": null
+    },
+    {
+      "single": null,
+      "amplified": null,
+      "count95": null
+    },
+    {
+      "single": null,
+      "amplified": null,
+      "count95": null
+    },
+    {
+      "single": null,
+      "amplified": null,
+      "count95": null
+    },
+    {
+      "single": null,
+      "amplified": null,
+      "count95": {
+        "n": 3,
+        "m": 119,
+        "copies": 1,
+        "budget": 168,
+        "mean_limit": 119,
+        "tail_certificate": "[0.0024755427968681630128833952711773595216153501914541 +/- 2.63e-53]"
+      }
+    }
+  ],
+  "budgets": [
+    1,
+    8,
+    16,
+    42,
+    84,
+    168
+  ],
+  "refinements": 0
+}

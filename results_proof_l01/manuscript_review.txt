@@ -1,0 +1,141 @@
+Independent review of C70_L1_proof.tex
+Date: 2026-11-04
+Scope: analytic proof structure, theorem scope, range coverage, and correspondence
+to the supplied certificates. This review does not itself replace the independent
+deterministic replay of the full certificate package.
+
+Overall assessment
+The principal analytic chain is correct. I found no counterexample or missing
+parameter range in the stated C0=70,L0=1 sufficient-constant result. The new
+homogenization argument, common F0/F1 envelope, deterministic anchor, positive
+one-dimensional interval enclosure, full-line MGF certificate, and discovery
+coupling fit together correctly. The old (70,14) theorem explicitly covers the
+same real Poisson mean, countable support, and simultaneous binary/interval
+statement, so transferring it for L>=14 is legitimate.
+
+The draft needs the local clarifications below before being called fully
+self-contained. None requires changing the estimator or the calculated bounds.
+
+1. Clarify the anchor event in the common-event probability statement
+Location: around line 377, immediately before the diagonal formula.
+The sentence currently says that homogenization bounds the probability of the
+union of the selected scales by the diagonal supremum. For K=4, the sharpened
+threshold was derived only on N_h>=K, so the literal unconditional statement
+omits the anchor failure. The next paragraph adds this failure and the numerical
+calculation is correct, but the intermediate sentence should explicitly say:
+  P((union of selected upper-scale events) intersect {N_h>=K})
+  <= sup_lambda Q_{n,S,y}(lambda).
+Then add P(N_h<K) and the remaining-scale bounds. The required fixed choice of
+h, before sampling, and the absence of conditioning on the other counts are
+already correctly explained.
+
+2. Make the q definition agree with the K=2 equality
+Location: lines 340 and 364.
+The first line permits any q_j >= max(0,max_odd>=3 u), whereas the definition of
+q_{h,j} uses the exact maximum. Under this more general wording, K=2 gives
+q_{h,j}<=q_j, not necessarily equality, so “For K=2 this equals T_j” need not be
+literally true. The implementation takes the exact maximum enclosed by Arb.
+Use q_j := max(0,max_odd>=3 u) in the analytic exposition, allowing an outward
+interval enclosure for computation. Alternatively retain the general envelope
+and say the K=2 threshold is at least as sharp as the previous one, rather than
+claiming equality. Defining the maximum over {0} union the indicated finite
+set also settles empty-degree cases without a convention for max(empty set).
+
+3. Attach or precisely identify the inherited large-range proof
+Location: around line 417.
+The transfer itself is valid. I checked results_parameter_search/proof.tex:
+its theorem uses m=Cn/(epsilon L) without a ceiling and states simultaneous
+binary/support correctness for finite or countable p. Its assembly is
+max(U+R_f,R), explicitly handling S<=n, S>n, and the gap. Thus there is no
+implicit sum of two separate 1/3 bounds in the inherited result.
+However, the current new TEX ends without appendix inclusion, while its prose
+says the earlier proof is “reproduced in the attached appendices.” To make that
+true, the final deliverable must actually include or bundle and link:
+  results_parameter_search/proof.tex (sufficiency theorem and analytic bounds),
+  artifacts/joint_constants_submission/submission_proof.tex (the expectation,
+  coefficient/range, and three-case lower-deviation ingredients it invokes).
+The precise earlier theorem and these dependency files should be named in the
+new manuscript or bibliography. The numerical large_range.json check alone
+cannot replace their analytic reductions. A combined PDF appendix or an
+explicitly described self-contained proof package both resolve this issue.
+
+4. Make countable-support well-definedness explicit
+Location: after defining Z_j around line 58.
+Add one sentence: sum_i N_i is Poisson(m), hence finite almost surely; because
+f_j(0)=0, D and every Z_j are finite almost surely even for countable support.
+The MGF product used in the new upper proof is only needed when S<=n, so is a
+finite product. When S>n, the upper bound is automatic after clipping. The
+discovery-coupling lower argument already covers countable support. The old
+large-range proof also explicitly justifies its countable sums by integrability
+and L2 convergence. No new finite-alphabet assumption is needed.
+
+5. Preserve the explicit margin when adding lower-tail error
+The displayed macro U_small<0.331 alone cannot be added to a positive lower
+error while retaining the same 0.331 result. The draft correctly cites the
+aggregate rational-margin check and also gives the sharper actual upper bound
+<0.330679396. For reader clarity, explicitly state
+  0.330679396 + 1.657e-27 < 0.331,
+and compare the other ranges' maxima similarly or invoke the global maximum.
+The aggregate verifier's actual Arb computation does perform this margin check.
+This is a presentation clarification, not an uncovered numerical obligation.
+
+6. Describe safe threshold rounding as a full-expression enclosure
+The strict event F0<T produces z=ceil(T)-1, as used in the code. This handles
+an exactly integral threshold correctly. When describing interval computation,
+prefer “enclose the entire threshold expression and certify its ceiling” over
+an unqualified suggestion to substitute coefficient upper endpoints: the
+expression has both additions and subtractions and rational dependence on q.
+The current Arb implementation already encloses the whole expression and
+rejects an unresolved ceiling. No implementation change is needed.
+
+Checks passed in this review
+- The Chebyshev coefficient identity and d_{k,r+1}/d_{k,r} recurrence agree.
+- The geometry proof covers all L>=1 and retains every scale and degree ceiling.
+- Removing b<=1 is justified by the original Appendix A proof, which never uses
+  this restriction in its three x regions or coefficient argument.
+- The discovery thinning produces iid Bernoulli(epsilon) marks independent of
+  arrival times, and D<=r implies at most r marked arrivals. Taking
+  r=min(e_epsilon,n)-1 controls interval underestimation; r=n controls the
+  binary alternative. For the first case r=0, the clipped lower bound 1 is
+  already automatic.
+- The MGF polynomial implication is correct: eta*T_d-P>=0 and T_d<=exp(lambda)
+  imply G<=1+eta. The half-line Bernstein coefficients for d=k have the stated
+  factor (k-ell)!/k!.
+- Continuous L slabs include all possible active j and ceil(k) branches.
+  N=floor(exp(a-1))<=n gives exponent <=-4n/N<=-4. At most 10 scales gives
+  10exp(-4)<0.183157.
+- The homogenization curvature derivatives, their signs, two-coordinate tail
+  comparison, convergence under extreme-pair averaging, and y=0/1 limits are
+  valid. Defining 0^0=1 explicitly would remove a minor boundary convention.
+- The q envelope is valid for all counts >=2; the K=4 anchor replaces only its
+  own q contribution by q_h. The original S remains in every threshold while
+  the diagonal polynomial has r=S-1 variables, exactly as required.
+- Selected scale events need not be independent; the proof uses a common
+  event and a union bound, never multiplies their probabilities.
+- For integer S<n, ceil(tilde S)>S iff tilde S>S; clipping cannot introduce an
+  upper failure. For S>=n the upper bound is automatic. On the alternative,
+  D>n gives both binary No and output n. In the gap only the interval is
+  required, with the earlier r argument supplying its lower bound.
+- Integer ranges 1..73, 74, 75..403 and continuous range from L=7 cover all
+  n>=1 because L(403)<7<L(404). The old range L>=14 overlaps the continuous
+  range, so there are no endpoint gaps.
+- The manuscript correctly separates uniform proof, empirical confidence
+  bounds, the iid empirical-resampling model, and ecological sampling claims.
+  It does not claim optimality of Cstar or a practical sampling advantage.
+
+Additional reproducibility suggestion outside the manuscript
+In proof_l01/verify_all.py, --aggregate-only checks the finite and midrange
+certificate hashes against their audits. Apply the same identity check to the
+small certificate (and bridge if its corresponding certificate is presented
+as audited), so a modified small_certificates.json cannot be aggregated against
+an older PASS audit. Full replay already recomputes the obligations; this is
+principally consistency protection for aggregate-only usage.
+
+Reviewed files
+  results_proof_l01/C70_L1_proof.tex
+  results_parameter_search/proof.tex (statement and inherited range reasoning)
+  results_proof_l01/{finite_audit,midrange_independent_audit,n74_audit,large_range}.json
+  proof_l01/verify_all.py
+  The small-n analytic derivation and certificate construction were separately
+  developed and checked in this agent's earlier work; independent replay is
+  assigned to the implementation audit agent, not counted twice here.

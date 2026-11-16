@@ -1,0 +1,159 @@
+{
+  "review_date": "2026-11-04",
+  "requested_parameters": {
+    "C0": 70,
+    "L0": 1,
+    "m": "70*n/(epsilon*(1+log(n)))",
+    "poisson_mean_is_real": true
+  },
+  "new_proof_material": {
+    "status": "user_pasted_summary_only",
+    "expected_missing_local_files": [
+      "optimal_constant_L0_one.pdf",
+      "optimal_constant_L0_one.tex",
+      "L0_1_C0_optimal_certificate.zip",
+      "verify_all.py"
+    ],
+    "search_scope": "Filename-targeted rg --files over /home/snowy; none of the named new artifacts found. Existing older proof packages are different artifacts."
+  },
+  "scalar_certificate": {
+    "passed": true,
+    "Cstar_open_bracket": [
+      "69.0062713812",
+      "69.0062713813"
+    ],
+    "uniqueness_reason": "Hprime(alpha)=asinh(alpha/32)>0, alpha(C) strictly decreases; endpoint limits are infinity and zero.",
+    "evaluations": {
+      "69.0062713812": {
+        "H_arb_512_bits": "[0.5000000000000372568837916654682550438035950111191572562332444708730336 +/- 4.70e-71]",
+        "2H_minus_1_arb_512_bits": "[7.451376758333093651008760719002223831451246648894174606710608904794852e-14 +/- 2.70e-84]",
+        "H_independent_integer_intervals": {
+          "lower": "22835963083297059690578305706828827048440473503/45671926166590716193865151022383844364247891968",
+          "upper": "22835963083297059690578305706828827048440473525/45671926166590716193865151022383844364247891968"
+        }
+      },
+      "69.0062713813": {
+        "H_arb_512_bits": "[0.4999999999993145468402465614260656918554553355694344730148787866911231 +/- 3.05e-72]",
+        "2H_minus_1_arb_512_bits": "[-1.370906319506877147868616289089328861131053970242426617753793906493163e-12 +/- 2.07e-82]",
+        "H_independent_integer_intervals": {
+          "lower": "2854495385408006516353707519199621966982124857/5708990770823839524233143877797980545530986496",
+          "upper": "22835963083264052130829660153596975735856998879/45671926166590716193865151022383844364247891968"
+        }
+      },
+      "70": {
+        "H_arb_512_bits": "[0.4929199202809152244767138045921423898864658745190737665216903759971317 +/- 1.61e-71]",
+        "2H_minus_1_arb_512_bits": "[-0.01416015943816955104657239081571522022706825096185246695661924800573657 +/- 2.08e-72]",
+        "H_independent_integer_intervals": {
+          "lower": "5628150551277935472598611193647075159357352165/11417981541647679048466287755595961091061972992",
+          "upper": "5628150551277935472598611193647075159357352171/11417981541647679048466287755595961091061972992"
+        }
+      }
+    },
+    "C70_alpha": "[5.62383637251180568275161083444848594388040758563994010456188 +/- 3.88e-60]",
+    "C70_t_maximizer": "[0.490422212473428324005976367513987454115253707878431736001653 +/- 2.16e-61]",
+    "C70_2H_strictly_below_1": true,
+    "meaning": "The scalar asymptotic coefficient exponent is certified; this alone does not establish uniform finite-n success or attainment of the optimal constant."
+  },
+  "lower_tail_certificate": {
+    "passed": true,
+    "C_range": "[69,infinity)",
+    "L_range": "[1,32]",
+    "continuous_slab_count": 992,
+    "certified_failure_upper_bound": "[1.6567744976535916224114790581945381586124429332426003714199791087e-27 +/- 4.19e-92]",
+    "method": "Poisson-process discovery coupling plus Chernoff, with 512-bit Arb endpoint bounds on 992 closed slabs.",
+    "limitation": "This controls only the lower deviation. Upper deviation and their joint probability need separate proof."
+  },
+  "parameter_certificate": {
+    "passed": true,
+    "all_L_ge_1_geometry_argument": "J=floor(log2(256 L^2/70))>=0; 0<A_j<=B/2; k_j<=alpha0(70)*L+1; sqrt(B(B-A_j))>=64 L/sqrt(2); rho_j<=delta_j^2/2.",
+    "all_L_ge_1_degree_condition_ratio_upper_bound": "[0.14636748801478750244238578862576335252147874846522 +/- 1.58e-51]",
+    "additional_finite_Arb_checks": {
+      "n_range": [
+        1,
+        403
+      ],
+      "scale_count": 3053
+    },
+    "old_b_guard": {
+      "b_formula": "64 epsilon L^2/(70 n)",
+      "exceptions_for_n_1_to_19": [
+        {
+          "n": 2,
+          "epsilon_above_which_b_exceeds_1": "[0.763059912096695820165915717568632484478187780 +/- 1.81e-46]"
+        },
+        {
+          "n": 3,
+          "epsilon_above_which_b_exceeds_1": "[0.745031950166796136837234998321288304511282260 +/- 3.06e-46]"
+        },
+        {
+          "n": 4,
+          "epsilon_above_which_b_exceeds_1": "[0.768298574446977453717969698916418475408079397 +/- 4.31e-46]"
+        },
+        {
+          "n": 5,
+          "epsilon_above_which_b_exceeds_1": "[0.803145322677241602984309511275180006041260688 +/- 4.97e-47]"
+        },
+        {
+          "n": 6,
+          "epsilon_above_which_b_exceeds_1": "[0.842002383081829883258906303894913904152973670 +/- 3.70e-46]"
+        },
+        {
+          "n": 7,
+          "epsilon_above_which_b_exceeds_1": "[0.882220434203259513595788727140419643615484452 +/- 3.02e-46]"
+        },
+        {
+          "n": 8,
+          "epsilon_above_which_b_exceeds_1": "[0.922707657472088162201510837896882989465572280 +/- 1.55e-47]"
+        },
+        {
+          "n": 9,
+          "epsilon_above_which_b_exceeds_1": "[0.962973397918003377082049239761776579062481697 +/- 3.79e-46]"
+        }
+      ],
+      "analytic_review": "Original paper Lemma 2.3 states b<=1, but its Appendix A proof separately covers x in [0,a], [a,b], and [b,infinity), without using b<=1. The identity, expectation bounds, and coefficient bound therefore extend to arbitrary 0<a<b under the stated remaining hypotheses. This is an extension of that lemma, not a proof of all success-probability claims."
+    }
+  },
+  "remaining_theory_gaps": [
+    "The supplied sufficient C interval [Cstar,69.00628] and finite certificate interval [69.00627,69.00628] do not contain C=70. Increasing C does not establish stochastic monotonicity because degrees/scales change discretely.",
+    "The new small-n MGF majorants, joint-scale envelopes and interval certificates cannot be independently rerun without their missing source/certificate files.",
+    "Equation (8), the uniform 0.053 coefficient prefactor, critical-constant attainment, and the triangular-array necessity proof require the full analytic derivations; their statements alone are not sufficient evidence."
+  ],
+  "existing_certified_overlap": {
+    "source": "results_proof_review/audit.json",
+    "C": 70,
+    "L_at_least": 14,
+    "n_at_least": 442414,
+    "reason": "With L>=14, both L0=1 and L0=14 select exactly the same multiscale estimator and real Poisson mean.",
+    "existing_joint_failure_bound": 0.0008794011635031739,
+    "status": "Previously audited artifact; this script checks source existence but does not rerun the entire earlier certificate."
+  },
+  "overall_status": "partial_independent_theory_validation; full_uniform_L0_1_success_not_certified",
+  "interpretation": "C0=70,L0=1 is a well-defined experimentally testable parameterization with certified scalar margin and geometry. Empirical real-data success is not a substitute for the missing finite-range upper-tail proof.",
+  "equation8_exploratory_search": {
+    "status": "diagnostic_only",
+    "cases": 480,
+    "seed": 23,
+    "r_values": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "search_box": [
+      1,
+      30
+    ],
+    "largest_off_diagonal_numerical_improvement": 0.0,
+    "candidate_counterexamples": [],
+    "analytic_partial_check": "Conditional on all other variables, the objective is A+exp(-lambda)*[(y-1)A+lambda(B-A)] with B>=A>=0. Its finite maximizer is lambda=1+(1-y)A/(B-A)>=1. This justifies excluding lambda<1 but does not imply equality of all means.",
+    "limitation": "Neither global numerical optimization nor absence of counterexamples proves equation (8); no analytic proof or original verifier of this lemma was supplied locally."
+  },
+  "source_sha256": {
+    "real_l01/theory_review.py": "fc9994b36ace9100586ef3fd877e46e72538d875803d410811d60253f2e25b3f",
+    "parameter_search/lower_bound.py": "355f2bbbc52f478092e76e134cab28b94333b059c8a314ebfc1a6550fc5c1fe2",
+    "parameter_search/algorithm.py": "a09b9902bf1425fdec76b776ea24639e319ae53965f13871b552c5492318dba0",
+    "artifacts/joint_constants_submission/rational_interval.py": "ef381a84fd95cb3c154f1680d88324cf174c469d72d1dc8cd60106522340322a",
+    "results_proof_review/audit.json": "e58229ff8689cc3092774ad05d39857e6a8d6738f409ece151a23088d1ad6c5d",
+    "2610.18723v1.pdf": "ee5509c4fdc637773a37b28d7c080f275f6c2e129f3f122f848cd858556f2720"
+  }
+}

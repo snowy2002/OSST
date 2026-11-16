@@ -1,0 +1,564 @@
+program,ecoregion,year,N,S,n_records,eligible_S_ge_20,selected
+RLS,Carolinian,2025,1762118,73,1422,True,True
+RLS,Carolinian,2024,826443,35,135,True,True
+RLS,Central and Southern Great Barrier Reef,2016,560630,436,18274,True,True
+RLS,Exmouth to Broome,2013,524181,603,35225,True,True
+RLS,South European Atlantic Shelf,2015,457990,53,2587,True,True
+RLS,Papua,2014,397413,528,12263,True,True
+RLS,Central and Southern Great Barrier Reef,2015,363766,418,14364,True,False
+RLS,Western Mediterranean,2015,348618,68,8000,True,False
+RLS,Nicoya,2011,307395,134,11312,True,False
+RLS,Manning-Hawkesbury,2009,298604,210,13865,True,False
+RLS,Alboran Sea,2015,297464,64,3470,True,False
+RLS,Cape Howe,2010,297212,170,17136,True,False
+RLS,Torres Strait Northern Great Barrier Reef,2015,294451,629,24378,True,False
+RLS,Cape Howe,2011,292033,193,14297,True,False
+RLS,Banda Sea,2015,290261,558,11037,True,False
+RLS,Eastern Galapagos Islands,2008,283378,107,4860,True,False
+RLS,Exmouth to Broome,2023,273664,569,26238,True,False
+RLS,Central and Southern Great Barrier Reef,2010,268989,423,9604,True,False
+RLS,Exmouth to Broome,2018,261379,466,24128,True,False
+RLS,Central and Southern Great Barrier Reef,2017,251559,457,13277,True,False
+RLS,Nicoya,2007,246051,106,7930,True,False
+RLS,Torres Strait Northern Great Barrier Reef,2016,209586,547,16559,True,False
+RLS,Arnhem Coast to Gulf of Carpenteria,2015,205518,277,9044,True,False
+RLS,Papua,2018,203566,490,9883,True,False
+RLS,Coral Sea,2013,197655,445,26992,True,False
+RLS,Exmouth to Broome,2021,196561,478,15157,True,False
+RLS,Central and Southern Great Barrier Reef,2020,195280,449,11041,True,False
+RLS,Houtman,2013,195175,169,3156,True,False
+RLS,Manning-Hawkesbury,2010,194092,197,9240,True,False
+ATRC,Cape Howe,2017,192995,175,17112,True,False
+RLS,Lord Howe and Norfolk Islands,2018,183817,297,15416,True,False
+RLS,Northeastern New Zealand,2012,177392,75,5998,True,False
+RLS,Floridian,2025,174203,169,10902,True,False
+RLS,Central and Southern Great Barrier Reef,2024,171845,451,14212,True,False
+RLS,Northeastern New Zealand,2024,169204,75,6544,True,False
+ATRC,Cape Howe,2006,167635,157,14450,True,False
+RLS,Cape Howe,2009,149751,147,7291,True,False
+RLS,Torres Strait Northern Great Barrier Reef,2023,147429,514,17914,True,False
+RLS,Manning-Hawkesbury,2016,144905,237,9504,True,False
+RLS,Manning-Hawkesbury,2018,144366,212,10104,True,False
+RLS,Cape Howe,2008,143113,169,11242,True,False
+RLS,Alboran Sea,2019,142845,57,4806,True,False
+RLS,Tuamotus,2012,142666,295,8305,True,False
+RLS,Floridian,2024,142270,170,12343,True,False
+RLS,Southern Caribbean,2022,138938,95,2880,True,False
+RLS,Azores Canaries Madeira,2015,136848,47,1787,True,False
+ATRC,Cape Howe,2007,135637,163,12895,True,False
+RLS,Manning-Hawkesbury,2012,130996,195,8363,True,False
+RLS,Tweed-Moreton,2016,127532,245,4060,True,False
+RLS,Western Sumatra,2009,127196,299,7695,True,False
+RLS,Central and Southern Great Barrier Reef,2022,126280,396,6700,True,False
+RLS,Coral Sea,2016,121304,415,11470,True,False
+RLS,Panama Bight,2006,119425,57,1819,True,False
+RLS,Samoa Islands,2024,119076,324,11425,True,False
+RLS,Cape Howe,2026,117285,157,4839,True,False
+RLS,Torres Strait Northern Great Barrier Reef,2017,115691,394,6532,True,False
+RLS,Manning-Hawkesbury,2013,114342,184,7782,True,False
+RLS,Western Mediterranean,2023,113711,50,4681,True,False
+RLS,Alboran Sea,2021,110757,56,3915,True,False
+RLS,Manning-Hawkesbury,2011,109989,220,9578,True,False
+RLS,Torres Strait Northern Great Barrier Reef,2010,108869,307,5135,True,False
+RLS,Coral Sea,2022,108635,389,14663,True,False
+ATRC,Cape Howe,2009,108038,135,9487,True,False
+RLS,Tweed-Moreton,2017,107560,214,3497,True,False
+ATRC,Cape Howe,2005,107029,143,11000,True,False
+ATRC,Cape Howe,2012,104202,132,8618,True,False
+RLS,Panama Bight,2011,103623,102,5833,True,False
+RLS,Cape Howe,2013,100500,153,7779,True,False
+ATRC,Bassian,2017,99836,71,5944,True,False
+RLS,Manning-Hawkesbury,2017,97217,191,8789,True,False
+RLS,Vanuatu,2024,97068,409,9310,True,False
+RLS,Western Galapagos Islands,2008,96455,80,3644,True,False
+RLS,Torres Strait Northern Great Barrier Reef,2020,96225,462,10595,True,False
+ATRC,Cape Howe,2000,95267,127,9244,True,False
+RLS,Fiji Islands,2024,95069,361,7168,True,False
+RLS,Lord Howe and Norfolk Islands,2010,94801,202,7762,True,False
+RLS,Central and Southern Great Barrier Reef,2023,93939,343,8696,True,False
+RLS,Lord Howe and Norfolk Islands,2026,92732,194,6025,True,False
+RLS,Lord Howe and Norfolk Islands,2013,92131,247,6082,True,False
+RLS,Manning-Hawkesbury,2019,91699,182,6782,True,False
+RLS,Panama Bight,2025,88881,121,3888,True,False
+RLS,Lord Howe and Norfolk Islands,2025,88444,119,3764,True,False
+RLS,Tweed-Moreton,2010,87411,300,3723,True,False
+RLS,Manning-Hawkesbury,2014,87298,168,5056,True,False
+RLS,Leeuwin,2023,85317,134,5125,True,False
+RLS,Greater Antilles,2023,83911,131,3587,True,False
+ATRC,Bassian,2016,83601,63,3379,True,False
+RLS,Arnhem Coast to Gulf of Carpenteria,2025,83429,240,4371,True,False
+RLS,Tweed-Moreton,2019,82902,239,3654,True,False
+RLS,Leeuwin,2019,82365,109,3291,True,False
+RLS,Panama Bight,2016,82142,49,519,True,False
+RLS,Coral Sea,2017,82066,400,13928,True,False
+RLS,Exmouth to Broome,2019,80385,406,8963,True,False
+RLS,Manning-Hawkesbury,2015,78580,188,6084,True,False
+RLS,Phoenix/Tokelau/Northern Cook Islands,2012,78382,137,2411,True,False
+RLS,Lord Howe and Norfolk Islands,2012,77891,204,7289,True,False
+ATRC,Cape Howe,2004,77716,151,9834,True,False
+RLS,Manning-Hawkesbury,2025,77440,202,5210,True,False
+RLS,South Australian Gulfs,2017,77278,89,6637,True,False
+RLS,Cape Howe,2016,76954,154,6070,True,False
+RLS,Ningaloo,2022,76768,254,8088,True,False
+RLS,Cape Howe,2015,75603,158,5071,True,False
+RLS,Ningaloo,2015,74715,277,9129,True,False
+RLS,Southwestern Caribbean,2015,74691,76,1606,True,False
+RLS,Lord Howe and Norfolk Islands,2022,74611,212,8270,True,False
+RLS,Azores Canaries Madeira,2012,74473,58,4149,True,False
+RLS,Lord Howe and Norfolk Islands,2014,73722,206,6527,True,False
+RLS,Ningaloo,2019,73608,229,7939,True,False
+RLS,Ningaloo,2017,73547,247,7213,True,False
+RLS,Cape Howe,2024,72201,139,5274,True,False
+RLS,Ningaloo,2021,71413,229,6686,True,False
+RLS,Coral Sea,2020,70937,370,9054,True,False
+ATRC,Cape Howe,2008,70692,126,6950,True,False
+RLS,Cocos Islands,2006,70275,78,2923,True,False
+RLS,Lord Howe and Norfolk Islands,2016,69508,227,8750,True,False
+RLS,Exmouth to Broome,2010,68841,248,4167,True,False
+RLS,Central and Southern Great Barrier Reef,2025,68516,309,7148,True,False
+ATRC,Cape Howe,2001,68002,111,5020,True,False
+ATRC,Bassian,1999,66943,81,6785,True,False
+ATRC,Bassian,2014,66512,57,3370,True,False
+ATRC,Bassian,2006,66434,87,10631,True,False
+RLS,Central and Southern Great Barrier Reef,2019,66405,343,5624,True,False
+RLS,Arnhem Coast to Gulf of Carpenteria,2021,66295,203,3241,True,False
+RLS,Leeuwin,2009,65265,124,4761,True,False
+RLS,Southern Caribbean,2012,65178,88,1525,True,False
+RLS,Central and Southern Great Barrier Reef,2018,64668,300,7106,True,False
+RLS,Marshall Islands,2014,64430,248,3270,True,False
+ATRC,Cape Howe,2003,64305,121,6606,True,False
+RLS,Alboran Sea,2023,64221,49,3016,True,False
+RLS,Central and Southern Great Barrier Reef,2021,64100,351,6046,True,False
+RLS,Tonga Islands,2024,62927,393,8905,True,False
+RLS,Lord Howe and Norfolk Islands,2020,62926,188,6950,True,False
+RLS,Alboran Sea,2020,62424,58,4190,True,False
+RLS,South Australian Gulfs,2020,61160,62,3750,True,False
+RLS,Lesser Sunda,2009,61024,303,2347,True,False
+RLS,Lord Howe and Norfolk Islands,2009,60597,189,6556,True,False
+RLS,Manning-Hawkesbury,2024,60462,176,5075,True,False
+ATRC,South Australian Gulfs,2005,60415,65,4873,True,False
+RLS,Western Caribbean,2016,59932,98,3345,True,False
+RLS,Cape Howe,2012,59799,107,5090,True,False
+RLS,Nicoya,2025,59512,96,5298,True,False
+RLS,Southwestern Caribbean,2011,59386,141,6264,True,False
+RLS,Cocos-Keeling/Christmas Island,2010,59309,205,2095,True,False
+RLS,Cape Howe,2025,57286,132,3782,True,False
+RLS,Leeuwin,2022,56943,105,1781,True,False
+ATRC,Bassian,2018,56554,73,6339,True,False
+RLS,Cape Howe,2019,56359,119,3393,True,False
+RLS,Cape Howe,2018,55213,132,3624,True,False
+RLS,Torres Strait Northern Great Barrier Reef,2025,55038,333,3902,True,False
+RLS,South Australian Gulfs,2018,54973,78,7718,True,False
+ATRC,Bassian,2007,54881,74,6616,True,False
+RLS,Northern and Central Red Sea,2011,54481,137,1667,True,False
+RLS,Cocos Islands,2011,54319,90,2526,True,False
+RLS,Ningaloo,2016,54251,239,6250,True,False
+RLS,Leeuwin,2008,53771,137,2719,True,False
+RLS,Bismarck Sea,2011,53436,220,1564,True,False
+RLS,Samoa Islands,2012,53367,244,4496,True,False
+ATRC,Bassian,2013,52999,56,3076,True,False
+RLS,Torres Strait Northern Great Barrier Reef,2021,52879,372,5680,True,False
+RLS,Coral Sea,2015,52328,295,3333,True,False
+ATRC,Cape Howe,1996,52263,98,4578,True,False
+RLS,Manning-Hawkesbury,2021,51512,163,5104,True,False
+ATRC,Bassian,2021,51292,56,3151,True,False
+RLS,Northern Galapagos Islands,2008,51175,66,1593,True,False
+RLS,Eastern Caribbean,2025,51162,92,1441,True,False
+RLS,Cape Howe,2023,50588,139,3818,True,False
+RLS,Northern Grand Banks - Southern Labrador,2020,50237,9,85,False,False
+ATRC,Bassian,1997,50002,55,4234,True,False
+RLS,Greater Antilles,2025,49469,100,1884,True,False
+RLS,Manning-Hawkesbury,2023,49396,179,4670,True,False
+RLS,Gulf of Papua,2015,48926,291,2455,True,False
+RLS,South Australian Gulfs,2014,48750,78,5631,True,False
+RLS,Cocos-Keeling/Christmas Island,2025,48352,253,3619,True,False
+RLS,Lord Howe and Norfolk Islands,2024,48274,170,5498,True,False
+RLS,Cape Howe,2021,47925,124,3278,True,False
+RLS,Tweed-Moreton,2023,47017,265,3147,True,False
+RLS,Leeuwin,2017,46936,112,4111,True,False
+RLS,Gulf of Papua,2016,46924,231,1368,True,False
+RLS,Bassian,2010,46386,100,3327,True,False
+RLS,Manning-Hawkesbury,2020,46352,144,4990,True,False
+RLS,Cocos Islands,2008,46063,76,2077,True,False
+RLS,Manning-Hawkesbury,2022,44986,163,4177,True,False
+ATRC,South Australian Gulfs,2007,44560,74,8045,True,False
+RLS,Tweed-Moreton,2013,44258,236,2753,True,False
+ATRC,South Australian Gulfs,2006,44158,62,6006,True,False
+ATRC,Bassian,2023,43775,59,3072,True,False
+RLS,Lesser Sunda,2014,42666,255,1365,True,False
+ATRC,Bassian,2015,42147,58,3359,True,False
+RLS,Cape Howe,2014,42100,125,4703,True,False
+RLS,Leeuwin,2011,42100,115,2307,True,False
+ATRC,Bassian,2012,42076,65,3393,True,False
+RLS,East African Coral Coast,2024,41919,260,5648,True,False
+RLS,Bonaparte Coast,2019,41225,114,1075,True,False
+ATRC,Bassian,2000,40609,53,3390,True,False
+RLS,Northern and Central Red Sea,2025,40117,185,3557,True,False
+RLS,Bassian,2016,39885,83,2362,True,False
+RLS,Lord Howe and Norfolk Islands,2008,38696,150,4517,True,False
+RLS,Leeuwin,2012,38590,135,3760,True,False
+RLS,Ningaloo,2012,38181,209,4786,True,False
+RLS,Coral Sea,2019,37959,297,5388,True,False
+ATRC,Bassian,2020,37814,44,2199,True,False
+RLS,South Australian Gulfs,2016,37670,67,2963,True,False
+RLS,Leeuwin,2010,36595,110,3369,True,False
+RLS,Floridian,2010,36026,104,2949,True,False
+RLS,Alboran Sea,2014,36021,42,1201,True,False
+ATRC,Bassian,2001,35980,49,3737,True,False
+RLS,Panama Bight,2012,35861,54,1015,True,False
+RLS,Bonaparte Coast,2021,35532,275,3186,True,False
+RLS,Ningaloo,2025,35310,209,4671,True,False
+ATRC,Bassian,2019,34843,64,3491,True,False
+ATRC,Bassian,1994,34606,71,6248,True,False
+RLS,Western Sumatra,2025,34535,213,2503,True,False
+RLS,Leeuwin,2015,34495,96,2893,True,False
+RLS,Tweed-Moreton,2009,34260,177,2616,True,False
+RLS,Lesser Sunda,2025,34189,264,2560,True,False
+RLS,Solomon Archipelago,2011,34102,200,908,True,False
+RLS,Chiapas-Nicaragua,2015,33709,75,2471,True,False
+RLS,Lord Howe and Norfolk Islands,2021,33614,87,1999,True,False
+RLS,Bonaparte Coast,2015,33133,199,1394,True,False
+RLS,Lord Howe and Norfolk Islands,2006,32962,140,2651,True,False
+RLS,Cortezian,2018,32797,82,1991,True,False
+RLS,Central and Southern Great Barrier Reef,2013,32661,258,1697,True,False
+RLS,Coral Sea,2018,32101,294,4888,True,False
+RLS,Western Mediterranean,2011,31994,51,2439,True,False
+ATRC,Houtman,2016,31857,88,6842,True,False
+RLS,Bassian,2009,31586,96,3635,True,False
+RLS,South Australian Gulfs,2019,31459,73,5473,True,False
+ATRC,Bassian,2010,31433,60,3468,True,False
+RLS,Tweed-Moreton,2021,31111,271,3765,True,False
+RLS,South Australian Gulfs,2022,30888,58,2199,True,False
+ATRC,Houtman,2009,30737,91,8858,True,False
+RLS,Western Mediterranean,2026,30078,59,2963,True,False
+ATRC,Bassian,1996,30028,48,2141,True,False
+RLS,Azores Canaries Madeira,2011,30023,52,1970,True,False
+RLS,Leeuwin,2020,29922,88,1728,True,False
+RLS,Lesser Sunda,2012,29903,170,862,True,False
+RLS,Kermadec Island,2012,29791,52,1221,True,False
+ATRC,Bassian,2022,29245,52,2983,True,False
+RLS,Western Caribbean,2022,29223,126,2966,True,False
+ATRC,Bassian,2009,28834,50,3296,True,False
+RLS,Southern Cook/Austral Islands,2012,28600,153,2282,True,False
+ATRC,Cape Howe,2019,28567,84,3354,True,False
+ATRC,Cape Howe,2023,28407,93,1817,True,False
+ATRC,Bassian,1992,28276,65,6374,True,False
+RLS,Ningaloo,2024,27655,214,4426,True,False
+ATRC,Houtman,2018,27433,88,5113,True,False
+RLS,Manning-Hawkesbury,2026,27421,150,2243,True,False
+ATRC,Cape Howe,2018,27390,55,4030,True,False
+RLS,Lord Howe and Norfolk Islands,2023,27319,180,2771,True,False
+RLS,Coral Sea,2012,27283,319,4127,True,False
+RLS,Bonaparte Coast,2018,26609,126,1649,True,False
+RLS,South Australian Gulfs,2008,26605,69,1438,True,False
+RLS,Bassian,2013,26451,86,3174,True,False
+ATRC,Houtman,2013,26043,104,7465,True,False
+RLS,Ningaloo,2010,25864,190,3239,True,False
+ATRC,Bassian,2004,25513,53,2453,True,False
+RLS,Seychelles,2023,25399,175,1337,True,False
+RLS,South Australian Gulfs,2021,25312,63,3890,True,False
+RLS,Cape Howe,2022,25024,115,3278,True,False
+RLS,Southwestern Caribbean,2024,25007,52,433,True,True
+RLS,Tweed-Moreton,2008,24967,168,2447,True,True
+RLS,Gulf of Papua,2020,24883,239,1845,True,False
+RLS,Coral Sea,2023,23551,192,2091,True,False
+RLS,Leeuwin,2026,23466,95,1604,True,False
+ATRC,Houtman,2004,23431,82,7077,True,False
+ATRC,Houtman,2015,23430,97,6519,True,False
+RLS,Leeuwin,2014,23265,118,3023,True,False
+RLS,South Australian Gulfs,2011,23235,51,1351,True,False
+RLS,Bassian,2024,23218,78,3911,True,False
+ATRC,Bassian,2011,23172,63,3452,True,False
+ATRC,Bassian,1993,22991,65,5715,True,False
+ATRC,Bassian,2024,22910,62,3123,True,False
+RLS,Leeuwin,2013,22726,110,2254,True,False
+RLS,Exmouth to Broome,2016,22592,180,2067,True,False
+RLS,Puget Trough/Georgia Basin,2026,22483,15,237,False,False
+RLS,Floridian,2022,22431,107,2447,True,False
+RLS,Tonga Islands,2012,22355,221,1799,True,False
+ATRC,South Australian Gulfs,2016,22074,61,4056,True,False
+ATRC,Leeuwin,1997,21823,74,4261,True,False
+ATRC,Bassian,2002,21639,45,2344,True,False
+RLS,Houtman,2008,21399,132,1991,True,False
+RLS,Marquesas,2009,21360,106,1077,True,False
+RLS,Central and Southern Great Barrier Reef,2012,21298,263,3224,True,False
+ATRC,Houtman,2008,21270,79,6604,True,False
+RLS,Leeuwin,2021,21165,90,2166,True,False
+ATRC,Bassian,2008,21132,59,2809,True,False
+RLS,Gulf of Papua,2021,21106,190,1159,True,False
+ATRC,Bassian,1998,21101,59,2910,True,False
+RLS,Northern Grand Banks - Southern Labrador,2021,20576,9,63,False,False
+RLS,Tweed-Moreton,2018,20359,135,892,True,False
+RLS,Coral Sea,2021,20311,224,3085,True,False
+RLS,Exmouth to Broome,2015,20231,175,1810,True,False
+RLS,Tweed-Moreton,2020,19990,165,1793,True,False
+RLS,Leeuwin,2016,19881,93,1732,True,False
+ATRC,Houtman,2006,19759,82,5530,True,False
+RLS,Southwestern Caribbean,2023,19547,70,740,True,False
+RLS,Cape Howe,2017,19446,109,3236,True,False
+RLS,Houtman,2021,19403,142,1942,True,False
+RLS,South Australian Gulfs,2012,19274,53,1322,True,False
+RLS,Maldives,2012,19273,195,1789,True,False
+ATRC,Bassian,1995,18753,60,3580,True,False
+ATRC,Bassian,2005,18712,52,2825,True,False
+RLS,Kermadec Island,2024,18233,62,1390,True,False
+RLS,Western Caribbean,2024,18186,103,2162,True,False
+RLS,Carolinian,2023,18170,20,73,True,False
+RLS,Shark Bay,2010,17945,97,746,True,False
+RLS,Bassian,2025,17666,89,3586,True,False
+RLS,Torres Strait Northern Great Barrier Reef,2013,17406,200,1650,True,False
+RLS,Society Islands,2009,17340,181,2092,True,False
+RLS,South Australian Gulfs,2023,17319,74,2646,True,False
+ATRC,Cape Howe,2011,16720,60,3667,True,False
+RLS,South Australian Gulfs,2009,16673,71,3066,True,False
+RLS,Tuamotus,2009,16534,154,852,True,False
+RLS,Southwestern Caribbean,2016,16446,93,901,True,False
+RLS,Leeuwin,2018,16292,98,1985,True,False
+RLS,Tweed-Moreton,2011,15807,114,954,True,False
+RLS,Torres Strait Northern Great Barrier Reef,2018,15755,230,1420,True,False
+RLS,Bassian,2019,15400,74,3148,True,False
+RLS,Bassian,2008,15302,74,2608,True,False
+RLS,Central Kuroshio Current,2012,15144,71,617,True,False
+RLS,Eastern Brazil,2012,15086,49,1660,True,False
+RLS,Tonga Islands,2009,14943,222,2205,True,False
+ATRC,Houtman,2007,14388,94,4957,True,False
+RLS,Guayaquil,2008,14291,68,1418,True,False
+RLS,Coral Sea,2024,14267,252,3278,True,False
+RLS,Manning-Hawkesbury,2008,14226,78,1056,True,False
+RLS,Bassian,2015,13893,73,1318,True,False
+RLS,New Caledonia,2023,13792,218,1225,True,False
+RLS,Bonaparte Coast,2025,13761,159,1057,True,False
+RLS,Gulf of Thailand,2009,13631,84,623,True,False
+RLS,Easter Island,2012,13563,42,1538,True,False
+RLS,Arnhem Coast to Gulf of Carpenteria,2019,13501,120,998,True,False
+RLS,Southwestern Caribbean,2017,13399,49,392,True,False
+RLS,Seychelles,2012,13392,174,1470,True,False
+RLS,Bassian,2018,13312,85,2820,True,False
+RLS,Tweed-Moreton,2022,13100,120,706,True,False
+ATRC,Houtman,2021,13089,74,2443,True,False
+ATRC,Leeuwin,2017,12798,61,2211,True,False
+RLS,Bassian,2023,12629,77,1609,True,False
+RLS,Azores Canaries Madeira,2013,12539,26,449,True,False
+ATRC,South Australian Gulfs,2013,12248,62,2723,True,False
+RLS,Exmouth to Broome,2017,11896,135,1198,True,False
+RLS,Southwestern Caribbean,2022,11887,53,403,True,False
+RLS,Exmouth to Broome,2012,11848,124,987,True,False
+Parks Vic,Cape Howe,2001,11783,55,4230,True,False
+ATRC,Houtman,1999,11697,63,4171,True,False
+RLS,Bassian,2011,11625,73,1896,True,False
+RLS,Arnhem Coast to Gulf of Carpenteria,2018,11570,63,256,True,False
+RLS,Cape Howe,2020,11492,78,2012,True,False
+RLS,Bassian,2017,11450,85,2762,True,False
+ATRC,South Australian Gulfs,2012,11444,52,1122,True,False
+ATRC,Houtman,2003,11210,60,4085,True,False
+RLS,Fiji Islands,2012,11079,177,1611,True,False
+ATRC,Great Australian Bight,2009,11051,51,2507,True,False
+ATRC,Houtman,2012,10910,80,3048,True,False
+RLS,Floridian,2011,10884,66,866,True,False
+RLS,South Australian Gulfs,2024,10865,48,1549,True,False
+RLS,Shark Bay,2021,10821,98,638,True,False
+RLS,Kermadec Island,2013,10804,47,669,True,False
+ATRC,Cape Howe,1992,10757,56,2656,True,False
+RLS,Western Caribbean,2017,10612,64,537,True,False
+RLS,Great Australian Bight,2015,10548,52,2691,True,False
+RLS,Ningaloo,2023,10495,169,2321,True,False
+RLS,East African Coral Coast,2012,10349,167,1032,True,False
+RLS,Northeastern New Zealand,2009,10349,35,300,True,False
+RLS,Eastern Galapagos Islands,2012,10305,51,370,True,False
+RLS,Arnhem Coast to Gulf of Carpenteria,2010,10231,90,1517,True,False
+RLS,Alboran Sea,2013,9900,34,357,True,False
+RLS,Tweed-Moreton,2024,9891,208,2057,True,False
+ATRC,Cape Howe,1999,9850,56,3334,True,False
+RLS,South Kuroshio,2012,9767,184,1096,True,False
+RLS,Coral Sea,2025,9732,207,1446,True,False
+ATRC,Leeuwin,2018,9303,67,1745,True,False
+Parks Vic,Cape Howe,2002,9239,61,3672,True,False
+ATRC,Houtman,2000,9235,63,3701,True,False
+RLS,Southeastern Brazil,2025,9176,62,725,True,False
+RLS,Lesser Sunda,2024,9148,182,737,True,False
+RLS,Leeuwin,2025,9005,74,796,True,False
+Parks Vic,Cape Howe,2000,8981,50,2685,True,False
+RLS,Bassian,2022,8911,74,1561,True,False
+RLS,South Australian Gulfs,2010,8703,46,1553,True,False
+RLS,Western Mediterranean,2025,8668,41,638,True,False
+RLS,Southern China,2014,8505,56,484,True,False
+RLS,Southern California Bight,2010,8377,36,980,True,False
+RLS,Greater Antilles,2022,8275,75,689,True,False
+RLS,Shark Bay,2023,7908,143,1367,True,False
+RLS,Tonga Islands,2011,7699,120,965,True,False
+RLS,Arnhem Coast to Gulf of Carpenteria,2013,7266,83,720,True,False
+RLS,Saharan Upwelling,2015,7262,38,368,True,False
+RLS,Lesser Sunda,2008,7258,84,106,True,False
+RLS,Nicoya,2008,7252,49,492,True,False
+RLS,Rapa-Pitcairn,2012,7207,98,695,True,False
+ATRC,Leeuwin,2016,7145,70,1850,True,False
+ATRC,Western Bassian,2007,7110,52,2505,True,False
+Parks Vic,Cape Howe,2005,7103,56,2039,True,False
+RLS,Bassian,2020,7061,59,1410,True,False
+ATRC,Leeuwin,2007,6989,67,1885,True,False
+RLS,Northern and Central Red Sea,2014,6985,105,499,True,False
+RLS,Bassian,2012,6979,72,1881,True,False
+RLS,Houtman,2009,6664,72,1899,True,False
+Parks Vic,Cape Howe,2006,6494,48,1977,True,False
+RLS,New Caledonia,2021,6434,181,859,True,False
+RLS,Western Caribbean,2015,6407,67,788,True,False
+RLS,Agulhas Bank,2012,6338,37,867,True,False
+RLS,New Caledonia,2022,6241,132,405,True,False
+RLS,North Patagonian Gulfs,2012,6141,13,557,False,False
+RLS,Central Kuroshio Current,2010,6099,34,198,True,False
+RLS,Bonaparte Coast,2010,6029,73,946,True,False
+RLS,Bassian,2026,5828,65,1277,True,False
+RLS,Araucanian,2019,5712,19,455,False,False
+RLS,Exmouth to Broome,2022,5710,88,550,True,False
+Parks Vic,Bassian,2001,5586,53,3078,True,False
+RLS,Southern California Bight,2014,5547,31,550,True,False
+RLS,Agulhas Bank,2025,5407,29,642,True,False
+RLS,Chiapas-Nicaragua,2011,5363,60,1384,True,False
+RLS,Tweed-Moreton,2012,5174,77,266,True,False
+Parks Vic,Bassian,2002,5051,50,2640,True,False
+Parks Vic,Cape Howe,2011,5037,49,1726,True,False
+RLS,Bassian,2021,4988,43,565,True,False
+Parks Vic,Cape Howe,2010,4901,58,1357,True,False
+RLS,Cortezian,2014,4822,29,522,True,False
+RLS,Shark Bay,2013,4799,97,533,True,False
+RLS,Three Kings-North Cape,2012,4752,30,426,True,False
+FRDC,Bassian,2020,4716,23,603,True,False
+RLS,Puget Trough/Georgia Basin,2023,4673,28,417,True,False
+RLS,Chiapas-Nicaragua,2008,4612,44,246,True,False
+RLS,Houtman,2023,4440,101,1005,True,False
+RLS,Houtman,2015,4257,51,688,True,False
+RLS,Houtman,2010,4094,58,472,True,False
+RLS,North Sea,2025,4056,15,158,False,False
+ATRC,Leeuwin,2023,4036,57,539,True,False
+RLS,Great Australian Bight,2014,3974,38,284,True,False
+RLS,Lesser Sunda,2015,3922,111,234,True,False
+RLS,Gulf of Maine/Bay of Fundy,2023,3921,5,97,False,False
+ATRC,Cape Howe,1994,3886,40,650,True,False
+RLS,Chiloense,2012,3867,9,358,False,False
+RLS,Western Caribbean,2019,3807,65,587,True,False
+RLS,Western Caribbean,2018,3797,60,653,True,False
+RLS,Society Islands,2012,3791,90,436,True,False
+RLS,Southern California Bight,2022,3790,30,475,True,False
+RLS,Bonaparte Coast,2023,3785,162,962,True,False
+ATRC,South Australian Gulfs,2009,3778,46,1119,True,False
+ATRC,South Australian Gulfs,2004,3775,40,1722,True,False
+FRDC,Bassian,2021,3744,34,670,True,False
+RLS,Hawaii,2019,3738,80,750,True,False
+Parks Vic,Bassian,2000,3727,47,1788,True,False
+Parks Vic,Bassian,2003,3722,45,1991,True,False
+RLS,South Australian Gulfs,2013,3596,36,397,True,False
+Parks Vic,Bassian,2006,3563,52,1534,True,False
+RLS,New Caledonia,2024,3495,160,468,True,False
+RLS,South Australian Gulfs,2015,3482,48,545,True,False
+RLS,South Australian Gulfs,2025,3323,45,860,True,False
+RLS,Puget Trough/Georgia Basin,2025,3300,23,389,True,False
+RLS,Southern Cook/Austral Islands,2009,3194,103,529,True,False
+FRDC,Bassian,2019,3077,45,954,True,False
+RLS,Northern Norway and Finnmark,2025,3052,20,193,True,False
+RLS,Agulhas Bank,2024,3048,24,348,True,False
+RLS,Bassian,2014,3034,51,473,True,False
+RLS,North American Pacific Fijordland,2017,2958,21,287,True,False
+RLS,Puget Trough/Georgia Basin,2024,2952,24,481,True,False
+RLS,Bahamian,2015,2899,59,472,True,False
+RLS,Greater Antilles,2011,2870,49,385,True,False
+RLS,Southern China,2025,2842,48,305,True,False
+RLS,Levantine Sea,2014,2816,26,304,True,False
+RLS,Northern and Central Red Sea,2022,2697,58,155,True,False
+RLS,Western Bassian,2018,2579,36,1212,True,False
+RLS,Hawaii,2012,2573,90,737,True,False
+RLS,"Oregon, Washington, Vancouver Coast and Shelf",2023,2546,28,645,True,False
+RLS,Puget Trough/Georgia Basin,2010,2493,21,349,True,False
+RLS,Western Bassian,2017,2436,36,1190,True,False
+Parks Vic,Cape Howe,2004,2401,40,924,True,False
+Parks Vic,Bassian,2009,2359,41,978,True,False
+RLS,Northeastern New Zealand,2008,2327,21,110,True,False
+ATRC,South Australian Gulfs,2023,2301,34,399,True,False
+RLS,Celtic Seas,2025,2263,19,116,False,False
+RLS,Lesser Sunda,2016,2248,108,232,True,False
+RLS,Sea of Japan/East Sea,2012,2230,15,60,False,False
+RLS,North Sea,2011,2225,14,155,False,False
+RLS,Bonaparte Coast,2009,2173,42,402,True,False
+RLS,Northern Grand Banks - Southern Labrador,2023,2163,5,53,False,False
+ATRC,Western Bassian,2005,2153,34,854,True,False
+Parks Vic,Bassian,2004,2089,44,1127,True,False
+RRH,Bassian,2026,2058,36,589,True,False
+RLS,Cocos-Keeling/Christmas Island,2009,2015,82,291,True,False
+RLS,Ningaloo,2008,2013,66,270,True,False
+RLS,Southern Cook/Austral Islands,2018,2011,71,286,True,False
+Parks Vic,Cape Howe,2009,1998,32,453,True,False
+Parks Vic,Bassian,2014,1973,41,1272,True,False
+RLS,Northern California,2022,1942,25,290,True,False
+RLS,Floridian,2014,1926,65,365,True,False
+RLS,Northern California,2010,1873,32,592,True,False
+Parks Vic,Bassian,1999,1863,43,1186,True,False
+RLS,Western Mediterranean,2022,1830,30,220,True,False
+RLS,Western Bassian,2013,1761,34,702,True,False
+Parks Vic,Cape Howe,2014,1684,31,335,True,False
+RLS,Bight of Sofala/Swamp Coast,2012,1664,87,257,True,False
+RLS,Fiji Islands,2025,1595,71,202,True,False
+RLS,Great Australian Bight,2023,1593,38,356,True,False
+RLS,Houtman,2018,1565,41,273,True,False
+RLS,"Oregon, Washington, Vancouver Coast and Shelf",2025,1491,19,401,False,False
+Parks Vic,Bassian,2015,1486,43,863,True,False
+ATRC,Great Australian Bight,2023,1451,32,196,True,False
+RLS,Vanuatu,2012,1442,101,311,True,False
+RLS,Celtic Seas,2011,1419,18,175,False,False
+RLS,Southwestern Caribbean,2018,1418,22,67,True,False
+RLS,North Patagonian Gulfs,2025,1413,7,282,False,False
+Parks Vic,Bassian,2010,1403,40,685,True,False
+RLS,Central New Zealand,2018,1399,24,463,True,False
+Parks Vic,Bassian,2005,1387,34,775,True,False
+RLS,Western Bassian,2020,1338,30,706,True,False
+RLS,Bonaparte Coast,2008,1291,30,227,True,False
+RLS,"Oregon, Washington, Vancouver Coast and Shelf",2026,1130,21,386,True,False
+Parks Vic,Bassian,2011,1065,37,616,True,False
+RLS,Chiloense,2019,1029,7,289,False,False
+ATRC,Bassian,2025,1005,24,489,True,False
+RLS,Cocos-Keeling/Christmas Island,2019,953,74,157,True,False
+RLS,"Oregon, Washington, Vancouver Coast and Shelf",2024,936,22,359,True,False
+ATRC,Western Bassian,1992,932,27,404,True,False
+RLS,Houtman,2011,931,26,203,True,False
+ATRC,Western Bassian,2014,923,33,551,True,False
+RLS,Adriatic Sea,2012,876,14,82,False,False
+RLS,South New Zealand,2013,805,11,33,False,False
+RLS,"Oregon, Washington, Vancouver Coast and Shelf",2021,789,22,319,True,False
+RLS,Western Bassian,2025,781,24,244,True,False
+ATRC,Western Bassian,2006,719,26,310,True,False
+ATRC,Western Bassian,2012,616,19,239,False,False
+RLS,"Oregon, Washington, Vancouver Coast and Shelf",2022,571,19,278,False,False
+RLS,Tonga Islands,2019,552,42,99,True,False
+ATRC,Western Bassian,2004,469,13,98,False,False
+RLS,Arabian (Persian) Gulf,2018,463,19,61,False,False
+RLS,Houtman,2020,459,30,160,True,False
+RLS,Western Bassian,2009,430,23,254,True,False
+RLS,Northern Grand Banks - Southern Labrador,2022,429,5,47,False,False
+RLS,Northern Grand Banks - Southern Labrador,2018,400,7,23,False,False
+RLS,Gulf of St. Lawrence - Eastern Scotian Shelf,2020,310,1,17,False,False
+Parks Vic,Bassian,2013,294,21,193,True,False
+RLS,Gulf of Maine/Bay of Fundy,2010,281,1,29,False,False
+RLS,Celtic Seas,2010,250,9,36,False,False
+Parks Vic,Bassian,2012,241,20,171,True,False
+RLS,Bahamian,2024,234,25,81,True,False
+RLS,Northeastern New Zealand,2011,193,13,68,False,False
+ATRC,Western Bassian,2018,184,15,105,False,False
+RLS,Gulf of Maine/Bay of Fundy,2014,180,6,49,False,False
+RLS,Western Bassian,2023,175,12,85,False,False
+RLS,Ionian Sea,2016,107,9,36,False,False
+Parks Vic,Cape Howe,1999,92,12,29,False,False
+RLS,Northern Grand Banks - Southern Labrador,2019,92,8,46,False,False
+RLS,South Australian Gulfs,2026,84,9,40,False,False
+RLS,Malvinas/Falklands,2012,80,7,33,False,False
+RLS,Arabian (Persian) Gulf,2017,69,11,29,False,False
+RLS,Western Bassian,2012,63,6,43,False,False
+Parks Vic,Western Bassian,2013,41,8,33,False,False
+RLS,Channels and Fjords of Southern Chile,2010,39,5,21,False,False
+RLS,Araucanian,2020,38,6,22,False,False
+RLS,Chiloense,2016,23,3,8,False,False
+RLS,Oyashio Current,2012,12,6,8,False,False
+RLS,Western Bassian,2024,8,3,8,False,False
+Parks Vic,Bassian,1998,7,3,7,False,False
+RLS,North and East Barents Sea,2012,7,3,3,False,False
+RLS,East Greenland Shelf,2012,4,1,4,False,False
+RLS,Antarctic Peninsula,2016,3,2,3,False,False
+RLS,Antarctic Peninsula,2025,3,2,3,False,False
+RLS,Western Bassian,2026,3,1,1,False,False

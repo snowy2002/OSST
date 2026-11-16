@@ -1,0 +1,258 @@
+{
+  "rigorous": true,
+  "C": 70,
+  "L0": 1,
+  "n": 74,
+  "scale_count": 7,
+  "scales": [
+    {
+      "passed": true,
+      "R": 8,
+      "degree": 48,
+      "bits": 512,
+      "bernstein_nodes": 7,
+      "bernstein_leaves": [
+        [
+          "0",
+          "1"
+        ],
+        [
+          "1",
+          "2"
+        ],
+        [
+          "2",
+          "4"
+        ],
+        [
+          "4",
+          "8"
+        ]
+      ],
+      "tail_shift_all_coefficients_nonnegative": true,
+      "j": 0,
+      "k": 30,
+      "t": "431332699423/1000000000000",
+      "eta": "115911354859/1000000000000",
+      "delta": "1/4",
+      "bound_arb": "[0.00039224493357624462467016957083432057295460561259546874991601602730 +/- 3.47e-69]",
+      "bound_midpoint": 0.0003922449335762446
+    },
+    {
+      "passed": true,
+      "R": 8,
+      "degree": 48,
+      "bits": 512,
+      "bernstein_nodes": 9,
+      "bernstein_leaves": [
+        [
+          "0",
+          "1"
+        ],
+        [
+          "1",
+          "3/2"
+        ],
+        [
+          "3/2",
+          "2"
+        ],
+        [
+          "2",
+          "4"
+        ],
+        [
+          "4",
+          "8"
+        ]
+      ],
+      "tail_shift_all_coefficients_nonnegative": true,
+      "j": 1,
+      "k": 29,
+      "t": "297675686071/500000000000",
+      "eta": "77412514549/1000000000000",
+      "delta": "1/8",
+      "bound_arb": "[0.0041015647636029944255565230200448737179683454756122978121884472346 +/- 2.70e-68]",
+      "bound_midpoint": 0.0041015647636029945
+    },
+    {
+      "passed": true,
+      "R": 8,
+      "degree": 48,
+      "bits": 512,
+      "bernstein_nodes": 5,
+      "bernstein_leaves": [
+        [
+          "0",
+          "2"
+        ],
+        [
+          "2",
+          "4"
+        ],
+        [
+          "4",
+          "8"
+        ]
+      ],
+      "tail_shift_all_coefficients_nonnegative": true,
+      "j": 2,
+      "k": 25,
+      "t": "1041232009921/1000000000000",
+      "eta": "2105490089/31250000000",
+      "delta": "1/16",
+      "bound_arb": "[0.0081774585245343249120558523455531904584682214083928387010000302240 +/- 3.05e-68]",
+      "bound_midpoint": 0.008177458524534324
+    },
+    {
+      "passed": true,
+      "R": 8,
+      "degree": 48,
+      "bits": 512,
+      "bernstein_nodes": 9,
+      "bernstein_leaves": [
+        [
+          "0",
+          "2"
+        ],
+        [
+          "2",
+          "5/2"
+        ],
+        [
+          "5/2",
+          "3"
+        ],
+        [
+          "3",
+          "4"
+        ],
+        [
+          "4",
+          "8"
+        ]
+      ],
+      "tail_shift_all_coefficients_nonnegative": true,
+      "j": 3,
+      "k": 22,
+      "t": "1630658991027/1000000000000",
+      "eta": "13095838359/250000000000",
+      "delta": "1/32",
+      "bound_arb": "[0.023201314090015572731529012717490095663875955375930316100757676430 +/- 1.88e-68]",
+      "bound_midpoint": 0.023201314090015572
+    },
+    {
+      "passed": true,
+      "R": 8,
+      "degree": 48,
+      "bits": 512,
+      "bernstein_nodes": 9,
+      "bernstein_leaves": [
+        [
+          "0",
+          "2"
+        ],
+        [
+          "2",
+          "5/2"
+        ],
+        [
+          "5/2",
+          "3"
+        ],
+        [
+          "3",
+          "4"
+        ],
+        [
+          "4",
+          "8"
+        ]
+      ],
+      "tail_shift_all_coefficients_nonnegative": true,
+      "j": 4,
+      "k": 18,
+      "t": "543862897353/200000000000",
+      "eta": "43491690967/1000000000000",
+      "delta": "1/64",
+      "bound_arb": "[0.043367243884861852923879286814139555702987960683017078640490510708 +/- 6.43e-69]",
+      "bound_midpoint": 0.04336724388486185
+    },
+    {
+      "passed": true,
+      "R": 8,
+      "degree": 48,
+      "bits": 512,
+      "bernstein_nodes": 9,
+      "bernstein_leaves": [
+        [
+          "0",
+          "2"
+        ],
+        [
+          "2",
+          "5/2"
+        ],
+        [
+          "5/2",
+          "3"
+        ],
+        [
+          "3",
+          "4"
+        ],
+        [
+          "4",
+          "8"
+        ]
+      ],
+      "tail_shift_all_coefficients_nonnegative": true,
+      "j": 5,
+      "k": 15,
+      "t": "4246331325231/1000000000000",
+      "eta": "8449583339/250000000000",
+      "delta": "1/128",
+      "bound_arb": "[0.086286580216825403189408444730448954166020225239357409288484610529 +/- 4.58e-67]",
+      "bound_midpoint": 0.0862865802168254
+    },
+    {
+      "passed": true,
+      "R": 8,
+      "degree": 48,
+      "bits": 512,
+      "bernstein_nodes": 7,
+      "bernstein_leaves": [
+        [
+          "0",
+          "2"
+        ],
+        [
+          "2",
+          "3"
+        ],
+        [
+          "3",
+          "4"
+        ],
+        [
+          "4",
+          "8"
+        ]
+      ],
+      "tail_shift_all_coefficients_nonnegative": true,
+      "j": 6,
+      "k": 12,
+      "t": "345791669923/50000000000",
+      "eta": "428718023/15625000000",
+      "delta": "1/256",
+      "bound_arb": "[0.13599141919205038503123269178100836505471807651685561467582830067 +/- 9.71e-67]",
+      "bound_midpoint": 0.13599141919205038
+    }
+  ],
+  "passed": true,
+  "union_bound_arb": "[0.30151782560546677783833198097951935533699339031176102396866559182 +/- 1.46e-66]",
+  "union_bound_midpoint": 0.3015178256054668,
+  "strict_target": "8/25",
+  "proposal_method": "Nonrigorous MGF optimization followed by rational rounding and 512-bit Arb polynomial certification. Optimizer is not trusted as a proof.",
+  "elapsed_seconds": 0.2161673000009614
+}

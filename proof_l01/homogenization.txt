@@ -1,0 +1,81 @@
+Homogenization of zero/singleton Poisson occupancy statistics
+
+Theorem. Let X_i be independent Poisson(lambda_i), F_0=# {i:X_i=0},
+F_1=# {i:X_i=1}, and let phi:{0,...,r}->[0,infinity) be nondecreasing.
+For every y in [0,1],
+ sup_{lambda_1,...,lambda_r>=0} E[y^{F_0} phi(F_1)]
+ = sup_{lambda>=0} E_{lambda_1=...=lambda_r=lambda}[y^{F_0} phi(F_1)].
+The supremum may be a limit at infinity. Take 0^0=1.
+
+Proof. First assume 0<d:=1-y<=1 and all relevant parameters are finite
+and positive. Put
+ a=e^{-lambda}, b=lambda e^{-lambda},
+ t=1-d e^{-lambda}, h=t-b=1-(d+lambda)e^{-lambda}.
+The unnormalized generating polynomial for a single variable, after
+weighting zero outcomes by y, is h+bz. Its total mass is t. Both h and
+b are positive for lambda>0, and x=log t increases strictly with lambda.
+
+We need two curvature facts in this x coordinate.
+
+(i) log b is concave as a function of x. Indeed,
+ d(log b)/dx = (1-lambda)(e^lambda-d)/(d lambda),
+ and its derivative with respect to lambda equals
+ [d-e^lambda(lambda^2-lambda+1)]/(d lambda^2) <= 0.
+Here e^lambda(lambda^2-lambda+1)>=1, since its value at zero is 1 and
+its derivative is e^lambda lambda(lambda+1)>=0. Since dx/dlambda>0,
+the claimed concavity follows.
+
+(ii) log h is convex as a function of x. Its first derivative is
+ R(lambda)=t(lambda-y)/(d h).
+Direct differentiation gives
+ R'(lambda) = N(lambda,d)/(d e^{2lambda} h^2),
+ N(lambda,d)=e^{2lambda}
+             -e^lambda[lambda^2-lambda+1+d(lambda+1)]+d.
+N decreases with d because its d derivative is 1-(lambda+1)e^lambda<=0.
+Consequently, for 0<d<=1,
+ N(lambda,d)>=N(lambda,1)
+ = e^lambda[2cosh(lambda)-lambda^2-2] >= 0.
+The last inequality follows termwise from the absolutely convergent
+cosh series: 2cosh(lambda)-lambda^2-2
+=2 sum_{k>=2}lambda^{2k}/(2k)! >=0. This proves convexity.
+
+Given two parameters, replace their x coordinates by their arithmetic
+mean. The corresponding common lambda_* is uniquely defined by
+ t_*^2=t_1 t_2. The curvature facts imply
+ b_*^2>=b_1 b_2 and h_*^2<=h_1 h_2.
+For the two-variable unnormalized singleton distribution, total mass,
+mass above or equal to one, and mass above or equal to two are respectively
+ t_1t_2, t_1t_2-h_1h_2, b_1b_2.
+After replacement they become t_*^2, t_*^2-h_*^2, b_*^2. Thus total mass
+is unchanged and both positive tails increase. Every nondecreasing phi
+is a nonnegative linear combination of a constant and upper-tail
+indicators, so its expectation does not decrease. Conditioning on all
+remaining variables preserves this assertion, since their weights are
+nonnegative and k->phi(k+F_1_other) is nondecreasing.
+
+Apply this operation repeatedly to the largest and smallest x coordinate.
+The mean of all r coordinates stays fixed and their squared deviations
+decrease by half the squared distance of the replaced pair. The squared
+range is at least the variance divided by r, so the variance tends to zero.
+All coordinates converge to their common arithmetic mean. Continuity
+then shows that the original expectation is at most the expectation at
+this single common lambda. The reverse inequality follows by inclusion
+of diagonal parameter tuples in the original supremum.
+
+Boundary cases follow by continuity. If y=0 and some lambda_i=0 then
+t_i=0, and the whole weighted expectation is zero, so the inequality is
+immediate. Zero singleton weights and lambda=infinity are limits.
+Finally, if y=1, weighting disappears and F_1 is a sum of independent
+Bernoulli variables with success probabilities lambda_i e^{-lambda_i}.
+Their probabilities are all maximized by lambda_i=1, and a nondecreasing
+phi is maximized by increasing each probability. This proves the claim
+also for y=1. QED.
+
+Useful corollary for computation. For 0<y<1, the diagonal expectation is
+ sum_{s=0}^r binom(r,s) b(lambda)^s h(lambda)^{r-s} phi(s).
+Its supremum can be restricted to lambda>=1: with other variables fixed,
+the objective equals A+e^{-lambda}[(y-1)A+lambda(B-A)], where B>=A>=0.
+Its derivative is e^{-lambda}[(1-y)A+(1-lambda)(B-A)]>=0 on [0,1].
+Increasing all coordinates up to 1 therefore cannot decrease it.
+
+The proof is analytic and independent of any numerical optimization.

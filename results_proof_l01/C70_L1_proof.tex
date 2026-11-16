@@ -1,0 +1,493 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.85in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,hyperref,microtype}
+\setlength{\emergencystretch}{2em}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Prb}{\mathbb P}
+\newcommand{\Poi}{\operatorname{Poi}}
+\newcommand{\eff}{\operatorname{eff}}
+\input{certified_bounds.tex}
+\title{A Sufficient-Constant Proof for the Unchanged Support Estimator\\$C_0=70$, $L_0=1$}
+\author{Independent analytic derivation and reproducible interval certificates}
+\date{November 4, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We prove the original single-run, multiscale support guarantee with real
+Poisson mean $70n/[\epsilon(1+\log n)]$ for every positive integer $n$.
+The new part is uniform control of the upper tail below the previously
+certified threshold $1+\log n=14$. It combines a Poisson occupancy
+homogenization lemma, a large-mean anchor category, and exact moment
+generating function certificates. All degree ceilings and scale transitions
+are covered. Simulations are not premises of this proof. This is a
+sufficiency result for 70, not a proof of the optimal real constant.
+\end{abstract}
+
+\section{Exact algorithm and theorem}
+Let $p$ be a probability distribution on a finite or countable alphabet.
+For $n\ge1$ and $0<\epsilon<1$, put
+\[
+ L=1+\log n,\qquad m=\frac{70n}{\epsilon L},\qquad
+ N_i\ \hbox{independent},\quad N_i\sim\Poi(mp_i),\qquad
+ D=\sum_i1_{N_i>0}.
+\]
+The mean $m$ is a real number, not an integer ceiling. Write
+$S=|\operatorname{supp}p|$,
+$\Delta_r=\sum_{i>r}p_{(i)}$, and
+$e_\epsilon=\min\{r\ge1:\Delta_r\le\epsilon\}$.
+The latter is finite even if $S=\infty$.
+Set
+\[
+ J=\left\lfloor\log_2\frac{256L^2}{70}\right\rfloor,\quad
+ A_j=\frac{70\,2^j}{8L},\quad B=64L,\quad
+ \delta_j=2^{-j-2},\quad
+ k_j=\left\lceil\sqrt{B/A_j}(j+3)\log2\right\rceil.
+\]
+Let $a_j=A_j/m$, $b=B/m$, and
+\[
+ P_j(x)=-\frac{T_{k_j}((b+a_j-2x)/(b-a_j))}
+                  {T_{k_j}((b+a_j)/(b-a_j))}
+       =\sum_{\ell=0}^{k_j}c_{j,\ell}x^\ell.
+\]
+Use $f_j(0)=0$, $f_j(\ell)=1+c_{j,\ell}\ell!/m^\ell$ for
+$1\le\ell\le k_j$, and $f_j(\ell)=1$ for $\ell>k_j$. Define
+\[
+ Z_j=\sum_i f_j(N_i),\qquad
+ \widetilde S=\max\left\{D,\max_{0\le j\le J}
+                   \frac{Z_j-\delta_j n}{1+\delta_j}\right\},\quad
+ \widehat S=\min\{n,\max\{1,\lceil\widetilde S\rceil\}\}.
+\]
+The binary output is Yes if and only if $\widetilde S\le n$.
+These are the original scales, degree ceilings, correction, and output;
+there is no degree cap or modification of the statistic in the theorem.
+For countable support, $\sum_iN_i\sim\Poi(m)<\infty$ almost surely.
+Since $f_j(0)=0$, only finitely many terms in each $Z_j$ are nonzero
+almost surely; the statistic is therefore well-defined.
+
+\begin{theorem}\label{thm:main}
+For every such $n,\epsilon,p$, the failure probability is less than
+$0.331$, and in particular
+\[
+ \Prb\{\min(e_\epsilon,n)\le\widehat S\le\min(S,n)\}>\frac23.
+\]
+On the promise $S\le n$, the binary output is Yes; on the promise
+$\Delta_n\ge\epsilon$, it is No, with probability greater than $2/3$.
+On either promise, the binary output and the displayed interval are
+simultaneously correct with probability greater than $2/3$.
+There is no binary correctness claim in the intervening gap.
+\end{theorem}
+
+The upper and lower deviations are different events. Establishing a bound
+for each at $1/3$ would not prove the simultaneous statement. Below we
+explicitly add the bounds where necessary.
+
+\section{Well-defined parameters and exact coefficient formula}
+Since $256/70>1$, $J\ge0$ for all $L\ge1$, and its definition gives
+$0<A_j\le B/2$. With
+$\alpha_0=3\log2\sqrt{512/70}$, the sequence
+$(j+3)2^{-j/2}$ is decreasing, and hence
+\[
+ k_j\le\alpha_0L+1<6.7L<64L/\sqrt2
+ \le\sqrt{B(B-A_j)}.
+\]
+The usual Chebyshev normalization bound gives
+$\rho_j=T_{k_j}((B+A_j)/(B-A_j))^{-1}\le\delta_j^2/2$.
+The constant inequalities in this paragraph are checked by outward
+intervals as well as the finite implementation audit.
+
+The original expectation lemma was stated with $b\le1$. Its proof is
+valid without that restriction: the intervals $[0,a]$, $[a,b]$, and
+$[b,\infty)$ use respectively concavity, $|T_k|\le1$, and the inequality
+$m\sqrt{b(b-a)}\ge k$. None uses an absolute upper bound on $b$.
+Thus removing the implementation's old $b\le1$ guard does not change
+the estimator and does not invalidate that lemma. The new finite-range
+upper proof below in fact uses the exact coefficients directly.
+
+For $k\ge1$,
+\[
+ T_k(1+z)=\sum_{r=0}^k d_{k,r}z^r,\qquad
+ d_{k,r}=\frac{k\,2^r(k+r-1)!}{(k-r)!(2r)!}>0.
+\]
+This identity follows either by differentiating the Chebyshev differential
+equation at 1 or by its polynomial recurrence. Put
+$z=2A/(B-A)$ and $\beta=2/(B-A)$. Then
+\begin{equation}\label{eq:coeff}
+ u_\ell=
+ \frac{\beta^\ell\ell!\sum_{r=\ell}^k d_{k,r}\binom r\ell z^{r-\ell}}
+      {\sum_{r=0}^k d_{k,r}z^r}>0,\qquad
+ f(\ell)-1=(-1)^{\ell+1}u_\ell.
+\end{equation}
+All terms used to enclose $u_\ell$ are positive. The independent checker
+also uses
+$d_{k,r+1}/d_{k,r}=(k^2-r^2)/[(r+1)(2r+1)]$ and a different polynomial
+evaluation to avoid relying on just one coefficient implementation.
+
+\section{Lower deviation on the new range}
+\begin{lemma}[Discovery coupling]\label{lem:discovery}
+If $\Delta_r\ge\epsilon$ and $r\le n$, then
+\[
+ \Prb(D\le r)\le\Prb\{\Poi(m\epsilon)\le r\}
+                 \le\Prb\{\Poi(70n/L)\le n\}.
+\]
+\end{lemma}
+\begin{proof}
+Until $r+1$ distinct labels have been seen, the probability that the next
+observation is new is at least $\epsilon$, since the total mass of any
+set of at most $r$ labels is at most $1-\Delta_r$.
+Thin the new-label event, using an extra independent uniform variable,
+to have conditional probability exactly $\epsilon$. After $r+1$
+discoveries, continue with independent Bernoulli($\epsilon$) marks.
+These marks are iid and are a thinning of the Poisson arrival process;
+before the target is reached each mark forces a discovery.
+Thus $D\le r$ implies that at most $r$ marks arrived. Poisson thinning
+and monotonicity in the threshold give the assertion.
+\end{proof}
+For $C\ge69$ and $1\le L\le32$, Chernoff gives
+\[
+ \Prb\{\Poi(Cn/L)\le n\}
+ \le\exp\{-e^{L-1}[C/L-1-\log(C/L)]\}.
+\]
+On each of the 992 closed intervals $[a,b]$ of width $1/32$ covering
+$[1,32]$, replace $e^{L-1}$ by $e^{a-1}$ and $C/L$ by $69/b$.
+The function $x-1-\log x$ is increasing for $x>1$.
+Outward interval evaluation proves the uniform bound
+\begin{equation}\label{eq:lower}
+ R_{\rm small}<1.657\cdot10^{-27}.
+\end{equation}
+This is much smaller than the upper-tail margins used below. For the
+interval output take $r=\min(e_\epsilon,n)-1$ when it is positive;
+minimality of $e_\epsilon$ gives $\Delta_r>\epsilon$.
+For the binary alternative take $r=n$.
+
+\section{Exact MGF and its finite certificates}
+For a fixed scale write $Y=f(\Poi(\lambda))-1$. Set
+$y_0=-1$, $y_\ell=(-1)^{\ell+1}u_\ell$ for $1\le\ell\le k$.
+The other values of $Y$ are zero. Therefore, exactly,
+\begin{equation}\label{eq:mgf}
+ G(t,\lambda)=\E e^{tY}
+ =1+e^{-\lambda}\sum_{\ell=0}^k(e^{ty_\ell}-1)
+                                  \frac{\lambda^\ell}{\ell!}.
+\end{equation}
+In particular the zero-count contribution is negative and is retained.
+If $G(t,\lambda)\le1+\eta$ uniformly for $\lambda\ge0$, exponential
+Markov and independence imply
+\begin{equation}\label{eq:chernoff}
+ \Prb\{Z_j>(1+\delta_j)S+\delta_jn\}
+ \le\exp\{S\log(1+\eta)-t\delta_j(n+S)\}.
+\end{equation}
+For fixed $n$, its logarithm is affine in $S$; the maximum over
+$1\le S\le n$ is attained at $S=1$ or $S=n$.
+
+\begin{lemma}[Polynomial certificate]\label{lem:polynomial}
+Let $d\ge k$, $t,\eta>0$. If
+\[
+ Q(\lambda)=\eta\sum_{\ell=0}^d\frac{\lambda^\ell}{\ell!}
+       -\sum_{\ell=0}^k(e^{ty_\ell}-1)\frac{\lambda^\ell}{\ell!}
+ \ge0\qquad(\lambda\ge0),
+\]
+then $G(t,\lambda)\le1+\eta$ for every $\lambda\ge0$.
+\end{lemma}
+\begin{proof}
+The Taylor polynomial is a lower bound for $e^\lambda$ on this domain.
+Consequently $\eta e^\lambda$ is no smaller than the second sum;
+multiply by $e^{-\lambda}$ and use \eqref{eq:mgf}.
+\end{proof}
+There are two separate implementations of the global nonnegativity test.
+First, map a finite interval $[a,b]$ to $[0,1]$ and express $Q$ in the
+Bernstein basis $\binom di x^i(1-x)^{d-i}$. Nonnegative coefficients
+certify nonnegativity on the entire interval. Subdivide intervals if
+needed. For $\lambda\ge R$, nonnegative coefficients of $Q(R+x)$
+suffice. Second, for $d=k$ map the whole half-line by
+$\lambda=x/(1-x)$; the Bernstein coefficients of
+$(1-x)^k Q(x/(1-x))$ are explicitly
+\[
+ (\eta-(e^{ty_\ell}-1))\frac{(k-\ell)!}{k!}.
+\]
+de Casteljau subdivision proves nonnegativity on $[0,1]$ and hence on
+the complete original half-line. The endpoint $x=1$ causes no gap:
+all finite $\lambda$ correspond to $x<1$.
+All these operations use outward intervals. A failed or ambiguous
+positivity test is rejected; it is never replaced by a grid estimate.
+
+\subsection{Integers $74\le n\le403$}
+Every scale of these integers is included. The 329 integers from 75 to
+403 give 2570 scale obligations; a separate bridge certificate covers
+all seven scales at 74. A nonrigorous numerical search proposes rational
+$t,\eta$. Lemma~\ref{lem:polynomial} then verifies every proposal over
+the whole half-line. The final proof uses only the rational proposals
+and the successful certificates, not correctness of the optimizer.
+Summing \eqref{eq:chernoff}, with both $S$ endpoints checked, gives
+\begin{equation}\label{eq:finite}
+ U_{75:403}<0.291304,\qquad U_{74}<\BridgeUpperDisplay.
+\end{equation}
+The exact certified maximum is recorded in the accompanying JSON.
+The independent replay rejects missing integers, missing scales,
+incorrect degrees or corrections, and nonpositive rational parameters.
+Deleting an integer or a scale is included as a negative control.
+
+\subsection{Continuous range $7\le L\le14$}
+Partition this interval into 700 closed rational slabs of width $1/100$.
+For a slab $[a,b]$ put $N=\lfloor e^{a-1}\rfloor\le n$.
+At scale $j$ choose
+\[
+ t=\frac4{\delta_jN},\qquad\eta=\frac4N=t\delta_j.
+\]
+For each possibly active scale include every integer between
+$\lceil\alpha_ja\rceil$ and $\lceil\alpha_jb\rceil$, where
+$\alpha_j=\sqrt{512/(70\,2^j)}(j+3)\log2$.
+Equation~\eqref{eq:coeff} encloses the coefficients over the whole slab,
+even when the ceiling or $J$ changes inside it.
+Both nonnegativity implementations certify all 6597 resulting $(j,k)$
+obligations. Thus $G\le1+\eta$. Using $\log(1+\eta)\le\eta$ in
+\eqref{eq:chernoff} gives
+\[
+ S\log(1+\eta)-t\delta_j(n+S)\le-4n/N\le-4.
+\]
+There are at most 10 active scales for $L\le14$, so
+\begin{equation}\label{eq:mid}
+ U_{7:14}\le10e^{-4}<0.183157.
+\end{equation}
+This is continuous coverage, not a finite sample of $L$ values.
+
+\section{A homogenization theorem for zero and singleton counts}
+\begin{lemma}\label{lem:homog}
+Let $X_i$ be independent $\Poi(\lambda_i)$, $i=1,\ldots,r$,
+$F_0=\#\{i:X_i=0\}$, $F_1=\#\{i:X_i=1\}$.
+For $0\le y\le1$ and nonnegative nondecreasing
+$\phi:\{0,\ldots,r\}\to\mathbb R$,
+\[
+ \sup_{\lambda_1,\ldots,\lambda_r\ge0}\E[y^{F_0}\phi(F_1)]
+ =\sup_{\lambda\ge0}\E_{\lambda_i=\lambda}[y^{F_0}\phi(F_1)].
+\]
+For computing the supremum one may restrict to $\lambda\ge1$.
+\end{lemma}
+\begin{proof}
+First let $0<d=1-y\le1$ and all parameters be finite and positive.
+For a single coordinate put
+\[
+ b=\lambda e^{-\lambda},\quad t=1-de^{-\lambda},\quad
+ h=t-b=1-(d+\lambda)e^{-\lambda},\quad x=\log t.
+\]
+The unnormalized singleton generating polynomial after weighting zeros
+by $y$ is $h+bz$. We show that $\log b$ is concave and $\log h$ convex
+as functions of $x$. Since $dx/d\lambda>0$, for the first claim it
+suffices that
+\[
+ \frac{d}{d\lambda}\frac{d\log b}{dx}
+ =\frac{d-e^\lambda(\lambda^2-\lambda+1)}{d\lambda^2}\le0.
+\]
+Indeed $e^\lambda(\lambda^2-\lambda+1)\ge1$, as its derivative is
+$e^\lambda\lambda(\lambda+1)\ge0$ and its value at zero is 1.
+For the second claim,
+\[
+ \frac{d\log h}{dx}=\frac{t(\lambda-y)}{dh},\qquad
+ \frac{d}{d\lambda}\frac{d\log h}{dx}
+ =\frac{W(\lambda,d)}{de^{2\lambda}h^2},
+\]
+where
+\[
+ W=e^{2\lambda}-e^\lambda[\lambda^2-\lambda+1+d(\lambda+1)]+d.
+\]
+This decreases with $d$, and at $d=1$ equals
+$e^\lambda(2\cosh\lambda-\lambda^2-2)\ge0$, by the nonnegative
+remaining terms in the cosh power series.
+
+Replace two $x$ coordinates by their arithmetic mean, with resulting
+common parameter denoted by a star. Then
+\[
+ t_*^2=t_1t_2,\qquad b_*^2\ge b_1b_2,\qquad h_*^2\le h_1h_2.
+\]
+For two singleton indicators the total unnormalized mass, tail mass at
+least 1, and tail mass at least 2 are respectively
+$t_1t_2$, $t_1t_2-h_1h_2$, $b_1b_2$.
+The replacement preserves the first and increases the latter two.
+Every nondecreasing $\phi$ is a nonnegative linear combination of a
+constant and upper-tail indicators. Conditional on the other coordinates,
+the weighted expectation therefore does not decrease.
+
+Repeatedly average the largest and smallest $x$ coordinates. Their mean
+is unchanged; the sum of squared deviations decreases by half their
+squared difference and consequently converges to zero. Continuity shows
+that the fully equal vector has at least the original expectation.
+The reverse supremum inequality is immediate.
+Boundary points follow by continuity. If $y=0$ and a mean is zero,
+the weighted expectation is zero. Infinite means are limits.
+If $y=1$, the $F_1$ summands are independent Bernoulli variables with
+probabilities $\lambda_i e^{-\lambda_i}$, each maximized at 1;
+monotonicity of $\phi$ proves this remaining case.
+
+Finally, conditional on the other coordinates the objective is
+$A+e^{-\lambda}[(y-1)A+\lambda(B-A)]$ with $B\ge A\ge0$.
+Its derivative is
+$e^{-\lambda}[(1-y)A+(1-\lambda)(B-A)]\ge0$ for $\lambda\le1$.
+Increasing each coordinate below 1 therefore cannot decrease the value.
+\end{proof}
+
+\section{Small integers: retaining the probability-mass constraint}
+For $1\le S\le n$, choose a category $h$ of maximal true probability,
+before observing the sample. Its mean satisfies
+\[
+ \lambda_h=mp_h\ge m/S>\frac{70n}{SL}=:\Lambda.
+\]
+Hence
+\begin{equation}\label{eq:anchor}
+ \Prb(N_h<K)\le e^{-\Lambda}\sum_{\ell=0}^{K-1}\frac{\Lambda^\ell}{\ell!}
+ \quad\hbox{for every positive integer }K.
+\end{equation}
+This step is essential: allowing arbitrary unconstrained means for every
+category may give an upper bound above $1/3$ even when $S=1$.
+
+Choose the exact envelope $q_j:=\max(0,\max_{\ell\ge3,\ \ell\ {
+m odd}}u_{j,\ell})$.
+Then
+\[
+ \sum_i(f_j(N_i)-1)
+ \le q_j S+(u_{j,1}-q_j)F_1-(1+q_j)F_0.
+\]
+Consequently the scale's upper event implies
+\begin{equation}\label{eq:F01}
+ F_0<T_j(F_1),\qquad
+ T_j(s)=\frac{(u_{j,1}-q_j)s+(q_j-\delta_j)S-\delta_jn}{1+q_j}.
+\end{equation}
+When $N_h\ge2$, $F_0,F_1$ come from the remaining $r=S-1$ categories.
+Independence permits removing the anchor without changing their law.
+Importantly, the $S$ in \eqref{eq:F01} remains the original support size.
+For two rows, $n=16$ and $n=27$, use the stronger anchor event $N_h\ge4$.
+In general, for an even $K\ge2$ put
+\[
+ q_{h,j}=\max(0,\max_{\ell\ge K+1,\ \ell\ {\rm odd}}u_{j,\ell}).
+\]
+On $N_h\ge K$ the anchor's correction is at most $q_{h,j}$. Replace
+$T_j(s)$ in \eqref{eq:F01} by the sharper threshold
+\[
+ T_{j,K}(s)=T_j(s)-\frac{q_j-q_{h,j}}{1+q_j}.
+\]
+For $K=2$ this equals $T_j(s)$. This adjustment and the full Poisson
+tail in \eqref{eq:anchor} are included in the certificates.
+
+For a chosen collection of scales with $u_{j,1}\ge q_j$, define
+$z_s=\lceil\max_j T_{j,K}(s)\rceil-1$.
+This is the largest integer strictly below the threshold; certified
+rational coefficient upper bounds may be used to enlarge it safely.
+The sequence $z_s$ is nondecreasing. For any fixed rational $0<y<1$ put
+\[
+ \phi_y(s)=\begin{cases}0,&z_s<0,\\y^{-z_s},&z_s\ge0.\end{cases}
+\]
+Then
+$1_{\{F_0\le z_{F_1}\}}\le y^{F_0}\phi_y(F_1)$.
+The intersection of this union with $\{N_h\ge K\}$ is contained in the
+remaining-coordinate event just bounded. Dropping the anchor condition
+enlarges that event and does not condition the remaining variables.
+Lemma~\ref{lem:homog} therefore bounds the intersection probability
+by the supremum, over a single $\lambda\ge1$, of
+\begin{equation}\label{eq:diagonal}
+ \sum_{s=0}^r\binom rs
+       (\lambda e^{-\lambda})^s
+       [1-(1-y+\lambda)e^{-\lambda}]^{r-s}\phi_y(s).
+\end{equation}
+The remaining scales, if any, are bounded with \eqref{eq:chernoff} at
+the specified $S$. Add these bounds and the anchor error
+\eqref{eq:anchor}. The chosen split and rational $y,t,\eta$ may vary
+with $n,S$: they are proof parameters, not changes to the estimator.
+Empty scale collections and $r=0$ are handled directly.
+
+The finite verifier includes every integer $1\le n\le73$ and
+$1\le S\le n$, with complete scale coverage, exact strict-inequality
+rounding, and monotonicity checks on $\phi$. It proves
+\begin{equation}\label{eq:small}
+ U_{1:73}<\SmallUpperDisplay.
+\end{equation}
+Here is the explicit enclosure of \eqref{eq:diagonal}. Write
+$b(\lambda)=\lambda e^{-\lambda}$ and
+$h(\lambda)=1-(1-y+\lambda)e^{-\lambda}$.
+On $\lambda\ge1$, $b$ decreases and $h$ increases. On a closed interval
+$[a,b_0]\subset[1,24]$, the positive sum is therefore at most
+\[
+ \sum_{s=0}^r\binom rs b(a)^s h(b_0)^{r-s}\phi_y(s).
+\]
+The verifier bisects until this outward interval bound is below the
+specified rational target. For $\lambda\ge24$ use $h\le1$ and
+$b(\lambda)\le24e^{-24}$ in the same positive sum.
+The full certificate includes 2701 $(n,S)$ cases and covers every
+$\lambda$ by these intervals and the explicit remaining half-line.
+Its worst upper bound is below $0.330679396$, at $n=27$.
+The bound for each fixed $S$ is assembled before taking the maximum;
+unrelated maxima over $S$ are not multiplied or treated as independent.
+Numerical optimization alone is never accepted as verification.
+
+\section{Large range, coverage, and completion of the proof}
+For $L\ge14$ the present estimator and the earlier $(70,14)$ estimator
+are identical, including their real mean. The earlier concentration
+proof, reproduced in the attached appendices, establishes joint failure
+less than $0.0009$. It uses coefficient/range envelopes, Cantelli,
+Hoeffding and endpoint Bernstein bounds, with 260 closed slabs covering
+$[14,40]$ and a decreasing analytic envelope on $[40,\infty)$.
+Thus its use here does not extrapolate a finite simulation to infinity.
+For this proof the $C=70$ obligations have been freshly recomputed using
+160-bit dyadic rational intervals: 15,885 checks, including equality with
+the saved complete finite and half-line values. The final joint bound is
+below $0.000879402$. The old counting branch is not used in this transfer.
+In the combined PDF, Appendix A is the repository manuscript
+\emph{A Single-Run Refinement of the Support-Testing Constants}
+(\texttt{results\_parameter\_search/proof.pdf}), and Appendix B is
+the earlier exact-certificate manuscript
+(\texttt{artifacts/joint\_constants\_submission/submission\_proof.pdf}).
+Their sources and arithmetic dependencies are included in the archive.
+We use only their sufficiency results and supporting lemmas.
+
+There is no gap between the new finite and continuous ranges because
+$1+\log403<7<1+\log404$. The continuous interval includes its endpoints
+and overlaps the large-range proof at 14. Thus the domain is exhausted:
+\begin{center}
+\begin{tabular}{lll}\toprule
+Range & Upper deviation or joint bound & Coverage\\\midrule
+$1\le n\le73$ & $U<\SmallUpperDisplay$ & all 2701 $(n,S)$ pairs\\
+$n=74$ & $U<\BridgeUpperDisplay$ & all seven scales\\
+$75\le n\le403$ & $U<0.291304$ & all 329 integers, 2570 scales\\
+$7\le L\le14$ & $U\le10e^{-4}<0.183157$ & 700 closed slabs, 6597 branches\\
+$L\ge14$ & joint $<0.0009$ & 260 closed slabs and an infinite tail\\\bottomrule
+\end{tabular}
+\end{center}
+For $L<14$ and $S\le n$, $D\le S$ deterministically. Thus an upper
+failure requires a polynomial scale event already bounded by $U$.
+The lower interval failure is bounded by \eqref{eq:lower}, since
+$\widetilde S\ge D$. Explicitly,
+$0.330679396+1.657\cdot10^{-27}<0.331<1/3$; all other new upper
+bounds are smaller. This rational margin is checked in the aggregate
+certificate. On the null promise, the
+same event also ensures the binary answer is correct.
+If $S>n$, the clipped upper endpoint is automatic. On the alternative,
+$D>n$ simultaneously gives the correct binary answer and interval;
+its complement is bounded by the discovery lemma. In the gap only the
+interval is required. These arguments also apply to countable support.
+For $L\ge14$ use the transferred joint bound. This proves
+Theorem~\ref{thm:main}.
+
+\section{Verification, scope, and experimental interpretation}
+The proof package separates exploratory optimizers from deterministic
+certificate replay. Every accepted bound uses outward intervals and
+global domain coverage. It includes independent coefficient and
+polynomial-positivity implementations, missing-domain negative controls,
+and hashes of the exact sources and certificate files. The single
+entry point is \texttt{python -m proof\_l01.verify\_all} in the repository
+environment. This is a computer-assisted mathematical proof, conditional
+on the documented arithmetic software and analytic lemmas; it is not a
+claim of proof-assistant formalization.
+
+The theorem is about iid Poisson sampling from a fixed discrete
+distribution. Existing real-data tests construct fixed empirical
+distributions and resample from them, so they test precisely this
+conditional model. They do not establish independent field observations,
+known unseen ecological support, or a sample-efficiency advantage.
+The observed 78 failures in 1.28 million primary paths, including a worst
+cell rate of 1.1\%, are compatible with the theorem. The tested cells and
+their confidence bounds remain empirical evidence separate from the
+uniform proof. The cheaper certified count baseline and the lack of a
+demonstrated practical sampling advantage remain unchanged conclusions.
+The exact optimal real constant, attainment of that constant, and
+necessity for every smaller constant are outside this sufficient-constant
+result and are not needed for the validity of $C_0=70,L_0=1$.
+\end{document}

@@ -1,0 +1,103 @@
+{
+  "population": "bbs_66ce41d269",
+  "plans": [
+    {
+      "single": null,
+      "amplified": null,
+      "count95": null
+    },
+    {
+      "single": null,
+      "amplified": null,
+      "count95": {
+        "n": 19,
+        "m": 342,
+        "copies": 1,
+        "budget": 419,
+        "mean_limit": 342,
+        "tail_certificate": "[0.0034109800891596584017293317513955326950034221377315 +/- 2.51e-53]"
+      }
+    },
+    {
+      "single": {
+        "n": 1,
+        "m": 700.0,
+        "copies": 1,
+        "budget": 838,
+        "mean_limit": 729
+      },
+      "amplified": null,
+      "count95": {
+        "n": 51,
+        "m": 729,
+        "copies": 1,
+        "budget": 838,
+        "mean_limit": 729,
+        "tail_certificate": "[0.0043151453650308439850402092669794146446087420202644 +/- 4.06e-53]"
+      }
+    },
+    {
+      "single": {
+        "n": 8,
+        "m": 1818.5115463972077,
+        "copies": 1,
+        "budget": 2096,
+        "mean_limit": 1924
+      },
+      "amplified": null,
+      "count95": {
+        "n": 158,
+        "m": 1924,
+        "copies": 1,
+        "budget": 2096,
+        "mean_limit": 1924,
+        "tail_certificate": "[0.0060504687288847878912066305245334511266977255777331 +/- 5.65e-54]"
+      }
+    },
+    {
+      "single": {
+        "n": 23,
+        "m": 3893.1259867286994,
+        "copies": 1,
+        "budget": 4193,
+        "mean_limit": 3950
+      },
+      "amplified": null,
+      "count95": {
+        "n": 346,
+        "m": 3950,
+        "copies": 1,
+        "budget": 4193,
+        "mean_limit": 3950,
+        "tail_certificate": "[0.0064882907096258585256056255439061426466296640522836 +/- 6.30e-54]"
+      }
+    },
+    {
+      "single": {
+        "n": 58,
+        "m": 8023.012988267221,
+        "copies": 1,
+        "budget": 8387,
+        "mean_limit": 8044
+      },
+      "amplified": null,
+      "count95": {
+        "n": 734,
+        "m": 8044,
+        "copies": 1,
+        "budget": 8387,
+        "mean_limit": 8044,
+        "tail_certificate": "[0.0062862197995661938829513640468799599812092113373800 +/- 7.28e-54]"
+      }
+    }
+  ],
+  "budgets": [
+    83,
+    419,
+    838,
+    2096,
+    4193,
+    8387
+  ],
+  "refinements": 0
+}

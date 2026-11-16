@@ -1,5 +1,40 @@
 这个目录把《Optimal Support Size Testing》中的公式、可执行的有限样本方案和鱼类数据实验放在一起。论文原文保留为 `2610.18723v1.pdf`；抽取的文本在 `artifacts/paper.txt`。当前代码是依据 PDF 和分析编写的实现。
 
+**2026-11-16：真实观测逐条抽样与“95%准确率”专项分析。** 入口为 [中文报告](results_real_stream_95_20261116/report.html)、[PDF](results_real_stream_95_20261116/report.pdf)、[完整结果 CSV](results_real_stream_95_20261116/results.csv)、[保留已发现种数的下界](results_real_stream_95_20261116/reported_lower.csv) 和 [复现说明](results_real_stream_95_20261116/REPRODUCE.txt)。实现位于 `real_stream_95/`。
+
+本轮统一分析50个经验总体、9,836,879条源计数，包括MidFish、LTRM、NRMN、EPA NRSA、BBS五来源的40个群体，以及此前的10个生态总体。每个总体分别进行128次不放回随机排列和128次独立有放回抽样，实际读取逐个观测标签，检查1%、5%、10%、25%、50%、100%六种预算。合计12,800条独立标签流、460,800次配对方法评估；方法和预算共享标签流，这些评估不是独立野外调查。参数按预算确定，不使用参照物种数选参数。46,579项抽样重放、输出、置信区间及数值检查通过。
+
+**预测下界的含义：** 输出80表示“至少有80种”，不表示“总共80种”。论文的原始输出满足的目标是 `min(eff_epsilon,n) <= S_hat <= min(S,n)`，其中 `eff_epsilon` 是覆盖至少 `1-epsilon` 概率质量所需的最少物种数，`n` 是预先输入的检验阈值。`epsilon` 不是算法犯错概率，也不是物种数的相对误差。95%的下界正确概率、对成功率的95%置信区间、以及预测数量误差不超过5%，是三个不同概念。为避免丢弃已发现的物种，另行报告 `max(已发现种数, 原始下界)`；这是明确标记的事后报告层，仍不等于精确总数预测。
+
+在不放回读取一半记录、共同可运行的42个总体上，直接计数、C70L1报告下界、Chao1的平均绝对相对误差分别为6.84%、7.21%、5.56%，距文件参照物种数±5%内的比例分别为37.31%、34.15%、64.84%。比较使用相同预算上限，实际读取数量另行记录。当前未展示95%准确预测总物种数，也未展示这些真实数据上的整体采样效率优势。
+
+最新本地C70L1证明与此前40总体的实验分别保存在 [证明及可靠性说明](results_proof_l01/reliability_report.html) 和 [真实数据报告](results_real_l01_20261104/report.html)。前者在iid泊松模型下给出联合失败小于0.331的充分界；23次独立重复加预算截断可将本轮规定的失败界降到5%以下，但保证的仍是检验和有效支持下界。后者128万条泊松路径出现78次联合失败，同预算计数零失败。文件经验物种数不是自然生态系统完整普查真值；不放回重排也不自动继承iid泊松定理。
+
+```bash
+OPENBLAS_NUM_THREADS=1 .venv/bin/python -m real_stream_95.run --out results_real_stream_95_reproduced
+OPENBLAS_NUM_THREADS=1 .venv/bin/python -m real_stream_95.derive --out results_real_stream_95_reproduced
+OPENBLAS_NUM_THREADS=1 .venv/bin/python -m real_stream_95.audit --out results_real_stream_95_reproduced
+OPENBLAS_NUM_THREADS=1 .venv/bin/python -m real_stream_95.report --out results_real_stream_95_reproduced
+```
+
+**2026-11-02 补充实验已完成：机制消融、共同分布预算比较和完整整数输出。** 入口为 [中文报告与图表](results_followup_20261102/report.html)、[结构化摘要](results_followup_20261102/summary.json)、[复现说明](results_followup_20261102/REPRODUCE.txt) 和 [冻结协议](results_followup_20261102/protocol.json)。新增实现位于 `followup/`；此前的冻结结果保持不变。
+
+主实验使用新种子，新增 **4,620,000 条独立总体—预算模拟路径、10,560,000 次方法评估**。机制实验在 192 个配置上对 `(70,14)` 评估 768,000 次，其中 672,000 次满足二元承诺；没有观察到二元或下界覆盖错误。相对同预算计数，240,000 次输出的整数下界得到认证提升，但额外拒绝次数仍为 0。对计数与单尺度的配对比较，各有 36 个配置在同时 95% 区间下支持正期望增益；`(70,14)` 对 `(70,16)` 有 20 个这样的配置。
+
+共同分布网格明确保留负面结果：C=32 的完整统计量最坏观测错误率为 62.475%，而其同预算计数没有错误。C=60 在本有限网格通过，不表示获得全参数保证。C=70 的期望预算仍是 1% 强计数基线的约 3.22–8.23 倍；即使计数也采用 0.09% 风险目标，仍为其约 3.22–8.03 倍。所有基线预算由 Arb 认证，缩预算结果单独标为探索。
+
+观察主网格后，另冻结并执行 `epsilon=1/(4n)` 的计数分支诊断，共 8,000 条新路径、24,000 次方法评估。四个配置中，去掉直接计数 D 的版本全部发生下界覆盖失效，完整算法与计数没有失效；二元 Yes 判断未出错。该诊断有独立协议与新种子，不混入主实验的事前设计或置信声明。全部新统计路径合计 4,628,000 条。
+
+历史 37,071 个未唯一确定的整数下界已在新目录中全部细化；均在 512 位精度下成功，原二元判定和覆盖事件没有改变。另完成 2,574 项独立闭式系数核验、10 次完整接口核验（含实际 iid 标签且进入多项式分支）、冷编译和交错热评分计时。142 项回归测试与 35,562 项新结果审计通过；原实验包 2,045 个文件的哈希核验通过。上述结果不替代原论文的证明、最优性参数范围修订或独立自然总体调查。
+
+```bash
+# 使用新目录复现，保留已有证据
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python -m followup.run --out results_followup_reproduced
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python -m followup.guard.run --out results_followup_reproduced/count_guard
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python -m followup.audit --out results_followup_reproduced
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python -m followup.report --out results_followup_reproduced
+```
+
 **最新投稿前审查：理论适用范围、原始数据与论文整合。** 入口为 [完整中文审查报告](results_submission_audit/review_report.html)、[理论边界与补充证明](results_submission_audit/theory_scope.pdf)、[英文实验章节预览](results_submission_audit/paper_insert_preview.pdf)、[可整合的 LaTeX 源码](results_submission_audit/paper_insert.tex) 和 [整合说明](results_submission_audit/INTEGRATION.txt)。此前的新证明专项复核保存在 `results_proof_review/`。审查列出 27 项问题及修订建议；以下历史报告应结合这次审查阅读。
 
 原论文的匹配下界需要明确 ε 的适用范围，不能对整个 ε∈(0,1) 作统一最优性断言；新常数需要连同新的系数与集中界证明一起整合。当前 `(70,14)` 的 1,994,000 次试验中，承诺范围内的二元检验有 1,792,000 次；同预算计数消融同样没有错误，多项式的已观察收益是提高支持下界，尚未展示额外的二元判定优势。补充证明还给出：在 n≤10¹²、ε∈(0,1) 和 C₀=70 的预算下，纯计数的统一误差界已小于 1.863×10⁻¹²。零观测错误不能代替最坏情形理论保证，自然经验总体的重采样也不等同于新的野外独立观测。英文章节和整合说明明确保留这些限制；本仓库材料尚不代表论文已提交或通过同行评审。

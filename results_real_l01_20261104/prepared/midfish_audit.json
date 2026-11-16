@@ -1,0 +1,29 @@
+{
+  "input_rows": 60335666,
+  "excluded_protocol_or_scope": 11684,
+  "excluded_unresolved_species": 1884867,
+  "excluded_invalid_or_nonpositive_count": 0,
+  "excluded_missing_group": 292198,
+  "retained_rows": 58146917,
+  "retained_count": 58146917,
+  "dataset": "midfish",
+  "grouping_rule": "state x year x sampling_method_simple; all available years",
+  "notes": "One retained row = one recorded fish, including rows expanded from aggregate catch. Map local taxon list to binomial names; merge aliases; exclude missing/coarse/hybrid taxa and either no-catch flag. Groups pool lakes within state and gear, defining an empirical catch distribution, not wild population abundance.",
+  "source_files": [
+    {
+      "path": "data/public_ecology/01_fish_counts/midfish/raw/Midwest_Hive_Data_Files.zip",
+      "sha256": "7d86697641a1d0396c006b305c62b63899677effe7f96ece951a9e293ff740f4",
+      "source_url": "https://www.sciencebase.gov/catalog/file/get/68a75ab9d4be02616520f462?f=__disk__5d%2Ff3%2F08%2F5df308d0f9ba3efc8668f0f6aadea7db013e27db",
+      "sha256_provenance": "download_manifest.csv"
+    },
+    {
+      "path": "data/public_ecology/01_fish_counts/midfish/raw/Taxa_List.csv",
+      "sha256": "1140e3f2630f7348092a5f280ec52d10d286518199b35c8de5ef86050685362f",
+      "source_url": "https://www.sciencebase.gov/catalog/file/get/68a75ab9d4be02616520f462?f=__disk__49%2F92%2Fe8%2F4992e88b107c23224c1e9a38d3fccb7312e5dadc",
+      "sha256_provenance": "download_manifest.csv"
+    }
+  ],
+  "total_groups": 1427,
+  "eligible_groups": 635,
+  "selected_groups": 8
+}

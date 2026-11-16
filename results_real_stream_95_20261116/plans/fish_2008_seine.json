@@ -1,0 +1,58 @@
+{
+  "population": "fish_2008_seine",
+  "plans": [
+    {
+      "single": null,
+      "amplified": null,
+      "count95": null
+    },
+    {
+      "single": null,
+      "amplified": null,
+      "count95": null
+    },
+    {
+      "single": null,
+      "amplified": null,
+      "count95": null
+    },
+    {
+      "single": null,
+      "amplified": null,
+      "count95": null
+    },
+    {
+      "single": null,
+      "amplified": null,
+      "count95": {
+        "n": 3,
+        "m": 116,
+        "copies": 1,
+        "budget": 165,
+        "mean_limit": 116,
+        "tail_certificate": "[0.0031167387022311188509808408326759384957229842753226 +/- 1.37e-53]"
+      }
+    },
+    {
+      "single": null,
+      "amplified": null,
+      "count95": {
+        "n": 13,
+        "m": 262,
+        "copies": 1,
+        "budget": 330,
+        "mean_limit": 262,
+        "tail_certificate": "[0.0034485629302089748249195713815621259034863390746511 +/- 2.55e-53]"
+      }
+    }
+  ],
+  "budgets": [
+    3,
+    16,
+    33,
+    82,
+    165,
+    330
+  ],
+  "refinements": 0
+}

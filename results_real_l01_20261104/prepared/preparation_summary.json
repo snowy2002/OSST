@@ -1,0 +1,160 @@
+{
+  "selection_rule": "Prepare reproducible integer-abundance empirical populations, without fitting.\n\nThe selection rule is fixed before estimator experiments: among groups with at\nleast 20 identified species, take the six largest N and the two central ranks\nof the remaining groups sorted by N (ties broken by the group key).\nThese are finite empirical distributions, not estimates of wild abundance.\n",
+  "scope": "Empirical abundance distributions; no inference about true unobserved ecological species richness.",
+  "n_populations": 40,
+  "datasets": [
+    {
+      "input_rows": 60335666,
+      "excluded_protocol_or_scope": 11684,
+      "excluded_unresolved_species": 1884867,
+      "excluded_invalid_or_nonpositive_count": 0,
+      "excluded_missing_group": 292198,
+      "retained_rows": 58146917,
+      "retained_count": 58146917,
+      "dataset": "midfish",
+      "grouping_rule": "state x year x sampling_method_simple; all available years",
+      "notes": "One retained row = one recorded fish, including rows expanded from aggregate catch. Map local taxon list to binomial names; merge aliases; exclude missing/coarse/hybrid taxa and either no-catch flag. Groups pool lakes within state and gear, defining an empirical catch distribution, not wild population abundance.",
+      "source_files": [
+        {
+          "path": "data/public_ecology/01_fish_counts/midfish/raw/Midwest_Hive_Data_Files.zip",
+          "sha256": "7d86697641a1d0396c006b305c62b63899677effe7f96ece951a9e293ff740f4",
+          "source_url": "https://www.sciencebase.gov/catalog/file/get/68a75ab9d4be02616520f462?f=__disk__5d%2Ff3%2F08%2F5df308d0f9ba3efc8668f0f6aadea7db013e27db",
+          "sha256_provenance": "download_manifest.csv"
+        },
+        {
+          "path": "data/public_ecology/01_fish_counts/midfish/raw/Taxa_List.csv",
+          "sha256": "1140e3f2630f7348092a5f280ec52d10d286518199b35c8de5ef86050685362f",
+          "source_url": "https://www.sciencebase.gov/catalog/file/get/68a75ab9d4be02616520f462?f=__disk__49%2F92%2Fe8%2F4992e88b107c23224c1e9a38d3fccb7312e5dadc",
+          "sha256_provenance": "download_manifest.csv"
+        }
+      ],
+      "total_groups": 1427,
+      "eligible_groups": 635,
+      "selected_groups": 8
+    },
+    {
+      "input_rows": 1787994,
+      "excluded_protocol_or_scope": 203301,
+      "excluded_unresolved_species": 29254,
+      "excluded_invalid_or_nonpositive_count": 12,
+      "excluded_missing_group": 0,
+      "retained_rows": 1555427,
+      "retained_count": 8347348,
+      "dataset": "ltrm",
+      "grouping_rule": "pool x year(sdate) x gear; years >= 1993 (post design revision)",
+      "notes": "Sum catch only, never repeated sheet or collection totals. Use documented species-code whitelist; remove unidentified, no-fish, hybrid and unlisted codes. The latter includes valid but undocumented additions: the filtered subset is explicitly narrower than the complete release.",
+      "source_files": [
+        {
+          "path": "data/public_ecology/01_fish_counts/ltrm/raw/LTRM_FISH_DATA_ENTIRE.zip",
+          "sha256": "19360b1565ddfc9deef843283661b5cdf585b6103b8d5b29f8a156e2dd5ef948",
+          "source_url": "https://www.umesc.usgs.gov/data_library/fisheries/LTRM_FISH_DATA_ENTIRE.zip",
+          "sha256_provenance": "download_manifest.csv"
+        }
+      ],
+      "total_groups": 1381,
+      "eligible_groups": 789,
+      "selected_groups": 8
+    },
+    {
+      "input_rows": 1914733,
+      "excluded_protocol_or_scope": 527,
+      "excluded_unresolved_species": 11670,
+      "excluded_invalid_or_nonpositive_count": 1,
+      "excluded_missing_group": 0,
+      "retained_rows": 1902535,
+      "retained_count": 28415604,
+      "dataset": "nrmn",
+      "grouping_rule": "program x marine ecoregion x survey year; method 1 only",
+      "notes": "Sum integer total across legitimate size-class and survey/block rows. Exclude non-binomial unidentified/hybrid labels. Count unit is fish sightings recorded by underwater visual surveys; repeated observation of individual fish across surveys cannot be excluded; no biomass or density values used.",
+      "source_files": [
+        {
+          "path": "data/public_ecology/02_community_abundance/reef_life_survey/raw/NRMN_global_reef_fish_20261104.csv",
+          "sha256": "f85c295115bba0da4fe65a3222dc84d843a6a15a1fca3aacabe649fe9e481a72",
+          "source_url": "https://geoserver-123.aodn.org.au/geoserver/ows?service=WFS&version=2.0.0&request=GetFeature&typeNames=imos:ep_m1_public_data&count=2000000&outputFormat=csv",
+          "sha256_provenance": "download_manifest.csv"
+        }
+      ],
+      "total_groups": 563,
+      "eligible_groups": 513,
+      "selected_groups": 8
+    },
+    {
+      "input_rows": 72344,
+      "excluded_protocol_or_scope": 7606,
+      "excluded_unresolved_species": 689,
+      "excluded_invalid_or_nonpositive_count": 51,
+      "excluded_missing_group": 830,
+      "retained_rows": 63168,
+      "retained_count": 1473572,
+      "dataset": "epa_nrsa",
+      "grouping_rule": "NRSA two-year survey cycle x source ecoregion; VISIT_NO=1; IS_DISTINCT=1",
+      "notes": "Integer FINAL_CT/TOTAL only. Join pinned NRSA taxon list, retain fish with species-level binomials, merge subspecies/age categories, exclude HERP, hybrids, unresolved taxa. First visit only; pooled site catches represent an empirical distribution, not survey-weighted regional abundance.",
+      "source_files": [
+        {
+          "path": "data/public_ecology/01_fish_counts/finsyncr/raw/EPA__fishcts.csv",
+          "sha256": "96e11a34650ed215b3ff224d4c97bc1480c460807e170ab56781295e7dce9b89",
+          "source_url": "https://www.epa.gov/sites/default/files/2015-09/fishcts.csv",
+          "sha256_provenance": "download_manifest.csv"
+        },
+        {
+          "path": "data/public_ecology/01_fish_counts/finsyncr/raw/EPA__nrsa1314_fishcts_04232019.csv",
+          "sha256": "d8ddcc09159a048ded74d7775f08a6586e8ac5eab2a33c5dfa15551ae9772e52",
+          "source_url": "https://www.epa.gov/sites/default/files/2019-04/nrsa1314_fishcts_04232019.csv",
+          "sha256_provenance": "download_manifest.csv"
+        },
+        {
+          "path": "data/public_ecology/01_fish_counts/finsyncr/raw/EPA__nrsa-1819-fish-count-data.csv",
+          "sha256": "1cee6cceb4382308d6e2e639a29f6d4bac2cea2edaeff03c175a5845066c927c",
+          "source_url": "https://www.epa.gov/system/files/other-files/2022-03/nrsa-1819-fish-count-data.csv",
+          "sha256_provenance": "download_manifest.csv"
+        },
+        {
+          "path": "data/public_ecology/01_fish_counts/finsyncr/raw/inst__extdata__updateNRSAfishtax.csv",
+          "sha256": "672e401053b318e68d6a33e0c97d5cba69a0c7c110101e4186b807bc096fa11f",
+          "source_url": "https://raw.githubusercontent.com/USEPA/finsyncR/2c31b78126f08884aa6cfa195f9a7708450f73c3/inst/extdata/updateNRSAfishtax.csv",
+          "sha256_provenance": "download_manifest.csv"
+        }
+      ],
+      "total_groups": 27,
+      "eligible_groups": 27,
+      "selected_groups": 8
+    },
+    {
+      "input_rows": 7562439,
+      "excluded_protocol_or_scope": 5946331,
+      "excluded_unresolved_species": 6312,
+      "excluded_invalid_or_nonpositive_count": 0,
+      "excluded_missing_group": 0,
+      "retained_rows": 1609796,
+      "retained_count": 20103632,
+      "dataset": "bbs",
+      "grouping_rule": "single route survey (RouteDataID), limited a priori to years 2015-2025; RPID=101 standard runs",
+      "notes": "SpeciesTotal is a bird observation count, not StopTotal (occupied stops). Only States.zip used: 50-StopData is an overlapping representation. Map AOU through supplied SpeciesList, merge forms/subspecies, remove hybrid/unidentified labels. Sightings do not guarantee distinct individual birds; empirical count-distribution benchmark only.",
+      "source_files": [
+        {
+          "path": "data/public_ecology/06_birds/bbs/raw/States.zip",
+          "sha256": "568053a412e42f2974642d1961956174e8eaad6bc85c278ef50d6191cc56adcf",
+          "source_url": "https://www.sciencebase.gov/catalog/file/get/6a0b0b0ab66b0188da36aedd?f=__disk__fb%2Ff3%2Fb6%2Ffbf3b68cd779b281a77c7b10b8289c8bf6b77497",
+          "sha256_provenance": "download_manifest.csv"
+        },
+        {
+          "path": "data/public_ecology/06_birds/bbs/raw/SpeciesList.csv",
+          "sha256": "e54e4b5b1eb6fc5fc5941a8e31876ecc17675f229265f60c4dbfed742fb35274",
+          "source_url": "https://www.sciencebase.gov/catalog/file/get/6a0b0b0ab66b0188da36aedd?f=__disk__67%2F26%2F5b%2F67265bbc0d9312830188fb7e683ed344f19f5452",
+          "sha256_provenance": "download_manifest.csv"
+        }
+      ],
+      "total_groups": 30782,
+      "eligible_groups": 30344,
+      "selected_groups": 8
+    }
+  ],
+  "excluded_sources": {
+    "ebird": "Downloaded tutorial is a single focal species; full EBD unavailable.",
+    "amazonfish_ictio": "Occurrence records not exchangeable fish individual counts.",
+    "midfish_cpue": "Abundance_Data_Files contains CPUE products, not raw counts.",
+    "yrfir_edna": "Barcode/sequence counts are not animal individual counts.",
+    "biotime_rivfishtime_fishglob": "Not used in this fixed five-source benchmark; unit harmonization and additional loaders required."
+  },
+  "code_sha256": "c2cc994affc80a21e8449e12e2a984220720932c8e3c491c44e47beaf9053767"
+}

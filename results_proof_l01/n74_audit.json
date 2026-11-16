@@ -1,0 +1,101 @@
+{
+  "status": "PASS",
+  "C": 70,
+  "L0": 1,
+  "n": 74,
+  "scale_count": 7,
+  "scale_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "full_scale_coverage_unique_and_ordered": true,
+  "positive_rational_t_eta_checked": true,
+  "geometry_k_delta_rebuilt": true,
+  "optimization_executed_in_replay": false,
+  "optimization_calls_disabled": true,
+  "all_polynomial_certificates_recomputed": true,
+  "union_bound_arb": "[0.30151782560546677783833198097951935533699339031176102396866559182 +/- 1.46e-66]",
+  "union_bound_midpoint": 0.3015178256054668,
+  "strict_target": "8/25",
+  "strictly_below_one_third": true,
+  "scales": [
+    {
+      "j": 0,
+      "k": 30,
+      "delta": "1/4",
+      "t": "431332699423/1000000000000",
+      "eta": "115911354859/1000000000000",
+      "passed": true,
+      "bound_arb": "[0.00039224493357624462467016957083432057295460561259546874991601602730 +/- 3.47e-69]"
+    },
+    {
+      "j": 1,
+      "k": 29,
+      "delta": "1/8",
+      "t": "297675686071/500000000000",
+      "eta": "77412514549/1000000000000",
+      "passed": true,
+      "bound_arb": "[0.0041015647636029944255565230200448737179683454756122978121884472346 +/- 2.70e-68]"
+    },
+    {
+      "j": 2,
+      "k": 25,
+      "delta": "1/16",
+      "t": "1041232009921/1000000000000",
+      "eta": "2105490089/31250000000",
+      "passed": true,
+      "bound_arb": "[0.0081774585245343249120558523455531904584682214083928387010000302240 +/- 3.05e-68]"
+    },
+    {
+      "j": 3,
+      "k": 22,
+      "delta": "1/32",
+      "t": "1630658991027/1000000000000",
+      "eta": "13095838359/250000000000",
+      "passed": true,
+      "bound_arb": "[0.023201314090015572731529012717490095663875955375930316100757676430 +/- 1.88e-68]"
+    },
+    {
+      "j": 4,
+      "k": 18,
+      "delta": "1/64",
+      "t": "543862897353/200000000000",
+      "eta": "43491690967/1000000000000",
+      "passed": true,
+      "bound_arb": "[0.043367243884861852923879286814139555702987960683017078640490510708 +/- 6.43e-69]"
+    },
+    {
+      "j": 5,
+      "k": 15,
+      "delta": "1/128",
+      "t": "4246331325231/1000000000000",
+      "eta": "8449583339/250000000000",
+      "passed": true,
+      "bound_arb": "[0.086286580216825403189408444730448954166020225239357409288484610529 +/- 4.58e-67]"
+    },
+    {
+      "j": 6,
+      "k": 12,
+      "delta": "1/256",
+      "t": "345791669923/50000000000",
+      "eta": "428718023/15625000000",
+      "passed": true,
+      "bound_arb": "[0.13599141919205038503123269178100836505471807651685561467582830067 +/- 9.71e-67]"
+    }
+  ],
+  "negative_control": {
+    "test": "delete_one_scale",
+    "rejected": true,
+    "reason": "Exactly seven saved scales required"
+  },
+  "certificate_sha256": "d0bcec236acc46a1f1ecef69a85ace2fa80508c9fafb65d83a8717d654bbca7e",
+  "mgf_code_sha256": "fb07bf251097e3a1c5d33759570d51d3f0bd0bb859819703de363a816bb727a1",
+  "verifier_sha256": "40ebbaeba6b0f99e8cc41d0c77acc137b4441b4a51edc3e865a7f9e69a471585",
+  "elapsed_seconds": 0.027735998999560252,
+  "scope": "Upper deviation for n=74, all S<=74 and arbitrary independent Poisson means. Combined with separate lower-tail control in the full theorem."
+}

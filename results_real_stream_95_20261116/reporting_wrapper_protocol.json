@@ -1,0 +1,9 @@
+{
+  "post_hoc": true,
+  "new_random_draws": 0,
+  "rule": "max(D_union, original output)",
+  "why": "Do not discard already observed species due to clipping at n.",
+  "valid_target": "[min(effective_support_epsilon,n), S] on the original success event. No relative-error guarantee.",
+  "inference": "Separate Bonferroni family for wrapper relative-error rates; no tuning or selection of successful populations.",
+  "source_order_note": "File row order is not a timestamp. Fish case study literally reads the retained rows sequentially."
+}

@@ -1,0 +1,51 @@
+{
+  "population": "bird_north",
+  "plans": [
+    {
+      "single": null,
+      "amplified": null,
+      "count95": null
+    },
+    {
+      "single": null,
+      "amplified": null,
+      "count95": null
+    },
+    {
+      "single": null,
+      "amplified": null,
+      "count95": null
+    },
+    {
+      "single": null,
+      "amplified": null,
+      "count95": null
+    },
+    {
+      "single": null,
+      "amplified": null,
+      "count95": null
+    },
+    {
+      "single": null,
+      "amplified": null,
+      "count95": {
+        "n": 5,
+        "m": 148,
+        "copies": 1,
+        "budget": 202,
+        "mean_limit": 148,
+        "tail_certificate": "[0.0032065200494318850928305617113299911074621902532869 +/- 3.04e-53]"
+      }
+    }
+  ],
+  "budgets": [
+    2,
+    10,
+    20,
+    50,
+    101,
+    202
+  ],
+  "refinements": 0
+}

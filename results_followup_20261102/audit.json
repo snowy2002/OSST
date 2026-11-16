@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "checks": 35562,
+  "fresh_population_budget_paths": 4620000,
+  "method_trial_evaluations": 10560000,
+  "method_cells": 2640,
+  "mechanism_paths": 768000,
+  "refined_archived_outputs": 37071,
+  "refinement_seconds": 175.32527829999162,
+  "refinement_seconds_median": 0.0044384000002537505,
+  "refinement_seconds_p95": 0.006331399999908172,
+  "refinement_max_bits": 512,
+  "refinement_changed_decisions": 0,
+  "refinement_changed_coverage": 0,
+  "full_api_runs": 10,
+  "independent_coefficient_checks": 2574,
+  "post_primary_guard": {
+    "independent_paths": 8000,
+    "method_evaluations": 24000,
+    "no_count_coverage_errors": 8000,
+    "full_coverage_errors": 0,
+    "disclosure": "Added after observing no failures of no_count on the primary grid. Separate mechanistic diagnostic, not prospectively included in the primary confidence family."
+  },
+  "source_sha256": "9357a48a16b4fa35a36f2e2ed0e2f4d5fc9d5fd245637083a3b56333e67471d5",
+  "scope": "Hash, exact truth, raw events, paired bounds, and representative higher-precision scores. Not a new proof or exact PRNG certification."
+}

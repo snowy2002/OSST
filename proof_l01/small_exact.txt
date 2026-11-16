@@ -1,0 +1,122 @@
+Finite n upper-tail certificate for C=70, L0=1
+
+We consider a distribution with finite support size 1<=S<=n; for S>n
+the support-estimator upper bound is automatic after clipping at n.
+All counts are independent Poisson(lambda_i), where sum lambda_i=m and
+m=70n/(epsilon L), L=1+log n, 0<epsilon<1.
+Scale j has delta_j and alternating corrections
+ f_j(0)=0, f_j(ell)-1=(-1)^{ell+1}u_{j,ell} for 1<=ell<=k_j,
+ f_j(ell)-1=0 for ell>k_j, with u>=0.
+Its false-positive event is
+ Z_j>(1+delta_j)S+delta_j n.
+This is exactly the event that its corrected statistic exceeds S.
+
+1. Splitting the scales
+The program partitions scales into separately controlled scales and a
+common-event group. The partition can vary with n; its chosen value is
+recorded, then checked independently of the numerical optimizer.
+For a common-event scale define
+ q_j=max(0,max_{odd ell>=3}u_{j,ell}).
+The program checks u_{j,1}>=q_j. Every count ell>=2 has correction<=q_j,
+including even counts (nonpositive corrections) and counts above k_j.
+Consequently
+ Z_j <= S-F0 +u_{j,1}F1 +q_j(S-F0-F1).
+Its false-positive event is therefore contained in
+ F0 < [(u_{j,1}-q_j)F1+(q_j-delta_j)S-delta_j n]/(1+q_j).
+Let z_s be ceil of the maximum of the right sides over the group, minus
+one. Outward Arb arithmetic certifies the ceil. Thus the union event is
+contained in F0<=z_{F1}. The sequence z_s is nondecreasing, because every
+slope (u_{j,1}-q_j)/(1+q_j) is nonnegative. No condition q_j<=delta_j is
+needed for this reduction. If z_0>=0 the bound is generally unhelpful,
+and the numerical proposal stage tries a different scale partition.
+
+2. A necessary use of the total-mass constraint
+The unconstrained supremum over Poisson means is too loose at very small
+n: it discards sum lambda_i=m. Choose a fixed largest-probability category
+of p, before sampling, and call it h. Since S<=n,
+ lambda_h>=m/S>70n/(SL)>=70/L=:a_n.
+The function (1+a)e^{-a} decreases for a>=0. Hence
+ Pr(N_h<=1) <= (1+a_n)e^{-a_n}=:eta_h(n).
+For the two certificate rows n=16 and n=27 we use the slightly stronger
+event N_h>=K with K=4; all other rows use K=2. For an even K>=2 put
+ q_{h,j}=max(0,max_{odd ell>=K+1}u_{j,ell}).
+On N_h>=K the anchor's correction is at most q_{h,j}, while F0 and F1
+count only the other r=S-1 categories. The sharper common threshold is
+ [(u_{j,1}-q_j)s+(q_j-delta_j)S-delta_j n-q_j+q_{h,j}]/(1+q_j).
+For K=2 it is the previous threshold. We do not change S to S-1 in this
+formula. The program verifies the alternating signs of all corrections.
+It uses the sharper anchor mean 70n/(SL) and charges the full bad-event
+probability
+ eta_h(n,S,K)=exp[-70n/(SL)] sum_{ell=0}^{K-1}[70n/(SL)]^ell/ell!.
+Poisson stochastic monotonicity justifies using this lower mean.
+Consequently the common-event probability is at most eta_h(n) plus the
+probability of F0_remaining<=z_{F1_remaining}. Counts of the other fixed
+categories remain independent; no conditioning or data-dependent choice
+of h is used in this probability bound.
+
+3. Exponential majorant and homogenization
+Choose an exactly represented rational 0<y<1 and define
+ phi_y(s)=0 if z_s<0, and phi_y(s)=y^{-z_s} otherwise.
+This is nonnegative and nondecreasing. Pointwise,
+ 1{F0<=z_{F1}} <= y^{F0} phi_y(F1).
+The analytic theorem proved in homogenization.txt bounds its expectation
+by the supremum for r=S-1 equal Poisson means. In notation from that proof,
+ b(lambda)=lambda e^{-lambda},
+ h(lambda)=1-(1-y+lambda)e^{-lambda},
+ the required one-dimensional function is
+ Q_{n,S,y}(lambda)=sum_{s=0}^r binom(r,s)
+                  b(lambda)^s h(lambda)^{r-s} phi_y(s).
+Its supremum may be restricted to lambda>=1, as proved there.
+The r=0 case is evaluated directly.
+
+4. Rigorous certification of the entire one-dimensional domain
+For lambda>=1, b decreases and h increases, since
+ b'=(1-lambda)e^{-lambda}<=0,
+ h'=(lambda-y)e^{-lambda}>0.
+On any interval [a,b] with a>=1, positive coefficients therefore give
+ Q(lambda)<=sum_s binom(r,s)b(a)^s h(b)^{r-s}phi_y(s).
+All terms are evaluated by 512-bit outward-rounded Arb arithmetic.
+The program starts from [1,R], R=24, and bisects until each whole closed
+interval has a strict upper bound below the proposed rational target.
+It records every leaf and does not infer positivity from sampled points.
+For lambda>=R, h<=1 and b(lambda)<=R e^{-R}, so the whole remaining
+half-line is bounded by sum_s binom(r,s)(R e^{-R})^s phi_y(s).
+This is also checked strictly below the same target.
+The exact rational y and target are proposals only; unsuccessful interval
+checks cause the verifier to stop. The optimizer is not part of the proof.
+
+5. The other scales
+For each separately controlled scale use its exact centered MGF,
+ G_j(t,lambda)=1+e^{-lambda}sum_{ell=0}^{k_j}
+                  (exp(t*y_ell)-1)lambda^ell/ell!,
+ where y_0=-1 and y_ell=f_j(ell)-1. In particular the negative zero-count
+term is retained. The verifier in mgf.py certifies G_j<=1+eta_j for all
+lambda>=0 by an exponential Taylor lower polynomial, positive Bernstein
+coefficients on a finite interval, and nonnegative shifted coefficients
+on the remaining half-line. It then bounds the scale's error by
+ exp[S log(1+eta_j)-t delta_j(n+S)].
+This exponent is affine in S. The proposal stage can optimize its worst
+S endpoint, but the final assembly evaluates the exact exponent for each
+specific S, rather than summing unrelated maxima over S.
+
+6. Assembly
+For each (n,S), sum eta_h(n,S,K), its own common-event rational target,
+and all other-scale MGF bounds evaluated at that S. The maximum over
+S=1,...,n is a rigorous upper-tail bound. This controls all scales jointly
+without pretending that their
+statistics are independent. It also controls false rejection for the
+binary tester when S<=n, because exceeding n implies exceeding S.
+
+The small_certificates.json result records the checks and bound for each
+n. Its all_passed flag requires each assembled bound to be less than
+1/3-10^{-20}; the independently certified lower-tail error is much smaller
+than this reserved margin. This proof covers all epsilon in (0,1) and
+all finite support distributions with S<=n, not only simulated instances.
+
+Reproduce from /home/snowy/OSST:
+ OPENBLAS_NUM_THREADS=1 .venv/bin/python proof_l01/small_exact.py
+ OPENBLAS_NUM_THREADS=1 .venv/bin/python proof_l01/small_exact.py --refine
+ OPENBLAS_NUM_THREADS=1 .venv/bin/python proof_l01/small_exact.py --certify
+The first two commands generate proposals; only the third is the strict
+numerical certificate. The common-event analytic reduction is this file
+and homogenization.txt; numerical positivity alone does not replace them.

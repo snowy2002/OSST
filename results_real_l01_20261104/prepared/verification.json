@@ -1,0 +1,9 @@
+{
+  "forty_unique_ids": true,
+  "five_sources_eight_each": true,
+  "vectors_match_csv": true,
+  "filter_audit_conservation": true,
+  "full_population_json_sha256": "48634e7ea08e8d88fb5353a022d3887e9a07656d9570383faf11b38be566c935",
+  "total_selected_count": 9785885,
+  "code_sha256": "c2cc994affc80a21e8449e12e2a984220720932c8e3c491c44e47beaf9053767"
+}

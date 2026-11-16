@@ -1,0 +1,65 @@
+{
+  "population": "bbs_20b1f4b60c",
+  "plans": [
+    {
+      "single": null,
+      "amplified": null,
+      "count95": null
+    },
+    {
+      "single": null,
+      "amplified": null,
+      "count95": null
+    },
+    {
+      "single": null,
+      "amplified": null,
+      "count95": null
+    },
+    {
+      "single": null,
+      "amplified": null,
+      "count95": {
+        "n": 2,
+        "m": 104,
+        "copies": 1,
+        "budget": 150,
+        "mean_limit": 104,
+        "tail_certificate": "[0.0019927189873902701184274299330905932878012092175878 +/- 1.19e-53]"
+      }
+    },
+    {
+      "single": null,
+      "amplified": null,
+      "count95": {
+        "n": 11,
+        "m": 236,
+        "copies": 1,
+        "budget": 301,
+        "mean_limit": 236,
+        "tail_certificate": "[0.0031665554398065541855234771447496158307892943536868 +/- 1.47e-53]"
+      }
+    },
+    {
+      "single": null,
+      "amplified": null,
+      "count95": {
+        "n": 33,
+        "m": 510,
+        "copies": 1,
+        "budget": 602,
+        "mean_limit": 510,
+        "tail_certificate": "[0.0047910326029836341166842455968048310665812653749574 +/- 1.11e-53]"
+      }
+    }
+  ],
+  "budgets": [
+    6,
+    30,
+    60,
+    150,
+    301,
+    602
+  ],
+  "refinements": 0
+}

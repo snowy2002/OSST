@@ -1,0 +1,128 @@
+{
+  "population": "epa_nrsa_81abeccf31",
+  "plans": [
+    {
+      "single": null,
+      "amplified": null,
+      "count95": {
+        "n": 32,
+        "m": 493,
+        "copies": 1,
+        "budget": 584,
+        "mean_limit": 493,
+        "tail_certificate": "[0.0057500762356478463468729270581532722783877566925238 +/- 1.71e-53]"
+      }
+    },
+    {
+      "single": {
+        "n": 14,
+        "m": 2693.0051143316587,
+        "copies": 1,
+        "budget": 2924,
+        "mean_limit": 2721
+      },
+      "amplified": null,
+      "count95": {
+        "n": 231,
+        "m": 2721,
+        "copies": 1,
+        "budget": 2924,
+        "mean_limit": 2721,
+        "tail_certificate": "[0.0059302710443545336429380900096228104735783321634465 +/- 3.12e-53]"
+      }
+    },
+    {
+      "single": {
+        "n": 36,
+        "m": 5497.959174679061,
+        "copies": 1,
+        "budget": 5849,
+        "mean_limit": 5562
+      },
+      "amplified": null,
+      "count95": {
+        "n": 498,
+        "m": 5562,
+        "copies": 1,
+        "budget": 5849,
+        "mean_limit": 5562,
+        "tail_certificate": "[0.0065025337062853512055474122220918875528949611962853 +/- 2.24e-53]"
+      }
+    },
+    {
+      "single": {
+        "n": 116,
+        "m": 14112.92728590841,
+        "copies": 1,
+        "budget": 14624,
+        "mean_limit": 14171
+      },
+      "amplified": null,
+      "count95": {
+        "n": 1324,
+        "m": 14171,
+        "copies": 1,
+        "budget": 14624,
+        "mean_limit": 14171,
+        "tail_certificate": "[0.0065153112701366588702943407595868317923425857458403 +/- 1.18e-53]"
+      }
+    },
+    {
+      "single": {
+        "n": 269,
+        "m": 28553.182870509303,
+        "copies": 1,
+        "budget": 29249,
+        "mean_limit": 28609
+      },
+      "amplified": {
+        "n": 4,
+        "m": 1173.3673957499345,
+        "copies": 23,
+        "budget": 29249,
+        "mean_limit": 28609
+      },
+      "count95": {
+        "n": 2729,
+        "m": 28609,
+        "copies": 1,
+        "budget": 29249,
+        "mean_limit": 28609,
+        "tail_certificate": "[0.0067050479362296783032504487830436690082661922073084 +/- 2.67e-53]"
+      }
+    },
+    {
+      "single": {
+        "n": 609,
+        "m": 57516.25101996978,
+        "copies": 1,
+        "budget": 58498,
+        "mean_limit": 57593
+      },
+      "amplified": {
+        "n": 12,
+        "m": 2410.394551174277,
+        "copies": 23,
+        "budget": 58498,
+        "mean_limit": 57593
+      },
+      "count95": {
+        "n": 5572,
+        "m": 57593,
+        "copies": 1,
+        "budget": 58498,
+        "mean_limit": 57593,
+        "tail_certificate": "[0.0067041469813554620072867534786603602820945352922931 +/- 3.64e-53]"
+      }
+    }
+  ],
+  "budgets": [
+    584,
+    2924,
+    5849,
+    14624,
+    29249,
+    58498
+  ],
+  "refinements": 0
+}

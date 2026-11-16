@@ -1,0 +1,13 @@
+OSST direct-stream evaluation, 2026-11-16
+
+From /home/snowy/OSST with existing prepared data and pinned dependencies:
+  OPENBLAS_NUM_THREADS=1 .venv/bin/python -m real_stream_95.run --out results_real_stream_95_reproduced
+  OPENBLAS_NUM_THREADS=1 .venv/bin/python -m real_stream_95.derive --out results_real_stream_95_reproduced
+  OPENBLAS_NUM_THREADS=1 .venv/bin/python -m real_stream_95.audit --out results_real_stream_95_reproduced
+  OPENBLAS_NUM_THREADS=1 .venv/bin/python -m real_stream_95.report --out results_real_stream_95_reproduced
+
+The main protocol was frozen before new draws. The max(D_union, original output) reporting wrapper was added after inspecting the main results; it uses no new random draws and has a separately stated inference family. The source-file-order fish replay is descriptive, not a timestamp claim.
+
+Inputs: data/c1025/datasets.json and prepared/*.npz; results_real_l01_20261104/prepared/populations.json; historical results/raw and results.json; data/inch_lake_fish.csv. Each abundance vector and original input path are available in the protocol and earlier preparation metadata. Species-level integer records are expanded to literal observation labels. No observations are fabricated; repeated permutations/bootstrap paths are NOT new field measurements.
+
+results.csv: original clipped outputs; reported_lower.csv: explicit reporting wrapper. Within-5-percent rates use all 128 trials; unavailable output and budget abort count as unsuccessful. MAPE/mean omit unavailable outputs, so available population counts must be shown. The CSV quantiles are repeated-output quantiles, not confidence intervals for unknown ecological richness.

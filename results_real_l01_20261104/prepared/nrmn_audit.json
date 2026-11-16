@@ -1,0 +1,23 @@
+{
+  "input_rows": 1914733,
+  "excluded_protocol_or_scope": 527,
+  "excluded_unresolved_species": 11670,
+  "excluded_invalid_or_nonpositive_count": 1,
+  "excluded_missing_group": 0,
+  "retained_rows": 1902535,
+  "retained_count": 28415604,
+  "dataset": "nrmn",
+  "grouping_rule": "program x marine ecoregion x survey year; method 1 only",
+  "notes": "Sum integer total across legitimate size-class and survey/block rows. Exclude non-binomial unidentified/hybrid labels. Count unit is fish sightings recorded by underwater visual surveys; repeated observation of individual fish across surveys cannot be excluded; no biomass or density values used.",
+  "source_files": [
+    {
+      "path": "data/public_ecology/02_community_abundance/reef_life_survey/raw/NRMN_global_reef_fish_20261104.csv",
+      "sha256": "f85c295115bba0da4fe65a3222dc84d843a6a15a1fca3aacabe649fe9e481a72",
+      "source_url": "https://geoserver-123.aodn.org.au/geoserver/ows?service=WFS&version=2.0.0&request=GetFeature&typeNames=imos:ep_m1_public_data&count=2000000&outputFormat=csv",
+      "sha256_provenance": "download_manifest.csv"
+    }
+  ],
+  "total_groups": 563,
+  "eligible_groups": 513,
+  "selected_groups": 8
+}

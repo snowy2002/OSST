@@ -1,0 +1,91 @@
+C=70, L0=1: rigorous finite-n upper-tail certificate, 75 <= n <= 403
+
+Scope and conclusion
+--------------------
+For every integer 75 <= n <= 403, every integer 1 <= S <= n, every
+collection of independent Poisson variables N_i with arbitrary means
+lambda_i >= 0, and the unchanged multiscale estimator coefficients,
+
+  P[there exists j: Z_j > (1+delta_j) S + delta_j n]
+    < 0.291303649639558466 < 0.32.
+
+The bound is uniform in the Poisson means, so in particular it holds when
+lambda_i=m p_i with the algorithm's real mean m. The numeric maximum over
+the certified integer range occurs at n=75. This result controls the upper
+deviation only. It does not cover n<75 or n>403, and it does not by itself
+prove the full estimator theorem.
+
+Moment generating function
+--------------------------
+At scale j let k=k_j, Y=f_j(Poi(lambda))-1, y_0=-1, and
+y_l=f_j(l)-1 for 1 <= l <= k. For l>k the correction is zero. Thus
+
+  G_j(t,lambda) = E exp(t Y)
+               = 1 + exp(-lambda) sum_{l=0}^k
+                         [exp(t y_l)-1] lambda^l/l!.
+
+The negative zero-count term exp(-lambda)[exp(-t)-1] is retained exactly.
+Let t>0 and eta>0 be the rational certificate values. The checker proves
+G_j(t,lambda) <= 1+eta for every lambda>=0 as follows.
+
+Polynomial certificate
+----------------------
+With d=max(k,48), define
+
+  P(x)=eta sum_{l=0}^d x^l/l!
+       -sum_{l=0}^k [exp(t y_l)-1] x^l/l!.
+
+Since exp(x)>=sum_{l=0}^d x^l/l! for x>=0, nonnegativity of P(x) implies
+eta exp(x)>=sum_{l=0}^k [exp(t y_l)-1]x^l/l!, hence the claimed MGF bound.
+The checker uses 512-bit outward Arb intervals for every coefficient.
+
+On [0,R] with R=8, it recursively bisects intervals [a,b] until every
+Bernstein coefficient of P(a+(b-a)u), 0<=u<=1, has strictly positive
+interval lower bound. Nonnegative Bernstein basis functions sum to one,
+so each such interval has P>0. The saved leaf intervals form a complete
+binary partition of [0,R].
+
+For x>=R the checker expands P(R+u) and verifies every coefficient has
+nonnegative interval lower bound. Therefore P(R+u)>=0 for every u>=0.
+This covers the entire half-line; no finite sampling grid is used as proof.
+
+The power-to-Bernstein conversion is itself carried out by outward Arb
+polynomial arithmetic. If q(u)=sum q_j u^j has degree at most d, then
+
+  beta_i = (i!/d!) sum_{j=0}^i (d-j)! q_j/(i-j)!.
+
+Chernoff and support-size endpoint reduction
+-------------------------------------------
+Independence yields E exp(t sum_i Y_i) <= (1+eta)^S. Consequently
+
+  P[Z_j>(1+delta_j)S+delta_j n]
+    <= exp[S log(1+eta)-t delta_j(n+S)].
+
+The exponent is affine in S. Over every integer 1<=S<=n it is bounded by
+the larger of its two endpoint values,
+
+  max{log(1+eta)-t delta_j(n+1),
+      n log(1+eta)-2t delta_j n}.
+
+The verifier sums these exponential bounds over all active scales. It
+checks that the resulting Arb upper interval is less than 8/25 for each
+of the 329 integers, covering 2570 scale certificates. The observed-count
+term D cannot exceed S, so it does not create an additional upper event.
+
+Reproduction
+------------
+cd /home/snowy/OSST
+OPENBLAS_NUM_THREADS=1 .venv/bin/python proof_l01/mgf.py --start 75 --end 403
+OPENBLAS_NUM_THREADS=1 .venv/bin/python proof_l01/mgf.py --certify
+
+The first command is nonrigorous optimization used only to find candidate
+rational t and eta values. The second independently checks all inequalities
+required above. A poor optimizer proposal causes certificate failure; it
+cannot silently establish a false proof claim. A 0.2% eta margin and upward
+rational rounding are checked rather than assumed sufficient.
+
+Artifacts
+---------
+proof_l01/mgf.py: optimization and rigorous certificate verification.
+results_proof_l01/mgf_exploration.json: numerical proposals, marked nonrigorous.
+results_proof_l01/mgf_certificates.json: certified rational inputs and results.

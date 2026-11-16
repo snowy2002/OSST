@@ -1,0 +1,44 @@
+{
+  "raw_file": "raw/6dd734adb39c2bfd61b43896.npz",
+  "raw_sha256": "cd66435d7410be170aa4105e7d04a086fc4b6648d19d86c99263ca41e1e2a22b",
+  "rows": [
+    {
+      "scenario": "epsilon_scaled_rare_1/10_null",
+      "method": "count_risk_.01",
+      "C": "count_risk_.01",
+      "L0": 1024,
+      "n": 1000000000,
+      "epsilon": "1/1000",
+      "mean": 1000073568050.0,
+      "degree": 0,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "S": 1000000000,
+      "effective": 1,
+      "trials": 4000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "joint_errors": 0,
+      "mean_lower_lo": 95169148.0455,
+      "mean_lower_hi": 95169148.0455,
+      "nonunique": 0,
+      "refinements": 0,
+      "suite": "budget",
+      "cell": "6dd734adb39c2bfd61b43896",
+      "pmf_defect": 0.0,
+      "extra_rejects": 0
+    }
+  ],
+  "suite": "budget",
+  "population": {
+    "multiplicities": [
+      1,
+      999999999
+    ],
+    "probabilities_exact": [
+      "9999/10000",
+      "1/9999999990000"
+    ],
+    "support": 1000000000
+  }
+}

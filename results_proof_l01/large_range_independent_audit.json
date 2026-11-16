@@ -1,0 +1,92 @@
+{
+  "passed": true,
+  "independent_arithmetic": "512-bit Arb",
+  "finite_slabs_checked": 520,
+  "formula_checks": 20507,
+  "coverage_checks": {
+    "constant_set": 2,
+    "result_set_no_duplicates": 1,
+    "continuous_domain_no_gaps_or_duplicates": 2,
+    "half_line_meets_slabs": 2,
+    "parameter_lemma": 8,
+    "scale_vector_lengths": 520,
+    "all_active_scales_included": 520,
+    "last_scale_not_accidentally_extra": 520,
+    "tail_margin_constants": 6130,
+    "degree_ceiling_envelope": 6130,
+    "half_line_shift": 16,
+    "scale_zero_decay": 2,
+    "scale_zero_polynomial_decay": 2,
+    "low_scale_decay": 14,
+    "omitted_scale_decay": 2,
+    "counting_rate_positive": 472,
+    "counting_recomputed_bound": 472,
+    "counting_target": 8,
+    "selected_domain": 8,
+    "exact_aggregation": 32,
+    "advertised_target": 8
+  },
+  "results": [
+    {
+      "C": "star",
+      "L0": 14,
+      "counting_upper": 2.5802693551487186e-12,
+      "joint_upper": 0.0014522181243532975,
+      "target": "3/2000"
+    },
+    {
+      "C": "star",
+      "L0": 15,
+      "counting_upper": 2.5802693551487186e-12,
+      "joint_upper": 0.000376058669474608,
+      "target": "19/50000"
+    },
+    {
+      "C": "star",
+      "L0": 16,
+      "counting_upper": 2.5802693551487186e-12,
+      "joint_upper": 0.00030681209395968937,
+      "target": "31/100000"
+    },
+    {
+      "C": "star",
+      "L0": 18,
+      "counting_upper": 2.5802693551487186e-12,
+      "joint_upper": 0.00027389720462564683,
+      "target": "7/25000"
+    },
+    {
+      "C": "70",
+      "L0": 14,
+      "counting_upper": 1.8628220042200464e-12,
+      "joint_upper": 0.0008794011635031739,
+      "target": "9/10000"
+    },
+    {
+      "C": "70",
+      "L0": 15,
+      "counting_upper": 1.8628220042200464e-12,
+      "joint_upper": 7.962574534073948e-05,
+      "target": "81/1000000"
+    },
+    {
+      "C": "70",
+      "L0": 16,
+      "counting_upper": 1.8628220042200464e-12,
+      "joint_upper": 5.6194050562205936e-05,
+      "target": "57/1000000"
+    },
+    {
+      "C": "70",
+      "L0": 18,
+      "counting_upper": 1.8628220042200464e-12,
+      "joint_upper": 3.891500781855941e-05,
+      "target": "1/25000"
+    }
+  ],
+  "old_certificate_sha256": "f0ae63840def635685b31bbcba2e12e9bc7e6d02ee672db0d07936a82cfe4e43",
+  "source_sha256": {
+    "parameter_search/audit.py": "bc01a06025ace9f38dc84b30a0711478fccb3cf620edcbd920f86a2c7df7d772",
+    "parameter_search/review_proof.py": "a54380cf56f9e28e1feb3dad66dc0bafe7500a31d7ae412dd7c42e727ba1a3b9"
+  }
+}

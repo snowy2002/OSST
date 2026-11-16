@@ -1,0 +1,12 @@
+{
+  "complete": true,
+  "independent_paths": 8000,
+  "method_evaluations": 24000,
+  "raw_sha256": {
+    "3269018_rare_mass_2epsilon.npz": "1f006b35d5b4e64ac7e25c18111bac963a7b4a78ab6fda122b5b8977877aa176",
+    "442414_uniform.npz": "5ec7a11965e368fe8de5d79ef670f5e3289d630d0b40c70f84d821e2c97a0a4f",
+    "442414_rare_mass_2epsilon.npz": "5ec7a11965e368fe8de5d79ef670f5e3289d630d0b40c70f84d821e2c97a0a4f",
+    "3269018_uniform.npz": "1f006b35d5b4e64ac7e25c18111bac963a7b4a78ab6fda122b5b8977877aa176"
+  },
+  "scope": "Added after observing no failures of no_count on the primary grid. Separate mechanistic diagnostic, not prospectively included in the primary confidence family."
+}

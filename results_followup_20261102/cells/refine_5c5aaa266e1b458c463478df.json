@@ -1,0 +1,21 @@
+{
+  "raw_file": "raw/refine_5c5aaa266e1b458c463478df.npz",
+  "raw_sha256": "558340558275bef0cad5a86c0fc9fbb682ff6bfa150af53070114a1b5998b0dd",
+  "rows": [
+    {
+      "suite": "refinement",
+      "cell": "refine_5c5aaa266e1b458c463478df",
+      "n": 1000000000000,
+      "epsilon": ".001",
+      "scenario": "target_C70_lambda4",
+      "refined": 24,
+      "seconds": 0.12870310100061033,
+      "max_bits": 512,
+      "changed_decisions": 0,
+      "changed_coverage": 0,
+      "legacy_raw": "raw/5c5aaa266e1b458c463478df.npz",
+      "legacy_raw_sha256": "1912febe04fc51de7a295ba7ab65cc82e8988b685095947bfce524470ee37628"
+    }
+  ],
+  "suite": "refinement"
+}

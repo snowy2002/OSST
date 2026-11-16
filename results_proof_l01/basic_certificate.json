@@ -1,0 +1,66 @@
+{
+  "parameters": {
+    "passed": true,
+    "all_L_ge_1_geometry_argument": "J=floor(log2(256 L^2/70))>=0; 0<A_j<=B/2; k_j<=alpha0(70)*L+1; sqrt(B(B-A_j))>=64 L/sqrt(2); rho_j<=delta_j^2/2.",
+    "all_L_ge_1_degree_condition_ratio_upper_bound": "[0.14636748801478750244238578862576335252147874846522 +/- 1.58e-51]",
+    "additional_finite_Arb_checks": {
+      "n_range": [
+        1,
+        403
+      ],
+      "scale_count": 3053
+    },
+    "old_b_guard": {
+      "b_formula": "64 epsilon L^2/(70 n)",
+      "exceptions_for_n_1_to_19": [
+        {
+          "n": 2,
+          "epsilon_above_which_b_exceeds_1": "[0.763059912096695820165915717568632484478187780 +/- 1.81e-46]"
+        },
+        {
+          "n": 3,
+          "epsilon_above_which_b_exceeds_1": "[0.745031950166796136837234998321288304511282260 +/- 3.06e-46]"
+        },
+        {
+          "n": 4,
+          "epsilon_above_which_b_exceeds_1": "[0.768298574446977453717969698916418475408079397 +/- 4.31e-46]"
+        },
+        {
+          "n": 5,
+          "epsilon_above_which_b_exceeds_1": "[0.803145322677241602984309511275180006041260688 +/- 4.97e-47]"
+        },
+        {
+          "n": 6,
+          "epsilon_above_which_b_exceeds_1": "[0.842002383081829883258906303894913904152973670 +/- 3.70e-46]"
+        },
+        {
+          "n": 7,
+          "epsilon_above_which_b_exceeds_1": "[0.882220434203259513595788727140419643615484452 +/- 3.02e-46]"
+        },
+        {
+          "n": 8,
+          "epsilon_above_which_b_exceeds_1": "[0.922707657472088162201510837896882989465572280 +/- 1.55e-47]"
+        },
+        {
+          "n": 9,
+          "epsilon_above_which_b_exceeds_1": "[0.962973397918003377082049239761776579062481697 +/- 3.79e-46]"
+        }
+      ],
+      "analytic_review": "Original paper Lemma 2.3 states b<=1, but its Appendix A proof separately covers x in [0,a], [a,b], and [b,infinity), without using b<=1. The identity, expectation bounds, and coefficient bound therefore extend to arbitrary 0<a<b under the stated remaining hypotheses. This is an extension of that lemma, not a proof of all success-probability claims."
+    }
+  },
+  "lower": {
+    "passed": true,
+    "C_range": "[69,infinity)",
+    "L_range": "[1,32]",
+    "continuous_slab_count": 992,
+    "certified_failure_upper_bound": "[1.6567744976535916224114790581945381586124429332426003714199791087e-27 +/- 4.19e-92]",
+    "method": "Poisson-process discovery coupling plus Chernoff, with 512-bit Arb endpoint bounds on 992 closed slabs.",
+    "limitation": "This controls only the lower deviation. Upper deviation and their joint probability need separate proof."
+  },
+  "source_sha256": {
+    "real_l01/theory_review.py": "fc9994b36ace9100586ef3fd877e46e72538d875803d410811d60253f2e25b3f",
+    "parameter_search/algorithm.py": "a09b9902bf1425fdec76b776ea24639e319ae53965f13871b552c5492318dba0",
+    "proof_l01/verify_all.py": "f12bd0348e9f8e322bf9fa2c1cdb12f741eadb9e4e912768b5803b1b507193e9"
+  }
+}

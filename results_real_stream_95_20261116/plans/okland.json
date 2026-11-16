@@ -1,0 +1,84 @@
+{
+  "population": "okland",
+  "plans": [
+    {
+      "single": null,
+      "amplified": null,
+      "count95": null
+    },
+    {
+      "single": null,
+      "amplified": null,
+      "count95": null
+    },
+    {
+      "single": null,
+      "amplified": null,
+      "count95": {
+        "n": 3,
+        "m": 119,
+        "copies": 1,
+        "budget": 168,
+        "mean_limit": 119,
+        "tail_certificate": "[0.0024755427968681630128833952711773595216153501914541 +/- 2.63e-53]"
+      }
+    },
+    {
+      "single": null,
+      "amplified": null,
+      "count95": {
+        "n": 20,
+        "m": 345,
+        "copies": 1,
+        "budget": 422,
+        "mean_limit": 345,
+        "tail_certificate": "[0.0053954830349746132003171497948354479558420527381336 +/- 1.19e-53]"
+      }
+    },
+    {
+      "single": {
+        "n": 1,
+        "m": 700.0,
+        "copies": 1,
+        "budget": 844,
+        "mean_limit": 735
+      },
+      "amplified": null,
+      "count95": {
+        "n": 52,
+        "m": 735,
+        "copies": 1,
+        "budget": 844,
+        "mean_limit": 735,
+        "tail_certificate": "[0.0052011510050631338978689975388115986502085573878585 +/- 1.20e-53]"
+      }
+    },
+    {
+      "single": {
+        "n": 6,
+        "m": 1504.4276006920236,
+        "copies": 1,
+        "budget": 1689,
+        "mean_limit": 1535
+      },
+      "amplified": null,
+      "count95": {
+        "n": 123,
+        "m": 1535,
+        "copies": 1,
+        "budget": 1689,
+        "mean_limit": 1535,
+        "tail_certificate": "[0.0063236855888461864211217502935583425025816137097593 +/- 3.26e-53]"
+      }
+    }
+  ],
+  "budgets": [
+    16,
+    84,
+    168,
+    422,
+    844,
+    1689
+  ],
+  "refinements": 0
+}

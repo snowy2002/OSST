@@ -1,0 +1,41 @@
+工作目录：/home/snowy/OSST
+
+新目录完整复现（固定种子将复现同一组伪随机试验；计时不逐字相同）：
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python -m followup.run --out results_followup_reproduced
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python -m followup.guard.run --out results_followup_reproduced/count_guard
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python -m followup.audit --out results_followup_reproduced
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python -m followup.report --out results_followup_reproduced
+
+回归测试：
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python -m pytest -q
+
+只核验已有数据：
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python -m followup.audit
+
+另有事后追加的 D 分支诊断：followup.guard.run。它有独立协议、独立种子与单独置信声明。
+主网格结果先于这项诊断被观察；诊断不计入原先冻结的主试验。
+
+完整接口：
+from followup.core import test_fingerprint
+from parameter_search.algorithm import parameters
+from support_size import Fingerprint
+plan = parameters('70', 14, 442414, '.1')
+# fp 应来自预定 plan.m 下的 iid 泊松抽样；代码不能认证采样设计。
+# result = test_fingerprint(fp, 442414, '.1', mean=plan.m)
+
+验证文件包哈希：
+.venv/bin/python - <<'PY'
+from pathlib import Path
+import hashlib,json
+root=Path('results_followup_20261102')
+for row in json.loads((root/'manifest.json').read_text())['files']:
+    p=root/row['path']
+    assert p.stat().st_size==row['bytes']
+    assert hashlib.sha256(p.read_bytes()).hexdigest()==row['sha256']
+print('all artifact hashes pass')
+PY
+
+依赖版本在 protocol.json；原依赖锁 requirements-lock.txt 沿用。
+历史整数细化依赖 results_parameter_search/raw 和 cells；其原哈希逐格核验。
+协议冻结前用 smoke 做实现调试；正式数据使用固定新种子，不按结果调参。
+定理、Monte Carlo 风险、数值认证及计算时间是不同证据层。

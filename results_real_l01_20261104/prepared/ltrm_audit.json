@@ -1,0 +1,23 @@
+{
+  "input_rows": 1787994,
+  "excluded_protocol_or_scope": 203301,
+  "excluded_unresolved_species": 29254,
+  "excluded_invalid_or_nonpositive_count": 12,
+  "excluded_missing_group": 0,
+  "retained_rows": 1555427,
+  "retained_count": 8347348,
+  "dataset": "ltrm",
+  "grouping_rule": "pool x year(sdate) x gear; years >= 1993 (post design revision)",
+  "notes": "Sum catch only, never repeated sheet or collection totals. Use documented species-code whitelist; remove unidentified, no-fish, hybrid and unlisted codes. The latter includes valid but undocumented additions: the filtered subset is explicitly narrower than the complete release.",
+  "source_files": [
+    {
+      "path": "data/public_ecology/01_fish_counts/ltrm/raw/LTRM_FISH_DATA_ENTIRE.zip",
+      "sha256": "19360b1565ddfc9deef843283661b5cdf585b6103b8d5b29f8a156e2dd5ef948",
+      "source_url": "https://www.umesc.usgs.gov/data_library/fisheries/LTRM_FISH_DATA_ENTIRE.zip",
+      "sha256_provenance": "download_manifest.csv"
+    }
+  ],
+  "total_groups": 1381,
+  "eligible_groups": 789,
+  "selected_groups": 8
+}

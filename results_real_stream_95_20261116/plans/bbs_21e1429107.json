@@ -1,0 +1,97 @@
+{
+  "population": "bbs_21e1429107",
+  "plans": [
+    {
+      "single": null,
+      "amplified": null,
+      "count95": null
+    },
+    {
+      "single": null,
+      "amplified": null,
+      "count95": {
+        "n": 16,
+        "m": 299,
+        "copies": 1,
+        "budget": 372,
+        "mean_limit": 299,
+        "tail_certificate": "[0.0040698064008243387261626761667441866711599840361331 +/- 2.60e-54]"
+      }
+    },
+    {
+      "single": null,
+      "amplified": null,
+      "count95": {
+        "n": 44,
+        "m": 642,
+        "copies": 1,
+        "budget": 745,
+        "mean_limit": 642,
+        "tail_certificate": "[0.0049144490508771896097057305807477455194331750666847 +/- 1.94e-53]"
+      }
+    },
+    {
+      "single": {
+        "n": 7,
+        "m": 1663.322963726955,
+        "copies": 1,
+        "budget": 1863,
+        "mean_limit": 1701
+      },
+      "amplified": null,
+      "count95": {
+        "n": 138,
+        "m": 1701,
+        "copies": 1,
+        "budget": 1863,
+        "mean_limit": 1701,
+        "tail_certificate": "[0.0063660207208797511483228866791651342292832228601024 +/- 1.38e-53]"
+      }
+    },
+    {
+      "single": {
+        "n": 19,
+        "m": 3371.835657807698,
+        "copies": 1,
+        "budget": 3726,
+        "mean_limit": 3497
+      },
+      "amplified": null,
+      "count95": {
+        "n": 303,
+        "m": 3497,
+        "copies": 1,
+        "budget": 3726,
+        "mean_limit": 3497,
+        "tail_certificate": "[0.0058834179828334392713421614921876850890773602321626 +/- 3.04e-53]"
+      }
+    },
+    {
+      "single": {
+        "n": 50,
+        "m": 7125.373794325154,
+        "copies": 1,
+        "budget": 7452,
+        "mean_limit": 7129
+      },
+      "amplified": null,
+      "count95": {
+        "n": 647,
+        "m": 7129,
+        "copies": 1,
+        "budget": 7452,
+        "mean_limit": 7129,
+        "tail_certificate": "[0.0065316716735109388830663560283938362197391734633505 +/- 5.19e-55]"
+      }
+    }
+  ],
+  "budgets": [
+    74,
+    372,
+    745,
+    1863,
+    3726,
+    7452
+  ],
+  "refinements": 0
+}

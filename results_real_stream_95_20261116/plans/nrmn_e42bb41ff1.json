@@ -1,0 +1,122 @@
+{
+  "population": "nrmn_e42bb41ff1",
+  "plans": [
+    {
+      "single": null,
+      "amplified": null,
+      "count95": {
+        "n": 8,
+        "m": 190,
+        "copies": 1,
+        "budget": 250,
+        "mean_limit": 190,
+        "tail_certificate": "[0.0038733487272856170630840667640078799450893098301137 +/- 1.67e-53]"
+      }
+    },
+    {
+      "single": {
+        "n": 3,
+        "m": 1000.6612518850593,
+        "copies": 1,
+        "budget": 1250,
+        "mean_limit": 1117
+      },
+      "amplified": null,
+      "count95": {
+        "n": 85,
+        "m": 1117,
+        "copies": 1,
+        "budget": 1250,
+        "mean_limit": 1117,
+        "tail_certificate": "[0.0050799666716532562518841161885523835755283443240367 +/- 4.17e-53]"
+      }
+    },
+    {
+      "single": {
+        "n": 11,
+        "m": 2266.1086884112788,
+        "copies": 1,
+        "budget": 2500,
+        "mean_limit": 2312
+      },
+      "amplified": null,
+      "count95": {
+        "n": 193,
+        "m": 2312,
+        "copies": 1,
+        "budget": 2500,
+        "mean_limit": 2312,
+        "tail_certificate": "[0.0055341054858112748457000993446268148330955268951667 +/- 2.91e-53]"
+      }
+    },
+    {
+      "single": {
+        "n": 39,
+        "m": 5853.8949565846615,
+        "copies": 1,
+        "budget": 6251,
+        "mean_limit": 5955
+      },
+      "amplified": null,
+      "count95": {
+        "n": 535,
+        "m": 5955,
+        "copies": 1,
+        "budget": 6251,
+        "mean_limit": 5955,
+        "tail_certificate": "[0.0062996135097820549713238643372091367616914989450725 +/- 1.24e-53]"
+      }
+    },
+    {
+      "single": {
+        "n": 96,
+        "m": 12076.886220571525,
+        "copies": 1,
+        "budget": 12503,
+        "mean_limit": 12084
+      },
+      "amplified": null,
+      "count95": {
+        "n": 1123,
+        "m": 12084,
+        "copies": 1,
+        "budget": 12503,
+        "mean_limit": 12084,
+        "tail_certificate": "[0.0068137388723842344088237517724828393806054514792681 +/- 2.39e-53]"
+      }
+    },
+    {
+      "single": {
+        "n": 223,
+        "m": 24363.32372035449,
+        "copies": 1,
+        "budget": 25007,
+        "mean_limit": 24415
+      },
+      "amplified": {
+        "n": 3,
+        "m": 1000.6612518850593,
+        "copies": 23,
+        "budget": 25007,
+        "mean_limit": 24415
+      },
+      "count95": {
+        "n": 2320,
+        "m": 24415,
+        "copies": 1,
+        "budget": 25007,
+        "mean_limit": 24415,
+        "tail_certificate": "[0.0068301218221504847654683294779503040294925410305715 +/- 3.41e-53]"
+      }
+    }
+  ],
+  "budgets": [
+    250,
+    1250,
+    2500,
+    6251,
+    12503,
+    25007
+  ],
+  "refinements": 0
+}

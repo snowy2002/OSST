@@ -1,0 +1,25 @@
+{
+  "design": {
+    "ns": [
+      442414,
+      3269018
+    ],
+    "trials": 2000,
+    "seed": 202611027803,
+    "epsilon": "1/(4*n)",
+    "scenarios": [
+      "uniform",
+      "rare_mass_2epsilon"
+    ],
+    "disclosure": "Added after observing no failures of no_count on the primary grid. Separate mechanistic diagnostic, not prospectively included in the primary confidence family.",
+    "guarantee": "Full C70 L14 is certified. Removing D is an ablation without a coverage theorem.",
+    "sampling": "Grouped iid Poisson fingerprint; binary64 RNG. Huge means are simulated, not acquired observations."
+  },
+  "source_sha256": {
+    "followup/guard/run.py": "69a6b65f81aee5d5c0b36e282728a1a83bbc2cde6c8b3ee3b91ced1994fe5a51",
+    "followup/core.py": "ea412a609d179eda4edfa76aedc2b94875ac2b61bfffa1d2dcec9911913d9e68",
+    "parameter_search/algorithm.py": "a09b9902bf1425fdec76b776ea24639e319ae53965f13871b552c5492318dba0",
+    "c7016/populations.py": "3213bac31dbb1853411f2cf527d73f724232dbd2c8eec89e948a0f7b9e9979c5"
+  },
+  "frozen_at_utc": "2026-11-02T03:33:53.813890+00:00"
+}

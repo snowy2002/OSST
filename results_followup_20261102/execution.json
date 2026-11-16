@@ -1,0 +1,14 @@
+{
+  "regression_tests": {
+    "command": "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python -m pytest -q",
+    "passed": 142,
+    "seconds": 10.57,
+    "exit_code": 0
+  },
+  "historical_package_verification": {
+    "command": ".venv/bin/python -m parameter_search.package --verify",
+    "passed_files": 2045
+  },
+  "resumption": "Initial invocation interrupted during budget grid; resumed with identical frozen protocol. Completed cells checked by SHA256 and reused, not counted as additional trials.",
+  "scope": "Runtime repetitions and integration checks are separate from primary Monte Carlo trial counts."
+}

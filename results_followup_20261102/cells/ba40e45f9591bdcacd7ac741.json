@@ -1,0 +1,70 @@
+{
+  "raw_file": "raw/ba40e45f9591bdcacd7ac741.npz",
+  "raw_sha256": "dbee5700fd700303b65b1b638a5a82e0a2be1d8a1d8e299fee915ccdb7ba21be",
+  "rows": [
+    {
+      "scenario": "epsilon_scaled_rare_1/2_null",
+      "method": "C8",
+      "C": "8",
+      "L0": 14,
+      "n": 1000000,
+      "epsilon": "1/10",
+      "mean": 5399746.413531118,
+      "degree": 247,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "S": 1000000,
+      "effective": 1,
+      "trials": 4000,
+      "errors": 2235,
+      "coverage_errors": 0,
+      "joint_errors": 2235,
+      "mean_lower_lo": 931556.99425,
+      "mean_lower_hi": 931556.99425,
+      "nonunique": 0,
+      "refinements": 0,
+      "suite": "budget",
+      "cell": "ba40e45f9591bdcacd7ac741",
+      "pmf_defect": 0.0,
+      "extra_rejects": 2235
+    },
+    {
+      "scenario": "epsilon_scaled_rare_1/2_null",
+      "method": "C8_count",
+      "C": "8",
+      "L0": 14,
+      "n": 1000000,
+      "epsilon": "1/10",
+      "mean": 5399746.413531118,
+      "degree": 247,
+      "truth": "Yes",
+      "tail_exact": "0",
+      "S": 1000000,
+      "effective": 1,
+      "trials": 4000,
+      "errors": 0,
+      "coverage_errors": 0,
+      "joint_errors": 0,
+      "mean_lower_lo": 236618.847,
+      "mean_lower_hi": 236618.847,
+      "nonunique": 0,
+      "refinements": 0,
+      "suite": "budget",
+      "cell": "ba40e45f9591bdcacd7ac741",
+      "pmf_defect": 0.0,
+      "extra_rejects": 0
+    }
+  ],
+  "suite": "budget",
+  "population": {
+    "multiplicities": [
+      1,
+      999999
+    ],
+    "probabilities_exact": [
+      "19/20",
+      "1/19999980"
+    ],
+    "support": 1000000
+  }
+}

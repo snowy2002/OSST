@@ -1,0 +1,92 @@
+{
+  "extension": "Post hoc extension prompted by observed accuracy/budget tradeoff; all extension choices frozen before its own simulations",
+  "included_in_original_main_summary": false,
+  "cells": 640,
+  "trials_per_cell": 2000,
+  "paths": 1280000,
+  "risk_certificate": "For each fixed population and cell, the count rule has joint failure risk <= 1/100 under the iid Poisson model",
+  "confidence": "One-sided Clopper-Pearson, Bonferroni across 640 extension cells",
+  "total_failures": 35,
+  "worst_failure_rate": 0.0045,
+  "maximum_cell_upper_95": 0.007839446211579703,
+  "maximum_cell_upper_simultaneous_95": 0.013220966622944056,
+  "worst_cell": {
+    "id": "c0476",
+    "population_id": "epa_nrsa_7bc3881126",
+    "dataset": "epa_nrsa",
+    "regime": "below_effective",
+    "n": 1,
+    "epsilon": "0.9",
+    "S": 164,
+    "eff": 2,
+    "truth": "No",
+    "baseline_m": 8,
+    "c70_m": 77.77777777777777,
+    "c70_m_over_baseline_m": 9.722222222222221
+  },
+  "worst_cell_failures": 9,
+  "worst_cell_ties": [
+    "c0476"
+  ],
+  "c70_m_over_baseline_m_range": [
+    8.08604848483051,
+    10.587673769894645
+  ],
+  "count_budget_range": [
+    8,
+    128929
+  ],
+  "truth_counts": {
+    "No": 113,
+    "Gap": 207,
+    "Yes": 320
+  },
+  "datasets": {
+    "bbs": {
+      "cells": 128,
+      "failures": 1,
+      "worst_failure_rate": 0.0005,
+      "c70_m_over_baseline_m_range": [
+        9.44004083457822,
+        10.565538650735771
+      ]
+    },
+    "epa_nrsa": {
+      "cells": 128,
+      "failures": 27,
+      "worst_failure_rate": 0.0045,
+      "c70_m_over_baseline_m_range": [
+        8.554171353611764,
+        10.54004041121525
+      ]
+    },
+    "ltrm": {
+      "cells": 128,
+      "failures": 3,
+      "worst_failure_rate": 0.0005,
+      "c70_m_over_baseline_m_range": [
+        9.722222222222221,
+        10.587673769894645
+      ]
+    },
+    "midfish": {
+      "cells": 128,
+      "failures": 4,
+      "worst_failure_rate": 0.001,
+      "c70_m_over_baseline_m_range": [
+        9.548495299847808,
+        10.586611170510825
+      ]
+    },
+    "nrmn": {
+      "cells": 128,
+      "failures": 0,
+      "worst_failure_rate": 0.0,
+      "c70_m_over_baseline_m_range": [
+        8.08604848483051,
+        10.587659461210233
+      ]
+    }
+  },
+  "elapsed_seconds": 8.192753559989796
+}

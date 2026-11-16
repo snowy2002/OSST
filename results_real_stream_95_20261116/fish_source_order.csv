@@ -1,0 +1,13 @@
+year,gear,fraction,samples,N,S,observed,chao1_bc,source_row,order,guarantee
+2007,seine,0.01,11,1180,8,2,2.0,57,Original source-file row order; not proven temporal order or iid,Descriptive only; no 95% species-total guarantee
+2007,seine,0.05,59,1180,8,4,4.0,256,Original source-file row order; not proven temporal order or iid,Descriptive only; no 95% species-total guarantee
+2007,seine,0.1,118,1180,8,4,4.0,315,Original source-file row order; not proven temporal order or iid,Descriptive only; no 95% species-total guarantee
+2007,seine,0.25,295,1180,8,7,7.0,1080,Original source-file row order; not proven temporal order or iid,Descriptive only; no 95% species-total guarantee
+2007,seine,0.5,590,1180,8,7,7.0,1572,Original source-file row order; not proven temporal order or iid,Descriptive only; no 95% species-total guarantee
+2007,seine,1.0,1180,1180,8,8,8.0,4877,Original source-file row order; not proven temporal order or iid,Descriptive only; no 95% species-total guarantee
+2008,seine,0.01,3,330,4,2,2.0,807,Original source-file row order; not proven temporal order or iid,Descriptive only; no 95% species-total guarantee
+2008,seine,0.05,16,330,4,4,4.0,822,Original source-file row order; not proven temporal order or iid,Descriptive only; no 95% species-total guarantee
+2008,seine,0.1,33,330,4,4,4.0,839,Original source-file row order; not proven temporal order or iid,Descriptive only; no 95% species-total guarantee
+2008,seine,0.25,82,330,4,4,4.0,2199,Original source-file row order; not proven temporal order or iid,Descriptive only; no 95% species-total guarantee
+2008,seine,0.5,165,330,4,4,4.0,2282,Original source-file row order; not proven temporal order or iid,Descriptive only; no 95% species-total guarantee
+2008,seine,1.0,330,330,4,4,4.0,2447,Original source-file row order; not proven temporal order or iid,Descriptive only; no 95% species-total guarantee

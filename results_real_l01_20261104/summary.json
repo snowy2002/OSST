@@ -1,0 +1,25 @@
+{
+  "cells": 640,
+  "populations": 40,
+  "trials_per_cell": 2000,
+  "paths": 1280000,
+  "truth_counts": {
+    "No": 113,
+    "Gap": 207,
+    "Yes": 320
+  },
+  "total_refinements": 0,
+  "full_failures": 78,
+  "max_full_failure_rate": 0.011,
+  "max_full_upper_95": 0.015670397780576984,
+  "max_full_upper_simultaneous_95": 0.022710341756733414,
+  "gain_paths": 259115,
+  "multiscale_gain_paths": 259076,
+  "mean_gain": 0.36199609375,
+  "m_ratio_range": [
+    8.532627009397732,
+    30.434782608695652
+  ],
+  "m_exceeds_source_N_cells": 131,
+  "elapsed_seconds": 30.173888845936744
+}

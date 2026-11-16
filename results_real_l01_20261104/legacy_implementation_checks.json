@@ -1,0 +1,218 @@
+{
+  "status": "passed_formula_checks",
+  "scope": "Finite implementation audit; no distribution-free success guarantee is certified.",
+  "module": "parameter_search.algorithm",
+  "precision_bits": 512,
+  "C": 70,
+  "L0": 1,
+  "n_range": [
+    1,
+    100
+  ],
+  "epsilons": [
+    "0.001",
+    "0.01",
+    "0.1",
+    "0.5",
+    "0.9"
+  ],
+  "parameter_grid_size": 500,
+  "scales_checked": 665,
+  "coefficients_checked": 13583,
+  "polynomial_values_checked": 3325,
+  "maximum_degree": 32,
+  "geometry_failures": [],
+  "parameter_failures": [
+    {
+      "n": 2,
+      "epsilon": "0.9",
+      "exception": "NumericalCertificationError",
+      "error": "Polynomial endpoint exceeds one"
+    },
+    {
+      "n": 3,
+      "epsilon": "0.9",
+      "exception": "NumericalCertificationError",
+      "error": "Polynomial endpoint exceeds one"
+    },
+    {
+      "n": 4,
+      "epsilon": "0.9",
+      "exception": "NumericalCertificationError",
+      "error": "Polynomial endpoint exceeds one"
+    },
+    {
+      "n": 5,
+      "epsilon": "0.9",
+      "exception": "NumericalCertificationError",
+      "error": "Polynomial endpoint exceeds one"
+    },
+    {
+      "n": 6,
+      "epsilon": "0.9",
+      "exception": "NumericalCertificationError",
+      "error": "Polynomial endpoint exceeds one"
+    },
+    {
+      "n": 7,
+      "epsilon": "0.9",
+      "exception": "NumericalCertificationError",
+      "error": "Polynomial endpoint exceeds one"
+    }
+  ],
+  "b_above_one": [
+    {
+      "n": 2,
+      "epsilon": "0.9",
+      "b": 1.1794617771585294
+    },
+    {
+      "n": 3,
+      "epsilon": "0.9",
+      "b": 1.2080018847493854
+    },
+    {
+      "n": 4,
+      "epsilon": "0.9",
+      "b": 1.1714195885991607
+    },
+    {
+      "n": 5,
+      "epsilon": "0.9",
+      "b": 1.1205942120161998
+    },
+    {
+      "n": 6,
+      "epsilon": "0.9",
+      "b": 1.0688805852376473
+    },
+    {
+      "n": 7,
+      "epsilon": "0.9",
+      "b": 1.0201532010679364
+    }
+  ],
+  "output_checks": {
+    "fingerprints_checked": 83,
+    "skipped": [
+      {
+        "n": 2,
+        "error": "Polynomial endpoint exceeds one"
+      },
+      {
+        "n": 3,
+        "error": "Polynomial endpoint exceeds one"
+      },
+      {
+        "n": 7,
+        "error": "Polynomial endpoint exceeds one"
+      }
+    ],
+    "cases": "Empty, high-frequency D=1,n-1,n,n+1; F1,F2,F3,FK-only profiles",
+    "oracle": "Independent closed-form coefficients and Arb ceil/threshold",
+    "tested_functions": "followup.core.exact_output and scale_intervals"
+  },
+  "representative_geometries": [
+    {
+      "n": 1,
+      "J": 1,
+      "degrees": [
+        6,
+        6
+      ]
+    },
+    {
+      "n": 2,
+      "J": 3,
+      "degrees": [
+        10,
+        9,
+        8,
+        7
+      ]
+    },
+    {
+      "n": 3,
+      "J": 4,
+      "degrees": [
+        12,
+        12,
+        10,
+        9,
+        7
+      ]
+    },
+    {
+      "n": 7,
+      "J": 4,
+      "degrees": [
+        17,
+        16,
+        14,
+        12,
+        10
+      ]
+    },
+    {
+      "n": 8,
+      "J": 5,
+      "degrees": [
+        18,
+        17,
+        15,
+        13,
+        11,
+        9
+      ]
+    },
+    {
+      "n": 10,
+      "J": 5,
+      "degrees": [
+        19,
+        18,
+        16,
+        14,
+        11,
+        9
+      ]
+    },
+    {
+      "n": 50,
+      "J": 6,
+      "degrees": [
+        28,
+        27,
+        24,
+        20,
+        17,
+        14,
+        11
+      ]
+    },
+    {
+      "n": 100,
+      "J": 6,
+      "degrees": [
+        32,
+        30,
+        27,
+        23,
+        19,
+        15,
+        12
+      ]
+    }
+  ],
+  "formula_notes": {
+    "mean": "m=70*n/(epsilon*(1+log(n))), real-valued, no ceiling",
+    "J": "floor(log2(256*L^2/70))",
+    "scaled_interval": "A_j=70*2^j/(8*L); B=64*L",
+    "degree": "ceil(sqrt(B/A_j)*log(2/delta_j))",
+    "correction": "(Z_j-delta_j*n)/(1+delta_j)",
+    "score": "max(D, max_j corrected_j)",
+    "lower_bound_output": "min(max(ceil(score),1),n)",
+    "binary_output": "Yes if score<=n, No otherwise",
+    "b_le_1": "Old Lemma 2.3 premise; not needed to define the polynomial statistic"
+  }
+}

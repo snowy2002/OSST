@@ -1,0 +1,71 @@
+{
+  "population": "fish_2007_seine",
+  "plans": [
+    {
+      "single": null,
+      "amplified": null,
+      "count95": null
+    },
+    {
+      "single": null,
+      "amplified": null,
+      "count95": null
+    },
+    {
+      "single": null,
+      "amplified": null,
+      "count95": null
+    },
+    {
+      "single": null,
+      "amplified": null,
+      "count95": {
+        "n": 11,
+        "m": 230,
+        "copies": 1,
+        "budget": 295,
+        "mean_limit": 230,
+        "tail_certificate": "[0.0044270198675093636020316743422274210572462740331034 +/- 4.73e-53]"
+      }
+    },
+    {
+      "single": null,
+      "amplified": null,
+      "count95": {
+        "n": 32,
+        "m": 499,
+        "copies": 1,
+        "budget": 590,
+        "mean_limit": 499,
+        "tail_certificate": "[0.0045667025883335325432529784305204822288822217641736 +/- 2.45e-53]"
+      }
+    },
+    {
+      "single": {
+        "n": 3,
+        "m": 1000.6612518850593,
+        "copies": 1,
+        "budget": 1180,
+        "mean_limit": 1051
+      },
+      "amplified": null,
+      "count95": {
+        "n": 79,
+        "m": 1051,
+        "copies": 1,
+        "budget": 1180,
+        "mean_limit": 1051,
+        "tail_certificate": "[0.0047516285594971072540945067263964749964888645278776 +/- 2.35e-54]"
+      }
+    }
+  ],
+  "budgets": [
+    11,
+    59,
+    118,
+    295,
+    590,
+    1180
+  ],
+  "refinements": 0
+}

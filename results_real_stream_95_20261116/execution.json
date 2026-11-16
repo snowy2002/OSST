@@ -1,0 +1,9 @@
+{
+  "populations": 50,
+  "independent_streams": 12800,
+  "literal_labels_generated": 2518241024,
+  "method_budget_rows": 3600,
+  "method_budget_evaluations": 460800,
+  "paired_fractions_and_methods": true,
+  "seconds": 113.09880721599995
+}

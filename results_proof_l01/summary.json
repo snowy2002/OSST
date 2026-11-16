@@ -1,0 +1,57 @@
+{
+  "status": "PASS",
+  "C0": 70,
+  "L0": 1,
+  "poisson_mean": "70*n/(epsilon*(1+log(n))) (real)",
+  "scope": "Every positive integer n, every epsilon in (0,1), every finite or countably supported fixed distribution under independent Poisson sampling",
+  "guarantee": "Binary promise and clipped effective-support interval simultaneously correct with probability > 0.669 > 2/3",
+  "failure_bound_rational": "331/1000",
+  "computed_uniform_joint_bound_arb": "[0.33067939547353427773706002134817695965721945377352220036638310555 +/- 2.92e-66]",
+  "upper_bounds": {
+    "n_1_73": "[0.33067939547353427773706001969140246200362783136204314217184494694 +/- 4.73e-67]",
+    "n_74": "[0.30151782560546677783833198097951935533699339031176102396866559182 +/- 1.47e-66]",
+    "n_75_403": "[0.29130364963955846562653662607539539154955613349850585259569761776 +/- 4.76e-66]",
+    "L_7_14": "[0.18315638888734180293718021273241242211912067553475594769599927439 +/- 2.52e-66]"
+  },
+  "small_lower_bound_arb": "[1.6567744976535916224114790581945381586124429332426003714199791087e-27 +/- 4.20e-92]",
+  "large_joint_bound_arb": "[0.00087940116350317387495843357981822052180712497920264838482433536779 +/- 2.84e-69]",
+  "finite_n_support_pairs": 2701,
+  "finite_n_75_403_scale_cases": 2570,
+  "continuous_midrange_cases": 6597,
+  "continuous_midrange_slabs": 700,
+  "fresh_full_replay_this_invocation": true,
+  "optimizer_used_in_replay": false,
+  "optimal_real_constant_claim": false,
+  "limitations": [
+    "Computer-assisted proof, not proof-assistant formalization",
+    "The model is iid Poisson sampling; field sampling validity is not implied",
+    "This sufficient-constant proof does not show practical sample-efficiency superiority"
+  ],
+  "artifact_sha256": {
+    "small_certificates.json": "36d70a2ae8b32cc7c88e7c97f748c1611d78988a16623ecc458e653a6c2ec92c",
+    "small_audit.json": "53222d90df5f8997dabad9eb75ed323e54490b4c36ad4f62fbd5495d2dcafcd2",
+    "n74_certificate.json": "d0bcec236acc46a1f1ecef69a85ace2fa80508c9fafb65d83a8717d654bbca7e",
+    "n74_audit.json": "391feaeebc26860b670f823c9ab7a9861602989e00025e3a6483c6a6ad7cd796",
+    "mgf_certificates.json": "51ef93b91844a098778a91767f7fce471c235c32a1dbc9a2850aca9339d6fe8f",
+    "finite_audit.json": "d27e33c85139412bb53900d8f9d8942b449cf7981d5654934993d06c1e9bfdb1",
+    "midrange_certificate.json": "c5ca47987c7d6442bb50140f79b48af3cf59b4773cf6cf67fba97749a3b0b89f",
+    "midrange_independent_audit.json": "7f32c81969adfb2862ba0d82e6928d7f8ce1eb7564eeb6c164db2198a2e26b26",
+    "large_range.json": "28983e59e109e41408cb1ce685d7424890e1c4821db3cd2ba49383a411539ceb",
+    "large_range_independent_audit.json": "007e5518b09db4664f64dca892846914041671738858b17722d0086f472731ad",
+    "basic_certificate.json": "3673676b615e1ee29514100a73e915857135540c510a14db562b179e74c44048"
+  },
+  "proof_source_sha256": {
+    "proof_l01/__init__.py": "1a8f323f98859112d5397cec3fd71c88b05394b70bbfa99fc0202402afd98487",
+    "proof_l01/audit_midrange.py": "2250197e05f2012ce9b1d77b5b225bcbf65969fddb9d27fb7c264401fe0f515f",
+    "proof_l01/bridge74.py": "40ebbaeba6b0f99e8cc41d0c77acc137b4441b4a51edc3e865a7f9e69a471585",
+    "proof_l01/large_range.py": "f57cd624e2c3f6faaa6b35bfa16420c38094c3eb6e24791140508992c5146da1",
+    "proof_l01/mgf.py": "fb07bf251097e3a1c5d33759570d51d3f0bd0bb859819703de363a816bb727a1",
+    "proof_l01/midrange.py": "b3366d2338a35f04642480f02a02022932998c393b1cb53700d73b8c1b1719b5",
+    "proof_l01/package.py": "388525ec276233706f7ebdec8f94415720ac1cb79500ca0c96154d17bdf0d3ca",
+    "proof_l01/report.py": "e68dbbbb0ea89303cb88b3072cf52529589046efc5a095ee1c86dee50260086f",
+    "proof_l01/small_exact.py": "49707fbd572ee6b6533a4dd5ae3edc69bf0fde9b38f394cef48e13469d5532af",
+    "proof_l01/verify_all.py": "f12bd0348e9f8e322bf9fa2c1cdb12f741eadb9e4e912768b5803b1b507193e9",
+    "proof_l01/verify_finite.py": "fee5917a1ae4aba1023783d58c3e8bfe30a2a73665107f1723b5e1e861eac34b",
+    "proof_l01/verify_small.py": "f18810f10ad0878d8265d2c5e2dd5d0db62db3396a91b2446af665836b5df0d3"
+  }
+}

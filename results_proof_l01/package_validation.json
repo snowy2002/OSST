@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "pdf_page_counts": {
+    "results_proof_l01/C70_L1_proof.pdf": 7,
+    "results_parameter_search/proof.pdf": 6,
+    "artifacts/joint_constants_submission/submission_proof.pdf": 12
+  },
+  "complete_pdf_pages": 25,
+  "files": 83,
+  "archive_bytes": 10880139,
+  "archive_sha256": "5f3685b3ed2094b2369ef7ffb97d5d88bf26c468dfd1bb34ce4015e0f6f03ba7",
+  "environment": {
+    "python": "3.14.4",
+    "packages": {
+      "python-flint": "0.9.0",
+      "numpy": "2.5.4",
+      "scipy": "1.18.1",
+      "pypdf": "6.20.1"
+    }
+  },
+  "archive_crc_and_all_hashes_verified": true,
+  "isolated_archive_aggregate_replay": "PASS",
+  "isolated_all_verifier_imports": "PASS",
+  "complete_replay_in_repository": "PASS"
+}

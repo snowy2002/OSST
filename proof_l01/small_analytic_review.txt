@@ -1,0 +1,165 @@
+Independent analytic review: small-n upper-tail reduction at C0=70,L0=1
+
+Conclusion: the homogenization theorem and the proposed heavy-category /
+zero-singleton reduction are valid. This conclusion concerns the analytic
+reduction. Completion of the finite numerical certificates and their exact
+index coverage must still be verified separately. No simulation is used in
+this review.
+
+1. Homogenization theorem
+
+For 0<=y<1 write d=1-y, b(lambda)=lambda exp(-lambda),
+t(lambda)=1-d exp(-lambda), and
+h(lambda)=1-(d+lambda)exp(-lambda). The one-coordinate weighted singleton
+polynomial is h+bz. For lambda>0, h,b,t are positive, and x=log(t) is
+strictly increasing. The following derivatives in homogenization.txt check:
+
+  d(log b)/dx = (1-lambda)(exp(lambda)-d)/(d lambda),
+  d/dlambda[d(log b)/dx]
+    = [d-exp(lambda)(lambda^2-lambda+1)]/(d lambda^2) <= 0.
+
+Indeed exp(lambda)(lambda^2-lambda+1) starts at 1 and has derivative
+exp(lambda)*lambda*(lambda+1)>=0. Thus log b is concave in x.
+
+For log h, the first x derivative is t(lambda-y)/(d h). Its lambda
+derivative has positive denominator d exp(2lambda) h^2 and numerator
+
+  N = exp(2lambda)
+      -exp(lambda)[lambda^2-lambda+1+d(lambda+1)]+d.
+
+The derivative of N in d is 1-(lambda+1)exp(lambda)<=0. Therefore N is
+at least its value at d=1, namely
+exp(lambda)[2 cosh(lambda)-lambda^2-2]>=0. The last inequality follows
+from the absolutely convergent positive even-power series. Hence log h
+is convex in x, including the part where h itself decreases in lambda.
+
+Replacing two x coordinates by their mean keeps t1*t2 unchanged,
+increases b1*b2, and decreases h1*h2. The resulting unnormalized
+singleton measures have the same total mass and larger tails at both
+nonzero cutoffs 1 and 2. This is exactly the order needed for every
+nondecreasing function of the singleton count. Conditioning on all
+other coordinates preserves the comparison, because their weights are
+nonnegative and the conditional test function remains nondecreasing.
+
+The max/min averaging iteration converges: if E=sum_i(x_i-xbar)^2,
+one step decreases E by (xmax-xmin)^2/2, and
+(xmax-xmin)^2>=E/r. Thus E contracts by at least 1-1/(2r), for r>=2.
+This proves convergence to the diagonal, without requiring an attained
+global maximizer. The cases r=1 and r=0 are immediate; r=0 should be
+stated explicitly when the theorem is used for S=1.
+
+Boundary handling in the supplied proof is correct. If y=0 and a mean
+is zero, the weighted expectation is zero. Other zero means and
+infinite-mean limits follow from continuity of the finite zero/one/other
+probability representation. When y=1, the singleton probabilities are
+independent Bernoulli parameters <=1/e, simultaneously maximized by
+lambda_i=1. The convention 0^0=1 is consistent.
+
+The computational restriction lambda>=1 also checks. With other
+coordinates fixed, the objective is
+A+exp(-lambda)[(y-1)A+lambda(B-A)], B>=A>=0. Its derivative is
+exp(-lambda)[(1-y)A+(1-lambda)(B-A)]>=0 for 0<=lambda<=1.
+Thus the diagonal supremum can be restricted to lambda>=1. The change
+of means need not preserve their sum, because this is an upper bound
+over an enlarged set of admissible mean vectors.
+
+2. Heavy-category removal
+
+For a finite support S<=n choose h to maximize p_h before observing
+counts. Then p_h>=1/S and, with the original real Poisson mean,
+
+  lambda_h = 70 n p_h/(epsilon L)
+            >=70 n/(epsilon S L)>70 n/(S L)>=70/L.
+
+Since (1+lambda)exp(-lambda) is decreasing on lambda>=0,
+Pr(N_h<=1) is at most (1+lambda_min)exp(-lambda_min), with either
+lambda_min=70 n/(S L) or the coarser common value 70/L. The code's
+70/L bound is therefore valid uniformly in S and epsilon.
+
+On N_h>=2, the full zero/singleton counts equal those of the remaining
+r=S-1 coordinates. Those coordinates retain independent Poisson laws.
+Formally, bound the common event on the remaining coordinates without
+conditioning and add Pr(N_h<=1). Independence also justifies conditioning,
+but dropping the probability of N_h>=2 already gives the desired bound.
+
+3. Envelope, strict integer threshold, and Markov inequality
+
+Write f_j(1)=1+u1, f_j(ell)=1+(-1)^(ell+1)u_ell for 1<=ell<=k,
+f_j(0)=0, and f_j(ell)=1 for ell>k. Set
+q=max(0,max_{odd ell>=3,ell<=k} u_ell). The empty maximum gives q=0.
+On N_h>=2,
+
+  Z_j <= (1+q)S-(1+q)F0+(u1-q)F1.
+
+Consequently Z_j>(1+delta)S+delta*n implies
+
+  F0 < T_j(F1),
+  T_j(s)=[(u1-q)s+(q-delta)S-delta*n]/(1+q).
+
+For a group of scales with u1>=q, every T_j is nondecreasing in s.
+Taking their maximum preserves monotonicity. For integer F0 the strict
+condition is exactly F0<=ceil(max_j T_j(s))-1. The minus one is essential
+when the threshold itself is an integer; using floor alone would fail
+at integer thresholds. The Arb unique-ceil routine correctly rejects
+uncertified boundary values instead of guessing.
+
+Thus z_s=ceil(max_j T_j(s))-1 is nondecreasing. For 0<y<1, define
+phi_y(s)=0 if z_s<0 and phi_y(s)=y^(-z_s) otherwise. This phi is
+nonnegative and nondecreasing, and pointwise
+
+  1{F0<=z_F1} <= y^F0 phi_y(F1).
+
+The homogenization theorem now applies. For r=S-1 its diagonal bound is
+sum_{s=0}^r binom(r,s)b(lambda)^s h(lambda)^(r-s)phi_y(s), maximized
+over lambda>=1. The thresholds still use the original S and n; only the
+number of remaining random coordinates changes to r. The implementation
+passes S-1 and z[0:S], which is the correct range.
+
+The actual code uses the stronger good-scale condition q<=delta<=u1.
+This implies u1>=q and additionally z_0<0. Thus the r=0 case has an empty
+common event, as handled by its zero_event path. All other scales go to
+the separate MGF group. Adding their individual bounds, the common
+event bound, and the heavy-category error is a valid union bound; no
+independence between the scales is asserted or needed.
+
+4. Uniform one-variable certificate in small_exact.certify_common
+
+For lambda>=1, b(lambda)=lambda exp(-lambda) is nonincreasing and
+h(lambda)=1-(1-y+lambda)exp(-lambda) is increasing, with h>0.
+On [a,b] the sum of nonnegative monomials is therefore bounded by
+
+  h(b)^r P(b(a)/h(b)),
+  P(v)=sum_s binom(r,s)phi_y(s)v^s.
+
+On [R,infinity), b(lambda)<=R exp(-R) and h(lambda)<=1, giving the
+valid tail bound P(R exp(-R)). The finite interval subdivision and this
+tail cover all lambda>=1. Numerical y optimization only proposes a
+rational y; a successful outward-interval certificate for that rational
+y suffices even if it is not optimal.
+
+5. Required coverage safeguards for the independent certificate replay
+
+The analytic reduction is sound, but small_exact.certify currently uses
+zip(bad_scales, saved_mgf_proposals) and iterates saved common proposals.
+Without extra checks, a shortened input artifact could omit a scale or
+a support size. The final independent verifier should require:
+
+* The exact final n index set, including n=74 if the next range begins at 75.
+* For each n, exactly one common certificate for every S=1,...,n.
+* Disjoint good/bad groups whose union equals every prescribed scale.
+* Exact j,k,delta correspondence for every saved low-scale MGF proposal.
+* Recomputed z_s values, z_s nondecreasing, and complete s=0,...,S-1.
+* Certified rational 0<y<1, positive targets/t/eta, and all per-cell bounds.
+* The full union bound, plus the separately proved lower-deviation budget,
+  is strictly below 1/3. The small-n upper bound alone does not prove the
+  joint theorem.
+
+Negative tests deleting one n, one S, or one low scale should be rejected.
+These are verification-completeness requirements, not a mathematical
+counterexample to the proposed proof. This review did not modify the
+small-n implementation or claim that all outstanding numerical certificates
+had already been completed.
+
+Reviewed source fingerprints (SHA-256):
+proof_l01/homogenization.txt 4560a2a6639f9f7280c72a1df178232b978117dbec420459d769c2f5e265a8bf
+proof_l01/small_exact.py 5cf2e4486835f94866d0af578d69385a284853b665b69e06eaccdb2d0b9d9a08

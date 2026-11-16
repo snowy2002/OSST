@@ -1,0 +1,41 @@
+{
+  "input_rows": 72344,
+  "excluded_protocol_or_scope": 7606,
+  "excluded_unresolved_species": 689,
+  "excluded_invalid_or_nonpositive_count": 51,
+  "excluded_missing_group": 830,
+  "retained_rows": 63168,
+  "retained_count": 1473572,
+  "dataset": "epa_nrsa",
+  "grouping_rule": "NRSA two-year survey cycle x source ecoregion; VISIT_NO=1; IS_DISTINCT=1",
+  "notes": "Integer FINAL_CT/TOTAL only. Join pinned NRSA taxon list, retain fish with species-level binomials, merge subspecies/age categories, exclude HERP, hybrids, unresolved taxa. First visit only; pooled site catches represent an empirical distribution, not survey-weighted regional abundance.",
+  "source_files": [
+    {
+      "path": "data/public_ecology/01_fish_counts/finsyncr/raw/EPA__fishcts.csv",
+      "sha256": "96e11a34650ed215b3ff224d4c97bc1480c460807e170ab56781295e7dce9b89",
+      "source_url": "https://www.epa.gov/sites/default/files/2015-09/fishcts.csv",
+      "sha256_provenance": "download_manifest.csv"
+    },
+    {
+      "path": "data/public_ecology/01_fish_counts/finsyncr/raw/EPA__nrsa1314_fishcts_04232019.csv",
+      "sha256": "d8ddcc09159a048ded74d7775f08a6586e8ac5eab2a33c5dfa15551ae9772e52",
+      "source_url": "https://www.epa.gov/sites/default/files/2019-04/nrsa1314_fishcts_04232019.csv",
+      "sha256_provenance": "download_manifest.csv"
+    },
+    {
+      "path": "data/public_ecology/01_fish_counts/finsyncr/raw/EPA__nrsa-1819-fish-count-data.csv",
+      "sha256": "1cee6cceb4382308d6e2e639a29f6d4bac2cea2edaeff03c175a5845066c927c",
+      "source_url": "https://www.epa.gov/system/files/other-files/2022-03/nrsa-1819-fish-count-data.csv",
+      "sha256_provenance": "download_manifest.csv"
+    },
+    {
+      "path": "data/public_ecology/01_fish_counts/finsyncr/raw/inst__extdata__updateNRSAfishtax.csv",
+      "sha256": "672e401053b318e68d6a33e0c97d5cba69a0c7c110101e4186b807bc096fa11f",
+      "source_url": "https://raw.githubusercontent.com/USEPA/finsyncR/2c31b78126f08884aa6cfa195f9a7708450f73c3/inst/extdata/updateNRSAfishtax.csv",
+      "sha256_provenance": "download_manifest.csv"
+    }
+  ],
+  "total_groups": 27,
+  "eligible_groups": 27,
+  "selected_groups": 8
+}

@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "full_replay_completed": true,
+  "proof_pages": 25,
+  "all_report_links_valid": {
+    "results_proof_l01/reliability_report.html": 9,
+    "results_real_l01_20261104/report.html": 19
+  },
+  "all_proof_sources_and_certificate_hashes_match": true,
+  "experiment_results_unchanged": true,
+  "archive_matches_current_files": true
+}

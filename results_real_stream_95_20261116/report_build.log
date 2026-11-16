@@ -1,0 +1,50 @@
+{
+  "populations": 50,
+  "independent_streams": 12800,
+  "literal_labels_generated": 2518241024,
+  "method_budget_rows": 3600,
+  "method_budget_evaluations": 460800,
+  "paired_fractions_and_methods": true,
+  "seconds": 113.09880721599995,
+  "audit_checks": 46579,
+  "selected_source_records": 9836879,
+  "historical_large_main_paths": 1280000,
+  "historical_large_main_joint_failures": 78,
+  "historical_worst_failure_rate": 0.011,
+  "historical_simultaneous95_failure_upper": 0.022710341756733414,
+  "half_sample": {
+    "observed": {
+      "available": 50.0,
+      "mape_available": 0.08126589467021192,
+      "within5_all": 0.3390625
+    },
+    "chao1_bc": {
+      "available": 50.0,
+      "mape_available": 0.07282647747631542,
+      "within5_all": 0.59703125
+    },
+    "C70_L14_report_maxD": {
+      "available": 42.0,
+      "mape_available": 0.07229658427750307,
+      "within5_all": 0.28640625
+    },
+    "C70_L1_report_maxD": {
+      "available": 42.0,
+      "mape_available": 0.07207706143213174,
+      "within5_all": 0.286875
+    },
+    "C70_L1_median23_report_maxD": {
+      "available": 28.0,
+      "mape_available": 0.06841875378436575,
+      "within5_all": 0.211875
+    },
+    "count95": {
+      "available": 48.0,
+      "mape_available": 0.14392688842236298,
+      "within5_all": 0.2934375
+    }
+  },
+  "latest_theory": "C70L1: joint failure <0.331 under iid Poisson. 23 independent copies + cap: failure <0.046627.",
+  "important": "This task is an analysis, not a fresh end-to-end review of every historical analytic proof. Current proof artifact hashes checked; prior audit statuses reported separately.",
+  "no_publication_or_push_performed": true
+}

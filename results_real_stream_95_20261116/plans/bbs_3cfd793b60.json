@@ -1,0 +1,103 @@
+{
+  "population": "bbs_3cfd793b60",
+  "plans": [
+    {
+      "single": null,
+      "amplified": null,
+      "count95": null
+    },
+    {
+      "single": null,
+      "amplified": null,
+      "count95": {
+        "n": 29,
+        "m": 460,
+        "copies": 1,
+        "budget": 548,
+        "mean_limit": 460,
+        "tail_certificate": "[0.0049520526302441958453189216712565063627618272684128 +/- 4.07e-53]"
+      }
+    },
+    {
+      "single": {
+        "n": 2,
+        "m": 826.8625528094977,
+        "copies": 1,
+        "budget": 1096,
+        "mean_limit": 972
+      },
+      "amplified": null,
+      "count95": {
+        "n": 72,
+        "m": 972,
+        "copies": 1,
+        "budget": 1096,
+        "mean_limit": 972,
+        "tail_certificate": "[0.0045694741407835399478543782678287153718290229221543 +/- 3.59e-53]"
+      }
+    },
+    {
+      "single": {
+        "n": 12,
+        "m": 2410.394551174277,
+        "copies": 1,
+        "budget": 2741,
+        "mean_limit": 2545
+      },
+      "amplified": null,
+      "count95": {
+        "n": 215,
+        "m": 2545,
+        "copies": 1,
+        "budget": 2741,
+        "mean_limit": 2545,
+        "tail_certificate": "[0.0061968434243643603001303394390251263310884653108075 +/- 1.59e-54]"
+      }
+    },
+    {
+      "single": {
+        "n": 33,
+        "m": 5137.320394601143,
+        "copies": 1,
+        "budget": 5483,
+        "mean_limit": 5205
+      },
+      "amplified": null,
+      "count95": {
+        "n": 464,
+        "m": 5205,
+        "copies": 1,
+        "budget": 5483,
+        "mean_limit": 5205,
+        "tail_certificate": "[0.0063289592909632597804289076408989348770528199543538 +/- 3.56e-53]"
+      }
+    },
+    {
+      "single": {
+        "n": 81,
+        "m": 10510.804416589766,
+        "copies": 1,
+        "budget": 10966,
+        "mean_limit": 10574
+      },
+      "amplified": null,
+      "count95": {
+        "n": 977,
+        "m": 10574,
+        "copies": 1,
+        "budget": 10966,
+        "mean_limit": 10574,
+        "tail_certificate": "[0.0064977419366418155914423000700111162948280563111296 +/- 4.56e-53]"
+      }
+    }
+  ],
+  "budgets": [
+    109,
+    548,
+    1096,
+    2741,
+    5483,
+    10966
+  ],
+  "refinements": 0
+}

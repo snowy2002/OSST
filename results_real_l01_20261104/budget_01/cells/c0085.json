@@ -1,0 +1,70 @@
+{
+  "id": "c0085",
+  "population_id": "midfish_210c4d1d48",
+  "dataset": "midfish",
+  "n": 44,
+  "epsilon": "0.1",
+  "regime": "middle_support",
+  "truth": "Gap",
+  "tail_exact": "307/157897",
+  "eff": 13,
+  "S": 76,
+  "trials": 2000,
+  "baseline_risk": "1/100",
+  "baseline_m": 621,
+  "baseline_tail_certificate": "[0.00986634303276607869530754664773656503365040103499317016146023 +/- 4.78e-63]",
+  "seeds": [
+    16077735172855524978,
+    13549727648321506945,
+    17134071415756838263,
+    13584895987939797753
+  ],
+  "c70_m": 6437.87189822882,
+  "c70_m_interval": "[6437.8718982288201167034089382931286063519089278869322466603184817 +/- 2.77e-62]",
+  "c70_m_over_baseline_m": 10.366943475408728,
+  "extension": "post_hoc_predeclared_1pct_count_budget",
+  "included_in_original_main_summary": false,
+  "probabilities_sum_binary64": 1.0,
+  "stats": {
+    "reject": 0,
+    "binary": 0,
+    "over": 0,
+    "short": 0,
+    "joint": 0,
+    "failure_rate": 0.0,
+    "mean_lower": 33.795,
+    "block_joint_failures": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "joint_upper_95": 0.0014967448951882837,
+    "joint_upper_simultaneous_95": 0.004717437995747087
+  },
+  "main_full_stats": {
+    "reject": 1998,
+    "over": 0,
+    "short": 0,
+    "binary": 0,
+    "joint": 0,
+    "mean_lower": 44.0,
+    "q05_lower": 44.0,
+    "q95_lower": 44.0,
+    "mean_unclipped_score_interval": [
+      51.54046304465161,
+      51.54046304465168
+    ],
+    "block_joint_failures": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "joint_upper_95": 0.0014967448951882837,
+    "joint_upper_simultaneous_95": 0.004717437995747087
+  },
+  "comparison": "Independent seeds; not a paired comparison to the original C70 run",
+  "raw_sha256": "2cbe6ac86913f9037a2b31fdf64e8de0ee42279740fa4f79a3a96110b5494207",
+  "elapsed_seconds": 0.007871999994677026
+}

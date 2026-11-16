@@ -1,0 +1,58 @@
+{
+  "population": "spider_logged",
+  "plans": [
+    {
+      "single": null,
+      "amplified": null,
+      "count95": null
+    },
+    {
+      "single": null,
+      "amplified": null,
+      "count95": null
+    },
+    {
+      "single": null,
+      "amplified": null,
+      "count95": null
+    },
+    {
+      "single": null,
+      "amplified": null,
+      "count95": null
+    },
+    {
+      "single": null,
+      "amplified": null,
+      "count95": {
+        "n": 1,
+        "m": 84,
+        "copies": 1,
+        "budget": 126,
+        "mean_limit": 84,
+        "tail_certificate": "[0.0021137528472811737643071554651456466523355482845066 +/- 2.39e-53]"
+      }
+    },
+    {
+      "single": null,
+      "amplified": null,
+      "count95": {
+        "n": 8,
+        "m": 192,
+        "copies": 1,
+        "budget": 252,
+        "mean_limit": 192,
+        "tail_certificate": "[0.0034277126332856533419261700687577732883377753700577 +/- 1.78e-53]"
+      }
+    }
+  ],
+  "budgets": [
+    2,
+    12,
+    25,
+    63,
+    126,
+    252
+  ],
+  "refinements": 0
+}

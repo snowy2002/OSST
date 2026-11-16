@@ -1,0 +1,29 @@
+{
+  "input_rows": 7562439,
+  "excluded_protocol_or_scope": 5946331,
+  "excluded_unresolved_species": 6312,
+  "excluded_invalid_or_nonpositive_count": 0,
+  "excluded_missing_group": 0,
+  "retained_rows": 1609796,
+  "retained_count": 20103632,
+  "dataset": "bbs",
+  "grouping_rule": "single route survey (RouteDataID), limited a priori to years 2015-2025; RPID=101 standard runs",
+  "notes": "SpeciesTotal is a bird observation count, not StopTotal (occupied stops). Only States.zip used: 50-StopData is an overlapping representation. Map AOU through supplied SpeciesList, merge forms/subspecies, remove hybrid/unidentified labels. Sightings do not guarantee distinct individual birds; empirical count-distribution benchmark only.",
+  "source_files": [
+    {
+      "path": "data/public_ecology/06_birds/bbs/raw/States.zip",
+      "sha256": "568053a412e42f2974642d1961956174e8eaad6bc85c278ef50d6191cc56adcf",
+      "source_url": "https://www.sciencebase.gov/catalog/file/get/6a0b0b0ab66b0188da36aedd?f=__disk__fb%2Ff3%2Fb6%2Ffbf3b68cd779b281a77c7b10b8289c8bf6b77497",
+      "sha256_provenance": "download_manifest.csv"
+    },
+    {
+      "path": "data/public_ecology/06_birds/bbs/raw/SpeciesList.csv",
+      "sha256": "e54e4b5b1eb6fc5fc5941a8e31876ecc17675f229265f60c4dbfed742fb35274",
+      "source_url": "https://www.sciencebase.gov/catalog/file/get/6a0b0b0ab66b0188da36aedd?f=__disk__67%2F26%2F5b%2F67265bbc0d9312830188fb7e683ed344f19f5452",
+      "sha256_provenance": "download_manifest.csv"
+    }
+  ],
+  "total_groups": 30782,
+  "eligible_groups": 30344,
+  "selected_groups": 8
+}
